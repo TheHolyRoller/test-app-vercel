@@ -1,0 +1,217 @@
+
+
+/* Add in the root variables here  */
+
+
+/* Add in the global styles here  */
+
+
+
+/* Add in the main classes here  */
+
+.quizComponentContainer{
+
+
+font-family: cursive;
+
+
+}
+
+
+
+.cardContainer{
+
+
+
+
+
+}
+
+
+
+.card{
+    height: 35rem;
+
+    width: 25rem;
+    position: relative;
+    background-color: aliceblue;
+
+    margin-bottom: 3rem;
+    margin-top: 4.85rem; 
+
+
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+
+
+
+.cardCategoryColorContainer{
+
+
+
+
+
+
+}
+
+
+
+
+.categoryLabelContainer{
+
+
+    height: 4.5rem; 
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    background-color: #2e9fe7;
+    display: grid; 
+    place-content: center;
+
+
+
+}
+
+
+.questionTextContainer{
+
+    color: black !important;
+    font-size: 1.5rem; 
+    width: 90%; 
+    text-align: center;
+    margin: 0 auto; 
+
+    
+}
+
+
+
+.questionText{
+
+
+
+
+}
+
+
+
+.doodleContainer{
+
+
+    position: absolute; 
+    bottom: 4%; 
+
+
+
+
+    
+}
+
+.imageDoodle{
+
+
+
+
+}
+
+
+
+
+
+.answerSectionContainer{
+
+
+
+
+
+}
+
+
+
+
+.buttonsContainer{
+
+
+    display: grid;
+
+    place-content: center; 
+    grid-template-columns: 1fr 1fr 1fr;
+
+
+}
+
+
+
+
+.noButtonContainer{
+
+
+
+    
+}
+
+
+
+
+.noButton{
+
+
+background-color: #ef4744;
+
+
+}
+
+
+
+.sometimesButtonContainer{
+
+
+
+
+
+}
+
+
+.sometimesButton{
+
+
+background-color: #f5d142;
+
+
+
+}
+
+
+
+.yesButtonContainer{
+
+}
+
+.yesButton{
+
+
+background-color: #82c34a;
+
+}
+
+
+
+/* Add in the media queries here  */
+
+
+/* Add in the effects here  */
+
+
+/* Add in the animations here  */
+
+
+
+
+
+
+
+
+
