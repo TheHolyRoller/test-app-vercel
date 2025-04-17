@@ -20,12 +20,9 @@ export const QuizProvider = ({ children }) => {
     const [questions, setQuestions] = useState([]);
     const [weights, setWeights] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [loading, setLoading] = useState(false);
     const [currentQuestion, setCurrentQuestion] = useState();
     const [quizLength, setQuizLength] = useState(0);
     const [finalScore, setFinalScore] = useState(0);
-    const [scorePercentage, setScorePercentage] = useState(0);
-    const [calculate, setCalculate] = useState(false);
     const [gif_URLs, setGIF_URLS] = useState();
 
     // Category score state variables
@@ -116,13 +113,6 @@ export const QuizProvider = ({ children }) => {
             router.push('/quiz/email-permissions');
         }
     };
-
-    useEffect(() => {
-        if (currentIndex === quizLength) {
-            setFinalScore(score);
-            setCalculate(true);
-        }
-    }, [score, currentQuestion, weights, currentIndex, quizLength]);
 
     return (
         <QuizContext.Provider value={{

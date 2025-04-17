@@ -2,7 +2,7 @@
 
 import { useQuiz } from '../lib/context/QuizContext';
 import { useUser } from '../lib/context/UserContext';
-import { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import q from '../Styles/Quiz.module.css';
 import Image from 'next/image';
@@ -12,13 +12,7 @@ export default function Quiz() {
     const { name, sound, userAge } = useUser();
     const { questions, currentQuestion, handleAnswer, currentIndex, quizLength, gif_URLs } = useQuiz();
     
-    // Add loading state
-    const [isLoading, setIsLoading] = useState(true);
-
-    const isQuizEndRef = useRef(false);
     const [answer, setAnswer] = useState();
-    const [quizEnd, setQuizEnd] = useState(false);
-    const [currentIMG, setCurrentIMG] = useState();
 
     // Initialize currentQuestion properties safely
     const questionText = currentQuestion?.questionText || '';
@@ -26,44 +20,12 @@ export default function Quiz() {
     const Section = currentQuestion?.Section || '';
     const Type = currentQuestion?.Type || '';
     const GIF_URL = currentQuestion?.GIF_URL || '';
+    const currentIMG = gif_URLs?.[currentIndex] || '';
 
-    useEffect(() => {
-        if (currentQuestion && gif_URLs) {
-            setIsLoading(false);
-            let current_IMG_URL = gif_URLs[currentIndex];
-            setCurrentIMG(current_IMG_URL);
-            
-            if(currentIndex === quizLength) {
-                setQuizEnd(true);
-            }
-        }
-    }, [currentIndex, quizLength, gif_URLs, currentQuestion]);
-
-    useEffect(() => {
-        if(quizEnd) {
-            disableButtons();
-        }
-    }, [quizEnd]);
-
-    const disableButtons = () => {
-        const quizElem = document.getElementById('quizElement');
-        if (quizElem) {
-            quizElem.style.display = 'none';
-        }
-    }
-    
     const handleClick = async (userAnswer) => {
         await setAnswer(userAnswer);
         handleAnswer(userAnswer);
     };
-
-    if (isLoading) {
-        return (
-            <div className={q.loadingContainer}>
-                <h2>Loading quiz...</h2>
-            </div>
-        );
-    }
 
     return (
         <section style={{color: 'white'}}>
