@@ -1,13 +1,34 @@
-import Image from "next/image";
-import Quiz from "./quiz/page";
+'use client';
 
+import { useRouter } from 'next/navigation';
+import { useUser } from './lib/context/UserContext';
 
 export default function Home() {
+  const router = useRouter();
+  const { setUserType } = useUser();
+
+  const handleAgeSelection = (age) => {
+    setUserType(age);
+    router.push('/quiz');
+  };
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-
-      <Quiz/> 
-
-    </div>
+    <main className="flex min-h-screen flex-col items-center justify-center p-24">
+      <h1 className="text-4xl font-bold mb-8">Welcome to the Quiz</h1>
+      <div className="flex gap-4">
+        <button
+          onClick={() => handleAgeSelection('adult')}
+          className="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+        >
+          I'm an Adult
+        </button>
+        <button
+          onClick={() => handleAgeSelection('child')}
+          className="px-6 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors"
+        >
+          I'm a Child
+        </button>
+      </div>
+    </main>
   );
 }
