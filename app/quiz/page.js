@@ -95,12 +95,13 @@ export default function Quiz() {
                         
                         <div className={q.doodleContainer} style={{outline: '0px solid lime', margin: '0 auto'}}>
                             {currentIMG && (
-                                <img 
+                                <Image 
                                     src={currentIMG}
                                     alt='quiz illustration'
+                                    width={300}
+                                    height={300}
+                                    unoptimized
                                     style={{
-                                        width: '300px',
-                                        height: '300px',
                                         margin: '0 auto',
                                         objectFit: 'contain'
                                     }}
