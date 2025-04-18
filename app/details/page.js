@@ -2,9 +2,14 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import q from '../../../Styles/Quiz.module.css';
-import { useQuiz } from '../../../lib/context/QuizContext';
-import { useUser } from '../../../lib/context/UserContext';
+// import q from '../../../Styles/Quiz.module.css';
+// import { useQuiz } from '../../../lib/context/QuizContext';
+// import { useUser } from '../../../lib/context/UserContext';
+
+import { useUser } from '../lib/context/UserContext';
+import q from '../Styles/Quiz.module.css'; 
+import { useQuiz } from '../lib/context/QuizContext';
+
 
 export default function UserDetails() {
     const router = useRouter();
