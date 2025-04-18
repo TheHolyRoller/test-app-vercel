@@ -1,10 +1,13 @@
 'use client';
 
+
 import { useQuiz } from '../lib/context/QuizContext';
+
 import { useUser } from '../lib/context/UserContext';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-// import q from '../Styles/Quiz.module.css';
+
+
 import q from '../Styles/Quiz.module.css'; 
 import Image from 'next/image';
 
