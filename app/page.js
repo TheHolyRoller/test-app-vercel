@@ -12,7 +12,7 @@ export default function Home() {
   const handleAgeSelection = (age) => {
     try {
       setUserType(age);
-      router.push('/quiz/sound');
+      router.push('/sound');
     } catch (error) {
       console.error('Error in age selection:', error);
     }
@@ -21,7 +21,7 @@ export default function Home() {
   return (
 
     <StartQuiz/> 
-    
+
 
   );
 }
