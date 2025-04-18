@@ -6,8 +6,8 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 // import q from '../Styles/Quiz.module.css';
 import q from '../Styles/Quiz.module.css'; 
-
 import Image from 'next/image';
+
 
 export default function Quiz() {
     const router = useRouter();
