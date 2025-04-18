@@ -13,6 +13,10 @@ const inter = Inter({
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <title>Dyslexia Quiz App</title>
+        <meta name="description" content="A quiz application to help identify signs of dyslexia" />
+      </head>
       <body className={`${inter.variable} antialiased`}>
         <UserProvider>
           <QuizProvider>
