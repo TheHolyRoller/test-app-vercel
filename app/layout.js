@@ -1,31 +1,24 @@
 'use client';
 
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { UserProvider } from "./lib/context/UserContext";
 import { QuizProvider } from "./lib/context/QuizContext";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
   subsets: ["latin"],
+  variable: "--font-inter",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-// export const metadata = {
-//   title: "Dyslexia Quiz App",
-//   description: "A quiz application to help identify signs of dyslexia",
-// };
+export const metadata = {
+  title: "Dyslexia Quiz App",
+  description: "A quiz application to help identify signs of dyslexia",
+};
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${inter.variable} antialiased`}>
         <UserProvider>
           <QuizProvider>
             {children}
