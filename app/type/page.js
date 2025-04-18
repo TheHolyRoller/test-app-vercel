@@ -17,7 +17,7 @@ export default function UserType() {
 
         // Add a small delay before navigation
         setTimeout(() => {
-            router.push('/quiz/details');
+            router.push('/details');
         }, 210);
     };
 
