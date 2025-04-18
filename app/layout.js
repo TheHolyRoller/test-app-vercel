@@ -10,11 +10,6 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
-export const metadata = {
-  title: "Dyslexia Quiz App",
-  description: "A quiz application to help identify signs of dyslexia",
-};
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
