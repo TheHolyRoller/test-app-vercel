@@ -11,7 +11,7 @@ export default function SoundPage() {
 
     const handleSoundChoice = (soundEnabled) => {
         setUserSound(soundEnabled);
-        router.push('/quiz/type');
+        router.push('/type');
     };
 
     return (

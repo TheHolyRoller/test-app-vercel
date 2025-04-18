@@ -15,21 +15,6 @@ import logo from '../assets/Logo.png';
 export default function Navbar(){
 
 
-    // Setup the State Management here 
-
-
-    // setup the global variables here 
-
-
-    // Setup the useEffect data retrieval hooks here 
-
-
-    // Setup the functions here 
-
-
-
-    // Return the JSX here 
-
     return(
 
 
