@@ -1,10 +1,11 @@
 'use client';
 
+import { Suspense } from 'react';
 import { useUser } from '../lib/context/UserContext';
 import { useQuiz } from '../lib/context/QuizContext';
 import { useSearchParams } from 'next/navigation';
 
-export default function RenderResults() {
+function ResultContent() {
     const searchParams = useSearchParams();
     const { name } = useUser();
     const { 
@@ -68,5 +69,13 @@ export default function RenderResults() {
                 </div>
             </div>
         </div>
+    );
+}
+
+export default function RenderResults() {
+    return (
+        <Suspense fallback={<div style={{ color: 'white', textAlign: 'center', padding: '2rem' }}>Loading results...</div>}>
+            <ResultContent />
+        </Suspense>
     );
 } 

@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import q from '../../Styles/Quiz.module.css';
+// import q from '../../Styles/Quiz.module.css';
+import q from '../Styles/Quiz.module.css'; 
 import { useUser } from '../lib/context/UserContext';
 
 export default function UserType() {

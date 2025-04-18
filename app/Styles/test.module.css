@@ -1,35 +1,5 @@
 
 
-/* Add in the root variables here  */
-:root{
-
-    --background: #4c2a72; 
-    --navbar: #2a1044; 
-    --mainImageBackground: #53267a; 
-}
-
-/* Add in the box sizing here  */
-
-
-/* Add in the global styling here  */
-
-
-/* Add in the main classes here  */
-
-body{
-    
-    /* background-color: var(--mainImageBackground); */
-    overflow-x: hidden !important;; 
-    max-width: 100vw; 
-    width: 99.99svw; 
-    height: 100vh; 
-    overflow-x: hidden !important; 
-    position: absolute; 
-    left: 0; 
-    right: 0; 
-    bottom: 0; 
-    top: 0; 
-}
 
 .landingPageMainContainer{
 

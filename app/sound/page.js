@@ -1,8 +1,9 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import q from '../../Styles/Quiz.module.css';
 import { useUser } from '../lib/context/UserContext';
+import q from '../Styles/Quiz.module.css'; 
+
 
 export default function SoundPage() {
     const router = useRouter();
