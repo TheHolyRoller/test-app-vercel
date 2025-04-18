@@ -110,7 +110,7 @@ export const QuizProvider = ({ children }) => {
             setCurrentIndex(prevIndex => prevIndex + 1);
         } else {
             setFinalScore(score);
-            router.push('/quiz/email-permissions');
+            router.push('/email-permissions');
         }
     };
 

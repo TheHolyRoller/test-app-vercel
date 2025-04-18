@@ -2,10 +2,12 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import q from '../../Styles/Quiz.module.css';
 import { useUser } from '../lib/context/UserContext';
 import { useQuiz } from '../lib/context/QuizContext';
 import { databases } from '../lib/appwrite';
+// import q from '../../Styles/Quiz.module.css';
+import q from '../Styles/Quiz.module.css'; 
+
 
 const DATABASE_ID = process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID;
 const COLLECTION_ID = process.env.NEXT_PUBLIC_APPWRITE_RESULTS_COLLECTION_ID;

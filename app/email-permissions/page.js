@@ -3,7 +3,9 @@
 import { useQuiz } from '../lib/context/QuizContext';
 import { useUser } from '../lib/context/UserContext';
 import { useRouter } from 'next/navigation';
-import q from '../../Styles/Quiz.module.css';
+// import q from '../../Styles/Quiz.module.css';
+import q from '../Styles/Quiz.module.css'; 
+
 
 export default function EmailPermission() {
     const router = useRouter();
@@ -11,7 +13,7 @@ export default function EmailPermission() {
     const { name } = useUser();
 
     const handleYesClick = () => {
-        router.push('/quiz/email-signup');
+        router.push('/email-signup');
     };
 
     const handleNoClick = () => {
