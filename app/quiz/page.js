@@ -1,21 +1,25 @@
 'use client';
 
-
 import { useQuiz } from '../lib/context/QuizContext';
-
 import { useUser } from '../lib/context/UserContext';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-
-
-import q from '../Styles/Quiz.module.css'; 
+import q from '../Styles/Quiz.module.css';
 import Image from 'next/image';
-
 
 export default function Quiz() {
     const router = useRouter();
     const { name, sound, userAge } = useUser();
-    const { questions, currentQuestion, handleAnswer, currentIndex, quizLength, gif_URLs } = useQuiz();
+    const { 
+        questions, 
+        currentQuestion, 
+        handleAnswer, 
+        currentIndex, 
+        quizLength, 
+        gif_URLs,
+        isLoading,
+        error
+    } = useQuiz();
     
     const [answer, setAnswer] = useState();
 
@@ -31,6 +35,45 @@ export default function Quiz() {
         await setAnswer(userAnswer);
         handleAnswer(userAnswer);
     };
+
+    if (isLoading) {
+        return (
+            <div className={q.loadingContainer}>
+                <h2>Loading questions...</h2>
+                <p>Please wait while we prepare your quiz.</p>
+            </div>
+        );
+    }
+
+    if (error) {
+        return (
+            <div className={q.errorContainer}>
+                <h2>Error Loading Quiz</h2>
+                <p>{error}</p>
+                <button 
+                    onClick={() => window.location.reload()}
+                    className={q.retryButton}
+                >
+                    Retry
+                </button>
+            </div>
+        );
+    }
+
+    if (!questions || questions.length === 0) {
+        return (
+            <div className={q.errorContainer}>
+                <h2>No Questions Available</h2>
+                <p>We couldn't find any questions for your quiz.</p>
+                <button 
+                    onClick={() => window.location.reload()}
+                    className={q.retryButton}
+                >
+                    Retry
+                </button>
+            </div>
+        );
+    }
 
     return (
         <section style={{color: 'white'}}>
