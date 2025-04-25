@@ -14,6 +14,7 @@ export default function Quiz() {
     
     const [answer, setAnswer] = useState();
 
+
     // Log initial props and state
     useEffect(() => {
         console.log('🎯 Quiz Page Initial State:', {
@@ -92,6 +93,11 @@ export default function Quiz() {
             <main className={q.quizComponentContainer} id='quizElement' style={{outline: '4px solid lime'}}>
                 <section className={q.cardContainer}>
                     <article className={q.card}>
+                        <article className={q.card} id={q.cardOne}></article>
+                        <article className={q.card} id={q.cardTwo}></article>
+                        <article className={q.card} id={q.cardThree}></article>
+                        <article className={q.card} id={q.cardFour}></article>
+
                         <div className={q.cardCategoryColorContainer}>
                             {sound === true && audio_URL && (
                                 <audio 
