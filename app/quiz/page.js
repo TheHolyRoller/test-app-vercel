@@ -2,7 +2,7 @@
 
 import { useQuiz } from '../lib/context/QuizContext';
 import { useUser } from '../lib/context/UserContext';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import q from '../Styles/Quiz.module.css';
 import Image from 'next/image';
@@ -10,18 +10,48 @@ import Image from 'next/image';
 export default function Quiz() {
     const router = useRouter();
     const { name, sound, userAge } = useUser();
-    const { 
-        questions, 
-        currentQuestion, 
-        handleAnswer, 
-        currentIndex, 
-        quizLength, 
-        gif_URLs,
-        isLoading,
-        error
-    } = useQuiz();
+    const { questions, currentQuestion, handleAnswer, currentIndex, quizLength, gif_URLs } = useQuiz();
     
     const [answer, setAnswer] = useState();
+
+    // Log initial props and state
+    useEffect(() => {
+        console.log('🎯 Quiz Page Initial State:', {
+            userInfo: {
+                name,
+                sound,
+                userAge
+            },
+            quizState: {
+                currentIndex,
+                quizLength,
+                questionsCount: questions?.length,
+                currentQuestion: currentQuestion ? {
+                    id: currentQuestion.$id,
+                    section: currentQuestion.Section,
+                    type: currentQuestion.Type,
+                    questionText: currentQuestion.questionText
+                } : null,
+                gifURLsCount: gif_URLs?.length
+            }
+        });
+    }, []);
+
+    // Log state changes
+    useEffect(() => {
+        console.log('🔄 Quiz State Update:', {
+            currentIndex,
+            quizLength,
+            questionsCount: questions?.length,
+            currentQuestion: currentQuestion ? {
+                id: currentQuestion.$id,
+                section: currentQuestion.Section,
+                type: currentQuestion.Type,
+                questionText: currentQuestion.questionText
+            } : null,
+            gifURLsCount: gif_URLs?.length
+        });
+    }, [currentIndex, quizLength, questions, currentQuestion, gif_URLs]);
 
     // Initialize currentQuestion properties safely
     const questionText = currentQuestion?.questionText || '';
@@ -31,58 +61,47 @@ export default function Quiz() {
     const GIF_URL = currentQuestion?.GIF_URL || '';
     const currentIMG = gif_URLs?.[currentIndex] || '';
 
+    // Log question details
+    useEffect(() => {
+        console.log('📝 Current Question Details:', {
+            questionText,
+            audio_URL,
+            Section,
+            Type,
+            GIF_URL,
+            currentIMG,
+            currentIndex,
+            totalQuestions: quizLength
+        });
+    }, [currentQuestion, currentIndex]);
+
     const handleClick = async (userAnswer) => {
+        console.log('🎯 Answer Selected:', {
+            answer: userAnswer,
+            currentIndex,
+            questionId: currentQuestion?.$id,
+            questionText: currentQuestion?.questionText
+        });
+        
         await setAnswer(userAnswer);
         handleAnswer(userAnswer);
     };
 
-    if (isLoading) {
-        return (
-            <div className={q.loadingContainer}>
-                <h2>Loading questions...</h2>
-                <p>Please wait while we prepare your quiz.</p>
-            </div>
-        );
-    }
-
-    if (error) {
-        return (
-            <div className={q.errorContainer}>
-                <h2>Error Loading Quiz</h2>
-                <p>{error}</p>
-                <button 
-                    onClick={() => window.location.reload()}
-                    className={q.retryButton}
-                >
-                    Retry
-                </button>
-            </div>
-        );
-    }
-
-    if (!questions || questions.length === 0) {
-        return (
-            <div className={q.errorContainer}>
-                <h2>No Questions Available</h2>
-                <p>We couldn't find any questions for your quiz.</p>
-                <button 
-                    onClick={() => window.location.reload()}
-                    className={q.retryButton}
-                >
-                    Retry
-                </button>
-            </div>
-        );
-    }
-
     return (
-        <section style={{color: 'white'}}>
-            <main className={q.quizComponentContainer} id='quizElement'>
+        <section className={q.quizMainSection} style={{color: 'white', outline: '4px solid lime'}}>
+            <main className={q.quizComponentContainer} id='quizElement' style={{outline: '4px solid lime'}}>
                 <section className={q.cardContainer}>
                     <article className={q.card}>
                         <div className={q.cardCategoryColorContainer}>
                             {sound === true && audio_URL && (
-                                <audio key={audio_URL} controls autoPlay style={{ opacity: '0', position: 'absolute' }}>
+                                <audio 
+                                    key={audio_URL} 
+                                    controls 
+                                    autoPlay 
+                                    style={{ opacity: '0', position: 'absolute' }}
+                                    onPlay={() => console.log('🎵 Audio Started Playing:', audio_URL)}
+                                    onError={(e) => console.error('❌ Audio Error:', e)}
+                                >
                                     <source src={audio_URL} type="audio/mp3" />
                                 </audio>
                             )}
@@ -98,7 +117,7 @@ export default function Quiz() {
                             <h2 className={q.questionText}>
                                 {questionText}
                                 <span>
-                                    {currentQuestion?.question_text}
+                                    {currentQuestion?.questionText}
                                 </span>
                             </h2>
                         </div>
@@ -111,6 +130,8 @@ export default function Quiz() {
                                     width={300}
                                     height={300}
                                     unoptimized
+                                    onLoad={() => console.log('🖼️ Image Loaded:', currentIMG)}
+                                    onError={(e) => console.error('❌ Image Error:', e)}
                                     style={{
                                         margin: '0 auto',
                                         objectFit: 'contain'
@@ -121,22 +142,35 @@ export default function Quiz() {
                     </article>
                 </section>
 
-                <section className={q.answerSectionContainer}>
+                <section className={q.answerSectionContainer} style={{outline: '5px solid red'}} >
                     <aside className={q.buttonsContainer}>
                         <div className={q.noButtonContainer}>
-                            <button className={q.noButton} onClick={() => handleClick('no')}>
+                            <button 
+                                className={q.noButton} 
+                                onClick={() => handleClick('no')}
+                                onMouseEnter={() => console.log('🖱️ Hovering No Button')}
+                            >
                                 No 
                             </button>
                         </div>       
 
                         <div className={q.sometimesButtonContainer}>
-                            <button className={q.sometimesButton} onClick={() => handleClick('sometimes')}>
+                            <button 
+                                className={q.sometimesButton} 
+                                onClick={() => handleClick('sometimes')}
+                                onMouseEnter={() => console.log('🖱️ Hovering Sometimes Button')}
+                            >
                                 Sometimes   
                             </button>
                         </div>  
+                        
 
                         <div className={q.yesButtonContainer}>
-                            <button className={q.yesButton} onClick={() => handleClick('yes')}>
+                            <button 
+                                className={q.yesButton} 
+                                onClick={() => handleClick('yes')}
+                                onMouseEnter={() => console.log('🖱️ Hovering Yes Button')}
+                            >
                                 Yes 
                             </button>
                         </div>
