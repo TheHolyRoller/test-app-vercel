@@ -31,6 +31,10 @@ font-family: cursive;
 
 .cardContainer{
 
+    position: relavite; 
+    outline: 4px solid pink; 
+
+
 
 
 }
@@ -45,6 +49,7 @@ font-family: cursive;
     background-color: white; 
 
 
+
     margin-bottom: 3rem;
     margin-top: 4.85rem; 
 
@@ -55,6 +60,65 @@ font-family: cursive;
     -ms-border-radius: 1rem;
     -o-border-radius: 1rem;
 }
+
+
+#cardOne{
+
+
+    position: absolute; 
+    left: 0; 
+    right: 0; 
+    top: 0;
+    height: 90%; 
+
+    transform:  translate(0rem, -2em) !important; 
+    box-shadow: 0 0 12px 2px #888; 
+
+
+
+}
+
+
+
+#cardTwo{
+
+
+position: absolute; 
+bottom: 0; 
+left: 0; 
+right: 0; 
+height: 12rem;    
+margin-bottom: -0em; 
+margin-bottom: 0.4em;
+box-shadow: 0 0 9px 2px #888; 
+
+
+
+}
+
+
+#cardThree{
+
+
+    display: none; 
+
+
+
+
+}
+
+
+#cardFour{
+
+
+display: none; 
+
+
+
+
+}
+
+
 
 
 
