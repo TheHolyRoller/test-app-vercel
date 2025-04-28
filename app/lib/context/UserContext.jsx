@@ -17,7 +17,7 @@ export const UserProvider = ({ children }) => {
   };
 
   const setUserType = (age) => {
-    setUserAge(age);
+    setUserAge(age); 
   };
 
   const setUserName = (userName) => {
