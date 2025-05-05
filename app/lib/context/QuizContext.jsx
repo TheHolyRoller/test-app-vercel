@@ -43,6 +43,8 @@ export const QuizProvider = ({ children }) => {
     const [memoryScore, setMemoryScore] = useState(0);
     const [examResultsScore, setExamResultsScore] = useState(0);
 
+    const [email, setEmail] = useState(''); 
+
     // Monitor quiz-related state changes
     useEffect(() => {
         console.log('📊 Quiz State Update:', {
@@ -216,6 +218,8 @@ export const QuizProvider = ({ children }) => {
             examResultsScore,
             organisationalScore,
             gif_URLs,
+            email, 
+            setEmail,
             isLoading,
             error
         }}>

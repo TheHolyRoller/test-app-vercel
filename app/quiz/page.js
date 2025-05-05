@@ -89,16 +89,16 @@ export default function Quiz() {
     };
 
     return (
-        <section className={q.quizMainSection} style={{color: 'white', outline: '4px solid lime'}}>
-            <main className={q.quizComponentContainer} id='quizElement' style={{outline: '4px solid lime'}}>
+        <section className={q.quizMainSection} style={{color: 'white', outline: '0px solid lime'}}>
+            <main className={q.quizComponentContainer} id='quizElement' style={{outline: '0px solid lime'}}>
                 <section className={q.cardContainer}>
                     <article className={q.card}>
                         <article className={q.card} id={q.cardOne}></article>
-                        <article className={q.card} id={q.cardTwo}></article>
-                        <article className={q.card} id={q.cardThree}></article>
-                        <article className={q.card} id={q.cardFour}></article>
+                        {/* <article className={q.card} id={q.cardTwo}></article> */}
+                        {/* <article className={q.card} id={q.cardThree}></article> */}
+                        {/* <article className={q.card} id={q.cardFour}></article> */}
 
-                        <div className={q.cardCategoryColorContainer}>
+                        <div className={q.cardCategoryColorContainer} style={{outline: '0px solid red'}}>
                             {sound === true && audio_URL && (
                                 <audio 
                                     key={audio_URL} 
@@ -118,8 +118,8 @@ export default function Quiz() {
                                 </label>
                             </div>
                         </div>
-
-                        <div className={q.questionTextContainer}>
+                            {/* Abstract this to the stylesheet  */}
+                        <div className={q.questionTextContainer} style={{outline: '0px solid red', position: 'relative', zIndex: '9999', marginTop: '-1rem'}} >
                             <h2 className={q.questionText}>
                                 {questionText}
                                 <span>
@@ -127,7 +127,8 @@ export default function Quiz() {
                                 </span>
                             </h2>
                         </div>
-                        
+                        <div className={q.imageSectionContainer}>
+
                         <div className={q.doodleContainer} style={{outline: '0px solid lime', margin: '0 auto'}}>
                             {currentIMG && (
                                 <Image 
@@ -139,20 +140,22 @@ export default function Quiz() {
                                     onLoad={() => console.log('🖼️ Image Loaded:', currentIMG)}
                                     onError={(e) => console.error('❌ Image Error:', e)}
                                     style={{
-                                        margin: '0 auto',
+                                        marginTop: '-2rem',
                                         objectFit: 'contain'
                                     }}
                                 />
                             )}
                         </div>
+                        </div>
                     </article>
                 </section>
 
-                <section className={q.answerSectionContainer} style={{outline: '5px solid red'}} >
+                <section className={q.answerSectionContainer} style={{outline: '0px solid red'}} >
                     <aside className={q.buttonsContainer}>
                         <div className={q.noButtonContainer}>
                             <button 
                                 className={q.noButton} 
+                                id={q.button}
                                 onClick={() => handleClick('no')}
                                 onMouseEnter={() => console.log('🖱️ Hovering No Button')}
                             >
@@ -163,17 +166,23 @@ export default function Quiz() {
                         <div className={q.sometimesButtonContainer}>
                             <button 
                                 className={q.sometimesButton} 
+                                id={q.button}
                                 onClick={() => handleClick('sometimes')}
                                 onMouseEnter={() => console.log('🖱️ Hovering Sometimes Button')}
                             >
-                                Sometimes   
+                                Some-
+                                <span className={q.sometimesSpan} >
+
+                                times   
+                                </span>
                             </button>
                         </div>  
                         
 
                         <div className={q.yesButtonContainer}>
                             <button 
-                                className={q.yesButton} 
+                                className={q.yesButton}
+                                id={q.button} 
                                 onClick={() => handleClick('yes')}
                                 onMouseEnter={() => console.log('🖱️ Hovering Yes Button')}
                             >

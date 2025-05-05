@@ -33,7 +33,7 @@ export default function StartQuiz() {
                         <div className={t.callToActionButton}>
                             <button 
                                 className={t.callToActionLink}
-                                onClick={() => router.push('/quiz')}
+                                onClick={() => router.push('/sound')}
                             >
                                 Start Quiz
                             </button>

@@ -32,7 +32,8 @@ font-family: cursive;
 .cardContainer{
 
     position: relavite; 
-    outline: 4px solid pink; 
+    /* outline: 4px solid pink;  */
+
 
 
 
@@ -46,7 +47,9 @@ font-family: cursive;
 
     width: 25rem;
     position: relative;
-    background-color: white; 
+    /* background-color: white;  */
+    background-color: #fbfbfb;
+
 
 
 
@@ -125,7 +128,8 @@ display: none;
 .cardCategoryColorContainer{
 
 
-
+position: relative; 
+z-index: 99; 
 
 
 
@@ -170,12 +174,25 @@ display: none;
 }
 
 
+.imageSectionContainer{
+
+    /* outline: 33px solid red;  */
+    display: grid;  
+    place-content: center; 
+    margin: 0 auto; 
+    width: 100%;
+    position: relative; 
+
+
+
+}
+
 
 .doodleContainer{
 
 
-    position: absolute; 
-    bottom: 4%; 
+    /* position: absolute;  */
+    bottom: 0%; 
 
 
 
@@ -216,7 +233,8 @@ display: none;
     display: flex; 
     gap: 5rem; 
     margin: 0 auto; 
-    outline: 12px solid blue; 
+    /* outline: 12px solid blue;  */
+
     
 
 }
@@ -231,14 +249,28 @@ display: none;
     
 }
 
+#button{
+    padding: 0.75rem;
+    /* padding: 0.75rem 0.5em !important;  */
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
 
+    font-size: 0.9rem;
+    text-transform: capitalize !important;
+    text-transform: uppercase !important; 
+
+}
 
 
 .noButton{
 
 
-background-color: #ef4744;
-
+    all: unset; 
+    background-color: #ef4744;
+    
 
 }
 
@@ -256,8 +288,24 @@ background-color: #ef4744;
 .sometimesButton{
 
 
-background-color: #f5d142;
+    all: unset; 
+    background-color: #f5d142;
+    padding: 0.5em !important;
+    font-size: 0.75rem !important;
+    color: black; 
 
+
+    
+    
+
+
+
+}
+
+.sometimesSpan{
+
+
+    display: block;
 
 
 }
@@ -271,7 +319,9 @@ background-color: #f5d142;
 .yesButton{
 
 
+    all: unset; 
 background-color: #82c34a;
+
 
 }
 

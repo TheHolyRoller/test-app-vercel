@@ -1,0 +1,239 @@
+
+
+
+.cardStackContainer{
+
+
+    position: relative; 
+    width: 70vw; 
+    margin: 10em auto;
+    outline: 3px solid lime; 
+    display: grid; 
+    place-content: center; 
+
+}
+
+
+
+.cardList{
+
+
+    position: relative; 
+
+
+
+
+}
+
+
+
+.cardListElements{
+
+
+    position: absolute;
+
+    
+
+
+
+}
+
+
+
+.cardItem{
+    width: 19rem;
+    background-color: aliceblue;
+    height: 25rem;
+    /* margin: 1em auto; */
+    border-radius: 14px;
+    -webkit-border-radius: 14px ;
+    -moz-border-radius: 14px ;
+    -ms-border-radius: 14px ;
+    -o-border-radius: 14px ;
+}
+
+
+
+.cardListElements{
+
+
+
+
+
+}
+
+
+
+
+.cardItem{
+
+
+
+
+
+}
+
+
+
+#cardOne{
+
+top: 0.7em; 
+/* background-color: red; */
+    border-radius: 14px;
+    -webkit-border-radius: 14px;
+    -moz-border-radius: 14px;
+    -ms-border-radius: 14px;
+    -o-border-radius: 14px;
+
+    /* Add in a border shadow here  */
+    box-shadow: 0 0 9px 2px rgb(75, 74, 74);
+
+
+}
+
+
+#cardTwo{
+
+
+    top: 0.5em; 
+    /* background-color: blue; */
+    border-radius: 14px;
+    -webkit-border-radius: 14px;
+    -moz-border-radius: 14px;
+    -ms-border-radius: 14px;
+    -o-border-radius: 14px;
+
+    /* Add in a border shadow here  */
+    box-shadow: 0 0 9px 2px rgb(75, 74, 74);
+
+
+}
+
+
+
+#cardThree{
+
+
+    top: 0.1em; 
+/* background-color: lime; */
+    border-radius: 14px;
+    -webkit-border-radius: 14px;
+    -moz-border-radius: 14px;
+    -ms-border-radius: 14px;
+    -o-border-radius: 14px;
+
+    /* Add in a border shadow here  */
+    box-shadow: 0 0 9px 2px rgb(75, 74, 74);
+
+
+    
+}
+
+
+#cardFour{
+
+
+
+
+}
+
+
+
+#cardFive{
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

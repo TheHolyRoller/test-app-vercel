@@ -15,8 +15,24 @@ function ResultContent() {
         writingScore,
         readingScore,
         examResultsScore,
-        organisationalScore
+        organisationalScore, 
+        email
     } = useQuiz();
+
+    // Detailed console logging with emojis
+    console.log('🎯 === Quiz Results Details ===');
+    console.log('👤 User Name:', name);
+    console.log('📧 User Email:', email);
+    console.log('🔍 Search Parameters:', Object.fromEntries(searchParams.entries()));
+    console.log('📊 === Score Breakdown ===');
+    console.log('🏆 Overall Score:', score);
+    console.log('🎓 Final Score:', finalScore);
+    console.log('🧠 Memory Score:', memoryScore);
+    console.log('✍️ Writing Score:', writingScore);
+    console.log('📚 Reading Score:', readingScore);
+    console.log('📝 Exam Results Score:', examResultsScore);
+    console.log('📋 Organisational Score:', organisationalScore);
+    console.log('✨ ======================');
 
     return (
         <div style={{ 
