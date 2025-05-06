@@ -5,7 +5,7 @@ import { useUser } from '../lib/context/UserContext';
 import { useRouter } from 'next/navigation';
 // import q from '../../Styles/Quiz.module.css';
 import q from '../Styles/Quiz.module.css'; 
-
+import QuizCard from '../Components/QuizCard';
 
 export default function EmailPermission() {
     const router = useRouter();
@@ -24,25 +24,17 @@ export default function EmailPermission() {
         <section style={{color: 'white'}}>
             <main className={q.quizComponentContainer} id='quizElement'>
                 <section className={q.cardContainer}>
-                    <article className={q.card}>
-                        <div className={q.cardCategoryColorContainer}>
-                            <div className={q.categoryLabelContainer}>
-                                <label className={q.categoryLabel}>Writing</label>
-                            </div>
-                        </div>
-
-                        <div className={q.questionTextContainer}>
-                            <h2 className={q.questionText}>
-                                <span>
-                                    Can I send your results to your email?
-                                </span>
-                            </h2>
-                        </div>
-                        
-                        <div className={q.doodleContainer}>
-                            {/* Add doodle image here if needed */}
-                        </div>
-                    </article>
+                    <QuizCard 
+                        questionText="Can I send your results to your email?"
+                        Section="Results"
+                        currentQuestion={{
+                            questionText: "We'll send your detailed results to your email"
+                        }}
+                        // No audio for this page
+                        audio_URL=""
+                        // Optional: Add a results-related image if you have one
+                        currentIMG=""
+                    />
                 </section>
 
                 <section className={q.answerSectionContainer}>

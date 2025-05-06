@@ -6,6 +6,8 @@ import { useRouter } from 'next/navigation';
 import q from '../Styles/Quiz.module.css'; 
 import { useUser } from '../lib/context/UserContext';
 
+import QuizCard from '../Components/QuizCard';
+
 export default function UserType() {
     const router = useRouter();
     const [user, setUser] = useState();
@@ -28,27 +30,15 @@ export default function UserType() {
     return (
         <section style={{color: 'white'}}>
             <main className={q.quizComponentContainer} id='quizElement'>
-                <section className={q.cardContainer}>
-                    <article className={q.card}>
-                        <div className={q.cardCategoryColorContainer}>
-                            <div className={q.categoryLabelContainer}>
-                                <label className={q.categoryLabel}>Writing</label>
-                            </div>
-                        </div>
-
-                        <div className={q.questionTextContainer}>
-                            <h2 className={q.questionText}>
-                                <span>
-                                    I can quiz different people for you. Who is it this time?
-                                </span>
-                            </h2>
-                        </div>
-                        
-                        <div className={q.doodleContainer}>
-                            {/* Add doodle image here if needed */}
-                        </div>
-                    </article>
-                </section>
+            <QuizCard 
+                        questionText="I can quiz different people for you. who is it this time?"
+                        Section="Details"
+                        currentQuestion={{
+                            questionText: ""
+                        }}
+                        audio_URL=''
+                        currentIMG=''
+                    />
 
                 <section className={q.answerSectionContainer}>
                     <aside className={q.buttonsContainer}>

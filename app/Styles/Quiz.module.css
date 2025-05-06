@@ -14,6 +14,12 @@
 
 font-family: cursive;
 
+outline: 4px solid lime; 
+display: grid;
+place-content: center;  
+
+
+
 
 }
 
@@ -24,15 +30,24 @@ font-family: cursive;
     margin: 0 auto; 
     display: grid;
     place-content: center; 
+    outline: 4px solid lime; 
+
 
 }
 
 
 
+
+
+
 .cardContainer{
 
-    position: relavite; 
-    /* outline: 4px solid pink;  */
+    position: relative; 
+    outline: 4px solid pink; 
+    margin: 0 auto; 
+    display: grid;  
+    place-content: center; 
+    
 
 
 
@@ -44,16 +59,11 @@ font-family: cursive;
 
 .card{
     height: 35rem;
-
     width: 25rem;
     position: relative;
     /* background-color: white;  */
     background-color: #fbfbfb;
 
-
-
-
-    margin-bottom: 3rem;
     margin-top: 4.85rem; 
 
 
@@ -73,9 +83,10 @@ font-family: cursive;
     right: 0; 
     top: 0;
     height: 90%; 
+    z-index: 999999;
 
     transform:  translate(0rem, -2em) !important; 
-    box-shadow: 0 0 12px 2px #888; 
+    box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
 
 
 
@@ -86,14 +97,17 @@ font-family: cursive;
 #cardTwo{
 
 
-position: absolute; 
-bottom: 0; 
-left: 0; 
-right: 0; 
-height: 12rem;    
-margin-bottom: -0em; 
-margin-bottom: 0.4em;
-box-shadow: 0 0 9px 2px #888; 
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    z-index: 0;
+    /* margin-top: -0.5em;  */
+    height: 29.4rem; 
+    margin-bottom: -5em;
+    box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+
 
 
 
@@ -103,18 +117,31 @@ box-shadow: 0 0 9px 2px #888;
 #cardThree{
 
 
-    display: none; 
-
-
-
+ position: absolute;
+ top: 0; 
+ left: 0; 
+ right: 0; 
+ bottom: 0; 
+ z-index: 0;
+ /* margin-top: -0.5em;  */
+ height: 29.7rem; 
+ margin-bottom: -5em;
+ box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
 
 }
 
 
 #cardFour{
 
-
-display: none; 
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    z-index: 0;
+    height: 29rem; 
+    margin-bottom: -5em;
+    box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
 
 
 
@@ -129,7 +156,9 @@ display: none;
 
 
 position: relative; 
-z-index: 99; 
+/* z-index: 99;  */
+
+outline: 5px solid red; 
 
 
 
@@ -169,6 +198,11 @@ z-index: 99;
 .questionText{
 
 
+    color: black !important; 
+    position: relative; 
+    z-index: 99999;
+
+
 
 
 }
@@ -182,6 +216,8 @@ z-index: 99;
     margin: 0 auto; 
     width: 100%;
     position: relative; 
+    z-index: 9999999; 
+
 
 
 

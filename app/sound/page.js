@@ -4,6 +4,9 @@ import { useRouter } from 'next/navigation';
 import { useUser } from '../lib/context/UserContext';
 import q from '../Styles/Quiz.module.css'; 
 
+import QuizCard from '../Components/QuizCard';
+
+
 
 export default function SoundPage() {
     const router = useRouter();
@@ -17,27 +20,15 @@ export default function SoundPage() {
     return (
         <section style={{color: 'white'}}>
             <main className={q.quizComponentContainer} id='quizElement'>
-                <section className={q.cardContainer}>
-                    <article className={q.card}>
-                        <div className={q.cardCategoryColorContainer}>
-                            <div className={q.categoryLabelContainer}>
-                                <label className={q.categoryLabel}>Writing</label>
-                            </div>
-                        </div>
-
-                        <div className={q.questionTextContainer}>
-                            <h2 className={q.questionText}>
-                                <span>
-                                    Hi! I&apos;m &apos;Dood&apos;. I&apos;ll Quiz You On The Signs Of Dyslexia. Can I Turn On the Audio So I Can Speak To You?
-                                </span>
-                            </h2>
-                        </div>
-                        
-                        <div className={q.doodleContainer}>
-                            {/* Add doodle image here if needed */}
-                        </div>
-                    </article>
-                </section>
+            <QuizCard 
+                        questionText="Hi I'm 'Dood'. I'll quiz you on the signs of dyslexia. Can I turn on the audio so I can speak to you?"
+                        Section="Details"
+                        currentQuestion={{
+                            questionText: ""
+                        }}
+                        audio_URL='https://dyslexiaquizapp.s3.eu-west-2.amazonaws.com/audio+doodles/intro+dood-v1.mp3'
+                        currentIMG='/'
+                    />
 
                 <section className={q.answerSectionContainer}>
                     <aside className={q.buttonsContainer} style={{outline: '0px solid lime', display: 'flex', placeContent: 'center', width: '90%'}}>

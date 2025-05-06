@@ -9,9 +9,12 @@ import { useRouter } from 'next/navigation';
 import { useUser } from '../lib/context/UserContext';
 import q from '../Styles/Quiz.module.css'; 
 import { useQuiz } from '../lib/context/QuizContext';
-
+import QuizCard from '../Components/QuizCard';
 
 export default function UserDetails() {
+    const audio_URL = 'https://dyslexiaquizapp.s3.eu-west-2.amazonaws.com/audio+doodles/quizzer+name-v1.mp3'; 
+    const currentIMG = '/';
+
     const router = useRouter();
     const { handleAnswer } = useQuiz();
     const { setUserName } = useUser();
@@ -36,50 +39,40 @@ export default function UserDetails() {
         <section style={{color: 'white'}}>
             <main className={q.quizComponentContainer} id='quizElement'>
                 <section className={q.cardContainer}>
-                    <article className={q.card}>
-                        <div className={q.cardCategoryColorContainer}>
-                            <div className={q.categoryLabelContainer}>
-                                <label className={q.categoryLabel}>Writing</label>
-                            </div>
-                        </div>
-
-                        <div className={q.questionTextContainer}>
-                            <h2 className={q.questionText}>
-                                <span>
-                                    What&apos;s The Name Of The Quiz Taker?
-                                </span>
-                            </h2>
+                    <QuizCard 
+                        questionText="What's The Name Of The Quiz Taker?"
+                        Section="Details"
+                        currentQuestion={{
+                            questionText: ""
+                        }}
+                        audio_URL={audio_URL}
+                        currentIMG={currentIMG}
+                    />
+                    
+                    <form onSubmit={handleSubmit} className={q.detailsForm}>
+                        <div className={q.inputContainer}>
+                            <label htmlFor="name" className={q.inputLabel}>
+                                Name
+                            </label>
+                            <input
+                                id="name"
+                                type="text"
+                                value={userName}
+                                onChange={handleChange}
+                                className={q.nameInput}
+                                required
+                            />
                         </div>
                         
-                        <div className={q.doodleContainer}>
-                            {/* Add doodle image here if needed */}
-                        </div>
-                    </article>
+                        <button 
+                            type="submit" 
+                            className={q.yesButton}
+                            style={{marginLeft: '0.5rem'}}
+                        >
+                            Next
+                        </button>
+                    </form>
                 </section>
-
-                <form onSubmit={handleSubmit} className={q.detailsForm}>
-                    <div className={q.inputContainer}>
-                        <label htmlFor="name" className={q.inputLabel}>
-                            Name
-                        </label>
-                        <input
-                            id="name"
-                            type="text"
-                            value={userName}
-                            onChange={handleChange}
-                            className={q.nameInput}
-                            required
-                        />
-                    </div>
-                    
-                    <button 
-                        type="submit" 
-                        className={q.yesButton}
-                        style={{marginLeft: '0.5rem'}}
-                    >
-                        Next
-                    </button>
-                </form>
             </main>
         </section>
     );

@@ -7,6 +7,8 @@ import { useRouter } from 'next/navigation';
 import q from '../Styles/Quiz.module.css';
 import Image from 'next/image';
 
+import QuizCard from '../Components/QuizCard';
+
 export default function Quiz() {
     const router = useRouter();
     const { name, sound, userAge } = useUser();
@@ -56,7 +58,7 @@ export default function Quiz() {
 
     // Initialize currentQuestion properties safely
     const questionText = currentQuestion?.questionText || '';
-    const audio_URL = currentQuestion?.audio_URL || '';
+    const audio_URL = sound ? (currentQuestion?.audio_URL || '') : '';
     const Section = currentQuestion?.Section || '';
     const Type = currentQuestion?.Type || '';
     const GIF_URL = currentQuestion?.GIF_URL || '';
@@ -88,67 +90,16 @@ export default function Quiz() {
         handleAnswer(userAnswer);
     };
 
-    return (
+    return (    
         <section className={q.quizMainSection} style={{color: 'white', outline: '0px solid lime'}}>
-            <main className={q.quizComponentContainer} id='quizElement' style={{outline: '0px solid lime'}}>
-                <section className={q.cardContainer}>
-                    <article className={q.card}>
-                        <article className={q.card} id={q.cardOne}></article>
-                        {/* <article className={q.card} id={q.cardTwo}></article> */}
-                        {/* <article className={q.card} id={q.cardThree}></article> */}
-                        {/* <article className={q.card} id={q.cardFour}></article> */}
-
-                        <div className={q.cardCategoryColorContainer} style={{outline: '0px solid red'}}>
-                            {sound === true && audio_URL && (
-                                <audio 
-                                    key={audio_URL} 
-                                    controls 
-                                    autoPlay 
-                                    style={{ opacity: '0', position: 'absolute' }}
-                                    onPlay={() => console.log('🎵 Audio Started Playing:', audio_URL)}
-                                    onError={(e) => console.error('❌ Audio Error:', e)}
-                                >
-                                    <source src={audio_URL} type="audio/mp3" />
-                                </audio>
-                            )}
-
-                            <div className={q.categoryLabelContainer}>
-                                <label className={q.categoryLabel}>
-                                    {Section}
-                                </label>
-                            </div>
-                        </div>
-                            {/* Abstract this to the stylesheet  */}
-                        <div className={q.questionTextContainer} style={{outline: '0px solid red', position: 'relative', zIndex: '9999', marginTop: '-1rem'}} >
-                            <h2 className={q.questionText}>
-                                {questionText}
-                                <span>
-                                    {currentQuestion?.questionText}
-                                </span>
-                            </h2>
-                        </div>
-                        <div className={q.imageSectionContainer}>
-
-                        <div className={q.doodleContainer} style={{outline: '0px solid lime', margin: '0 auto'}}>
-                            {currentIMG && (
-                                <Image 
-                                    src={currentIMG}
-                                    alt='quiz illustration'
-                                    width={300}
-                                    height={300}
-                                    unoptimized
-                                    onLoad={() => console.log('🖼️ Image Loaded:', currentIMG)}
-                                    onError={(e) => console.error('❌ Image Error:', e)}
-                                    style={{
-                                        marginTop: '-2rem',
-                                        objectFit: 'contain'
-                                    }}
-                                />
-                            )}
-                        </div>
-                        </div>
-                    </article>
-                </section>
+            <main className={q.quizComponentContainer} id='quizElement' style={{outline: '0px solid lime', position: 'relative', zIndex: '9999999'}}>
+            <QuizCard 
+             style={{outline: '0px solid lime', position: 'relative', zIndex: '9999999'}}
+                        questionText={questionText}
+                        Section={Section}
+                        audio_URL={audio_URL}
+                        currentIMG={GIF_URL}
+                    />
 
                 <section className={q.answerSectionContainer} style={{outline: '0px solid red'}} >
                     <aside className={q.buttonsContainer}>
