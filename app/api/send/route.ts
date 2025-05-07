@@ -10,6 +10,7 @@ if (!apiKey) {
 }
 const resend = new Resend(process.env.NEXT_RESEND_API_KEY);
 
+
 export async function POST(request: Request) {
     console.log('🚀 API Route Hit - POST /api/send');
     
