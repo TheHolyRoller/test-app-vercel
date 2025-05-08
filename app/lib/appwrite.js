@@ -14,7 +14,7 @@ if (!projectID) {
 
 const client = new Client(); 
 
-client.setEndpoint("api.dyslexiaquiz.com")
+client.setEndpoint("https://api.dyslexiaquiz.com/v1")
 .setProject(projectID); 
 
 
