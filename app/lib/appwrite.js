@@ -1,8 +1,5 @@
 'use client';
 
-// Configure the client, database and account here 
-// Configure the client first and then use that to configure the account and database 
-
 // import them from appwrite here 
 
 import { Client, Databases, Account } from 'appwrite'; 
@@ -17,7 +14,7 @@ if (!projectID) {
 
 const client = new Client(); 
 
-client.setEndpoint("https://cloud.appwrite.io/v1")
+client.setEndpoint("api.dyslexiaquiz.com")
 .setProject(projectID); 
 
 
@@ -26,7 +23,6 @@ console.log('this is the client object \n', client);
 
 export const databases = new Databases(client); 
 
-// Optional: Add a function to verify the connection
 export const verifyConnection = async () => {
   try {
     const response = await account.get();

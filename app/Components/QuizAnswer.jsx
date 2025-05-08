@@ -56,9 +56,9 @@ export const QuizAnswer = () => {
 
             <div className={a.button} id={a.sometimesButton} onClick={() => increment('sometimesNum')}>
 
-                {/* <span className={a.numSpan}>
+                <span className={a.numSpan}>
                 {counters.sometimesNum}
-                </span> */}
+                </span>
 
                 Some 
                     times
