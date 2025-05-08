@@ -1,0 +1,451 @@
+
+
+
+.mainAnswerContainer{
+
+
+    margin: 50vh auto; 
+    display: grid; 
+    place-content: center;  
+    font-family: cursive;
+    text-transform: uppercase;
+    
+
+
+}
+
+
+
+.answerSection{
+
+
+
+
+
+
+}
+
+
+
+.buttonList{
+
+
+    display: flex; 
+    gap: 5vw; 
+
+
+
+
+}
+
+
+
+.button{
+    all: unset;
+    border-radius: 10px;
+    display: grid;
+    place-content: center;
+    width: 3rem;
+    height: 3rem;
+    padding: 0 0.1rem;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.buttonStackContainer{
+
+
+    position: relative;
+    display: grid;
+    place-content: center;      
+    height: 3rem; 
+
+
+}
+
+
+
+
+.buttonStack{
+    /*background-color: ;
+    */position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    /*outline: 3px solid lime;
+    */height: 100%;
+    /*background-color: blue;
+    */z-index: -1;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+}
+
+
+#noButton{
+
+    /* background-color: rgb(241, 52, 39);  */
+    position: relative;
+    z-index: 9;
+    max-height: 3rem !important; 
+
+
+}
+
+.numSpan{
+
+
+
+
+
+}
+
+#noStackOne{
+    transform: rotate(3deg);
+    -webkit-transform: rotate(3deg);
+    -moz-transform: rotate(3deg);
+    -ms-transform: rotate(3deg);
+    -o-transform: rotate(3deg);
+    width: 105%;
+    height: 105%;
+
+    background-color: rgb(241, 52, 39); 
+    /* opacity: 0.7; */
+    opacity: 1; 
+}
+
+
+#noStackTwo{
+    /*background-color: white;
+    */background-color: rgb(241, 52, 39);
+    opacity: 0.4;
+    /* opacity: 1;  */
+    transform: rotate(-2deg);
+    -webkit-transform: rotate(-2deg);
+    -moz-transform: rotate(-2deg);
+    -ms-transform: rotate(-2deg);
+    -o-transform: rotate(-2deg);
+    width: 106%;
+    height: 110%;
+    margin-left: -2px;
+}
+
+
+
+
+
+
+#noStackThree{
+    background-color: rgb(241, 52, 39);
+    opacity: 1;
+    /* opacity: 0.44; */
+    transform: rotate(-1.5deg);
+    -webkit-transform: rotate(-1.5deg);
+    -moz-transform: rotate(-1.5deg);
+    -ms-transform: rotate(-1.5deg);
+    -o-transform: rotate(-1.5deg);
+    width: 108%;
+    height: 110%;
+    /*margin-right: -2px;
+    */margin-top: -1px;
+}
+
+#noStackFour{
+    background-color: rgba(243, 80, 68, 0.916);
+    /* background-color: aqua; */
+
+    opacity: 0.9;
+    /* opacity: 1; */
+    transform: rotate(-3deg);
+    -webkit-transform: rotate(-3deg);
+    -moz-transform: rotate(-3deg);
+    -ms-transform: rotate(-3deg);
+    -o-transform: rotate(-3deg);
+    width: 110%;
+    height: 110%;
+    margin-right: -7px; 
+    margin-top: -2px;
+}
+
+#noStackFive{
+    background-color: rgb(241, 52, 39);
+    /* opacity: 1; */
+    opacity: 0.4;
+    transform: rotate(1deg);
+    -webkit-transform: rotate(1deg);
+    -moz-transform: rotate(1deg);
+    -ms-transform: rotate(1deg);
+    -o-transform: rotate(1deg);
+    width: 109%;
+    height: 110%;
+    margin-top: 0px;
+    margin-left: 2px; 
+
+}
+
+#noStackSix{
+
+    background-color: rgb(241, 52, 39);
+    /* opacity: 1; */
+    opacity: 0.4;
+    transform: rotate(1deg);
+    -webkit-transform: rotate(1deg);
+    -moz-transform: rotate(1deg);
+    -ms-transform: rotate(1deg);
+    -o-transform: rotate(1deg);
+    width: 109%;
+    height: 110%;
+    margin-top: -3px;
+
+
+
+}
+
+#sometimesButton{
+    background-color: rgb(245, 207, 48);
+    display: grid;
+    place-content: center;
+    font-size: 0.8rem;
+    text-align: center;
+    padding-right: 0.2rem;
+    position: relative;
+   
+
+
+
+
+
+
+
+
+}
+
+#sometimesButton::after{
+
+
+/* 
+    content: "";
+    position: absolute;
+    top: 5px;
+    right: 40px;
+    width: 50%;
+    height: 50%;
+    background-color: #bbb;
+    box-shadow: 0 0 10px 10px #bbb;
+    transform: skew(30deg, 4deg);
+    z-index: -1; */
+
+
+
+
+
+
+ 
+
+}
+
+
+#sometimesButton::before {
+    content: "";
+    position: absolute;
+    top: 55px;
+    left:15px;
+    width: 50%;
+    height: 50%;
+    background-color: #bbb;
+    box-shadow: 0 0 10px 10px #bbb;
+    z-index: -1;
+    transform: skew(-19deg, -4deg);
+    -webkit-transform: skew(-19deg, -4deg);
+    -moz-transform: skew(-19deg, -4deg);
+    -ms-transform: skew(-19deg, -4deg);
+    -o-transform: skew(-19deg, -4deg);
+}   
+
+#sometimesStackOne{
+    background-color: rgb(245, 207, 48);
+    opacity: 0;
+    /*opacity: 0.4;
+    */transform: rotate(3deg);
+    -webkit-transform: rotate(3deg);
+    -moz-transform: rotate(3deg);
+    -ms-transform: rotate(3deg);
+    -o-transform: rotate(3deg);
+    width: 109%;
+    height: 110%;
+    margin-top: -3px;
+}
+
+
+#sometimesStackTwo{
+     background-color: rgb(245, 207, 48);
+     /*opacity: 1;
+     */opacity: 0.4;
+     transform: rotate(2deg);
+     -webkit-transform: rotate(2deg);
+     -moz-transform: rotate(2deg);
+     -ms-transform: rotate(2deg);
+     -o-transform: rotate(2deg);
+     width: 105%;
+     height: 110%;
+     margin-top: -2px;
+}
+
+
+#sometimesStackThree{
+     background-color: rgb(245, 207, 48);
+     opacity: 0.4;
+     transform: rotate(-2.5deg);
+     -webkit-transform: rotate(-2.5deg);
+     -moz-transform: rotate(-2.5deg);
+     -ms-transform: rotate(-2.5deg);
+     -o-transform: rotate(-2.5deg);
+     width: 105%;
+     height: 110%;
+     margin-top: -3px;
+}
+
+
+#sometimesStackFour{
+     background-color: rgb(245, 207, 48);
+     opacity: 0.63;
+     width: 105%;
+     height: 111%;
+     transform: rotate(-2.5deg);
+     -webkit-transform: rotate(-2.5deg);
+     -moz-transform: rotate(-2.5deg);
+     -ms-transform: rotate(-2.5deg);
+     -o-transform: rotate(-2.5deg);
+     margin-top: 3px;
+}
+
+#sometimesStackFive{
+
+
+    background-color: rgb(224, 190, 55);
+    opacity: 0.45;
+    transform: rotate(-2.5deg);
+    -webkit-transform: rotate(-2.5deg);
+    -moz-transform: rotate(-2.5deg);
+    -ms-transform: rotate(-2.5deg);
+    -o-transform: rotate(-2.5deg);
+    width: 105%;
+    height: 110%;
+    margin-left: -3px;
+
+
+
+}
+
+
+#sometimesStackSix{
+    background-color: rgb(245, 207, 48);
+    opacity: 0.55;
+    transform: rotate(-2.5deg);
+    -webkit-transform: rotate(-2.5deg);
+    -moz-transform: rotate(-2.5deg);
+    -ms-transform: rotate(-2.5deg);
+    -o-transform: rotate(-2.5deg);
+    width: 110%;
+    height: 110%;
+    margin-right: -3px;
+
+}
+
+
+
+
+
+
+
+
+
+
+#yesButton{
+
+    background-color: rgb(156, 194, 109);
+
+}
+
+
+
+#yesStackOne{
+    background-color: rgb(156, 194, 109);
+    opacity: 0.45;
+    transform: rotate(-2.5deg);
+    -webkit-transform: rotate(-2.5deg);
+    -moz-transform: rotate(-2.5deg);
+    -ms-transform: rotate(-2.5deg);
+    -o-transform: rotate(-2.5deg);
+
+    margin-right: -2px; 
+    width: 105%; 
+    height: 105%; 
+
+}
+
+#yesStackTwo{
+    background-color: rgb(137, 171, 96);
+    opacity: 0.58;
+    transform: rotate(2.5deg);
+    -webkit-transform: rotate(2.5deg);
+    -moz-transform: rotate(2.5deg);
+    -ms-transform: rotate(2.5deg);
+    -o-transform: rotate(2.5deg);
+    margin-left: -2px;
+    width: 105%;
+    height: 105%;
+}
+
+#yesStackThree{
+
+
+
+
+    
+}
+
+#yesStackFour{
+
+
+
+
+    
+}
+
+
+#yesStackFive{
+
+
+
+
+    
+}
+
+#yesStackSix{
+
+
+
+
+    
+}
+
+
+
+
+.sometimesSpan{
+
+    display: block;
+}
+
+
+/* Add in the media queries here  */
+
+
+
+/* Add in the animations here  */
