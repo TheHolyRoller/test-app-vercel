@@ -21,9 +21,6 @@ export const QuizAnswer = () => {
 
         })); 
 
-
-
-
     }
 
 
@@ -37,8 +34,18 @@ export const QuizAnswer = () => {
 
             <div className={a.buttonStackContainer}>
 
-            <div className={a.button} id={a.noButton}>
+            <div className={a.button} id={a.noButton} onClick={() => increment('noNum')} >
+             {counters.noNum > 0 && (
+
+                <span className={a.numSpan}>
+                {counters.noNum}
+                </span>
+
+            )}
+
+
                 No 
+
             </div>
 
             <div className={a.buttonStack} id={a.noStackOne}></div>
@@ -48,23 +55,23 @@ export const QuizAnswer = () => {
             <div className={a.buttonStack} id={a.noStackFive}></div>
             <div className={a.buttonStack} id={a.noStackSix}></div>
 
-
-
             </div>
 
             <div className={a.buttonStackContainer}>
 
-            <div className={a.button} id={a.sometimesButton} onClick={() => increment('sometimesNum')}>
+            <div className={a.button} id={a.sometimesButton} onClick={() => increment('sometimesNum')} >
+             {counters.sometimesNum > 0 && (
 
                 <span className={a.numSpan}>
                 {counters.sometimesNum}
                 </span>
 
-                Some 
-                    times
 
-                {/* <span className={a.sometimesSpan}>
-                </span> */}
+            )}
+
+                Some 
+                times 
+
             </div>
 
             <div className={a.buttonStack} id={a.sometimesStackOne}></div>
@@ -78,7 +85,16 @@ export const QuizAnswer = () => {
 
             <div className={a.buttonStackContainer}>
 
-            <div className={a.button} id={a.yesButton}>
+            <div className={a.button} id={a.yesButton} onClick={() => increment('yesNum')}>
+
+             {counters.yesNum > 0 && (
+
+                <span className={a.numSpan}>
+                {counters.yesNum}
+                </span>
+
+            )}
+
                 Yes 
             </div>
 

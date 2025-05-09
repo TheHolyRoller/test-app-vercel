@@ -1,11 +1,13 @@
-import { QuizAnswer } from "../Components/QuizAnswer";
+import   LongButtons  from '../Components/LongButtons'; 
+
 
 export default function Control() {
 
 
     return(
 
-        <QuizAnswer/> 
+        <LongButtons/> 
+
         
 
     )
