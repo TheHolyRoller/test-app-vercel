@@ -3,12 +3,14 @@ import i from '../Styles/UserInput.module.css';
 
 function UserInput() {
   return (
-    <div  >
+
+    <section>
+    <article>
+    <input></input>
+    </article>
+    </section>
 
 
-
-
-    </div>
   )
 }
 
