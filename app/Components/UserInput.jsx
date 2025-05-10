@@ -7,6 +7,7 @@ function UserInput() {
     <section>
     <article>
     <input></input>
+    
     </article>
     </section>
 
