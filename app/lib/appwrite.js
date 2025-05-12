@@ -6,8 +6,11 @@ import { Client, Databases, Account } from 'appwrite';
 // IMPORT THE CREDS HERE USING VITE AND THE .ENV PAGAGE 
 const projectID = process.env.NEXT_PUBLIC_APPWRITE_PROJECT_ID; 
 
+
+
 if (!projectID) {
   throw new Error('NEXT_PUBLIC_APPWRITE_PROJECT_ID is not defined');
+  console.log('No PROJECT ID \n'); 
 }
 
 // Create the client instance here 
