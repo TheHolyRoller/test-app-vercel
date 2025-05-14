@@ -7,6 +7,8 @@ import q from '../Styles/Quiz.module.css';
 import { useUser } from '../lib/context/UserContext';
 
 import QuizCard from '../Components/QuizCard';
+import TypeControls from '../Components/TypeControls'; 
+
 
 export default function UserType() {
     const router = useRouter();
@@ -40,7 +42,7 @@ export default function UserType() {
                         currentIMG=''
                     />
 
-                <section className={q.answerSectionContainer}>
+                {/* <section className={q.answerSectionContainer}>
                     <aside className={q.buttonsContainer}>
                         <div className={q.noButtonContainer}>
                             <button 
@@ -60,7 +62,11 @@ export default function UserType() {
                             </button>
                         </div>
                     </aside>
-                </section>
+                </section> */}
+
+
+                <TypeControls/>
+
             </main>
         </section>
     );

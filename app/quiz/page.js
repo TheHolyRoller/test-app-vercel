@@ -6,6 +6,8 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import q from '../Styles/Quiz.module.css';
 import Image from 'next/image';
+import { QuizAnswer } from '../Components/QuizAnswer';
+
 
 import QuizCard from '../Components/QuizCard';
 
@@ -90,6 +92,10 @@ export default function Quiz() {
         handleAnswer(userAnswer);
     };
 
+
+
+
+
     return (    
         <section className={q.quizMainSection} style={{color: 'white', outline: '0px solid lime'}}>
             <main className={q.quizComponentContainer} id='quizElement' style={{outline: '0px solid lime', position: 'relative', zIndex: '9999999'}}>
@@ -101,47 +107,9 @@ export default function Quiz() {
                         currentIMG={GIF_URL}
                     />
 
-                <section className={q.answerSectionContainer} style={{outline: '0px solid red'}} >
-                    <aside className={q.buttonsContainer}>
-                        <div className={q.noButtonContainer}>
-                            <button 
-                                className={q.noButton} 
-                                id={q.button}
-                                onClick={() => handleClick('no')}
-                                onMouseEnter={() => console.log('🖱️ Hovering No Button')}
-                            >
-                                No 
-                            </button>
-                        </div>       
-
-                        <div className={q.sometimesButtonContainer}>
-                            <button 
-                                className={q.sometimesButton} 
-                                id={q.button}
-                                onClick={() => handleClick('sometimes')}
-                                onMouseEnter={() => console.log('🖱️ Hovering Sometimes Button')}
-                            >
-                                Some-
-                                <span className={q.sometimesSpan} >
-
-                                times   
-                                </span>
-                            </button>
-                        </div>  
-                        
-
-                        <div className={q.yesButtonContainer}>
-                            <button 
-                                className={q.yesButton}
-                                id={q.button} 
-                                onClick={() => handleClick('yes')}
-                                onMouseEnter={() => console.log('🖱️ Hovering Yes Button')}
-                            >
-                                Yes 
-                            </button>
-                        </div>
-                    </aside>
-                </section>
+               
+                <QuizAnswer/> 
+                
             </main>
         </section>
     );

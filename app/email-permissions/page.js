@@ -6,6 +6,8 @@ import { useRouter } from 'next/navigation';
 // import q from '../../Styles/Quiz.module.css';
 import q from '../Styles/Quiz.module.css'; 
 import QuizCard from '../Components/QuizCard';
+import {PermissionAnswer} from '../Components/PermissionAnswer'; 
+
 
 export default function EmailPermission() {
     const router = useRouter();
@@ -19,6 +21,7 @@ export default function EmailPermission() {
     const handleNoClick = () => {
         router.push('/');
     };
+
 
     return (
         <section style={{color: 'white'}}>
@@ -37,7 +40,7 @@ export default function EmailPermission() {
                     />
                 </section>
 
-                <section className={q.answerSectionContainer}>
+                {/* <section className={q.answerSectionContainer}>
                     <aside className={q.buttonsContainer} style={{outline: '0px solid lime', display: 'flex', placeContent: 'center', width: '90%'}}>
                         <div className={q.noButtonContainer}>
                             <button 
@@ -58,7 +61,10 @@ export default function EmailPermission() {
                             </button>
                         </div>
                     </aside>
-                </section>
+                </section> */}
+                <PermissionAnswer/>
+
+
             </main>
         </section>
     );

@@ -4,14 +4,13 @@
 .mainAnswerContainer{
 
 
-    margin: 0em auto; 
+    margin: 2em auto; 
     display: grid; 
     place-content: center;  
     font-family: cursive;
     text-transform: uppercase;
     background: none;
-    margin-top: -3.5em; 
-    margin-bottom: 5em;
+    
 
 
 }
@@ -30,7 +29,7 @@
 
 
     display: flex; 
-    gap: 5vw; 
+    gap: 3vw; 
 
 
 
@@ -44,8 +43,8 @@
     border-radius: 10px;
     display: grid;
     place-content: center;
-    width: 3rem !important;
-    height: 3rem !important;
+    width: 9rem !important;
+    height: 2.3rem !important;
     padding: 0 0.1rem;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -59,8 +58,10 @@
     position: relative;
     display: grid;
     place-content: center;      
-    height: 3rem; 
+    height: 0rem; 
 
+    margin-bottom: 5em;
+    cursor: pointer;
 
 }
 
@@ -74,10 +75,8 @@
     right: 0;
     top: 0;
     bottom: 0;
-    /*outline: 3px solid lime;
-    */height: 100%;
-    /*background-color: blue;
-    */z-index: -1;
+    height: 100%;
+    z-index: -1;
     border-radius: 12px;
     -webkit-border-radius: 12px;
     -moz-border-radius: 12px;
@@ -86,17 +85,19 @@
 }
 
 
-#noButton{
+#child{
 
 
-    background-color: rgb(241, 52, 39); 
+    background-color: rgb(245, 207, 48);
+    cursor: pointer;
+
 
 
 
 }
 
 #noButton::before {
-    /* content: "";
+    content: "";
     position: absolute;
     top: 65px;
     left:15px;
@@ -109,7 +110,7 @@
     -webkit-transform: skew(-19deg, -4deg);
     -moz-transform: skew(-19deg, -4deg);
     -ms-transform: skew(-19deg, -4deg);
-    -o-transform: skew(-19deg, -4deg); */
+    -o-transform: skew(-19deg, -4deg);
 }   
 
 
@@ -272,6 +273,7 @@
     width: 109%;
     height: 110%;
     margin-top: -3px;
+    cursor: pointer;
 
 
 
@@ -306,7 +308,7 @@
 
 
 #sometimesButton::before {
-    /* content: "";
+    content: "";
     position: absolute;
     top: 55px;
     left:15px;
@@ -319,7 +321,7 @@
     -webkit-transform: skew(-19deg, -4deg);
     -moz-transform: skew(-19deg, -4deg);
     -ms-transform: skew(-19deg, -4deg);
-    -o-transform: skew(-19deg, -4deg); */
+    -o-transform: skew(-19deg, -4deg);
 }   
 
 #sometimesStackOne{
@@ -413,20 +415,16 @@
 }
 
 
+#adult{
 
-
-
-#yesButton{
-
-    background-color: rgb(156, 194, 109);
-    padding: 4px; 
-
+    background-color: rgb(146, 196, 47);
+    cursor: pointer;
 
 
 }
 
 #yesButton::before {
-    /* content: "";
+    content: "";
     position: absolute;
     top: 64px;
     left:10px;
@@ -439,7 +437,7 @@
     -webkit-transform: skew(-19deg, -4deg);
     -moz-transform: skew(-19deg, -4deg);
     -ms-transform: skew(-19deg, -4deg);
-    -o-transform: skew(-19deg, -4deg); */
+    -o-transform: skew(-19deg, -4deg);
 }   
 
 
@@ -500,22 +498,11 @@
 #yesStackSix{
 
 
-
-
     
 }
-
-
 
 
 .sometimesSpan{
 
     display: block;
 }
-
-
-/* Add in the media queries here  */
-
-
-
-/* Add in the animations here  */

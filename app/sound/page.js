@@ -6,7 +6,7 @@ import q from '../Styles/Quiz.module.css';
 
 import QuizCard from '../Components/QuizCard';
 import {QuizAnswer} from '../Components/QuizAnswer'; 
-
+import AudioControls from '../Components/AudioControls';
 
 
 export default function SoundPage() {
@@ -28,35 +28,13 @@ export default function SoundPage() {
                             questionText: ""
                         }}
                         audio_URL='https://dyslexiaquizapp.s3.eu-west-2.amazonaws.com/audio+doodles/intro+dood-v1.mp3'
-                        currentIMG='/'
+                        currentIMG='https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/audio/view?project=test-domain&mode=admin'
                     />
 
-                {/* <section className={q.answerSectionContainer}>
-                    <aside className={q.buttonsContainer} style={{outline: '0px solid lime', display: 'flex', placeContent: 'center', width: '90%'}}>
-                        <div className={q.noButtonContainer}>
-                            <button 
-                                className={q.yesButton} 
-                                style={{marginRight: '1rem'}}
-                                onClick={() => handleSoundChoice(true)}
-                            >
-                                Audio On
-                            </button>
-                        </div>
+                <div style={{outline: '0px solid red'}} >
 
-                        <div className={q.sometimesButtonContainer}>
-                            <button 
-                                className={q.noButton}
-                                onClick={() => handleSoundChoice(false)}
-                            >
-                                Audio Off
-                            </button>
-                        </div>
-                    </aside>
-                </section> */}
-
-                <div style={{outline: '3px solid red'}} >
-
-                <QuizAnswer/>
+                {/* <QuizAnswer/> */}
+                <AudioControls/>
                 </div>
 
             </main>

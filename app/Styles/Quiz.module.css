@@ -14,8 +14,8 @@
 
 font-family: cursive;
 
-outline: 4px solid lime; 
 display: grid;
+
 place-content: center;  
 
 
@@ -30,7 +30,6 @@ place-content: center;
     margin: 0 auto; 
     display: grid;
     place-content: center; 
-    outline: 4px solid lime; 
 
 
 }
@@ -43,8 +42,8 @@ place-content: center;
 .cardContainer{
 
     position: relative; 
-    outline: 4px solid pink; 
     margin: 0 auto; 
+
     display: grid;  
     place-content: center; 
     
@@ -61,11 +60,8 @@ place-content: center;
     height: 35rem;
     width: 25rem;
     position: relative;
-    /* background-color: white;  */
     background-color: #fbfbfb;
-
-    margin-top: 4.85rem; 
-
+    margin: 4.85rem auto; 
 
     border-radius: 1rem;
     -webkit-border-radius: 1rem;
@@ -153,10 +149,6 @@ place-content: center;
 
 
 position: relative; 
-/* z-index: 99;  */
-
-outline: 5px solid red; 
-
 
 
 }
@@ -207,16 +199,13 @@ outline: 5px solid red;
 
 .imageSectionContainer{
 
-    /* outline: 33px solid red;  */
     display: grid;  
+    
     place-content: center; 
     margin: 0 auto; 
     width: 100%;
     position: relative; 
     z-index: 9999999; 
-
-
-
 
 }
 
@@ -266,7 +255,6 @@ outline: 5px solid red;
     display: flex; 
     gap: 5rem; 
     margin: 0 auto; 
-    /* outline: 12px solid blue;  */
 
     
 

@@ -17,7 +17,6 @@ const QuizCard = ({
     console.log("Current Question:", currentQuestion);
 
 
-
     return (
 
         <>
@@ -48,7 +47,7 @@ const QuizCard = ({
             </div>
 
             {questionText && (
-                <div className={q.questionTextContainer} style={{outline: '0px solid red', position: 'relative', zIndex: '9999', marginTop: '-1rem'}} >
+                <div className={q.questionTextContainer} style={{outline: '0px solid red', color: 'black', position: 'relative', zIndex: '9999', marginTop: '1em', marginBottom: '5rem'}} >
                     <h2 className={q.questionText}>
                         {questionText}
                         <span>

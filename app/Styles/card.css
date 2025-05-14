@@ -134,6 +134,7 @@ p {
     --index0: calc(var(--index) - 1);
     --reverse-index: calc(var(--numcards) - var(--index0));
     --reverse-index0: calc(var(--reverse-index) - 1);
+    outline: 5px solid lime;
   }
   
   .card__content {

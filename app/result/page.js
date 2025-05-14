@@ -19,6 +19,7 @@ function ResultContent() {
         email
     } = useQuiz();
 
+    
     // Detailed console logging with emojis
     console.log('🎯 === Quiz Results Details ===');
     console.log('👤 User Name:', name);
@@ -35,6 +36,10 @@ function ResultContent() {
     console.log('✨ ======================');
 
     return (
+        <>
+
+        <section style={{color: 'black', minHeight: '100vh'}} >
+
         <div style={{ 
             color: 'white',
             padding: '2rem',
@@ -85,6 +90,8 @@ function ResultContent() {
                 </div>
             </div>
         </div>
+        </section>
+        </>
     );
 }
 

@@ -1,15 +1,11 @@
 'use client';
-
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-// import q from '../../../Styles/Quiz.module.css';
-// import { useQuiz } from '../../../lib/context/QuizContext';
-// import { useUser } from '../../../lib/context/UserContext';
-
 import { useUser } from '../lib/context/UserContext';
 import q from '../Styles/Quiz.module.css'; 
 import { useQuiz } from '../lib/context/QuizContext';
 import QuizCard from '../Components/QuizCard';
+import UserInput from '../Components/UserInput';
 
 export default function UserDetails() {
     const audio_URL = 'https://dyslexiaquizapp.s3.eu-west-2.amazonaws.com/audio+doodles/quizzer+name-v1.mp3'; 
@@ -48,30 +44,10 @@ export default function UserDetails() {
                         audio_URL={audio_URL}
                         currentIMG={currentIMG}
                     />
-                    
-                    <form onSubmit={handleSubmit} className={q.detailsForm}>
-                        <div className={q.inputContainer}>
-                            <label htmlFor="name" className={q.inputLabel}>
-                                Name
-                            </label>
-                            <input
-                                id="name"
-                                type="text"
-                                value={userName}
-                                onChange={handleChange}
-                                className={q.nameInput}
-                                required
-                            />
-                        </div>
-                        
-                        <button 
-                            type="submit" 
-                            className={q.yesButton}
-                            style={{marginLeft: '0.5rem'}}
-                        >
-                            Next
-                        </button>
-                    </form>
+
+                    <UserInput/>
+
+
                 </section>
             </main>
         </section>
