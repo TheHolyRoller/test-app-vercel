@@ -5,6 +5,7 @@ import { useUser } from '../lib/context/UserContext';
 import q from '../Styles/Quiz.module.css'; 
 
 import QuizCard from '../Components/QuizCard';
+import {QuizAnswer} from '../Components/QuizAnswer'; 
 
 
 
@@ -30,7 +31,7 @@ export default function SoundPage() {
                         currentIMG='/'
                     />
 
-                <section className={q.answerSectionContainer}>
+                {/* <section className={q.answerSectionContainer}>
                     <aside className={q.buttonsContainer} style={{outline: '0px solid lime', display: 'flex', placeContent: 'center', width: '90%'}}>
                         <div className={q.noButtonContainer}>
                             <button 
@@ -51,7 +52,13 @@ export default function SoundPage() {
                             </button>
                         </div>
                     </aside>
-                </section>
+                </section> */}
+
+                <div style={{outline: '3px solid red'}} >
+
+                <QuizAnswer/>
+                </div>
+
             </main>
         </section>
     );

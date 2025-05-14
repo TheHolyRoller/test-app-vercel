@@ -3,18 +3,6 @@
 /* Add in the global variables here  */
 
 /* Add in the Root variables here  */
-:root{ 
-
-    /* Add in the color variables here  */
-    --background: #4c2a72; 
-    --navbar: #2a1044; 
-    /* Add in the dark & light mode variables here  */
-
-    /* Add in the text color variables here  */
-
-    /* Add in the spacing variables here */
-
-}
 
 
 /* Add in the main classes here  */
@@ -27,7 +15,8 @@
     right: 0; 
     width: 100vw; 
     height: 4rem;
-    background-color: var(--navbar);
+    background-color: #013699;
+    overflow: hidden;
 
     /* Add in the bottom shadow here  */
     

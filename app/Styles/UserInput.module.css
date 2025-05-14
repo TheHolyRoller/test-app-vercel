@@ -1,0 +1,176 @@
+
+
+.mainUserNameSection{
+
+
+    width: 100vw; 
+    height: 100vh; 
+    display: grid;
+    place-content: center;
+
+
+}
+
+
+
+.userNameContainer{
+
+
+
+}
+
+
+
+.userNameInput{
+    all: unset;
+    outline: 2px solid rgb(193, 187, 187);
+    border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -ms-border-radius: 10px ;
+    -o-border-radius: 10px ;
+
+    height: 2.5rem; 
+    width: 17rem; 
+    color: rgb(193, 187, 187); 
+    text-align: center;
+    font-weight: bold;
+}
+
+
+.buttonSectionContainer{
+
+
+    /* outline: 1px solid limegreen;  */
+    display: flex;
+    justify-content: flex-end !important;
+
+
+
+}
+
+
+.userInputButton{
+   /* outline: 2px solid rgb(193, 187, 187); */
+   width: 8.5rem;
+   height: 2.45rem;
+   border-radius: 7px;
+   -webkit-border-radius: 7px;
+   -moz-border-radius: 7px;
+   -ms-border-radius: 7px;
+   -o-border-radius: 7px;
+   color: aliceblue;
+
+
+   display: grid;
+   place-content: center;
+
+   margin-top: 1rem;
+   font-weight: bold;
+   background-color: #013699;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

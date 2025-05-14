@@ -1,8 +1,14 @@
 /* @import "tailwindcss"; */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@plugin "daisyui";
 
 :root {
   --background: #9091ac;
   --foreground: #171717;
+  overflow-x: hidden;
+  
 }
 
 @theme inline {
@@ -23,4 +29,21 @@ body {
   background: var(--foreground);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.bg-home {
+  background-color: white;
+}
+
+.bg-about {
+  background-color: #f0f0f0;
+}
+
+.bg-contact {
+  background-color: #ffefd5;
+}
+
+.bg-default {
+  background-color: #e0e0e0;
 }

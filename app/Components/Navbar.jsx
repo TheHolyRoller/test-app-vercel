@@ -6,8 +6,8 @@ import { useEffect, useState, useRef, useReducer, useMemo, useContext } from 're
 // Import the style sheet here 
 import ns from '../Styles/Nav.module.css'; 
 // Import the static assets here 
-import logo from '../assets/Logo.png'; 
-
+import logo from '../assets/ivvi_Logo.svg'; 
+import Image from 'next/image';
 
 
 // Create the functional component here 
@@ -23,9 +23,13 @@ export default function Navbar(){
             <header  class={ns.navbarLogoSection} >
             <div class={ns.logoSubContainer} >
             <a href='/' className={ns.logoLink} >
+            <Image
+                src={logo}
+                alt="Logo"
+                width={110}
+                height={50}
+                />
 
-                {/* Add in the dimensions here  */}
-                <img src={logo} alt='logo' width={50} height={50} class={ns.logoImage} /> 
 
             </a>
             </div>

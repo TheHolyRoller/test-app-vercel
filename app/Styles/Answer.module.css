@@ -4,7 +4,7 @@
 .mainAnswerContainer{
 
 
-    margin: 50vh auto; 
+    margin: 3em auto; 
     display: grid; 
     place-content: center;  
     font-family: cursive;
@@ -17,9 +17,6 @@
 
 
 .answerSection{
-
-
-
 
 
 
@@ -90,9 +87,8 @@
 #noButton{
 
 
-    /* position: relative; */
-    /* z-index: 9; */
-    /* max-height: 3rem !important;  */
+    background-color: rgb(241, 52, 39); 
+
 
 
 }
@@ -113,6 +109,7 @@
     -ms-transform: skew(-19deg, -4deg);
     -o-transform: skew(-19deg, -4deg);
 }   
+
 
 .numSpan{
     position: absolute;
@@ -143,6 +140,7 @@
     height: 1em; 
     display: grid;
     place-content: center;
+    cursor: pointer;
 
 
 }
@@ -159,7 +157,6 @@
 
 
 
-    background-color: red;
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -198,10 +195,9 @@
 
 
 #noStackTwo{
-    /*background-color: white;
-    */background-color: rgb(241, 52, 39);
+    
+    background-color: rgb(241, 52, 39);
     opacity: 0.4;
-    /* opacity: 1;  */
     transform: rotate(-2deg);
     -webkit-transform: rotate(-2deg);
     -moz-transform: rotate(-2deg);
@@ -234,10 +230,7 @@
 
 #noStackFour{
     background-color: rgba(243, 80, 68, 0.916);
-    /* background-color: aqua; */
-
     opacity: 0.9;
-    /* opacity: 1; */
     transform: rotate(-3deg);
     -webkit-transform: rotate(-3deg);
     -moz-transform: rotate(-3deg);
@@ -268,7 +261,6 @@
 #noStackSix{
 
     background-color: rgb(241, 52, 39);
-    /* opacity: 1; */
     opacity: 0.4;
     transform: rotate(1deg);
     -webkit-transform: rotate(1deg);

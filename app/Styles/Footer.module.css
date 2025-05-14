@@ -1,165 +1,22 @@
-
-
-/* Add in the root variables here  */
-
-/* Add in the global styles here  */
-
-
-/* Add in the main classes here  */
-
 .footerMainContainer{
 
-        background-color: #4c2a72;
-        position: absolute;
-        bottom: 0; 
-        left: 0; 
-        right: 0; 
-        overflow-x: hidden !important;
-        max-width: 99.99vw; 
-        height: 55vh; 
-        /* margin-top: 500rem;  */
-
-
-
-
-}
-
-.footerSubContainerSection{
-
-    position: relative;
-
-
-
-
-
-}
-
-
-.footerTopSectionContainer{
-
-
-
-
-
-}
-
-
-.topSectionTextMainContainer{
-
-
-
-
-
-}
-
-
-.footerTopText{
-
-
-    /* outline: 3px solid red;  */
-
-    font-size: 2.65rem !important;
-    position: absolute; 
-    left: 8%; 
-    top: 10%; 
-
-
-}
-
-
-
-.contactButtonContainer{
-
-
-    /* outline: 3px solid red;  */
-
-    position: absolute; 
-    right: 3%; 
-    margin-top: 3rem; 
-
-
-
-
-}
-
-
-.footerContactButton{
-
-
-
-
-
-}
-
-
-.footerBottomSectionContainer{
-    position: absolute;
-    top: 200% !important;
-    left: 0%;
-    /* outline: 5px solid blue; */
-
-    margin-bottom: -50vh !important;
-    transform: translate(0, 15rem);
-    -webkit-transform: translate(0, 15rem);
-    -moz-transform: translate(0, 15rem);
-    -ms-transform: translate(0, 15rem);
-    -o-transform: translate(0, 15rem);
-
+    background-color: #013699;
     width: 100vw; 
-    overflow-x: hidden;
+    overflow: hidden;
+    position: absolute; 
+    height: 15em; 
+    display: grid;
+
 
 
 }
 
-
-.footerBottomSectionSubContainer{
+.footerSubContainer{
 
 
     position: relative; 
-    /* outline: 5px solid red;  */
-
-
-}
-
-
-.footerInfoList{
-
-
-    list-style: none;
-
-
-
-    
-}
-
-
-
-.footerInfoListItem{
-
-
-    list-style: none;
-    display: inline-block;
-    margin-right: 0.5rem; 
-
-
-
-
-    
-}
-
-
-.footerCopyRightInfo{
-
-
-
-
-}
-
-
-.footerListItem{
-
-
-    display: inline-block;
+    width: 100%; 
+    height: 100%; 
 
 
 
@@ -168,9 +25,7 @@
 
 
 
-
-.footerWebsiteLink{
-
+.footerLeftSection{
 
 
 
@@ -178,26 +33,79 @@
 }
 
 
+.logoContainer{
 
-
-.footerWebsiteLinkText{
-
-
-
-
-    
-}
-
-
-.footerBottomRightSectionContainer{
-
-
-
-    /* outline: 5px solid red;  */
 
     position: relative; 
-    /* right: 0;  */
-    /* bottom: 0;  */
+    z-index: 9999999; 
+    margin-top: 2em; 
+    margin-left: 1em; 
+
+
+}
+
+
+
+.footerLogo{
+
+    color: white;
+
+
+}
+
+
+
+.footerRightSection{
+
+
+    position: absolute; 
+    right: 0%; 
+    /* margin-top: 2em; */
+    top: 17%;
+    outline: 2px solid lime;
+    display: grid; 
+    grid-template-columns: 1fr 1fr;
+    gap: 1em; 
+
+
+
+}
+
+.rightSectionSubContainer{
+
+
+        position: relative;
+        display: grid; 
+        grid-template-columns: 1fr 1fr;
+        gap: 1em; 
+        width:20vw;
+
+
+
+}
+
+
+.listContainerOne{
+
+
+
+
+
+
+}
+
+
+.leftList{
+
+list-style: none;
+
+
+}
+
+
+.leftListItem{
+
+
 
 
 
@@ -205,36 +113,8 @@
 
 
 
-.footerBottomRightSection{
+.listContainerTwo{
 
-
-
-
-}
-
-
-
-.footerBottomRightSectionList{
-
-    list-style: none; 
-
-}
-
-
-
-.footerSocialIconItem{
-
-    margin-right: 1rem; 
-    display: inline-block; 
-
-
-
-}
-
-
-
-
-.iconListLink{
 
 
 
@@ -243,12 +123,19 @@
 }
 
 
-.iconListIcon{
+.socialMediaSection{
 
 
-    width: 1.5rem; 
-    height: 1.5rem; 
-    margin-bottom: -0.5rem;
+    outline: 2px solid lime;
+    position: absolute;
+    right: 0; 
+
+
+}
+
+
+.socialMediaSectionContainer{
+
 
 
 
@@ -256,14 +143,33 @@
 }
 
 
-
-/* Add in the media queries here  */
-
-
-/* Add in the effects here  */
+.footerSocialMediaList{
 
 
-/* Add in the animations here  */
+
+display: flex; 
+
+
+
+    
+}
+
+
+
+.socialMediaIconItem{
+
+
+    display: block !important; 
+
+
+
+}
+
+
+
+
+
+
 
 
 

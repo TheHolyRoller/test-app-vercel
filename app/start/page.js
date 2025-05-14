@@ -4,6 +4,10 @@ import { useRouter } from 'next/navigation';
 import t from '../Styles/test.module.css';
 import Image from 'next/image';
 import backgroundLogo from '../assets/CentralAsset.png';
+import Start from '../Components/Start'; 
+import UserInput from '../Components/UserInput'; 
+
+
 
 export default function StartQuiz() {
     const router = useRouter();
@@ -15,7 +19,7 @@ export default function StartQuiz() {
             </nav>
 
             <section className={t.mainSection}>
-                <div className={t.callToActionContainer}>
+                {/* <div className={t.callToActionContainer}>
                     <div className={t.logoImageContainer}>
                         <Image 
                             src={backgroundLogo} 
@@ -39,7 +43,12 @@ export default function StartQuiz() {
                             </button>
                         </div>
                     </article>
-                </div>
+                </div> */}
+                
+                <Start/>
+
+                {/* <UserInput/> */}
+
             </section>
         </main>
     );
