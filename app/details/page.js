@@ -45,7 +45,10 @@ export default function UserDetails() {
                         currentIMG={currentIMG}
                     />  
 
+                    <div style={{position: 'relative', zIndex: '9999', marginTop: '-4rem', marginRight: '1em'}} >
+
                     <UserInput/>
+                    </div>
 
 
                 </section>

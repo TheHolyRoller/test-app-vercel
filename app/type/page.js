@@ -41,9 +41,12 @@ export default function UserType() {
                         audio_URL={sound ? "https://dyslexiaquizapp.s3.eu-west-2.amazonaws.com/audio+doodles/quizzer+who-v1.mp3" : null}
                         currentIMG='https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/Dude_User_Type/view?project=test-domain&mode=admin'
                     />
+                    <div style={{marginTop: '-5.5rem'}}>
+
 
                 <TypeControls/>
 
+                    </div>
             </main>
         </section>
     );

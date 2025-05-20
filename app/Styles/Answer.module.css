@@ -10,8 +10,9 @@
     font-family: cursive;
     text-transform: uppercase;
     background: none;
-    margin-top: -3.5em; 
+    margin-top: -5.5em; 
     margin-bottom: 5em;
+    outline: 5px solid lime;
 
 
 }

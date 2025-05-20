@@ -58,7 +58,7 @@ const QuizCard = ({
             )}
             
             <div className={q.imageSectionContainer}>
-                <div className={q.doodleContainer} style={{outline: '0px solid lime', margin: '0 auto'}}>
+                <div className={q.doodleContainer} style={{}}>
                     {currentIMG && (
                         <Image 
                             src={currentIMG}
