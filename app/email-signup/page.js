@@ -18,6 +18,8 @@ const COLLECTION_ID = process.env.NEXT_PUBLIC_APPWRITE_RESULTS_COLLECTION_ID;
 
 export default function EmailSignup() {
 
+    const {sound} = useUser(); 
+
     return (
         <section style={{color: 'white'}}>
             <main className={q.quizComponentContainer} id='quizElement'>
@@ -28,10 +30,9 @@ export default function EmailSignup() {
                         currentQuestion={{
                             questionText: "We'll send your detailed results to your email"
                         }}
-                        // No audio for this page
-                        audio_URL=""
-                        // Optional: Add a results-related image if you have one
-                        currentIMG=""
+                        audio_URL={sound ? "https://dyslexiaquizapp.s3.eu-west-2.amazonaws.com/audio+doodles/receive+email-v1.mp3" : null}
+                        currentIMG="https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/682bb4430038bc15a801/view?project=test-domain&mode=admin"
+                    
                     />
                     
                     {/* <form onSubmit={onSubmit} className={q.emailForm}>

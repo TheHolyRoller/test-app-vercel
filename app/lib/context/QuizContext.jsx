@@ -5,23 +5,32 @@ import { createContext, useContext, useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useUser } from './UserContext';
 import { databases } from '../appwrite';
+import { useRef } from 'react';
+import { Query } from 'appwrite';
+import { off } from 'process';
+
 
 // Environment variable checks
 const DATABASE_ID = process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID;
 const QUESTION_COLLECTION_ID = process.env.NEXT_PUBLIC_APPWRITE_QUESTION_COLLECTION_ID;
-const WEIGHTS_COLLECTION_ID = process.env.NEXT_PUBLIC_APPWRITE_WEIGHT_COLLECTION_ID;
 
 // Log environment variables (without sensitive values)
 console.log('🔍 Appwrite Configuration:', {
     hasDatabaseId: !!DATABASE_ID,
     hasQuestionCollectionId: !!QUESTION_COLLECTION_ID,
-    hasWeightsCollectionId: !!WEIGHTS_COLLECTION_ID,
     environment: process.env.NODE_ENV
 });
+
+
 
 const QuizContext = createContext(null);
 
 export const QuizProvider = ({ children }) => {
+
+
+    // Add in the use Ref instance here 
+    const hasInitialized = useRef(false); 
+
     const router = useRouter();
     const { userAge } = useUser();
 
@@ -55,7 +64,7 @@ export const QuizProvider = ({ children }) => {
             currentQuestion: currentQuestion ? {
                 id: currentQuestion.$id,
                 section: currentQuestion.Section,
-                question: currentQuestion.Question
+                question: currentQuestion.questionText
             } : null,
             questionsCount: questions.length,
             gifURLsCount: gif_URLs?.length || 0
@@ -85,33 +94,66 @@ export const QuizProvider = ({ children }) => {
                     throw new Error('Missing required Appwrite configuration');
                 }
 
+                            
+                const allQuestions = [];
+                const limit = 100; 
+                let offset = 0;
+                let totalDocuments = 0;
+                let total; 
+
+                console.log('this is the limit \n', limit); 
+                console.log('this is the offset \n', offset); 
+
+
                 console.log('📥 QuizContext: Fetching questions from Appwrite');
                 console.log('🔗 Appwrite Connection Details:', {
                     databaseId: DATABASE_ID,
                     collectionId: QUESTION_COLLECTION_ID
                 });
 
-                const response = await databases.listDocuments(DATABASE_ID, QUESTION_COLLECTION_ID);
-                console.log('📦 Appwrite Response:', {
-                    total: response.total,
-                    documentsCount: response.documents?.length
-                });
+                do {
+                    const response = await databases.listDocuments(
+                      DATABASE_ID,
+                      QUESTION_COLLECTION_ID,
+                      [
+                        Query.limit(1000),
+                        Query.offset(offset)
+                      ]
+                    );
+                    
 
-                if (!response.documents || response.documents.length === 0) {
-                    throw new Error('No questions found in the collection');
+                    console.log(`📄 Fetched ${response.documents.length} questions (offset ${offset})`);
+
+                  
+                    if (response.documents.length === 0) break;
+                  
+                    allQuestions.push(...response.documents);
+                    console.log('this is the length of all QUESTIONS \n', allQuestions.length); 
+                  
+                    total = response.total;
+                    offset += response.documents.length;
+                  
+                  } while (offset < total);
+
+                  console.log(`✅ Total questions fetched: ${allQuestions.length}`);
+
+
+
+                if (!hasInitialized.current ) {
+                    
+
+                    hasInitialized.current = true;
+                    setQuestions(allQuestions);
+
+                    const gifURLS = allQuestions.map(doc => doc.GIF_URL);
+                    setGIF_URLS(gifURLS);
+                    setQuizLength(allQuestions.length);
+                    setCurrentQuestion(allQuestions[0]);
+                    console.log('✅ Loaded all questions:', allQuestions.length);
+
                 }
 
-                const documents = response.documents;
-                console.log(`📊 QuizContext: Retrieved ${documents.length} questions`);
-                setQuestions(documents);
-                
-                const gifURLS = documents.map(doc => doc.GIF_URL);
-                console.log(`🖼️ QuizContext: Extracted ${gifURLS.length} GIF URLs`);
-                setGIF_URLS(gifURLS);
-                
-                console.log('🎯 QuizContext: Setting first question');
-                setCurrentQuestion(documents[0]);
-                setQuizLength(documents.length);
+
             } catch (error) {
                 console.error('❌ QuizContext: Error fetching questions:', error);
                 setError(error.message);
@@ -128,6 +170,19 @@ export const QuizProvider = ({ children }) => {
 
         fetchQuestions();
     }, []);
+
+    useEffect(() => {
+
+        console.log('this is the current question \n', currentQuestion); 
+
+    }, [currentQuestion])
+
+    useEffect(() => {
+
+        setCurrentQuestion(questions[currentIndex]);
+
+    },[currentIndex, questions]); 
+
 
     const calculateScore = async (answer) => {
         if (!currentQuestion || answer === 'noop') {
@@ -146,6 +201,7 @@ export const QuizProvider = ({ children }) => {
             Section 
         } = currentQuestion;
 
+        
         console.log(`📊 QuizContext: Current section: ${Section}`);
 
         const updateScoreCategory = (type, score) => {
@@ -153,11 +209,13 @@ export const QuizProvider = ({ children }) => {
             const scoreSetters = {
                 reading: setReadingScore,
                 writing: setWritingScore,
-                organisation: setOrganisationalScore,
                 memory: setMemoryScore,
-                exams: setExamResultsScore
+                plans: setOrganisationalScore,
+                tests: setExamResultsScore
             };
 
+
+            
             const key = type.trim().toLowerCase();
             const scoreSetter = scoreSetters[key];
 
@@ -171,26 +229,36 @@ export const QuizProvider = ({ children }) => {
             if (answer === 'yes') {
                 setScore(prevScore => prevScore + adult_yes_weight);
                 updateScoreCategory(Section, adult_yes_weight);
+                console.log('this is the question Section \n', Section); 
             } else if (answer === 'sometimes') {
                 setScore(prevScore => prevScore + adult_maybe_weight);
                 updateScoreCategory(Section, adult_maybe_weight);
+                console.log('this is the question Section \n', Section); 
+
             }
         } else {
             console.log('👶 QuizContext: Calculating score for child');
             if (answer === 'yes') {
                 setScore(prevScore => prevScore + child_yes_weight);
                 updateScoreCategory(Section, child_yes_weight);
+                console.log('this is the question Section \n', Section); 
+
             } else if (answer === 'sometimes') {
                 setScore(prevScore => prevScore + child_maybe_weight);
                 updateScoreCategory(Section, child_maybe_weight);
+                console.log('this is the question Section \n', Section); 
+
             }
         }
     };
 
+
     const handleAnswer = async (answer) => {
+
+        if(answer === 'noop') return
+
         console.log(`🎯 QuizContext: Handling answer: ${answer}`);
         const question = questions[currentIndex];
-        setCurrentQuestion(question);
         await calculateScore(answer);
 
         if (currentIndex < quizLength - 1) {
@@ -202,6 +270,7 @@ export const QuizProvider = ({ children }) => {
             router.push('/email-permissions');
         }
     };
+
 
     return (
         <QuizContext.Provider value={{

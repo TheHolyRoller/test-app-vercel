@@ -12,7 +12,7 @@ import {PermissionAnswer} from '../Components/PermissionAnswer';
 export default function EmailPermission() {
     const router = useRouter();
     const { finalScore } = useQuiz();
-    const { name } = useUser();
+    const { name, sound } = useUser();
 
     const handleYesClick = () => {
         router.push('/email-signup');
@@ -33,35 +33,13 @@ export default function EmailPermission() {
                         currentQuestion={{
                             questionText: "We'll send your detailed results to your email"
                         }}
-                        // No audio for this page
-                        audio_URL=""
-                        // Optional: Add a results-related image if you have one
-                        currentIMG=""
+                        audio_URL={sound ? "https://dyslexiaquizapp.s3.eu-west-2.amazonaws.com/audio+doodles/send+email-v1.mp3" : null}
+                        currentIMG="https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/Dude_Email_Permission/view?project=test-domain&mode=admin"
+                    
                     />
                 </section>
 
-                {/* <section className={q.answerSectionContainer}>
-                    <aside className={q.buttonsContainer} style={{outline: '0px solid lime', display: 'flex', placeContent: 'center', width: '90%'}}>
-                        <div className={q.noButtonContainer}>
-                            <button 
-                                className={q.yesButton} 
-                                style={{marginRight: '1rem'}}
-                                onClick={handleYesClick}
-                            >
-                                Yes
-                            </button>
-                        </div>       
-
-                        <div className={q.sometimesButtonContainer}>
-                            <button 
-                                className={q.noButton}
-                                onClick={handleNoClick}
-                            >
-                                No
-                            </button>
-                        </div>
-                    </aside>
-                </section> */}
+               
                 <PermissionAnswer/>
 
 

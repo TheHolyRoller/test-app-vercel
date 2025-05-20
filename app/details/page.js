@@ -9,7 +9,7 @@ import UserInput from '../Components/UserInput';
 
 export default function UserDetails() {
     const audio_URL = 'https://dyslexiaquizapp.s3.eu-west-2.amazonaws.com/audio+doodles/quizzer+name-v1.mp3'; 
-    const currentIMG = '/';
+    const currentIMG = 'https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/Dude_User_Name/view?project=test-domain&mode=admin';
 
     const router = useRouter();
     const { handleAnswer } = useQuiz();
@@ -36,14 +36,14 @@ export default function UserDetails() {
             <main className={q.quizComponentContainer} id='quizElement'>
                 <section className={q.cardContainer}>
                     <QuizCard 
-                        questionText="What's The Name Of The Quiz Taker?"
+                        questionText="What's The Name Of The Person Taking The Quiz?"
                         Section="Details"
                         currentQuestion={{
                             questionText: ""
                         }}
                         audio_URL={audio_URL}
                         currentIMG={currentIMG}
-                    />
+                    />  
 
                     <UserInput/>
 
