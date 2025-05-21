@@ -75,10 +75,8 @@
     right: 0;
     top: 0;
     bottom: 0;
-    /*outline: 3px solid lime;
-    */height: 100%;
-    /*background-color: blue;
-    */z-index: -1;
+     height: 100%;
+     z-index: -1;
     border-radius: 12px;
     -webkit-border-radius: 12px;
     -moz-border-radius: 12px;
@@ -136,14 +134,15 @@
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
 
-    width: 1em;
+    width: 1.2em;
     outline: 1.5px solid white; 
 
 
-    height: 1em; 
+    height: 1.2em; 
     display: grid;
     place-content: center;
     cursor: pointer;
+    padding: 0.2rem;
 
 
 }
