@@ -25,19 +25,11 @@ function Start() {
 
        </article>
 
-       {/* Add in the button container section here  */}
 
         <aside className={s.buttonSectionContainer}>
-
         <div className={s.CTAButton}  onClick={() => router.push('/sound')} >Start Quiz</div>
-
-
         </aside>
-
     </section>
-    
-    
-    
     </>
   )
 }

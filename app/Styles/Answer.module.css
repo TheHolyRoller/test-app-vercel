@@ -43,6 +43,7 @@
     all: unset;
     border-radius: 10px;
     display: grid;
+    cursor: pointer !important;
     place-content: center;
     width: 3rem !important;
     height: 3rem !important;
