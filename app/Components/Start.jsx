@@ -36,7 +36,7 @@ function Start() {
 
     </section>
     
-    Start
+    
     
     </>
   )
