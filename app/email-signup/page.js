@@ -34,33 +34,11 @@ export default function EmailSignup() {
                         currentIMG="https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/682bb4430038bc15a801/view?project=test-domain&mode=admin"
                     
                     />
-                    
-                    {/* <form onSubmit={onSubmit} className={q.emailForm}>
-                        <div className={q.emailInputContainer}>
-                            <label htmlFor="email">Email</label>
-                            <input
-                                id="email"
-                                type="email"
-                                value={inputEmail}
-                                onChange={handleChange}
-                                required
-                                className={q.emailInput}
-                            />
-                        </div>
-
-                        <button 
-                            type="submit" 
-                            className={q.yesButton}
-                            style={{marginLeft: '0.5rem'}}
-                        >
-                            Next
-                        </button>
-                    </form> */}
+                    <div style={{position: 'relative', zIndex: '9999', marginTop: '-3em', marginRight: '1em'}}>
 
                     <UserEmailInput/>
                     
-
-
+                    </div>
 
                 </section>
 

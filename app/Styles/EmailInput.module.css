@@ -7,10 +7,13 @@
     /* height: 100vh;  */
     display: grid;
     place-content: center;
-    /* outline: 2px solid red; */
+    outline: 2px solid red;
     margin-bottom: 5em;
     margin-top: -4em; 
     margin-right: -7em; 
+    position: relative;
+    z-index: 99990; 
+
 
 
 
@@ -36,7 +39,7 @@
 
 .nameLabel{
 
-    /* outline: 4px solid blue;  */
+    outline: 4px solid blue; 
     padding-right: 5px; 
     margin-right: 0.3em;
     display: none;
