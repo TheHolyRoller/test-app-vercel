@@ -13,7 +13,7 @@ export default function UserDetails() {
 
     const router = useRouter();
     const { handleAnswer } = useQuiz();
-    const { setUserName } = useUser();
+    const { setUserName, sound } = useUser();
     const [userName, setName] = useState('');
 
     const handleChange = (e) => {
@@ -41,9 +41,13 @@ export default function UserDetails() {
                         currentQuestion={{
                             questionText: ""
                         }}
-                        audio_URL={audio_URL}
+                        
+                        // audio_URL={ (sound && audio_URL : '')}
+                        audio_URL={sound ? audio_URL : null}
+
                         currentIMG={currentIMG}
                     />  
+
 
                     <div style={{position: 'relative', zIndex: '9999', marginTop: '-4rem', marginRight: '1em'}} >
 

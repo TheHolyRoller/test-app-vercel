@@ -5,13 +5,14 @@ import { useQuiz } from '../lib/context/QuizContext';
 import { useSearchParams } from 'next/navigation';
 import r from '../Styles/Results.module.css'; 
 import { useRouter } from 'next/navigation'; 
+import { useState } from 'react';
 
 
 function ResultContent() {
     const searchParams = useSearchParams();
     const { name } = useUser();
     const router = useRouter(); 
-
+    const {percentageScore, setPercentageScore } = useState(0);
 
     const { 
         score,
@@ -23,6 +24,8 @@ function ResultContent() {
         organisationalScore, 
         email
     } = useQuiz();
+
+
 
     
     // Detailed console logging with emojis
@@ -39,6 +42,40 @@ function ResultContent() {
     console.log('📝 Exam Results Score:', examResultsScore);
     console.log('📋 Organisational Score:', organisationalScore);
     console.log('✨ ======================');
+
+    let percentage;
+
+    // Create the function that formats the final score here 
+    const formatScore = (finalScore) => {
+
+
+        // Add in the max score here 
+        const maxScore = 439;
+        let rounder;
+        let total; 
+        let normalization = maxScore / finalScore; 
+        let update = Math.floor(finalScore / 12); 
+        console.log('this is the max score divide by the final score \n', normalization); 
+        percentage = (maxScore / update) * 5; 
+        percentage = Math.floor(percentage); 
+        console.log('this is the formatted % Score \n', percentage); 
+        if(percentage > 100){
+
+        rounder = percentage -100; 
+        percentage = percentage - rounder; 
+            
+        }
+
+        console.log('this is the rounded down percentage \n', percentage); 
+
+
+
+
+    }
+
+    formatScore(finalScore); 
+
+
 
     
     return (
@@ -68,7 +105,13 @@ function ResultContent() {
 
         {/* Score */}
         {/* 82 */}
-        {finalScore}
+        {/* {finalScore} */}
+        {/* This is the percentage score below  */}
+        <span  style={{display:'inline-block'}}>
+
+        {percentage}%
+        </span>
+
 
         </h2>
 

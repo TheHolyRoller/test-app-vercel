@@ -63,6 +63,39 @@ margin-bottom: 5em;
 
     /* outline: 5px solid lime; */
 }
+.reading{
+
+    background-color: rgb(81, 216, 139) !important;
+
+    
+    
+}
+
+.writing{ 
+    
+    background-color:  rgb(44, 152, 224) !important; 
+    
+    
+}
+
+.plans{
+    
+    background-color: rgb(199, 59, 46) !important; 
+
+    
+    
+}
+.memory{
+    
+    background-color: rgb(231, 126, 34) !important;    
+
+}
+
+.tests{
+    background-color: rgb(244, 198, 14) !important;
+
+
+}
 
 
 #cardOne{
@@ -144,9 +177,15 @@ margin-bottom: 5em;
 
 
 position: relative; 
+height: 5rem; 
+
+
 
 
 }
+.cardCategoryColorContainer {
+    background-color: var(--category-color, #ccc);
+  }
 
 
 
@@ -157,7 +196,6 @@ position: relative;
     height: 4.5rem; 
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
-    background-color: #2e9fe7;
     display: grid; 
     place-content: center;
 

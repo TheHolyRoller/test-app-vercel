@@ -17,15 +17,56 @@ const QuizCard = ({
     console.log("Current Question:", currentQuestion);
 
 
+    const getColorBySection = (Section) => {
+        // Add debug logging
+        console.log('getColorBySection called with:', Section);
+        
+        // Handle undefined or null case
+        if (!Section) {
+            console.warn('Section is undefined or null, using default color');
+            return '#4c2a74';
+        }
+
+        // Normalize the section name
+        const normalizedSection = Section.trim().toLowerCase();
+        console.log('Normalized section:', normalizedSection);
+
+        switch(normalizedSection) {
+            case 'reading': 
+                return 'rgb(81, 216, 139)'; 
+            case 'writing': 
+                return 'rgb(44, 152, 224)'; 
+            case 'plans': 
+                return 'rgb(199, 59, 46)'; 
+            case 'memory': 
+                return 'rgb(231, 126, 34)'; 
+            case 'tests': 
+                return 'rgb(244, 198, 14)'; 
+            default: 
+                console.warn('Unknown section:', Section, 'using default color');
+                return '#4c2a74';  
+        }
+    }
+
+    // Add debug logging for the component render
+    console.log('QuizCard render - Section:', Section);
+    console.log('Selected color:', getColorBySection(Section));
+
     return (
 
         <>
 
 
-        <article className={q.card}>
+        <article className={q.card} style={{outline: '0px solid red'}} >
           
 
-            <div className={q.cardCategoryColorContainer} style={{outline: '0px solid red'}}>
+            <div 
+                className={q.cardCategoryColorContainer}
+                style={{
+                    backgroundColor: getColorBySection(Section),
+                    outline: '0px solid red'
+                }}
+            >
                 {audio_URL && (
                     <audio 
                         key={audio_URL} 
@@ -39,7 +80,10 @@ const QuizCard = ({
                     </audio>
                 )}
 
-                <div className={q.categoryLabelContainer}>
+                <div
+                 className={q.categoryLabelContainer}
+                // style={{'--category-color': getColorBySection(Section)}}
+                >
                     <label className={q.categoryLabel}>
                         {Section}
                     </label>
