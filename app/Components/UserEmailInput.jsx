@@ -58,7 +58,8 @@ function UserInput() {
                     examResultsScore,
                     organisationalScore,
                     userAge,
-                    name
+                    name,
+                    createdAt: new Date().toISOString(),
                 }
             );
             console.log('✅ Database save successful:', response);
