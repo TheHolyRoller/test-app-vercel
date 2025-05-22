@@ -153,7 +153,6 @@ function UserInput() {
     <form onSubmit={onSubmit} className={e.detailsForm}>
 
     <label className={e.nameLabel} >Enter Email</label>
-
     <input placeholder='Enter your email'
         id="email"
         type="email"

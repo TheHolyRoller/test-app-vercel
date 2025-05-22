@@ -12,7 +12,7 @@
 .quizComponentContainer{
 
 
-font-family: cursive;
+/* font-family: cursive; */
 display: grid;
 place-content: center;  
 
@@ -169,10 +169,12 @@ position: relative;
 .questionTextContainer{
 
     color: black !important;
-    font-size: 1.5rem; 
+    font-size: 1.3rem; 
     width: 90%; 
     text-align: center;
     margin: 0 auto; 
+    text-transform: uppercase;
+
 
     
 }

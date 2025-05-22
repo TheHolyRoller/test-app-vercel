@@ -96,7 +96,7 @@ export const QuizProvider = ({ children }) => {
 
                             
                 const allQuestions = [];
-                const limit = 100; 
+                const limit = 1000; 
                 let offset = 0;
                 let totalDocuments = 0;
                 let total; 
