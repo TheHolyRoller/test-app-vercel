@@ -18,6 +18,8 @@ place-content: center;
 
 margin-bottom: 5em;
 
+
+
 }
 
 
@@ -49,7 +51,7 @@ margin-bottom: 5em;
 
 
 .card{
-    height: 38rem;
+    height: 34rem;
     width: 25rem;
     position: relative;
     background-color: #fbfbfb;
@@ -61,12 +63,19 @@ margin-bottom: 5em;
     -ms-border-radius: 1rem;
     -o-border-radius: 1rem;
 
-    /* outline: 5px solid lime; */
 }
+
+
+#firstCARD{
+
+
+
+}
+
+
 .reading{
 
     background-color: rgb(81, 216, 139) !important;
-
     
     
 }
@@ -174,10 +183,12 @@ margin-bottom: 5em;
 
 
 .cardCategoryColorContainer{
-
-
-position: relative; 
-height: 5rem; 
+    position: relative;
+    height: 3rem;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px; 
+    display: grid; 
+    place-content: center;
 
 
 

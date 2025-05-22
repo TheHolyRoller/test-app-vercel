@@ -96,6 +96,7 @@ function UserInput() {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(emailData)
+                
             });
 
             console.log('�� Response status:', res.status);

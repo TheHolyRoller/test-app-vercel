@@ -57,14 +57,13 @@ const QuizCard = ({
         <>
 
 
-        <article className={q.card} style={{outline: '0px solid red'}} >
+        <article className={q.card} id={q.firstCARD} >
           
 
             <div 
-                className={q.cardCategoryColorContainer}
+                className={q.cardCategoryColorContainer} 
                 style={{
                     backgroundColor: getColorBySection(Section),
-                    outline: '0px solid red'
                 }}
             >
                 {audio_URL && (
