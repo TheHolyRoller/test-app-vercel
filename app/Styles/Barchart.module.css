@@ -11,21 +11,28 @@
 .mainChartSubContainer {
 
         height: 70vh;
-        width: 80vw; 
+        width: 90vw; 
         margin: 10vh auto; 
         display: grid;
         place-content: center;
-        outline: 2px solid lime; 
         color: rgb(41, 39, 39);
+        position: relative; 
+
+
 
 
 }
 
 .mainTitleContainer {
-
-    outline: 20px solid red;
-    position: relative; 
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -0%);
     z-index: 99999;
+    -webkit-transform: translate(-50%, -0%);
+    -moz-transform: translate(-50%, -0%);
+    -ms-transform: translate(-50%, -0%);
+    -o-transform: translate(-50%, -0%);
 }
 
 .mainTitleSubContainer {
@@ -47,48 +54,183 @@
 }
 
 .barChartListItem {
+
+    /* outline: 5px solid blue;  */
+    width: 90vw; 
+    position: relative; 
+    
+
+
 }
 
 .barContainer {
+
+    /* outline: 3px solid lime; */
+
 }
 
 .backgroundBar {
+    width: 70vw;
+    background-color: rgb(229, 226, 226);
+    /* outline: 6px solid lime; */
+    height: 6em;
+    position: absolute;
+    border-radius:50px ;
+    -webkit-border-radius:50px ;
+    -moz-border-radius:50px ;
+    -ms-border-radius:50px ;
+    -o-border-radius:50px ;
 }
 
 .progressBarContainer {
 }
 
+.progressBar{
+    height: 6em;
+    width: 60vw;
+    /* outline: 3px solid black; */
+    position: relative;
+    /* background-color: rgb(224, 231, 240); */
+    background-color: rgb(96, 96, 239);
+
+    border-radius: 50px ;
+    -webkit-border-radius: 50px ;
+    -moz-border-radius: 50px ;
+    -ms-border-radius: 50px ;
+    -o-border-radius: 50px ;
+}
+
+.progressBarSubContainer{
+
+
+    position: absolute; 
+    top: 0; 
+    left: 0
+
+
+
+}
+
 .iconContainer {
+
+    /* outline: 3px solid red; */
+    position: relative;
+
+
 }
 
 .iconSubContainer {
 }
 
 .iconBackground {
+    transform: translate(1em, 0.5rem);
+    -webkit-transform: translate(1em, 0.5rem);
+    -moz-transform: translate(1em, 0.5rem);
+    -ms-transform: translate(1em, 0.5rem);
+    -o-transform: translate(1em, 0.5rem);
+    width: 5em;
+    height: 5em;
+    background-color: white;
+    border-radius:50% ;
+    -webkit-border-radius:50% ;
+    -moz-border-radius:50% ;
+    -ms-border-radius:50% ;
+    -o-border-radius:50% ;
+    display: grid;
+    place-content: center;
 }
 
 .titleContainer {
 }
 
+.titleSubContainer{
+
+
+
+
+}
+
+
+.barTitle{
+   right: 0;
+   transform:translate(9em, -2.8em) ;
+   -webkit-transform:translate(9em, -2.8em) ;
+   -moz-transform:translate(9em, -2.8em) ;
+   -ms-transform:translate(9em, -2.8em) ;
+   -o-transform:translate(9em, -2.8em) ;
+   margin-top: -1em;
+   
+
+}
+
 .percentageContainer {
+    transform:translate(9.3em, -1.5em);
+    -webkit-transform:translate(9.3em, -1.5em);
+    -moz-transform:translate(9.3em, -1.5em);
+    -ms-transform:translate(9.3em, -1.5em);
+    -o-transform:translate(9.3em, -1.5em);
 }
 
 .lineContainer {
+
+
 }
 
 .lineSubContainer {
 }
 
 .line {
+    height: 2px;
+    background-color: white;
+    width: 50vw;
+    position: absolute;
+    z-index: 999;
+    top: 45%;
+    transform:translate(6em, 0) ;
+    -webkit-transform:translate(6em, 0) ;
+    -moz-transform:translate(6em, 0) ;
+    -ms-transform:translate(6em, 0) ;
+    -o-transform:translate(6em, 0) ;
 }
 
 .dotContainer {
+
+    position: relative;
+
+
 }
 
 .dot {
+    width: 5px;
+    height: 5px;
+    /*outline: 5px solid red;
+    */background-color: white;
+    border-radius:50%;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    -ms-border-radius:50%;
+    -o-border-radius:50%;
+    transform: translate(0, -0.1em);
+    position: absolute;
+    right: 0;
+    -webkit-transform: translate(0, -0.1em);
+    -moz-transform: translate(0, -0.1em);
+    -ms-transform: translate(0, -0.1em);
+    -o-transform: translate(0, -0.1em);
+    color: rgb(96, 96, 239);
 }
 
 .resultExplanationContainer {
+
+    /* outline: 3px solid red; */
+
+    position: absolute; 
+    right: 0;
+    top: 0; 
+    width: 10vw;    
+    margin-left: 3em; 
+    /* padding-left: 5em; */
+
 }
 
 .resultExplanationTitleContainer {

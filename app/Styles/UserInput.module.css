@@ -4,15 +4,12 @@
 
 
     width: 100vw; 
-    /* height: 100vh;  */
     display: grid;
     place-content: center;
     /* outline: 2px solid red; */
     margin-bottom: 5em;
     margin-top: -4em; 
     margin-right: -7em; 
-
-
 
 }
 
@@ -36,7 +33,7 @@
 
 .nameLabel{
 
-    /* outline: 4px solid blue;  */
+    outline: 4px solid blue; 
     padding-right: 5px; 
     margin-right: 0.3em;
     display: none;
@@ -59,11 +56,28 @@
 
     height: 2.5rem; 
     width: 17rem; 
-    color: rgb(193, 187, 187); 
+    /* color: rgb(193, 187, 187); 
+     */
+     color: black; 
+
     text-align: center;
     font-weight: bold;
+    /* outline: 3px solid red; */
+    background-color: white;
+
 }
 
+.userNameInput::placeholder {
+    color: #aaa; /* light gray, or any color you prefer */
+    opacity: 1;   /* make sure it's fully visible */
+    font-weight: normal; /* optional: remove bold if undesired */
+  }
+
+.userNameInput:-webkit-autofill {
+    background-color: rgb(226, 225, 225) !important;
+    -webkit-box-shadow: 0 0 0 1000px white inset !important;
+    -webkit-text-fill-color: black !important;
+  }
 
 .buttonSectionContainer{
 

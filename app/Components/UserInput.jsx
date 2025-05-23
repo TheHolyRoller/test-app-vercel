@@ -37,9 +37,6 @@ function UserInput() {
     <section className={i.mainUserNameSection}>
     <article className={i.userNameContainer}>
     <form onSubmit={handleSubmit} className={i.detailsForm}>
-
-
-
     <label className={i.nameLabel} >Enter Name</label>
 
     <input placeholder='Enter your name'
@@ -49,6 +46,7 @@ function UserInput() {
         onChange={handleChange} 
         required                                                                       
         className={i.userNameInput}
+        autoComplete="off"
      ></input>
 
 

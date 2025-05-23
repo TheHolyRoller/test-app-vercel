@@ -8,28 +8,25 @@ export default function Barchart(){
 
 
 
-
     return(
 
         <>
         <main className={b.mainChartContainer}>
             <div className={b.mainChartSubContainer}>
-                <div className={b.mainTitleContainer}>
+                <section className={b.chartContainer}>
+                
+                    <div className={b.mainChartSubContainer}>
+                    <div className={b.mainTitleContainer}>
                 <div className={b.mainTitleSubContainer}>
 
                     <div className={b.infoGraphicContainer}>
                     </div>
 
                     <h1 className={b.mainBarChartTitle}>
-
                         Quiz Results 
-
                     </h1>
                 </div>
                 </div>
-
-                <section className={b.chartContainer}>
-                    <div className={b.mainChartSubContainer}>
                     <ul className={b.barChartMainList}>
                         <li className={b.barChartListItem}>
 
@@ -38,6 +35,9 @@ export default function Barchart(){
                             </div>
 
                             <div className={b.progressBarContainer}>
+                            <div className={b.progressBar}>
+                            <div className={b.progressBarSubContainer}>
+                                
                             <div className={b.iconContainer}>
                             <div className={b.iconSubContainer}>
                                 <div className={b.iconBackground}>
@@ -47,20 +47,27 @@ export default function Barchart(){
                             </div> 
 
                             <div className={b.titleContainer}>
+                            <div className={b.titleSubContainer}>
+                            <div className={b.barTitle}>Reading</div>
+
                                 <div className={b.percentageContainer}>
                                     100%
                                 </div>
 
+                            </div>
                             </div>
                             <div className={b.lineContainer}>
                             <div className={b.lineSubContainer}>
 
                                 <div className={b.line}>
                                 <div className={b.dotContainer}>
-                                    <div className={b.dot}>.</div>
+                                    <div className={b.dot}>`</div>
                                 </div>
                                 </div>
                             </div>            
+                            </div>
+
+                            </div>
                             </div>
                             </div>
                             </article>
@@ -78,7 +85,7 @@ export default function Barchart(){
                             {/* Add in the explanation container here */}
                             <div className={b.resultExplanationText}>
 
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidip ex ea
 
                             </div>
                             </article>
