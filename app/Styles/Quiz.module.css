@@ -12,13 +12,9 @@
 .quizComponentContainer{
 
 
-/* font-family: cursive; */
 display: grid;
 place-content: center;  
-
 margin-bottom: 5em;
-
-
 
 }
 
@@ -46,12 +42,14 @@ margin-bottom: 5em;
     display: grid;  
     place-content: center; 
 
+
 }
 
 
 
 .card{
-    height: 34rem;
+    /* height: 30rem; */
+    height: 25rem;
     width: 25rem;
     position: relative;
     background-color: #fbfbfb;
@@ -62,6 +60,8 @@ margin-bottom: 5em;
     -moz-border-radius: 1rem;
     -ms-border-radius: 1rem;
     -o-border-radius: 1rem;
+    /* outline: 5px solid red; */
+
 
 }
 
@@ -69,6 +69,82 @@ margin-bottom: 5em;
 #firstCARD{
 
 
+    /* outline: 22px solid blue; */
+
+
+
+}
+
+
+
+
+
+#cardOne{
+
+
+    position: absolute; 
+    left: 0; 
+    right: 0; 
+    top: 0;
+    height: 90%; 
+    z-index: 999999;
+
+    transform:  translate(0rem, -2em) !important; 
+    box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+
+
+
+}
+
+
+
+#cardTwo{
+
+
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    z-index: 0;
+    /* height: 35.5rem;  */
+    height: 27rem; 
+    box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+
+
+}
+
+
+#cardThree{
+
+
+ position: absolute;
+ top: 0; 
+ left: 0; 
+ right: 0; 
+ bottom: 0; 
+ z-index: 0;
+ /* height: 36rem;  */
+ height: 27.5rem;
+ margin-bottom: -5em;
+ box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+ /* outline: 12px solid red; */
+
+}
+
+
+#cardFour{
+
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    z-index: 0;
+    /* height: 34.9rem;  */
+    height: 26.5rem;
+    margin-bottom: -5em;
+    box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
 
 }
 
@@ -102,78 +178,6 @@ margin-bottom: 5em;
 
 .tests{
     background-color: rgb(244, 198, 14) !important;
-
-
-}
-
-
-#cardOne{
-
-
-    position: absolute; 
-    left: 0; 
-    right: 0; 
-    top: 0;
-    height: 90%; 
-    z-index: 999999;
-
-    transform:  translate(0rem, -2em) !important; 
-    box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
-
-
-
-}
-
-
-
-#cardTwo{
-
-
-    position: absolute;
-    top: 0; 
-    left: 0; 
-    right: 0; 
-    bottom: 0; 
-    z-index: 0;
-    height: 38.4rem; 
-    /* margin-bottom: -5em; */
-    box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
-    /* outline: 4px solid red;  */
-
-
-}
-
-
-#cardThree{
-
-
- position: absolute;
- top: 0; 
- left: 0; 
- right: 0; 
- bottom: 0; 
- z-index: 0;
- /* margin-top: -0.5em;  */
- height: 39rem; 
- margin-bottom: -5em;
- box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
-
-}
-
-
-#cardFour{
-
-    position: absolute;
-    top: 0; 
-    left: 0; 
-    right: 0; 
-    bottom: 0; 
-    z-index: 0;
-    height: 37.9rem; 
-    margin-bottom: -5em;
-    box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
-
-
 
 
 }
@@ -220,6 +224,8 @@ margin-bottom: 5em;
     text-align: center;
     margin: 0 auto; 
     text-transform: uppercase;
+    position: relative;
+    z-index: 9999999;
 
 
     
@@ -248,7 +254,7 @@ margin-bottom: 5em;
     margin: 0 auto; 
     width: 100%;
     position: relative; 
-    z-index: 9999999; 
+    z-index: 9;
 
 }
 
@@ -256,7 +262,7 @@ margin-bottom: 5em;
 .doodleContainer{
 
 
-    /* margin-top: -5em;  */
+    margin-top: -1.5em; 
 
     
 }

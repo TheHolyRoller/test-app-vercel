@@ -106,8 +106,10 @@ export default function Quiz() {
                         audio_URL={audio_URL}
                         currentIMG={GIF_URL}
                     />
-               
+               <div style={{position: 'relative', zIndex: '9999999'}}>
+
                 <QuizAnswer/> 
+               </div>
                 
             </main>
         </section>

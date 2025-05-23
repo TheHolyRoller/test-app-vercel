@@ -55,10 +55,7 @@ const QuizCard = ({
     return (
 
         <>
-
-
         <article className={q.card} id={q.firstCARD} >
-          
 
             <div 
                 className={q.cardCategoryColorContainer} 
@@ -112,8 +109,10 @@ const QuizCard = ({
                             onLoad={() => console.log('🖼️ Image Loaded:', currentIMG)}
                             onError={(e) => console.error('❌ Image Error:', e)}
                             style={{
-                                marginTop: '-2rem',
-                                objectFit: 'contain'
+                                marginTop: '-4.5rem',
+                                objectFit: 'contain', 
+                                outline: '0px solid red',
+                                zIndex: '0'
                             }}
                         />
                     )}
