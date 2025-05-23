@@ -82,6 +82,7 @@ function UserInput() {
 
         try {
             const emailData = {
+                from: 'support@dyslexiaquiz.com',
                 toEmail: inputEmail,
                 subject: 'Your Quiz Results',
                 message: `Hi ${name},\n\nThank you for taking the quiz! Here are your results:\n\nOverall Score: ${score}\nFinal Score: ${finalScore}\nMemory Score: ${memoryScore}\nWriting Score: ${writingScore}\nReading Score: ${readingScore}\nExam Results Score: ${examResultsScore}\nOrganisational Score: ${organisationalScore}`,
@@ -96,7 +97,7 @@ function UserInput() {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(emailData)
-                
+
             });
 
             console.log('�� Response status:', res.status);
