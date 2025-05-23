@@ -7,6 +7,9 @@ import r from '../Styles/Results.module.css';
 import { useRouter } from 'next/navigation'; 
 import { useState } from 'react';
 
+import Barchart from '../Components/Barchart'; 
+
+
 
 function ResultContent() {
     const searchParams = useSearchParams();
@@ -68,9 +71,6 @@ function ResultContent() {
 
         console.log('this is the rounded down percentage \n', percentage); 
 
-
-
-
     }
 
     formatScore(finalScore); 
@@ -81,10 +81,9 @@ function ResultContent() {
     return (
         <>
 
-        <section className={r.quizResultsSection}>
+        {/* <section className={r.quizResultsSection}>
         <div className={r.quizResultsSubContainer}>
 
-        {/* Add in the main title section here  */}
         <div className={r.mainTitleContainer}>
 
             <h1 className={r.mainQuizTitle}>
@@ -95,18 +94,12 @@ function ResultContent() {
 
         </div>
 
-        {/*  Add in the main master score section here  */}
         <section className={r.mainScoreSectionContainer}>
 
         <div className={r.mainScoreSubContainer}>
         
-        {/* Add in the main score Element here  */}
         <h2 className={r.mainScoreElement} >
 
-        {/* Score */}
-        {/* 82 */}
-        {/* {finalScore} */}
-        {/* This is the percentage score below  */}
         <span  style={{display:'inline-block'}}>
 
         {percentage}%
@@ -115,7 +108,6 @@ function ResultContent() {
 
         </h2>
 
-        {/* Add in the circle background here  */}
         <div className={r.circle}>
             `
         </div>
@@ -251,7 +243,6 @@ function ResultContent() {
         <div className={r.CTATextContainer}>
             <div className={r.CTATextSubContainer}>
                 <h4 className={r.CTAText}>
-                {/* Take Quiz  */}
 
                 </h4>
             </div>
@@ -268,7 +259,11 @@ function ResultContent() {
         </div>
         </section>
         </div>
-        </section>
+        </section> */}
+
+        <Barchart/>
+
+
         </>
     );
 }

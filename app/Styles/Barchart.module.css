@@ -1,0 +1,112 @@
+
+
+.mainChartContainer {
+
+    min-height: 100vh;
+
+
+
+}
+
+.mainChartSubContainer {
+
+        height: 70vh;
+        width: 80vw; 
+        margin: 10vh auto; 
+        display: grid;
+        place-content: center;
+        outline: 2px solid lime; 
+        color: rgb(41, 39, 39);
+
+
+}
+
+.mainTitleContainer {
+
+    outline: 20px solid red;
+    position: relative; 
+    z-index: 99999;
+}
+
+.mainTitleSubContainer {
+}
+
+.infoGraphicContainer {
+}
+
+.mainBarChartTitle {
+
+
+
+}
+
+.chartContainer {
+}
+
+.barChartMainList {
+}
+
+.barChartListItem {
+}
+
+.barContainer {
+}
+
+.backgroundBar {
+}
+
+.progressBarContainer {
+}
+
+.iconContainer {
+}
+
+.iconSubContainer {
+}
+
+.iconBackground {
+}
+
+.titleContainer {
+}
+
+.percentageContainer {
+}
+
+.lineContainer {
+}
+
+.lineSubContainer {
+}
+
+.line {
+}
+
+.dotContainer {
+}
+
+.dot {
+}
+
+.resultExplanationContainer {
+}
+
+.resultExplanationTitleContainer {
+}
+
+.resultExplanationTitle {
+}
+
+.resultExplanationText {
+}
+
+
+/* Add in the media queries here  */
+
+
+
+/* Add in the effects here  */
+
+
+
+/* Add in the animations here  */
