@@ -74,10 +74,8 @@
     right: 0;
     top: 0;
     bottom: 0;
-    /*outline: 3px solid lime;
-    */height: 100%;
-    /*background-color: blue;
-    */z-index: -1;
+    height: 100%;
+    z-index: -1;
     border-radius: 12px;
     -webkit-border-radius: 12px;
     -moz-border-radius: 12px;

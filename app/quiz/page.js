@@ -100,13 +100,12 @@ export default function Quiz() {
         <section className={q.quizMainSection} style={{color: 'white', outline: '0px solid lime'}}>
             <main className={q.quizComponentContainer} id='quizElement' style={{outline: '0px solid lime', position: 'relative', zIndex: '9999999'}}>
             <QuizCard 
-             style={{outline: '12px solid lime', position: 'relative', zIndex: '9999999'}}
+            //  style={{outline: 'px solid lime', position: 'relative', zIndex: '9999999'}}
                         questionText={questionText}
                         Section={Section}
                         audio_URL={audio_URL}
                         currentIMG={GIF_URL}
                     />
-
                
                 <QuizAnswer/> 
                 

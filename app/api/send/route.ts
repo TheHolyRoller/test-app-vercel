@@ -38,7 +38,7 @@ export async function POST(request: Request) {
         }
 
         const { data, error } = await resend.emails.send({
-            from: 'Quiz App <onboarding@resend.dev>',
+            from: 'Quiz App <support@dyslexiaquiz.com>',
             to: [toEmail],
             subject: subject || 'Your Quiz Results',
             react: await EmailTemplate({ 

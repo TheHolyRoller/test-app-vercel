@@ -7,7 +7,6 @@
     position: relative; 
     width: 70vw; 
     margin: 10em auto;
-    outline: 3px solid lime; 
     display: grid; 
     place-content: center; 
 
@@ -115,7 +114,6 @@ top: 0.7em;
 
 
     top: 0.1em; 
-/* background-color: lime; */
     border-radius: 14px;
     -webkit-border-radius: 14px;
     -moz-border-radius: 14px;

@@ -6,9 +6,6 @@
     margin: 10vh auto;
     padding: 1vh; 
     position: relative;
-    /* outline: 5px solid lime; */
-
-
 
 }
 
@@ -18,14 +15,12 @@
     display: grid; 
     place-content: center;
     height: 100%;
-    /* outline: 5px solid red; */
 
 }
 
 .mainTitleContainer {
 
 
-    /* outline: 3px solid red; */
     display: grid;
     place-content: center;
 
