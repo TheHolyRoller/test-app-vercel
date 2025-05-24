@@ -39,8 +39,10 @@ export default function EmailPermission() {
                     />
                 </section>
 
-               
+                <div className={q.answerContainer} style={{position: 'relative', zIndex: '99'}} >
+
                 <PermissionAnswer/>
+                </div>
 
 
             </main>

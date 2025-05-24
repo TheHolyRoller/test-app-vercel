@@ -41,7 +41,7 @@ export default function Barchart(){
                             <div className={b.iconContainer}>
                             <div className={b.iconSubContainer}>
                                 <div className={b.iconBackground}>
-                                    <Image src={idea} height={50} width={50} alt='idea'/>
+                                    <Image src={idea} height={30} width={30} alt='idea'/>
                                 </div>
                             </div>
                             </div> 

@@ -49,6 +49,17 @@
 
 }
 
+.userNameInput::placeholder {
+    color: #aaa; 
+    opacity: 1;   
+    font-weight: normal; 
+  }
+
+.userNameInput:-webkit-autofill {
+    background-color: rgb(226, 225, 225) !important;
+    -webkit-box-shadow: 0 0 0 1000px white inset !important;
+    -webkit-text-fill-color: black !important;
+  }
 
 
 .userNameInput{

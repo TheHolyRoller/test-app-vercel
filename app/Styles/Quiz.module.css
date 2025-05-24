@@ -25,6 +25,8 @@ margin-bottom: 5em;
     margin: 0 auto; 
     display: grid;
     place-content: center; 
+    padding-top: 6em; 
+
 
 
 }
@@ -258,6 +260,14 @@ margin-bottom: 5em;
 
 }
 
+.quizCardContainer{
+
+    position: absolute; 
+    
+    
+
+
+}
 
 .doodleContainer{
 

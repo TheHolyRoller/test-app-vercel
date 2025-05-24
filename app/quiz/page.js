@@ -99,7 +99,13 @@ export default function Quiz() {
     return (    
         <section className={q.quizMainSection} style={{color: 'white', outline: '0px solid lime'}}>
             <main className={q.quizComponentContainer} id='quizElement' style={{outline: '0px solid lime', position: 'relative', zIndex: '9999999'}}>
+          
+            <div id="content" class="section section-device">
+
+            <div className={q.quizCardContainer}>
+
             <QuizCard 
+
             //  style={{outline: 'px solid lime', position: 'relative', zIndex: '9999999'}}
                         questionText={questionText}
                         Section={Section}
@@ -109,7 +115,36 @@ export default function Quiz() {
                <div style={{position: 'relative', zIndex: '9999999'}}>
 
                 <QuizAnswer/> 
+            </div>
                </div>
+    <div id="iphone-x" class="container grid-xl text-center">
+      <h3 class="s-title"><a href="#iphone-x" class="anchor" aria-hidden="true">#</a>iPhone X</h3>
+      <div class="columns">
+        <div class="column col-12">
+          <div class="device device-iphone-x">
+            <div class="device-frame">
+              <video class="device-screen" muted="muted" autoplay loop >
+                
+
+
+
+                <source src="src/video/bg-01.mp4" type="video/mp4"/>
+              </video>
+            </div>
+            <div class="device-stripe"></div>
+            <div class="device-header"></div>
+            <div class="device-sensors"></div>
+            <div class="device-btns"></div>
+            <div class="device-power"></div>
+            <div class="device-home"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+          
+          
+          
                 
             </main>
         </section>

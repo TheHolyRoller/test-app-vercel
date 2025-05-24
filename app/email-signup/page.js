@@ -28,13 +28,13 @@ export default function EmailSignup() {
                         questionText="Enter your email to receive your results"
                         Section="Results"
                         currentQuestion={{
-                            questionText: "We'll send your detailed results to your email"
+                            // questionText: "We'll send your detailed results to your email"
                         }}
                         audio_URL={sound ? "https://dyslexiaquizapp.s3.eu-west-2.amazonaws.com/audio+doodles/receive+email-v1.mp3" : null}
                         currentIMG="https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/682bb4430038bc15a801/view?project=test-domain&mode=admin"
                     
                     />
-                    <div style={{position: 'relative', zIndex: '9999', marginTop: '-3em', marginRight: '1em'}}>
+                    <div style={{position: 'relative', zIndex: '9999', marginTop: '-0.8em', marginRight: '1em',}}>
 
                     <UserEmailInput/>
                     

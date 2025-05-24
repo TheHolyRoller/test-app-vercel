@@ -2,12 +2,14 @@
 
 import { Inter } from "next/font/google";
 import "./globals.css";
+import './Styles/devices.css'; 
 import { UserProvider } from "./lib/context/UserContext";
 import { QuizProvider } from "./lib/context/QuizContext";
 import Navbar from './Components/Navbar'; 
 import Footer from './Components/Footer1'; 
 import Start from './Components/Start'; 
 import { chewy } from './fonts/chewy';
+
 
 const inter = Inter({
   subsets: ["latin"],
