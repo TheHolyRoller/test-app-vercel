@@ -1,5 +1,5 @@
 'use client';
-import { Suspense } from 'react';
+import { Suspense, use, useEffect } from 'react';
 import { useUser } from '../lib/context/UserContext';
 import { useQuiz } from '../lib/context/QuizContext';
 import { useSearchParams } from 'next/navigation';
@@ -8,6 +8,7 @@ import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
 import Barchart from '../Components/Barchart'; 
+import PhoneBarChart from '../Components/PhoneBarChart'; 
 
 
 
@@ -16,6 +17,12 @@ function ResultContent() {
     const { name } = useUser();
     const router = useRouter(); 
     const {percentageScore, setPercentageScore } = useState(0);
+    // Add in the state variables about category score percentage 
+    const [writingPercentage, setWritingPercentage] = useState(0); 
+    const [memoryPercentage, setMemoryPercentage] = useState(0); 
+    const [readingPercentage, setReadingPercentage] = useState(0); 
+    const [examResultsPercentage, setExamResultsPercentage] = useState(0); 
+    const [organisationalPercentage, setOrganisationalPercentage] = useState(0); 
 
     const { 
         score,
@@ -46,6 +53,63 @@ function ResultContent() {
     console.log('📋 Organisational Score:', organisationalScore);
     console.log('✨ ======================');
 
+
+    const formatCategoryCounter = (memoryScore, writingScore, readingScore, examResultsScore, organisationalScore ) => {
+
+
+        /**
+         *  'Memory Score: 10\n' +
+            'Writing Score: 10\n' +
+            'Reading Score: 9\n' +
+            'Exam Results Score: 10\n' +
+            'Organisational Score: 12'
+         * 
+         */
+        // Set the hard limits for each category here 
+        const memory = 10; 
+        const writing = 10; 
+        const exam = 10; 
+        const reading = 10
+        const organisation = 12;
+        // Now implement the formula to set the percentage for each category
+        
+        const examPercent = (examResultsScore / exam) * 100; 
+
+        console.log('this is the exam percentage \n', examPercent)    
+
+
+        setExamResultsPercentage( Math.floor((examResultsScore / exam) * 100));
+        setWritingPercentage((writingScore / exam) * 100);
+        setOrganisationalPercentage((organisationalScore / exam) * 100);
+        setReadingPercentage(Math.floor((readingScore / exam) * 112));
+        setMemoryPercentage((memoryScore / exam) * 100);
+
+        
+
+
+    }
+
+    useEffect(() =>{
+
+    console.log('calling format category score function in the useEffect hook')
+    formatCategoryCounter(memoryScore, writingScore, readingScore, examResultsScore, organisationalScore); 
+        // 
+
+    }, [])
+
+
+    useEffect(() => {
+
+
+        console.log('this is the percentage of each category in the useEffect hook \n', writingPercentage, memoryPercentage, readingPercentage, examResultsPercentage, organisationalPercentage);
+
+        // Call the function that translates the percentages to a pixel value here 
+
+
+
+    }, [writingPercentage, memoryPercentage, readingPercentage, examResultsPercentage, organisationalPercentage])
+
+
     let percentage;
 
     // Create the function that formats the final score here 
@@ -74,6 +138,8 @@ function ResultContent() {
     }
 
     formatScore(finalScore); 
+    // formatCategoryCounter(memoryScore, writingScore, readingScore, examResultsScore, organisationalScore); 
+
 
 
 
@@ -261,7 +327,10 @@ function ResultContent() {
         </div>
         </section> */}
 
-        <Barchart/>
+        {/* <Barchart/> */}
+        <PhoneBarChart/>
+        
+
 
 
         </>

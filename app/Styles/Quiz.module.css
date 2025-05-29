@@ -62,7 +62,6 @@ margin-bottom: 5em;
     -moz-border-radius: 1rem;
     -ms-border-radius: 1rem;
     -o-border-radius: 1rem;
-    /* outline: 5px solid red; */
 
 
 }
@@ -71,7 +70,6 @@ margin-bottom: 5em;
 #firstCARD{
 
 
-    /* outline: 22px solid blue; */
 
 
 
@@ -130,7 +128,6 @@ margin-bottom: 5em;
  height: 27.5rem;
  margin-bottom: -5em;
  box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
- /* outline: 12px solid red; */
 
 }
 
@@ -262,7 +259,7 @@ margin-bottom: 5em;
 
 .quizCardContainer{
 
-    position: absolute; 
+    /* position: absolute;  */
     
     
 

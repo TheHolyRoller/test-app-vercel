@@ -19,6 +19,7 @@ export const QuizAnswer = () => {
     
     const [answer, setAnswer] = useState();
 
+    
 
     // Log initial props and state
     useEffect(() => {

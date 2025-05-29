@@ -1,14 +1,13 @@
 'use client';
 
 /* eslint-disable no-unused-vars */
-import { createContext, useContext, useState, useEffect } from 'react';
+import { createContext, useContext, useState, useEffect, use } from 'react';
 import { useRouter } from 'next/navigation';
 import { useUser } from './UserContext';
 import { databases } from '../appwrite';
 import { useRef } from 'react';
 import { Query } from 'appwrite';
 import { off } from 'process';
-
 
 // Environment variable checks
 const DATABASE_ID = process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID;
@@ -51,6 +50,19 @@ export const QuizProvider = ({ children }) => {
     const [organisationalScore, setOrganisationalScore] = useState(0);
     const [memoryScore, setMemoryScore] = useState(0);
     const [examResultsScore, setExamResultsScore] = useState(0);
+
+
+    // Add in the counters for each category here 
+
+    // Add these state variables to the context export 
+    const [readingCounter, setReadingCounter] = useState(0);
+    const [writingCounter, setWritingCounter] = useState(0); 
+    const [memoryCounter, setMemoryCounter] = useState(0); 
+    const [plansCounter, setPlansCounter] = useState(0); 
+    const [testsCounter, setTestsCounter] = useState(0); 
+
+
+
 
     const [email, setEmail] = useState(''); 
 
@@ -184,6 +196,16 @@ export const QuizProvider = ({ children }) => {
     },[currentIndex, questions]); 
 
 
+    // Add in a useEffect hook here to track when counters from different question categories are incremented 
+    useEffect(() => {
+
+        console.log('category updated for question category counter \n', writingCounter, readingCounter, plansCounter, memoryCounter, testsCounter);
+
+        // Fill the dependency array with all the category counter state variables here 
+    }, [writingCounter, readingCounter, plansCounter, memoryCounter, testsCounter]); 
+
+
+
     const calculateScore = async (answer) => {
         if (!currentQuestion || answer === 'noop') {
             console.log('⏭️ QuizContext: Skipping score calculation - no question or noop answer');
@@ -215,14 +237,50 @@ export const QuizProvider = ({ children }) => {
             };
 
 
+
+
             
             const key = type.trim().toLowerCase();
             const scoreSetter = scoreSetters[key];
 
             if (scoreSetter) {
-                scoreSetter(prevScore => prevScore + score);
+                scoreSetter(prevScore => prevScore + 1);
+
             }
         };
+
+
+
+        
+        const updateQuestionTypeCounter = (type, score) => {
+
+
+            console.log('Updating the counter of each score category \n, ', type);
+            
+            const counterSetters = {
+
+                readingCount: setReadingCounter,
+                writingCount: setWritingCounter, 
+                plansCount: setPlansCounter, 
+                testsCount: setTestsCounter, 
+                memoryCount: setMemoryCounter
+
+   
+            }
+
+            const key = type.trim().toLowerCase(); 
+            const counterSetter = counterSetters[key]; 
+            if(counterSetter){
+                counterSetter(prevCounter => prevCounter + 1); 
+                
+            }
+
+
+              
+
+        }
+
+
 
         if (userAge === 'adult') {
             console.log('👤 QuizContext: Calculating score for adult');
@@ -290,7 +348,12 @@ export const QuizProvider = ({ children }) => {
             email, 
             setEmail,
             isLoading,
-            error
+            error, 
+            readingCounter, 
+            writingCounter, 
+            memoryCounter, 
+            testsCounter, 
+            plansCounter
         }}>
             {children}
         </QuizContext.Provider>
