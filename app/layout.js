@@ -10,6 +10,11 @@ import Footer from './Components/Footer1';
 import Start from './Components/Start'; 
 import { chewy } from './fonts/chewy';
 
+// Import the auth hook here 
+import { useAnonymousAuth } from "./lib/hooks/useAnonymousAuth";
+import { use } from "react";
+
+
 
 const inter = Inter({
   subsets: ["latin"],
@@ -18,9 +23,8 @@ const inter = Inter({
 
 export default function RootLayout({ children }) {
   
-  
-  
-  
+  console.log('this is the anonymous auth function being called in layout \n', useAnonymousAuth); 
+  useAnonymousAuth(); 
   return (
     <html lang="en" className={`${chewy.variable}`}>
       <head>

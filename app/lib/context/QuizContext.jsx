@@ -14,11 +14,11 @@ const DATABASE_ID = process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID;
 const QUESTION_COLLECTION_ID = process.env.NEXT_PUBLIC_APPWRITE_QUESTION_COLLECTION_ID;
 
 // Log environment variables (without sensitive values)
-console.log('🔍 Appwrite Configuration:', {
-    hasDatabaseId: !!DATABASE_ID,
-    hasQuestionCollectionId: !!QUESTION_COLLECTION_ID,
-    environment: process.env.NODE_ENV
-});
+    // console.log('🔍 Appwrite Configuration:', {
+    //     hasDatabaseId: !!DATABASE_ID,
+    //     hasQuestionCollectionId: !!QUESTION_COLLECTION_ID,
+    //     environment: process.env.NODE_ENV
+    // });
 
 
 
@@ -113,15 +113,15 @@ export const QuizProvider = ({ children }) => {
                 let totalDocuments = 0;
                 let total; 
 
-                console.log('this is the limit \n', limit); 
-                console.log('this is the offset \n', offset); 
+                // console.log('this is the limit \n', limit); 
+                // console.log('this is the offset \n', offset); 
 
 
-                console.log('📥 QuizContext: Fetching questions from Appwrite');
-                console.log('🔗 Appwrite Connection Details:', {
-                    databaseId: DATABASE_ID,
-                    collectionId: QUESTION_COLLECTION_ID
-                });
+                // console.log('📥 QuizContext: Fetching questions from Appwrite');
+                // console.log('🔗 :', {
+                //     databaseId: DATABASE_ID,
+                //     collectionId: QUESTION_COLLECTION_ID
+                // });
 
                 do {
                     const response = await databases.listDocuments(
@@ -134,7 +134,7 @@ export const QuizProvider = ({ children }) => {
                     );
                     
 
-                    console.log(`📄 Fetched ${response.documents.length} questions (offset ${offset})`);
+                    // console.log(`📄 Fetched ${response.documents.length} questions (offset ${offset})`);
 
                   
                     if (response.documents.length === 0) break;

@@ -17,9 +17,7 @@
         place-content: center;
         color: rgb(41, 39, 39);
         position: relative; 
-
-
-
+        
 
 }
 
@@ -83,7 +81,8 @@
 .progressBarContainer {
 
     /* max-width: 1000px;  */
-
+    width: 1000px; 
+    
 
 
 }
@@ -105,18 +104,20 @@
 
 .progressBar{
     height: 1.7em;
-    width: 60vw;
-    max-width: 800px; 
-
-   position: relative;
-   background-color: rgb(96, 96, 239);
+    /*width: 60vw;
+    */max-width: 800px;
+    position: relative;
+    background-color: rgb(96, 96, 239);
     border-radius: 50px;
     -webkit-border-radius: 50px;
     -moz-border-radius: 50px;
     -ms-border-radius: 50px;
     -o-border-radius: 50px;
-
-
+    transition: width 1s ease;
+    -webkit-transition: width 1s ease;
+    -moz-transition: width 1s ease;
+    -ms-transition: width 1s ease;
+    -o-transition: width 1s ease;
 }
 
 .progressBarSubContainer{

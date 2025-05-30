@@ -23,25 +23,25 @@ export const QuizAnswer = () => {
 
     // Log initial props and state
     useEffect(() => {
-        console.log('🎯 Quiz Page Initial State:', {
-            userInfo: {
-                name,
-                sound,
-                userAge
-            },
-            quizState: {
-                currentIndex,
-                quizLength,
-                questionsCount: questions?.length,
-                currentQuestion: currentQuestion ? {
-                    id: currentQuestion.$id,
-                    section: currentQuestion.Section,
-                    type: currentQuestion.Type,
-                    questionText: currentQuestion.questionText
-                } : null,
-                gifURLsCount: gif_URLs?.length
-            }
-        });
+        // console.log('🎯 Quiz Page Initial State:', {
+        //     userInfo: {
+        //         name,
+        //         sound,
+        //         userAge
+        //     },
+        //     quizState: {
+        //         currentIndex,
+        //         quizLength,
+        //         questionsCount: questions?.length,
+        //         currentQuestion: currentQuestion ? {
+        //             id: currentQuestion.$id,
+        //             section: currentQuestion.Section,
+        //             type: currentQuestion.Type,
+        //             questionText: currentQuestion.questionText
+        //         } : null,
+        //         gifURLsCount: gif_URLs?.length
+        //     }
+        // });
     }, []);
 
     // Log state changes

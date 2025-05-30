@@ -3,7 +3,27 @@ import React from 'react'
 import p from '../Styles/PhoneBarChart.module.css'; 
 
 
-function PhoneBarChart() {
+function PhoneBarChart({ writingPercentage,
+    memoryPercentage,
+    readingPercentage,
+    examResultsPercentage,
+    organisationalPercentage}) {
+
+
+        console.log('these are the percentages in the phone bar chart functional component  \n', writingPercentage,
+            memoryPercentage,
+            readingPercentage,
+            examResultsPercentage,
+            organisationalPercentage); 
+
+            console.log('reading percentage in the bar chart page \n', readingPercentage);
+            
+
+
+
+
+
+
   return (
     <>
      <main className={p.mainChartContainer}>
@@ -32,7 +52,7 @@ function PhoneBarChart() {
 
                             <div className={p.progressBarContainer}>
                             
-                            <div className={p.progressBar}>
+                            <div className={p.progressBar} style={{width: `${readingPercentage}%` }} >
                             <div className={p.percentageContainer}>
                                     80%
                                 </div>

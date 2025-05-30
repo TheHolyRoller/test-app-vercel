@@ -57,26 +57,15 @@ function ResultContent() {
     const formatCategoryCounter = (memoryScore, writingScore, readingScore, examResultsScore, organisationalScore ) => {
 
 
-        /**
-         *  'Memory Score: 10\n' +
-            'Writing Score: 10\n' +
-            'Reading Score: 9\n' +
-            'Exam Results Score: 10\n' +
-            'Organisational Score: 12'
-         * 
-         */
-        // Set the hard limits for each category here 
+   
         const memory = 10; 
         const writing = 10; 
         const exam = 10; 
         const reading = 10
         const organisation = 12;
-        // Now implement the formula to set the percentage for each category
-        
+
         const examPercent = (examResultsScore / exam) * 100; 
-
         console.log('this is the exam percentage \n', examPercent)    
-
 
         setExamResultsPercentage( Math.floor((examResultsScore / exam) * 100));
         setWritingPercentage((writingScore / exam) * 100);
@@ -84,16 +73,14 @@ function ResultContent() {
         setReadingPercentage(Math.floor((readingScore / exam) * 112));
         setMemoryPercentage((memoryScore / exam) * 100);
 
-        
 
 
     }
 
     useEffect(() =>{
 
-    console.log('calling format category score function in the useEffect hook')
+    console.log('calling format category score function in the useEffect hook');
     formatCategoryCounter(memoryScore, writingScore, readingScore, examResultsScore, organisationalScore); 
-        // 
 
     }, [])
 
@@ -147,188 +134,15 @@ function ResultContent() {
     return (
         <>
 
-        {/* <section className={r.quizResultsSection}>
-        <div className={r.quizResultsSubContainer}>
-
-        <div className={r.mainTitleContainer}>
-
-            <h1 className={r.mainQuizTitle}>
-                Overview 
-
-            </h1>
-
-
-        </div>
-
-        <section className={r.mainScoreSectionContainer}>
-
-        <div className={r.mainScoreSubContainer}>
-        
-        <h2 className={r.mainScoreElement} >
-
-        <span  style={{display:'inline-block'}}>
-
-        {percentage}%
-        </span>
-
-
-        </h2>
-
-        <div className={r.circle}>
-            `
-        </div>
-        </div>
-        </section>
-
-        <div className={r.scoreSupportingTextContainer}>
-        <div className={r.mainQuizSupportingText} >
-
-        <h3 className={r.scoreIntroText}>
-        Improve your score 
-        </h3>
-        </div>
-        </div>
-
-        <section className={r.mainScoreBoardContainer}>
-        <div className={r.scoreBoardSubContainer}>
-
-                <ul className={r.scoreBoardList}>
-
-                <li className={r.scoreBoardListItem}>
-<div className={r.scoreTitleContainer}>
-<div className={r.scoreTitle}>
-    Reading Score 
-</div>
-
-<div className={r.scoreSupportText}>
-
-</div>
-</div>
-
-<div className={r.scoreNumberContainer}>
-    <div className={r.scoreNumber}>
-    <div className={r.scoreNumSubContainer}>
-    {readingScore}
-    </div>
-</div>
-</div>
-</li> 
-
-<li className={r.scoreBoardListItem}>
-<div className={r.scoreTitleContainer}>
-<div className={r.scoreTitle}>
-    Memory Score 
-</div>
-
-
-<div className={r.scoreSupportText}>
-    Slightly Impacted 
-</div>
-</div>
-
-<div className={r.scoreNumberContainer}>
-<div className={r.scoreNumber}>
-    <div className={r.scoreNumSubContainer}>
-    {memoryScore}
-    </div>
-</div>
-</div>
-</li>
-
-
-<li className={r.scoreBoardListItem}>
-<div className={r.scoreTitleContainer}>
-<div className={r.scoreTitle}>
-    Writing Score 
-</div>
-<div className={r.scoreSupportText}>
-
-    Slightly Impacted 
-</div>
-</div>
-
-
-<div className={r.scoreNumberContainer}>
-
-<div className={r.scoreNumber}>
-    <div className={r.scoreNumSubContainer}>
-    {writingScore}
-    </div>
-</div>
-</div>
-</li>
-
-<li className={r.scoreBoardListItem}>
-<div className={r.scoreTitleContainer}>
-<div className={r.scoreTitle}>
-    Organisational Score 
-
-</div>
-<div className={r.scoreSupportText}>
-
-    Slightly Impacted 
-</div>
-</div>
-
-<div className={r.scoreNumberContainer}>
-<div className={r.scoreNumber}>
-    <div className={r.scoreNumSubContainer}>
-    {organisationalScore}
-    </div>
-</div>
-</div>
-</li>
-
-
-<li className={r.scoreBoardListItem}>
-<div className={r.scoreTitleContainer}>
-<div className={r.scoreTitle}>
-    Exam Score 
-</div>
-<div className={r.scoreSupportText}>
-    Slightly Impacted 
-</div>
-</div>
-
-
-<div className={r.scoreNumberContainer}>
-
-<div className={r.scoreNumber}>
-    <div className={r.scoreNumSubContainer}>
-        {examResultsScore}
-    </div>
-</div>
-</div>
-</li>
-</ul>
-</div>
-</section>
-
-        <section className={r.learnMoreCTAContainer}>
-        <div className={r.learnMoreCTASubContainer}>
-        <div className={r.CTATextContainer}>
-            <div className={r.CTATextSubContainer}>
-                <h4 className={r.CTAText}>
-
-                </h4>
-            </div>
-        </div>
-        <article className={r.CTAButtonContainer}>
-            <div className={r.CTAButtonSubContainer}>
-                <button className={r.CTAButton} onClick={() => router.push('/')}  >
-
-                Learn More 
-
-                </button>
-            </div>
-        </article>
-        </div>
-        </section>
-        </div>
-        </section> */}
-
-        {/* <Barchart/> */}
-        <PhoneBarChart/>
+       
+        {/* <PhoneBarChart/> */}
+        <PhoneBarChart
+        writingPercentage={writingPercentage}
+        memoryPercentage={memoryPercentage}
+        readingPercentage={readingPercentage}
+        examResultsPercentage={examResultsPercentage}
+        organisationalPercentage={organisationalPercentage}
+/>
         
 
 
