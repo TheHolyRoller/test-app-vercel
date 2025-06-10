@@ -9,7 +9,7 @@ import UserInput from '../Components/UserInput';
 
 export default function UserDetails() {
     const audio_URL = 'https://dyslexiaquizapp.s3.eu-west-2.amazonaws.com/audio+doodles/quizzer+name-v1.mp3'; 
-    const currentIMG = 'https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/Dude_User_Name/view?project=test-domain&mode=admin';
+    const currentIMG = 'https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/Dood_Name/view?project=test-domain&mode=admin';
 
     const router = useRouter();
     const { handleAnswer } = useQuiz();

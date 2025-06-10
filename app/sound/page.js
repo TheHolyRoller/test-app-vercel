@@ -27,8 +27,8 @@ export default function SoundPage() {
                         currentQuestion={{
                             questionText: ""
                         }}
-                        audio_URL='https://dyslexiaquizapp.s3.eu-west-2.amazonaws.com/audio+doodles/intro+dood-v1.mp3'
-                        currentIMG='https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/68251a980026fec5e869/view?project=test-domain&mode=admin'
+                        audio_URL=''
+                        currentIMG='https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/Turn_On_Audio/view?project=test-domain&mode=admin'
                     />
 
                 <div style={{outline: '0px solid red', marginTop: '-5rem', position: 'relative', zIndex: '999999999'}} >

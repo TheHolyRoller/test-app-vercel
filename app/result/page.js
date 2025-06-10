@@ -137,11 +137,19 @@ function ResultContent() {
        
         {/* <PhoneBarChart/> */}
         <PhoneBarChart
+        percentage={percentage}
         writingPercentage={writingPercentage}
         memoryPercentage={memoryPercentage}
         readingPercentage={readingPercentage}
         examResultsPercentage={examResultsPercentage}
         organisationalPercentage={organisationalPercentage}
+        writingScore={writingScore}
+        readingScore={readingScore}
+        examResultsScore={examResultsScore}
+        organisationalScore={organisationalScore}
+        memoryScore={memoryScore}
+
+
 />
         
 

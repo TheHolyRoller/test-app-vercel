@@ -34,7 +34,7 @@ export default function EmailPermission() {
                             questionText: "We'll send your detailed results to your email"
                         }}
                         audio_URL={sound ? "https://dyslexiaquizapp.s3.eu-west-2.amazonaws.com/audio+doodles/send+email-v1.mp3" : null}
-                        currentIMG="https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/Dude_Email_Permission/view?project=test-domain&mode=admin"
+                        currentIMG="https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/send_email/view?project=test-domain&mode=admin"
                     
                     />
                 </section>
