@@ -149,8 +149,6 @@ export const QuizProvider = ({ children }) => {
 
                   console.log(`✅ Total questions fetched: ${allQuestions.length}`);
 
-
-
                 if (!hasInitialized.current ) {
                     
 
@@ -235,9 +233,6 @@ export const QuizProvider = ({ children }) => {
                 plans: setOrganisationalScore,
                 tests: setExamResultsScore
             };
-
-
-
 
             
             const key = type.trim().toLowerCase();
@@ -328,6 +323,71 @@ export const QuizProvider = ({ children }) => {
             router.push('/email-permissions');
         }
     };
+
+
+    useEffect(() => {
+
+        const renderResults = async (databases) => {
+
+            try{
+                
+                if(!databases){
+    
+                    return console.error('Database object null could not read files from database'); 
+    
+                }
+    
+                if (!DATABASE_ID || !QUESTION_COLLECTION_ID) {
+                    throw new Error('Missing required Appwrite configuration');
+                }
+    
+                                        
+                const allQuestions = [];
+                const limit = 1000; 
+                let offset = 0;
+                let totalDocuments = 0;
+                let total; 
+    
+    
+                do {
+    
+                    const resultsResponse = await databases.listDocuments(
+                        DATABASE_ID,
+                        QUESTION_COLLECTION_ID,
+                        [
+                          Query.limit(1000),
+                          Query.offset(offset)
+                        ]
+                      );
+    
+                      
+                      allQuestions.push(...resultsResponse.documents);
+                      console.log('this is the length of all QUESTIONS \n', allQuestions.length); 
+                      
+                    // Check the length of the response object here 
+                    if (resultsResponse.documents.length === 0) break;
+
+                    total = resultsResponse.total;
+                    offset += resultsResponse.documents.length;
+    
+                }
+                while(offset < total); 
+    
+                console.log(`✅ Total questions fetched: ${allQuestions.length}`);
+
+
+            }
+            catch(error){
+    
+                console.error('there was a problem reading documents from database: operation unsuccessful \n', error); 
+    
+            }
+    
+        }
+    
+
+
+    }, [])
 
 
     return (

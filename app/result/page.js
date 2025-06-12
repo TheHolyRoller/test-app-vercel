@@ -10,13 +10,16 @@ import { useState } from 'react';
 import Barchart from '../Components/Barchart'; 
 import PhoneBarChart from '../Components/PhoneBarChart'; 
 
+// Import the appwrite credentials here 
+import { databases } from '../lib/appwrite';
+
 
 
 function ResultContent() {
     const searchParams = useSearchParams();
-    const { name } = useUser();
+    const { name, userAge } = useUser();
     const router = useRouter(); 
-    const {percentageScore, setPercentageScore } = useState(0);
+    const [percentageScore, setPercentageScore] = useState(0);
     // Add in the state variables about category score percentage 
     const [writingPercentage, setWritingPercentage] = useState(0); 
     const [memoryPercentage, setMemoryPercentage] = useState(0); 
@@ -36,8 +39,6 @@ function ResultContent() {
     } = useQuiz();
 
 
-
-    
     // Detailed console logging with emojis
     console.log('🎯 === Quiz Results Details ===');
     console.log('👤 User Name:', name);
@@ -53,6 +54,72 @@ function ResultContent() {
     console.log('📋 Organisational Score:', organisationalScore);
     console.log('✨ ======================');
 
+    /**
+     *     memoryPercentage: memoryPercentage, 
+        writingPercentage: writingPercentage, 
+        readingPercentage: readingPercentage, 
+        examResultsPercentage: examResultsPercentage, 
+        organisationalPercentage: organisationalPercentage
+     * 
+     * 
+     */
+
+    const data = {
+
+        score: finalScore, 
+        name: name, 
+        userAge: userAge,
+        inputEmail: email, 
+        memoryScore: memoryScore, 
+        writingScore: writingScore, 
+        readingScore: readingScore, 
+        examResultsScore: examResultsScore, 
+        organisationalScore: organisationalScore, 
+        memoryPercentage: memoryPercentage, 
+        writingPercentage: writingPercentage, 
+        readingPercentage: readingPercentage, 
+        examResultsPercentage: examResultsPercentage, 
+        organisationalPercentage: organisationalPercentage,
+        createdAt: new Date().toISOString()
+
+    }
+
+    console.log('this is the quiz result data saved to the appwrite database \n', data); 
+
+    const saveResults = async (databases, data) => {
+
+
+            console.log('save results function ')
+
+        try{
+
+            const result = await databases.createDocument(
+                
+                
+                process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID,
+                process.env.NEXT_PUBLIC_APPWRITE_RESULTS_COLLECTION_ID, 
+                'unique()', 
+                data
+            
+            ); 
+            console.log('document successfully created'); 
+            console.log('this is the result saved to the database \n', result); 
+
+
+        }
+        catch(error){
+
+            console.error('there was an error saving results operation unsuccessful \n', error); 
+            
+
+        }
+
+
+
+
+    }
+
+
 
     const formatCategoryCounter = (memoryScore, writingScore, readingScore, examResultsScore, organisationalScore ) => {
 
@@ -65,7 +132,7 @@ function ResultContent() {
         const organisation = 12;
 
         const examPercent = (examResultsScore / exam) * 100; 
-        console.log('this is the exam percentage \n', examPercent)    
+        console.log('this is the exam percentage in format category score  \n', examPercent)    
 
         setExamResultsPercentage( Math.floor((examResultsScore / exam) * 100));
         setWritingPercentage((writingScore / exam) * 100);
@@ -73,6 +140,8 @@ function ResultContent() {
         setReadingPercentage(Math.floor((readingScore / exam) * 112));
         setMemoryPercentage((memoryScore / exam) * 100);
 
+
+        
 
 
     }
@@ -82,15 +151,21 @@ function ResultContent() {
     console.log('calling format category score function in the useEffect hook');
     formatCategoryCounter(memoryScore, writingScore, readingScore, examResultsScore, organisationalScore); 
 
-    }, [])
+    }, []); 
+
+
 
 
     useEffect(() => {
 
 
-        console.log('this is the percentage of each category in the useEffect hook \n', writingPercentage, memoryPercentage, readingPercentage, examResultsPercentage, organisationalPercentage);
+        console.log('this is the percentage of each category in the useEffect hook just before save results \n', writingPercentage, memoryPercentage, readingPercentage, examResultsPercentage, organisationalPercentage);
 
-        // Call the function that translates the percentages to a pixel value here 
+        // Call the function that saves the results to the database here 
+        console.log('calling the save results function here '); 
+        saveResults(databases, data);
+
+
 
 
 
