@@ -6,9 +6,6 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import q from '../Styles/Quiz.module.css';
 import Image from 'next/image';
-import { QuizAnswer } from '../Components/QuizAnswer';
-
-
 import QuizCard from '../Components/QuizCard';
 
 export default function Quiz() {
@@ -17,6 +14,7 @@ export default function Quiz() {
     const { questions, currentQuestion, handleAnswer, currentIndex, quizLength, gif_URLs } = useQuiz();
     
     const [answer, setAnswer] = useState();
+
 
 
     // Log initial props and state
@@ -111,10 +109,7 @@ export default function Quiz() {
                         audio_URL={audio_URL}
                         currentIMG={GIF_URL}
                     />
-               <div style={{position: 'relative', zIndex: '9999999'}}>
 
-                <QuizAnswer/> 
-            </div>
                </div>
           
           

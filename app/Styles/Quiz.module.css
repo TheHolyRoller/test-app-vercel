@@ -1,5 +1,3 @@
-
-
 /* Add in the root variables here  */
 
 
@@ -50,19 +48,25 @@ margin-bottom: 5em;
 
 
 .card{
-    /* height: 30rem; */
-    height: 25rem;
-    width: 25rem;
+
+
+    /* height: 55vh; */
+    height: 577px;
+    max-height: 777px !important;
+
+    /* outline: 2px solid red; */
+    width:340px;    
     position: relative;
+    background-color: #ccc;
     background-color: #fbfbfb;
-    margin: 4.85rem auto; 
+    margin: 0 auto; 
+    margin-bottom: 4.9rem;
 
     border-radius: 1rem;
     -webkit-border-radius: 1rem;
     -moz-border-radius: 1rem;
     -ms-border-radius: 1rem;
     -o-border-radius: 1rem;
-
 
 }
 
@@ -86,8 +90,17 @@ margin-bottom: 5em;
     left: 0; 
     right: 0; 
     top: 0;
-    height: 90%; 
+    height: 777px; 
+    width: 345px;
+    background-color: #fbfbfb;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    outline: 3px solid pink;
     z-index: 999999;
+    display: none;
 
     transform:  translate(0rem, -2em) !important; 
     box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
@@ -108,7 +121,17 @@ margin-bottom: 5em;
     bottom: 0; 
     z-index: 0;
     /* height: 35.5rem;  */
-    height: 27rem; 
+    height: 777px; 
+    width: 345px;
+    background-color: #fbfbfb;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    outline: 3px solid #4ecdc4;
+    display: none;
+
     box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
 
 
@@ -125,24 +148,46 @@ margin-bottom: 5em;
  bottom: 0; 
  z-index: 0;
  /* height: 36rem;  */
- height: 27.5rem;
- margin-bottom: -5em;
+ height: 777px;
+ width: 345px;
+ background-color: #fbfbfb;
+ border-radius: 1rem;
+ -webkit-border-radius: 1rem;
+ -moz-border-radius: 1rem;
+ -ms-border-radius: 1rem;
+ -o-border-radius: 1rem;
+ outline: 3px solid #45b7d1;
+ display: none;
+
+ /* margin-bottom: -5em; */
  box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
 
 }
 
 
+
 #cardFour{
 
-    position: absolute;
+    /* position: absolute;
     top: 0; 
     left: 0; 
     right: 0; 
     bottom: 0; 
-    z-index: 0;
+    z-index: 0; */
+    position: relative;
+    display: none;
+
     /* height: 34.9rem;  */
-    height: 26.5rem;
-    margin-bottom: -5em;
+    height: 777px;
+    max-height: 777px;
+    width: 345px;
+    background-color: #fbfbfb;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    outline: 3px solid #f39c12;
     box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
 
 }
@@ -307,6 +352,9 @@ margin-bottom: 5em;
     display: flex; 
     gap: 5rem; 
     margin: 0 auto; 
+    outline: 5px solid green;
+    position: absolute;
+    bottom: 0;
 
     
 
@@ -398,7 +446,383 @@ background-color: #82c34a;
 
 }
 
+/* ============ INTEGRATED ANSWER STYLES FROM Answer.module.css ============ */
 
+.mainAnswerContainer{
+    position: absolute;
+    bottom: 7rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: grid;
+    place-content: center;  
+    text-transform: uppercase;
+    background: none;
+    z-index: 1000;
+    width: 130%;
+    /* outline: 5px solid blue; */
+}
+
+.answerSection{
+
+}
+
+.buttonList{
+    display: flex; 
+    gap: 2.8rem; 
+}
+
+.button{
+    all: unset;
+    border-radius: 10px;
+    display: grid;
+    cursor: pointer !important;
+    place-content: center;
+    width: 3rem !important;
+    height: 3rem !important;
+    padding: 0 0.1rem;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.buttonStackContainer{
+    position: relative;
+    display: grid;
+    place-content: center;      
+    height: 3rem; 
+}
+
+.buttonStack{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+     height: 100%;
+     z-index: -1;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+}
+
+#noButton{
+    background-color: rgb(241, 52, 39); 
+}
+
+#noButton::before {
+    /* content: "";
+    position: absolute;
+    top: 65px;
+    left:15px;
+    width: 50%;
+    height: 50%;
+    background-color: #bbb;
+    box-shadow: 0 0 10px 10px #bbb;
+    z-index: -1;
+    transform: skew(-19deg, -4deg);
+    -webkit-transform: skew(-19deg, -4deg);
+    -moz-transform: skew(-19deg, -4deg);
+    -ms-transform: skew(-19deg, -4deg);
+    -o-transform: skew(-19deg, -4deg); */
+}   
+
+.numSpan{
+    position: absolute;
+    top:0;
+    right: 0;
+    font-size: 0.75rem !important;
+    margin-top: -10px;
+    margin-right: -9px; 
+    padding-bottom: 3px;
+    padding-right: 3px; 
+    padding-left: 3px; 
+    padding-top: 3px; 
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    width: 1.2em;
+    outline: 1.5px solid white; 
+    height: 1.2em; 
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+    padding: 0.575rem;
+}
+
+.sometimesSpan{
+    position: absolute;
+    top:0;
+    right: 0;
+    margin-top: -5px;
+    margin-right: -9px; 
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    width: 2em;
+    height: 2em;
+    outline: 1.5px solid white; 
+    display: grid;
+    place-content: center;
+}
+
+#noStackOne{
+    transform: rotate(3deg);
+    -webkit-transform: rotate(3deg);
+    -moz-transform: rotate(3deg);
+    -ms-transform: rotate(3deg);
+    -o-transform: rotate(3deg);
+    width: 105%;
+    height: 105%;
+    background-color: rgb(241, 52, 39); 
+    opacity: 1; 
+}
+
+#noStackTwo{
+    background-color: rgb(241, 52, 39);
+    opacity: 0.4;
+    transform: rotate(-2deg);
+    -webkit-transform: rotate(-2deg);
+    -moz-transform: rotate(-2deg);
+    -ms-transform: rotate(-2deg);
+    -o-transform: rotate(-2deg);
+    width: 106%;
+    height: 110%;
+    margin-left: -2px;
+}
+
+#noStackThree{
+    background-color: rgb(241, 52, 39);
+    opacity: 1;
+    transform: rotate(-1.5deg);
+    -webkit-transform: rotate(-1.5deg);
+    -moz-transform: rotate(-1.5deg);
+    -ms-transform: rotate(-1.5deg);
+    -o-transform: rotate(-1.5deg);
+    width: 108%;
+    height: 110%;
+    margin-top: -1px;
+}
+
+#noStackFour{
+    background-color: rgba(243, 80, 68, 0.916);
+    opacity: 0.9;
+    transform: rotate(-3deg);
+    -webkit-transform: rotate(-3deg);
+    -moz-transform: rotate(-3deg);
+    -ms-transform: rotate(-3deg);
+    -o-transform: rotate(-3deg);
+    width: 110%;
+    height: 110%;
+    margin-right: -7px; 
+    margin-top: -2px;
+}
+
+#noStackFive{
+    background-color: rgb(241, 52, 39);
+    opacity: 0.4;
+    transform: rotate(1deg);
+    -webkit-transform: rotate(1deg);
+    -moz-transform: rotate(1deg);
+    -ms-transform: rotate(1deg);
+    -o-transform: rotate(1deg);
+    width: 109%;
+    height: 110%;
+    margin-top: 0px;
+    margin-left: 2px; 
+}
+
+#noStackSix{
+    background-color: rgb(241, 52, 39);
+    opacity: 0.4;
+    transform: rotate(1deg);
+    -webkit-transform: rotate(1deg);
+    -moz-transform: rotate(1deg);
+    -ms-transform: rotate(1deg);
+    -o-transform: rotate(1deg);
+    width: 109%;
+    height: 110%;
+    margin-top: -3px;
+}
+
+#sometimesButton{
+    background-color: rgb(245, 207, 48);
+    display: grid;
+    place-content: center;
+    font-size: 0.8rem;
+    text-align: center;
+    padding-right: 0.2rem;
+    position: relative;
+}
+
+#sometimesButton::after{
+ 
+}
+
+#sometimesButton::before {
+    /* content: "";
+    position: absolute;
+    top: 55px;
+    left:15px;
+    width: 50%;
+    height: 50%;
+    background-color: #bbb;
+    box-shadow: 0 0 10px 10px #bbb;
+    z-index: -1;
+    transform: skew(-19deg, -4deg);
+    -webkit-transform: skew(-19deg, -4deg);
+    -moz-transform: skew(-19deg, -4deg);
+    -ms-transform: skew(-19deg, -4deg);
+    -o-transform: skew(-19deg, -4deg); */
+}   
+
+#sometimesStackOne{
+    background-color: rgb(245, 207, 48);
+    opacity: 0;
+    transform: rotate(3deg);
+    -webkit-transform: rotate(3deg);
+    -moz-transform: rotate(3deg);
+    -ms-transform: rotate(3deg);
+    -o-transform: rotate(3deg);
+    width: 109%;
+    height: 110%;
+    margin-top: -3px;
+}
+
+#sometimesStackTwo{
+     background-color: rgb(245, 207, 48);
+     opacity: 0.4;
+     transform: rotate(2deg);
+     -webkit-transform: rotate(2deg);
+     -moz-transform: rotate(2deg);
+     -ms-transform: rotate(2deg);
+     -o-transform: rotate(2deg);
+     width: 105%;
+     height: 110%;
+     margin-top: -2px;
+}
+
+#sometimesStackThree{
+     background-color: rgb(245, 207, 48);
+     opacity: 0.4;
+     transform: rotate(-2.5deg);
+     -webkit-transform: rotate(-2.5deg);
+     -moz-transform: rotate(-2.5deg);
+     -ms-transform: rotate(-2.5deg);
+     -o-transform: rotate(-2.5deg);
+     width: 105%;
+     height: 110%;
+     margin-top: -3px;
+}
+
+#sometimesStackFour{
+     background-color: rgb(245, 207, 48);
+     opacity: 0.63;
+     width: 105%;
+     height: 111%;
+     transform: rotate(-2.5deg);
+     -webkit-transform: rotate(-2.5deg);
+     -moz-transform: rotate(-2.5deg);
+     -ms-transform: rotate(-2.5deg);
+     -o-transform: rotate(-2.5deg);
+     margin-top: 3px;
+}
+
+#sometimesStackFive{
+    background-color: rgb(224, 190, 55);
+    opacity: 0.45;
+    transform: rotate(-2.5deg);
+    -webkit-transform: rotate(-2.5deg);
+    -moz-transform: rotate(-2.5deg);
+    -ms-transform: rotate(-2.5deg);
+    -o-transform: rotate(-2.5deg);
+    width: 105%;
+    height: 110%;
+    margin-left: -3px;
+}
+
+#sometimesStackSix{
+    background-color: rgb(245, 207, 48);
+    opacity: 0.55;
+    transform: rotate(-2.5deg);
+    -webkit-transform: rotate(-2.5deg);
+    -moz-transform: rotate(-2.5deg);
+    -ms-transform: rotate(-2.5deg);
+    -o-transform: rotate(-2.5deg);
+    width: 110%;
+    height: 110%;
+    margin-right: -3px;
+}
+
+#yesButton{
+    background-color: rgb(156, 194, 109);
+    padding: 4px; 
+}
+
+#yesButton::before {
+    /* content: "";
+    position: absolute;
+    top: 64px;
+    left:10px;
+    width: 50%;
+    height: 50%;
+    background-color: #bbb;
+    box-shadow: 0 0 10px 10px #bbb;
+    z-index: -1;
+    transform: skew(-19deg, -4deg);
+    -webkit-transform: skew(-19deg, -4deg);
+    -moz-transform: skew(-19deg, -4deg);
+    -ms-transform: skew(-19deg, -4deg);
+    -o-transform: skew(-19deg, -4deg); */
+}   
+
+#yesStackOne{
+    background-color: rgb(156, 194, 109);
+    opacity: 0.45;
+    transform: rotate(-2.5deg);
+    -webkit-transform: rotate(-2.5deg);
+    -moz-transform: rotate(-2.5deg);
+    -ms-transform: rotate(-2.5deg);
+    -o-transform: rotate(-2.5deg);
+    margin-right: -2px; 
+    width: 105%; 
+    height: 105%; 
+}
+
+#yesStackTwo{
+    background-color: rgb(137, 171, 96);
+    opacity: 0.58;
+    transform: rotate(2.5deg);
+    -webkit-transform: rotate(2.5deg);
+    -moz-transform: rotate(2.5deg);
+    -ms-transform: rotate(2.5deg);
+    -o-transform: rotate(2.5deg);
+    margin-left: -2px;
+    width: 105%;
+    height: 105%;
+}
+
+#yesStackThree{
+
+}
+
+#yesStackFour{
+
+}
+
+#yesStackFive{
+
+}
+
+#yesStackSix{
+
+}
 
 /* Add in the media queries here  */
 
