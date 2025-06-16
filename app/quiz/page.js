@@ -102,6 +102,7 @@ export default function Quiz() {
             <div className={q.quizCardContainer}>
 
             <QuizCard 
+            
 
                         questionText={questionText}
                         Section={Section}
