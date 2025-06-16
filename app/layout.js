@@ -32,13 +32,13 @@ export default function RootLayout({ children }) {
         <meta name="description" content="A quiz application to help identify signs of dyslexia" />
       </head>
       <body className={`${inter.variable} antialiased`}>
-      <Navbar/>
+      {/* <Navbar/> */}
         <UserProvider>
           <QuizProvider>
             {children}
           </QuizProvider>
         </UserProvider>
-        <Footer/> 
+        {/* <Footer/>  */}
         
 
       </body>

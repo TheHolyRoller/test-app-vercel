@@ -4,6 +4,7 @@ import q from '../Styles/Quiz.module.css';
 import { useState, useEffect } from 'react';
 import { useQuiz } from '../lib/context/QuizContext';
 import { useUser } from '../lib/context/UserContext';
+import { usePathname } from 'next/navigation';
 
 const QuizCard = ({ 
     questionText, 
@@ -15,6 +16,7 @@ const QuizCard = ({
 
     // Answer button state and logic from QuizAnswer
     const { handleAnswer } = useQuiz();
+    const pathname = usePathname();
     const [answer, setAnswer] = useState();
     const [counters, setCounter] = useState({
         yesNum: 0, 
@@ -149,70 +151,72 @@ const QuizCard = ({
             <article className={q.card} id={q.cardFour}></article>
         </article>
 
-        {/* Integrated Answer Section - Moved outside card to prevent overlap */}
-        <section className={q.mainAnswerContainer} >
-            <article className={q.answerSection}>
-                <div className={q.buttonList}>
+        {/* Integrated Answer Section - Only show on /quiz route */}
+        {pathname === '/quiz' && (
+            <section className={q.mainAnswerContainer} >
+                <article className={q.answerSection}>
+                    <div className={q.buttonList}>
 
-                    <div className={q.buttonStackContainer} 
-                      onClick={() => handleClick('no')}
-                      onMouseEnter={() => console.log('🖱️ Hovering No Button')}
-                    >
-                        <div className={q.button} id={q.noButton} onClick={() => increment('noNum')} >
-                            {counters.noNum > 0 && (
-                                <span className={q.numSpan}>
-                                {counters.noNum}
-                                </span>
-                            )}
-                            No 
+                        <div className={q.buttonStackContainer} 
+                          onClick={() => handleClick('no')}
+                          onMouseEnter={() => console.log('🖱️ Hovering No Button')}
+                        >
+                            <div className={q.button} id={q.noButton} onClick={() => increment('noNum')} >
+                                {counters.noNum > 0 && (
+                                    <span className={q.numSpan}>
+                                    {counters.noNum}
+                                    </span>
+                                )}
+                                No 
+                            </div>
+                            <div className={q.buttonStack} id={q.noStackOne}></div>
+                            <div className={q.buttonStack} id={q.noStackTwo}></div>
+                            <div className={q.buttonStack} id={q.noStackThree}></div>
+                            <div className={q.buttonStack} id={q.noStackFour}></div>
+                            <div className={q.buttonStack} id={q.noStackFive}></div>
+                            <div className={q.buttonStack} id={q.noStackSix}></div>
                         </div>
-                        <div className={q.buttonStack} id={q.noStackOne}></div>
-                        <div className={q.buttonStack} id={q.noStackTwo}></div>
-                        <div className={q.buttonStack} id={q.noStackThree}></div>
-                        <div className={q.buttonStack} id={q.noStackFour}></div>
-                        <div className={q.buttonStack} id={q.noStackFive}></div>
-                        <div className={q.buttonStack} id={q.noStackSix}></div>
-                    </div>
 
-                    <div className={q.buttonStackContainer} onClick={() => handleClick('sometimes')} onMouseEnter={() => console.log('🖱️ Hovering Sometimes Button')} >
-                        <div className={q.button} id={q.sometimesButton} onClick={() => increment('sometimesNum')} >
-                            {counters.sometimesNum > 0 && (
-                                <span className={q.numSpan}>
-                                {counters.sometimesNum}
-                                </span>
-                            )}
-                            Some 
-                            times 
+                        <div className={q.buttonStackContainer} onClick={() => handleClick('sometimes')} onMouseEnter={() => console.log('🖱️ Hovering Sometimes Button')} >
+                            <div className={q.button} id={q.sometimesButton} onClick={() => increment('sometimesNum')} >
+                                {counters.sometimesNum > 0 && (
+                                    <span className={q.numSpan}>
+                                    {counters.sometimesNum}
+                                    </span>
+                                )}
+                                Some 
+                                times 
+                            </div>
+                            <div className={q.buttonStack} id={q.sometimesStackOne}></div>
+                            <div className={q.buttonStack} id={q.sometimesStackTwo}></div>
+                            <div className={q.buttonStack} id={q.sometimesStackThree}></div>
+                            <div className={q.buttonStack} id={q.sometimesStackFour}></div>
+                            <div className={q.buttonStack} id={q.sometimesStackFive}></div>
+                            <div className={q.buttonStack} id={q.sometimesStackSix}></div>
                         </div>
-                        <div className={q.buttonStack} id={q.sometimesStackOne}></div>
-                        <div className={q.buttonStack} id={q.sometimesStackTwo}></div>
-                        <div className={q.buttonStack} id={q.sometimesStackThree}></div>
-                        <div className={q.buttonStack} id={q.sometimesStackFour}></div>
-                        <div className={q.buttonStack} id={q.sometimesStackFive}></div>
-                        <div className={q.buttonStack} id={q.sometimesStackSix}></div>
-                    </div>
 
-                    <div className={q.buttonStackContainer}   
-                    onClick={() => handleClick('yes')}
-                    onMouseEnter={() => console.log('🖱️ Hovering Yes Button')}>
-                        <div className={q.button} id={q.yesButton} onClick={() => increment('yesNum')}>
-                            {counters.yesNum > 0 && (
-                                <span className={q.numSpan}>
-                                {counters.yesNum}
-                                </span>
-                            )}
-                            Yes 
+                        <div className={q.buttonStackContainer}   
+                        onClick={() => handleClick('yes')}
+                        onMouseEnter={() => console.log('🖱️ Hovering Yes Button')}>
+                            <div className={q.button} id={q.yesButton} onClick={() => increment('yesNum')}>
+                                {counters.yesNum > 0 && (
+                                    <span className={q.numSpan}>
+                                    {counters.yesNum}
+                                    </span>
+                                )}
+                                Yes 
+                            </div>
+                            <div className={q.buttonStack} id={q.yesStackOne}></div>
+                            <div className={q.buttonStack} id={q.yesStackTwo}></div>
+                            <div className={q.buttonStack} id={q.yesStackThree}></div>
+                            <div className={q.buttonStack} id={q.yesStackFour}></div>
+                            <div className={q.buttonStack} id={q.yesStackFive}></div>
+                            <div className={q.buttonStack} id={q.yesStackSix}></div>
                         </div>
-                        <div className={q.buttonStack} id={q.yesStackOne}></div>
-                        <div className={q.buttonStack} id={q.yesStackTwo}></div>
-                        <div className={q.buttonStack} id={q.yesStackThree}></div>
-                        <div className={q.buttonStack} id={q.yesStackFour}></div>
-                        <div className={q.buttonStack} id={q.yesStackFive}></div>
-                        <div className={q.buttonStack} id={q.yesStackSix}></div>
                     </div>
-                </div>
-            </article>
-        </section>
+                </article>
+            </section>
+        )}
         </>
     );
 };
