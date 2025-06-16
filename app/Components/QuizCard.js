@@ -41,6 +41,13 @@ const QuizCard = ({
         handleAnswer(userAnswer);
     };
 
+    // Scroll to top when on quiz route
+    useEffect(() => {
+        if (pathname === '/quiz') {
+            window.scrollTo(0, 0);
+        }
+    }, [pathname]);
+
     console.log("Rendering QuizCard with the following props:");
     console.log("Question Text:", questionText);
     console.log("Audio URL:", audio_URL);

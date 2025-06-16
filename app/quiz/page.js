@@ -103,7 +103,6 @@ export default function Quiz() {
 
             <QuizCard 
 
-            //  style={{outline: 'px solid lime', position: 'relative', zIndex: '9999999'}}
                         questionText={questionText}
                         Section={Section}
                         audio_URL={audio_URL}
