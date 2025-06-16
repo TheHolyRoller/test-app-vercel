@@ -96,7 +96,7 @@ const QuizCard = ({
             className={q.card} 
             id={q.firstCARD} 
             style={{
-                marginTop: pathname === '/quiz' ? '-5em' : '0'
+                marginTop: pathname === '/quiz' ? '-3em' : '0'
             }}
         >
             <div 
