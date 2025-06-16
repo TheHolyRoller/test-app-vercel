@@ -265,7 +265,7 @@ margin-bottom: 5em;
 
     color: black !important;
     font-size: 1.3rem; 
-    width: 90%; 
+    width: 70%; 
     text-align: center;
     margin: 0 auto; 
     text-transform: uppercase;
@@ -284,6 +284,9 @@ margin-bottom: 5em;
     color: black !important; 
     position: relative; 
     z-index: 99999;
+    margin-top: 2em; 
+    margin-bottom: 4.5em; 
+
 
 
 
@@ -451,7 +454,7 @@ background-color: #82c34a;
 
 .mainAnswerContainer{
     position: absolute;
-    bottom: 7rem;
+    bottom: 9rem;
     left: 50%;
     transform: translateX(-50%);
     display: grid;
