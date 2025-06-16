@@ -85,7 +85,13 @@ const QuizCard = ({
 
     return (
         <>
-        <article className={q.card} id={q.firstCARD} >
+        <article 
+            className={q.card} 
+            id={q.firstCARD} 
+            style={{
+                marginTop: pathname === '/quiz' ? '-5em' : '0'
+            }}
+        >
             <div 
                 className={q.cardCategoryColorContainer} 
                 style={{
