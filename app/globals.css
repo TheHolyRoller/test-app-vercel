@@ -28,8 +28,23 @@
 body {
   background: white;
   color: var(--foreground);
-  font-family: var(--font-chewy), sans-serif
+  font-family: var(--font-chewy), sans-serif;
+  /* Disable pull-to-refresh on mobile */
+  overscroll-behavior: none;
+  overscroll-behavior-y: none;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x pan-down pinch-zoom;
+}
 
+html {
+  overscroll-behavior: none;
+  overscroll-behavior-y: none;
+}
+
+/* Additional mobile refresh prevention */
+* {
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 
