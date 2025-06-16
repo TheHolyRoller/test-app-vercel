@@ -48,35 +48,6 @@ const QuizCard = ({
         }
     }, [pathname]);
 
-    // Disable pull-to-refresh on mobile browsers
-    useEffect(() => {
-        const preventRefresh = (e) => {
-            // Prevent pull-to-refresh
-            if (e.touches.length === 1 && window.scrollY === 0) {
-                e.preventDefault();
-            }
-        };
-
-        const preventDefaultRefresh = (e) => {
-            if (e.key === 'F5' || (e.ctrlKey && e.key === 'r')) {
-                e.preventDefault();
-            }
-        };
-
-        // Add touch event listeners for mobile
-        document.addEventListener('touchstart', preventRefresh, { passive: false });
-        document.addEventListener('touchmove', preventRefresh, { passive: false });
-        
-        // Add keyboard event listener for desktop refresh prevention
-        document.addEventListener('keydown', preventDefaultRefresh);
-
-        return () => {
-            document.removeEventListener('touchstart', preventRefresh);
-            document.removeEventListener('touchmove', preventRefresh);
-            document.removeEventListener('keydown', preventDefaultRefresh);
-        };
-    }, []);
-
     console.log("Rendering QuizCard with the following props:");
     console.log("Question Text:", questionText);
     console.log("Audio URL:", audio_URL);
