@@ -30,9 +30,18 @@ export default function RootLayout({ children }) {
   
   const pathname = usePathname();
   const isQuizOrResultsPage = pathname.includes('/quiz') || pathname.includes('/result');
+  const isCategoryPage = pathname.includes('/category');
+  const isHomePage = pathname === '/';
   
   return (
-    <html lang="en" className={`${chewy.variable} ${nunito.variable}`}>
+    <html 
+      lang="en" 
+      className={`${chewy.variable} ${nunito.variable}`}
+      style={{
+        backgroundColor: (isCategoryPage || isHomePage) ? '#f3f3f3' : (isQuizOrResultsPage ? '#eaeaea' : 'inherit'),
+        minHeight: '100vh'
+      }}
+    >
       <head>
         <title>Dyslexia Quiz App</title>
         <meta name="description" content="A quiz application to help identify signs of dyslexia" />
@@ -40,7 +49,6 @@ export default function RootLayout({ children }) {
       <body 
         className={`${inter.variable} antialiased`}
         style={{
-          backgroundColor: isQuizOrResultsPage ? '#eaeaea' : 'inherit',
           minHeight: '100vh'
         }}
       >

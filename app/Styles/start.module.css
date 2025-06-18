@@ -76,10 +76,6 @@ font-size: clamp(1.5rem + 1vw, 2rem, 3rem);
     display: grid;  
     place-content: center;
     
-    /* Add this into a media query  */
-    /* padding-top: 4em;  */
-
-
 
 
 }

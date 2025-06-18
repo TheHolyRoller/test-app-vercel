@@ -166,6 +166,7 @@ const QuizCard = ({
             }}
         />
         
+
         <article 
             className={`${q.card} ${nunito.className}`} 
             id={q.firstCARD} 
@@ -311,6 +312,8 @@ const QuizCard = ({
                             <div className={q.buttonStack} id={q.yesStackFour}></div>
                             <div className={q.buttonStack} id={q.yesStackFive}></div>
                             <div className={q.buttonStack} id={q.yesStackSix}></div>
+                            <div className={q.buttonStack} id={q.yesStackSeven}></div>
+
                         </div>
                     </div>
                 </article>

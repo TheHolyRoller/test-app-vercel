@@ -9,7 +9,7 @@ import u from '../Styles/understand.module.css';
 import png from '../assets/image 41.png'; 
 import n from '../assets/Notes.svg'; 
 import lg from '../assets/Large_Group.png'; 
-
+import group from '../assets/Group 633184.svg';
 
 
 
@@ -26,7 +26,7 @@ function Understand() {
 
     <header className={u.headerImageContainer}>
 
-    <Image className={u.mainImage}  src={lg} width={5000} height={500} alt='notes' /> 
+    <Image className={u.mainImage}  src={n} width={5000} height={500} alt='notes' /> 
 
     </header>
     
