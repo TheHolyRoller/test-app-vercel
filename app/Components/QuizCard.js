@@ -119,6 +119,31 @@ const QuizCard = ({
         }
     }
 
+    const getLabelColorBySection = (Section) => {
+        // Handle undefined or null case
+        if (!Section) {
+            return '#3a2850';
+        }
+
+        // Normalize the section name
+        const normalizedSection = Section.trim().toLowerCase();
+
+        switch(normalizedSection) {
+            case 'reading': 
+                return 'rgb(90, 170, 115)'; // Darker green
+            case 'writing': 
+                return 'rgb(25, 100, 160)'; // Darker blue
+            case 'plans': 
+                return 'rgb(140, 35, 25)'; // Darker red
+            case 'memory': 
+                return 'rgb(180, 90, 15)'; // Darker orange
+            case 'tests': 
+                return 'rgb(200, 150, 0)'; // Darker yellow
+            default: 
+                return '#3a2850';  // Darker purple
+        }
+    }
+
     // Add debug logging for the component render
     console.log('QuizCard render - Section:', Section);
     console.log('Selected card color:', getColorBySection(Section));
@@ -178,7 +203,7 @@ const QuizCard = ({
                         {/* Add in the category section container here  */}
 
 
-                        <div className={`${q.labelContainer} ${nunito.className}`}>
+                        <div className={`${q.labelContainer} ${nunito.className}`} style={{backgroundColor: getLabelColorBySection(Section)}}>
 
                         {Section}
                         </div>

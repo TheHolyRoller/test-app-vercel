@@ -273,7 +273,6 @@ margin-bottom: 5em;
     -o-border-radius:25px;
     display: grid;
     place-content: center;
-    background-color: #5ea772;
     text-transform: uppercase;
     margin-bottom: -0.5em;
     font-family: var(--font-nunito), sans-serif;
@@ -511,13 +510,18 @@ background-color: #82c34a;
     display: grid;
     cursor: pointer !important;
     place-content: center;
-    width: 3rem !important;
-    height: 3rem !important;
-    padding: 0 0.1rem;
+    width: calc(3rem + 10px) !important;
+    height: calc(3rem + 10px) !important;
+    padding: 0;
     font-family: var(--font-chewy), cursive;
     font-weight: 400;
     font-size: 1rem;
     text-transform: uppercase;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-touch-callout: none;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
@@ -528,7 +532,7 @@ background-color: #82c34a;
     position: relative;
     display: grid;
     place-content: center;      
-    height: 3rem; 
+    height: calc(3rem + 10px); 
 }
 
 .buttonStack{
@@ -696,7 +700,6 @@ background-color: #82c34a;
     place-content: center;
     font-size: 0.8rem;
     text-align: center;
-    padding-right: 0.2rem;
     position: relative;
     color: #686886;
 }
@@ -802,7 +805,6 @@ background-color: #82c34a;
 
 #yesButton{
     background-color: rgb(156, 194, 109);
-    padding: 4px; 
 }
 
 #yesButton::before {
