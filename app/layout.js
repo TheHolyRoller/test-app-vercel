@@ -10,6 +10,7 @@ import Footer from './Components/Footer1';
 import Start from './Components/Start'; 
 import { chewy } from './fonts/chewy';
 import { nunito } from './fonts/nunito';
+import { usePathname } from 'next/navigation';
 
 // Import the auth hook here 
 import { useAnonymousAuth } from "./lib/hooks/useAnonymousAuth";
@@ -26,13 +27,23 @@ export default function RootLayout({ children }) {
   
   console.log('this is the anonymous auth function being called in layout \n', useAnonymousAuth); 
   useAnonymousAuth(); 
+  
+  const pathname = usePathname();
+  const isQuizOrResultsPage = pathname.includes('/quiz') || pathname.includes('/result');
+  
   return (
     <html lang="en" className={`${chewy.variable} ${nunito.variable}`}>
       <head>
         <title>Dyslexia Quiz App</title>
         <meta name="description" content="A quiz application to help identify signs of dyslexia" />
       </head>
-      <body className={`${inter.variable} antialiased`}>
+      <body 
+        className={`${inter.variable} antialiased`}
+        style={{
+          backgroundColor: isQuizOrResultsPage ? '#eaeaea' : 'inherit',
+          minHeight: '100vh'
+        }}
+      >
       {/* <Navbar/> */}
         <UserProvider>
           <QuizProvider>

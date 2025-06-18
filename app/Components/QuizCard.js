@@ -5,6 +5,8 @@ import { useState, useEffect } from 'react';
 import { useQuiz } from '../lib/context/QuizContext';
 import { useUser } from '../lib/context/UserContext';
 import { usePathname } from 'next/navigation';
+import { nunito } from '../fonts/nunito';
+import { chewy } from '../fonts/chewy';
 
 const QuizCard = ({ 
     questionText, 
@@ -71,7 +73,7 @@ const QuizCard = ({
 
         switch(normalizedSection) {
             case 'reading': 
-                return 'rgb(81, 216, 139)'; 
+                return 'rgb(120, 213, 145)'; 
             case 'writing': 
                 return 'rgb(44, 152, 224)'; 
             case 'plans': 
@@ -86,23 +88,75 @@ const QuizCard = ({
         }
     }
 
+    const getNavbarColorBySection = (Section) => {
+        // Add debug logging
+        console.log('getNavbarColorBySection called with:', Section);
+        
+        // Handle undefined or null case
+        if (!Section) {
+            console.warn('Section is undefined or null, using default navbar color');
+            return '#2c1a3e';
+        }
+
+        // Normalize the section name
+        const normalizedSection = Section.trim().toLowerCase();
+        console.log('Normalized navbar section:', normalizedSection);
+
+        switch(normalizedSection) {
+            case 'reading': 
+                return 'rgb(119, 210, 143)'; 
+            case 'writing': 
+                return 'rgb(30, 120, 180)'; 
+            case 'plans': 
+                return 'rgb(160, 40, 30)'; 
+            case 'memory': 
+                return 'rgb(200, 100, 20)'; 
+            case 'tests': 
+                return 'rgb(220, 170, 10)'; 
+            default: 
+                console.warn('Unknown navbar section:', Section, 'using default navbar color');
+                return '#2c1a3e';  
+        }
+    }
+
     // Add debug logging for the component render
     console.log('QuizCard render - Section:', Section);
-    console.log('Selected color:', getColorBySection(Section));
+    console.log('Selected card color:', getColorBySection(Section));
+    console.log('Selected navbar color:', getNavbarColorBySection(Section));
 
     return (
         <>
+        {/* Navbar background strip */}
+        <div 
+            className={q.navbarStrip}
+            style={{
+                backgroundColor: getNavbarColorBySection(Section),
+                width: '100%',
+                height: '120px',
+                position: 'fixed',
+                top: 0,
+                left: 0,
+                zIndex: 100,
+                boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
+            }}
+        />
+        
         <article 
-            className={q.card} 
+            className={`${q.card} ${nunito.className}`} 
             id={q.firstCARD} 
             style={{
-                marginTop: pathname === '/quiz' ? '-3em' : '0'
+                marginTop: pathname === '/quiz' ? '-1em' : '0',
+                position: 'relative',
+                zIndex: 200,
+                boxShadow: '0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.06)'
+
             }}
         >
             <div 
                 className={q.cardCategoryColorContainer} 
                 style={{
                     backgroundColor: getColorBySection(Section),
+                    boxShadow: '0 -2px 8px rgba(0, 0, 0, 0.1), -2px 0 8px rgba(0, 0, 0, 0.1), 2px 0 8px rgba(0, 0, 0, 0.1)'
                 }}
             >
                 {audio_URL && (
@@ -118,17 +172,25 @@ const QuizCard = ({
                     </audio>
                 )}
 
-                <div className={q.categoryLabelContainer}>
-                    <label className={q.categoryLabel}>
+                <div className={`${q.categoryLabelContainer} ${nunito.className}`}>
+                    <label className={`${q.categoryLabel} ${nunito.className}`}>
+
+                        {/* Add in the category section container here  */}
+
+
+                        <div className={`${q.labelContainer} ${nunito.className}`}>
+
                         {Section}
+                        </div>
                     </label>
                 </div>
             </div>
 
             {questionText && (
-                <div className={q.questionTextContainer} style={{outline: '0px solid red', color: 'black', position: 'relative', zIndex: '9999', marginTop: '1em', marginBottom: '5rem'}} >
-                    <h2 className={q.questionText}>
+                <div className={`${q.questionTextContainer} ${nunito.className}`} >
+                    <h2 className={`${q.questionText} ${nunito.className}`}>
                         {questionText}
+                        {/* I tend to immediately forget what the teacher says even when I listen carefully     */}
                         <span>
                             {currentQuestion?.questionText}
                         </span>
@@ -137,7 +199,7 @@ const QuizCard = ({
             )}
             
             <div className={q.imageSectionContainer}>
-                <div className={q.doodleContainer} style={{}}>
+                <div className={q.doodleContainer}>
                     {currentIMG && (
                         <Image 
                             src={currentIMG}
@@ -150,7 +212,6 @@ const QuizCard = ({
                             style={{
                                 marginTop: '-4.5rem',
                                 objectFit: 'contain', 
-                                outline: '0px solid red',
                                 zIndex: '0'
                             }}
                         />
@@ -158,23 +219,23 @@ const QuizCard = ({
                 </div>
             </div>
 
-                    
-            <article className={q.card} id={q.cardThree}></article>
+            <article className={q.card} id={q.cardOne}></article>
             <article className={q.card} id={q.cardTwo}></article>
+            <article className={q.card} id={q.cardThree}></article>
             <article className={q.card} id={q.cardFour}></article>
         </article>
 
         {/* Integrated Answer Section - Only show on /quiz route */}
         {pathname === '/quiz' && (
-            <section className={q.mainAnswerContainer} >
-                <article className={q.answerSection}>
-                    <div className={q.buttonList}>
+            <section className={`${q.mainAnswerContainer} ${nunito.className}`}>
+                <article className={`${q.answerSection} ${nunito.className}`}>
+                    <div className={`${q.buttonList} ${nunito.className}`}>
 
                         <div className={q.buttonStackContainer} 
                           onClick={() => handleClick('no')}
                           onMouseEnter={() => console.log('🖱️ Hovering No Button')}
                         >
-                            <div className={q.button} id={q.noButton} onClick={() => increment('noNum')} >
+                            <div className={`${q.button} ${chewy.className}`} id={q.noButton} onClick={() => increment('noNum')} >
                                 {counters.noNum > 0 && (
                                     <span className={q.numSpan}>
                                     {counters.noNum}
@@ -191,7 +252,7 @@ const QuizCard = ({
                         </div>
 
                         <div className={q.buttonStackContainer} onClick={() => handleClick('sometimes')} onMouseEnter={() => console.log('🖱️ Hovering Sometimes Button')} >
-                            <div className={q.button} id={q.sometimesButton} onClick={() => increment('sometimesNum')} >
+                            <div className={`${q.button} ${chewy.className}`} id={q.sometimesButton} onClick={() => increment('sometimesNum')} >
                                 {counters.sometimesNum > 0 && (
                                     <span className={q.numSpan}>
                                     {counters.sometimesNum}
@@ -211,7 +272,7 @@ const QuizCard = ({
                         <div className={q.buttonStackContainer}   
                         onClick={() => handleClick('yes')}
                         onMouseEnter={() => console.log('🖱️ Hovering Yes Button')}>
-                            <div className={q.button} id={q.yesButton} onClick={() => increment('yesNum')}>
+                            <div className={`${q.button} ${chewy.className}`} id={q.yesButton} onClick={() => increment('yesNum')}>
                                 {counters.yesNum > 0 && (
                                     <span className={q.numSpan}>
                                     {counters.yesNum}
