@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-chewy)', 'sans-serif'],
+        sans: ['var(--font-nunito)', 'sans-serif'],
       },
     },
   },

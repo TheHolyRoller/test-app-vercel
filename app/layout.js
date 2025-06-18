@@ -9,6 +9,7 @@ import Navbar from './Components/Navbar';
 import Footer from './Components/Footer1'; 
 import Start from './Components/Start'; 
 import { chewy } from './fonts/chewy';
+import { nunito } from './fonts/nunito';
 
 // Import the auth hook here 
 import { useAnonymousAuth } from "./lib/hooks/useAnonymousAuth";
@@ -26,7 +27,7 @@ export default function RootLayout({ children }) {
   console.log('this is the anonymous auth function being called in layout \n', useAnonymousAuth); 
   useAnonymousAuth(); 
   return (
-    <html lang="en" className={`${chewy.variable}`}>
+    <html lang="en" className={`${chewy.variable} ${nunito.variable}`}>
       <head>
         <title>Dyslexia Quiz App</title>
         <meta name="description" content="A quiz application to help identify signs of dyslexia" />
