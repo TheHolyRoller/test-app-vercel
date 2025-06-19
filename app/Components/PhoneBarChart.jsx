@@ -18,6 +18,39 @@ function PhoneBarChart({ writingPercentage,
 
 }) {
 
+    // Create bar chart data structure
+    const categoryData = [
+        {
+            name: 'Reading',
+            percentage: Math.min(Math.max(readingPercentage || 0, 0), 100),
+            color: '#FF6B6B',
+            score: readingScore
+        },
+        {
+            name: 'Writing',
+            percentage: Math.min(Math.max(writingPercentage || 0, 0), 100),
+            color: '#4ECDC4',
+            score: writingScore
+        },
+        {
+            name: 'Memory',
+            percentage: Math.min(Math.max(memoryPercentage || 0, 0), 100),
+            color: '#45B7D1',
+            score: memoryScore
+        },
+        {
+            name: 'Exam Results',
+            percentage: Math.min(Math.max(examResultsPercentage || 0, 0), 100),
+            color: '#96CEB4',
+            score: examResultsScore
+        },
+        {
+            name: 'Organisation',
+            percentage: Math.min(Math.max(organisationalPercentage || 0, 0), 100),
+            color: '#FECA57',
+            score: organisationalScore
+        }
+    ];
 
         console.log('these are the percentages in the phone bar chart functional component  \n', writingPercentage,
             memoryPercentage,
@@ -44,70 +77,105 @@ function PhoneBarChart({ writingPercentage,
 
      <main className={p.mainChartContainer}>
             <div className={p.mainChartSubContainer}>
-            <div style={{position: 'absolute', bottom: '60%', left: '50%'}}>
 
-            {percentage}
+
+            <div className={p.mainHeadlineContainer}>
+
+                <h1 className={p.mainHeadline}>
+
+                    Your Dyslexia Score 
+
+                </h1>
+
+
+
+            </div>
+
+
+            <div className={p.mainScore}>
+
+            
+
+            {/* {percentage} */}
+            {percentage || 89}
+            <span className={p.refSpan}>
+                                        /100
+                                    </span>
+
+            </div>
+            
+            <div className={p.impactMessage}>
+                <p className={p.impactText}>
+                    {percentage >= 70 
+                        ? "This Indicates your work could be significantly impacted by Dyslexia"
+                        : "This indicates your work could be mildly impacted by Dyslexia"
+                    }
+                </p>
             </div>
                 <section className={p.chartContainer}>
                 
-                    <div className={p.mainChartSubContainer}>
+                    <div className={p.mainChartSubContainerTextSection}>
                     <div className={p.mainTitleContainer}>
                 <div className={p.mainTitleSubContainer}>
 
-                    <div className={p.infoGraphicContainer}>
+
+                    {/* <h1 className={p.mainBarChartTitle}>
+                       Category Breakdown
+                    </h1> */}
+                </div>
+                </div>
+                    
+                    {/* Bar Chart Section */}
+                    <div className={p.barChartSection}>
+                        {categoryData.map((category, index) => (
+                            <div key={index} className={p.barChartItem}>
+                                <div className={p.barChartHeader}>
+                                    <span className={p.categoryName}>{category.name}</span>
+                                </div>
+                                <div className={p.barContainer}>
+                                    <div className={p.barBackground}>
+                                        <div 
+                                            className={p.barFill}
+                                            style={{
+                                                width: `${category.percentage}%`,
+                                                backgroundColor: category.color
+                                            }}
+                                        >
+                                            <span className={p.barPercentageText}>
+                                                {Math.round(category.percentage)}%
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
                     </div>
 
-                    <h1 className={p.mainBarChartTitle}>
-                        Quiz Results 
-                    </h1>
-                </div>
-                </div>
                     <ul className={p.barChartMainList}>
                         <li className={p.barChartListItem}>
 
-                            <article className={p.barContainer}>
-                            <div className={p.backgroundBar}>
-                            </div>
-                          
-
-                            <div className={p.progressBarContainer}>
-                            
-                            <div className={p.progressBar} style={{width: `${readingPercentage}%` }} >
-                            <div className={p.percentageContainer}>
-                                    {/* 80% */}
-                                    {readingScore} /10
-                                </div>
-                                <div className={p.categoryLabel}>
-                                Reading
-                            </div>
-                            <div className={p.progressBarSubContainer}>
-                            
-                            
-                                </div>
-                            </div>
-                            </div>
-                            </article>
-
-
                             <article className={p.resultExplanationContainer}>
 
-                                {/* Add in the main title container here  */}
                             <div className={p.resultExplanationTitleContainer}>
-                                {/* <h1 className={p.resultExplanationTitle}>
-                                    Reading 
-                                </h1> */}
-
                             </div>
-                            {/* Add in the explanation container here */}
-                            {/* <div className={p.resultExplanationText}>
-
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidip ex ea
-
-                            </div> */}
+                          
                             </article>
                         </li>
                     </ul>
                     </div>
+
+                {/* Add in the button here  */}
+                    <div className={p.buttonContainer}>
+
+                        <div className={p.button}>
+
+                        Next
+
+                        </div>
+
+
+                    </div>
+
                 </section>
             </div>
         </main>

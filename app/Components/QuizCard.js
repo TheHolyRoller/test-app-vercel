@@ -165,7 +165,8 @@ const QuizCard = ({
                 boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
             }}
         />
-        
+
+            {/* CARD  */}
 
         <article 
             className={`${q.card} ${nunito.className}`} 
@@ -174,7 +175,8 @@ const QuizCard = ({
                 marginTop: pathname === '/quiz' ? '-1em' : '0',
                 position: 'relative',
                 zIndex: 200,
-                boxShadow: '0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.06)'
+                boxShadow: '0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.06)', 
+                outline: '4px solid red'
 
             }}
         >
@@ -253,7 +255,7 @@ const QuizCard = ({
 
         {/* Integrated Answer Section - Only show on /quiz route */}
         {pathname === '/quiz' && (
-            <section className={`${q.mainAnswerContainer} ${nunito.className}`}>
+            <section className={`${q.mainAnswerContainer} ${nunito.className}`} style={{outline: '4px solid red'}}>
                 <article className={`${q.answerSection} ${nunito.className}`}>
                     <div className={`${q.buttonList} ${nunito.className}`}>
 

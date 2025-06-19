@@ -56,7 +56,7 @@
 .mainTextHeader {
 
     margin: 0 auto; 
-    margin-top: 4rem !important; 
+    margin-top: 5rem !important; 
 
     display: grid;
     place-content: center;
@@ -64,7 +64,8 @@
     font-weight: bolder;
     /* width: 60%;  */
     text-align: center;
-    line-height: normal;
+    line-height: 1.12555;
+    /* line-height: normal; */
     color: #013699; 
     
 
@@ -77,8 +78,8 @@
     width: 80%;
     margin: 0 auto; 
     text-align: center;
-    margin-bottom: 7rem;
-    margin-top: 0.45em; 
+    margin-bottom: 7.5rem;
+    margin-top: 0.65em; 
     color: #69696f;
 
 
@@ -86,8 +87,34 @@
 
 
 
+}
+
+
+.affectsList{
+
+
+list-style-type: disc;
+/* outline: 2px solid red; */
+width: min-content; 
+margin: 0 auto; 
+text-align: left;
+
+
 
 }
+
+
+.affectsListItem{
+
+
+
+
+
+
+}
+
+
+
 
 
 .pagination{

@@ -1,0 +1,372 @@
+.mainAnswerContainer {
+    position: absolute;
+    bottom: 5.1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: grid;
+    place-content: center;
+    text-transform: uppercase;
+    background: none;
+    z-index: 1000;
+    width: 130%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+
+    /* outline: 5px solid red; */
+
+}
+
+.answerSection {
+
+
+}
+
+.buttonList {
+    display: flex; 
+    gap: 5.8rem; 
+
+
+
+}
+
+.buttonStackContainer {
+    position: relative;
+    display: grid;
+    place-content: center;      
+    height: calc(3rem + 10px); 
+}
+
+.button {
+    all: unset;
+    border-radius: 10px;
+    display: grid;
+    cursor: pointer !important;
+    place-content: center;
+    width: calc(6rem + 0px) !important;
+    height: calc(2rem + 10px) !important;
+    padding: 0;
+    font-family: var(--font-chewy), cursive;
+    font-weight: 400;
+    font-size: 1rem;
+    text-transform: uppercase;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    color: white; 
+    
+}
+
+.numSpan {
+    position: absolute;
+    top:0;
+    right: 0;
+    font-size: 0.75rem !important;
+    margin-top: -10px;
+    margin-right: -9px; 
+    padding-bottom: 3px;
+    padding-right: 3px; 
+    padding-left: 3px; 
+    padding-top: 3px; 
+    background-color: red;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    width: 1.2em;
+    outline: 1.5px solid white; 
+    height: 1.2em; 
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+    padding: 0.575rem;
+    color: white;
+    font-weight: bold;
+}
+
+.buttonStack {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+     height: 100%;
+     z-index: -1;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+}
+
+#noButton {
+    background-color: rgb(241, 52, 39); 
+}
+
+#noStackOne {
+    transform: rotate(3deg);
+    -webkit-transform: rotate(3deg);
+    -moz-transform: rotate(3deg);
+    -ms-transform: rotate(3deg);
+    -o-transform: rotate(3deg);
+    width: 105%;
+    height: 105%;
+    background-color: rgb(241, 52, 39); 
+    opacity: 1; 
+}
+
+#noStackTwo {
+    background-color: rgb(241, 52, 39);
+    opacity: 0.4;
+    transform: rotate(-2deg);
+    -webkit-transform: rotate(-2deg);
+    -moz-transform: rotate(-2deg);
+    -ms-transform: rotate(-2deg);
+    -o-transform: rotate(-2deg);
+    width: 106%;
+    height: 110%;
+    margin-left: -2px;
+}
+
+#noStackThree {
+    background-color: rgb(241, 52, 39);
+    opacity: 1;
+    transform: rotate(-1.5deg);
+    -webkit-transform: rotate(-1.5deg);
+    -moz-transform: rotate(-1.5deg);
+    -ms-transform: rotate(-1.5deg);
+    -o-transform: rotate(-1.5deg);
+    width: 108%;
+    height: 110%;
+    margin-top: -1px;
+}
+
+#noStackFour {
+    background-color: rgba(243, 80, 68, 0.916);
+    opacity: 0.9;
+    transform: rotate(-3deg);
+    -webkit-transform: rotate(-3deg);
+    -moz-transform: rotate(-3deg);
+    -ms-transform: rotate(-3deg);
+    -o-transform: rotate(-3deg);
+    width: 110%;
+    height: 110%;
+    margin-right: -7px; 
+    margin-top: -2px;
+}
+
+#noStackFive {
+    background-color: rgb(241, 52, 39);
+    opacity: 0.4;
+    transform: rotate(1deg);
+    -webkit-transform: rotate(1deg);
+    -moz-transform: rotate(1deg);
+    -ms-transform: rotate(1deg);
+    -o-transform: rotate(1deg);
+    width: 109%;
+    height: 110%;
+    margin-top: 0px;
+    margin-left: 2px; 
+}
+
+#noStackSix {
+    background-color: rgb(241, 52, 39);
+    opacity: 0.4;
+    transform: rotate(1deg);
+    -webkit-transform: rotate(1deg);
+    -moz-transform: rotate(1deg);
+    -ms-transform: rotate(1deg);
+    -o-transform: rotate(1deg);
+    width: 109%;
+    height: 110%;
+    margin-top: -3px;
+}
+
+#sometimesButton {
+    background-color: rgb(245, 207, 48);
+    display: grid;
+    place-content: center;
+    font-size: 0.8rem;
+    text-align: center;
+    position: relative;
+    color: #686886;
+}
+
+#sometimesStackOne {
+    background-color: rgb(245, 207, 48);
+    opacity: 0;
+    transform: rotate(3deg);
+    -webkit-transform: rotate(3deg);
+    -moz-transform: rotate(3deg);
+    -ms-transform: rotate(3deg);
+    -o-transform: rotate(3deg);
+    width: 109%;
+    height: 110%;
+    margin-top: -3px;
+}
+
+#sometimesStackTwo {
+     background-color: rgb(245, 207, 48);
+     opacity: 0.4;
+     transform: rotate(2deg);
+     -webkit-transform: rotate(2deg);
+     -moz-transform: rotate(2deg);
+     -ms-transform: rotate(2deg);
+     -o-transform: rotate(2deg);
+     width: 105%;
+     height: 110%;
+     margin-top: -2px;
+}
+
+#sometimesStackThree {
+     background-color: rgb(245, 207, 48);
+     opacity: 0.4;
+     transform: rotate(-2.5deg);
+     -webkit-transform: rotate(-2.5deg);
+     -moz-transform: rotate(-2.5deg);
+     -ms-transform: rotate(-2.5deg);
+     -o-transform: rotate(-2.5deg);
+     width: 105%;
+     height: 110%;
+     margin-top: -3px;
+}
+
+#sometimesStackFour {
+     background-color: rgb(245, 207, 48);
+     opacity: 0.63;
+     width: 105%;
+     height: 111%;
+     transform: rotate(-2.5deg);
+     -webkit-transform: rotate(-2.5deg);
+     -moz-transform: rotate(-2.5deg);
+     -ms-transform: rotate(-2.5deg);
+     -o-transform: rotate(-2.5deg);
+     margin-top: 3px;
+}
+
+#sometimesStackFive {
+    background-color: rgb(224, 190, 55);
+    opacity: 0.45;
+    transform: rotate(-2.5deg);
+    -webkit-transform: rotate(-2.5deg);
+    -moz-transform: rotate(-2.5deg);
+    -ms-transform: rotate(-2.5deg);
+    -o-transform: rotate(-2.5deg);
+    width: 105%;
+    height: 110%;
+    margin-left: -3px;
+}
+
+#sometimesStackSix {
+    background-color: rgb(245, 207, 48);
+    opacity: 0.55;
+    transform: rotate(-2.5deg);
+    -webkit-transform: rotate(-2.5deg);
+    -moz-transform: rotate(-2.5deg);
+    -ms-transform: rotate(-2.5deg);
+    -o-transform: rotate(-2.5deg);
+    width: 110%;
+    height: 110%;
+    margin-right: -3px;
+}
+
+#yesButton {
+
+    
+
+
+}
+
+#yesStackOne {
+    background-color: rgb(156, 194, 109);
+    opacity: 0.45;
+    transform: rotate(-2.5deg);
+    -webkit-transform: rotate(-2.5deg);
+    -moz-transform: rotate(-2.5deg);
+    -ms-transform: rotate(-2.5deg);
+    -o-transform: rotate(-2.5deg);
+    margin-right: -2px; 
+    width: 105%; 
+    height: 105%; 
+}
+
+#yesStackTwo {
+    background-color: rgb(137, 171, 96);
+    opacity: 0.58;
+    transform: rotate(2.5deg);
+    -webkit-transform: rotate(2.5deg);
+    -moz-transform: rotate(2.5deg);
+    -ms-transform: rotate(2.5deg);
+    -o-transform: rotate(2.5deg);
+    margin-left: -2px;
+    width: 105%;
+    height: 105%;
+}
+
+#yesStackThree {
+    height: 109%;
+    opacity:0.8;
+    background-color: rgb(137, 171, 96);
+    margin-top: -4px;
+    transform: rotate(2deg);
+    -webkit-transform: rotate(2deg);
+    -moz-transform: rotate(2deg);
+    -ms-transform: rotate(2deg);
+    -o-transform: rotate(2deg);
+}
+
+#yesStackFour {
+    height: 109%;
+    opacity:0.75;
+    background-color: rgb(137, 171, 96);
+    margin-bottom: -4px;
+    transform: rotate(2deg);
+    -webkit-transform: rotate(2deg);
+    -moz-transform: rotate(2deg);
+    -ms-transform: rotate(2deg);
+    -o-transform: rotate(2deg);
+}
+
+#yesStackFive {
+    height: 113%;
+    opacity:0.55;
+    background-color: rgb(137, 171, 96);
+    margin-bottom: -5px;
+    transform: rotate(2deg);
+    -webkit-transform: rotate(2deg);
+    -moz-transform: rotate(2deg);
+    -ms-transform: rotate(2deg);
+    -o-transform: rotate(2deg);
+}
+
+#yesStackSix {
+    height: 113%;
+    opacity: 0.63;
+    background-color: rgb(137, 171, 96);
+    margin-right: -5px;
+    transform: rotate(2deg);
+    -webkit-transform: rotate(2deg);
+    -moz-transform: rotate(2deg);
+    -ms-transform: rotate(2deg);
+    -o-transform: rotate(2deg);
+}
+
+#yesStackSeven {
+    height: 100%;
+    opacity: 0.63;
+    background-color: rgb(137, 171, 96);
+    margin-left: -4px;
+    transform: rotate(2deg);
+    -webkit-transform: rotate(2deg);
+    -moz-transform: rotate(2deg);
+    -ms-transform: rotate(2deg);
+    -o-transform: rotate(2deg);
+}

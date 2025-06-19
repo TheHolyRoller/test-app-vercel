@@ -13,8 +13,6 @@ import PhoneBarChart from '../Components/PhoneBarChart';
 // Import the appwrite credentials here 
 import { databases } from '../lib/appwrite';
 
-
-
 function ResultContent() {
     const searchParams = useSearchParams();
     const { name, userAge } = useUser();
@@ -63,6 +61,7 @@ function ResultContent() {
      * 
      * 
      */
+
 
     const data = {
 
@@ -114,12 +113,7 @@ function ResultContent() {
 
         }
 
-
-
-
     }
-
-
 
     const formatCategoryCounter = (memoryScore, writingScore, readingScore, examResultsScore, organisationalScore ) => {
 
@@ -176,41 +170,42 @@ function ResultContent() {
 
     // Create the function that formats the final score here 
     const formatScore = (finalScore) => {
-
-
         // Add in the max score here 
         const maxScore = 439;
-        let rounder;
-        let total; 
-        let normalization = maxScore / finalScore; 
-        let update = Math.floor(finalScore / 12); 
-        console.log('this is the max score divide by the final score \n', normalization); 
-        percentage = (maxScore / update) * 5; 
-        percentage = Math.floor(percentage); 
-        console.log('this is the formatted % Score \n', percentage); 
-        if(percentage > 100){
-
-        rounder = percentage -100; 
-        percentage = percentage - rounder; 
-            
+        
+        // Calculate raw percentage
+        const rawPercentage = (finalScore / maxScore) * 100;
+        
+        // Apply scaling to map scores appropriately:
+        // - High scores (80%+ of max) should map to 90-100%
+        // - Medium scores (50% of max) should map to around 60%
+        // - Low scores should map to lower percentages
+        
+        if (rawPercentage >= 80) {
+            // Most answers are "yes" - map to 90-100%
+            percentage = Math.floor(90 + ((rawPercentage - 80) / 20) * 10);
+        } else if (rawPercentage >= 50) {
+            // Roughly half answers are "yes" - map to 60-89%
+            percentage = Math.floor(60 + ((rawPercentage - 50) / 30) * 29);
+        } else {
+            // Lower scores - map to 30-59%
+            percentage = Math.floor(30 + (rawPercentage / 50) * 29);
         }
-
-        console.log('this is the rounded down percentage \n', percentage); 
-
+        
+        // Ensure percentage doesn't exceed 100
+        percentage = Math.min(percentage, 100);
+        
+        console.log('Raw percentage:', rawPercentage);
+        console.log('Formatted percentage:', percentage);
     }
 
     formatScore(finalScore); 
-    // formatCategoryCounter(memoryScore, writingScore, readingScore, examResultsScore, organisationalScore); 
-
-
-
 
     
     return (
         <>
 
        
-        {/* <PhoneBarChart/> */}
         <PhoneBarChart
         percentage={percentage}
         writingPercentage={writingPercentage}

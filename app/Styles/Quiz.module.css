@@ -295,6 +295,7 @@ margin-bottom: 5em;
     top: 30%;
     left: 50%;
     right: 50%;
+    
     transform:translate(-50%, -30%) ;
     -webkit-transform:translate(-50%, -30%) ;
     -moz-transform:translate(-50%, -30%) ;

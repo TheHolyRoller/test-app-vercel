@@ -13,6 +13,7 @@
 
 }
 
+
 .quizResultsSubContainer {
 
 
@@ -63,6 +64,15 @@
     place-content: center; 
     margin: 2em auto; 
     font-size: 3rem;
+
+}
+
+.refSpan{
+
+    
+
+
+
 
 }
 

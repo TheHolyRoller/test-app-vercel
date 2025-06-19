@@ -9,7 +9,6 @@ function Start() {
 
   const router = useRouter();
 
-
   return (
   
     <>

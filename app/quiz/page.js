@@ -8,6 +8,8 @@ import q from '../Styles/Quiz.module.css';
 import Image from 'next/image';
 import QuizCard from '../Components/QuizCard';
 
+
+
 export default function Quiz() {
     const router = useRouter();
     const { name, sound, userAge } = useUser();
@@ -103,7 +105,6 @@ export default function Quiz() {
 
             <QuizCard 
             
-
                         questionText={questionText}
                         Section={Section}
                         audio_URL={audio_URL}

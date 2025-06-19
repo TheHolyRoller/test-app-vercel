@@ -1,15 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
-import f from '../assets/Group 633184.svg'; 
-import notes from '../assets/Group 633184.svg'; 
-import num from '../assets/image 40.svg';
-import two from '../assets/image 42.svg'; 
-import write from '../assets/Your notes are comprehensiv 1.svg'; 
+import ivvi_group from '../assets/ivvi_group.svg'; 
 import u from '../Styles/understand.module.css'; 
-import png from '../assets/image 41.png'; 
-import n from '../assets/Notes.svg'; 
-import lg from '../assets/Large_Group.png'; 
-import group from '../assets/Group 633184.svg';
+
 
 
 
@@ -20,13 +13,14 @@ function Understand() {
   console.log('mainContainer class:', u.mainContainer);
   
   return (
+    
     <section className={u.mainContainer} style={{backgroundColor: 'white'}}>
     <div className={u.subContainer}>
 
 
     <header className={u.headerImageContainer}>
 
-    <Image className={u.mainImage}  src={n} width={5000} height={500} alt='notes' /> 
+    <Image className={u.mainImage}  src={ivvi_group} width={5000} height={500} alt='notes' /> 
 
     </header>
     
@@ -63,16 +57,9 @@ function Understand() {
 
 
     </div>
-
-
     </div>
-
-
     </div>
-
     </div>
-
-
     </section>
   )
 }

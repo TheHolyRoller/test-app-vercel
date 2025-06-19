@@ -1,0 +1,76 @@
+import React from 'react'
+import Image from 'next/image'
+import i from '../Styles/ideal.module.css'; 
+
+// import n from '../assets/All in one resource.svg'; 
+
+import learn from '../assets/Listen and learn, confident.svg'; 
+import say from '../assets/Say goodbye to the time.svg'; 
+import real from '../assets/Real time NotetakinListen and learn, confident.svg'; 
+import study from '../assets/Study anywhere.svg'; 
+import your from '../assets/Your notes are comprehensiv.svg'; 
+import multi from '../assets/Multi Style Learning.svg'; 
+import listen from '../assets/Listen and learn, confident.svg'; 
+import high from '../assets/Highlight Key Info.svg'; 
+import all from '../assets/All in one resource.svg'; 
+
+
+
+function page() {
+  return (
+
+  <section className={i.mainContainer} style={{backgroundColor: 'white'}}>
+    <div className={i.subContainer}>
+
+
+
+    <header className={i.headerImageContainer}>
+    <Image className={i.mainImage}  src={learn} width={5000} height={5000} alt='notes' /> 
+    </header>
+    
+
+    <div className={i.mainHeaderContainer}>
+        <h1 className={i.mainTextHeader}>
+
+        Ideal for University and the Workplace 
+
+        </h1>
+    </div>
+
+    <div>
+
+    <article className={i.mainSupportingTextContainer}>
+
+
+    Helps students and professionals understand when dyslexia gets in the way.    </article>
+
+    <div className={i.pagination} >
+
+
+        </div>
+
+    <div className={i.ctaContainer}>
+
+
+    <div className={i.cta}>
+
+      Next 
+
+
+    </div>
+
+
+    </div>
+
+
+    </div>
+
+    </div>
+
+
+    </section>
+  )
+
+}
+
+export default page

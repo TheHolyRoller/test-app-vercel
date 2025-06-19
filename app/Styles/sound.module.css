@@ -1,0 +1,188 @@
+.card {
+    height: 625px;
+    width:340px;    
+    position: relative;
+    background-color: #ccc;
+    background-color: #fbfbfb;
+    margin: 0 auto; 
+    margin-bottom: 5.9rem;
+    margin-top: 2rem;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+
+.firstCARD{
+}
+
+.cardCategoryColorContainer{
+    position: relative;
+    height: 3rem;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px; 
+    display: grid; 
+    place-content: center;
+    background-color: var(--category-color, #ccc);
+    height: 4.5rem; 
+}
+
+.categoryLabelContainer{
+    /* height: 4.5rem;  */
+    height: 5.5rem; 
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    display: grid; 
+    place-content: center;
+
+    
+
+}
+
+.categoryLabel {
+}
+
+.labelContainer{
+    height: 2.5rem;
+    width: 300px;
+    border-radius:25px;
+    -webkit-border-radius:25px;
+    -moz-border-radius:25px;
+    -ms-border-radius:25px;
+    -o-border-radius:25px;
+    display: grid;
+    place-content: center;
+    text-transform: uppercase;
+    margin-bottom: -0.5em;
+    font-family: var(--font-nunito), sans-serif;
+    font-weight: 700;
+    color: white;
+}
+
+.questionTextContainer{
+    color: black !important;
+    font-size: 1.3rem;
+    width: 70%;
+    text-align: center;
+    margin: 0 auto;
+    text-transform: uppercase;
+    font-family: var(--font-nunito), sans-serif;
+    /*position: relative;
+    */z-index: 9999999;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    right: 50%;
+    transform:translate(-50%, -30%);
+    -webkit-transform:translate(-50%, -30%);
+    -moz-transform:translate(-50%, -30%);
+    -ms-transform:translate(-50%, -30%);
+    -o-transform:translate(-50%, -30%);
+}
+
+.questionText{
+    color: black !important; 
+    position: relative; 
+    z-index: 99999;
+    margin-top: 2em; 
+    margin-bottom: 4.5em; 
+    font-family: var(--font-nunito), sans-serif;
+    font-weight: 600;
+}
+
+.imageSectionContainer{
+    display: grid;  
+    place-content: center; 
+    margin: 0 auto; 
+    width: 100%;
+    position: relative; 
+    z-index: 9;
+    margin-top: 0rem !important; 
+    position: absolute; 
+    top: 60%; 
+}
+
+.doodleContainer{
+    margin-top: -1.5em;     
+}
+
+#cardOne{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    position: relative;
+    width: 345px;
+    height: 555px;
+    background-color: #fbfbfb;
+    border-radius: 0rem;
+    -webkit-border-radius: 0rem;
+    -moz-border-radius: 0rem;
+    -ms-border-radius: 0rem;
+    -o-border-radius: 0rem;
+    z-index: -2;
+   display: none;
+    transform:  translate(0rem,3em) !important;
+    box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+}
+
+#cardTwo{
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    display: none;
+    z-index: -1;
+    margin-bottom: -5rem !important;
+    height: 555px; 
+    max-height: 777px;
+    width: 338px;
+    background-color: #fbfbfb;
+    box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+    transform:translate(0rem, 4em);
+    -webkit-transform:translate(0rem, 4em);
+    -moz-transform:translate(0rem, 4em);
+    -ms-transform:translate(0rem, 4em);
+    -o-transform:translate(0rem, 4em);
+}
+
+#cardThree{
+ width: 340px;
+ height: 400px;
+ background-color: #fbfbfb;
+ border-radius: 1rem;
+ -webkit-border-radius: 1rem;
+ -moz-border-radius: 1rem;
+ -ms-border-radius: 1rem;
+ -o-border-radius: 1rem;
+ /* display: none; */
+ position: absolute;
+ bottom: 0; 
+ z-index: -2;
+ margin-bottom: 0.8em;
+ box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+}
+
+#cardFour{
+    position: relative;
+    z-index: -5;
+    width: 340px;
+    height: 400px;
+    background-color: #fbfbfb;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-radius: 0 0 1rem 1rem;
+    box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+    transform:translate(0, 5.5em);
+    -webkit-transform:translate(0, 5.5em);
+    -moz-transform:translate(0, 5.5em);
+    -ms-transform:translate(0, 5.5em);
+    -o-transform:translate(0, 5.5em);
+    -webkit-border-radius: 0 0 1rem 1rem;
+    -moz-border-radius: 0 0 1rem 1rem;
+    -ms-border-radius: 0 0 1rem 1rem;
+    -o-border-radius: 0 0 1rem 1rem;
+}
