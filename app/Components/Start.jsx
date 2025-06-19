@@ -1,13 +1,36 @@
-import React from 'react'
+import React, { use } from 'react'
 import s from '../Styles/start.module.css'; 
 import { useRouter } from 'next/navigation';
 import logo from '../assets/ivvi_Logo.svg'; 
 import Image from 'next/image';
-
+import { useUserDetection } from '../lib/hooks/useUserDetection';
 
 function Start() {
 
   const router = useRouter();
+  const { user, loading, isNewUser } = useUserDetection();
+
+
+  console.log('this is the value of new user \n', isNewUser); 
+  console.log('this is the user \n', user); 
+
+    
+
+  const handleStartScreener = () => {
+    if (loading || isNewUser === null) {
+      console.log('Still determining user status...');
+      return;
+    }
+
+    if (isNewUser) {
+      console.log('this is the value of new user \n', isNewUser);
+      console.log('New user detected, routing to /understand');
+      router.push('/understand');
+    } else {
+      console.log('Returning user detected, routing to /audiopermission');
+      router.push('/audiopermission');
+    }
+  };
 
   return (
   
@@ -32,7 +55,7 @@ function Start() {
 
 
         <aside className={s.buttonSectionContainer}>
-        <div className={s.CTAButton}  onClick={() => router.push('/sound')} >Start Screener </div>
+        <div className={s.CTAButton} onClick={handleStartScreener}>Start Screener</div>
         </aside>
 
 

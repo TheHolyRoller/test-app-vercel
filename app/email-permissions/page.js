@@ -3,10 +3,11 @@
 import { useQuiz } from '../lib/context/QuizContext';
 import { useUser } from '../lib/context/UserContext';
 import { useRouter } from 'next/navigation';
-// import q from '../../Styles/Quiz.module.css';
-import q from '../Styles/Quiz.module.css'; 
 import QuizCard from '../Components/QuizCard';
 import {PermissionAnswer} from '../Components/PermissionAnswer'; 
+import e from '../Styles/emailPermission.module.css'; 
+import { nunito } from '../fonts/nunito';
+import Image from 'next/image';
 
 
 export default function EmailPermission() {
@@ -22,30 +23,141 @@ export default function EmailPermission() {
         router.push('/');
     };
 
+    const Section = "Audio Permission";
+    const audio_URL = 'https://dyslexiaquizapp.s3.eu-west-2.amazonaws.com/audio+doodles/send+email-v1.mp3';
+    const questionText = `Shall We send a results Report to your email?
+Otherwise they won’t be saved.`;
+    const currentQuestion = { questionText: "" };
+    const currentIMG = 'https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/EMAIL_SEND_TEST/view?project=test-domain&mode=admin';
+    
+    // Placeholder functions
+    const getLabelColorBySection = (section) => "#033699";
 
     return (
-        <section style={{color: 'white'}}>
-            <main className={q.quizComponentContainer} id='quizElement'>
-                <section className={q.cardContainer}>
-                    <QuizCard 
-                        questionText="Can I send your results to your email?"
-                        Section="Results"
-                        currentQuestion={{
-                            questionText: "We'll send your detailed results to your email"
-                        }}
-                        audio_URL={sound ? "https://dyslexiaquizapp.s3.eu-west-2.amazonaws.com/audio+doodles/send+email-v1.mp3" : null}
-                        currentIMG="https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/send_email/view?project=test-domain&mode=admin"
-                    
-                    />
-                </section>
+        <div>
+        {/* Top Blue Navbar Strip */}
+        <div 
+          style={{
+            width: '100%',
+            height: '120px',
+            backgroundColor: '#023597',
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            zIndex: 100
+          }}
+        />
+        
 
-                <div className={q.answerContainer} style={{position: 'relative', zIndex: '99'}} >
+        {/* Main Content Container */}
+        <div style={{ paddingTop: '60px' }}>
+          <article 
+          className={`${e.card} ${nunito.className}`} 
+          id={e.firstCARD} 
+          style={{
+              position: 'relative',
+              zIndex: 200,
+              boxShadow: '0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.06)',
+              marginTop: '-40px'
+          }}
+          >
+      <div 
+          className={e.cardCategoryColorContainer} 
+          style={{
+              backgroundColor: '#4168b3',
+              boxShadow: '0 -2px 8px rgba(0, 0, 0, 0.1), -2px 0 8px rgba(0, 0, 0, 0.1), 2px 0 8px rgba(0, 0, 0, 0.1)', 
+  
+          }}
+      >
+          {audio_URL && (
+              <audio 
+                  key={audio_URL} 
+                  controls 
+                  autoPlay 
+                  style={{ opacity: '0', position: 'absolute' }}
+                  onPlay={() => console.log('🎵 Audio Started Playing:', audio_URL)}
+                  onError={(e) => console.error('❌ Audio Error:', e)}
+              >
+                  <source src={audio_URL} type="audio/mp3" />
+              </audio>
+          )}
+          
+  
+          <div className={`${e.categoryLabelContainer} ${nunito.className}`}>
+              <label className={`${e.categoryLabel} ${nunito.className}`}>
+  
+  
+                  <div className={`${e.labelContainer} ${nunito.className}`} style={{backgroundColor: getLabelColorBySection(Section)}}>
+  
+                  ready
+                  </div>
+              </label>
+          </div>
+      </div>
+  
+      {questionText && (
+          <div className={`${e.questionTextContainer} ${nunito.className}`} >
+              <h2 className={`${e.questionText} ${nunito.className}`}>
+                  {questionText}
+  
+  
+                  <span>
+                      {currentQuestion?.questionText}
+                  </span>
+              </h2>
+          </div>
+      )}
+      
+      <div className={e.imageSectionContainer}>
+          <div className={e.doodleContainer}>
+              {currentIMG && (
+                  <Image 
+                      src={currentIMG}
+                      alt='quiz illustration'
+                      width={300}
+                      height={300}
+                      unoptimized
+                      onLoad={() => console.log('🖼️ Image Loaded:', currentIMG)}
+                      onError={(e) => console.error('❌ Image Error:', e)}
+                      style={{
+                          marginTop: '-4.5rem',
+                          objectFit: 'contain', 
+                          zIndex: '0'
+                      }}
+                  />
+              )}
+          </div>
+      </div>
+  
+      <article className={e.card} id={e.cardOne}></article>
+      <article className={e.card} id={e.cardTwo}></article>
+      <article className={e.card} id={e.cardThree}></article>
+      <article className={e.card} id={e.cardFour}></article>
+  </article>
 
-                <PermissionAnswer/>
-                </div>
+
+<section className={e.buttonSectionContainer}>
+
+  <div className={e.ctaContainer}>
+
+    <div className={e.cta}>
+        Yes
+    </div>
 
 
-            </main>
-        </section>
+  </div>
+
+  <div className={e.noButtonContainer}>
+    <div className={e.noButton}>
+       No Thanks 
+    
+     </div>
+
+
+  </div>
+  
+</section>
+        </div>
+      </div>
     );
 } 

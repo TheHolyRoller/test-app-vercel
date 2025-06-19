@@ -1,0 +1,148 @@
+
+
+
+.mainCTASection{
+
+
+    height: 100vh; 
+    width: 100vw; 
+    margin: 0 auto; 
+    display: grid; 
+    place-content: center;
+    background-color: #013699;
+
+
+
+
+}
+
+
+.mainLogoContainer{
+
+
+/* color: black; */
+color: white; 
+text-align: center;
+width: 60%; 
+margin: 0 auto; 
+
+font-size: clamp(1.5rem + 1vw, 2rem, 3rem);
+
+
+}
+
+.theSpan{
+
+    display: block; 
+    margin: 0 auto; 
+    font-size: 0.9rem;
+
+
+
+}
+
+.buttonSectionContainer{
+
+    display: grid;
+    place-content: center;
+    margin: 3em auto; 
+
+}
+
+
+.CTAButton{
+   
+    height: 55px !important;
+    width: 280px !important;
+    color: white;
+    margin: 0 auto;  
+    font-size: 1.25rem;
+    font-weight: bolder;
+    
+    background-color: #f49b53;
+    display: grid;
+    place-content: center;
+    border-radius: 22px;
+    -webkit-border-radius: 22px;
+    -moz-border-radius: 22px;
+    -ms-border-radius: 22px;
+    -o-border-radius: 22px;
+    cursor: pointer;
+}
+
+
+
+.ivviLogoContainer{
+
+
+    margin: 0 auto;
+    margin-top: 4rem !important;
+    display: grid;  
+    place-content: center;
+    
+
+
+}
+
+
+
+.bySpan{
+
+
+    margin: 0 auto;
+
+    margin-bottom: -0em; 
+    color: white; 
+    
+
+
+
+}
+
+
+.logo{
+
+
+
+
+
+}
+
+
+.secondaryButtonContainer{
+
+
+    /* outline: 5px solid red; */
+    width: 99.99vw; 
+    margin: 0 auto; 
+    display: grid;
+    place-content: center;
+    color: white;
+    cursor: pointer;
+
+
+
+
+}
+
+
+
+.secondaryButton{
+
+
+
+margin-top: -1.5em; 
+
+
+
+
+}
+
+
+
+
+
+
+
+
+

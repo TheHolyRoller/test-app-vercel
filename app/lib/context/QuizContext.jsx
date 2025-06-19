@@ -129,7 +129,8 @@ export const QuizProvider = ({ children }) => {
                       QUESTION_COLLECTION_ID,
                       [
                         Query.limit(1000),
-                        Query.offset(offset)
+                        Query.offset(offset), 
+                        Query.orderAsc('sequenceNumber')
                       ]
                     );
                     

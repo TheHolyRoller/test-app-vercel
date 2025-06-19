@@ -123,7 +123,7 @@ function CategoryPage() {
 
 
 
-                    <article className={c.mainLogoContainer}>
+     <article className={c.mainLogoContainer}>
       
       {/* Add in the Logo container here  */}
       <div className={c.logoContainer}>
@@ -158,13 +158,6 @@ function CategoryPage() {
 </footer>
 
 
-
-        {/* Add in the button here  */}
-        
-        
-
-
-       
 
 
 

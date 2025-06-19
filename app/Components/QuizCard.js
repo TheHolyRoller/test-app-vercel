@@ -176,7 +176,6 @@ const QuizCard = ({
                 position: 'relative',
                 zIndex: 200,
                 boxShadow: '0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.06)', 
-                outline: '4px solid red'
 
             }}
         >
@@ -255,7 +254,7 @@ const QuizCard = ({
 
         {/* Integrated Answer Section - Only show on /quiz route */}
         {pathname === '/quiz' && (
-            <section className={`${q.mainAnswerContainer} ${nunito.className}`} style={{outline: '4px solid red'}}>
+            <section className={`${q.mainAnswerContainer} ${nunito.className}`}>
                 <article className={`${q.answerSection} ${nunito.className}`}>
                     <div className={`${q.buttonList} ${nunito.className}`}>
 

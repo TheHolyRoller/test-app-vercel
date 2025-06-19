@@ -7,6 +7,7 @@ import { useRouter } from 'next/navigation';
 import q from '../Styles/Quiz.module.css';
 import Image from 'next/image';
 import QuizCard from '../Components/QuizCard';
+import CategoryCard from '../Components/CategoryCard';
 
 
 
@@ -76,7 +77,9 @@ export default function Quiz() {
             GIF_URL,
             currentIMG,
             currentIndex,
-            totalQuestions: quizLength
+            totalQuestions: quizLength,
+            isCategory: Type.toLowerCase() === 'category',
+            categoryName: currentQuestion?.categoryName
         });
     }, [currentQuestion, currentIndex]);
 
@@ -103,19 +106,24 @@ export default function Quiz() {
 
             <div className={q.quizCardContainer}>
 
-            <QuizCard 
-            
+                {/* Conditionally render CategoryCard or QuizCard based on Type */}
+                {Type.toLowerCase() === 'category' ? (
+                    <CategoryCard 
+                        Section={Section}
+                        categoryName={currentQuestion?.categoryName || currentQuestion?.questionText}
+                        audio_URL={audio_URL}
+                    />
+                ) : (
+                    <QuizCard
                         questionText={questionText}
                         Section={Section}
                         audio_URL={audio_URL}
                         currentIMG={GIF_URL}
+                        currentQuestion={currentQuestion}
                     />
+                )}
 
                </div>
-          
-          
-          
-                
             </main>
         </section>
     );
