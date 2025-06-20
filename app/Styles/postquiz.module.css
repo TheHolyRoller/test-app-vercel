@@ -91,7 +91,7 @@ font-size: clamp(1.5rem + 1vw, 2rem, 3rem);
 
     margin: 0 auto;
 
-    margin-bottom: -0em; 
+    margin-bottom: -3em; 
     color: white; 
     
 
@@ -104,6 +104,7 @@ font-size: clamp(1.5rem + 1vw, 2rem, 3rem);
 
 
 
+    margin-top: -1em;
 
 
 }
@@ -112,15 +113,14 @@ font-size: clamp(1.5rem + 1vw, 2rem, 3rem);
 .secondaryButtonContainer{
 
 
-    /* outline: 5px solid red; */
     width: 99.99vw; 
     margin: 0 auto; 
+    margin-top: -0.8em;
     display: grid;
     place-content: center;
     color: white;
     cursor: pointer;
-
-
+    
 
 
 }

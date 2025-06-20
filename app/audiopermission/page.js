@@ -1,7 +1,9 @@
 'use client'
 import React from 'react'
 import Image from 'next/image'; 
-import a from '../Styles/sound.module.css';
+// import a from '../Styles/sound.module.css';
+import a from '../Styles/Quiz.module.css'; 
+
 import { nunito } from '../fonts/nunito';
 import { usePathname } from 'next/navigation'; 
 import AudioButtons from '../Components/AudioButtons'; 
@@ -24,6 +26,18 @@ function Page() {
   const getLabelColorBySection = (section) => "#033699";
   
   return (
+
+    <>
+
+
+   <section className={a.mainPageContainer}>
+
+
+
+
+
+
+
     <div>
       {/* Top Blue Navbar Strip */}
       <div 
@@ -34,7 +48,7 @@ function Page() {
           position: 'fixed',
           top: 0,
           left: 0,
-          zIndex: 100
+        zIndex: 1
         }}
       />
       
@@ -42,12 +56,12 @@ function Page() {
       <div style={{ paddingTop: '60px' }}>
         <article 
         className={`${a.card} ${nunito.className}`} 
-        id={a.firstCARD} 
+        id={a.audioFirstCard} 
         style={{
             position: 'relative',
             zIndex: 200,
             boxShadow: '0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.06)',
-            marginTop: '-40px'
+            marginTop: '-40px', 
         }}
         >
     <div 
@@ -101,6 +115,7 @@ function Page() {
         <div className={a.doodleContainer}>
             {currentIMG && (
                 <Image 
+                    className={a.gifImage}
                     src={currentIMG}
                     alt='quiz illustration'
                     width={300}
@@ -124,13 +139,25 @@ function Page() {
     <article className={a.card} id={a.cardFour}></article>
 </article>
 
+        <div className={a.audioButtonSectionContainer}>
+        <div className={a.audioButtonsSubContainer}>
+
+
+
         <AudioButtons/> 
+        </div>
+        </div>
         
 
 
 
       </div>
     </div>
+   </section>
+
+
+    </>
+
   )
 }
 

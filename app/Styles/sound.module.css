@@ -1,12 +1,37 @@
-.card {
-    height: 625px;
-    width:340px;    
-    position: relative;
-    background-color: #ccc;
-    background-color: #fbfbfb;
+
+
+.mainPageContainer{
+
+
+
+    width: 99vw; 
     margin: 0 auto; 
+    position: relative; 
+    height: 99vh; 
+    max-height: 40.625rem;
+    display: grid;
+    place-content: center; 
+
+    outline: 5px solid red;
+
+
+
+
+
+}
+
+
+.card {
+    height: 70vh;
+    max-height: 31.25rem;
+    position: relative;
+    width: 340px;
+
+  
+    margin: 0 auto; 
+    
     margin-bottom: 5.9rem;
-    margin-top: 2rem;
+    margin-top: -5rem !important;
     border-radius: 1rem;
     -webkit-border-radius: 1rem;
     -moz-border-radius: 1rem;
@@ -19,13 +44,17 @@
 
 .cardCategoryColorContainer{
     position: relative;
-    height: 3rem;
+    z-index: 999999999999999999999;
     border-top-left-radius: 12px;
-    border-top-right-radius: 12px; 
-    display: grid; 
+    border-top-right-radius: 12px;
+    display: grid;
     place-content: center;
-    background-color: var(--category-color, #ccc);
-    height: 4.5rem; 
+    height: 4.5rem;
+    transform: translate(0, 0.75em);
+    -webkit-transform: translate(0, 0.75em);
+    -moz-transform: translate(0, 0.75em);
+    -ms-transform: translate(0, 0.75em);
+    -o-transform: translate(0, 0.75em);
 }
 
 .categoryLabelContainer{
@@ -104,7 +133,17 @@
 }
 
 .doodleContainer{
-    margin-top: -1.5em;     
+    /* margin-top: -1.5em;      */
+    /* display: none; */
+}
+
+
+.gifImage{
+   height: 90%;
+
+   
+
+
 }
 
 #cardOne{
@@ -115,7 +154,6 @@
     position: relative;
     width: 345px;
     height: 555px;
-    background-color: #fbfbfb;
     border-radius: 0rem;
     -webkit-border-radius: 0rem;
     -moz-border-radius: 0rem;
@@ -186,3 +224,102 @@
     -ms-border-radius: 0 0 1rem 1rem;
     -o-border-radius: 0 0 1rem 1rem;
 }
+
+
+.audioButtonSectionContainer{
+
+
+position: absolute; 
+width: 2vw; 
+left: 49%; 
+bottom: 0; 
+display: grid;
+place-content: center;
+
+
+
+}
+
+
+.audioButtonsSubContainer{
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+@media(max-width: 100px){
+
+    .audioButtonSectionContainer{
+
+
+        position: absolute; 
+        width: 2vw; 
+        left: 50%; 
+        bottom: 0;
+        
+        
+        }
+
+
+
+
+
+}
+
+@media(min-width: 1000px){
+
+    .audioButtonSectionContainer{
+
+
+        position: absolute; 
+        width: 2vw; 
+        left: 49%; 
+        bottom: 0;
+        
+        
+        }
+
+
+        
+.mainPageContainer{
+
+
+
+    width: 99vw; 
+    margin: 0 auto; 
+    position: relative; 
+    height: 99vh; 
+    max-height: 40.625rem;
+    display: grid;
+    place-content: center; 
+    /* margin-top: -3em */
+
+
+
+
+
+}
+
+
+
+
+
+}
+
+
+
+
+
+

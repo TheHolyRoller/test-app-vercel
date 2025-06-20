@@ -1,16 +1,23 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import ivvi_group from '../assets/ivvi_group.svg'; 
 import u from '../Styles/understand.module.css'; 
 
 
 
-
-
 function Understand() {
+  const router = useRouter();
+  
   // Debug: Log the CSS module classes
   console.log('CSS Module classes:', u);
   console.log('mainContainer class:', u.mainContainer);
+  
+  const handleNext = () => {
+    router.push('/ideal');
+  };
   
   return (
     
@@ -21,7 +28,6 @@ function Understand() {
     <header className={u.headerImageContainer}>
 
     <Image className={u.mainImage}  src={ivvi_group} width={5000} height={500} alt='notes' /> 
-
     </header>
     
     <div className={u.mainHeaderContainer}>
@@ -51,7 +57,7 @@ function Understand() {
     <div className={u.ctaContainer}>
 
 
-    <div className={u.cta}>
+    <div className={u.cta} onClick={handleNext}>
 
       Next 
 

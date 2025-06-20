@@ -4,6 +4,7 @@ import { useUser } from '../lib/context/UserContext';
 import { useQuiz } from '../lib/context/QuizContext';
 import { useSearchParams } from 'next/navigation';
 import r from '../Styles/Results.module.css'; 
+import resultStyles from '../Styles/Result.module.css'; 
 import { useRouter } from 'next/navigation'; 
 import { useState } from 'react';
 
@@ -13,6 +14,7 @@ import PhoneBarChart from '../Components/PhoneBarChart';
 // Import the appwrite credentials here 
 import { databases } from '../lib/appwrite';
 
+  
 function ResultContent() {
     const searchParams = useSearchParams();
     const { name, userAge } = useUser();
@@ -204,27 +206,55 @@ function ResultContent() {
     
     return (
         <>
+        <main className={resultStyles.mainChartContainer}>
+            <div className={resultStyles.mainChartSubContainer}>
 
-       
-        <PhoneBarChart
-        percentage={percentage}
-        writingPercentage={writingPercentage}
-        memoryPercentage={memoryPercentage}
-        readingPercentage={readingPercentage}
-        examResultsPercentage={examResultsPercentage}
-        organisationalPercentage={organisationalPercentage}
-        writingScore={writingScore}
-        readingScore={readingScore}
-        examResultsScore={examResultsScore}
-        organisationalScore={organisationalScore}
-        memoryScore={memoryScore}
+                <div className={resultStyles.mainHeadlineContainer}>
+                    <h1 className={resultStyles.mainHeadline}>
+                        Your Dyslexia Score
+                    </h1>
+                </div>
 
+                <div className={resultStyles.mainScore}>
+                    {percentage || 89}
+                    <span className={resultStyles.refSpan}>
+                        /100
+                    </span>
+                </div>
+                
+                <div className={resultStyles.impactMessage} 
+                >
+                    <p className={resultStyles.impactText}>
+                        {percentage >= 70 
+                            ? "This Indicates your work could be significantly impacted by Dyslexia"
+                            : "This indicates your work could be mildly impacted by Dyslexia"
+                        }
+                    </p>
+                </div>
 
-/>
-        
+                <section className={resultStyles.chartContainer}>
+                    <div className={resultStyles.mainChartSubContainerTextSection}>
+                        <div className={resultStyles.mainTitleContainer}>
+                            <div className={resultStyles.mainTitleSubContainer}>
+                                {/* Chart content area - ready for future enhancements */}
+                            </div>
+                        </div>
+                    </div>
 
+                    {/* Navigation Button with Expert UI Design */}
+                    <div className={resultStyles.buttonContainer}>
+                        <div 
+                            className={resultStyles.button} 
+                            onClick={() => router.push('/results-explanation')} 
+                        >
+                            View Detailed Breakdown
+                        </div>
+                    </div>
 
+                </section>
 
+            </div>
+        </main>
         </>
     );
 }

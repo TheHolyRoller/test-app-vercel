@@ -1,6 +1,8 @@
 .card {
-    height: 625px;
-    width:340px;    
+    /* height: 625px; */
+    height: var(--card-height);
+    max-height: var(--max-card-height);
+    width:320px;    
     position: relative;
     background-color: #ccc;
     background-color: #fbfbfb;
@@ -82,7 +84,9 @@
     -ms-transform:translate(-50%, -30%);
     -o-transform:translate(-50%, -30%);
 
-    /* outline: 4px solid lime; */
+
+
+
 }
 
 .questionText{
@@ -117,7 +121,7 @@
     right: 0;
     top: 0;
     position: relative;
-    width: 345px;
+    width: 320px;
     height: 555px;
     background-color: #fbfbfb;
     border-radius: 0rem;
@@ -142,7 +146,7 @@
     margin-bottom: -5rem !important;
     height: 555px; 
     max-height: 777px;
-    width: 338px;
+    width: 320px;
     background-color: #fbfbfb;
     box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
     transform:translate(0rem, 4em);
@@ -153,7 +157,7 @@
 }
 
 #cardThree{
- width: 340px;
+ width: 320px;
  height: 400px;
  background-color: #fbfbfb;
  border-radius: 1rem;
@@ -172,7 +176,7 @@
 #cardFour{
     position: relative;
     z-index: -5;
-    width: 340px;
+    width: 320px;
     height: 400px;
     background-color: #fbfbfb;
     position: absolute;
@@ -331,15 +335,13 @@
 
     height: 2.5rem; 
     width: 17rem; 
-    /* color: rgb(193, 187, 187); 
-     */
      color: black; 
 
     text-align: center;
     font-weight: bold;
-    /* outline: 3px solid red; */
     background-color: white;
 }
+
 
 .userNameInput::placeholder {
     color: #aaa; /* light gray, or any color you prefer */
@@ -382,6 +384,8 @@
     display: grid;
     place-content: center;
     margin-top: -5rem !important; 
+    cursor: pointer;
+    
 
 
 

@@ -6,6 +6,8 @@ import ab from '../Styles/audioButtons.module.css';
 import { nunito } from '../fonts/nunito';
 import { chewy } from '../fonts/chewy';
 
+
+
 function AudioButtons() {
     const router = useRouter();
     const { setUserSound } = useUser();
@@ -25,7 +27,9 @@ function AudioButtons() {
                   onMouseEnter={() => console.log('🖱️ Hovering Audio Off Button')}
                 >
                     <div className={`${ab.button} ${chewy.className}`} id={ab.noButton}>
+                        
                         NO 
+
                     </div>
                     <div className={ab.buttonStack} id={ab.noStackOne}></div>
                     <div className={ab.buttonStack} id={ab.noStackTwo}></div>

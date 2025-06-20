@@ -6,12 +6,15 @@ import { useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react'; 
 import { databases } from '../lib/appwrite';
 import emailSubmission from '../Styles/email.module.css'; 
+// import emailSubmission from '../Styles/Quiz.module.css'; 
 
+    
 import { nunito } from '../fonts/nunito';
 import Image from 'next/image';
 
 const DATABASE_ID = process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID;
 const COLLECTION_ID = process.env.NEXT_PUBLIC_APPWRITE_RESULTS_COLLECTION_ID;
+
 
 
 export default function EmailPermission() {
@@ -130,9 +133,9 @@ export default function EmailPermission() {
             console.log('📧 Sending email...');
             await sendEmail();
             
-            // Navigate to results page after successful submission
-            console.log('🔄 Navigating to results page...');
-            router.push('/result');
+            // Navigate to confirmation page after successful submission
+            console.log('🔄 Navigating to confirmation page...');
+            router.push('/confirmation');
         } catch (error) {
             console.error('❌ Error in form submission:', error);
             alert('An error occurred. Please try again.');
@@ -262,7 +265,7 @@ export default function EmailPermission() {
   <div className={emailSubmission.nextButtonContainer}>
 
 <button className={emailSubmission.nextButton} form='emailForm' type='submit'>
-    Submit 
+    Next 
 </button>
 </div>
 

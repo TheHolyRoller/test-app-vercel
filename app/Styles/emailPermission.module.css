@@ -1,6 +1,8 @@
 .card {
-    height: 625px;
-    width:340px;    
+    /* height: 625px; */
+    height: var(--card-height);
+
+    width:320px;    
     position: relative;
     /* background-color: #ccc; */
     /* background-color: #fbfbfb; */
@@ -99,16 +101,33 @@
     place-content: center; 
     margin: 0 auto; 
     width: 100%;
+    height:5em !important;
     position: relative; 
     z-index: 9;
     margin-top: 0rem !important; 
     position: absolute; 
-    top: 60%; 
+    top: 80%; 
+
+
+
+
 }
 
 .doodleContainer{
-    margin-top: -1.5em;     
+    margin-top: 2.8em;     
 }
+
+
+
+.currentIMG{
+
+    height: 80%; 
+    display: none;
+    
+
+}
+
+
 
 #cardOne{
     position: absolute;
@@ -116,7 +135,7 @@
     right: 0;
     top: 0;
     position: relative;
-    width: 345px;
+    width: 320px;
     height: 555px;
     background-color: #fbfbfb;
     border-radius: 0rem;
@@ -131,17 +150,17 @@
 }
 
 #cardTwo{
-    position: absolute; 
-    top: 0; 
-    left: 0; 
-    right: 0; 
-    bottom: 0; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     display: none;
     z-index: -1;
     margin-bottom: -5rem !important;
-    height: 555px; 
+    height: 555px;
     max-height: 777px;
-    width: 338px;
+    width: 320px;
     background-color: #fbfbfb;
     box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
     transform:translate(0rem, 4em);
@@ -152,7 +171,7 @@
 }
 
 #cardThree{
- width: 340px;
+ width: 320px;
  height: 400px;
  background-color: #fbfbfb;
  border-radius: 1rem;
@@ -171,7 +190,7 @@
 #cardFour{
     position: relative;
     z-index: -5;
-    width: 340px;
+    width: 320px;
     height: 400px;
     background-color: #fbfbfb;
     position: absolute;
@@ -201,7 +220,6 @@
     display: grid; 
     place-content: center;
     margin-top: -5.4em; 
-    cursor: pointer;
 
 
 
@@ -211,7 +229,7 @@
 .ctaContainer{
 
 
-
+    cursor: pointer;
 
 
 
@@ -233,7 +251,9 @@
     -moz-border-radius: 22px;
     -ms-border-radius: 22px;
     -o-border-radius: 22px;
-    cursor: pointer;
+    cursor: pointer !important; 
+
+
 
 }
 
@@ -241,7 +261,7 @@
 
 .noButtonContainer{
 
-
+    cursor: pointer;
 
 
 

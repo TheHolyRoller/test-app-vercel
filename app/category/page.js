@@ -4,6 +4,7 @@ import Image from 'next/image';
 import c from '../Styles/categories.module.css';
 import { nunito } from '../fonts/nunito';
 import { useQuiz } from '../lib/context/QuizContext';
+
 import { usePathname } from 'next/navigation';
 import logo from '../assets/ivvi_Logo.svg'; 
 
@@ -109,6 +110,9 @@ function CategoryPage() {
 
         <>
 
+        <section className={c.mainCategoryCardContainer}>
+
+
         <article 
         className={`${c.card} ${nunito.className}`} 
         id={c.firstCARD} 
@@ -185,6 +189,7 @@ function CategoryPage() {
     <aside className={c.buttonSectionContainer}>
         <div className={c.CTAButton}  onClick={() => router.push('/sound')} >Next </div>
         </aside>
+        </section>
 
 
     </>

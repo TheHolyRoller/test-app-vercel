@@ -1,34 +1,22 @@
-
 .quizResultsSection {
-
     height: 100vh; 
     width: 80vw; 
     margin: 10vh auto;
     padding: 1vh; 
     position: relative;
-
     outline: 4px solid lime;
     margin-top: -1em; 
-
-
 }
 
-
 .quizResultsSubContainer {
-
-
     display: grid; 
     place-content: center;
     height: 100%;
-
 }
 
 .mainTitleContainer {
-
-
     display: grid;
     place-content: center;
-
 }
 
 .mainQuizTitle {
@@ -36,19 +24,13 @@
 }
 
 .mainScoreSectionContainer {
-
-    /* outline: 3px solid blue; */
     position: relative; 
     display: grid;
     place-content: center;
-
-
 }
 
 .mainScoreSubContainer {
-
     height: 45vh;
-
 }
 
 .mainScoreElement {
@@ -64,16 +46,9 @@
     place-content: center; 
     margin: 2em auto; 
     font-size: 3rem;
-
 }
 
 .refSpan{
-
-    
-
-
-
-
 }
 
 .circle{
@@ -100,26 +75,20 @@
     position: relative;
     display: grid;  
     place-content: center;
-
 }
 
 .mainQuizSupportingText {
-
-  
 }
 
 .scoreIntroText {
-
     color: #868686; 
     text-transform: uppercase;
     font-weight: bold;
-
 }
 
 .mainScoreBoardContainer {
     background-color: #f1f1f1;
     padding: 4em; 
-
     height: 45vh;
     border-radius: 12px;
     -webkit-border-radius: 12px;
@@ -127,8 +96,6 @@
     -ms-border-radius: 12px;
     -o-border-radius: 12px;
     color: #000;
-    /* outline: 2px solid red; */
-
 }
 
 .scoreBoardSubContainer {
@@ -138,14 +105,11 @@
 }
 
 .scoreBoardListItem {
-
     display: flex;
     justify-content: space-between;
     align-items: center; 
     width: 55vw; 
     margin-top: 1em; 
-
-    
 }
 
 .scoreTitleContainer {
@@ -168,11 +132,8 @@
 }
 
 .learnMoreCTAContainer {
-
     display: flex;
     justify-content: flex-end;
-
-
 }
 
 .learnMoreCTASubContainer {
@@ -199,11 +160,20 @@
     -ms-border-radius:10px;
     -o-border-radius:10px;
     margin-top: 2em; 
-
 }
 
 .CTAButtonSubContainer {
 }
 
 .CTAButton {
+}
+
+
+
+.impactText{
+
+
+    margin: 4em auto; 
+    outline: 5px solid lime;
+
 }

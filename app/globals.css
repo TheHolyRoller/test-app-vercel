@@ -8,6 +8,14 @@
   --background: #9091ac;
   --foreground: #171717;
   overflow-x: hidden;
+
+  --card-width: 20rem; 
+  --card-height: 70vh; 
+  --max-card-height: 40rem; 
+  --card-background-color: rgb(251, 251, 251); 
+  
+  
+
   
 }
 

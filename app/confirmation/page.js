@@ -7,6 +7,7 @@ import { useState } from 'react';
 // import e from '../Styles/emailPermission.modul.css'; 
 import n from '../Styles/name.module.css'; 
 
+
 import { nunito } from '../fonts/nunito';
 import Image from 'next/image';
 
@@ -27,7 +28,7 @@ export default function EmailPermission() {
         handleAnswer('noop');
 
         setTimeout(() => {
-            router.push('/quiz');
+            router.push('/');
         }, 210);
     };
 
@@ -118,16 +119,6 @@ export default function EmailPermission() {
               </h2>
           </div>
       
-      
-  
-
-
-
-
-
-
-
-
   
       <article className={n.card} id={n.cardOne}></article>
       <article className={n.card} id={n.cardTwo}></article>
@@ -138,7 +129,7 @@ export default function EmailPermission() {
       
   <div className={n.nextButtonContainer}>
 
-<button className={n.nextButton} >
+<button className={n.nextButton} onClick={handleSubmit} >
     Next 
 </button>
 </div>

@@ -16,6 +16,7 @@ function Start() {
 
     
 
+
   const handleStartScreener = () => {
     if (loading || isNewUser === null) {
       console.log('Still determining user status...');
@@ -41,14 +42,13 @@ function Start() {
       
         {/* Add in the Logo container here  */}
         <div className={s.logoContainer}>
-        <h1> 
+        <h1 className={s.mainTextHeader} > 
         <span className={s.theSpan} >
 
         The
         </span>
          Adult Dyslexia Screener </h1>
         </div>
-              {/* Add in the logo here  */}
 
 
        </article>
@@ -62,7 +62,6 @@ function Start() {
         <footer className={s.ivviLogoContainer}>
 
           <span className={s.bySpan}>by</span>
-
 
           <figure className={s.logo}>
 

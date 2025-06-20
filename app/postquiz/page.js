@@ -31,21 +31,10 @@ function PostQuizPage() {
     }
   };
 
-  const handleStartScreener = () => {
-    if (loading || isNewUser === null) {
-      console.log('Still determining user status...');
-      return;
-    }
-
-    if (isNewUser) {
-      console.log('this is the value of new user \n', isNewUser);
-      console.log('New user detected, routing to /understand');
-      router.push('/understand');
-    } else {
-      console.log('Returning user detected, routing to /audiopermission');
-      router.push('/audiopermission');
-    }
+  const handleGoToIdeal = () => {
+    router.push('/');
   };
+
 
   return (
     <>
@@ -70,7 +59,7 @@ function PostQuizPage() {
          {/* Add in the final button here  */}
              <div className={ps.secondaryButtonContainer}>
 
-                 <div className={ps.secondaryButton} onClick={handleStartScreener}>
+                 <div className={ps.secondaryButton} onClick={handleGoToIdeal}>
 
                  *or Click here to Screen them now
 

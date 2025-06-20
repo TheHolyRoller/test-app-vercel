@@ -30,6 +30,18 @@ margin-bottom: 5em;
 }
 
 
+.mainCategoryCardContainer{
+
+
+    outline: 5px solid lime;
+    height: 70vh; 
+    max-height: 650px;
+
+
+}
+
+
+
 .navbarStrip{
 
 
@@ -55,14 +67,20 @@ margin-bottom: 5em;
 
 
 
+
 .card{
 
-    height: 625px;
+    /* height: 70vh;  */
+    height: var(--card-height); 
+    max-height: 40rem; 
+    width: var(--card-width);   
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
 
-    width:340px;    
+
+
+
     position: relative;
-    background-color: #ccc;
-    background-color: #fbfbfb;
+    background-color: var(--card-background-color);
     margin: 0 auto; 
     margin-bottom: 5.9rem;
     margin-top: -5em !important;
@@ -73,66 +91,57 @@ margin-bottom: 5em;
     -o-border-radius: 1rem;
 
 
+
 }
 
 
 #firstCARD{
-
-
-
+  
 
 
 }
+
+
+
+#audioFirstCard{
+
+
+
+    margin-top: 0 !important;
+
+
+}
+
+
+
 
 
 
 
 
 #cardOne{
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    position: relative;
-    outline: 5px solid red;
-    width: 345px;
-    height: 555px;
-    background-color: #fbfbfb;
-    border-radius: 0rem;
-    -webkit-border-radius: 0rem;
-    -moz-border-radius: 0rem;
-    -ms-border-radius: 0rem;
-    -o-border-radius: 0rem;
-    z-index: -2;
-   display: none;
-    transform:  translate(0rem,3em) !important;
-    box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+
+
+
+    height: 90%;
+    margin-top: 5em;
+    transform:translate(0, 4.27em) !important;
+    -webkit-transform:translate(0, 4.27em) !important;
+    -moz-transform:translate(0, 4.27em) !important;
+    -ms-transform:translate(0, 4.27em) !important;
+    -o-transform:translate(0, 4.27em) !important;
 }
 
 
 
 #cardTwo{
 
-    position: absolute; 
-    top: 0; 
-    left: 0; 
-    right: 0; 
-    bottom: 0; 
-    display: none;
 
-    z-index: -1;
-    margin-bottom: -5rem !important;
-    outline: 1px solid lime;
-    height: 555px; 
-    max-height: 777px;
-    width: 338px;
-    background-color: #fbfbfb;
-    box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
-    transform:translate(0rem, 4em);
-    -webkit-transform:translate(0rem, 4em);
-    -moz-transform:translate(0rem, 4em);
-    -ms-transform:translate(0rem, 4em);
-    -o-transform:translate(0rem, 4em);
+
+    display: none;  
+
+
+    
     
 
 }
@@ -142,8 +151,10 @@ margin-bottom: 5em;
 
 
  
- width: 340px;
- height: 400px;
+ /* width: 340px; */
+ width: var(--card-width);     
+
+ /* height: 400px; */
  background-color: #fbfbfb;
  border-radius: 1rem;
  -webkit-border-radius: 1rem;
@@ -154,29 +165,34 @@ margin-bottom: 5em;
  position: absolute;
  bottom: 0; 
  z-index: -2;
- /* outline: 1px solid red; */
- /* margin-bottom: -0rem; */
- margin-bottom: 0.8em;
-
+ margin-bottom: -1rem;
+ /* margin-bottom: 0.8em; */
  box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+
+ /* outline: 3px solid lime; */
 
 }
 
 
 
 #cardFour{
-    /*display: none;*/
-    /* outline: 1px solid red; */
-    
     position: relative;
     z-index: -5;
-    width: 340px;
-    height: 400px;
+    width: var(--card-width);
+    
+    
+    height: var(--card-height);
+    max-height: var(--max-card-height);
+
+
     background-color: #fbfbfb;
     position: absolute;
-    bottom: 0;
+    bottom: -1.8rem;
     right: 0;
     border-radius: 0 0 1rem 1rem;
+
+
+
     box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
     transform:translate(0, 5.5em);
     -webkit-transform:translate(0, 5.5em);
@@ -226,12 +242,13 @@ margin-bottom: 5em;
 
 .cardCategoryColorContainer{
     position: relative;
+    z-index: 999;
     height: 3rem;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px; 
     display: grid; 
     place-content: center;
-
+    margin-top: -2em; 
 
 
 
@@ -289,8 +306,8 @@ margin-bottom: 5em;
     margin: 0 auto;
     text-transform: uppercase;
     font-family: var(--font-nunito), sans-serif;
-    /*position: relative;
-    */z-index: 9999999;
+    height: 6rem; 
+    z-index: 9999999;
     position: absolute;
     top: 30%;
     left: 50%;
@@ -301,6 +318,11 @@ margin-bottom: 5em;
     -moz-transform:translate(-50%, -30%) ;
     -ms-transform:translate(-50%, -30%) ;
     -o-transform:translate(-50%, -30%) ;
+}
+
+/* Email-specific question text container positioning */
+.questionTextContainer.emailStyle{
+    top: 42%;
 }
 
 
@@ -481,7 +503,7 @@ background-color: #82c34a;
 
 .mainAnswerContainer{
     position: absolute;
-    bottom: 1.125rem;
+    bottom: 0;
     left: 50%;
     transform: translateX(-50%);
     display: grid;
@@ -494,6 +516,9 @@ background-color: #82c34a;
     -moz-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     -o-transform: translateX(-50%);
+
+
+
 }
 
 .answerSection{
@@ -808,7 +833,6 @@ background-color: #82c34a;
 
 #yesButton{
     background-color: rgb(156, 194, 109);
-    /* outline: 2px solid lime; */
 }
 
 #yesButton::before {
@@ -942,13 +966,332 @@ background-color: #82c34a;
 
 }
 
+
+
+.audioButtonSectionContainer{
+
+    position: absolute; 
+    width: 2vw; 
+    left: 49%; 
+    bottom: -1.5rem !important; 
+
+    display: grid;
+    place-content: center;
+
+
+}
+
+
+
+
 /* Add in the media queries here  */
+
+@media(min-width: 1300px){
+
+
+    .audioButtonSectionContainer{
+        position: absolute;
+        width: 2vw;
+        height: 9em;
+        display: grid;
+        place-content: center;
+        left: 49%;
+        bottom: 0rem !important;
+        /* outline: 3px solid red !important; */
+        transform:translate(0, 2em) ;
+        -webkit-transform:translate(0, 2em) ;
+        -moz-transform:translate(0, 2em) ;
+        -ms-transform:translate(0, 2em) ;
+        -o-transform:translate(0, 2em) ;
+}
+
+    
+
+
+}
+
+@media(min-width: 1100px){
+
+    .mainAnswerContainer{
+        position: absolute;
+        bottom: -0.9em;
+
+    
+    }
+}
+
+@media(min-width: 1280px) {
+
+
+    .audioButtonSectionContainer{
+
+        position: absolute; 
+        width: 2vw; 
+        left: 49%; 
+        bottom: 4rem !important; 
+    
+        display: grid;
+        place-content: center;
+    
+    
+    }
+
+
+
+
+}
 
 
 /* Add in the effects here  */
 
 
 /* Add in the animations here  */
+
+
+
+
+
+
+
+
+
+
+/* ============ EMAIL SPECIFIC STYLES ============ */
+
+.buttonSectionContainer{
+    display: flex;
+    justify-content: flex-end !important;
+}
+
+.ctaContainer{
+    /* CTA container styling */
+}
+
+.cta{
+    background-color: #f49b53;
+    width: 300px;
+    height: 55px;
+    display: grid;
+    place-content: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    border-radius: 22px;
+    -webkit-border-radius: 22px;
+    -moz-border-radius: 22px;
+    -ms-border-radius: 22px;
+    -o-border-radius: 22px;
+    cursor: pointer;
+}
+
+.noButtonContainer{
+    /* No button container styling */
+}
+
+.noButton{
+    margin: 0 auto; 
+    display: grid; 
+    place-content: center;
+    margin-top: 0.5em; 
+    color: #7d879b; 
+}
+
+.inputContainer{
+    margin: 0 auto; 
+    display: grid;
+    place-content: center;
+    margin-top: 87%; 
+}
+
+.mainUserNameSection{
+    width: 100vw; 
+    display: grid;
+    place-content: center;
+    margin-bottom: 5em;
+    margin-top: -4em; 
+    margin-right: -7em; 
+}
+
+.userNameContainer{
+    /* Container for user name input */
+}
+
+.detailsForm{
+    /* Form styling */
+}
+
+.nameLabel{
+    outline: 4px solid blue; 
+    padding-right: 5px; 
+    margin-right: 0.3em;
+    display: none;
+}
+
+#name{
+    /* Name input ID styling */
+}
+
+.userNameInput{
+    all: unset;
+    outline: 2px solid rgb(193, 187, 187);
+    border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -ms-border-radius: 10px ;
+    -o-border-radius: 10px ;
+
+    height: 2.5rem; 
+    width: 17rem; 
+    color: black; 
+
+    text-align: center;
+    font-weight: bold;
+    background-color: white;
+}
+
+.userNameInput::placeholder {
+    color: #aaa;
+    opacity: 1;
+    font-weight: normal;
+}
+
+.userNameInput:-webkit-autofill {
+    background-color: rgb(226, 225, 225) !important;
+    -webkit-box-shadow: 0 0 0 1000px white inset !important;
+    -webkit-text-fill-color: black !important;
+}
+
+.userInputButton{
+    width: 8.5rem;
+    height: 2.45rem;
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
+    color: aliceblue;
+
+    display: grid;
+    place-content: center;
+
+    margin-top: 1rem;
+    font-weight: bold;
+    background-color: #013699;
+}
+
+.nextButtonContainer{
+    margin: 0 auto; 
+    width: 99.99vw; 
+    display: grid;
+    place-content: center;
+    margin-top: -5rem !important; 
+}
+
+.nextButton{
+    all: unset;
+    background-color: #F49B53;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    width: 300px;
+    height: 55px;
+    border-radius:22px;
+    -webkit-border-radius:22px;
+    -moz-border-radius:22px;
+    -ms-border-radius:22px;
+    -o-border-radius:22px;
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+}
+
+/* ============ EMAIL-SPECIFIC CARD OVERRIDES ============ */
+
+/* Email page card overrides */
+.card.emailCard {
+    height: 625px;
+    width: 340px;    
+    margin-top: -3rem !important; 
+}
+
+#cardOne.emailCardOne{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    position: relative;
+    width: 345px;
+    height: 555px;
+    background-color: #fbfbfb;
+    border-radius: 0rem;
+    -webkit-border-radius: 0rem;
+    -moz-border-radius: 0rem;
+    -ms-border-radius: 0rem;
+    -o-border-radius: 0rem;
+    z-index: -2;
+    display: none;
+    transform: translate(0rem,3em) !important;
+    box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+}
+
+#cardTwo.emailCardTwo{
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    display: none;
+    z-index: -1;
+    margin-bottom: -5rem !important;
+    height: 555px; 
+    max-height: 777px;
+    width: 338px;
+    background-color: #fbfbfb;
+    box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+    transform:translate(0rem, 4em);
+    -webkit-transform:translate(0rem, 4em);
+    -moz-transform:translate(0rem, 4em);
+    -ms-transform:translate(0rem, 4em);
+    -o-transform:translate(0rem, 4em);
+}
+
+#cardThree.emailCardThree{
+    width: 340px;
+    height: 400px;
+    background-color: #fbfbfb;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    position: absolute;
+    bottom: 0; 
+    z-index: -2;
+    margin-bottom: 0.8em;
+    box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+}
+
+#cardFour.emailCardFour{
+    position: relative;
+    z-index: -5;
+    width: 340px;
+    height: 400px;
+    background-color: #fbfbfb;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-radius: 0 0 1rem 1rem;
+    box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+    transform:translate(0, 5.5em);
+    -webkit-transform:translate(0, 5.5em);
+    -moz-transform:translate(0, 5.5em);
+    -ms-transform:translate(0, 5.5em);
+    -o-transform:translate(0, 5.5em);
+    -webkit-border-radius: 0 0 1rem 1rem;
+    -moz-border-radius: 0 0 1rem 1rem;
+    -ms-border-radius: 0 0 1rem 1rem;
+    -o-border-radius: 0 0 1rem 1rem;
+}
 
 
 

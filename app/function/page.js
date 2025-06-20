@@ -2,9 +2,17 @@ import React from 'react'
 import Image from 'next/image'
 import f from '../Styles/function.module.css'; 
 import group from '../assets/Multi Style Learning.svg'; 
+import { useRouter } from 'next/navigation';
 
 
-function page() {
+function Functional(){ 
+
+
+  const router = useRouter(); 
+  
+
+
+
   return (
     <section className={f.mainContainer} style={{backgroundColor: 'white'}}>
     <div className={f.subContainer}>

@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import Image from 'next/image'
 import l from '../Styles/legal.module.css'; 
@@ -8,12 +9,50 @@ import l from '../Styles/legal.module.css';
 // import legal from '../assets/Designed for You (2).svg'; 
 import legal from '../assets/Your notes are comprehensiv.svg'; 
 
+import { useRouter } from 'next/navigation';
 
 
 
 
 
-function page() {
+function Legal() {
+
+
+
+  const router = useRouter(); 
+
+
+  // Add in the router function here 
+  const handleNavigation = async () => {
+
+
+    console.log('navigating to audio permission');
+    
+    try{
+
+    await router.push('audiopermission'); 
+    console.log('navigation successful'); 
+
+
+
+
+    } 
+    catch(error){
+
+
+      console.error('navigation unsuccessful', error); 
+
+    }
+
+
+
+
+
+  }
+
+
+
+
   return (
     <section className={l.mainContainer} style={{backgroundColor: 'white'}}>
     <div className={l.subContainer}>
@@ -64,7 +103,7 @@ function page() {
     <div className={l.ctaContainer}>
 
 
-    <div className={l.cta}>
+    <div className={l.cta} onClick={handleNavigation} >
 
       Next 
 
@@ -84,4 +123,4 @@ function page() {
   )
 }
 
-export default page
+export default Legal

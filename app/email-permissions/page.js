@@ -16,7 +16,7 @@ export default function EmailPermission() {
     const { name, sound } = useUser();
 
     const handleYesClick = () => {
-        router.push('/email-signup');
+        router.push('/email');
     };
 
     const handleNoClick = () => {
@@ -88,7 +88,6 @@ Otherwise they won’t be saved.`;
   
   
                   <div className={`${e.labelContainer} ${nunito.className}`} style={{backgroundColor: getLabelColorBySection(Section)}}>
-  
                   ready
                   </div>
               </label>
@@ -113,6 +112,7 @@ Otherwise they won’t be saved.`;
               {currentIMG && (
                   <Image 
                       src={currentIMG}
+                      className={e.currentIMG}
                       alt='quiz illustration'
                       width={300}
                       height={300}
@@ -122,7 +122,7 @@ Otherwise they won’t be saved.`;
                       style={{
                           marginTop: '-4.5rem',
                           objectFit: 'contain', 
-                          zIndex: '0'
+                          zIndex: '0', 
                       }}
                   />
               )}
@@ -140,7 +140,7 @@ Otherwise they won’t be saved.`;
 
   <div className={e.ctaContainer}>
 
-    <div className={e.cta}>
+    <div className={e.cta} onClick={handleYesClick} >
         Yes
     </div>
 
@@ -148,7 +148,7 @@ Otherwise they won’t be saved.`;
   </div>
 
   <div className={e.noButtonContainer}>
-    <div className={e.noButton}>
+    <div className={e.noButton} onClick={handleNoClick} >
        No Thanks 
     
      </div>

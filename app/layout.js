@@ -2,7 +2,6 @@
 
 import { Inter } from "next/font/google";
 import "./globals.css";
-// import './Styles/devices.css'; 
 import { UserProvider } from "./lib/context/UserContext";
 import { QuizProvider } from "./lib/context/QuizContext";
 import Navbar from './Components/Navbar'; 

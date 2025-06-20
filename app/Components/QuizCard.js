@@ -14,6 +14,7 @@ const QuizCard = ({
     Section, 
     currentIMG,
     currentQuestion 
+    
 }) => {
 
     // Answer button state and logic from QuizAnswer

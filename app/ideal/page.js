@@ -1,5 +1,8 @@
+'use client';
+
 import React from 'react'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation';
 import i from '../Styles/ideal.module.css'; 
 
 // import n from '../assets/All in one resource.svg'; 
@@ -16,7 +19,13 @@ import all from '../assets/All in one resource.svg';
 
 
 
-function page() {
+function IdealPage() {
+  const router = useRouter();
+  
+  const handleNext = () => {
+    router.push('/adult');
+  };
+
   return (
 
   <section className={i.mainContainer} style={{backgroundColor: 'white'}}>
@@ -42,7 +51,11 @@ function page() {
     <article className={i.mainSupportingTextContainer}>
 
 
-    Helps students and professionals understand when dyslexia gets in the way.    </article>
+    Helps students and professionals understand when dyslexia gets in the way.  
+    
+    
+    
+    </article>
 
     <div className={i.pagination} >
 
@@ -52,7 +65,7 @@ function page() {
     <div className={i.ctaContainer}>
 
 
-    <div className={i.cta}>
+    <div className={i.cta} onClick={handleNext}>
 
       Next 
 
@@ -73,4 +86,4 @@ function page() {
 
 }
 
-export default page
+export default IdealPage

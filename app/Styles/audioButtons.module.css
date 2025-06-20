@@ -1,18 +1,14 @@
 .mainAnswerContainer {
     position: absolute;
-    bottom: 5.8rem;
-    left: 50%;
-    transform: translateX(-50%);
+    bottom:2.5em;
+    left: 0;
     display: grid;
     place-content: center;
     text-transform: uppercase;
     background: none;
     z-index: 1000;
-    width: 130%;
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
+    width: 100%;
+    
 
 
 
@@ -77,6 +73,7 @@
     padding-left: 3px; 
     padding-top: 3px; 
     background-color: red;
+    
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;

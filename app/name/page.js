@@ -27,7 +27,7 @@ export default function EmailPermission() {
         handleAnswer('noop');
 
         setTimeout(() => {
-            router.push('/quiz');
+            router.push('/email');
         }, 210);
     };
 
@@ -116,6 +116,7 @@ export default function EmailPermission() {
           </div>
       )}
       
+  
   
 
 

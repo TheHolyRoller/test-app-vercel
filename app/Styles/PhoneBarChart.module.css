@@ -27,14 +27,17 @@
 
 .mainScore{
     outline: 12px solid white;
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
     font-size: 4rem;
     color: white;
     background-color: #99bb9a;
     display: grid;
     place-content: center;
     margin: 0.5rem auto;
+
+    margin-top: -0.5em !important; 
+
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -69,6 +72,9 @@
     width: 100%;
     text-align: center;
     margin-bottom: 1rem;
+    margin-top: -2em;
+    
+
 }
 
 .mainHeadline{
@@ -97,9 +103,12 @@
     margin: 2rem auto; 
     width: 90%; 
     text-align: center;
-    margin-top: 5.5rem;
+    margin-top: 1.5rem;
     margin-bottom: -3rem; 
+    
+
 }
+
 
 
 .impactText{
@@ -107,7 +116,7 @@
     width: 100%; 
     text-align: center;
     line-height: 1.4;
-}
+} 
 
 
 
@@ -131,10 +140,17 @@
 }
 
 .chartContainer {
-    width: 100%;
+    width: 90vw; 
+    margin: 0 auto; 
+    display: grid;
+    place-content: center;
 }
 
 .barChartMainList {
+    margin: 0 auto; 
+    width: 90%; 
+    display: grid;
+    place-content: center;
 }
 
 .barChartListItem {
@@ -352,14 +368,15 @@
 
 /* Bar Chart Styles */
 .barChartSection {
-    width: calc(100% - 2rem);
+    width: 60vw;
     max-width: 800px;
-    margin: 3rem 1rem 2rem 1rem; 
+    margin: 3rem auto 2rem auto; 
     padding: 1rem 2rem;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 15px;
     backdrop-filter: blur(10px);
     box-sizing: border-box;
+    display: block;
 }
 
 .barChartItem {
@@ -391,7 +408,7 @@
 
 .barBackground {
     width: 100%;
-    height: 30px;
+    height: 50px;
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 15px;
     overflow: hidden;
@@ -490,11 +507,13 @@
     }
     
     .barBackground {
-        height: 26px;
+        height: 40px;
     }
     
     .barFill {
-        min-width: 50px;
+        min-width: 200px;
+        justify-content: center !important;
+        padding-left: 0 !important;
     }
     
     .barChartItem {
@@ -519,12 +538,14 @@
     }
     
     .barBackground {
-        height: 24px;
+        height: 36px;
     }
     
     .barFill {
         border-radius: 12px;
-        min-width: 45px;
+        min-width: 180px;
+        justify-content: center !important;
+        padding-left: 0 !important;
     }
     
     .barBackground {

@@ -13,7 +13,9 @@ function PhoneBarChart({ writingPercentage,
     readingScore, 
     examResultsScore, 
     organisationalScore,  
-    percentage
+    percentage,
+    isExplanationPage = false,
+    onNext
 
 
 }) {
@@ -67,7 +69,6 @@ function PhoneBarChart({ writingPercentage,
                 organisationalScore); 
                 
                 console.log('this is the final score in the phone bar chart \n', percentage); 
-            
 
   return (
     <>
@@ -83,7 +84,7 @@ function PhoneBarChart({ writingPercentage,
 
                 <h1 className={p.mainHeadline}>
 
-                    Your Dyslexia Score 
+                    {isExplanationPage ? "The 5 Areas" : "Your Dyslexia Score"}
 
                 </h1>
 
@@ -91,18 +92,23 @@ function PhoneBarChart({ writingPercentage,
 
             </div>
 
+            {!isExplanationPage && (
+                <div className={p.mainScore}>
+                    {percentage || 89}
+                    <span className={p.refSpan}>
+                        /100
+                    </span>
+                </div>
+            )}
 
-            <div className={p.mainScore}>
-
-            
-
-            {/* {percentage} */}
-            {percentage || 89}
-            <span className={p.refSpan}>
-                                        /100
-                                    </span>
-
-            </div>
+            {isExplanationPage && (
+                <div className={p.mainScore} style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>
+                    {percentage || 89}
+                    <span className={p.refSpan} style={{ fontSize: '1.2rem' }}>
+                        /100
+                    </span>
+                </div>
+            )}
             
             <div className={p.impactMessage}>
                 <p className={p.impactText}>
@@ -119,31 +125,37 @@ function PhoneBarChart({ writingPercentage,
                 <div className={p.mainTitleSubContainer}>
 
 
-                    {/* <h1 className={p.mainBarChartTitle}>
-                       Category Breakdown
-                    </h1> */}
                 </div>
                 </div>
-                    
-                    {/* Bar Chart Section */}
+
                     <div className={p.barChartSection}>
                         {categoryData.map((category, index) => (
                             <div key={index} className={p.barChartItem}>
-                                <div className={p.barChartHeader}>
-                                    <span className={p.categoryName}>{category.name}</span>
-                                </div>
                                 <div className={p.barContainer}>
                                     <div className={p.barBackground}>
                                         <div 
                                             className={p.barFill}
                                             style={{
                                                 width: `${category.percentage}%`,
-                                                backgroundColor: category.color
+                                                backgroundColor: category.color,
+                                                height: '50px',
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                justifyContent: 'flex-start',
+                                                paddingLeft: '16px'
                                             }}
                                         >
-                                            <span className={p.barPercentageText}>
-                                                {Math.round(category.percentage)}%
-                                            </span>
+                                            <div style={{ 
+                                                display: 'flex', 
+                                                alignItems: 'center', 
+                                                gap: '12px',
+                                                color: 'white',
+                                                fontWeight: '600',
+                                                fontSize: '1rem'
+                                            }}>
+                                                <span>{category.name}</span>
+                                                <span>{Math.round(category.percentage)}%</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -167,7 +179,7 @@ function PhoneBarChart({ writingPercentage,
                 {/* Add in the button here  */}
                     <div className={p.buttonContainer}>
 
-                        <div className={p.button}>
+                        <div className={p.button} onClick={onNext} style={{ cursor: 'pointer' }}>
 
                         Next
 
