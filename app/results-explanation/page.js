@@ -77,7 +77,7 @@ function ResultsExplanationContent() {
     formatScore(finalScore); 
 
     const handleNext = () => {
-        router.push('/result');
+        router.push('/email-permissions');
     };
     
     return (

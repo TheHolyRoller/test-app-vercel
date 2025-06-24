@@ -123,6 +123,8 @@
     font-size: 1.255rem;
     border: none;
     outline: none;
+    cursor: pointer;
+    
 }
 
 .button:hover {

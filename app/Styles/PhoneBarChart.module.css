@@ -144,6 +144,9 @@
     margin: 0 auto; 
     display: grid;
     place-content: center;
+    height: 50vh; 
+
+
 }
 
 .barChartMainList {

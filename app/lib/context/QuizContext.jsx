@@ -322,7 +322,7 @@ export const QuizProvider = ({ children }) => {
         } else {
             console.log('🏁 QuizContext: Quiz completed, setting final score');
             setFinalScore(score);
-            router.push('/email-permissions');
+            router.push('/result');
         }
     };
 

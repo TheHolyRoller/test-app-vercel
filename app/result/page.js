@@ -231,6 +231,7 @@ function ResultContent() {
                         }
                     </p>
                 </div>
+                
 
                 <section className={resultStyles.chartContainer}>
                     <div className={resultStyles.mainChartSubContainerTextSection}>

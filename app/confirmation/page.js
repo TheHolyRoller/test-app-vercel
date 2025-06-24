@@ -28,7 +28,7 @@ export default function EmailPermission() {
         handleAnswer('noop');
 
         setTimeout(() => {
-            router.push('/');
+            router.push('/postquiz');
         }, 210);
     };
 
@@ -119,6 +119,7 @@ export default function EmailPermission() {
               </h2>
           </div>
       
+
   
       <article className={n.card} id={n.cardOne}></article>
       <article className={n.card} id={n.cardTwo}></article>

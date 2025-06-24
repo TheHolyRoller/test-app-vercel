@@ -169,6 +169,8 @@
  box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
 }
 
+
+
 #cardFour{
     position: relative;
     z-index: -5;
@@ -197,6 +199,8 @@
 .buttonSectionContainer{
     display: flex;
     justify-content: flex-end !important;
+    cursor: pointer;
+
 }
 
 
@@ -367,6 +371,8 @@
    margin-top: 1rem;
    font-weight: bold;
    background-color: #013699;
+   cursor: pointer;
+
 }
 
 
@@ -405,5 +411,7 @@
 
       display: grid;
       place-content: center;
+      cursor: pointer;
+      
 }
 

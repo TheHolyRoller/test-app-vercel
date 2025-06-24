@@ -110,14 +110,14 @@ function PhoneBarChart({ writingPercentage,
                 </div>
             )}
             
-            <div className={p.impactMessage}>
+            {/* <div className={p.impactMessage}>
                 <p className={p.impactText}>
                     {percentage >= 70 
                         ? "This Indicates your work could be significantly impacted by Dyslexia"
                         : "This indicates your work could be mildly impacted by Dyslexia"
                     }
                 </p>
-            </div>
+            </div> */}
                 <section className={p.chartContainer}>
                 
                     <div className={p.mainChartSubContainerTextSection}>

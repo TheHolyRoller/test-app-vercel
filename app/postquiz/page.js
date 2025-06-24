@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import ps from '../Styles/postquiz.module.css'; 
 import { useRouter } from 'next/navigation';
 import logo from '../assets/ivvi_Logo.svg'; 
@@ -10,9 +10,26 @@ import { useUserDetection } from '../lib/hooks/useUserDetection';
 function PostQuizPage() {
   const router = useRouter();
   const { user, loading, isNewUser } = useUserDetection();
+  const [isMobile, setIsMobile] = useState(false);
 
   console.log('this is the value of new user \n', isNewUser); 
   console.log('this is the user \n', user); 
+
+  // Detect screen size
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    // Check on mount
+    checkScreenSize();
+
+    // Add event listener for screen resize
+    window.addEventListener('resize', checkScreenSize);
+
+    // Cleanup
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
 
   const handleShare = async () => {
     if (navigator.share) {
@@ -31,10 +48,43 @@ function PostQuizPage() {
     }
   };
 
+  const handleCopyToClipboard = async () => {
+    try {
+      const textToCopy = `Take this quick dyslexia screening assessment to better understand your learning style and get personalized insights. ${window.location.origin}`;
+      
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(textToCopy);
+        alert('✅ Link copied to clipboard!');
+      } else {
+        // Fallback for older browsers
+        const textArea = document.createElement('textarea');
+        textArea.value = textToCopy;
+        textArea.style.position = 'fixed';
+        textArea.style.left = '-999999px';
+        textArea.style.top = '-999999px';
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        
+        try {
+          document.execCommand('copy');
+          alert('✅ Link copied to clipboard!');
+        } catch (err) {
+          console.error('❌ Copy failed:', err);
+          alert('❌ Failed to copy link. Please copy the URL manually.');
+        }
+        
+        document.body.removeChild(textArea);
+      }
+    } catch (error) {
+      console.error('❌ Copy to clipboard failed:', error);
+      alert('❌ Failed to copy link. Please copy the URL manually.');
+    }
+  };
+
   const handleGoToIdeal = () => {
     router.push('/');
   };
-
 
   return (
     <>
@@ -53,7 +103,11 @@ function PostQuizPage() {
        </article>
 
                  <aside className={ps.buttonSectionContainer}>
-         <div className={ps.CTAButton} onClick={handleShare}>Share Screener</div>
+         {isMobile ? (
+           <div className={ps.CTAButton} onClick={handleShare}>Share Screener</div>
+         ) : (
+           <div className={ps.CTAButton} onClick={handleCopyToClipboard}>Copy Link</div>
+         )}
          </aside>
 
          {/* Add in the final button here  */}
@@ -63,15 +117,9 @@ function PostQuizPage() {
 
                  *or Click here to Screen them now
 
-
                  </div>
 
-
-
              </div>
-
-
-
 
         <footer className={ps.ivviLogoContainer}>
 
