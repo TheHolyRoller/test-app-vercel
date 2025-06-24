@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 import ps from '../Styles/postquiz.module.css'; 
 import { useRouter } from 'next/navigation';
 import logo from '../assets/ivvi_Logo.svg'; 
@@ -9,7 +9,7 @@ import { useUserDetection } from '../lib/hooks/useUserDetection';
 
 function PostQuizPage() {
   const router = useRouter();
-  const { user, loading, isNewUser } = useUserDetection();
+  const { user, isNewUser } = useUserDetection();
   const [isMobile, setIsMobile] = useState(false);
 
   console.log('this is the value of new user \n', isNewUser); 
@@ -88,54 +88,39 @@ function PostQuizPage() {
 
   return (
     <>
-    <section className={ps.mainCTASection}>
+      <section className={ps.mainCTASection}>
+        <article className={ps.mainLogoContainer}>
+          {/* Add in the Logo container here  */}
+          <div className={ps.logoContainer}>
+            <h1>Want to screen your friends or family?</h1>
+          </div>
+          {/* Add in the logo here  */}
+        </article>
 
-      <article className={ps.mainLogoContainer}>
-      
-        {/* Add in the Logo container here  */}
-        <div className={ps.logoContainer}>
-        <h1> 
-        
-        Want to screen your friends or family? </h1>
+        <aside className={ps.buttonSectionContainer}>
+          {isMobile ? (
+            <div className={ps.CTAButton} onClick={handleShare}>Share Screener</div>
+          ) : (
+            <div className={ps.CTAButton} onClick={handleCopyToClipboard}>Copy Link</div>
+          )}
+        </aside>
+
+        {/* Add in the final button here  */}
+        <div className={ps.secondaryButtonContainer}>
+          <div className={ps.secondaryButton} onClick={handleGoToIdeal}>
+            *or Click here to Screen them now
+          </div>
         </div>
-              {/* Add in the logo here  */}
-
-       </article>
-
-                 <aside className={ps.buttonSectionContainer}>
-         {isMobile ? (
-           <div className={ps.CTAButton} onClick={handleShare}>Share Screener</div>
-         ) : (
-           <div className={ps.CTAButton} onClick={handleCopyToClipboard}>Copy Link</div>
-         )}
-         </aside>
-
-         {/* Add in the final button here  */}
-             <div className={ps.secondaryButtonContainer}>
-
-                 <div className={ps.secondaryButton} onClick={handleGoToIdeal}>
-
-                 *or Click here to Screen them now
-
-                 </div>
-
-             </div>
 
         <footer className={ps.ivviLogoContainer}>
-
           <span className={ps.bySpan}>by</span>
-
           <figure className={ps.logo}>
-
-              <Image src={logo} width={150} height={50} alt='logo'/>
-
+            <Image src={logo} width={150} height={50} alt='logo'/>
           </figure>
-
         </footer>
-
-    </section>
+      </section>
     </>
-  )
+  );
 }
 
-export default PostQuizPage
+export default PostQuizPage;
