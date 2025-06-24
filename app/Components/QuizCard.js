@@ -18,21 +18,9 @@ const QuizCard = ({
 }) => {
 
     // Answer button state and logic from QuizAnswer
-    const { handleAnswer } = useQuiz();
+    const { handleAnswer, buttonCounters, incrementButtonCounter } = useQuiz();
     const pathname = usePathname();
     const [answer, setAnswer] = useState();
-    const [counters, setCounter] = useState({
-        yesNum: 0, 
-        noNum: 0, 
-        sometimesNum: 0 
-    }); 
-
-    const increment = (name) => {
-        setCounter(prev => ({
-            ...prev, 
-            [name]: prev[name] + 1
-        })); 
-    }
 
     const handleClick = async (userAnswer) => {
         console.log('🎯 Answer Selected:', {
@@ -215,7 +203,7 @@ const QuizCard = ({
             </div>
 
             {questionText && (
-                <div className={`${q.questionTextContainer} ${nunito.className}`} >
+                <div className={`${q.questionTextContainer} ${nunito.className}`} style={{ marginTop: '-4.5rem' }}>
                     <h2 className={`${q.questionText} ${nunito.className}`}>
                         {questionText}
                     </h2>
@@ -234,12 +222,14 @@ const QuizCard = ({
                             onLoad={() => console.log('🖼️ Image Loaded:', currentIMG)}
                             onError={(e) => console.error('❌ Image Error:', e)}
                             style={{
-                                marginTop: '-4.5rem',
+                                marginTop: '-3.5rem',
                                 objectFit: 'contain', 
                                 zIndex: '0'
                             }}
                         />
                     )}
+                    
+
                 </div>
             </div>
 
@@ -259,10 +249,10 @@ const QuizCard = ({
                           onClick={() => handleClick('no')}
                           onMouseEnter={() => console.log('🖱️ Hovering No Button')}
                         >
-                            <div className={`${q.button} ${chewy.className}`} id={q.noButton} onClick={() => increment('noNum')} >
-                                {counters.noNum > 0 && (
+                            <div className={`${q.button} ${chewy.className}`} id={q.noButton} onClick={() => incrementButtonCounter('noNum')} >
+                                {buttonCounters.noNum > 0 && (
                                     <span className={q.numSpan}>
-                                    {counters.noNum}
+                                    {buttonCounters.noNum}
                                     </span>
                                 )}
                                 No 
@@ -276,10 +266,10 @@ const QuizCard = ({
                         </div>
 
                         <div className={q.buttonStackContainer} onClick={() => handleClick('sometimes')} onMouseEnter={() => console.log('🖱️ Hovering Sometimes Button')} >
-                            <div className={`${q.button} ${chewy.className}`} id={q.sometimesButton} onClick={() => increment('sometimesNum')} >
-                                {counters.sometimesNum > 0 && (
+                            <div className={`${q.button} ${chewy.className}`} id={q.sometimesButton} onClick={() => incrementButtonCounter('sometimesNum')} >
+                                {buttonCounters.sometimesNum > 0 && (
                                     <span className={q.numSpan}>
-                                    {counters.sometimesNum}
+                                    {buttonCounters.sometimesNum}
                                     </span>
                                 )}
                                 Some 
@@ -296,10 +286,10 @@ const QuizCard = ({
                         <div className={q.buttonStackContainer}   
                         onClick={() => handleClick('yes')}
                         onMouseEnter={() => console.log('🖱️ Hovering Yes Button')}>
-                            <div className={`${q.button} ${chewy.className}`} id={q.yesButton} onClick={() => increment('yesNum')}>
-                                {counters.yesNum > 0 && (
+                            <div className={`${q.button} ${chewy.className}`} id={q.yesButton} onClick={() => incrementButtonCounter('yesNum')}>
+                                {buttonCounters.yesNum > 0 && (
                                     <span className={q.numSpan}>
-                                    {counters.yesNum}
+                                    {buttonCounters.yesNum}
                                     </span>
                                 )}
                                 Yes 

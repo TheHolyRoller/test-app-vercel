@@ -108,11 +108,15 @@ export default function Quiz() {
 
                 {/* Conditionally render CategoryCard or QuizCard based on Type */}
                 {Type.toLowerCase() === 'category' ? (
+
+                    <div className={q.categoryCardContainer}>
+
                     <CategoryCard 
                         Section={Section}
                         categoryName={currentQuestion?.categoryName || currentQuestion?.questionText}
                         audio_URL={audio_URL}
                     />
+                    </div>
                 ) : (
                     <QuizCard
                         questionText={questionText}

@@ -59,7 +59,22 @@ export const QuizProvider = ({ children }) => {
     const [writingCounter, setWritingCounter] = useState(0); 
     const [memoryCounter, setMemoryCounter] = useState(0); 
     const [plansCounter, setPlansCounter] = useState(0); 
-    const [testsCounter, setTestsCounter] = useState(0); 
+    const [testsCounter, setTestsCounter] = useState(0);
+
+    // Button click counters that persist across renders
+    const [buttonCounters, setButtonCounters] = useState({
+        yesNum: 0, 
+        noNum: 0, 
+        sometimesNum: 0 
+    });
+
+    // Function to increment button counters
+    const incrementButtonCounter = (buttonType) => {
+        setButtonCounters(prev => ({
+            ...prev, 
+            [buttonType]: prev[buttonType] + 1
+        })); 
+    }; 
 
 
 
@@ -415,7 +430,9 @@ export const QuizProvider = ({ children }) => {
             writingCounter, 
             memoryCounter, 
             testsCounter, 
-            plansCounter
+            plansCounter,
+            buttonCounters,
+            incrementButtonCounter
         }}>
             {children}
         </QuizContext.Provider>

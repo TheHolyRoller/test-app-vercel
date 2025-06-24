@@ -13,7 +13,18 @@ function PostQuizPage() {
   const [isMobile, setIsMobile] = useState(false);
 
   console.log('this is the value of new user \n', isNewUser); 
-  console.log('this is the user \n', user); 
+  console.log('this is the user \n', user);
+
+  // Automatically refresh the page when component mounts - only once
+  useEffect(() => {
+    const hasRefreshedPostQuiz = sessionStorage.getItem('hasRefreshedPostQuiz');
+    
+    if (!hasRefreshedPostQuiz) {
+      console.log('🔄 Auto-refreshing postquiz page - one time only');
+      sessionStorage.setItem('hasRefreshedPostQuiz', 'true');
+      window.location.reload();
+    }
+  }, []); 
 
   // Detect screen size
   useEffect(() => {
