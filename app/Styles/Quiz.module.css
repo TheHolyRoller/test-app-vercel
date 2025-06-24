@@ -299,7 +299,9 @@ margin-bottom: 5em;
 
 
 .questionTextContainer{
-    color: black !important;
+    /* color: black !important; */
+    color: #404F6F !important; 
+
     font-size: 1.3rem;
     width: 70%;
     text-align: center;
@@ -328,7 +330,9 @@ margin-bottom: 5em;
 
 
 .questionText{
-    color: black !important; 
+    /* color: black !important;  */
+    color: #404F6F !important; 
+
     position: relative; 
     z-index: 99999;
     margin-top: 2em; 
@@ -466,7 +470,7 @@ margin-bottom: 5em;
     background-color: #f5d142;
     padding: 0.5em !important;
     font-size: 0.75rem !important;
-    color: black; 
+    /* color: black;  */
 
 
     

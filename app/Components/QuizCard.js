@@ -218,10 +218,6 @@ const QuizCard = ({
                 <div className={`${q.questionTextContainer} ${nunito.className}`} >
                     <h2 className={`${q.questionText} ${nunito.className}`}>
                         {questionText}
-                        {/* I tend to immediately forget what the teacher says even when I listen carefully     */}
-                        <span>
-                            {currentQuestion?.questionText}
-                        </span>
                     </h2>
                 </div>
             )}
