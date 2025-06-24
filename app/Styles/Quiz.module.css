@@ -360,6 +360,7 @@ margin-bottom: 5em;
 
 }
 
+
 .quizCardContainer{
 
 
@@ -987,8 +988,8 @@ background-color: #82c34a;
     position: absolute; 
     width: 2vw; 
     left: 49%; 
-    bottom: -1.5rem !important; 
-
+    /* bottom: -0.5rem !important;  */
+    margin-top: 2em ;
     display: grid;
     place-content: center;
 
@@ -1011,7 +1012,9 @@ background-color: #82c34a;
         place-content: center;
         left: 49%;
         bottom: 0rem !important;
-        /* outline: 3px solid red !important; */
+        margin-top: -9em !important; 
+        
+        outline: 3px solid red !important;
         transform:translate(0, 2em) ;
         -webkit-transform:translate(0, 2em) ;
         -moz-transform:translate(0, 2em) ;

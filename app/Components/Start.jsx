@@ -1,4 +1,4 @@
-import React, { use } from 'react'
+import React, { use, useState, useEffect } from 'react'
 import s from '../Styles/start.module.css'; 
 import { useRouter } from 'next/navigation';
 import logo from '../assets/ivvi_Logo.svg'; 
@@ -9,7 +9,14 @@ function Start() {
 
   const router = useRouter();
   const { user, loading, isNewUser } = useUserDetection();
+  const [quizCompletionCount, setQuizCompletionCount] = useState(0);
 
+  // Check quiz completion count on component mount
+  useEffect(() => {
+    const count = parseInt(localStorage.getItem('quizCompletionCount') || '0');
+    setQuizCompletionCount(count);
+    console.log('📊 Current quiz completion count:', count);
+  }, []);
 
   console.log('this is the value of new user \n', isNewUser); 
   console.log('this is the user \n', user); 
@@ -53,6 +60,14 @@ function Start() {
 
        </article>
 
+        {/* Show refresh message for users who completed quiz twice or more */}
+        {quizCompletionCount > 1 && (
+          <div className={s.refreshMessageContainer}>
+            <p className={s.refreshMessage}>
+              📝 Taking the quiz again? Please refresh this page first for the best experience.
+            </p>
+          </div>
+        )}
 
         <aside className={s.buttonSectionContainer}>
         <div className={s.CTAButton} onClick={handleStartScreener}>Start Screener</div>

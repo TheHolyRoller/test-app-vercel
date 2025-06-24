@@ -112,8 +112,26 @@ font-size: clamp(1.5rem + 1vw, 2rem, 3rem);
 
 
 
+}
 
+/* Refresh message styles */
+.refreshMessageContainer {
+    width: 90%;
+    max-width: 400px;
+    margin: 1.5em auto 0;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    text-align: center;
+}
 
+.refreshMessage {
+    color: #ffcc66;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin: 0;
+    font-weight: 500;
 }
 
 

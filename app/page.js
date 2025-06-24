@@ -13,11 +13,14 @@ export default function Home() {
   useEffect(() => {
     // Check if user is coming from internal navigation and hasn't been refreshed yet
     const hasRefreshed = sessionStorage.getItem('hasRefreshed');
+    const needsRefreshFromEmailDecline = sessionStorage.getItem('needsRefreshFromEmailDecline');
     const isFromInternal = document.referrer && document.referrer.includes(window.location.origin);
     
-    if (isFromInternal && !hasRefreshed) {
+    // Refresh if coming from internal navigation OR if user declined email submission
+    if ((isFromInternal && !hasRefreshed) || needsRefreshFromEmailDecline) {
       console.log('🔄 Refreshing page to reset quiz state');
       sessionStorage.setItem('hasRefreshed', 'true');
+      sessionStorage.removeItem('needsRefreshFromEmailDecline'); // Clear the email decline flag
       window.location.reload();
     }
     

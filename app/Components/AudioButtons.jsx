@@ -16,6 +16,7 @@ function AudioButtons() {
         setUserSound(soundEnabled);
         router.push('/quiz');
     };
+    
 
   return (
     <section className={`${ab.mainAnswerContainer} ${nunito.className}`}>

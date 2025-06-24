@@ -12,7 +12,6 @@ import AudioButtons from '../Components/AudioButtons';
 
 
 
-
 function Page() {
   
   // Default values for missing variables

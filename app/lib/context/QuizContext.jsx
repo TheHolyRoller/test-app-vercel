@@ -74,6 +74,14 @@ export const QuizProvider = ({ children }) => {
             ...prev, 
             [buttonType]: prev[buttonType] + 1
         })); 
+    };
+
+    // Track quiz completion count
+    const incrementQuizCompletionCount = () => {
+        const currentCount = parseInt(localStorage.getItem('quizCompletionCount') || '0');
+        const newCount = currentCount + 1;
+        localStorage.setItem('quizCompletionCount', newCount.toString());
+        console.log('📊 Quiz completion count:', newCount);
     }; 
 
 
@@ -337,6 +345,7 @@ export const QuizProvider = ({ children }) => {
         } else {
             console.log('🏁 QuizContext: Quiz completed, setting final score');
             setFinalScore(score);
+            incrementQuizCompletionCount();
             router.push('/result');
         }
     };
