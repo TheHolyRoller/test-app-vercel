@@ -79,6 +79,7 @@ margin-bottom: 5em;
 
 
 
+
     position: relative;
     background-color: var(--card-background-color);
     margin: 0 auto; 
@@ -249,6 +250,7 @@ margin-bottom: 5em;
     display: grid; 
     place-content: center;
     margin-top: -2em; 
+    outline: 4px solid red;
 
 
 
@@ -988,7 +990,6 @@ background-color: #82c34a;
     position: absolute; 
     width: 2vw; 
     left: 49%; 
-    /* bottom: -0.5rem !important;  */
     margin-top: 2em ;
     display: grid;
     place-content: center;
@@ -1012,14 +1013,14 @@ background-color: #82c34a;
         place-content: center;
         left: 49%;
         bottom: 0rem !important;
-        margin-top: -9em !important; 
+        margin-top: -9em !important;
         
-        outline: 3px solid red !important;
-        transform:translate(0, 2em) ;
-        -webkit-transform:translate(0, 2em) ;
-        -moz-transform:translate(0, 2em) ;
-        -ms-transform:translate(0, 2em) ;
-        -o-transform:translate(0, 2em) ;
+        
+        transform:translate(0, 2em);
+        -webkit-transform:translate(0, 2em);
+        -moz-transform:translate(0, 2em);
+        -ms-transform:translate(0, 2em);
+        -o-transform:translate(0, 2em);
 }
 
     

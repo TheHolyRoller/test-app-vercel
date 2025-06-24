@@ -31,12 +31,6 @@ function Page() {
 
    <section className={a.mainPageContainer}>
 
-
-
-
-
-
-
     <div>
       {/* Top Blue Navbar Strip */}
       <div 
@@ -140,6 +134,7 @@ function Page() {
 
         <div className={a.audioButtonSectionContainer}>
         <div className={a.audioButtonsSubContainer}>
+
 
 
 

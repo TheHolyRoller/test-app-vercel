@@ -138,7 +138,7 @@ export default function EmailPermission() {
             router.push('/confirmation');
         } catch (error) {
             console.error('❌ Error in form submission:', error);
-            alert('An error occurred. Please try again.');
+            alert('Email sending error: Error: Too many requests. You can only make 2 requests per second. See rate limit response headers for more information. Or contact support to increase rate limit.');
         }
     };
 
@@ -262,6 +262,7 @@ export default function EmailPermission() {
   </article>
 
       
+
   <div className={emailSubmission.nextButtonContainer}>
 
 <button className={emailSubmission.nextButton} form='emailForm' type='submit'>
