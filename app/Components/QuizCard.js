@@ -215,6 +215,7 @@ const QuizCard = ({
                     {currentIMG && (
                         <Image 
                             src={currentIMG}
+                            className={q.currentIMG}
                             alt='quiz illustration'
                             width={300}
                             height={300}
@@ -224,7 +225,8 @@ const QuizCard = ({
                             style={{
                                 marginTop: '-3.5rem',
                                 objectFit: 'contain', 
-                                zIndex: '0'
+                                zIndex: '0', 
+                                overflow: 'hidden'
                             }}
                         />
                     )}

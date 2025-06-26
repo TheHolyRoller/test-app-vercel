@@ -138,11 +138,12 @@ function PhoneBarChart({ writingPercentage,
                                             style={{
                                                 width: `${category.percentage}%`,
                                                 backgroundColor: category.color,
-                                                height: '50px',
+                                                height: '35px',
                                                 display: 'flex',
                                                 alignItems: 'center',
                                                 justifyContent: 'flex-start',
-                                                paddingLeft: '16px'
+                                                paddingLeft: '16px', 
+                                                paddingBottom: '1em'
                                             }}
                                         >
                                             <div style={{ 
@@ -151,7 +152,8 @@ function PhoneBarChart({ writingPercentage,
                                                 gap: '12px',
                                                 color: 'white',
                                                 fontWeight: '600',
-                                                fontSize: '1rem'
+                                                fontSize: '1rem', 
+                                                paddingTop: '15px'
                                             }}>
                                                 <span>{category.name}</span>
                                                 <span>{Math.round(category.percentage)}%</span>

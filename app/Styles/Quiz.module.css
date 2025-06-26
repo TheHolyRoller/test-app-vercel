@@ -74,9 +74,11 @@ margin-bottom: 5em;
     max-height: 40rem; 
     width: var(--card-width);   
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
-
-
-
+    /* overflow-y: scroll;  */
+    /* overflow: clip !important; */
+    /* overflow: hidden !important; */
+    scrollbar-width: none !important; 
+    -ms-overflow-style: none;
 
 
     position: relative;
@@ -93,6 +95,31 @@ margin-bottom: 5em;
 
 
 }
+
+.card::-webkit-scrollbar{
+
+    display: none !important; 
+
+
+
+
+}
+
+
+
+
+.currentIMG{
+
+
+    scrollbar-width: none !important; 
+    -ms-overflow-style: none;
+
+
+}
+
+
+
+
 
 
 #firstCARD{
@@ -120,16 +147,13 @@ margin-bottom: 5em;
 
 
 #cardOne{
-
-
-
     height: 90%;
     margin-top: 5em;
-    transform:translate(0, 4.27em) !important;
-    -webkit-transform:translate(0, 4.27em) !important;
-    -moz-transform:translate(0, 4.27em) !important;
-    -ms-transform:translate(0, 4.27em) !important;
-    -o-transform:translate(0, 4.27em) !important;
+    transform:translate(0, 4.5em) !important;
+    -webkit-transform:translate(0, 4.5em) !important;
+    -moz-transform:translate(0, 4.5em) !important;
+    -ms-transform:translate(0, 4.5em) !important;
+    -o-transform:translate(0, 4.5em) !important;
 }
 
 
@@ -373,6 +397,10 @@ margin-bottom: 5em;
     margin-top: 0rem !important; 
     position: absolute; 
     top: 60%; 
+    scrollbar-width: none !important; 
+    -ms-overflow-style: none;
+
+
 
     
 
@@ -404,6 +432,10 @@ margin-bottom: 5em;
 
     margin-top: -1.5em;    
     background-color: #fbfbfb;
+    scrollbar-width: none !important; 
+    -ms-overflow-style: none;
+
+
 
 
     
