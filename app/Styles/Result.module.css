@@ -98,12 +98,34 @@
 
 .buttonContainer {
     width: 99.99vw; 
+    
     margin: 6em auto;  
     display: grid;
     place-content: center;
+    /* outline: 5px solid red; */
     
 
 }
+
+
+.buttonOverlay{
+
+
+
+    width: 13em; 
+    height: 2em; 
+    position: absolute;
+    left: 5%;
+    top: 4%; 
+
+
+
+
+
+}
+
+
+
 
 .button {
     width: 300px;
@@ -114,6 +136,7 @@
     -ms-border-radius: 22px;
     -o-border-radius: 22px;
     margin: 1em auto; 
+    position: relative; 
     display: grid;
     place-content: center;
     color: white; 
@@ -123,6 +146,16 @@
     border: none;
     outline: none;
     cursor: pointer;
+    outline: 5px solid lime;
+
+
+
+
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* IE/Edge */
+    user-select: none;  
+
     
 }
 

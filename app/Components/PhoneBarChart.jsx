@@ -41,13 +41,13 @@ function PhoneBarChart({ writingPercentage,
             score: memoryScore
         },
         {
-            name: 'Exam Results',
+            name: 'Tests',
             percentage: Math.min(Math.max(examResultsPercentage || 0, 0), 100),
             color: '#96CEB4',
             score: examResultsScore
         },
         {
-            name: 'Organisation',
+            name: 'Plans',
             percentage: Math.min(Math.max(organisationalPercentage || 0, 0), 100),
             color: '#FECA57',
             score: organisationalScore

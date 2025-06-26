@@ -2,7 +2,7 @@
 
 .mainChartContainer {
 
-    min-height: 100vh;
+    min-height: 150vh;
     position: relative; 
     width: 99.99vw; 
     margin: 0 auto; 
@@ -45,7 +45,6 @@
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
 
-    /* outline: 5px solid red; */
 
 
 
@@ -62,7 +61,6 @@
         position: relative; 
         min-height: auto;
 
-        /* outline: 5px solid red; */
 
 }
 
@@ -153,6 +151,7 @@
     display: grid;
     place-content: center;
     height: 50vh; 
+
 
 
 }
@@ -390,7 +389,6 @@
     display: block;
 
 
-    /* outline: 5px solid red; */
 
 
 }
@@ -398,6 +396,9 @@
 .barChartItem {
     margin-bottom: 1.5rem;
     width: 100%;
+
+
+
 }
 
 .barChartHeader {
@@ -424,12 +425,14 @@
 
 .barBackground {
     width: 100%;
-    height: 90px;
+    height: 50px;
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 15px;
     overflow: hidden;
     position: relative;
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+
+
     
 
 }
@@ -445,7 +448,8 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    min-width: 60px;
+    min-width: 50px;
+
 }
 
 .barPercentageText {
@@ -492,6 +496,12 @@
     background-color: #f49b53;
     font-weight: bolder;
     font-size: 1.255rem;
+
+
+    -webkit-user-select: none; /* Safari */
+  -moz-user-select: none;    /* Firefox */
+  -ms-user-select: none;     /* IE/Edge */
+  user-select: none; 
 }
 
 
@@ -537,6 +547,7 @@
     
     .barChartItem {
         margin-bottom: 1.25rem;
+
     }
 }
 
@@ -601,6 +612,25 @@
     }
 
 
+    .barFill {
+        /* height: 130%; */
+        height: 50px !important;
+        border-radius: 15px;
+        transition: width 1.5s ease-in-out;
+        position: relative;
+        background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.1) 75%, transparent 75%, transparent);
+        background-size: 20px 20px;
+        animation: shimmer 2s linear infinite;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        min-width: 130px;
+        
+        w
+    
+    }
+
+
 
 }
 
@@ -619,10 +649,10 @@
         backdrop-filter: blur(10px);
         box-sizing: border-box;
         display: block;
-    
-        margin-top: -4em !important; 
-    
-        /* outline: 5px solid red; */
+        
+        /* margin-top: 12em; */
+        margin-top: -5.5em !important; 
+
     
     
     }

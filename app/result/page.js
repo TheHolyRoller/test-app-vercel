@@ -243,11 +243,17 @@ function ResultContent() {
                     </div>
 
                     {/* Navigation Button with Expert UI Design */}
-                    <div className={resultStyles.buttonContainer}>
+                    <div className={resultStyles.buttonContainer}
+                            style={{outline: '5px solid lime'}}
+                    
+                    >
+
                         <div 
                             className={resultStyles.button} 
                             onClick={() => router.push('/results-explanation')} 
                         >
+                          
+
                             View Detailed Breakdown
                         </div>
                     </div>
