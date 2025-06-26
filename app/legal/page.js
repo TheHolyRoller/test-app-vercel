@@ -108,7 +108,47 @@ function Legal() {
       Next 
 
 
+
     </div>
+
+
+    <div className={l.paginationElementContainer}
+      
+      style={{ margin: '0 auto'}}
+
+      >
+      <div className={l.paginationElementSubContainer}>
+
+
+        <ul className={l.paginationList}
+
+          style={{display: 'flex', gap: '0.8em'}}
+        
+        >
+
+          <li className={l.paginationItem} 
+          
+          style={{height: '5px', width: '33px', backgroundColor: 'rgb(227, 225, 228)', borderRadius: '14px', display: 'block'}}
+          
+          ></li>
+        <li className={l.paginationItem} 
+          
+          style={{height: '5px', width: '33px', backgroundColor: 'rgb(227, 225, 228)', borderRadius: '14px', display: 'block'}}
+          
+          ></li>
+             <li className={l.paginationItem} 
+          
+          style={{height: '5px', width: '33px', backgroundColor: 'rgb(227, 225, 228)', borderRadius: '14px', display: 'block'}}
+          
+          ></li>
+             <li className={l.paginationItem} 
+          
+          style={{height: '5px', width: '33px', backgroundColor: 'rgb(153, 187, 154)', borderRadius: '14px', display: 'block'}}
+          
+          ></li>
+        </ul>
+      </div>
+      </div>
 
 
     </div>

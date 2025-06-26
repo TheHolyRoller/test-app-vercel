@@ -341,6 +341,45 @@ margin-bottom: 5em;
 }
 
 
+
+.soundIconContainer{
+    
+    
+    
+    position: absolute;
+    right: 6%;
+    bottom: 22%;
+    height: 2em;
+    width: 2em;
+    display: grid;
+    place-content: center;
+    background-color: #686886;
+    border-radius:50%;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    -ms-border-radius:50%;
+    -o-border-radius:50%;
+
+    cursor: pointer;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .questionTextContainer{
     /* color: black !important; */
     color: #404F6F !important; 
@@ -1097,11 +1136,18 @@ background-color: #82c34a;
         position: absolute; 
         width: 2vw; 
         left: 49%; 
-        bottom: 4rem !important; 
+        bottom: 9rem !important; 
     
         display: grid;
         place-content: center;
+
     
+    
+    }
+
+    .audioButtonsSubContainer{
+
+
     
     }
 

@@ -73,6 +73,49 @@ function IdealPage() {
     </div>
 
 
+
+    <div className={i.paginationElementContainer}
+      
+      style={{ margin: '0 auto'}}
+
+      >
+      <div className={i.paginationElementSubContainer}>
+
+
+        <ul className={i.paginationList}
+
+          style={{display: 'flex', gap: '0.8em'}}
+        
+        >
+
+          <li className={i.paginationItem} 
+          
+          style={{height: '5px', width: '33px', backgroundColor: 'rgb(227, 225, 228)', borderRadius: '14px', display: 'block'}}
+          
+          ></li>
+        <li className={i.paginationItem} 
+          
+          style={{height: '5px', width: '33px', backgroundColor: 'rgb(153, 187, 154)', borderRadius: '14px', display: 'block'}}
+          
+          ></li>
+             <li className={i.paginationItem} 
+          
+          style={{height: '5px', width: '33px', backgroundColor: 'rgb(227, 225, 228)', borderRadius: '14px', display: 'block'}}
+          
+          ></li>
+             <li className={i.paginationItem} 
+          
+          style={{height: '5px', width: '33px', backgroundColor: 'rgb(227, 225, 228)', borderRadius: '14px', display: 'block'}}
+          
+          ></li>
+        </ul>
+      </div>
+      </div>
+
+
+
+
+
     </div>
 
 

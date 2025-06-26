@@ -1,13 +1,26 @@
+'use client'
 import React from 'react'
 
 import a from '../Styles/adult.module.css'; 
 import Image from 'next/image';
 // import affect from '../assets/Listen and learn, confident.svg'; 
 import affect from '../assets/Highlight Key Info.svg'; 
+import { useRouter } from 'next/navigation';
 
 
 
-function page() {
+function Adult() {
+
+
+
+  const router = useRouter();
+  
+  const handleNext = () => {
+    router.push('/function');
+  };
+
+
+
   return (
     <section className={a.mainContainer} style={{backgroundColor: 'white'}}>
     <div className={a.subContainer}>
@@ -76,12 +89,54 @@ function page() {
     <div className={a.ctaContainer}>
 
 
-    <div className={a.cta}>
+  <div className={a.cta} onClick={handleNext}
+  
+  style={{cursor: 'pointer'}}
+  >
 
       Next 
 
 
     </div>
+
+
+    <div className={a.paginationElementContainer}
+      
+      style={{ margin: '0 auto'}}
+
+      >
+      <div className={a.paginationElementSubContainer}>
+
+
+        <ul className={a.paginationList}
+
+          style={{display: 'flex', gap: '0.8em'}}
+        
+        >
+
+          <li className={a.paginationItem} 
+          
+          style={{height: '5px', width: '33px', backgroundColor: 'rgb(227, 225, 228)', borderRadius: '14px', display: 'block'}}
+          
+          ></li>
+        <li className={a.paginationItem} 
+          
+          style={{height: '5px', width: '33px', backgroundColor: 'rgb(227, 225, 228)', borderRadius: '14px', display: 'block'}}
+          
+          ></li>
+             <li className={a.paginationItem} 
+          
+          style={{height: '5px', width: '33px', backgroundColor: 'rgb(153, 187, 154)', borderRadius: '14px', display: 'block'}}
+          
+          ></li>
+             <li className={a.paginationItem} 
+          
+          style={{height: '5px', width: '33px', backgroundColor: 'rgb(227, 225, 228)', borderRadius: '14px', display: 'block'}}
+          
+          ></li>
+        </ul>
+      </div>
+      </div>
 
 
     </div>
@@ -96,4 +151,4 @@ function page() {
   )
 }
 
-export default page
+export default Adult

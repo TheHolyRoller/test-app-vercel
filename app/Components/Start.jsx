@@ -21,6 +21,7 @@ function Start() {
     // Only show refresh message if user has completed quiz and explicitly wants to take it again
     // This prevents the message from showing on initial page load
     setShowRefreshMessage(false);
+
   }, []);
 
   console.log('this is the value of new user \n', isNewUser); 
@@ -41,7 +42,9 @@ function Start() {
       router.push('/understand');
     } else {
       console.log('Returning user detected, routing to /audiopermission');
-      router.push('/audiopermission');
+      // router.push('/audiopermission');
+      router.push('/understand');
+
     }
   };
 
@@ -83,7 +86,9 @@ function Start() {
 
           <span className={s.bySpan}>by</span>
 
-          <figure className={s.logo}>
+          <figure className={s.logo}
+          
+          >
 
               <Image src={logo} width={150} height={50} alt='logo'/>
 

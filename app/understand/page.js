@@ -57,12 +57,68 @@ function Understand() {
     <div className={u.ctaContainer}>
 
 
-    <div className={u.cta} onClick={handleNext}>
+    <div className={u.cta} onClick={handleNext}
+    
+    >
 
       Next 
 
 
     </div>
+
+    {/* Add in pagination element here  */}
+
+      <div className={u.paginationElementContainer}
+      
+      style={{ margin: '0 auto'}}
+
+      >
+      <div className={u.paginationElementSubContainer}>
+
+
+        <ul className={u.paginationList}
+
+          style={{display: 'flex', gap: '0.8em'}}
+        
+        >
+
+          <li className={u.paginationItem} 
+          
+          style={{height: '5px', width: '33px', backgroundColor: 'rgb(153, 187, 154)', borderRadius: '14px', display: 'block'}}
+          
+          ></li>
+        <li className={u.paginationItem} 
+          
+          style={{height: '5px', width: '33px', backgroundColor: 'rgb(227, 225, 228)', borderRadius: '14px', display: 'block'}}
+          
+          ></li>
+             <li className={u.paginationItem} 
+          
+          style={{height: '5px', width: '33px', backgroundColor: 'rgb(227, 225, 228)', borderRadius: '14px', display: 'block'}}
+          
+          ></li>
+             <li className={u.paginationItem} 
+          
+          style={{height: '5px', width: '33px', backgroundColor: 'rgb(227, 225, 228)', borderRadius: '14px', display: 'block'}}
+          
+          ></li>
+             
+
+
+
+        </ul>
+
+
+      </div>
+
+
+
+
+      </div>
+
+
+
+
     </div>
     </div>
     </div>

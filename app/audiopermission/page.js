@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useEffect } from 'react'
 import Image from 'next/image'; 
 // import a from '../Styles/sound.module.css';
 import a from '../Styles/Quiz.module.css'; 
@@ -23,6 +23,24 @@ function Page() {
   
   // Placeholder functions
   const getLabelColorBySection = (section) => "#033699";
+
+  // Scroll down on load for laptop dimensions
+  useEffect(() => {
+    const scrollOnLaptop = () => {
+      // Check if screen width is in laptop range (typically 1024px to 1440px)
+      if (window.innerWidth >= 1024 && window.innerWidth <= 1440) {
+        window.scrollTo({
+          top: 100, // Scroll down 100px
+          behavior: 'smooth'
+        });
+      }
+    };
+
+    // Small delay to ensure the page is fully loaded
+    const timer = setTimeout(scrollOnLaptop, 100);
+    
+    return () => clearTimeout(timer);
+  }, []);
   
   return (
 

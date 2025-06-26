@@ -16,6 +16,13 @@ export const UserProvider = ({ children }) => {
     setSound(userSound);
   };
 
+  const toggleUserSound = () => {
+
+    setSound(!sound)  
+
+
+  }
+
   const setUserType = (age) => {
     setUserAge(age); 
   };
@@ -32,7 +39,7 @@ export const UserProvider = ({ children }) => {
   }, [name, sound, userAge]);
 
   return (
-    <UserContext.Provider value={{ name, sound, userAge, setUserName, setUserSound, setUserType }}>
+    <UserContext.Provider value={{ name, sound, userAge, setUserName, setUserSound, setUserType, toggleUserSound }}>
       {children}
     </UserContext.Provider>
   );

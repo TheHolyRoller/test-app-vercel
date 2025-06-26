@@ -7,20 +7,28 @@ import { useUser } from '../lib/context/UserContext';
 import { usePathname } from 'next/navigation';
 import { nunito } from '../fonts/nunito';
 import { chewy } from '../fonts/chewy';
+import mute from '../assets/mute.png'; 
+import soundOn from '../assets/volume.png'; 
+
+
 
 const QuizCard = ({ 
     questionText, 
     audio_URL, 
     Section, 
     currentIMG,
-    currentQuestion 
+    currentQuestion
     
 }) => {
 
+
     // Answer button state and logic from QuizAnswer
     const { handleAnswer, buttonCounters, incrementButtonCounter } = useQuiz();
+    const { sound, toggleUserSound } = useUser();
     const pathname = usePathname();
     const [answer, setAnswer] = useState();
+
+    console.log('this is the sound instance variable \n', sound); 
 
     const handleClick = async (userAnswer) => {
         console.log('🎯 Answer Selected:', {
@@ -172,7 +180,7 @@ const QuizCard = ({
                 className={q.cardCategoryColorContainer} 
                 style={{
                     backgroundColor: getColorBySection(Section),
-                    boxShadow: '0 -2px 8px rgba(0, 0, 0, 0.1), -2px 0 8px rgba(0, 0, 0, 0.1), 2px 0 8px rgba(0, 0, 0, 0.1)'
+                    boxShadow: '0 -2px 8px rgba(0, 0, 0, 0.1), -2px 0 8px rgba(0, 0, 0, 0.1), 2px 0 8px rgba(0, 0, 0, 0.1)', 
                 }}
             >
                 {audio_URL && (
@@ -197,6 +205,31 @@ const QuizCard = ({
                         <div className={`${q.labelContainer} ${nunito.className}`} style={{backgroundColor: getLabelColorBySection(Section)}}>
 
                         {Section}
+
+
+                        {/* Add in the icon here  */}
+                        {/* Add in an event listener here that toggles the sound on or off option  */}
+                        <div className={q.soundIconContainer} onClick={toggleUserSound} >
+
+
+
+                            {sound === true ? (
+
+                                <Image src={soundOn} width={20} height={20} alt='sound'/>
+
+
+                            ) : (
+
+                                <Image src={mute} width={20} height={20} alt='sound off'/>
+
+
+                            )}
+
+
+
+                        </div>
+
+
                         </div>
                     </label>
                 </div>
