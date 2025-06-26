@@ -54,7 +54,6 @@
 
 .barChartListItem {
 
-    /* outline: 5px solid blue;  */
     width: 90vw; 
     position: relative; 
     
@@ -64,14 +63,12 @@
 
 .barContainer {
 
-    /* outline: 3px solid lime; */
 
 }
 
 .backgroundBar {
     width: 70vw;
     background-color: rgb(229, 226, 226);
-    /* outline: 6px solid lime; */
     height: 3.5em;
     position: absolute;
     border-radius:50px ;
@@ -87,9 +84,7 @@
 .progressBar{
     height: 3.5em;
     width: 60vw;
-    /* outline: 3px solid black; */
     position: relative;
-    /* background-color: rgb(224, 231, 240); */
     background-color: rgb(96, 96, 239);
 
     border-radius: 50px ;
@@ -112,7 +107,6 @@
 
 .iconContainer {
 
-    /* outline: 3px solid red; */
     position: relative;
 
 
@@ -208,8 +202,7 @@
 .dot {
     width: 5px;
     height: 5px;
-    /*outline: 5px solid red;
-    */background-color: white;
+    background-color: white;
     border-radius:50%;
     -webkit-border-radius:50%;
     -moz-border-radius:50%;
@@ -227,7 +220,6 @@
 
 .resultExplanationContainer {
 
-    /* outline: 3px solid red; */
 
     position: absolute; 
     right: 0;

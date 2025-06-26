@@ -96,6 +96,7 @@ function ResultsExplanationContent() {
                 memoryScore={memoryScore}
                 isExplanationPage={true}
                 onNext={handleNext}
+                
             />
         </>
     );

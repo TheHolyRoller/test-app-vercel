@@ -31,7 +31,7 @@ export default function SoundPage() {
                         currentIMG='https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/Turn_On_Audio/view?project=test-domain&mode=admin'
                     />
 
-                <div style={{outline: '0px solid red', marginTop: '-5rem', position: 'relative', zIndex: '999999999'}} >
+                <div style={{marginTop: '-5rem', position: 'relative', zIndex: '999999999'}} >
 
                 {/* <QuizAnswer/> */}
                 <AudioControls/>

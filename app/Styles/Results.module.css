@@ -4,7 +4,6 @@
     margin: 10vh auto;
     padding: 1vh; 
     position: relative;
-    outline: 4px solid lime;
     margin-top: -1em; 
 }
 
@@ -174,6 +173,5 @@
 
 
     margin: 4em auto; 
-    outline: 5px solid lime;
 
 }

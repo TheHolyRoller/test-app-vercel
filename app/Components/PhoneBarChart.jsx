@@ -118,7 +118,7 @@ function PhoneBarChart({ writingPercentage,
                     }
                 </p>
             </div> */}
-                <section className={p.chartContainer}>
+                <section className={p.chartContainer} >
                 
                     <div className={p.mainChartSubContainerTextSection}>
                     <div className={p.mainTitleContainer}>

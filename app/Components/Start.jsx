@@ -10,12 +10,17 @@ function Start() {
   const router = useRouter();
   const { user, loading, isNewUser } = useUserDetection();
   const [quizCompletionCount, setQuizCompletionCount] = useState(0);
+  const [showRefreshMessage, setShowRefreshMessage] = useState(false);
 
   // Check quiz completion count on component mount
   useEffect(() => {
     const count = parseInt(localStorage.getItem('quizCompletionCount') || '0');
     setQuizCompletionCount(count);
     console.log('📊 Current quiz completion count:', count);
+    
+    // Only show refresh message if user has completed quiz and explicitly wants to take it again
+    // This prevents the message from showing on initial page load
+    setShowRefreshMessage(false);
   }, []);
 
   console.log('this is the value of new user \n', isNewUser); 
@@ -60,8 +65,8 @@ function Start() {
 
        </article>
 
-        {/* Show refresh message for users who completed quiz twice or more */}
-        {quizCompletionCount > 1 && (
+        {/* Show refresh message only when explicitly triggered */}
+        {showRefreshMessage && (
           <div className={s.refreshMessageContainer}>
             <p className={s.refreshMessage}>
               📝 Taking the quiz again? Please refresh this page first for the best experience.

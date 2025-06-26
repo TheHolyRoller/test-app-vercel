@@ -148,7 +148,7 @@ function UserInput() {
 
   return (
 
-    <section className={e.mainUserNameSection} style={{outline: '0px solid red', position: 'relative', zIndex: '999999'}}>
+    <section className={e.mainUserNameSection} style={{ position: 'relative', zIndex: '999999'}}>
     <article className={e.userNameContainer}>
     <form onSubmit={onSubmit} className={e.detailsForm}>
 

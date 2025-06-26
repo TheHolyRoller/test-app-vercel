@@ -33,7 +33,6 @@ margin-bottom: 5em;
 .mainCategoryCardContainer{
 
 
-    outline: 5px solid lime;
     height: 70vh; 
     max-height: 650px;
 
@@ -170,8 +169,6 @@ margin-bottom: 5em;
  /* margin-bottom: 0.8em; */
  box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
 
- /* outline: 3px solid lime; */
-
 }
 
 
@@ -250,11 +247,31 @@ margin-bottom: 5em;
     display: grid; 
     place-content: center;
     margin-top: -2em; 
-    outline: 4px solid red;
 
 
 
 }
+
+
+.gifImage{
+
+
+
+    background-color: #fbfbfb !important;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
 .cardCategoryColorContainer {
     background-color: var(--category-color, #ccc);
     height: 4.5rem; 
@@ -385,7 +402,9 @@ margin-bottom: 5em;
 .doodleContainer{
 
 
-    margin-top: -1.5em;     
+    margin-top: -1.5em;    
+    background-color: #fbfbfb;
+
 
     
 }
@@ -1139,7 +1158,6 @@ background-color: #82c34a;
 }
 
 .nameLabel{
-    outline: 4px solid blue; 
     padding-right: 5px; 
     margin-right: 0.3em;
     display: none;

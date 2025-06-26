@@ -12,6 +12,7 @@
     padding-bottom: 2rem;
 
 
+
 }
 
 
@@ -43,6 +44,9 @@
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
+
+
+
 }
 
 .mainChartSubContainer {
@@ -454,6 +458,7 @@
     margin: 0 auto;  
     display: grid;
     place-content: center;
+    
 
 
 
@@ -555,6 +560,40 @@
         border-radius: 12px;
     }
 }
+
+@media(min-width: 1200px){
+
+
+    .chartContainer {
+        width: 90vw; 
+        margin: 0 auto; 
+        display: grid;
+        place-content: center;
+        height: 50vh; 
+        margin-top: 6em !important; 
+    
+    
+    }
+
+
+    .buttonContainer{
+
+        width: 99.99vw; 
+        margin: 0 auto;  
+        display: grid;
+        place-content: center;
+        padding-bottom: 5vh;
+        
+    
+    
+    
+    }
+
+
+
+}
+
+
 
 /* Add in the effects here  */
 

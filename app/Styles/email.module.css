@@ -83,7 +83,6 @@
     -ms-transform:translate(-50%, -30%);
     -o-transform:translate(-50%, -30%);
 
-    /* outline: 4px solid red; */
 }
 
 .questionText{
@@ -280,7 +279,6 @@
     width: 100vw; 
     display: grid;
     place-content: center;
-    /* outline: 2px solid red; */
     margin-bottom: 5em;
     margin-top: -4em; 
     margin-right: -7em; 
@@ -303,7 +301,6 @@
 
 
 .nameLabel{
-    outline: 4px solid blue; 
     padding-right: 5px; 
     margin-right: 0.3em;
     display: none;
@@ -338,7 +335,6 @@
 
     text-align: center;
     font-weight: bold;
-    /* outline: 3px solid red; */
     background-color: white;
 }
 
@@ -355,7 +351,6 @@
 }
 
 .userInputButton{
-   /* outline: 2px solid rgb(193, 187, 187); */
    width: 8.5rem;
    height: 2.45rem;
    border-radius: 7px;
@@ -379,7 +374,6 @@
 .nextButtonContainer{
 
 
-    /* outline: 4px solid red; */
     margin: 0 auto; 
     width: 99.99vw; 
     display: grid;

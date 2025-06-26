@@ -57,6 +57,7 @@ function Page() {
             marginTop: '-40px', 
         }}
         >
+
     <div 
         className={a.cardCategoryColorContainer} 
         style={{
@@ -108,7 +109,7 @@ function Page() {
         <div className={a.doodleContainer}>
             {currentIMG && (
                 <Image 
-                    className={a.gifImage}
+                className={a.gifImage}
                     src={currentIMG}
                     alt='quiz illustration'
                     width={300}
@@ -119,7 +120,7 @@ function Page() {
                     style={{
                         marginTop: '-4.5rem',
                         objectFit: 'contain', 
-                        zIndex: '0'
+                        zIndex: '0', 
                     }}
                 />
             )}
