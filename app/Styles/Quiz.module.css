@@ -1136,7 +1136,7 @@ background-color: #82c34a;
         position: absolute; 
         width: 2vw; 
         left: 49%; 
-        bottom: 9rem !important; 
+        bottom: 6.5rem !important; 
     
         display: grid;
         place-content: center;
