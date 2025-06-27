@@ -14,7 +14,7 @@ import { usePathname } from 'next/navigation';
 // Import the auth hook here 
 import { useAnonymousAuth } from "./lib/hooks/useAnonymousAuth";
 import { use } from "react";
-
+import { Analytics } from '@vercel/analytics/next';
 
 
 const inter = Inter({
@@ -58,6 +58,7 @@ export default function RootLayout({ children }) {
           </QuizProvider>
         </UserProvider>
         {/* <Footer/>  */}
+        <Analytics />
         
 
       </body>

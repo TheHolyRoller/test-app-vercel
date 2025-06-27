@@ -127,16 +127,26 @@
     -ms-user-select: none;     /* IE10+/Edge */
     user-select: none; 
     cursor: pointer;
-    
-
 
     color: white; 
     font-size: 1.5rem;
     font-weight: bolder;
 
+    /* Animation properties */
+    transition: all 0.1s ease-in-out;
+    transform: scale(1);
+}
 
+.cta:hover {
+    background-color: #e8894a;
+    transform: scale(1.02);
+    box-shadow: 0 2px 8px rgba(244, 155, 83, 0.3);
+}
 
-
+.cta:active {
+    background-color: #d67d3e;
+    transform: scale(0.98);
+    box-shadow: 0 1px 4px rgba(244, 155, 83, 0.4);
 }
 
 
