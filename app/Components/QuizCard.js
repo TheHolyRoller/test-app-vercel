@@ -22,6 +22,7 @@ const QuizCard = ({
 }) => {
 
 
+
     // Answer button state and logic from QuizAnswer
     const { handleAnswer, buttonCounters, incrementButtonCounter } = useQuiz();
     const { sound, toggleUserSound } = useUser();
@@ -250,8 +251,8 @@ const QuizCard = ({
                             src={currentIMG}
                             className={q.currentIMG}
                             alt='quiz illustration'
-                            width={300}
-                            height={300}
+                            width={200}
+                            height={200}
                             unoptimized
                             onLoad={() => console.log('🖼️ Image Loaded:', currentIMG)}
                             onError={(e) => console.error('❌ Image Error:', e)}
@@ -259,7 +260,7 @@ const QuizCard = ({
                                 marginTop: '-3.5rem',
                                 objectFit: 'contain', 
                                 zIndex: '0', 
-                                overflow: 'hidden'
+                                overflow: 'hidden', 
                             }}
                         />
                     )}

@@ -94,6 +94,7 @@ margin-bottom: 5em;
 
 
 
+
 }
 
 .card::-webkit-scrollbar{
@@ -474,6 +475,11 @@ margin-bottom: 5em;
     scrollbar-width: none !important; 
     -ms-overflow-style: none;
 
+    height: 73%;
+    width: 95%; 
+    margin: 0 auto;
+    /* outline: 5px solid red; */
+
 
 
 
@@ -483,6 +489,7 @@ margin-bottom: 5em;
 .imageDoodle{
 
 
+    outline: 4px solid red !important;
 
 
 }
