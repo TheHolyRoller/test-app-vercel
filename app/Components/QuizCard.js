@@ -260,7 +260,7 @@ const QuizCard = ({
                                 marginTop: '-3.5rem',
                                 objectFit: 'contain', 
                                 zIndex: '0', 
-                                overflow: 'hidden', 
+                               
                             }}
                         />
                     )}

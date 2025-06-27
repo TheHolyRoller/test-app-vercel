@@ -111,7 +111,7 @@ function Page() {
     </div>
 
     {questionText && (
-        <div className={`${a.questionTextContainer} ${nunito.className}`} >
+        <div className={`${a.questionTextContainer} ${nunito.className}`} style={{outline: '0px solid red', marginTop: '-2.7rem'}} >
             <h2 className={`${a.questionText} ${nunito.className}`}>
                 {questionText}
 
@@ -123,7 +123,7 @@ function Page() {
         </div>
     )}
     
-    <div className={a.imageSectionContainer}>
+    <div className={a.imageSectionContainer} style={{outline: '0px solid red', top: '61%'}} >
         <div className={a.doodleContainer}>
             {currentIMG && (
                 <Image 

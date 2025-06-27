@@ -64,7 +64,6 @@ header {
   background: #fffaf2;
   color: #131212;
   border-radius: 2rem;
-  overflow: hidden;
   display: grid;
   grid-template-areas: "text img";
   grid-template-columns: 1fr 1fr;
@@ -86,7 +85,6 @@ header {
 
 .card-content > figure {
   grid-area: img;
-  overflow: hidden;
 }
 
 .card-content > figure > img {

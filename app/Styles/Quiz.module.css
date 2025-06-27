@@ -71,16 +71,12 @@ margin-bottom: 5em;
 
 .card{
 
-    /* height: 70vh;  */
     height: var(--card-height); 
     max-height: 40rem; 
     width: var(--card-width);   
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
-    /* overflow-y: scroll;  */
-    /* overflow: clip !important; */
-    /* overflow: hidden !important; */
-    scrollbar-width: none !important; 
-    -ms-overflow-style: none;
+   
+    
 
 
     position: relative;
@@ -114,8 +110,7 @@ margin-bottom: 5em;
 .currentIMG{
 
 
-    scrollbar-width: none !important; 
-    -ms-overflow-style: none;
+   
 
 
 }
@@ -362,7 +357,6 @@ margin-bottom: 5em;
     -moz-border-radius:50%;
     -ms-border-radius:50%;
     -o-border-radius:50%;
-
     cursor: pointer;
 
 
@@ -370,44 +364,31 @@ margin-bottom: 5em;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 .questionTextContainer{
-    /* color: black !important; */
-    color: #404F6F !important; 
-
+    color: #404F6F !important;
     font-size: 1.3rem;
     width: 70%;
     text-align: center;
     margin: 0 auto;
     text-transform: uppercase;
     font-family: var(--font-nunito), sans-serif;
-    height: 6rem; 
+    font-size: 1.5rem !important;
+    height: 6rem;
     z-index: 9999999;
     position: absolute;
     top: 30%;
     left: 50%;
     right: 50%;
-    
-    transform:translate(-50%, -30%) ;
-    -webkit-transform:translate(-50%, -30%) ;
-    -moz-transform:translate(-50%, -30%) ;
-    -ms-transform:translate(-50%, -30%) ;
-    -o-transform:translate(-50%, -30%) ;
+    transform:translate(-50%, -30%);
+    -webkit-transform:translate(-50%, -30%);
+    -moz-transform:translate(-50%, -30%);
+    -ms-transform:translate(-50%, -30%);
+    -o-transform:translate(-50%, -30%);
+
+
+
 }
 
-/* Email-specific question text container positioning */
 .questionTextContainer.emailStyle{
     top: 42%;
 }
@@ -438,9 +419,10 @@ margin-bottom: 5em;
     z-index: 9;
     margin-top: 0rem !important; 
     position: absolute; 
-    top: 60%; 
-    scrollbar-width: none !important; 
-    -ms-overflow-style: none;
+    top: 71%; 
+
+    /* outline: 4px solid lime; */
+
 
 
 
@@ -474,13 +456,11 @@ margin-bottom: 5em;
 
     margin-top: -1.5em;    
     background-color: #fbfbfb;
-    scrollbar-width: none !important; 
-    -ms-overflow-style: none;
+   
 
     height: 73%;
     width: 95%; 
     margin: 0 auto;
-    /* outline: 5px solid red; */
 
 
 
@@ -491,7 +471,6 @@ margin-bottom: 5em;
 .imageDoodle{
 
 
-    outline: 4px solid red !important;
 
 
 }
