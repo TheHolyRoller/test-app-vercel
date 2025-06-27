@@ -148,20 +148,25 @@ text-align: left;
     -ms-border-radius:19px;
     -o-border-radius:19px;
     margin-top: -4em;
-
-    -webkit-user-select: none; /* Safari */
-    -moz-user-select: none;    /* Firefox */
-    -ms-user-select: none;     /* IE10+/Edge */
-    user-select: none; 
+    outline: 5px solid red;
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    transform:translate(-50%, 20%) ;
+    -webkit-user-select: none;
+    /*Safari*/-moz-user-select: none;
+    /*Firefox*/-ms-user-select: none;
+    /*IE10+/Edge*/user-select: none;
     cursor: pointer;
-
-    color: white; 
+    color: white;
     font-size: 1.5rem;
     font-weight: bolder;
-
-    /* Animation properties */
-    transition: all 0.1s ease-in-out;
+    /*Animationproperties*/transition: all 0.1s ease-in-out;
     transform: scale(1);
+    -webkit-transform:translate(-50%, 20%) ;
+    -moz-transform:translate(-50%, 20%) ;
+    -ms-transform:translate(-50%, 20%) ;
+    -o-transform:translate(-50%, 20%) ;
 }
 
 .cta:hover {

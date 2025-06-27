@@ -115,7 +115,6 @@ function Page() {
             <h2 className={`${a.questionText} ${nunito.className}`}>
                 {questionText}
 
-
                 <span>
                     {currentQuestion?.questionText}
                 </span>

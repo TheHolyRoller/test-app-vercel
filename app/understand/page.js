@@ -21,11 +21,11 @@ function Understand() {
   
   return (
     
-    <section className={u.mainContainer} style={{backgroundColor: 'white'}}>
+    <section className={u.mainContainer} style={{backgroundColor: 'white', outline: '4px solid blue'}}>
     <div className={u.subContainer}>
 
 
-    <header className={u.headerImageContainer}>
+    <header className={u.headerImageContainer} style={{outline: '5px solid red'}}>
 
     <Image className={u.mainImage}  src={ivvi_group} width={5000} height={500} alt='notes' /> 
     </header>
@@ -70,7 +70,7 @@ function Understand() {
 
       <div className={u.paginationElementContainer}
       
-      style={{ margin: '0 auto'}}
+      style={{ margin: '0 auto', outline: '4px solid red'}}
 
       >
       <div className={u.paginationElementSubContainer}>
