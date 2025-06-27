@@ -32,6 +32,7 @@ export default function RootLayout({ children }) {
   const isCategoryPage = pathname.includes('/category');
   const isHomePage = pathname === '/';
   
+  
   return (
     <html 
       lang="en" 
@@ -47,7 +48,7 @@ export default function RootLayout({ children }) {
       </head>
       <body 
         className={`${inter.variable} antialiased`}
-        style={{
+        style={{    
           minHeight: '100vh'
         }}
       >
