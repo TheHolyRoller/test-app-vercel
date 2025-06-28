@@ -251,9 +251,11 @@
         position: absolute;
         left: 50%;
         right: 50%;
-        bottom: 22%;
+        bottom: 12%;
 
-        
+        font-size: 1.4rem;
+
+
 
         transform:translate(-50%, -50%) ;
         -webkit-transform:translate(-50%, -50%) ;
