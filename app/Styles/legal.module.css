@@ -256,7 +256,6 @@ text-decoration: underline;
         -ms-transform:translate(-50%, -50%);
         -o-transform:translate(-50%, -50%);
     
-    
     }
     
     .mainHeaderContainer {
@@ -273,11 +272,11 @@ text-decoration: underline;
         line-height: 1.12555;
         color: #013699;
         position: absolute;
-        top: 29%;
+        top: 26%;
         left: 50%;
         right: 50%;
         width: 100%;
-        
+
     
     
         transform:translate(-50%, -50%) ;
@@ -300,7 +299,7 @@ text-decoration: underline;
         position: absolute;
         left: 50%;
         right: 50%;
-        bottom: 0%;
+        bottom: 1.2%;
 
 
         font-size: 1.34rem;
