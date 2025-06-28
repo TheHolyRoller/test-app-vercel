@@ -75,8 +75,7 @@ function IdealPage() {
 
 
     <div className={i.paginationElementContainer}
-      
-      style={{ margin: '0 auto'}}
+    
 
       >
       <div className={i.paginationElementSubContainer}>

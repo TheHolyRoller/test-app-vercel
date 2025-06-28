@@ -54,22 +54,28 @@
 }
 
 .mainTextHeader {
-
-    margin: 0 auto; 
-    margin-top: 5rem !important; 
-
+    margin: 0 auto;
+    margin-top: 5rem !important;
     display: grid;
     place-content: center;
     font-size: 2.1rem;
     font-weight: bolder;
-    /* width: 60%;  */
-    text-align: center;
+    /*width: 60%;
+    */text-align: center;
     line-height: 1.12555;
-    /* line-height: normal; */
-    color: #013699; 
-    
-
-
+    /*line-height: normal;
+    */color: #013699;
+    width: 80vw; 
+    max-width: 600px;
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    bottom: 46%; 
+    transform:translate(-50%, -50%);
+    -webkit-transform:translate(-50%, -50%);
+    -moz-transform:translate(-50%, -50%);
+    -ms-transform:translate(-50%, -50%);
+    -o-transform:translate(-50%, -50%);
 }
 
 .mainSupportingTextContainer {
@@ -90,11 +96,25 @@
 }
 
 
-.pagination{
+.paginationElementContainer{
+   
+
+    /* display: none; */
+
+    
+
+
+}
 
 
 
 
+.paginationList{
+    transform:translate(0, 50vh) !important;
+    -webkit-transform:translate(0, 50vh) !important;
+    -moz-transform:translate(0, 50vh) !important;
+    -ms-transform:translate(0, 50vh) !important;
+    -o-transform:translate(0, 50vh) !important;
 }
 
 .ctaContainer{
@@ -218,32 +238,31 @@
     place-content: center;
     font-size: 2.1rem;
     font-weight: bolder;
-    /* width: 60%;  */
     text-align: center;
     line-height: 1.12555;
-    /* line-height: normal; */
     color: #013699; 
-    
+
+    position: absolute;
 
 
 }
 
 .mainSupportingTextContainer {
-
-
     width: 75vw;
-    outline: 5px solid red;
-    margin: 0 auto; 
+    margin: 0 auto;
     text-align: center;
     margin-bottom: 7.5rem;
-    margin-top: 0.65em; 
+    margin-top: 0.65em;
     color: #69696f;
-
-
-
-
-
-
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    bottom: 20%;
+    transform:translate(-50%, -50%) ;
+    -webkit-transform:translate(-50%, -50%) ;
+    -moz-transform:translate(-50%, -50%) ;
+    -ms-transform:translate(-50%, -50%) ;
+    -o-transform:translate(-50%, -50%) ;
 }
 
 
@@ -289,10 +308,12 @@
     font-weight: bolder;
     /*Animationproperties*/transition: all 0.1s ease-in-out;
     transform: scale(1);
-    outline: 5px solid red;
     position: absolute;
     left: 50%;
     right: 50%;
+    bottom: 30%;
+
+
     transform:translate(-50%, 5%);
     -webkit-transform:translate(-50%, 5%);
     -moz-transform:translate(-50%, 5%);
