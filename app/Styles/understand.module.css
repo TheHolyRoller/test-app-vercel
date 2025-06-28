@@ -64,7 +64,6 @@
     top: 38%;
     width: 80%;
     max-width: 400px;
-    /* outline: 4px solid lime; */
     transform:translate(-50%, -2%) ;
     -webkit-transform:translate(-50%, -2%) ;
     -moz-transform:translate(-50%, -2%) ;
@@ -104,7 +103,6 @@
     top: 62%;
 
 
-    /* outline: 4px solid lime; */
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
@@ -158,8 +156,8 @@
     top: 75%;
     left: 50%;
     right: 50%;
-    outline: 11px solid lime;
 
+    
 
     transform: translate(-50%, -50%) scale(1);
     -webkit-transform: translate(-50%, -50%) scale(1);
@@ -184,7 +182,7 @@
 
 
 
-@media(max-width: 400px) and (min-width: 550px){
+@media (min-width: 375px) and (max-width: 450px) {
 
 
     /* Add in all the main onboarding elements here  */
@@ -215,18 +213,24 @@
         top: 75%;
         left: 50%;
         right: 50%;
-        outline: 11px solid lime;
-    
-    
         transform: translate(-50%, -50%) scale(1);
         -webkit-transform: translate(-50%, -50%) scale(1);
         -moz-transform: translate(-50%, -50%) scale(1);
         -ms-transform: translate(-50%, -50%) scale(1);
         -o-transform: translate(-50%, -50%) scale(1);
-        
-    }
+        -webkit-transition: all 0.1s ease-in-out;
+        -moz-transition: all 0.1s ease-in-out;
+        -ms-transition: all 0.1s ease-in-out;
+        -o-transition: all 0.1s ease-in-out;
+
+
+
+
+        /* outline: 4px solid lime ; */
+}
 
     .paginationElementContainer{
+
 
 
 
@@ -250,10 +254,9 @@
         position: absolute;
         left: 50%;
         right: 50%;
-        top: 62%;
+        top: 64%;
     
     
-        /* outline: 4px solid lime; */
         transform: translate(-50%, -50%);
         -webkit-transform: translate(-50%, -50%);
         -moz-transform: translate(-50%, -50%);
@@ -270,7 +273,6 @@
     top: 38%;
     width: 80%;
     max-width: 400px;
-    /* outline: 4px solid lime; */
     transform:translate(-50%, -2%) ;
     -webkit-transform:translate(-50%, -2%) ;
     -moz-transform:translate(-50%, -2%) ;
@@ -291,6 +293,8 @@
     text-align: center;
     line-height: normal;
     color: #013699; 
+
+
     
 
 
