@@ -282,6 +282,10 @@ margin-bottom: 5em;
     background-color: #fbfbfb !important;
 
 
+    /* outline: 2px solid lime; */
+
+
+
 
 
 
@@ -384,6 +388,7 @@ margin-bottom: 5em;
     -moz-transform:translate(-50%, -30%);
     -ms-transform:translate(-50%, -30%);
     -o-transform:translate(-50%, -30%);
+
 
 
 

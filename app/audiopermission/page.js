@@ -129,8 +129,8 @@ function Page() {
                 className={a.gifImage}
                     src={currentIMG}
                     alt='quiz illustration'
-                    width={300}
-                    height={300}
+                    width={250}
+                    height={250}
                     unoptimized
                     onLoad={() => console.log('🖼️ Image Loaded:', currentIMG)}
                     onError={(e) => console.error('❌ Image Error:', e)}
