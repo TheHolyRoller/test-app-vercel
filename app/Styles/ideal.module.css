@@ -109,13 +109,6 @@
 
 
 
-.paginationList{
-    transform:translate(0, 50vh) !important;
-    -webkit-transform:translate(0, 50vh) !important;
-    -moz-transform:translate(0, 50vh) !important;
-    -ms-transform:translate(0, 50vh) !important;
-    -o-transform:translate(0, 50vh) !important;
-}
 
 .ctaContainer{
 
@@ -319,7 +312,7 @@
     position: absolute;
     left: 50%;
     right: 50%;
-    bottom: 32%;
+    bottom: 28%;
 
 
     transform:translate(-50%, 5%);
@@ -328,6 +321,18 @@
     -ms-transform:translate(-50%, 5%);
     -o-transform:translate(-50%, 5%);
 }
+
+    
+.paginationList{
+    transform:translate(0, 48vh) !important;
+    -webkit-transform:translate(0, 48vh) !important;
+    -moz-transform:translate(0, 48vh) !important;
+    -ms-transform:translate(0, 48vh) !important;
+    -o-transform:translate(0, 48vh) !important;
+}
+
+
+
 
 
 }
