@@ -15,7 +15,7 @@ import { usePathname } from 'next/navigation';
 import { useAnonymousAuth } from "./lib/hooks/useAnonymousAuth";
 import { use } from "react";
 import { Analytics } from '@vercel/analytics/next';
-
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -32,7 +32,7 @@ export default function RootLayout({ children }) {
   const isCategoryPage = pathname.includes('/category');
   const isHomePage = pathname === '/';
   
-  
+
   return (
     <html 
       lang="en" 
@@ -60,6 +60,7 @@ export default function RootLayout({ children }) {
         </UserProvider>
         {/* <Footer/>  */}
         <Analytics />
+        <SpeedInsights/>
         
 
       </body>
