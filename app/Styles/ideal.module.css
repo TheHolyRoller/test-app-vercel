@@ -35,8 +35,8 @@
 }
 
 .mainImage {
-    width: 16em;
-    height: 16em;
+    width: 14.5em;
+    height: 14.5em;
     margin: 0 auto;
     position: absolute;
     left: 50%;
@@ -152,6 +152,153 @@
 
 
 
+@media (min-width: 375px) and (max-width: 450px){
+
+
+
+    
+.mainContainer {
+    background-color: white !important;
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative; 
+
+}
+
+
+.subContainer{
+
+    width: 50vw; 
+    margin: 0 auto; 
+    padding-top: 27vh; 
+    display: grid;
+    place-content: center;
+
+    
+
+
+
+
+}
+
+.headerImageContainer {
+
+
+
+
+}
+
+.mainImage {
+    width: 14.5em;
+    height: 14.5em;
+    margin: 0 auto;
+    position: absolute;
+    left: 50%;
+    top: 18%;
+    transform:translate(-50%, -50%);
+    -webkit-transform:translate(-50%, -50%);
+    -moz-transform:translate(-50%, -50%);
+    -ms-transform:translate(-50%, -50%);
+    -o-transform:translate(-50%, -50%);
+    
+
+}
+
+.mainHeaderContainer {
+}
+
+.mainTextHeader {
+
+    margin: 0 auto; 
+    margin-top: 5rem !important; 
+
+    display: grid;
+    place-content: center;
+    font-size: 2.1rem;
+    font-weight: bolder;
+    /* width: 60%;  */
+    text-align: center;
+    line-height: 1.12555;
+    /* line-height: normal; */
+    color: #013699; 
+    
+
+
+}
+
+.mainSupportingTextContainer {
+
+
+    width: 75vw;
+    outline: 5px solid red;
+    margin: 0 auto; 
+    text-align: center;
+    margin-bottom: 7.5rem;
+    margin-top: 0.65em; 
+    color: #69696f;
+
+
+
+
+
+
+}
+
+
+.pagination{
+
+
+
+
+}
+
+.ctaContainer{
+
+
+    height: 3em; 
+    display: grid;
+    place-content: center;
+
+
+
+
+}
+
+
+.cta{
+    height: 55px;
+    width: 275px;
+    background-color: #f49b53;
+    display: grid;
+    place-content: center;
+    border-radius:19px;
+    -webkit-border-radius:19px;
+    -moz-border-radius:19px;
+    -ms-border-radius:19px;
+    -o-border-radius:19px;
+    margin-top: -4em;
+    -webkit-user-select: none;
+    /*Safari*/-moz-user-select: none;
+    /*Firefox*/-ms-user-select: none;
+    /*IE10+/Edge*/user-select: none;
+    cursor: pointer;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    /*Animationproperties*/transition: all 0.1s ease-in-out;
+    transform: scale(1);
+    outline: 5px solid red;
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    transform:translate(-50%, 5%);
+    -webkit-transform:translate(-50%, 5%);
+    -moz-transform:translate(-50%, 5%);
+    -ms-transform:translate(-50%, 5%);
+    -o-transform:translate(-50%, 5%);
+}
 
 
 
@@ -173,14 +320,7 @@
 
 
 
-
-
-
-
-
-
-
-
+}
 
 
 
