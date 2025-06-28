@@ -298,7 +298,7 @@ text-decoration: underline;
         position: absolute;
         left: 50%;
         right: 50%;
-        bottom: 2%;
+        bottom: 1.5%;
 
 
         font-size: 1.34rem;
@@ -310,7 +310,7 @@ text-decoration: underline;
         -moz-transform:translate(-50%, -50%) ;
         -ms-transform:translate(-50%, -50%) ;
         -o-transform:translate(-50%, -50%) ;
-        /* outline: 2px solid lime; */
+        outline: 2px solid lime;
     
     }
     
