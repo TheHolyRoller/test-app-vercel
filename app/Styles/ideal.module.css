@@ -343,6 +343,7 @@
     left: 50%;
     right: 50%;
     bottom: 19.5%;
+    
 
     transform: translate(-50%, 5%) scale(1);
     -webkit-transform: translate(-50%, 5%) scale(1);
