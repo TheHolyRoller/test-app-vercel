@@ -210,7 +210,7 @@
         font-weight: bolder;
         transition: all 0.1s ease-in-out;
         position: absolute;
-        top: 77%;
+        top: 77.6%;
         left: 50%;
         right: 50%;
         transform: translate(-50%, -50%) scale(1);
@@ -223,10 +223,10 @@
         -ms-transition: all 0.1s ease-in-out;
         -o-transition: all 0.1s ease-in-out;
 
+        
 
 
 
-        /* outline: 4px solid lime ; */
 }
 
     .paginationElementContainer{
@@ -313,8 +313,8 @@
 }
 
 .mainImage {
-    width: 16em;
-    height: 16em;
+    width: 14.5em;
+    height: 14.5em;
     margin: 0 auto;
     position: absolute;
     left: 50%;

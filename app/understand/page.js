@@ -27,7 +27,7 @@ function Understand() {
 
     <header className={u.headerImageContainer} style={{outline: '5px solid red'}}>
 
-    <Image className={u.mainImage}  src={ivvi_group} width={5000} height={500} alt='notes' /> 
+    <Image className={u.mainImage}  src={ivvi_group} width={4000} height={4000} alt='notes' /> 
     </header>
     
     <div className={u.mainHeaderContainer}>
