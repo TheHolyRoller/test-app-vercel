@@ -276,6 +276,8 @@ text-decoration: underline;
         top: 29%;
         left: 50%;
         right: 50%;
+        width: 100%;
+        
     
     
         transform:translate(-50%, -50%) ;
