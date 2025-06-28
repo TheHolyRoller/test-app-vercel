@@ -28,8 +28,7 @@ function Functional(){
 
     <div className={f.mainHeaderContainer}>
         <h1 className={f.mainTextHeader}>
-
-        Ideal for University and the Workplace 
+        How the Screener Works
 
         </h1>
     </div>
@@ -39,7 +38,8 @@ function Functional(){
     <article className={f.mainSupportingTextContainer}>
 
 
-    Helps students and professionals understand when dyslexia gets in the way.    </article>
+    You can see and hear the questions.
+    At the end you will be given a score and sent your results.    </article>
 
     <div className={f.pagination} >
 
