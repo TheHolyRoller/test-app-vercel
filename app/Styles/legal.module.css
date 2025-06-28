@@ -311,7 +311,7 @@ text-decoration: underline;
         -moz-transform:translate(-50%, -50%) ;
         -ms-transform:translate(-50%, -50%) ;
         -o-transform:translate(-50%, -50%) ;
-        outline: 2px solid lime;
+        /* outline: 2px solid lime; */
     
     }
     
