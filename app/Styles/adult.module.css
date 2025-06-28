@@ -105,7 +105,7 @@
 }
 
 .affectsListItem{
-    font-size: 1.2rem;
+    font-size: 1.34rem;
     margin-bottom: 0.5rem;
     line-height: 1.4;
 }
@@ -491,8 +491,6 @@
         -ms-transform:translate(0, 55vh) !important;
         -o-transform:translate(0, 55vh) !important;
     }
-    
-    
     
     
     
