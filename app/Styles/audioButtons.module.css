@@ -25,7 +25,7 @@
 
 .buttonList {
     display: flex; 
-    gap: 2.8rem; 
+    gap: 4.8rem; 
 
 
 
@@ -35,8 +35,8 @@
     position: relative;
     display: grid;
     place-content: center;      
-    /* height: calc(3rem + 10px);  */
-    height: calc(2rem + 10px); 
+    height: calc(3rem + 10px); 
+    /* height: calc(2rem + 10px);  */
 
 }
 
@@ -46,7 +46,7 @@
     display: grid;
     cursor: pointer !important;
     place-content: center;
-    width: calc(7rem + 0px) !important;
+    width: calc(6rem + 0px) !important;
     height: calc(1rem + 0px) !important;
     padding: 0;
     font-family: var(--font-chewy), cursive;
@@ -375,4 +375,67 @@
     -moz-transform: rotate(2deg);
     -ms-transform: rotate(2deg);
     -o-transform: rotate(2deg);
+}
+
+
+
+@media (min-width: 375px) and (max-width: 450px){
+
+
+    .buttonStackContainer {
+        position: relative;
+        display: grid;
+        place-content: center;      
+        /* height: calc(3rem + 10px);  */
+        height: calc(2rem + 10px); 
+    
+    }
+
+
+    .button {
+        all: unset;
+        border-radius: 10px;
+        display: grid;
+        cursor: pointer !important;
+        place-content: center;
+        width: calc(7rem + 0px) !important;
+        height: calc(1rem + 0px) !important;
+        padding: 0;
+        font-family: var(--font-chewy), cursive;
+        font-weight: 400;
+        font-size: 1.83rem;
+        text-transform: uppercase;
+        user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -webkit-touch-callout: none;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+        color: white; 
+    
+        /* outline: 2px solid lime; */
+        
+    }
+
+
+    .buttonList {
+        display: flex; 
+        gap: 2.8rem; 
+
+
+        outline: 22px solid lime;
+    
+    
+    
+    }
+
+
+
+
+
+
+
 }
