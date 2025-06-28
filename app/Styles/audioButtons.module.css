@@ -35,7 +35,9 @@
     position: relative;
     display: grid;
     place-content: center;      
-    height: calc(3rem + 10px); 
+    /* height: calc(3rem + 10px);  */
+    height: calc(2rem + 10px); 
+
 }
 
 .button {
@@ -62,7 +64,7 @@
     -o-border-radius: 10px;
     color: white; 
 
-    outline: 2px solid lime;
+    /* outline: 2px solid lime; */
     
 }
 
