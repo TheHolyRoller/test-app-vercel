@@ -211,7 +211,7 @@ function ResultContent() {
 
                 <div className={resultStyles.mainHeadlineContainer}>
                     <h1 className={resultStyles.mainHeadline}>
-                        Your Dyslexia Score
+                        Your Dyslexia Screener Score
                     </h1>
                 </div>
 
@@ -231,6 +231,7 @@ function ResultContent() {
                         }
                     </p>
                 </div>
+                
                 
 
                 <section className={resultStyles.chartContainer}>

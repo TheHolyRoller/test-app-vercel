@@ -20,16 +20,23 @@
     color: rgb(41, 39, 39);
     position: relative; 
     min-height: auto;
+
 }
 
 .mainChartSubContainerTextSection {
     /* Text section container */
+
+
+
+
+
 }
 
 .mainHeadlineContainer {
     width: 100%;
     text-align: center;
     margin-bottom: 1rem;
+
 }
 
 .mainHeadline {
@@ -55,12 +62,18 @@
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
+
+
 }
 
 .refSpan {
     font-size: 0.9rem;
     margin: 0 auto; 
     display: block;
+    margin-top: -1em; 
+    
+
+
 }
 
 .impactMessage {
@@ -140,7 +153,8 @@
     color: white; 
     background-color: #f49b53;
     font-weight: bolder;
-    font-size: 1.255rem;
+    font-size: 1.565rem;
+    letter-spacing: 1px;
     border: none;
     outline: none;
     cursor: pointer;
@@ -188,6 +202,9 @@
 
 
     }
+
+    
+
     
     .button {
         width: 280px;
@@ -197,15 +214,70 @@
 }
 
 @media (max-width: 480px) {
+   
+    .mainHeadlineContainer {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 0.8rem;
+        margin-top: 2em !important; 
+
+        
+    }
+
+    .mainScore {
+        outline: 14px solid white;
+        width: 155px !important;
+        height: 155px !important;
+        font-size: 4rem;
+        color: white;
+        background-color: #99bb9a;
+        display: grid;
+        place-content: center;
+        margin: 0.5rem auto;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+    
+        
+    }
+
+    
+   
     .mainHeadline {
         font-size: 1.8rem;
+        width: 70%;
+        margin: 0 auto;
     }
-    
+
     .mainScore {
         width: 100px;
         height: 100px;
         font-size: 2.5rem;
-        outline-width: 6px;
+        outline-width: 10px;
+    }
+    
+    .impactText {
+        margin: 0; 
+        width: 100%; 
+        text-align: center;
+        line-height: 1.4;
+        margin-top: -1.5em !important; 
+
+
+
+    }
+
+
+
+
+    .refSpan {
+        font-size: 0.9rem;
+        margin: 0 auto; 
+        display: block;
+        margin-top: -0.85em;
+    
     }
     
     .impactMessage {
@@ -219,6 +291,8 @@
     .button {
         width: 250px;
         height: 50px;
-        font-size: 1rem;
+        font-size: 1.45rem;
+        letter-spacing: 1px;
+
     }
 } 

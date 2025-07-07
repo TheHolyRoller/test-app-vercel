@@ -22,6 +22,7 @@ export default function EmailPermission() {
     const { handleAnswer } = useQuiz();
     const { name, userAge } = useUser();
     const [inputEmail, setInputEmail] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
 
     // Extract the set email function from the quiz context here 
     const { setEmail } = useQuiz(); 
@@ -105,40 +106,59 @@ export default function EmailPermission() {
         e.preventDefault();
         console.log('📝 Form submission started');
 
-        try {
-            // First, save to database
-            console.log('💾 Saving to database...');
-            const response = await databases.createDocument(
-                DATABASE_ID,
-                COLLECTION_ID,
-                'unique()',
-                {
-                    inputEmail,
-                    finalScore,
-                    score,
-                    memoryScore,
-                    writingScore,
-                    readingScore,
-                    examResultsScore,
-                    organisationalScore,
-                    userAge,
-                    name,
-                    createdAt: new Date().toISOString(),
-                }
-            );
-            
-            console.log('✅ Database save successful:', response);
+        setIsLoading(true);
 
-            // Then send email
-            console.log('📧 Sending email...');
-            await sendEmail();
+        try {
+            // Create a promise that will resolve after 2 seconds maximum
+            const timeoutPromise = new Promise((resolve) => {
+                setTimeout(() => resolve('timeout'), 2000);
+            });
+
+            // Create the submission promise
+            const submissionPromise = async () => {
+                // First, save to database
+                console.log('💾 Saving to database...');
+                const response = await databases.createDocument(
+                    DATABASE_ID,
+                    COLLECTION_ID,
+                    'unique()',
+                    {
+                        inputEmail,
+                        finalScore,
+                        score,
+                        memoryScore,
+                        writingScore,
+                        readingScore,
+                        examResultsScore,
+                        organisationalScore,
+                        userAge,
+                        name,
+                        createdAt: new Date().toISOString(),
+                    }
+                );
+                
+                console.log('✅ Database save successful:', response);
+
+                // Then send email
+                console.log('📧 Sending email...');
+                await sendEmail();
+                
+                return 'success';
+            };
+
+            // Race between submission and timeout
+            const result = await Promise.race([submissionPromise(), timeoutPromise]);
             
-            // Navigate to confirmation page after successful submission
+            // Navigate to confirmation page after successful submission or timeout
             console.log('🔄 Navigating to confirmation page...');
             router.push('/confirmation');
+            
         } catch (error) {
             console.error('❌ Error in form submission:', error);
-            // alert('Email sending error: Error: Too many requests. You can only make 2 requests per second. See rate limit response headers for more information. Or contact support to increase rate limit.');
+            // Still navigate to confirmation page even if there's an error
+            router.push('/confirmation');
+        } finally {
+            setIsLoading(false);
         }
     };
 
@@ -266,9 +286,41 @@ export default function EmailPermission() {
 
   <div className={emailSubmission.nextButtonContainer}>
 
-<button className={emailSubmission.nextButton} form='emailForm' type='submit'>
-    Next 
+<button 
+    className={emailSubmission.nextButton} 
+    form='emailForm' 
+    type='submit'
+    disabled={isLoading}
+    style={{ 
+        opacity: isLoading ? 0.7 : 1,
+        cursor: isLoading ? 'not-allowed' : 'pointer'
+    }}
+>
+    {isLoading ? (
+        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <div className="spinner" style={{
+                width: '20px',
+                height: '20px',
+                border: '3px solid rgba(255, 255, 255, 0.3)',
+                borderTop: '3px solid white',
+                borderRadius: '50%',
+                animation: 'spin 1s linear infinite'
+            }}></div>
+            Sending...
+        </div>
+    ) : (
+        'Next'
+    )}
 </button>
+
+{/* Add spinner animation CSS */}
+<style jsx>{`
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+`}</style>
+
 </div>
 
         </div>

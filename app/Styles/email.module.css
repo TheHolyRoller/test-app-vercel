@@ -229,6 +229,10 @@
     -ms-border-radius: 22px;
     -o-border-radius: 22px;
     cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 
 }
 
@@ -252,6 +256,11 @@
     place-content: center;
     margin-top: 0.5em; 
     color: #7d879b; 
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 
 
 
@@ -400,8 +409,10 @@
       -moz-border-radius:22px;
       -ms-border-radius:22px;
       -o-border-radius:22px;
-
-
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
 
       display: grid;
       place-content: center;

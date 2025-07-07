@@ -139,7 +139,81 @@ margin-top: -1.5em;
 }
 
 
+@media(min-width: 1500px){
 
+
+
+
+    .buttonSectionContainer{
+
+        display: grid;
+        place-content: center;
+        margin: 3em auto; 
+
+        margin-top: 8em !important; 
+
+
+
+
+    }
+
+
+
+    .ivviLogoContainer{
+
+
+        margin: 0 auto;
+        margin-top: 2rem !important;
+        display: grid;  
+        place-content: center;
+        
+    
+    
+    }
+
+
+
+}
+
+
+
+@media(max-width: 1000px){
+
+
+
+
+    .buttonSectionContainer{
+
+        display: grid;
+        place-content: center;
+        margin: 3em auto; 
+        margin-top: 6em !important; 
+
+
+    }
+
+
+
+    .ivviLogoContainer{
+
+
+        margin: 0 auto;
+        margin-top: 1rem !important;
+        display: grid;  
+        place-content: center;
+
+        
+    
+    
+    }
+
+
+
+
+
+
+
+}
 
 
 
