@@ -102,8 +102,6 @@
     margin: 6em auto;  
     display: grid;
     place-content: center;
-    /* outline: 5px solid red; */
-    
 
 }
 
@@ -146,9 +144,6 @@
     border: none;
     outline: none;
     cursor: pointer;
-    outline: 5px solid lime;
-
-
 
 
     -webkit-user-select: none; /* Safari */

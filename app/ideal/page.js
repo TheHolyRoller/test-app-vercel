@@ -75,11 +75,11 @@ function IdealPage() {
 
 
     <div className={i.paginationElementContainer}
-    
+      
+      style={{ margin: '0 auto'}}
 
       >
       <div className={i.paginationElementSubContainer}>
-
 
         <ul className={i.paginationList}
 
@@ -107,7 +107,12 @@ function IdealPage() {
           style={{height: '5px', width: '33px', backgroundColor: 'rgb(227, 225, 228)', borderRadius: '14px', display: 'block'}}
           
           ></li>
-        </ul>
+            <li className={i.paginationItem} 
+          
+          style={{height: '5px', width: '33px', backgroundColor: 'rgb(227, 225, 228)', borderRadius: '14px', display: 'block'}}
+          
+          ></li>
+        </ul> 
       </div>
       </div>
 

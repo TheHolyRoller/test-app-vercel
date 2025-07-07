@@ -26,7 +26,6 @@ function Adult() {
     <div className={a.subContainer}>
 
 
-
     <header className={a.headerImageContainer}>
     <Image className={a.mainImage}  src={affect} width={5000} height={5000} alt='notes' /> 
     </header>
@@ -41,6 +40,7 @@ function Adult() {
 
     <div>
 
+    
     <article className={a.mainSupportingTextContainer}>
 
         <ul className={a.affectsList}> 
@@ -81,10 +81,6 @@ function Adult() {
 
        </article>
 
-    <div className={a.pagination} >
-
-
-        </div>
 
     <div className={a.ctaContainer}>
 
@@ -99,14 +95,13 @@ function Adult() {
 
     </div>
 
-
+    
     <div className={a.paginationElementContainer}
       
       style={{ margin: '0 auto'}}
 
       >
       <div className={a.paginationElementSubContainer}>
-
 
         <ul className={a.paginationList}
 
@@ -130,6 +125,11 @@ function Adult() {
           
           ></li>
              <li className={a.paginationItem} 
+          
+          style={{height: '5px', width: '33px', backgroundColor: 'rgb(227, 225, 228)', borderRadius: '14px', display: 'block'}}
+          
+          ></li>
+            <li className={a.paginationItem} 
           
           style={{height: '5px', width: '33px', backgroundColor: 'rgb(227, 225, 228)', borderRadius: '14px', display: 'block'}}
           

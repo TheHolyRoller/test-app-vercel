@@ -9,6 +9,9 @@
     padding: 0;
     position: relative; 
 
+
+
+
 }
 
 
@@ -31,21 +34,24 @@
 
 
 
-
 }
 
 .mainImage {
-    width: 16em;
-    height: 16em;
+    
+    width: 15em;
+    height: 15em;
     margin: 0 auto;
     position: absolute;
     left: 50%;
-    top: 18%;
+    top: 17%;
+
+
     transform:translate(-50%, -50%);
     -webkit-transform:translate(-50%, -50%);
     -moz-transform:translate(-50%, -50%);
     -ms-transform:translate(-50%, -50%);
     -o-transform:translate(-50%, -50%);
+   
     
 
 }
@@ -58,7 +64,7 @@
     margin-top: 5rem !important;
     display: grid;
     place-content: center;
-    font-size: 2.1rem;
+    font-size: 2rem;
     font-weight: bolder;
     text-align: center;
     line-height: 1.12555;
@@ -68,7 +74,7 @@
     position: absolute;
     left: 50%;
     right: 50%;
-    bottom: 50%; 
+    bottom: 60%; 
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
@@ -86,7 +92,7 @@
     position: absolute;
     left: 50%;
     right: 50%;
-    bottom: 25%;
+    bottom: 10.45%;
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
@@ -102,12 +108,11 @@
     margin: 0 auto; 
     text-align: left;
     font-size: 1.2rem;
-
     
 }
 
 .affectsListItem{
-    font-size: 1.34rem;
+    font-size: 1.22rem;
     margin-bottom: 0.5rem;
     line-height: 1.4;
 }
@@ -122,6 +127,51 @@
 
 
 }
+
+.paginationElementContainer{
+    
+    position: absolute;
+    bottom: 31%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+
+.paginationElementSubContainer{
+
+
+
+
+
+
+}
+
+
+.paginationList{
+
+
+
+
+
+
+}
+
+
+.paginationItem{
+
+
+
+
+
+}
+
+
+
+
+
 
 .ctaContainer{
 
@@ -151,7 +201,7 @@
     position: absolute;
     left: 50%;
     right: 50%;
-    bottom: 10%;
+    bottom: 18%;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -231,6 +281,7 @@
     color: #013699;
     position: absolute;
     top: 30%;
+    /* top: 25%;    */
     left: 50%;
     right: 50%;
     transform: translate(-50%, -50%);
@@ -425,15 +476,12 @@
         -moz-transform:translate(-50%, -50%) ;
         -ms-transform:translate(-50%, -50%) ;
         -o-transform:translate(-50%, -50%) ;
-        /* outline: 2px solid lime; */
     
     }
     
     
     .pagination{
-    
-    
-    
+
     
     }
     

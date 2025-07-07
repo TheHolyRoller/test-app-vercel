@@ -19,13 +19,16 @@ function Understand() {
     router.push('/ideal');
   };
   
+
   return (
     
-    <section className={u.mainContainer} style={{backgroundColor: 'white', outline: '4px solid blue'}}>
+    <section className={u.mainContainer} style={{backgroundColor: 'white'}}>
+
+
     <div className={u.subContainer}>
 
 
-    <header className={u.headerImageContainer} style={{outline: '5px solid red'}}>
+    <header className={u.headerImageContainer}>
 
     <Image className={u.mainImage}  src={ivvi_group} width={4000} height={4000} alt='notes' /> 
     </header>
@@ -68,13 +71,22 @@ function Understand() {
 
     {/* Add in pagination element here  */}
 
-      <div className={u.paginationElementContainer}
+
+    </div>
+
+    
+
+
+    </div>
+    </div>
+    
+    
+    <div className={u.paginationElementContainer}
       
-      style={{ margin: '0 auto', outline: '4px solid red'}}
+      style={{ margin: '0 auto'}}
 
       >
       <div className={u.paginationElementSubContainer}>
-
 
         <ul className={u.paginationList}
 
@@ -102,26 +114,14 @@ function Understand() {
           style={{height: '5px', width: '33px', backgroundColor: 'rgb(227, 225, 228)', borderRadius: '14px', display: 'block'}}
           
           ></li>
-             
-
-
-
+            <li className={u.paginationItem} 
+          
+          style={{height: '5px', width: '33px', backgroundColor: 'rgb(227, 225, 228)', borderRadius: '14px', display: 'block'}}
+          
+          ></li>
         </ul>
-
-
       </div>
-
-
-
-
       </div>
-
-
-
-
-    </div>
-    </div>
-    </div>
     </section>
   )
 }

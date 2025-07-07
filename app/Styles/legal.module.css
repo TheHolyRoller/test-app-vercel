@@ -35,8 +35,8 @@
 }
 
 .mainImage {
-    width: 16em;
-    height: 16em;
+    width: 15em;
+    height: 15em;
     margin: 0 auto;
     position: absolute;
     left: 50%;
@@ -165,7 +165,8 @@ text-decoration: underline;
     position: absolute;
     left: 50%;
     right: 50%;
-    transform:translate(-50%, 20%) ;
+    bottom: 23%;
+    /* outline: 11px solid lime; */
     display: grid;
     place-content: center;
     border-radius:19px;
@@ -183,24 +184,75 @@ text-decoration: underline;
     font-size: 1.5rem;
     font-weight: bolder;
     /*Animationproperties*/transition: all 0.1s ease-in-out;
-    transform: scale(1);
-    -webkit-transform:translate(-50%, 20%) ;
-    -moz-transform:translate(-50%, 20%) ;
-    -ms-transform:translate(-50%, 20%) ;
-    -o-transform:translate(-50%, 20%) ;
+    transform: translate(-50%, 20%) scale(1);
+    -webkit-transform: translate(-50%, 20%) scale(1);
+    -moz-transform: translate(-50%, 20%) scale(1);
+    -ms-transform: translate(-50%, 20%) scale(1);
+    -o-transform: translate(-50%, 20%) scale(1);
 }
 
 .cta:hover {
     background-color: #e8894a;
-    transform: scale(1.02);
+    transform: translate(-50%, 20%) scale(1.02);
     box-shadow: 0 2px 8px rgba(244, 155, 83, 0.3);
 }
 
 .cta:active {
     background-color: #d67d3e;
-    transform: scale(0.98);
+    transform: translate(-50%, 20%) scale(0.98);
     box-shadow: 0 1px 4px rgba(244, 155, 83, 0.4);
 }
+
+
+
+.paginationElementContainer{
+    /* outline: 22px solid lime; */
+    position: absolute;
+    bottom: 31%;
+    left: 50%;
+    transform:translate(-50%, -50%) ;
+    -webkit-transform:translate(-50%, -50%) ;
+    -moz-transform:translate(-50%, -50%) ;
+    -ms-transform:translate(-50%, -50%) ;
+    -o-transform:translate(-50%, -50%) ;
+}
+
+
+
+
+
+.paginationElementSubContainer{
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+.paginationList{
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
 
 
 
@@ -307,13 +359,13 @@ text-decoration: underline;
         -moz-transform:translate(-50%, -50%) ;
         -ms-transform:translate(-50%, -50%) ;
         -o-transform:translate(-50%, -50%) ;
-        /* outline: 2px solid lime; */
     
     }
     
     
     .pagination{
     
+
     
     
     

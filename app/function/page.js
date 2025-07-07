@@ -63,7 +63,6 @@ function Functional(){
       >
       <div className={f.paginationElementSubContainer}>
 
-
         <ul className={f.paginationList}
 
           style={{display: 'flex', gap: '0.8em'}}
@@ -82,10 +81,15 @@ function Functional(){
           ></li>
              <li className={f.paginationItem} 
           
-          style={{height: '5px', width: '33px', backgroundColor: 'rgb(153, 187, 154)', borderRadius: '14px', display: 'block'}}
+          style={{height: '5px', width: '33px', backgroundColor: 'rgb(227, 225, 228)', borderRadius: '14px', display: 'block'}}
           
           ></li>
              <li className={f.paginationItem} 
+          
+          style={{height: '5px', width: '33px', backgroundColor: 'rgb(153, 187, 154)', borderRadius: '14px', display: 'block'}}
+          
+          ></li>
+            <li className={f.paginationItem} 
           
           style={{height: '5px', width: '33px', backgroundColor: 'rgb(227, 225, 228)', borderRadius: '14px', display: 'block'}}
           

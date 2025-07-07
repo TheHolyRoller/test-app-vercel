@@ -59,6 +59,9 @@ font-size: clamp(1.5rem + 1vw, 2rem, 3rem);
     place-content: center;
     margin: 3em auto; 
 
+    margin-bottom: 0.5em !important;
+
+
 }
 
 
@@ -79,7 +82,12 @@ font-size: clamp(1.5rem + 1vw, 2rem, 3rem);
     -ms-border-radius: 14px;
     -o-border-radius: 14px;
     cursor: pointer;
+    
+
+
+
 }
+
 
 
 
