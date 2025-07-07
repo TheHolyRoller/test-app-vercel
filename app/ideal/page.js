@@ -38,6 +38,7 @@ function IdealPage() {
     </header>
     
 
+
     <div className={i.mainHeaderContainer}>
         <h1 className={i.mainTextHeader}>
 

@@ -421,15 +421,15 @@ text-decoration: underline;
     
         
     .paginationList{
-        transform:translate(0, 55vh) !important;
-        -webkit-transform:translate(0, 55vh) !important;
-        -moz-transform:translate(0, 55vh) !important;
-        -ms-transform:translate(0, 55vh) !important;
-        -o-transform:translate(0, 55vh) !important;
-
-
-
-    }
+        position: absolute;
+        bottom: 25%;
+        left: 50%;
+        transform:translate(-50%, 550%);
+        -webkit-transform:translate(-50%, 550%);
+        -moz-transform:translate(-50%, 550%);
+        -ms-transform:translate(-50%, 550%);
+        -o-transform:translate(-50%, 550%);
+}
     
     
     

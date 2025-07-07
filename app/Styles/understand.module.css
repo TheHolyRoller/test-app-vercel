@@ -256,7 +256,10 @@
     .paginationElementContainer{
 
 
-
+        /* outline: 11px solid red; */
+        position: absolute;
+        bottom: 29%; 
+        
 
 
 
@@ -278,7 +281,7 @@
         position: absolute;
         left: 50%;
         right: 50%;
-        top: 64%;
+        top: 55%;
 
         
     
@@ -296,7 +299,7 @@
     position: absolute;
     left: 50%;
     right: 50%;
-    top: 38%;
+    top: 28.7%;
     width: 80%;
     max-width: 400px;
     transform:translate(-50%, -2%) ;
@@ -344,13 +347,13 @@
     margin: 0 auto;
     position: absolute;
     left: 50%;
-    top: 23%;
+    top: 20%;
     transform:translate(-50%, -50%);
     -webkit-transform:translate(-50%, -50%);
     -moz-transform:translate(-50%, -50%);
     -ms-transform:translate(-50%, -50%);
     -o-transform:translate(-50%, -50%);
-    
+    /* outline: 2px solid lime; */
 
 }
 
