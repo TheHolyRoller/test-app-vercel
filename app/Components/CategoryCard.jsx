@@ -101,7 +101,7 @@ function CategoryCard({ Section, audio_URL, categoryName }) {
             </article>
 
             <aside className={c.buttonSectionContainer}>
-                <div className={c.CTAButton} onClick={handleNext}>Next</div>
+                <div className={c.CTAButton} onClick={handleNext} style={{userSelect: 'none'}}>Next</div>
             </aside>
         </>
     )

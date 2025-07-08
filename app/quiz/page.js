@@ -121,7 +121,7 @@ export default function Quiz() {
                     <QuizCard
                         questionText={questionText}
                         Section={Section}
-                        audio_URL={audio_URL}
+                        audio_URL={audio_URL}   
                         currentIMG={GIF_URL}
                         currentQuestion={currentQuestion}
                     />

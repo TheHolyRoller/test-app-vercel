@@ -310,6 +310,7 @@ margin-bottom: 5em;
     border-top-right-radius: 1rem;
     display: grid; 
     place-content: center;
+    position: relative; 
 
 
 
@@ -337,26 +338,33 @@ margin-bottom: 5em;
 
 
 .soundIconContainer{
-    
-    
-    
-    position: absolute;
-    right: 6%;
-    bottom: 22%;
-    height: 2em;
-    width: 2em;
-    display: grid;
-    place-content: center;
-    background-color: #686886;
-    border-radius:50%;
-    -webkit-border-radius:50%;
-    -moz-border-radius:50%;
-    -ms-border-radius:50%;
-    -o-border-radius:50%;
-    cursor: pointer;
 
+
+    position: relative; 
+    /* outline: 2px solid lime; */
+    display: grid; 
+    /* margin-right: -3vw;  */
+    margin-right: -6em; 
+    margin-top: -1.35em; 
 
 }
+
+
+.soundIcon{
+
+
+    /* outline: 3px solid lime; */
+    justify-self: end;
+
+
+
+
+
+  
+}
+
+
+
 
 
 
@@ -424,6 +432,7 @@ margin-bottom: 5em;
 
 
 .quizCardContainer{
+
 
 
 
@@ -521,6 +530,9 @@ margin-bottom: 5em;
     font-size: 0.9rem;
     text-transform: capitalize !important;
     text-transform: uppercase !important; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    /* outline: 4px solid red !important; */
+    
 
 }
 
@@ -530,6 +542,8 @@ margin-bottom: 5em;
 
     all: unset; 
     background-color: #ef4744;
+    outline: 4px solid red !important;
+
     
 
 }
@@ -645,6 +659,9 @@ background-color: #82c34a;
     display: grid;
     place-content: center;      
     height: calc(3rem + 10px); 
+
+    /* outline: 2px solid red; */
+
 }
 
 .buttonStack{
@@ -660,6 +677,9 @@ background-color: #82c34a;
     -moz-border-radius: 12px;
     -ms-border-radius: 12px;
     -o-border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+
+    
 }
 
 #noButton{
@@ -1134,16 +1154,6 @@ background-color: #82c34a;
 
 
 }
-
-
-/* Add in the effects here  */
-
-
-/* Add in the animations here  */
-
-
-
-
 
 
 

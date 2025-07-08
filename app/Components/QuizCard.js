@@ -7,9 +7,12 @@ import { useUser } from '../lib/context/UserContext';
 import { usePathname } from 'next/navigation';
 import { nunito } from '../fonts/nunito';
 import { chewy } from '../fonts/chewy';
-import mute from '../assets/mute.png'; 
-import soundOn from '../assets/volume.png'; 
+// import mute from '../assets/mute.png'; 
+import mute from '../assets/mute.svg'; 
 
+// import soundOn from '../assets/volume.png'; 
+import soundOn from '../assets/volume.svg'; 
+import styled from "styled-components";
 
 
 const QuizCard = ({ 
@@ -21,13 +24,13 @@ const QuizCard = ({
     
 }) => {
 
-
-
     // Answer button state and logic from QuizAnswer
     const { handleAnswer, buttonCounters, incrementButtonCounter } = useQuiz();
     const { sound, toggleUserSound } = useUser();
-    const pathname = usePathname();
+    const pathname = usePathname(); 
     const [answer, setAnswer] = useState();
+    const [iconColor, setIconColor] = useState('');
+
 
     console.log('this is the sound instance variable \n', sound); 
 
@@ -38,8 +41,30 @@ const QuizCard = ({
         });
         
         await setAnswer(userAnswer);
+        await setIconColor(Section); 
         handleAnswer(userAnswer);
     };
+
+
+
+    // Create the color hash map here 
+    const colorMap = {
+
+
+
+
+
+
+    }
+
+
+    useEffect(() => {
+
+        console.log('this is the current icon color \n', iconColor); 
+        console.log('this is the current section \n', Section);
+    }, [iconColor, Section]);
+
+
 
     // Scroll to top when on quiz route
     useEffect(() => {
@@ -77,11 +102,14 @@ const QuizCard = ({
             case 'plans': 
                 return 'rgb(199, 59, 46)'; 
             case 'memory': 
+
                 return 'rgb(231, 126, 34)'; 
             case 'tests': 
+
                 return 'rgb(244, 198, 14)'; 
             default: 
                 console.warn('Unknown section:', Section, 'using default color');
+
                 return '#4c2a74';  
         }
     }
@@ -102,12 +130,16 @@ const QuizCard = ({
 
         switch(normalizedSection) {
             case 'reading': 
+
                 return 'rgb(119, 210, 143)'; 
             case 'writing': 
+
                 return 'rgb(30, 120, 180)'; 
             case 'plans': 
+
                 return 'rgb(160, 40, 30)'; 
             case 'memory': 
+
                 return 'rgb(200, 100, 20)'; 
             case 'tests': 
                 return 'rgb(220, 170, 10)'; 
@@ -147,6 +179,15 @@ const QuizCard = ({
     console.log('Selected card color:', getColorBySection(Section));
     console.log('Selected navbar color:', getNavbarColorBySection(Section));
 
+
+    const StyledSVG = styled.svg`
+  width: 5px;
+  height: 5px;
+  background-color: ${(props) => props.color};
+  background-image: url(${(props) => props.src});
+  outline: 4px solid red; 
+`;
+
     return (
         <>
         {/* Navbar background strip */}
@@ -164,8 +205,6 @@ const QuizCard = ({
             }}
         />
 
-            {/* CARD  */}
-
         <article 
             className={`${q.card} ${nunito.className}`} 
             id={q.firstCARD} 
@@ -176,14 +215,17 @@ const QuizCard = ({
                 boxShadow: '0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.06)', 
 
             }}
+
+
         >
             <div 
                 className={q.cardCategoryColorContainer} 
                 style={{
-                    backgroundColor: getColorBySection(Section),
+                    backgroundColor: getColorBySection(Section),    
                     boxShadow: '0 -2px 8px rgba(0, 0, 0, 0.1), -2px 0 8px rgba(0, 0, 0, 0.1), 2px 0 8px rgba(0, 0, 0, 0.1)', 
                 }}
             >
+
                 {audio_URL && (
                     <audio 
                         key={audio_URL} 
@@ -208,28 +250,24 @@ const QuizCard = ({
                         {Section}
 
 
-                        {/* Add in the icon here  */}
-                        {/* Add in an event listener here that toggles the sound on or off option  */}
                         <div className={q.soundIconContainer} onClick={toggleUserSound} >
-
-
 
                             {sound === true ? (
 
-                                <Image src={soundOn} width={20} height={20} alt='sound'/>
-
+                                <Image src={soundOn} width={20} height={20} alt='sound on' className={q.soundIcon}  />
 
                             ) : (
 
-                                <Image src={mute} width={20} height={20} alt='sound off'/>
-
+                                <Image src={mute} width={20} height={20} alt='sound off' className={q.soundIcon} />
+                               
 
                             )}
 
-
-
                         </div>
 
+
+
+                     
 
                         </div>
                     </label>

@@ -13,8 +13,9 @@
   --card-height: 70vh; 
   --max-card-height: 40rem; 
   --card-background-color: rgb(251, 251, 251); 
-  
-  
+  --svg-fill-color: #000; 
+  --svg-opacity: 1; 
+  --stroke-color: #000; 
 
   
 }
@@ -29,7 +30,8 @@
 
 
 body {
-  background: white;
+  /* background: white; */
+  background-color: rgb(234, 234, 234);
   color: var(--foreground);
   font-family: var(--font-nunito), sans-serif
 
