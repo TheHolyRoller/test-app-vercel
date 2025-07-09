@@ -176,29 +176,35 @@ function ResultContent() {
         const maxScore = 439;
         
         // Calculate raw percentage
-        const rawPercentage = (finalScore / maxScore) * 100;
+        const rawPercentage = (finalScore / 5) * 10;
         
         // Apply scaling to map scores appropriately:
         // - High scores (80%+ of max) should map to 90-100%
         // - Medium scores (50% of max) should map to around 60%
         // - Low scores should map to lower percentages
         
-        if (rawPercentage >= 80) {
-            // Most answers are "yes" - map to 90-100%
-            percentage = Math.floor(90 + ((rawPercentage - 80) / 20) * 10);
-        } else if (rawPercentage >= 50) {
-            // Roughly half answers are "yes" - map to 60-89%
-            percentage = Math.floor(60 + ((rawPercentage - 50) / 30) * 29);
-        } else {
-            // Lower scores - map to 30-59%
-            percentage = Math.floor(30 + (rawPercentage / 50) * 29);
-        }
+        // if (rawPercentage >= 80) {
+        //     // Most answers are "yes" - map to 90-100%
+        //     percentage = Math.floor(90 + ((rawPercentage - 80) / 20) * 10);
+        // } else if (rawPercentage >= 50) {
+        //     // Roughly half answers are "yes" - map to 60-89%
+        //     percentage = Math.floor(60 + ((rawPercentage - 50) / 30) * 29);
+        // } else {
+        //     // Lower scores - map to 30-59%
+        //     percentage = Math.floor(30 + (rawPercentage / 50) * 29);
+        // }
+        let percentage = rawPercentage; 
         
         // Ensure percentage doesn't exceed 100
         percentage = Math.min(percentage, 100);
         
         console.log('Raw percentage:', rawPercentage);
         console.log('Formatted percentage:', percentage);
+
+        return percentage; 
+        
+
+
     }
 
     formatScore(finalScore); 

@@ -258,6 +258,7 @@ export const QuizProvider = ({ children }) => {
                 plans: setOrganisationalScore,
                 tests: setExamResultsScore
             };
+            
 
             
             const key = type.trim().toLowerCase();
