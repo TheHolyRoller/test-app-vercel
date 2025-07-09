@@ -8,8 +8,6 @@ import { useReducer } from 'react';
 import { useRouter } from 'next/navigation';
 import { databases } from '../lib/appwrite';
 
-
-
 const DATABASE_ID = process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID;
 const COLLECTION_ID = process.env.NEXT_PUBLIC_APPWRITE_RESULTS_COLLECTION_ID;
 
@@ -169,16 +167,10 @@ function UserInput() {
 <button type='submit' className={e.userInputButton}>
   Confirm 
 </button>
-
-
 </aside>
 
     </form>
     </article>
-
-    {/* Add in the button section here  */}
-   
-
     </section>
 
 
