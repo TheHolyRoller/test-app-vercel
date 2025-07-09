@@ -23,7 +23,7 @@ export default function(){
             <article className={l.answerSection}>
                 <div className={l.buttonList}>
                     <div className={l.buttonStackContainer}>
-                        <div className={l.button} id={l.noButton} onClick={() => increment('noNum')}>
+                        <div className={l.button} id={l.noButton} onClick={() => increment('noNum')} style={{cursor: 'pointer', fontSize: '2rem', letterSpacing: '1px'}} >
                             {counters.noNum > 0 && (
                                 <span className={l.numSpan}>
                                     {counters.noNum}

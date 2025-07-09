@@ -87,7 +87,7 @@ function Adult() {
 
   <div className={a.cta} onClick={handleNext}
   
-  style={{cursor: 'pointer'}}
+  style={{cursor: 'pointer', fontSize: '2rem', letterSpacing: '1px'}}
   >
 
       Next 

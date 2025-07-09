@@ -61,11 +61,9 @@ function Understand() {
 
 
     <div className={u.cta} onClick={handleNext}
-    
-    >
+    style={{fontSize: '2rem', cursor: 'pointer', letterSpacing: '1px'}}>
 
       Next 
-
 
     </div>
 

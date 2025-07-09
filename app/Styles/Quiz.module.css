@@ -303,7 +303,6 @@ margin-bottom: 5em;
 .categoryLabelContainer{
 
 
-    /* height: 4.5rem;  */
     height: 5.5rem; 
 
     border-top-left-radius: 1rem;
@@ -333,6 +332,10 @@ margin-bottom: 5em;
     font-family: var(--font-nunito), sans-serif;
     font-weight: 700;
     color: white;
+
+
+
+
 }
 
 
@@ -341,11 +344,11 @@ margin-bottom: 5em;
 
 
     position: relative; 
-    /* outline: 2px solid lime; */
     display: grid; 
-    /* margin-right: -3vw;  */
     margin-right: -6em; 
     margin-top: -1.35em; 
+
+
 
 }
 
@@ -353,14 +356,38 @@ margin-bottom: 5em;
 .soundIcon{
 
 
-    /* outline: 3px solid lime; */
     justify-self: end;
+    stroke: var(--svg-fill-color);
+    fill: var(--svg-fill-color);
+    opacity: 1;
+    
+}
 
 
 
 
-
-  
+.iconBackground{
+    /*outline: 2px solid red;
+    */width: 2em;
+    height: 2em;
+    background-color: rgba(240, 240, 240, 0.7);
+    border-radius:50% ;
+    -webkit-border-radius:50% ;
+    -moz-border-radius:50% ;
+    -ms-border-radius:50% ;
+    -o-border-radius:50% ;
+    justify-self: right;
+    /*margin-top: -1em;
+    */display: grid;
+    place-content: center;
+    margin-right: -0.7em;
+    /*margin-bottom: -8px;
+    */padding-bottom: 0px;
+    transform:translate(0, -1.6px) ;
+    -webkit-transform:translate(0, -1.6px) ;
+    -moz-transform:translate(0, -1.6px) ;
+    -ms-transform:translate(0, -1.6px) ;
+    -o-transform:translate(0, -1.6px) ;
 }
 
 
@@ -527,7 +554,7 @@ margin-bottom: 5em;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
 
-    font-size: 0.9rem;
+
     text-transform: capitalize !important;
     text-transform: uppercase !important; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
@@ -543,6 +570,7 @@ margin-bottom: 5em;
     all: unset; 
     background-color: #ef4744;
     outline: 4px solid red !important;
+    font-size: 2rem !important;
 
     
 
@@ -559,19 +587,10 @@ margin-bottom: 5em;
 }
 
 
-.sometimesButton{
+#sometimesButton{
 
 
-    all: unset; 
-    background-color: #f5d142;
-    padding: 0.5em !important;
-    font-size: 0.75rem !important;
-    /* color: black;  */
-
-
-    
-    
-
+    font-size: 1.25rem !important;
 
 
 }
@@ -588,13 +607,17 @@ margin-bottom: 5em;
 
 .yesButtonContainer{
 
+ 
+
 }
 
-.yesButton{
+#yesButton{
 
 
-    all: unset; 
+    /* all: unset;  */
 background-color: #82c34a;
+font-size: 1.76rem !important;
+
 
 
 }
@@ -684,6 +707,9 @@ background-color: #82c34a;
 
 #noButton{
     background-color: rgb(241, 52, 39); 
+    font-size: 1.76rem !important;
+
+
 }
 
 #noButton::before {
@@ -720,9 +746,14 @@ background-color: #82c34a;
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
-    width: 1.2em;
+    
+    
+    width: 1.85em;
+    height: 1.85em; 
+
+
+
     outline: 1.5px solid white; 
-    height: 1.2em; 
     display: grid;
     place-content: center;
     cursor: pointer;
@@ -1102,14 +1133,12 @@ background-color: #82c34a;
         place-content: center;
         left: 49%;
         bottom: 0rem !important;
-        margin-top: -9em !important;
-        
-        
-        transform:translate(0, 2em);
-        -webkit-transform:translate(0, 2em);
-        -moz-transform:translate(0, 2em);
-        -ms-transform:translate(0, 2em);
-        -o-transform:translate(0, 2em);
+        margin-top: -14em !important;
+        transform:translate(0, -1em);
+        -webkit-transform:translate(0, -1em);
+        -moz-transform:translate(0, -1em);
+        -ms-transform:translate(0, -1em);
+        -o-transform:translate(0, -1em);
 }
 
     

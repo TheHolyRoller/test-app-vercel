@@ -130,7 +130,7 @@ export default function EmailPermission() {
       
   <div className={n.nextButtonContainer}>
 
-<button className={n.nextButton} onClick={handleSubmit} >
+<button className={n.nextButton} onClick={handleSubmit} style={{fontSize: '2rem', letterSpacing: '1px'}} >
     Next 
 </button>
 </div>

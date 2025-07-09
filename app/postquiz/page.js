@@ -112,7 +112,7 @@ function PostQuizPage() {
           {isMobile ? (
             <div className={ps.CTAButton} onClick={handleShare}>Share Screener</div>
           ) : (
-            <div className={ps.CTAButton} onClick={handleCopyToClipboard}>Copy Link</div>
+            <div className={ps.CTAButton} onClick={handleCopyToClipboard} style={{fontSize: '1.9rem', letterSpacing: '1px'}}>Copy Link</div>
           )}
         </aside>
 

@@ -251,6 +251,7 @@ function ResultContent() {
                         <div 
                             className={resultStyles.button} 
                             onClick={() => router.push('/results-explanation')} 
+                            style={{cursor: 'pointer', fontSize: '2rem', letterSpacing: '1px'}}
                         >
                           
 Next    

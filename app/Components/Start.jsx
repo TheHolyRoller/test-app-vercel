@@ -78,7 +78,7 @@ function Start() {
         )}
 
         <aside className={s.buttonSectionContainer}>
-        <div className={s.CTAButton} onClick={handleStartScreener}>Start Screener</div>
+        <div className={s.CTAButton} onClick={handleStartScreener} style={{fontSize: '2rem', letterSpacing: '1px'}} >Start Screener</div>
         </aside>
 
 

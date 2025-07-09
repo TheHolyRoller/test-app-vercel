@@ -98,12 +98,12 @@ Otherwise they won’t be saved.`;
       </div>
   
       {questionText && (
-          <div className={`${e.questionTextContainer} ${nunito.className}`} >
-              <h2 className={`${e.questionText} ${nunito.className}`}>
+          <div className={`${e.questionTextContainer} ${nunito.className}`} style={{color:'#333333' }} >
+              <h2 className={`${e.questionText} ${nunito.className}`} style={{color:'#333333' }}>
                   {questionText}
   
   
-                  <span>
+                  <span style={{color:'#333333' }}>
                       {currentQuestion?.questionText}
                   </span>
               </h2>
@@ -143,7 +143,7 @@ Otherwise they won’t be saved.`;
 
   <div className={e.ctaContainer}>
 
-    <div className={e.cta} onClick={handleYesClick} >
+    <div className={e.cta} onClick={handleYesClick} style={{cursor: 'pointer', fontSize: '2rem', letterSpacing: '1px'}} >
         Yes
     </div>
 

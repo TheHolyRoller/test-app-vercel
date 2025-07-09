@@ -66,7 +66,7 @@ function IdealPage() {
     <div className={i.ctaContainer}>
 
 
-    <div className={i.cta} onClick={handleNext}>
+    <div className={i.cta} onClick={handleNext} style={{cursor: 'pointer', fontSize: '2rem', letterSpacing: '1px'}}>
 
       Next 
 

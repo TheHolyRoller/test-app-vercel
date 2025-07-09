@@ -264,6 +264,8 @@ export default function EmailPermission() {
         required                                                                       
         className={emailSubmission.userNameInput}
         autoComplete="off"
+        style={{color: '#2c2c2c'}}
+
      ></input>
     </form>
     </article>
@@ -293,11 +295,12 @@ export default function EmailPermission() {
     disabled={isLoading}
     style={{ 
         opacity: isLoading ? 0.7 : 1,
-        cursor: isLoading ? 'not-allowed' : 'pointer'
+        cursor: isLoading ? 'not-allowed' : 'pointer', 
+        fontSize: '2rem', letterSpacing: '1px' 
     }}
 >
     {isLoading ? (
-        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '10px'}}>
             <div className="spinner" style={{
                 width: '20px',
                 height: '20px',
@@ -309,6 +312,7 @@ export default function EmailPermission() {
             Sending...
         </div>
     ) : (
+
         'Next'
     )}
 </button>

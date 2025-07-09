@@ -49,7 +49,7 @@ function Functional(){
     <div className={f.ctaContainer}>
 
 
-    <div className={f.cta} onClick={handleNext} >
+    <div className={f.cta} onClick={handleNext} style={{cursor: 'pointer', fontSize: '2rem', letterSpacing: '1px'}} >
 
       Next 
 

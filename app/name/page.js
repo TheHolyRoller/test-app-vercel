@@ -132,7 +132,8 @@ export default function EmailPermission() {
         onChange={handleChange} 
         required                                                                       
         className={n.userNameInput}
-        autoComplete="off"
+        autoComplete="off" 
+        style={{color: '#2c2c2c'}}
      ></input>
     </form>
     </article>
@@ -154,7 +155,7 @@ export default function EmailPermission() {
       
   <div className={n.nextButtonContainer}>
 
-<button className={n.nextButton} form='nameForm' type='submit'>
+<button className={n.nextButton} form='nameForm' type='submit' style={{fontSize: '2rem', letterSpacing: '1px'}}>
     Next 
 </button>
 </div>

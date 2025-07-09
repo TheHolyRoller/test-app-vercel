@@ -98,7 +98,7 @@ function Legal() {
     <div className={l.ctaContainer}>
 
 
-    <div className={l.cta} onClick={handleNavigation} >
+    <div className={l.cta} onClick={handleNavigation} style={{cursor: 'pointer', fontSize: '2rem', letterSpacing: '1px'}}>
 
       Next 
 

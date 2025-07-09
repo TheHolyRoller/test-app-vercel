@@ -48,6 +48,7 @@ function UserInput() {
         required                                                                       
         className={i.userNameInput}
         autoComplete="off"
+        style={{color: '#2c2c2c'}}
      ></input>
 
 

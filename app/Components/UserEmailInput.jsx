@@ -160,6 +160,7 @@ function UserInput() {
         onChange={handleChange}
         required                                                                     
         className={e.userNameInput}
+        style={{color: '#2c2c2c'}}
      ></input>
 
 

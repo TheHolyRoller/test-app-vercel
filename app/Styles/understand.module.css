@@ -11,7 +11,6 @@
 
     font-size: 1.2rem !important;
 
-
 }
 
 
@@ -175,7 +174,7 @@
     /*IE10+/Edge*/user-select: none;
     cursor: pointer;
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.9rem;
     font-weight: bolder;
     transition: all 0.1s ease-in-out;
     position: absolute;
@@ -232,7 +231,7 @@
         /*IE10+/Edge*/user-select: none;
         cursor: pointer;
         color: white;
-        font-size: 1.5rem;
+        font-size: 1.9rem;
         font-weight: bolder;
         transition: all 0.1s ease-in-out;
         position: absolute;

@@ -64,7 +64,7 @@
 }
 
 .questionTextContainer{
-    color: black !important;
+    color: #333333 !important; 
     font-size: 1.3rem;
     width: 70%;
     text-align: center;
@@ -90,7 +90,8 @@
 }
 
 .questionText{
-    color: black !important; 
+    color: #333333 !important; 
+    
     position: relative; 
     z-index: 99999;
     margin-top: 2em; 
@@ -330,7 +331,8 @@
 
     height: 2.5rem; 
     width: 17rem; 
-     color: black; 
+     color: #333333; 
+     
 
     text-align: center;
     font-weight: bold;
@@ -347,7 +349,7 @@
 .userNameInput:-webkit-autofill {
     background-color: rgb(226, 225, 225) !important;
     -webkit-box-shadow: 0 0 0 1000px white inset !important;
-    -webkit-text-fill-color: black !important;
+    -webkit-text-fill-color: #333333 !important;
 }
 
 .userInputButton{
