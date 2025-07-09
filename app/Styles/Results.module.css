@@ -180,6 +180,18 @@
 }
 
 
+.CTAButton:hover {
+    background-color: #e8894a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(244, 155, 83, 0.3);
+}
+
+.CTAButton:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(244, 155, 83, 0.2);
+}
+
+
 
 .impactText{
 

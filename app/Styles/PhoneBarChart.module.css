@@ -507,16 +507,28 @@
 
 
 
+.button:hover {
+    background-color: #e8894a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(244, 155, 83, 0.3);
+}
+
+
+.button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(244, 155, 83, 0.2);
+}
+
 
 
 
 
 @keyframes shimmer {
     0% {
-        background-position: -20px 0;
+        /* background-position: -20px 0; */
     }
     100% {
-        background-position: 20px 0;
+        /* background-position: 20px 0; */
     }
 }
 

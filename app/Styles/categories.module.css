@@ -319,6 +319,7 @@
 
 
 
+
 .CTAButton{
     height: 60px;
     width: 318px;
@@ -339,6 +340,36 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     outline: 0.5px solid #e8eaef;
 }
+
+
+.CTAButton:hover{
+
+    transform:scale(0.98);
+    -webkit-transform: scale(0.98);
+    -moz-transform: scale(0.98);
+    -ms-transform: scale(0.98);
+    -o-transform: scale(0.98);
+
+
+
+
+}
+
+
+.CTAButton:active{
+
+    transform:scale(0.98);
+    -webkit-transform: scale(0.98);
+    -moz-transform: scale(0.98);
+    -ms-transform: scale(0.98);
+    -o-transform: scale(0.98);
+
+}
+
+
+
+
+
 
 .mainLogoContainer{
 

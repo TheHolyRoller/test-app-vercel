@@ -545,7 +545,7 @@ margin-bottom: 5em;
     
 }
 
-#button{
+.button{
     padding: 0.75rem;
     /* padding: 0.75rem 0.5em !important;  */
     border-radius: 10px;
@@ -562,6 +562,123 @@ margin-bottom: 5em;
     
 
 }
+
+/* Add in the hover and click effects here to all the relevant button classes  */
+.button:hover{ 
+
+    transform:scale(0.98);
+    -webkit-transform: scale(0.98);
+    -moz-transform: scale(0.98);
+    -ms-transform: scale(0.98);
+    -o-transform: scale(0.98);
+
+
+
+
+}
+
+
+.button:active{
+    transform:scale(0.98);
+    -webkit-transform:scale(0.98);
+    -moz-transform:scale(0.98);
+    -ms-transform:scale(0.98);
+    -o-transform:scale(0.98);
+}
+
+.button:active{
+    transform:translateY(2px);
+    -webkit-transform:translateY(2px);
+    -moz-transform:translateY(2px);
+    -ms-transform:translateY(2px);
+    -o-transform:translateY(2px);
+}
+
+
+
+
+.buttonStack:hover{
+
+
+    transform:scale(0.98);
+    -webkit-transform: scale(0.98);
+    -moz-transform: scale(0.98);
+    -ms-transform: scale(0.98);
+    -o-transform: scale(0.98);
+
+
+
+}
+
+
+
+.buttonStack:active{
+
+    transform:scale(0.98);
+    -webkit-transform: scale(0.98);
+    -moz-transform: scale(0.98);
+    -ms-transform: scale(0.98);
+    -o-transform: scale(0.98);
+
+
+
+}
+
+.buttonStack:active{
+    transform:translateY(2px);
+    -webkit-transform:translateY(2px);
+    -moz-transform:translateY(2px);
+    -ms-transform:translateY(2px);
+    -o-transform:translateY(2px);
+}
+
+
+
+
+
+
+.buttonStackContainer:hover{
+
+
+    transform:scale(0.98);
+    -webkit-transform: scale(0.98);
+    -moz-transform: scale(0.98);
+    -ms-transform: scale(0.98);
+    -o-transform: scale(0.98);
+
+
+
+
+
+}
+
+
+
+#buttonStackContainer:active{
+
+
+
+    transform:scale(0.98);
+    -webkit-transform: scale(0.98);
+    -moz-transform: scale(0.98);
+    -ms-transform: scale(0.98);
+    -o-transform: scale(0.98);
+
+
+}
+
+
+
+.buttonStackContainer:active{
+    transform:translateY(2px);
+    -webkit-transform:translateY(2px);
+    -moz-transform:translateY(2px);
+    -ms-transform:translateY(2px);
+    -o-transform:translateY(2px);
+
+}
+
+
 
 
 .noButton{

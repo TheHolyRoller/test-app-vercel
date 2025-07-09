@@ -66,6 +66,86 @@
 
 }
 
+
+
+/* Add all the rest of the relevant button classes and see if you can add in a translation effect that works  */
+
+.button:hover {
+   
+    
+    transform:  scale(1.02);
+    -webkit-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+    -o-transform: scale(1.02);
+}
+
+.button:active {
+     transform:scale(0.98);
+    -webkit-transform: scale(0.98);
+    -moz-transform: scale(0.98);
+    -ms-transform: scale(0.98);
+    -o-transform: scale(0.98);
+}
+
+.buttonStack:hover {
+
+    transform:scale(0.98);
+    -webkit-transform: scale(0.98);
+    -moz-transform: scale(0.98);
+    -ms-transform: scale(0.98);
+    -o-transform: scale(0.98);
+}
+
+
+.buttonStack:active { 
+
+
+    transform:scale(0.98);
+    -webkit-transform: scale(0.98);
+    -moz-transform: scale(0.98);
+    -ms-transform: scale(0.98);
+    -o-transform: scale(0.98);
+
+
+
+
+
+}
+
+
+
+
+
+.buttonStackContainer:hover{
+
+
+    transform:scale(0.98);
+    -webkit-transform: scale(0.98);
+    -moz-transform: scale(0.98);
+    -ms-transform: scale(0.98);
+    -o-transform: scale(0.98);
+
+
+
+}
+
+
+
+.buttonStackContainer:active{
+
+    transform:scale(0.98);
+    -webkit-transform: scale(0.98);
+    -moz-transform: scale(0.98);
+    -ms-transform: scale(0.98);
+    -o-transform: scale(0.98);
+
+}
+
+
+
+
+
 .numSpan {
     position: absolute;
     top:0;
@@ -284,10 +364,16 @@
 
 #yesButton {
 
-    
+
 
 
 }
+
+
+/* Change this from the yes button to the general button class  */
+
+
+
 
 #yesStackOne {
     background-color: rgb(156, 194, 109);
