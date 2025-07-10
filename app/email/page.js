@@ -59,7 +59,7 @@ export default function EmailPermission() {
                 from: 'support@dyslexiaquiz.com',
                 toEmail: inputEmail,
                 subject: 'Your Quiz Results',
-                message: `Hi ${name},\n\nThank you for taking the quiz! Here are your results:\n\nOverall Score: ${score}\nFinal Score: ${finalScore}\nMemory Score: ${memoryScore}\nWriting Score: ${writingScore}\nReading Score: ${readingScore}\nExam Results Score: ${examResultsScore}\nOrganisational Score: ${organisationalScore}`,
+                message: `Hi ${name},\n\nThank you for taking the quiz! Here are your results:\n \nFinal Score: ${finalScore}\nMemory Score: ${memoryScore}\nWriting Score: ${writingScore}\nReading Score: ${readingScore}\nExam Results Score: ${examResultsScore}\nOrganisational Score: ${organisationalScore}`,
                 name: name
             };
 

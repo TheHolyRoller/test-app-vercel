@@ -295,6 +295,7 @@ export const QuizProvider = ({ children }) => {
 
             if (scoreSetter) {
                 scoreSetter(prevScore => prevScore + 2);
+                
 
             }
         };
