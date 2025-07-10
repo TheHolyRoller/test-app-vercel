@@ -24,31 +24,31 @@ function PhoneBarChart({ writingPercentage,
     const categoryData = [
         {
             name: 'Reading',
-            percentage: Math.min(Math.max(readingPercentage || 0, 0), 100),
+            percentage: readingScore,
             color: '#FF6B6B',
             score: readingScore
         },
         {
             name: 'Writing',
-            percentage: Math.min(Math.max(writingPercentage || 0, 0), 100),
+            percentage: writingScore,
             color: '#4ECDC4',
             score: writingScore
         },
         {
             name: 'Memory',
-            percentage: Math.min(Math.max(memoryPercentage || 0, 0), 100),
+            percentage: memoryScore,
             color: '#45B7D1',
             score: memoryScore
         },
         {
             name: 'Tests',
-            percentage: Math.min(Math.max(examResultsPercentage || 0, 0), 100),
+            percentage: examResultsScore,
             color: '#96CEB4',
             score: examResultsScore
         },
         {
-            name: 'Plans',
-            percentage: Math.min(Math.max(organisationalPercentage || 0, 0), 100),
+            name: 'Planning',
+            percentage: organisationalScore,
             color: '#FECA57',
             score: organisationalScore
         }
@@ -136,7 +136,7 @@ function PhoneBarChart({ writingPercentage,
                                         <div 
                                             className={p.barFill}
                                             style={{
-                                                width: `${category.percentage}%`,
+                                                width: `${category.percentage}`,
                                                 backgroundColor: category.color,
                                                 height: '35px',
                                                 display: 'flex',
@@ -156,7 +156,7 @@ function PhoneBarChart({ writingPercentage,
                                                 paddingTop: '15px'
                                             }}>
                                                 <span>{category.name}</span>
-                                                <span>{Math.round(category.percentage)}%</span>
+                                                <span>{Math.round(category.percentage)}</span>
                                             </div>
                                         </div>
                                     </div>

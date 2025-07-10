@@ -26,6 +26,8 @@ export default function EmailPermission() {
 
     // Extract the set email function from the quiz context here 
     const { setEmail } = useQuiz(); 
+    
+    // Add in the percentage here 
     const { 
         finalScore, 
         score, 
@@ -35,6 +37,8 @@ export default function EmailPermission() {
         examResultsScore, 
         organisationalScore 
     } = useQuiz();
+
+    
 
     const handleChange = (e) => {
         setInputEmail(e.target.value);

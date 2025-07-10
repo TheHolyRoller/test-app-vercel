@@ -74,6 +74,7 @@ function ResultsExplanationContent() {
         percentage = Math.min(percentage, 100);
     }
 
+    
     formatScore(finalScore); 
 
     const handleNext = () => {

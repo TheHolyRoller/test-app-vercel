@@ -9,6 +9,7 @@ import { useRef } from 'react';
 import { Query } from 'appwrite';
 import { off } from 'process';
 
+
 // Environment variable checks
 const DATABASE_ID = process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID;
 const QUESTION_COLLECTION_ID = process.env.NEXT_PUBLIC_APPWRITE_QUESTION_COLLECTION_ID;
@@ -33,6 +34,7 @@ export const QuizProvider = ({ children }) => {
     const router = useRouter();
     const { userAge } = useUser();
 
+    // Set the score to the percentage score 
     const [score, setScore] = useState(0);
     const [questions, setQuestions] = useState([]);
     const [weights, setWeights] = useState([]);
@@ -229,6 +231,34 @@ export const QuizProvider = ({ children }) => {
 
 
 
+    // Create the format score function here 
+
+    const formatScore = async (score) => {
+
+
+        console.log('this is the format score function'); 
+        console.log('this is the inputted score \n', score); 
+
+        console.log('Just about to format the score ')
+        const divisor = 5; 
+        console.log('this is the divisor \n', divisor); 
+
+        let percentage; 
+
+        percentage = Math.floor((score / 5));
+
+        
+        console.log('this is the final percentage of the quiz \n', percentage); 
+
+        console.log('returning percentage')
+        return percentage; 
+
+    }
+
+
+
+
+
     const calculateScore = async (answer) => {
         if (!currentQuestion || answer === 'noop') {
             console.log('⏭️ QuizContext: Skipping score calculation - no question or noop answer');
@@ -258,14 +288,13 @@ export const QuizProvider = ({ children }) => {
                 plans: setOrganisationalScore,
                 tests: setExamResultsScore
             };
-            
 
             
             const key = type.trim().toLowerCase();
             const scoreSetter = scoreSetters[key];
 
             if (scoreSetter) {
-                scoreSetter(prevScore => prevScore + 1);
+                scoreSetter(prevScore => prevScore + 2);
 
             }
         };
@@ -296,9 +325,6 @@ export const QuizProvider = ({ children }) => {
                 
             }
 
-
-              
-
         }
 
 
@@ -315,16 +341,18 @@ export const QuizProvider = ({ children }) => {
                 console.log('this is the question Section \n', Section); 
 
             }
+
+            // change this to just work for an adult 
         } else {
             console.log('👶 QuizContext: Calculating score for child');
             if (answer === 'yes') {
-                setScore(prevScore => prevScore + child_yes_weight);
-                updateScoreCategory(Section, child_yes_weight);
+                setScore(prevScore => prevScore + adult_yes_weight);
+                updateScoreCategory(Section, adult_yes_weight);
                 console.log('this is the question Section \n', Section); 
 
             } else if (answer === 'sometimes') {
-                setScore(prevScore => prevScore + child_maybe_weight);
-                updateScoreCategory(Section, child_maybe_weight);
+                setScore(prevScore => prevScore + adult_maybe_weight);
+                updateScoreCategory(Section, adult_maybe_weight);
                 console.log('this is the question Section \n', Section); 
 
             }
@@ -338,6 +366,8 @@ export const QuizProvider = ({ children }) => {
 
         console.log(`🎯 QuizContext: Handling answer: ${answer}`);
         const question = questions[currentIndex];
+        
+        // Workout what this function call does 
         await calculateScore(answer);
 
         if (currentIndex < quizLength - 1) {
@@ -345,8 +375,28 @@ export const QuizProvider = ({ children }) => {
             setCurrentIndex(prevIndex => prevIndex + 1);
         } else {
             console.log('🏁 QuizContext: Quiz completed, setting final score');
-            setFinalScore(score);
-            incrementQuizCompletionCount();
+
+            // Add in a sub-routine here that takes the score and formats it and sets the final score the the percentage that the format Score function returns 
+
+            let percentage = await formatScore(score); 
+            console.log('this is the percentage result of calling the format score function in handle Answer \n', percentage); 
+
+
+            setTimeout(() => {
+                console.log('quick break'); 
+            }, 200); 
+
+
+
+            setFinalScore(percentage);
+           await incrementQuizCompletionCount();
+
+
+
+            setTimeout(() => {
+                console.log('just about to navigate to the result page'); 
+            }, 2000);
+
             router.push('/result');
         }
     };
