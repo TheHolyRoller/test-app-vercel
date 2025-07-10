@@ -222,7 +222,7 @@ function ResultContent() {
                 </div>
 
                 <div className={resultStyles.mainScore}>
-                    {percentage || 89}
+                    {finalScore}
                     <span className={resultStyles.refSpan}>
                         /100
                     </span>
@@ -231,7 +231,7 @@ function ResultContent() {
                 <div className={resultStyles.impactMessage} 
                 >
                     <p className={resultStyles.impactText}>
-                        {percentage >= 70 
+                        {finalScore >= 70 
                             ? "This Indicates your work could be significantly impacted by Dyslexia"
                             : "This indicates your work could be mildly impacted by Dyslexia"
                         }

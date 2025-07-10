@@ -239,13 +239,15 @@ export const QuizProvider = ({ children }) => {
         console.log('this is the format score function'); 
         console.log('this is the inputted score \n', score); 
 
+        
         console.log('Just about to format the score ')
         const divisor = 5; 
         console.log('this is the divisor \n', divisor); 
 
-        let percentage; 
 
+        let percentage; 
         percentage = Math.floor((score / 5));
+
 
         
         console.log('this is the final percentage of the quiz \n', percentage); 
@@ -295,9 +297,8 @@ export const QuizProvider = ({ children }) => {
 
             if (scoreSetter) {
                 scoreSetter(prevScore => prevScore + 2);
-                
 
-            }
+            } 
         };
 
 

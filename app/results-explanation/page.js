@@ -85,6 +85,7 @@ function ResultsExplanationContent() {
         <>
             <PhoneBarChart
                 percentage={percentage}
+                finalScore={finalScore}
                 writingPercentage={writingPercentage}
                 memoryPercentage={memoryPercentage}
                 readingPercentage={readingPercentage}

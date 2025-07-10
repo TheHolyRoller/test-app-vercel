@@ -14,6 +14,7 @@ function PhoneBarChart({ writingPercentage,
     examResultsScore, 
     organisationalScore,  
     percentage,
+    finalScore, 
     isExplanationPage = false,
     onNext
 
@@ -94,7 +95,7 @@ function PhoneBarChart({ writingPercentage,
 
             {!isExplanationPage && (
                 <div className={p.mainScore}>
-                    {percentage || 89}
+                    {finalScore}
                     <span className={p.refSpan}>
                         /100
                     </span>
@@ -103,7 +104,7 @@ function PhoneBarChart({ writingPercentage,
 
             {isExplanationPage && (
                 <div className={p.mainScore} style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>
-                    {percentage || 89}
+                    {finalScore}
                     <span className={p.refSpan} style={{ fontSize: '1.2rem' }}>
                         /100
                     </span>
@@ -118,6 +119,7 @@ function PhoneBarChart({ writingPercentage,
                     }
                 </p>
             </div> */}
+
                 <section className={p.chartContainer} >
                 
                     <div className={p.mainChartSubContainerTextSection}>
