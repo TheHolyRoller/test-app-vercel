@@ -247,8 +247,6 @@ export const QuizProvider = ({ children }) => {
 
         let percentage; 
         percentage = Math.floor((score / 5));
-
-
         
         console.log('this is the final percentage of the quiz \n', percentage); 
 
@@ -281,6 +279,8 @@ export const QuizProvider = ({ children }) => {
         
         console.log(`📊 QuizContext: Current section: ${Section}`);
 
+
+        // Workout why these scores are not being passed down to the phone bar chart
         const updateScoreCategory = (type, score) => {
             console.log(`📈 QuizContext: Updating ${type} score by ${score}`);
             const scoreSetters = {
@@ -295,8 +295,20 @@ export const QuizProvider = ({ children }) => {
             const key = type.trim().toLowerCase();
             const scoreSetter = scoreSetters[key];
 
+            console.log('this is the score setter in the quiz context used to update the category score  \n', scoreSetter); 
+
+            console.log('this is the score to set to the particular category here \n', score); 
+
+            let categoryScore = score / 5; 
+
+            console.log('just about to update the category with the formatted category score \n', categoryScore); 
+            
+
+
             if (scoreSetter) {
-                scoreSetter(prevScore => prevScore + 2);
+
+                // This is the problem here 
+                scoreSetter(prevScore => prevScore + categoryScore);
 
             } 
         };

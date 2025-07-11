@@ -231,6 +231,7 @@ function ResultContent() {
                 <div className={resultStyles.impactMessage} 
                 >
                     <p className={resultStyles.impactText}>
+                    
                         {finalScore >= 70 
                             ? "This Indicates your work could be significantly impacted by Dyslexia"
                             : "This indicates your work could be mildly impacted by Dyslexia"

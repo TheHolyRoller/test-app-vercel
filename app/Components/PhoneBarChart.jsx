@@ -21,11 +21,15 @@ function PhoneBarChart({ writingPercentage,
 
 }) {
 
+
+    const   MAX_SCORE = 20; 
+
+
     // Create bar chart data structure
     const categoryData = [
         {
             name: 'Reading',
-            percentage: readingScore,
+            percentage: (readingScore / MAX_SCORE) * 100  ,
             color: '#FF6B6B',
             score: readingScore
         },
@@ -54,6 +58,8 @@ function PhoneBarChart({ writingPercentage,
             score: organisationalScore
         }
     ];
+
+    
 
         console.log('these are the percentages in the phone bar chart functional component  \n', writingPercentage,
             memoryPercentage,
@@ -138,7 +144,8 @@ function PhoneBarChart({ writingPercentage,
                                         <div 
                                             className={p.barFill}
                                             style={{
-                                                width: `${category.percentage}`,
+                                                width: `${category.percentage}%`,
+                                                // width: '50rem',
                                                 backgroundColor: category.color,
                                                 height: '35px',
                                                 display: 'flex',
