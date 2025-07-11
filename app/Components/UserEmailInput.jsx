@@ -80,7 +80,7 @@ function UserInput() {
                 from: 'support@dyslexiaquiz.com',
                 toEmail: inputEmail,
                 subject: 'Your Quiz Results',
-                message: `Hi ${name},\n\nThank you for taking the quiz! Here are your results:\n\nOverall Score: ${score}\nFinal Score: ${finalScore}\nMemory Score: ${memoryScore}\nWriting Score: ${writingScore}\nReading Score: ${readingScore}\nExam Results Score: ${examResultsScore}\nOrganisational Score: ${organisationalScore}`,
+                message: `Hi ${name},\n\nThank you for taking the quiz! Here are your results:\n\nFinal Score: ${finalScore} \nReading Score: ${readingScore} \n Writing Score: ${writingScore} \n Memory Score: ${memoryScore}\n Test Results Score: ${examResultsScore}\n Planing Score: ${organisationalScore}`,
                 name: name
             };
 

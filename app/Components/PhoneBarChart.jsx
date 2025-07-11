@@ -29,31 +29,31 @@ function PhoneBarChart({ writingPercentage,
     const categoryData = [
         {
             name: 'Reading',
-            percentage: (readingScore / MAX_SCORE) * 100  ,
+            percentage: (readingScore / MAX_SCORE) * 100,
             color: '#FF6B6B',
             score: readingScore
         },
         {
             name: 'Writing',
-            percentage: writingScore,
+            percentage: (writingScore / MAX_SCORE) * 100,
             color: '#4ECDC4',
             score: writingScore
         },
         {
             name: 'Memory',
-            percentage: memoryScore,
+            percentage: (memoryScore / MAX_SCORE) * 100,
             color: '#45B7D1',
             score: memoryScore
         },
         {
             name: 'Tests',
-            percentage: examResultsScore,
+            percentage: (examResultsScore / MAX_SCORE) * 100,
             color: '#96CEB4',
             score: examResultsScore
         },
         {
             name: 'Planning',
-            percentage: organisationalScore,
+            percentage: (organisationalScore / MAX_SCORE) * 100,
             color: '#FECA57',
             score: organisationalScore
         }
@@ -165,7 +165,7 @@ function PhoneBarChart({ writingPercentage,
                                                 paddingTop: '15px'
                                             }}>
                                                 <span>{category.name}</span>
-                                                <span>{Math.round(category.percentage)}</span>
+                                                <span>{Math.round(category.score)}</span>
                                             </div>
                                         </div>
                                     </div>
