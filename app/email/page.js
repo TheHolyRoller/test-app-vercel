@@ -123,6 +123,12 @@ export default function EmailPermission() {
             const submissionPromise = async () => {
                 // First, save to database
                 console.log('💾 Saving to database...');
+
+                if(finalScore && writingScore && memoryScore && score && readingScore && organisationalScore && name && inputEmail ){
+
+
+
+
                 const response = await databases.createDocument(
                     DATABASE_ID,
                     COLLECTION_ID,
@@ -136,11 +142,13 @@ export default function EmailPermission() {
                         readingScore,
                         examResultsScore,
                         organisationalScore,
-                        userAge,
                         name,
                         createdAt: new Date().toISOString(),
                     }
                 );
+
+            }
+
                 
                 console.log('✅ Database save successful:', response);
 

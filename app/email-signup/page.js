@@ -11,7 +11,6 @@ import QuizCard from '../Components/QuizCard';
 import UserEmailInput from '../Components/UserEmailInput'; 
 
 
-
 const DATABASE_ID = process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID;
 const COLLECTION_ID = process.env.NEXT_PUBLIC_APPWRITE_RESULTS_COLLECTION_ID;
 
@@ -31,7 +30,8 @@ export default function EmailSignup() {
                         }}
                         audio_URL={sound ? "https://dyslexiaquizapp.s3.eu-west-2.amazonaws.com/audio+doodles/receive+email-v1.mp3" : null}
                         currentIMG="https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/682bb4430038bc15a801/view?project=test-domain&mode=admin"
-                    
+                        
+                        
                     />
                     <div style={{position: 'relative', zIndex: '9999', marginTop: '-0.8em', marginRight: '1em',}}>
 

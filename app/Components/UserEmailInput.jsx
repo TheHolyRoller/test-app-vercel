@@ -28,9 +28,12 @@ function UserInput() {
     const score = 50; 
     const memoryScore = 20; 
     const readingScore = 50; 
-    const examScore = 50; 
+    const examResultsScore = 50; 
     const organisationalScore = 50; 
     const finalScore = 100; 
+    const writingScore = 20; 
+
+
 
     console.log('this is the answers object', answers); 
 

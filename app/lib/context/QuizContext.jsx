@@ -14,14 +14,6 @@ import { off } from 'process';
 const DATABASE_ID = process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID;
 const QUESTION_COLLECTION_ID = process.env.NEXT_PUBLIC_APPWRITE_QUESTION_COLLECTION_ID;
 
-// Log environment variables (without sensitive values)
-    // console.log('🔍 Appwrite Configuration:', {
-    //     hasDatabaseId: !!DATABASE_ID,
-    //     hasQuestionCollectionId: !!QUESTION_COLLECTION_ID,
-    //     environment: process.env.NODE_ENV
-    // });
-
-
 
 const QuizContext = createContext(null);
 

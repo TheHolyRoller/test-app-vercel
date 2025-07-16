@@ -6,8 +6,6 @@ import { Client, Databases, Account } from 'appwrite';
 import { use } from 'react';
 const projectID = process.env.NEXT_PUBLIC_APPWRITE_PROJECT_ID; 
 
-
-
 if (!projectID) {
   throw new Error('NEXT_PUBLIC_APPWRITE_PROJECT_ID is not defined');
   console.log('No PROJECT ID \n'); 
@@ -20,7 +18,7 @@ client.setEndpoint("https://api.dyslexiaquiz.com/v1")
 
 
 export const account = new Account(client); 
-// console.log('this is the client object \n', client); 
+console.log('this is the client object \n', client); 
 
 
 // Add in the anonymous session auth here 
@@ -40,9 +38,7 @@ export const createAnonymousSession = async () => {
 
       }
 
-      // Now throw an error in the else block so that the catch block is triggered and can handle the account creation. 
-      // Make sure to bake in error handling there as well and throw the needed errors if that process is not successful. 
-
+    
 
     }
 
