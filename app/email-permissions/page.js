@@ -62,7 +62,6 @@ Otherwise they won’t be saved.`;
               zIndex: 200,
               boxShadow: '0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.06)',
               marginTop: '-40px', 
-              outline: '5px solid red'
           }}
           >
       <div 
