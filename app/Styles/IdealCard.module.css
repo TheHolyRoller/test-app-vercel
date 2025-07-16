@@ -94,7 +94,7 @@
 
 
 
-.questionTextContainer{
+.question_textContainer{
     font-size: 1.3rem;
     width: 90%;
     text-align: center;
@@ -117,7 +117,7 @@
 
 }
 
-.questionText{
+.question_text{
 
     position: relative; 
     z-index: 99999;

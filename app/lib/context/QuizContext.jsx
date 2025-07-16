@@ -34,7 +34,7 @@ export const QuizProvider = ({ children }) => {
     const [currentQuestion, setCurrentQuestion] = useState();
     const [quizLength, setQuizLength] = useState(0);
     const [finalScore, setFinalScore] = useState(0);
-    const [gif_URLs, setGIF_URLS] = useState();
+    const [gif_urls, setgif_urlS] = useState();
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
 
@@ -93,12 +93,12 @@ export const QuizProvider = ({ children }) => {
             currentQuestion: currentQuestion ? {
                 id: currentQuestion.$id,
                 section: currentQuestion.Section,
-                question: currentQuestion.questionText
+                question: currentQuestion.question_text
             } : null,
             questionsCount: questions.length,
-            gifURLsCount: gif_URLs?.length || 0
+            gifURLsCount: gif_urls?.length || 0
         });
-    }, [currentIndex, quizLength, score, finalScore, currentQuestion, questions, gif_URLs, answers]);
+    }, [currentIndex, quizLength, score, finalScore, currentQuestion, questions, gif_urls, answers]);
 
 
     // Monitor category score changes
@@ -131,15 +131,15 @@ export const QuizProvider = ({ children }) => {
                 let totalDocuments = 0;
                 let total; 
 
-                // console.log('this is the limit \n', limit); 
-                // console.log('this is the offset \n', offset); 
+                console.log('this is the limit \n', limit); 
+                console.log('this is the offset \n', offset); 
 
 
-                // console.log('📥 QuizContext: Fetching questions from Appwrite');
-                // console.log('🔗 :', {
-                //     databaseId: DATABASE_ID,
-                //     collectionId: QUESTION_COLLECTION_ID
-                // });
+                console.log('📥 QuizContext: Fetching questions from Appwrite');
+                console.log('🔗 :', {
+                    databaseId: DATABASE_ID,
+                    collectionId: QUESTION_COLLECTION_ID
+                });
 
                 do {
                     const response = await databases.listDocuments(
@@ -148,7 +148,7 @@ export const QuizProvider = ({ children }) => {
                       [
                         Query.limit(1000),
                         Query.offset(offset), 
-                        Query.orderAsc('Sequence_Number'), 
+                        Query.orderAsc('sequence_number'), 
                         
                       ]
                     );
@@ -175,8 +175,8 @@ export const QuizProvider = ({ children }) => {
                     hasInitialized.current = true;
                     setQuestions(allQuestions);
 
-                    const gifURLS = allQuestions.map(doc => doc.GIF_URL);
-                    setGIF_URLS(gifURLS);
+                    const gifURLS = allQuestions.map(doc => doc.gif_url);
+                    setgif_urlS(gifURLS);
                     setQuizLength(allQuestions.length);
                     setCurrentQuestion(allQuestions[0]);
                     console.log('✅ Loaded all questions:', allQuestions.length);
@@ -260,12 +260,7 @@ export const QuizProvider = ({ children }) => {
 
         console.log(`🎯 QuizContext: Calculating score for answer: ${answer}`);
         const { 
-            adult_yes_weight, 
-            adult_no_weight, 
-            adult_maybe_weight, 
-            child_maybe_weight, 
-            child_no_weight, 
-            child_yes_weight,
+            sometimes_weight,
             Section 
         } = currentQuestion;
 
@@ -283,7 +278,6 @@ export const QuizProvider = ({ children }) => {
                 plans: setOrganisationalScore,
                 tests: setExamResultsScore
             };
-
 
             
             const key = type.trim().toLowerCase();
@@ -340,12 +334,12 @@ export const QuizProvider = ({ children }) => {
         if (userAge === 'adult') {
             console.log('👤 QuizContext: Calculating score for adult');
             if (answer === 'yes') {
-                setScore(prevScore => prevScore + adult_yes_weight);
-                updateScoreCategory(Section, adult_yes_weight);
+                setScore(prevScore => prevScore + adult_sometimes_weight);
+                updateScoreCategory(Section, adult_sometimes_weight);
                 console.log('this is the question Section \n', Section); 
             } else if (answer === 'sometimes') {
-                setScore(prevScore => prevScore + adult_maybe_weight);
-                updateScoreCategory(Section, adult_maybe_weight);
+                setScore(prevScore => prevScore + adult_sometimes_weight);
+                updateScoreCategory(Section, adult_sometimes_weight);
                 console.log('this is the question Section \n', Section); 
 
             }
@@ -354,13 +348,13 @@ export const QuizProvider = ({ children }) => {
         } else {
             console.log('👶 QuizContext: Calculating score for child');
             if (answer === 'yes') {
-                setScore(prevScore => prevScore + adult_yes_weight);
-                updateScoreCategory(Section, adult_yes_weight);
+                setScore(prevScore => prevScore + adult_sometimes_weight);
+                updateScoreCategory(Section, adult_sometimes_weight);
                 console.log('this is the question Section \n', Section); 
 
             } else if (answer === 'sometimes') {
-                setScore(prevScore => prevScore + adult_maybe_weight);
-                updateScoreCategory(Section, adult_maybe_weight);
+                setScore(prevScore => prevScore + adult_sometimes_weight);
+                updateScoreCategory(Section, adult_sometimes_weight);
                 console.log('this is the question Section \n', Section); 
 
             }
@@ -377,7 +371,7 @@ export const QuizProvider = ({ children }) => {
         const answerObject = {
             
             question_id: question.id, 
-            question_text: question.questionText, 
+            question_text: question.question_text, 
             section: question.Section, 
             type: question.Type, 
             id: question.Sequence_Number, 
@@ -504,7 +498,7 @@ export const QuizProvider = ({ children }) => {
             readingScore,
             examResultsScore,
             organisationalScore,
-            gif_URLs,
+            gif_urls,
             email, 
             setEmail,
             isLoading,

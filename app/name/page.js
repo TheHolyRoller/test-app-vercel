@@ -33,9 +33,9 @@ export default function EmailPermission() {
 
 
     const Section = "Audio Permission";
-    const audio_URL = '';
-    const questionText = `Enter your full name`;
-    const currentQuestion = { questionText: "" };
+    const audio_url = '';
+    const question_text = `Enter your full name`;
+    const currentQuestion = { question_text: "" };
     const currentIMG = '';
     
     // Placeholder functions
@@ -77,16 +77,16 @@ export default function EmailPermission() {
   
           }}
       >
-          {audio_URL && (
+          {audio_url && (
               <audio 
-                  key={audio_URL} 
+                  key={audio_url} 
                   controls 
                   autoPlay 
                   style={{ opacity: '0', position: 'absolute' }}
-                  onPlay={() => console.log('🎵 Audio Started Playing:', audio_URL)}
+                  onPlay={() => console.log('🎵 Audio Started Playing:', audio_url)}
                   onError={(e) => console.error('❌ Audio Error:', e)}
               >
-                  <source src={audio_URL} type="audio/mp3" />
+                  <source src={audio_url} type="audio/mp3" />
               </audio>
           )}
           
@@ -103,14 +103,14 @@ export default function EmailPermission() {
           </div>
       </div>
   
-      {questionText && (
-          <div className={`${n.questionTextContainer} ${nunito.className}`} >
-              <h2 className={`${n.questionText} ${nunito.className}`}>
-                  {questionText}
+      {question_text && (
+          <div className={`${n.question_textContainer} ${nunito.className}`} >
+              <h2 className={`${n.question_text} ${nunito.className}`}>
+                  {question_text}
   
   
                   <span>
-                      {currentQuestion?.questionText}
+                      {currentQuestion?.question_text}
                   </span>
               </h2>
           </div>

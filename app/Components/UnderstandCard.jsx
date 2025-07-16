@@ -30,9 +30,9 @@ export default function EmailPermission() {
     };
 
     const Section = "Audio Permission";
-    const audio_URL = '';
-    const questionText = `t`;
-    const currentQuestion = { questionText: "" };
+    const audio_url = '';
+    const question_text = `t`;
+    const currentQuestion = { question_text: "" };
     const currentIMG = 'https://fra.cloud.appwrituc.io/v1/storage/buckets/dood_gifs/files/EMAIL_SEND_TEST/view?project=test-domain&mode=admin';
     
     // Placeholder functions
@@ -75,16 +75,16 @@ export default function EmailPermission() {
   
           }}
       >
-          {audio_URL && (
+          {audio_url && (
               <audio 
-                  key={audio_URL} 
+                  key={audio_url} 
                   controls 
                   autoPlay 
                   style={{ opacity: '0', position: 'absolute' }}
-                  onPlay={() => consoluc.log('🎵 Audio Started Playing:', audio_URL)}
+                  onPlay={() => consoluc.log('🎵 Audio Started Playing:', audio_url)}
                   onError={(e) => consoluc.error('❌ Audio Error:', e)}
               >
-                  <source src={audio_URL} type="audio/mp3" />
+                  <source src={audio_url} type="audio/mp3" />
               </audio>
           )}
           
@@ -110,14 +110,14 @@ export default function EmailPermission() {
 
 
   
-      {questionText && (
-          <div className={`${uc.questionTextContainer} ${nunito.className}`} style={{color:'#333333' }} >
-              <h2 className={`${uc.questionText} ${nunito.className}`} style={{color:'#333333' }}>
-                  {/* {questionText} */}
+      {question_text && (
+          <div className={`${uc.question_textContainer} ${nunito.className}`} style={{color:'#333333' }} >
+              <h2 className={`${uc.question_text} ${nunito.className}`} style={{color:'#333333' }}>
+                  {/* {question_text} */}
   
   
                   <span style={{color:'rgb(40, 84, 168)', fontWeight: 'bolder', fontSize: '1.7rem' }}>
-                      {/* {currentQuestion?.questionText} */}
+                      {/* {currentQuestion?.question_text} */}
                       Understand how Dyslexia feels 
                   </span>
               </h2>

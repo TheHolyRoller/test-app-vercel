@@ -25,6 +25,7 @@ function UserInput() {
         answers
     } = useQuiz();
 
+    
     const score = 50; 
     const memoryScore = 20; 
     const readingScore = 50; 

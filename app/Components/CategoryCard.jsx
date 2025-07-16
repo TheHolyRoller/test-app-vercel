@@ -7,12 +7,12 @@ import { useQuiz } from '../lib/context/QuizContext';
 import { usePathname } from 'next/navigation';
 import logo from '../assets/ivvi_Logo.svg'; 
 
-function CategoryCard({ Section, audio_URL, categoryName }) {
+function CategoryCard({ Section, audio_url, categoryName }) {
     const { handleAnswer, currentQuestion } = useQuiz();
     const pathname = usePathname();
     
     // Use categoryName prop, or try to extract from question data, or fallback to Section
-    const actualCategory = categoryName || currentQuestion?.categoryName || currentQuestion?.questionText?.toLowerCase() || Section;
+    const actualCategory = categoryName || currentQuestion?.categoryName || currentQuestion?.question_text?.toLowerCase() || Section;
     
     console.log('CategoryCard - Props:', { Section, categoryName, actualCategory });
     
@@ -81,16 +81,16 @@ function CategoryCard({ Section, audio_URL, categoryName }) {
                     </figure>
                 </footer>
 
-                {audio_URL && (
+                {audio_url && (
                     <audio 
-                        key={audio_URL} 
+                        key={audio_url} 
                         controls 
                         autoPlay 
                         style={{ opacity: '0', position: 'absolute' }}
-                        onPlay={() => console.log('🎵 Audio Started Playing:', audio_URL)}
+                        onPlay={() => console.log('🎵 Audio Started Playing:', audio_url)}
                         onError={(e) => console.error('❌ Audio Error:', e)}
                     >
-                        <source src={audio_URL} type="audio/mp3" />
+                        <source src={audio_url} type="audio/mp3" />
                     </audio>
                 )}
 

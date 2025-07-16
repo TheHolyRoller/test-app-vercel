@@ -11,22 +11,22 @@ import logo from '../assets/ivvi_Logo.svg';
 
 function CategoryPage() {
     // Get category from quiz context like QuizCard does
-    const { currentQuestion, currentIndex, questions, gif_URLs } = useQuiz();
+    const { currentQuestion, currentIndex, questions, gif_urls } = useQuiz();
     const pathname = usePathname();
     const Section = currentQuestion?.Section || 'reading'; // Default to reading if no current question
     
     // Extract variables like QuizCard does
-    const questionText = currentQuestion?.questionText || '';
-    const audio_URL = currentQuestion?.audio_URL || '';
-    const currentIMG = gif_URLs?.[currentIndex] || '';
+    const question_text = currentQuestion?.question_text || '';
+    const audio_url = currentQuestion?.audio_url || '';
+    const currentIMG = gif_urls?.[currentIndex] || '';
     
     console.log('Category Page - Context Data:', {
         currentQuestion,
         currentIndex,
         questionsCount: questions?.length,
         Section,
-        questionText,
-        audio_URL,
+        question_text,
+        audio_url,
         currentIMG
     });
 
@@ -165,16 +165,16 @@ function CategoryPage() {
 
 
 
-        {audio_URL && (
+        {audio_url && (
                 <audio 
-                    key={audio_URL} 
+                    key={audio_url} 
                     controls 
                     autoPlay 
                     style={{ opacity: '0', position: 'absolute' }}
-                    onPlay={() => console.log('🎵 Audio Started Playing:', audio_URL)}
+                    onPlay={() => console.log('🎵 Audio Started Playing:', audio_url)}
                     onError={(e) => console.error('❌ Audio Error:', e)}
                 >
-                    <source src={audio_URL} type="audio/mp3" />
+                    <source src={audio_url} type="audio/mp3" />
                 </audio>
             )}
         

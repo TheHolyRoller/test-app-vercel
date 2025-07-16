@@ -22,12 +22,12 @@ export default function SoundPage() {
         <section style={{color: 'white'}}>
             <main className={q.quizComponentContainer} id='quizElement'>
             <QuizCard 
-                        questionText="Hi I'm 'Dood'. I'll quiz you on the signs of dyslexia. Can I turn on the audio so I can speak to you?"
+                        question_text="Hi I'm 'Dood'. I'll quiz you on the signs of dyslexia. Can I turn on the audio so I can speak to you?"
                         Section="Details"
                         currentQuestion={{
-                            questionText: ""
+                            question_text: ""
                         }}
-                        audio_URL=''
+                        audio_url=''
                         currentIMG='https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/Turn_On_Audio/view?project=test-domain&mode=admin'
                     />
 

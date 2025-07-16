@@ -27,10 +27,10 @@ export default function EmailPermission() {
     };
 
     const Section = "Audio Permission";
-    const audio_URL = 'https://dyslexiaquizapp.s3.eu-west-2.amazonaws.com/audio+doodles/send+email-v1.mp3';
-    const questionText = `Shall We send a results Report to your email?
+    const audio_url = 'https://dyslexiaquizapp.s3.eu-west-2.amazonaws.com/audio+doodles/send+email-v1.mp3';
+    const question_text = `Shall We send a results Report to your email?
 Otherwise they won’t be saved.`;
-    const currentQuestion = { questionText: "" };
+    const currentQuestion = { question_text: "" };
     const currentIMG = 'https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/EMAIL_SEND_TEST/view?project=test-domain&mode=admin';
     
     // Placeholder functions
@@ -72,16 +72,16 @@ Otherwise they won’t be saved.`;
   
           }}
       >
-          {audio_URL && (
+          {audio_url && (
               <audio 
-                  key={audio_URL} 
+                  key={audio_url} 
                   controls 
                   autoPlay 
                   style={{ opacity: '0', position: 'absolute' }}
-                  onPlay={() => console.log('🎵 Audio Started Playing:', audio_URL)}
+                  onPlay={() => console.log('🎵 Audio Started Playing:', audio_url)}
                   onError={(e) => console.error('❌ Audio Error:', e)}
               >
-                  <source src={audio_URL} type="audio/mp3" />
+                  <source src={audio_url} type="audio/mp3" />
               </audio>
           )}
           
@@ -97,14 +97,14 @@ Otherwise they won’t be saved.`;
           </div>
       </div>
   
-      {questionText && (
-          <div className={`${e.questionTextContainer} ${nunito.className}`} style={{color:'#333333' }} >
-              <h2 className={`${e.questionText} ${nunito.className}`} style={{color:'#333333' }}>
-                  {questionText}
+      {question_text && (
+          <div className={`${e.question_textContainer} ${nunito.className}`} style={{color:'#333333' }} >
+              <h2 className={`${e.question_text} ${nunito.className}`} style={{color:'#333333' }}>
+                  {question_text}
   
   
                   <span style={{color:'#333333' }}>
-                      {currentQuestion?.questionText}
+                      {currentQuestion?.question_text}
                   </span>
               </h2>
           </div>

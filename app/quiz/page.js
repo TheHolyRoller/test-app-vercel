@@ -14,7 +14,7 @@ import CategoryCard from '../Components/CategoryCard';
 export default function Quiz() {
     const router = useRouter();
     const { name, sound, userAge } = useUser();
-    const { questions, currentQuestion, handleAnswer, currentIndex, quizLength, gif_URLs } = useQuiz();
+    const { questions, currentQuestion, handleAnswer, currentIndex, quizLength, gif_urls } = useQuiz();
     
     const [answer, setAnswer] = useState();
 
@@ -36,9 +36,9 @@ export default function Quiz() {
                     id: currentQuestion.$id,
                     section: currentQuestion.Section,
                     type: currentQuestion.Type,
-                    questionText: currentQuestion.questionText
+                    question_text: currentQuestion.question_text
                 } : null,
-                gifURLsCount: gif_URLs?.length
+                gifURLsCount: gif_urls?.length
             }
         });
     }, []);
@@ -53,28 +53,28 @@ export default function Quiz() {
                 id: currentQuestion.$id,
                 section: currentQuestion.Section,
                 type: currentQuestion.Type,
-                questionText: currentQuestion.questionText
+                question_text: currentQuestion.question_text
             } : null,
-            gifURLsCount: gif_URLs?.length
+            gifURLsCount: gif_urls?.length
         });
-    }, [currentIndex, quizLength, questions, currentQuestion, gif_URLs]);
+    }, [currentIndex, quizLength, questions, currentQuestion, gif_urls]);
 
     // Initialize currentQuestion properties safely
-    const questionText = currentQuestion?.questionText || '';
-    const audio_URL = sound ? (currentQuestion?.audio_URL || '') : '';
+    const question_text = currentQuestion?.question_text || '';
+    const audio_url = sound ? (currentQuestion?.audio_url || '') : '';
     const Section = currentQuestion?.Section || '';
     const Type = currentQuestion?.Type || '';
-    const GIF_URL = currentQuestion?.GIF_URL || '';
-    const currentIMG = gif_URLs?.[currentIndex] || '';
+    const gif_url = currentQuestion?.gif_url || '';
+    const currentIMG = gif_urls?.[currentIndex] || '';
 
     // Log question details
     useEffect(() => {
         console.log('📝 Current Question Details:', {
-            questionText,
-            audio_URL,
+            question_text,
+            audio_url,
             Section,
             Type,
-            GIF_URL,
+            gif_url,
             currentIMG,
             currentIndex,
             totalQuestions: quizLength,
@@ -88,7 +88,7 @@ export default function Quiz() {
             answer: userAnswer,
             currentIndex,
             questionId: currentQuestion?.$id,
-            questionText: currentQuestion?.questionText
+            question_text: currentQuestion?.question_text
         });
         
         await setAnswer(userAnswer);
@@ -106,23 +106,25 @@ export default function Quiz() {
 
             <div className={q.quizCardContainer}>
 
+           
                 {/* Conditionally render CategoryCard or QuizCard based on Type */}
                 {Type.toLowerCase() === 'category' ? (
 
                     <div className={q.categoryCardContainer}>
 
+
                     <CategoryCard 
                         Section={Section}
-                        categoryName={currentQuestion?.categoryName || currentQuestion?.questionText}
-                        audio_URL={audio_URL}
+                        categoryName={currentQuestion?.categoryName || currentQuestion?.question_text}
+                        audio_url={audio_url}
                     />
                     </div>
                 ) : (
                     <QuizCard
-                        questionText={questionText}
+                        question_text={question_text}
                         Section={Section}
-                        audio_URL={audio_URL}   
-                        currentIMG={GIF_URL}
+                        audio_url={audio_url}   
+                        currentIMG={gif_url}
                         currentQuestion={currentQuestion}
                     />
                 )}

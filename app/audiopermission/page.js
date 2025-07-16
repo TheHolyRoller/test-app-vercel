@@ -16,9 +16,9 @@ function Page() {
   
   // Default values for missing variables
   const Section = "Audio Permission";
-  const audio_URL = null;
-  const questionText = "Shall i read out the questions for you?";
-  const currentQuestion = { questionText: "" };
+  const audio_url = '';
+  const question_text = "Shall i read out the questions for you?";
+  const currentQuestion = { question_text: "" };
   const currentIMG = 'https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/Turn_On_Audio/view?project=test-domain&mode=admin';
   
   // Placeholder functions
@@ -84,16 +84,16 @@ function Page() {
 
         }}
     >
-        {audio_URL && (
+        {audio_url && (
             <audio 
-                key={audio_URL} 
+                key={audio_url} 
                 controls 
                 autoPlay 
                 style={{ opacity: '0', position: 'absolute' }}
-                onPlay={() => console.log('🎵 Audio Started Playing:', audio_URL)}
+                onPlay={() => console.log('🎵 Audio Started Playing:', audio_url)}
                 onError={(e) => console.error('❌ Audio Error:', e)}
             >
-                <source src={audio_URL} type="audio/mp3" />
+                <source src={audio_url} type="audio/mp3" />
             </audio>
         )}
         
@@ -110,13 +110,13 @@ function Page() {
         </div>
     </div>
 
-    {questionText && (
-        <div className={`${a.questionTextContainer} ${nunito.className}`} style={{outline: '0px solid red', marginTop: '-2.7rem'}} >
-            <h2 className={`${a.questionText} ${nunito.className}`}>
-                {questionText}
+    {question_text && (
+        <div className={`${a.question_textContainer} ${nunito.className}`} style={{outline: '0px solid red', marginTop: '-2.7rem'}} >
+            <h2 className={`${a.question_textt} ${nunito.className}`}>
+                {question_text}
 
                 <span>
-                    {currentQuestion?.questionText}
+                    {currentQuestion?.question_text}
                 </span>
             </h2>
         </div>

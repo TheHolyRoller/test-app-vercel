@@ -88,7 +88,7 @@
     color: white;
 }
 
-.questionTextContainer{
+.question_textContainer{
     color: black !important;
     font-size: 1.3rem;
     width: 70%;
@@ -109,7 +109,7 @@
     -o-transform:translate(-50%, -30%);
 }
 
-.questionText{
+.question_text{
     color: black !important; 
     position: relative; 
     z-index: 99999;

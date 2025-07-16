@@ -15,7 +15,7 @@ export const QuizAnswer = () => {
 
     const router = useRouter();
     const { name, sound, userAge } = useUser();
-    const { questions, currentQuestion, handleAnswer, currentIndex, quizLength, gif_URLs } = useQuiz();
+    const { questions, currentQuestion, handleAnswer, currentIndex, quizLength, gif_urls } = useQuiz();
     
     const [answer, setAnswer] = useState();
 
@@ -37,9 +37,9 @@ export const QuizAnswer = () => {
         //             id: currentQuestion.$id,
         //             section: currentQuestion.Section,
         //             type: currentQuestion.Type,
-        //             questionText: currentQuestion.questionText
+        //             question_text: currentQuestion.question_text
         //         } : null,
-        //         gifURLsCount: gif_URLs?.length
+        //         gifURLsCount: gif_urls?.length
         //     }
         // });
     }, []);
@@ -54,28 +54,28 @@ export const QuizAnswer = () => {
                 id: currentQuestion.$id,
                 section: currentQuestion.Section,
                 type: currentQuestion.Type,
-                questionText: currentQuestion.questionText
+                question_text: currentQuestion.question_text
             } : null,
-            gifURLsCount: gif_URLs?.length
+            gifURLsCount: gif_urls?.length
         });
-    }, [currentIndex, quizLength, questions, currentQuestion, gif_URLs]);
+    }, [currentIndex, quizLength, questions, currentQuestion, gif_urls]);
 
     // Initialize currentQuestion properties safely
-    const questionText = currentQuestion?.questionText || '';
-    const audio_URL = sound ? (currentQuestion?.audio_URL || '') : '';
+    const question_text = currentQuestion?.question_text || '';
+    const audio_url = sound ? (currentQuestion?.audio_url || '') : '';
     const Section = currentQuestion?.Section || '';
     const Type = currentQuestion?.Type || '';
-    const GIF_URL = currentQuestion?.GIF_URL || '';
-    const currentIMG = gif_URLs?.[currentIndex] || '';
+    const gif_url = currentQuestion?.gif_url || '';
+    const currentIMG = gif_urls?.[currentIndex] || '';
 
     // Log question details
     useEffect(() => {
         console.log('📝 Current Question Details:', {
-            questionText,
-            audio_URL,
+            question_text,
+            audio_url,
             Section,
             Type,
-            GIF_URL,
+            gif_url,
             currentIMG,
             currentIndex,
             totalQuestions: quizLength
@@ -87,7 +87,7 @@ export const QuizAnswer = () => {
             answer: userAnswer,
             currentIndex,
             questionId: currentQuestion?.$id,
-            questionText: currentQuestion?.questionText
+            question_text: currentQuestion?.question_text
         });
         
         await setAnswer(userAnswer);

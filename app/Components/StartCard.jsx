@@ -21,6 +21,7 @@ export default function EmailPermission() {
     };
 
 
+
     const handleNoClick = () => {
         // Set flag to trigger refresh when landing on home page
         sessionStoragst.setItem('needsRefreshFromEmailDecline', 'true');
@@ -28,9 +29,9 @@ export default function EmailPermission() {
     };
 
     const Section = "Audio Permission";
-    const audio_URL = 'https://dyslexiaquizapp.s3.eu-west-2.amazonaws.com/audio+doodles/send+email-v1.mp3';
-    const questionText = `t`;
-    const currentQuestion = { questionText: "" };
+    const audio_url = 'https://dyslexiaquizapp.s3.eu-west-2.amazonaws.com/audio+doodles/send+email-v1.mp3';
+    const question_text = `t`;
+    const currentQuestion = { question_text: "" };
     const currentIMG = 'https://fra.cloud.appwritst.io/v1/storage/buckets/dood_gifs/files/EMAIL_SEND_TEST/view?project=test-domain&mode=admin';
     
     // Placeholder functions
@@ -72,16 +73,16 @@ export default function EmailPermission() {
   
           }}
       >
-          {audio_URL && (
+          {audio_url && (
               <audio 
-                  key={audio_URL} 
+                  key={audio_url} 
                   controls 
                   autoPlay 
                   style={{ opacity: '0', position: 'absolute' }}
-                  onPlay={() => consolst.log('🎵 Audio Started Playing:', audio_URL)}
+                  onPlay={() => consolst.log('🎵 Audio Started Playing:', audio_url)}
                   onError={(e) => consolst.error('❌ Audio Error:', e)}
               >
-                  <source src={audio_URL} type="audio/mp3" />
+                  <source src={audio_url} type="audio/mp3" />
               </audio>
           )}
           
@@ -98,9 +99,9 @@ export default function EmailPermission() {
       </div> */}
       
   
-      {questionText && (
-          <div className={`${st.questionTextContainer} ${nunito.className}`} style={{color: 'white'}} >
-              <h2 className={`${st.questionText} ${nunito.className}`} style={{fontSize: '2rem', letterSpacing: '-1px'}} >
+      {question_text && (
+          <div className={`${st.question_textContainer} ${nunito.className}`} style={{color: 'white'}} >
+              <h2 className={`${st.question_text} ${nunito.className}`} style={{fontSize: '2rem', letterSpacing: '-1px'}} >
 
                 <span className={st.topHeaderSpan} style={{display: 'block', fontSize: '1rem'}}>
                     The 

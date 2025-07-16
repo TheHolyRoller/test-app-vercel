@@ -113,9 +113,9 @@ export default function PostQuizCard() {
     };
 
     const Section = "Post Quiz";
-    const audio_URL = '';
-    const questionText = `t`;
-    const currentQuestion = { questionText: "" };
+    const audio_url = '';
+    const question_text = `t`;
+    const currentQuestion = { question_text: "" };
     const currentIMG = '';
     
     // Placeholder functions
@@ -171,9 +171,9 @@ export default function PostQuizCard() {
           </div>
       </div>
   
-      {questionText && (
-          <div className={`${pc.questionTextContainer} ${nunito.className}`}  >
-              <h2 className={`${pc.questionText} ${nunito.className}`} style={{color: 'white' }}>
+      {question_text && (
+          <div className={`${pc.question_textContainer} ${nunito.className}`}  >
+              <h2 className={`${pc.question_text} ${nunito.className}`} style={{color: 'white' }}>
                   Want to screen your friends or family? 
   
 

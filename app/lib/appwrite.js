@@ -13,9 +13,8 @@ if (!projectID) {
 
 const client = new Client(); 
 
-client.setEndpoint("https://api.dyslexiaquiz.com/v1")
+client.setEndpoint("https://fra.cloud.appwrite.io/v1")
 .setProject(projectID); 
-
 
 export const account = new Account(client); 
 console.log('this is the client object \n', client); 

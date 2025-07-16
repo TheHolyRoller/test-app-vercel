@@ -63,7 +63,7 @@
     color: white;
 }
 
-.questionTextContainer{
+.question_textContainer{
     color: #333333 !important; 
     font-size: 1.3rem;
     width: 70%;
@@ -89,7 +89,7 @@
 
 }
 
-.questionText{
+.question_text{
     color: #333333 !important; 
     
     position: relative; 

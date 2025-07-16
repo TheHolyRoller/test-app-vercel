@@ -42,9 +42,9 @@ export default function EmailPermission() {
     };
 
     const Section = "Audio Permission";
-    const audio_URL = '';
-    const questionText = `t`;
-    const currentQuestion = { questionText: "" };
+    const audio_url = '';
+    const question_text = `t`;
+    const currentQuestion = { question_text: "" };
     const currentIMG = 'https://fra.cloud.appwritid.io/v1/storage/buckets/dood_gifs/files/EMAIL_SEND_TEST/view?project=test-domain&mode=admin';
     
     // Placeholder functions
@@ -111,14 +111,14 @@ export default function EmailPermission() {
 
 
   
-      {questionText && (
-          <div className={`${id.questionTextContainer} ${nunito.className}`} style={{color:'#333333' }} >
-              <h2 className={`${id.questionText} ${nunito.className}`} style={{color:'#333333' }}>
-                  {/* {questionText} */}
+      {question_text && (
+          <div className={`${id.question_textContainer} ${nunito.className}`} style={{color:'#333333' }} >
+              <h2 className={`${id.question_text} ${nunito.className}`} style={{color:'#333333' }}>
+                  {/* {question_text} */}
   
   
                   <span style={{color:'rgb(40, 84, 168)', fontWeight: 'bolder', fontSize: '1.7rem' }}>
-                      {/* {currentQuestion?.questionText} */}
+                      {/* {currentQuestion?.question_text} */}
                       {/* Understand how Dyslexia feels  */}
                       Ideal for University and the Workplace 
                   </span>

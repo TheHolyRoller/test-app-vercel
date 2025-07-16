@@ -14,8 +14,8 @@ import styled from "styled-components";
 
 
 const QuizCard = ({ 
-    questionText, 
-    audio_URL, 
+    question_text, 
+    audio_url, 
     Section, 
     currentIMG,
     currentQuestion
@@ -35,7 +35,7 @@ const QuizCard = ({
     const handleClick = async (userAnswer) => {
         console.log('🎯 Answer Selected:', {
             answer: userAnswer,
-            questionText: currentQuestion?.questionText
+            question_text: currentQuestion?.question_text
         });
         
         await setAnswer(userAnswer);
@@ -81,8 +81,8 @@ const QuizCard = ({
     }, [pathname]);
 
     console.log("Rendering QuizCard with the following props:");
-    console.log("Question Text:", questionText);
-    console.log("Audio URL:", audio_URL);
+    console.log("Question Text:", question_text);
+    console.log("Audio URL:", audio_url);
     console.log("Section:", Section);
     console.log("Current Image:", currentIMG);
     console.log("Current Question:", currentQuestion);
@@ -231,16 +231,16 @@ const QuizCard = ({
                 }}
             >
 
-                {audio_URL && (
+                {audio_url && (
                     <audio 
-                        key={audio_URL} 
+                        key={audio_url} 
                         controls 
                         autoPlay 
                         style={{ opacity: '0', position: 'absolute' }}
-                        onPlay={() => console.log('🎵 Audio Started Playing:', audio_URL)}
+                        onPlay={() => console.log('🎵 Audio Started Playing:', audio_url)}
                         onError={(e) => console.error('❌ Audio Error:', e)}
                     >
-                        <source src={audio_URL} type="audio/mp3" />
+                        <source src={audio_url} type="audio/mp3" />
                     </audio>
                 )}
 
@@ -292,10 +292,10 @@ const QuizCard = ({
                 </div>
             </div>
 
-            {questionText && (
-                <div className={`${q.questionTextContainer} ${nunito.className}`} style={{ marginTop: '-4.5rem' }}>
-                    <h2 className={`${q.questionText} ${nunito.className}`}>
-                        {questionText}
+            {question_text && (
+                <div className={`${q.question_textContainer} ${nunito.className}`} style={{ marginTop: '-4.5rem' }}>
+                    <h2 className={`${q.question_text} ${nunito.className}`}>
+                        {question_text}
                     </h2>
                 </div>
             )}

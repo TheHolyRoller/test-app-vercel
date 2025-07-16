@@ -31,14 +31,14 @@ export default function UserType() {
         <section style={{color: 'white'}}>
             <main className={q.quizComponentContainer} id='quizElement'>
             <QuizCard 
-                        questionText="I can quiz different people for you. who is it this time?"
+                        question_text="I can quiz different people for you. who is it this time?"
                         Section="Details"
                         currentQuestion={{
-                            questionText: ""
+                            question_text: ""
                         }}
                         
                         
-                        audio_URL={sound ? "https://dyslexiaquizapp.s3.eu-west-2.amazonaws.com/audio+doodles/quizzer+who-v1.mp3" : null}
+                        audio_url={sound ? "https://dyslexiaquizapp.s3.eu-west-2.amazonaws.com/audio+doodles/quizzer+who-v1.mp3" : null}
                         currentIMG='https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/Age_Bracket/view?project=test-domain&mode=admin'
                     />
                     <div style={{marginTop: '-5.5rem', position: 'relative', zIndex: '99999999'}}>
