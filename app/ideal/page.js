@@ -16,6 +16,8 @@ import multi from '../assets/Multi Style Learning.svg';
 import listen from '../assets/Listen and learn, confident.svg'; 
 import high from '../assets/Highlight Key Info.svg'; 
 import all from '../assets/All in one resource.svg'; 
+import IdealCard from '../Components/IdealCard'; 
+
 
 
 
@@ -28,7 +30,12 @@ function IdealPage() {
 
   return (
 
-  <section className={i.mainContainer} style={{backgroundColor: 'white'}}>
+    <>
+
+    <IdealCard/>
+
+
+  {/* <section className={i.mainContainer} style={{backgroundColor: 'white'}}>
     <div className={i.subContainer}>
 
 
@@ -129,7 +136,13 @@ function IdealPage() {
     </div>
 
 
-    </section>
+    </section> */}
+
+    </>
+
+
+
+
   )
 
 }

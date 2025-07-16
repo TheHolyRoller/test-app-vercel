@@ -1235,6 +1235,27 @@ font-size: 1.76rem !important;
 }
 
 
+@media(min-width:1200px){
+
+
+    .audioButtonSectionContainer{
+        position: absolute;
+        width: 2vw;
+        left: 49%;
+        display: grid;
+        place-content: center;
+        transform:translate(0, 0.5rem) !important;
+        -webkit-transform:translate(0, 0.5rem) !important;
+        -moz-transform:translate(0, 0.5rem) !important;
+        -ms-transform:translate(0, 0.5rem) !important;
+        -o-transform:translate(0, 0.5rem) !important;
+}
+
+
+
+}
+
+
 
 
 /* Add in the media queries here  */

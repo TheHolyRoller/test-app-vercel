@@ -5,9 +5,11 @@ import { useUser } from '../lib/context/UserContext';
 import { useRouter } from 'next/navigation';
 import QuizCard from '../Components/QuizCard';
 import {PermissionAnswer} from '../Components/PermissionAnswer'; 
-import e from '../Styles/emailPermission.module.css'; 
+// import e from '../Styles/emailPermission.modulst.css'; 
+import st from '../Styles/startCard.module.css'; 
 import { nunito } from '../fonts/nunito';
 import Image from 'next/image';
+import logo from '../assets/ivvi_Logo.svg'; 
 
 
 export default function EmailPermission() {
@@ -16,22 +18,21 @@ export default function EmailPermission() {
     const { name, sound } = useUser();
 
     const handleYesClick = () => {
-        router.push('/name');
+        router.push('/understand');
     };
 
 
     const handleNoClick = () => {
         // Set flag to trigger refresh when landing on home page
-        sessionStorage.setItem('needsRefreshFromEmailDecline', 'true');
+        sessionStoragst.setItem('needsRefreshFromEmailDecline', 'true');
         router.push('/');
     };
 
     const Section = "Audio Permission";
     const audio_URL = 'https://dyslexiaquizapp.s3.eu-west-2.amazonaws.com/audio+doodles/send+email-v1.mp3';
-    const questionText = `Shall We send a results Report to your email?
-Otherwise they won’t be saved.`;
+    const questionText = `t`;
     const currentQuestion = { questionText: "" };
-    const currentIMG = 'https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/EMAIL_SEND_TEST/view?project=test-domain&mode=admin';
+    const currentIMG = 'https://fra.cloud.appwritst.io/v1/storage/buckets/dood_gifs/files/EMAIL_SEND_TEST/view?project=test-domain&mode=admin';
     
     // Placeholder functions
     const getLabelColorBySection = (section) => "#033699";
@@ -39,7 +40,7 @@ Otherwise they won’t be saved.`;
     return (
         <div>
         {/* Top Blue Navbar Strip */}
-        <div 
+        {/* <div 
           style={{
             width: '100%',
             height: '120px',
@@ -49,24 +50,23 @@ Otherwise they won’t be saved.`;
             left: 0,
             zIndex: 100
           }}
-        />
+        /> */}
         
 
         {/* Main Content Container */}
         <div style={{ paddingTop: '60px' }}>
           <article 
-          className={`${e.card} ${nunito.className}`} 
-          id={e.firstCARD} 
+          className={`${st.card} ${nunito.className}`} 
+          id={st.firstCARD} 
           style={{
               position: 'relative',
               zIndex: 200,
               boxShadow: '0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.06)',
               marginTop: '-40px', 
-              outline: '5px solid red'
           }}
           >
-      <div 
-          className={e.cardCategoryColorContainer} 
+      {/* <div 
+          className={st.cardCategoryColorContainer} 
           style={{
               backgroundColor: '#4168b3',
               boxShadow: '0 -2px 8px rgba(0, 0, 0, 0.1), -2px 0 8px rgba(0, 0, 0, 0.1), 2px 0 8px rgba(0, 0, 0, 0.1)', 
@@ -79,50 +79,55 @@ Otherwise they won’t be saved.`;
                   controls 
                   autoPlay 
                   style={{ opacity: '0', position: 'absolute' }}
-                  onPlay={() => console.log('🎵 Audio Started Playing:', audio_URL)}
-                  onError={(e) => console.error('❌ Audio Error:', e)}
+                  onPlay={() => consolst.log('🎵 Audio Started Playing:', audio_URL)}
+                  onError={(e) => consolst.error('❌ Audio Error:', e)}
               >
                   <source src={audio_URL} type="audio/mp3" />
               </audio>
           )}
           
   
-          <div className={`${e.categoryLabelContainer} ${nunito.className}`}>
-              <label className={`${e.categoryLabel} ${nunito.className}`}>
+          <div className={`${st.categoryLabelContainer} ${nunito.className}`}>
+              <label className={`${st.categoryLabel} ${nunito.className}`}>
   
   
-                  <div className={`${e.labelContainer} ${nunito.className}`} style={{backgroundColor: getLabelColorBySection(Section)}}>
+                  <div className={`${st.labelContainer} ${nunito.className}`} style={{backgroundColor: getLabelColorBySection(Section)}}>
                   ready
                   </div>
               </label>
           </div>
-      </div>
+      </div> */}
+      
   
       {questionText && (
-          <div className={`${e.questionTextContainer} ${nunito.className}`} style={{color:'#333333' }} >
-              <h2 className={`${e.questionText} ${nunito.className}`} style={{color:'#333333' }}>
-                  {questionText}
-  
-  
-                  <span style={{color:'#333333' }}>
-                      {currentQuestion?.questionText}
-                  </span>
+          <div className={`${st.questionTextContainer} ${nunito.className}`} style={{color: 'white'}} >
+              <h2 className={`${st.questionText} ${nunito.className}`} style={{fontSize: '2rem', letterSpacing: '-1px'}} >
+
+                <span className={st.topHeaderSpan} style={{display: 'block', fontSize: '1rem'}}>
+                    The 
+                </span>
+
+                    Adult Dyslexia
+                    Screener
+
+
+
               </h2>
           </div>
       )}
       
-      <div className={e.imageSectionContainer}>
-          <div className={e.doodleContainer}>
+      {/* <div className={st.imageSectionContainer}>
+          <div className={st.doodleContainer}>
               {currentIMG && (
                   <Image 
                       src={currentIMG}
-                      className={e.currentIMG}
+                      className={st.currentIMG}
                       alt='quiz illustration'
                       width={300}
                       height={300}
                       unoptimized
-                      onLoad={() => console.log('🖼️ Image Loaded:', currentIMG)}
-                      onError={(e) => console.error('❌ Image Error:', e)}
+                      onLoad={() => consolst.log('🖼️ Image Loaded:', currentIMG)}
+                      onError={(e) => consolst.error('❌ Image Error:', e)}
                       style={{
                           marginTop: '-4.5rem',
                           objectFit: 'contain', 
@@ -131,34 +136,41 @@ Otherwise they won’t be saved.`;
                   />
               )}
           </div>
-      </div>
+      </div> */}
+
+
+        {/* Add in the by ivvi section here  */}
+
+        <footer className={st.ivviLogoContainer}>
+                    <span className={st.bySpan}>by</span>
+                    <figure className={st.logo}>
+                        <Image src={logo} width={150} height={50} alt='logo' className={st.logoImage} />
+                    </figure>
+                </footer>
+
+
+
+
   
-      <article className={e.card} id={e.cardOne}></article>
-      <article className={e.card} id={e.cardTwo}></article>
-      <article className={e.card} id={e.cardThree}></article>
-      <article className={e.card} id={e.cardFour}></article>
+      <article className={st.card} id={st.cardOne}></article>
+      <article className={st.card} id={st.cardTwo}></article>
+      <article className={st.card} id={st.cardThree}></article>
+      <article className={st.card} id={st.cardFour}></article>
   </article>
 
 
-<section className={e.buttonSectionContainer}>
+<section className={st.buttonSectionContainer}>
 
-  <div className={e.ctaContainer}>
+  <div className={st.ctaContainer}>
 
-    <div className={e.cta} onClick={handleYesClick} style={{cursor: 'pointer', fontSize: '2rem', letterSpacing: '1px'}} >
-        Yes
+    <div className={st.cta} onClick={handleYesClick} style={{cursor: 'pointer', fontSize: '2rem', letterSpacing: '1px'}} >
+        Start Screener 
+
     </div>
 
 
   </div>
 
-  <div className={e.noButtonContainer}>
-    <div className={e.noButton} onClick={handleNoClick} >
-       No Thanks 
-    
-     </div>
-
-
-  </div>
   
 </section>
         </div>

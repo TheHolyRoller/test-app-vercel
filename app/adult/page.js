@@ -6,6 +6,8 @@ import Image from 'next/image';
 // import affect from '../assets/Listen and learn, confident.svg'; 
 import affect from '../assets/Highlight Key Info.svg'; 
 import { useRouter } from 'next/navigation';
+import AdultCard from '../Components/AdultCard'; 
+
 
 
 
@@ -22,7 +24,13 @@ function Adult() {
 
 
   return (
-    <section className={a.mainContainer} style={{backgroundColor: 'white'}}>
+
+
+    <>
+
+    <AdultCard/>
+
+    {/* <section className={a.mainContainer} style={{backgroundColor: 'white'}}>
     <div className={a.subContainer}>
 
 
@@ -147,7 +155,12 @@ function Adult() {
     </div>
 
 
-    </section>
+    </section> */}
+
+
+    </>
+
+
   )
 }
 

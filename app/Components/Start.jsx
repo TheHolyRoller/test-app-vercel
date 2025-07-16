@@ -17,9 +17,7 @@ function Start() {
     const count = parseInt(localStorage.getItem('quizCompletionCount') || '0');
     setQuizCompletionCount(count);
     console.log('📊 Current quiz completion count:', count);
-    
-    // Only show refresh message if user has completed quiz and explicitly wants to take it again
-    // This prevents the message from showing on initial page load
+
     setShowRefreshMessage(false);
 
   }, []);

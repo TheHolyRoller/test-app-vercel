@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import ivvi_group from '../assets/ivvi_group.svg'; 
 import u from '../Styles/understand.module.css'; 
-
+import UnderstandCard from '../Components/UnderstandCard'; 
 
 
 function Understand() {
@@ -22,7 +22,11 @@ function Understand() {
 
   return (
     
-    <section className={u.mainContainer} style={{backgroundColor: 'white'}}>
+    <>
+
+    <UnderstandCard/>
+
+    {/* <section className={u.mainContainer} style={{backgroundColor: 'white'}}>
 
 
     <div className={u.subContainer}>
@@ -67,8 +71,6 @@ function Understand() {
 
     </div>
 
-    {/* Add in pagination element here  */}
-
 
     </div>
 
@@ -79,49 +81,12 @@ function Understand() {
     </div>
     
     
-    <div className={u.paginationElementContainer}
-      
-      style={{ margin: '0 auto'}}
+   
+    </section> */}
 
-      >
-      <div className={u.paginationElementSubContainer}>
 
-        <ul className={u.paginationList}
-
-          style={{display: 'flex', gap: '0.8em'}}
-        
-        >
-        
-
-          <li className={u.paginationItem} 
-          
-          style={{height: '5px', width: '33px', backgroundColor: 'rgb(153, 187, 154)', borderRadius: '14px', display: 'block'}}
-          
-          ></li>
-        <li className={u.paginationItem} 
-          
-          style={{height: '5px', width: '33px', backgroundColor: 'rgb(227, 225, 228)', borderRadius: '14px', display: 'block'}}
-          
-          ></li>
-             <li className={u.paginationItem} 
-          
-          style={{height: '5px', width: '33px', backgroundColor: 'rgb(227, 225, 228)', borderRadius: '14px', display: 'block'}}
-          
-          ></li>
-             <li className={u.paginationItem} 
-          
-          style={{height: '5px', width: '33px', backgroundColor: 'rgb(227, 225, 228)', borderRadius: '14px', display: 'block'}}
-          
-          ></li>
-            <li className={u.paginationItem} 
-          
-          style={{height: '5px', width: '33px', backgroundColor: 'rgb(227, 225, 228)', borderRadius: '14px', display: 'block'}}
-          
-          ></li>
-        </ul>
-      </div>
-      </div>
-    </section>
+    
+    </>
   )
 }
 

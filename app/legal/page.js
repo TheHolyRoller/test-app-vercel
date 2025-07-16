@@ -3,7 +3,7 @@ import React from 'react'
 import Image from 'next/image'
 import l from '../Styles/legal.module.css'; 
 import legal from '../assets/Your notes are comprehensiv.svg'; 
-
+import LegalCard from '../Components/LegalCard'; 
 import { useRouter } from 'next/navigation';
 
 
@@ -49,7 +49,11 @@ function Legal() {
 
 
   return (
-    <section className={l.mainContainer} style={{backgroundColor: 'white'}}>
+    <>
+
+    <LegalCard/>
+
+    {/* <section className={l.mainContainer} style={{backgroundColor: 'white'}}>
     <div className={l.subContainer}>
 
 
@@ -68,6 +72,7 @@ function Legal() {
     </div>
 
     <div>
+
 
     <article className={l.mainSupportingTextContainer}>
 
@@ -158,7 +163,11 @@ function Legal() {
     </div>
 
 
-    </section>
+    </section> */}
+
+    </>
+
+
   )
 }
 
