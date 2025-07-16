@@ -1,105 +1,238 @@
-import React, { use, useState, useEffect } from 'react'
-import s from '../Styles/start.module.css'; 
+'use client';
+
+import { useQuiz } from '../lib/context/QuizContext';
+import { useUser } from '../lib/context/UserContext';
 import { useRouter } from 'next/navigation';
+import QuizCard from '../Components/QuizCard';
 import logo from '../assets/ivvi_Logo.svg'; 
+
+import {PermissionAnswer} from '../Components/PermissionAnswer'; 
+// import e from '../Styles/emailPermission.modulpc.css'; 
+import pc from '../Styles/PostQuizCard.module.css'; 
+
+import { nunito } from '../fonts/nunito';
 import Image from 'next/image';
-import { useUserDetection } from '../lib/hooks/useUserDetection';
-import pq from '../Styles/PostQuizCard.module.css'; 
+import React, { useState, useEffect } from 'react';
 
 
-function Start() {
+export default function PostQuizCard() {
 
-  const router = useRouter();
-  const { user, loading, isNewUser } = useUserDetection();
-  const [quizCompletionCount, setQuizCompletionCount] = useState(0);
-  const [showRefreshMessage, setShowRefreshMessage] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
-  // Check quiz completion count on component mount
+
+  // Automatically refresh the page when component mounts - only once
   useEffect(() => {
-    const count = parseInt(localStorage.getItem('quizCompletionCount') || '0');
-    setQuizCompletionCount(count);
-    console.log('📊 Current quiz completion count:', count);
+    const hasRefreshedPostQuiz = sessionStorage.getItem('hasRefreshedPostQuiz');
+    
+    if (!hasRefreshedPostQuiz) {
+      console.log('🔄 Auto-refreshing postquiz page - one time only');
+      sessionStorage.setItem('hasRefreshedPostQuiz', 'true');
+      window.location.reload();
+    }
+  }, []); 
 
-    setShowRefreshMessage(false);
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
 
+    checkScreenSize();
+
+    window.addEventListener('resize', checkScreenSize);
+
+    return () => window.removeEventListener('resize', checkScreenSize);
   }, []);
 
-  console.log('this is the value of new user \n', isNewUser); 
-  console.log('this is the user \n', user); 
-
-    
-
-
-  const handleStartScreener = () => {
-    if (loading || isNewUser === null) {
-      console.log('Still determining user statupq...');
-      return;
-    }
-
-    if (isNewUser) {
-      console.log('this is the value of new user \n', isNewUser);
-      console.log('New user detected, routing to /understand');
-      router.push('/understand');
+  const handleShare = async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: 'Adult Dyslexia Screener',
+          text: 'Take this quick dyslexia screening assessment to better understand your learning style and get personalized insights.',
+          url: window.location.origin,
+        });
+        console.log('✅ Shared successfully');
+      } catch (error) {
+        console.error('❌ Share failed:', error);
+      }
     } else {
-      console.log('Returning user detected, routing to /audiopermission');
-      // router.push('/audiopermission');
-      router.push('/understand');
-
+      alert('Sharing not supported in this browser. Please use a mobile device or modern browser to share.');
     }
   };
-  return (
-  
-    <>
-    <section className={pq.mainCTASection}>
 
-      <article className={pq.mainLogoContainer}>
+  const handleCopyToClipboard = async () => {
+    try {
+      const textToCopy = `Take this quick dyslexia screening assessment to better understand your learning style and get personalized insights. ${window.location.origin}`;
       
-        {/* Add in the Logo container here  */}
-        <div className={pq.logoContainer}>
-        <h1 className={pq.mainTextHeader} > 
-        <span className={pq.theSpan} >
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(textToCopy);
+        alert('✅ Link copied to clipboard!');
+      } else {
+        // Fallback for older browsers
+        const textArea = document.createElement('textarea');
+        textArea.value = textToCopy;
+        textArea.style.position = 'fixed';
+        textArea.style.left = '-999999px';
+        textArea.style.top = '-999999px';
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        
+        try {
+          document.execCommand('copy');
+          alert('✅ Link copied to clipboard!');
+        } catch (err) {
+          console.error('❌ Copy failed:', err);
+          alert('❌ Failed to copy link. Please copy the URL manually.');
+        }
+        
+        document.body.removeChild(textArea);
+      }
+    } catch (error) {
+      console.error('❌ Copy to clipboard failed:', error);
+      alert('❌ Failed to copy link. Please copy the URL manually.');
+    }
+  };
 
-        The
-        </span>
-         Adult Dyslexia Screener </h1>
-        </div>
+  const handleGoToIdeal = () => {
+    router.push('/');
+  };
+    const router = useRouter();
+    const { finalScore } = useQuiz();
+    const { name, sound } = useUser();
+
+    const handleYesClick = () => {
+        router.push('/name');
+    };
 
 
-       </article>
+    const handleNoClick = () => {
+        // Set flag to trigger refresh when landing on home page
+        sessionStoragpc.setItem('needsRefreshFromEmailDecline', 'true');
+        router.push('/');
+    };
 
-        {/* Show refresh message only when explicitly triggered */}
-        {showRefreshMessage && (
-          <div className={pq.refreshMessageContainer}>
-            <p className={pq.refreshMessage}>
-              📝 Taking the quiz again? Please refresh this page first for the best experience.
-            </p>
-          </div>
-        )}
+    const Section = "Post Quiz";
+    const audio_URL = '';
+    const questionText = `t`;
+    const currentQuestion = { questionText: "" };
+    const currentIMG = '';
+    
+    // Placeholder functions
+    const getLabelColorBySection = (section) => "#033699";
 
-        <aside className={pq.buttonSectionContainer}>
-        <div className={pq.CTAButton} onClick={handleStartScreener} style={{fontSize: '2rem', letterSpacing: '1px'}} >Start Screener</div>
-        </aside>
+    return (
+        <div>
+        {/* Top Blue Navbar Strip */}
+        <div 
+          style={{
+            width: '100%',
+            height: '120px',
+            backgroundColor: '#023597',
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            zIndex: 100
+          }}
+        />
+        
 
-
-        <footer className={pq.ivviLogoContainer}>
-
-          <span className={pq.bySpan}>by</span>
-
-          <figure className={pq.logo}
-          
+        {/* Main Content Container */}
+        <div style={{ paddingTop: '60px' }}>
+          <article 
+          className={`${pc.card} ${nunito.className}`} 
+          id={pc.firstCARD} 
+          style={{
+              position: 'relative',
+              zIndex: 200,
+              boxShadow: '0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.06)',
+              marginTop: '-40px', 
+          }}
           >
+      <div 
+          className={pc.cardCategoryColorContainer} 
+          style={{
+              backgroundColor: '#4168b3',
+              boxShadow: '0 -2px 8px rgba(0, 0, 0, 0.1), -2px 0 8px rgba(0, 0, 0, 0.1), 2px 0 8px rgba(0, 0, 0, 0.1)', 
+  
+          }}
+      >
+          
+          
+  
+          <div className={`${pc.categoryLabelContainer} ${nunito.className}`}>
+              <label className={`${pc.categoryLabel} ${nunito.className}`}>
+  
+  
+                  <div className={`${pc.labelContainer} ${nunito.className}`} style={{backgroundColor: getLabelColorBySection(Section)}}>
+                  Results
+                  </div>
+              </label>
+          </div>
+      </div>
+  
+      {questionText && (
+          <div className={`${pc.questionTextContainer} ${nunito.className}`}  >
+              <h2 className={`${pc.questionText} ${nunito.className}`} style={{color: 'white' }}>
+                  Want to screen your friends or family? 
+  
 
-              <Image src={logo} width={150} height={50} alt='logo'/>
+  
+              </h2>
+          </div>
+      )}
+      
+      <div className={pc.imageSectionContainer}>
+          <div className={pc.doodleContainer}>
+              {currentIMG && (
+                  <Image 
+                      src={currentIMG}
+                      className={pc.currentIMG}
+                      alt='quiz illustration'
+                      width={300}
+                      height={300}
+                      unoptimized
+                      onLoad={() => consolpc.log('🖼️ Image Loaded:', currentIMG)}
+                      onError={(e) => consolpc.error('❌ Image Error:', e)}
+                      style={{
+                          marginTop: '-4.5rem',
+                          objectFit: 'contain', 
+                          zIndex: '0', 
+                      }}
+                  />
+              )}
+          </div>
+      </div>
+
+      <footer className={pc.ivviLogoContainer}>
+                    <span className={pc.bySpan}>by</span>
+                    <figure className={pc.logo}>
+                        <Image src={logo} width={150} height={50} alt='logo' className={pc.logoImage} />
+                    </figure>
+                </footer>
+  
+      <article className={pc.card} id={pc.cardOne}></article>
+      <article className={pc.card} id={pc.cardTwo}></article>
+      <article className={pc.card} id={pc.cardThree}></article>
+      <article className={pc.card} id={pc.cardFour}></article>
+  </article>
 
 
-          </figure>
 
-        </footer>
-
-
-    </section>
-    </>
-  )
-}
-
-export default Start
+<aside className={pc.buttonSectionContainer}>
+          {isMobile ? (
+            <div className={pc.CTAButton} onClick={handleShare}>Share Screener</div>
+          ) : (
+            <div className={pc.CTAButton} onClick={handleCopyToClipboard} style={{fontSize: '1.9rem', letterSpacing: '1px'}}>Copy Link</div>
+          )}
+        </aside>
+        <div className={pc.secondaryButtonContainer}>
+          <div className={pc.secondaryButton} onClick={handleGoToIdeal}>
+            *or Click here to Screen them now
+          </div>
+        </div>
+  
+        </div>
+      </div>
+    );
+} 

@@ -5,7 +5,6 @@ import { useUser } from '../lib/context/UserContext';
 import { useRouter } from 'next/navigation';
 import QuizCard from '../Components/QuizCard';
 import {PermissionAnswer} from '../Components/PermissionAnswer'; 
-// import e from '../Styles/emailPermission.modulst.css'; 
 import st from '../Styles/startCard.module.css'; 
 import { nunito } from '../fonts/nunito';
 import Image from 'next/image';

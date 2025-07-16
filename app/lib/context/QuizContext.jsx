@@ -52,6 +52,7 @@ export const QuizProvider = ({ children }) => {
     const [organisationalScore, setOrganisationalScore] = useState(0);
     const [memoryScore, setMemoryScore] = useState(0);
     const [examResultsScore, setExamResultsScore] = useState(0);
+    const [answers, setAnswers] = useState([]); 
 
 
     // Add in the counters for each category here 
@@ -87,8 +88,6 @@ export const QuizProvider = ({ children }) => {
     }; 
 
 
-
-
     const [email, setEmail] = useState(''); 
 
     // Monitor quiz-related state changes
@@ -98,6 +97,7 @@ export const QuizProvider = ({ children }) => {
             quizLength,
             score,
             finalScore,
+            answers,
             currentQuestion: currentQuestion ? {
                 id: currentQuestion.$id,
                 section: currentQuestion.Section,
@@ -106,7 +106,8 @@ export const QuizProvider = ({ children }) => {
             questionsCount: questions.length,
             gifURLsCount: gif_URLs?.length || 0
         });
-    }, [currentIndex, quizLength, score, finalScore, currentQuestion, questions, gif_URLs]);
+    }, [currentIndex, quizLength, score, finalScore, currentQuestion, questions, gif_URLs, answers]);
+
 
     // Monitor category score changes
     useEffect(() => {
@@ -291,6 +292,7 @@ export const QuizProvider = ({ children }) => {
                 tests: setExamResultsScore
             };
 
+
             
             const key = type.trim().toLowerCase();
             const scoreSetter = scoreSetters[key];
@@ -380,6 +382,20 @@ export const QuizProvider = ({ children }) => {
 
         console.log(`🎯 QuizContext: Handling answer: ${answer}`);
         const question = questions[currentIndex];
+        const answerObject = {
+            
+            question_id: question.id, 
+            question_text: question.questionText, 
+            section: question.Section, 
+            type: question.Type, 
+            id: question.Sequence_Number, 
+            answer: answer, 
+            timestamp: new Date().toISOString()
+        }
+
+        console.log('this is the current answer object \n', answerObject)
+
+        setAnswers(prev => [...prev, answerObject]); 
         
         // Workout what this function call does 
         await calculateScore(answer);
@@ -486,6 +502,7 @@ export const QuizProvider = ({ children }) => {
             currentIndex,
             handleAnswer,
             questions,
+            answers,
             currentQuestion,
             quizLength,
             finalScore,
@@ -508,6 +525,7 @@ export const QuizProvider = ({ children }) => {
             buttonCounters,
             incrementButtonCounter
         }}>
+
             {children}
         </QuizContext.Provider>
     );

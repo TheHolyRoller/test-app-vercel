@@ -15,7 +15,6 @@ import UserEmailInput from '../Components/UserEmailInput';
 const DATABASE_ID = process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID;
 const COLLECTION_ID = process.env.NEXT_PUBLIC_APPWRITE_RESULTS_COLLECTION_ID;
 
-
 export default function EmailSignup() {
 
     const {sound} = useUser(); 

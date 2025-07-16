@@ -6,6 +6,10 @@ import { useRouter } from 'next/navigation';
 import logo from '../assets/ivvi_Logo.svg'; 
 import Image from 'next/image';
 import { useUserDetection } from '../lib/hooks/useUserDetection';
+import PostQuizCard from '../Components/PostQuizCard'; 
+import pc from '../Styles/PostQuizCard.module.css'; 
+
+
 
 function PostQuizPage() {
   const router = useRouter();
@@ -26,19 +30,15 @@ function PostQuizPage() {
     }
   }, []); 
 
-  // Detect screen size
   useEffect(() => {
     const checkScreenSize = () => {
       setIsMobile(window.innerWidth <= 768);
     };
 
-    // Check on mount
     checkScreenSize();
 
-    // Add event listener for screen resize
     window.addEventListener('resize', checkScreenSize);
 
-    // Cleanup
     return () => window.removeEventListener('resize', checkScreenSize);
   }, []);
 
@@ -99,13 +99,15 @@ function PostQuizPage() {
 
   return (
     <>
-      <section className={ps.mainCTASection}>
+
+    <PostQuizCard/>
+
+
+      {/* <section className={ps.mainCTASection}>
         <article className={ps.mainLogoContainer}>
-          {/* Add in the Logo container here  */}
           <div className={ps.logoContainer}>
             <h1>Want to screen your friends or family?</h1>
           </div>
-          {/* Add in the logo here  */}
         </article>
 
         <aside className={ps.buttonSectionContainer}>
@@ -115,8 +117,6 @@ function PostQuizPage() {
             <div className={ps.CTAButton} onClick={handleCopyToClipboard} style={{fontSize: '1.9rem', letterSpacing: '1px'}}>Copy Link</div>
           )}
         </aside>
-
-        {/* Add in the final button here  */}
         <div className={ps.secondaryButtonContainer}>
           <div className={ps.secondaryButton} onClick={handleGoToIdeal}>
             *or Click here to Screen them now
@@ -129,7 +129,7 @@ function PostQuizPage() {
             <Image src={logo} width={150} height={50} alt='logo'/>
           </figure>
         </footer>
-      </section>
+      </section> */}
     </>
   );
 }

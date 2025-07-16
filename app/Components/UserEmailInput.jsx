@@ -12,7 +12,6 @@ const DATABASE_ID = process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID;
 const COLLECTION_ID = process.env.NEXT_PUBLIC_APPWRITE_RESULTS_COLLECTION_ID;
 
 
-
 function UserInput() {
 
 
@@ -23,37 +22,48 @@ function UserInput() {
     // Extract the set email function from the quiz context here 
     const { setEmail} = useQuiz(); 
     const { 
-        finalScore, 
-        score, 
-        memoryScore, 
-        writingScore, 
-        readingScore, 
-        examResultsScore, 
-        organisationalScore 
+        answers
     } = useQuiz();
+
+    const score = 50; 
+    const memoryScore = 20; 
+    const readingScore = 50; 
+    const examScore = 50; 
+    const organisationalScore = 50; 
+    const finalScore = 100; 
+
+    console.log('this is the answers object', answers); 
+
+
+    console.log('these are the extracted values in user email input:  \n', score, finalScore, memoryScore, readingScore, writingScore, examResultsScore, organisationalScore, answers); 
+
 
     const onSubmit = async (e) => {
         e.preventDefault();
         console.log('📝 Form submission started');
+            console.log('these are the extracted values in user email input:  \n', score, finalScore, memoryScore, readingScore, writingScore, examResultsScore, organisationalScore, answers); 
+
 
         try {
             // First, save to database
             console.log('💾 Saving to database...');
+            console.log('these are the extracted values in user email input:  \n', score, finalScore, memoryScore, readingScore, writingScore, examResultsScore, organisationalScore, answers); 
+
             const response = await databases.createDocument(
                 DATABASE_ID,
                 COLLECTION_ID,
                 'unique()',
                 {
                     inputEmail,
-                    finalScore,
-                    score,
-                    memoryScore,
-                    writingScore,
-                    readingScore,
-                    examResultsScore,
-                    organisationalScore,
-                    userAge,
+                    answers, 
                     name,
+                    memoryScore, 
+                    readingScore, 
+                    writingScore, 
+                    examScore, 
+                    organisationalScore, 
+                    score, 
+                    finalScore, 
                     createdAt: new Date().toISOString(),
                 }
             );
@@ -67,6 +77,9 @@ function UserInput() {
             console.log('🔄 Navigating to results page...');
             router.push('/result');
         } catch (error) {
+           
+            console.log('these are the extracted values in user email input error catch:  \n', score, finalScore, memoryScore, readingScore, writingScore, examResultsScore, organisationalScore, answers); 
+            
             console.error('❌ Error in form submission:', error);
             alert('An error occurred. Please try again.');
         }
