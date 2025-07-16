@@ -31,7 +31,18 @@ function ResultsExplanationContent() {
         examResultsScore,
         organisationalScore, 
         email
-    } = useQuiz();  
+    } = useQuiz();
+
+    // Debug logging to see the actual values
+    console.log('🎯 Results Explanation - Score Values:', {
+        score,
+        finalScore,
+        memoryScore,
+        writingScore,
+        readingScore,
+        examResultsScore,
+        organisationalScore
+    });  
     
 
     const formatCategoryCounter = (memoryScore, writingScore, readingScore, examResultsScore, organisationalScore ) => {
@@ -54,7 +65,15 @@ function ResultsExplanationContent() {
     useEffect(() =>{
         console.log('calling format category score function in the useEffect hook');
         formatCategoryCounter(memoryScore, writingScore, readingScore, examResultsScore, organisationalScore); 
-    }, []); 
+    }, []);
+
+    // Recalculate percentage when finalScore changes
+    useEffect(() => {
+        if (finalScore !== undefined) {
+            formatScore(finalScore);
+            console.log('🔄 Recalculated percentage for finalScore:', finalScore, 'Result:', percentage);
+        }
+    }, [finalScore]); 
 
     let percentage;
 
@@ -84,7 +103,8 @@ function ResultsExplanationContent() {
     return (
         <>
             <PhoneBarChart
-                percentage={percentage}
+                percentage={percentage || 0}
+                score={score}
                 finalScore={finalScore}
                 writingPercentage={writingPercentage}
                 memoryPercentage={memoryPercentage}

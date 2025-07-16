@@ -54,6 +54,7 @@ function ResultContent() {
     console.log('📋 Organisational Score:', organisationalScore);
     console.log('✨ ======================');
 
+
     /**
      *     memoryPercentage: memoryPercentage, 
         writingPercentage: writingPercentage, 
@@ -67,20 +68,14 @@ function ResultContent() {
 
     const data = {
 
-        score: finalScore, 
+        score: score, 
         name: name, 
-        userAge: userAge,
         inputEmail: email, 
         memoryScore: memoryScore, 
         writingScore: writingScore, 
         readingScore: readingScore, 
         examResultsScore: examResultsScore, 
         organisationalScore: organisationalScore, 
-        memoryPercentage: memoryPercentage, 
-        writingPercentage: writingPercentage, 
-        readingPercentage: readingPercentage, 
-        examResultsPercentage: examResultsPercentage, 
-        organisationalPercentage: organisationalPercentage,
         createdAt: new Date().toISOString()
 
     }
@@ -90,7 +85,7 @@ function ResultContent() {
     const saveResults = async (databases, data) => {
 
 
-            console.log('save results function ')
+            console.log('save results function')
 
         try{
 
@@ -194,6 +189,11 @@ function ResultContent() {
         //     percentage = Math.floor(30 + (rawPercentage / 50) * 29);
         // }
         let percentage = rawPercentage; 
+
+        console.log('this is the raw percentage::::: \n', rawPercentage); 
+        console.log('this is the percentage:::::: \n', percentage); 
+
+
         
         // Ensure percentage doesn't exceed 100
         percentage = Math.min(percentage, 100);
@@ -222,7 +222,7 @@ function ResultContent() {
                 </div>
 
                 <div className={resultStyles.mainScore}>
-                    {finalScore}
+                    {score}
                     <span className={resultStyles.refSpan}>
                         /100
                     </span>

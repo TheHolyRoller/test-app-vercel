@@ -14,7 +14,6 @@ import { off } from 'process';
 const DATABASE_ID = process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID;
 const QUESTION_COLLECTION_ID = process.env.NEXT_PUBLIC_APPWRITE_QUESTION_COLLECTION_ID;
 
-
 const QuizContext = createContext(null);
 
 export const QuizProvider = ({ children }) => {
@@ -24,7 +23,9 @@ export const QuizProvider = ({ children }) => {
     const hasInitialized = useRef(false); 
 
     const router = useRouter();
-    const { userAge } = useUser();
+    // const { userAge } = useUser();
+    const userAge = 'adult'; 
+
 
     // Set the score to the percentage score 
     const [score, setScore] = useState(0);
@@ -47,14 +48,13 @@ export const QuizProvider = ({ children }) => {
     const [answers, setAnswers] = useState([]); 
 
 
-    // Add in the counters for each category here 
-
-    // Add these state variables to the context export 
     const [readingCounter, setReadingCounter] = useState(0);
     const [writingCounter, setWritingCounter] = useState(0); 
     const [memoryCounter, setMemoryCounter] = useState(0); 
     const [plansCounter, setPlansCounter] = useState(0); 
     const [testsCounter, setTestsCounter] = useState(0);
+    const [updateCounter, setUpdateCounter] = useState(0); 
+
 
     // Button click counters that persist across renders
     const [buttonCounters, setButtonCounters] = useState({
@@ -114,6 +114,8 @@ export const QuizProvider = ({ children }) => {
     }, [readingScore, writingScore, organisationalScore, memoryScore, examResultsScore, score]);
 
     useEffect(() => {
+
+
         console.log('🔄 QuizContext: Initializing quiz data fetch');
         const fetchQuestions = async () => {
             try {
@@ -217,10 +219,10 @@ export const QuizProvider = ({ children }) => {
     // Add in a useEffect hook here to track when counters from different question categories are incremented 
     useEffect(() => {
 
-        console.log('category updated for question category counter \n', writingCounter, readingCounter, plansCounter, memoryCounter, testsCounter);
+        console.log('category updated for question category counter::::::::: \n', writingCounter, readingCounter, plansCounter, memoryCounter, testsCounter, updateCounter);
 
         // Fill the dependency array with all the category counter state variables here 
-    }, [writingCounter, readingCounter, plansCounter, memoryCounter, testsCounter]); 
+    }, [writingCounter, readingCounter, plansCounter, memoryCounter, testsCounter, updateCounter]); 
 
 
 
@@ -232,16 +234,12 @@ export const QuizProvider = ({ children }) => {
         console.log('this is the format score function'); 
         console.log('this is the inputted score \n', score); 
 
-        
-        console.log('Just about to format the score ')
-        const divisor = 5; 
-        console.log('this is the divisor \n', divisor); 
-
-
         let percentage; 
-        percentage = Math.floor((score / 5));
+        // percentage = Math.floor((score));
+        percentage = score; 
+        console.log('this is just an experiment not using flooring the score percentage:::: \n', percentage )
         
-        console.log('this is the final percentage of the quiz \n', percentage); 
+        console.log('this is the final percentage of the quiz::::: \n', percentage); 
 
         console.log('returning percentage')
         return percentage; 
@@ -261,6 +259,8 @@ export const QuizProvider = ({ children }) => {
         console.log(`🎯 QuizContext: Calculating score for answer: ${answer}`);
         const { 
             sometimes_weight,
+            yes_weight,
+            no_weight,
             Section 
         } = currentQuestion;
 
@@ -279,15 +279,15 @@ export const QuizProvider = ({ children }) => {
                 tests: setExamResultsScore
             };
 
+            setUpdateCounter(prev => prev + 1); 
             
             const key = type.trim().toLowerCase();
             const scoreSetter = scoreSetters[key];
 
             console.log('this is the score setter in the quiz context used to update the category score  \n', scoreSetter); 
-
             console.log('this is the score to set to the particular category here \n', score); 
 
-            let categoryScore = score / 5; 
+            let categoryScore = score; 
 
             console.log('just about to update the category with the formatted category score \n', categoryScore); 
             
@@ -295,19 +295,18 @@ export const QuizProvider = ({ children }) => {
 
             if (scoreSetter) {
 
-                // This is the problem here 
                 scoreSetter(prevScore => prevScore + categoryScore);
 
             } 
         };
-
-
 
         
         const updateQuestionTypeCounter = (type, score) => {
 
 
             console.log('Updating the counter of each score category \n, ', type);
+            console.log('this is the current score that will update the right category::: \n', score); 
+
             
             const counterSetters = {
 
@@ -334,12 +333,12 @@ export const QuizProvider = ({ children }) => {
         if (userAge === 'adult') {
             console.log('👤 QuizContext: Calculating score for adult');
             if (answer === 'yes') {
-                setScore(prevScore => prevScore + adult_sometimes_weight);
-                updateScoreCategory(Section, adult_sometimes_weight);
+                setScore(prevScore => prevScore + yes_weight);
+                updateScoreCategory(Section, yes_weight);
                 console.log('this is the question Section \n', Section); 
             } else if (answer === 'sometimes') {
-                setScore(prevScore => prevScore + adult_sometimes_weight);
-                updateScoreCategory(Section, adult_sometimes_weight);
+                setScore(prevScore => prevScore + sometimes_weight);
+                updateScoreCategory(Section, sometimes_weight);
                 console.log('this is the question Section \n', Section); 
 
             }
@@ -348,13 +347,13 @@ export const QuizProvider = ({ children }) => {
         } else {
             console.log('👶 QuizContext: Calculating score for child');
             if (answer === 'yes') {
-                setScore(prevScore => prevScore + adult_sometimes_weight);
-                updateScoreCategory(Section, adult_sometimes_weight);
+                setScore(prevScore => prevScore + sometimes_weight);
+                updateScoreCategory(Section, sometimes_weight);
                 console.log('this is the question Section \n', Section); 
 
             } else if (answer === 'sometimes') {
-                setScore(prevScore => prevScore + adult_sometimes_weight);
-                updateScoreCategory(Section, adult_sometimes_weight);
+                setScore(prevScore => prevScore + sometimes_weight);
+                updateScoreCategory(Section, sometimes_weight);
                 console.log('this is the question Section \n', Section); 
 
             }
@@ -368,6 +367,10 @@ export const QuizProvider = ({ children }) => {
 
         console.log(`🎯 QuizContext: Handling answer: ${answer}`);
         const question = questions[currentIndex];
+        console.log('this is the question type#### \n', question.Type); 
+        console.log('this is the question id ##### \n', question.id); 
+        console.log('this is the question text ##### \n', question.question_text); 
+
         const answerObject = {
             
             question_id: question.id, 
@@ -383,7 +386,7 @@ export const QuizProvider = ({ children }) => {
 
         setAnswers(prev => [...prev, answerObject]); 
         
-        // Workout what this function call does 
+        // Calculate score first
         await calculateScore(answer);
 
         if (currentIndex < quizLength - 1) {

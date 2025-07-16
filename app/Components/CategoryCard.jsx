@@ -12,12 +12,16 @@ function CategoryCard({ Section, audio_url, categoryName }) {
     const pathname = usePathname();
     
     // Use categoryName prop, or try to extract from question data, or fallback to Section
-    const actualCategory = categoryName || currentQuestion?.categoryName || currentQuestion?.question_text?.toLowerCase() || Section;
+    // const actualCategory = categoryName || currentQuestion?.categoryName || currentQuestion?.question_text?.toLowerCase() || Section;
+    const actualCategory = Section || categoryName || currentQuestion?.categoryName || currentQuestion?.question_text?.toLowerCase();
+
     
     console.log('CategoryCard - Props:', { Section, categoryName, actualCategory });
     
     // Color logic extracted from QuizCard.js
     const getColorBySection = (Section) => {
+
+        console.log('this is the section in getClororBySection function:::: \n', Section); 
         // Handle undefined or null case
         if (!Section) {
             return '#4c2a74';
@@ -25,19 +29,28 @@ function CategoryCard({ Section, audio_url, categoryName }) {
 
         // Normalize the section name
         const normalizedSection = Section.trim().toLowerCase();
+        console.log('this is the normalized Section::: \n', normalizedSection); 
 
         switch(normalizedSection) {
             case 'reading': 
+            console.log('reading section color');
+
                 return 'rgb(120, 213, 145)'; 
             case 'writing': 
+            console.log('writing section color');
                 return 'rgb(44, 152, 224)'; 
             case 'plans': 
+            console.log('plans section color');
                 return 'rgb(199, 59, 46)'; 
             case 'memory': 
+            console.log('memory section color');
                 return 'rgb(231, 126, 34)'; 
+
             case 'tests': 
+                console.log('tests section color');
                 return 'rgb(244, 198, 14)'; 
             default: 
+            console.log('default section color::');
                 return '#4c2a74';  
         }
     }

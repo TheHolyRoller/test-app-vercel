@@ -12,66 +12,41 @@ const DATABASE_ID = process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID;
 const COLLECTION_ID = process.env.NEXT_PUBLIC_APPWRITE_RESULTS_COLLECTION_ID;
 
 
-function UserInput() {
+function UserInput({ 
+    answers, 
+    score, 
+    finalScore, 
+    memoryScore, 
+    writingScore, 
+    readingScore, 
+    examResultsScore, 
+    organisationalScore 
+}) {
 
 
     const router = useRouter();
-    const [inputEmail, setInputEmail] = useState('');
+    const [email, setEmail] = useState('');
     const { name, userAge } = useUser();
 
-    // Extract the set email function from the quiz context here 
-    const { setEmail} = useQuiz(); 
-    const { 
-        answers
-    } = useQuiz();
-
-    
-    const score = 50; 
-    const memoryScore = 20; 
-    const readingScore = 50; 
-    const examResultsScore = 50; 
-    const organisationalScore = 50; 
-    const finalScore = 100; 
-    const writingScore = 20; 
-
-
-
-    console.log('this is the answers object', answers); 
-
-
-    console.log('these are the extracted values in user email input:  \n', score, finalScore, memoryScore, readingScore, writingScore, examResultsScore, organisationalScore, answers); 
+    console.log('📧 UserEmailInput - Received Props:', {
+        answers,
+        score,
+        finalScore,
+        memoryScore,
+        writingScore,
+        readingScore,
+        examResultsScore,
+        organisationalScore
+    }); 
 
 
     const onSubmit = async (e) => {
         e.preventDefault();
         console.log('📝 Form submission started');
-            console.log('these are the extracted values in user email input:  \n', score, finalScore, memoryScore, readingScore, writingScore, examResultsScore, organisationalScore, answers); 
-
+        
 
         try {
             // First, save to database
-            console.log('💾 Saving to database...');
-            console.log('these are the extracted values in user email input:  \n', score, finalScore, memoryScore, readingScore, writingScore, examResultsScore, organisationalScore, answers); 
-
-            const response = await databases.createDocument(
-                DATABASE_ID,
-                COLLECTION_ID,
-                'unique()',
-                {
-                    inputEmail,
-                    answers, 
-                    name,
-                    memoryScore, 
-                    readingScore, 
-                    writingScore, 
-                    examScore, 
-                    organisationalScore, 
-                    score, 
-                    finalScore, 
-                    createdAt: new Date().toISOString(),
-                }
-            );
-            console.log('✅ Database save successful:', response);
 
             // Then send email
             console.log('📧 Sending email...');
@@ -79,11 +54,8 @@ function UserInput() {
             
             // Navigate to results page after successful submission
             console.log('🔄 Navigating to results page...');
-            router.push('/result');
+            await router.push('/result');
         } catch (error) {
-           
-            console.log('these are the extracted values in user email input error catch:  \n', score, finalScore, memoryScore, readingScore, writingScore, examResultsScore, organisationalScore, answers); 
-            
             console.error('❌ Error in form submission:', error);
             alert('An error occurred. Please try again.');
         }
@@ -95,9 +67,9 @@ function UserInput() {
         try {
             const emailData = {
                 from: 'support@dyslexiaquiz.com',
-                toEmail: inputEmail,
+                toEmail: email,
                 subject: 'Your Quiz Results',
-                message: `Hi ${name},\n\nThank you for taking the quiz! Here are your results:\n\nFinal Score: ${finalScore} \nReading Score: ${readingScore} \n Writing Score: ${writingScore} \n Memory Score: ${memoryScore}\n Test Results Score: ${examResultsScore}\n Planing Score: ${organisationalScore}`,
+                message: `Hi ${name},\n\nThank you for taking the quiz! Here are your results:\n\nOverall Score: ${score}/100\nFinal Score: ${finalScore}\nReading Score: ${readingScore}\nWriting Score: ${writingScore}\nMemory Score: ${memoryScore}\nTest Results Score: ${examResultsScore}\nPlanning Score: ${organisationalScore}`,
                 name: name
             };
 
@@ -146,21 +118,33 @@ function UserInput() {
     };
 
     const handleChange = (e) => {
-        setInputEmail(e.target.value);
+        setEmail(e.target.value);
         console.log('this is the input \n', e.target.value); 
-        
     };
-
 
     // Add in the useEffect hook that will run when the Input Email changes 
     useEffect(() => {
+        console.log('this is the input email in the useEffect hook \n', email); 
+        setEmail(email); 
+    }, [email]);
 
-        console.log('this is the input email in the useEffect hook \n', inputEmail); 
-        setEmail(inputEmail); 
+    // Log when quiz data props change
 
-    }, [inputEmail]); 
+    // This does not run 
+    useEffect(() => {
+        console.log('📊 UserEmailInput - Quiz data updated:', {
+            answers: answers?.length || 0,
+            score,
+            finalScore,
+            memoryScore,
+            writingScore,
+            readingScore,
+            examResultsScore,
+            organisationalScore
+        });
+    }, [answers, score, finalScore, memoryScore, writingScore, readingScore, examResultsScore, organisationalScore]); 
 
-
+    
   return (
 
     <section className={e.mainUserNameSection} style={{ position: 'relative', zIndex: '999999'}}>
@@ -171,7 +155,7 @@ function UserInput() {
     <input placeholder='Enter your email'
         id="email"
         type="email"
-        value={inputEmail}
+        value={email}
         onChange={handleChange}
         required                                                                     
         className={e.userNameInput}

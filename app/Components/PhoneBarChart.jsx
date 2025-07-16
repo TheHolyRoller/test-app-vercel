@@ -14,18 +14,29 @@ function PhoneBarChart({ writingPercentage,
     examResultsScore, 
     organisationalScore,  
     percentage,
+    score,
     finalScore, 
     isExplanationPage = false,
     onNext
 
-
 }) {
 
+    // Debug logging to see what values are being received
+    console.log('📊 PhoneBarChart - Received Props:', {
+        percentage,
+        score,
+        finalScore,
+        isExplanationPage,
+        writingPercentage,
+        memoryPercentage,
+        readingPercentage,
+        examResultsPercentage,
+        organisationalPercentage
+    });
 
-    const   MAX_SCORE = 20; 
 
+    const MAX_SCORE = 20; 
 
-    // Create bar chart data structure
     const categoryData = [
         {
             name: 'Reading',
@@ -101,7 +112,7 @@ function PhoneBarChart({ writingPercentage,
 
             {!isExplanationPage && (
                 <div className={p.mainScore}>
-                    {finalScore}
+                    {percentage}
                     <span className={p.refSpan}>
                         /100
                     </span>
@@ -110,7 +121,7 @@ function PhoneBarChart({ writingPercentage,
 
             {isExplanationPage && (
                 <div className={p.mainScore} style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>
-                    {finalScore}
+                    {percentage}
                     <span className={p.refSpan} style={{ fontSize: '1.2rem' }}>
                         /100
                     </span>

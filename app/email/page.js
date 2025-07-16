@@ -57,7 +57,7 @@ export default function EmailPermission() {
         try {
             const emailData = {
                 from: 'support@dyslexiaquiz.com',
-                toEmail: 'delivered@resend.dev',
+                toEmail: 'danielwakeley7@gmail.com',
                 subject: 'Your Quiz Results',
                 message: `Hi ${name},\n\nThank you for taking the quiz! Here are your results:\n \nFinal Score: ${finalScore}\nMemory Score: ${memoryScore}\nWriting Score: ${writingScore}\nReading Score: ${readingScore}\nExam Results Score: ${examResultsScore}\nOrganisational Score: ${organisationalScore}`,
                 name: name
@@ -122,37 +122,8 @@ export default function EmailPermission() {
             // Create the submission promise
             const submissionPromise = async () => {
                 // First, save to database
-                console.log('💾 Saving to database...');
-
-                if(finalScore && writingScore && memoryScore && score && readingScore && organisationalScore && name && inputEmail ){
-
-
-
-
-                const response = await databases.createDocument(
-                    DATABASE_ID,
-                    COLLECTION_ID,
-                    'unique()',
-                    {
-                        inputEmail,
-                        finalScore,
-                        score,
-                        memoryScore,
-                        writingScore,
-                        readingScore,
-                        examResultsScore,
-                        organisationalScore,
-                        name,
-                        createdAt: new Date().toISOString(),
-                    }
-                );
-
-            }
-
-                
-                console.log('✅ Database save successful:', response);
-
-                // Then send email
+               
+            
                 console.log('📧 Sending email...');
                 await sendEmail();
                 
