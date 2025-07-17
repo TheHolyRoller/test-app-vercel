@@ -20,7 +20,8 @@ function UserInput({
     writingScore, 
     readingScore, 
     examResultsScore, 
-    organisationalScore 
+    organisationalScore
+     
 }) {
 
 

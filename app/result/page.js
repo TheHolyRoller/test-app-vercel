@@ -35,8 +35,15 @@ function ResultContent() {
         readingScore,
         examResultsScore,
         organisationalScore, 
-        email
+        email, 
+        answers
     } = useQuiz();
+
+    const formattedAnswers = JSON.stringify(answers, null, 4); 
+
+    console.log('this is the formatted Answer object \n', formattedAnswers);
+    console.log('this is the type of formatted Answers \n', typeof formattedAnswers); 
+    
 
 
     // Detailed console logging with emojis
@@ -68,15 +75,17 @@ function ResultContent() {
 
     const data = {
 
-        score: score, 
-        name: name, 
-        inputEmail: email, 
-        memoryScore: memoryScore, 
-        writingScore: writingScore, 
-        readingScore: readingScore, 
-        examResultsScore: examResultsScore, 
-        organisationalScore: organisationalScore, 
-        createdAt: new Date().toISOString()
+        name, 
+        email, 
+        score, 
+        readingScore, 
+        writingScore, 
+        memoryScore, 
+        examResultsScore, 
+        organisationalScore,
+        formattedAnswers
+
+        // Add in the user's name and email here  
 
     }
 
@@ -84,13 +93,11 @@ function ResultContent() {
 
     const saveResults = async (databases, data) => {
 
-
-            console.log('save results function')
+        console.log('save results function')
 
         try{
 
             const result = await databases.createDocument(
-                
                 
                 process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID,
                 process.env.NEXT_PUBLIC_APPWRITE_RESULTS_COLLECTION_ID, 
@@ -101,12 +108,10 @@ function ResultContent() {
             console.log('document successfully created'); 
             console.log('this is the result saved to the database \n', result); 
 
-
         }
         catch(error){
 
             console.error('there was an error saving results operation unsuccessful \n', error); 
-            
 
         }
 
@@ -131,10 +136,6 @@ function ResultContent() {
         setReadingPercentage(Math.floor((readingScore / exam) * 112));
         setMemoryPercentage((memoryScore / exam) * 100);
 
-
-        
-
-
     }
 
     useEffect(() =>{
@@ -154,7 +155,7 @@ function ResultContent() {
 
         // Call the function that saves the results to the database here 
         console.log('calling the save results function here '); 
-        saveResults(databases, data);
+        // saveResults(databases, data);
 
 
 

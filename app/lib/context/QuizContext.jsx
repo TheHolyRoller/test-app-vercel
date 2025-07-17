@@ -10,6 +10,7 @@ import { Query } from 'appwrite';
 import { off } from 'process';
 
 
+
 // Environment variable checks
 const DATABASE_ID = process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID;
 const QUESTION_COLLECTION_ID = process.env.NEXT_PUBLIC_APPWRITE_QUESTION_COLLECTION_ID;
@@ -225,11 +226,7 @@ export const QuizProvider = ({ children }) => {
     }, [writingCounter, readingCounter, plansCounter, memoryCounter, testsCounter, updateCounter]); 
 
 
-
-    // Create the format score function here 
-
     const formatScore = async (score) => {
-
 
         console.log('this is the format score function'); 
         console.log('this is the inputted score \n', score); 
@@ -375,14 +372,11 @@ export const QuizProvider = ({ children }) => {
             
             question_id: question.id, 
             question_text: question.question_text, 
-            section: question.Section, 
-            type: question.Type, 
-            id: question.Sequence_Number, 
             answer: answer, 
-            timestamp: new Date().toISOString()
-        }
+        }; 
 
-        console.log('this is the current answer object \n', answerObject)
+
+        console.log('this is the current answer object in the quiz context:: \n', answerObject)
 
         setAnswers(prev => [...prev, answerObject]); 
         

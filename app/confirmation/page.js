@@ -10,6 +10,7 @@ import n from '../Styles/name.module.css';
 
 import { nunito } from '../fonts/nunito';
 import Image from 'next/image';
+import { databases } from '../lib/appwrite';
 
 
 export default function EmailPermission() {
@@ -18,25 +19,113 @@ export default function EmailPermission() {
     const { setUserName, sound } = useUser();
     const [userName, setName] = useState('');
 
-    const handleChange = (e) => {
+
+    const { name, userAge } = useUser();
+    const { 
+        score,
+        finalScore,
+        memoryScore,
+        writingScore,
+        readingScore,
+        examResultsScore,
+        organisationalScore, 
+        email, 
+        answers
+    } = useQuiz();
+
+
+
+    console.log('this is the answers object that will be saved to the database here \n', answers); 
+
+
+    
+    const formattedAnswers = JSON.stringify(answers, null, 4); 
+
+    console.log('this is the formatted Answer object \n', formattedAnswers);
+    console.log('this is the type of formatted Answers \n', typeof formattedAnswers); 
+    
+    const data = {
+
+        name, 
+        email, 
+        score, 
+        readingScore, 
+        writingScore, 
+        memoryScore, 
+        examResultsScore, 
+        organisationalScore,
+        formattedAnswers
+
+        // Add in the user's name and email here  
+
+    }
+
+    const saveResults = async (databases, data) => {
+
+        console.log('save results function')
+
+        try{
+
+            const result = await databases.createDocument(
+                
+                process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID,
+                process.env.NEXT_PUBLIC_APPWRITE_RESULTS_COLLECTION_ID, 
+                'unique()', 
+                data
+            
+            ); 
+            console.log('document successfully created'); 
+            console.log('this is the result saved to the database \n', result); 
+            alert('Results saved to the database!'); 
+            return result; 
+
+
+        }
+        catch(error){
+
+            console.error('there was an error saving results operation unsuccessful \n', error); 
+
+        }
+
+    }
+
+
+
+    const handleChange =  (e) => {
         setName(e.target.value);
+        console.log('this is the handle change function in the confirmation file ')
+
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+        
+
         setUserName(userName);
         handleAnswer('noop');
+        console.log('this is the handle change function in the confirmation file ')
+        // Call the save answers to the database function here 
+        console.log('calling the save answers function in the handle submit function')
+        const response = saveResults(databases, data); 
+        console.log('this is the response of the save results function \n', response); 
+
+
+
 
         setTimeout(() => {
-            router.push('/postquiz');
+            // router.push('/postquiz');
         }, 210);
     };
 
+
+   
 
     const Section = "Audio Permission";
     const audio_url = '';
     const currentQuestion = { question_text: "" };
     const currentIMG = '';
+
+    console.log('this is the answers object from the quiz context \n', answers); 
     
     // Placeholder functions
     const getLabelColorBySection = (section) => "#033699";
@@ -125,8 +214,7 @@ export default function EmailPermission() {
       <article className={n.card} id={n.cardTwo}></article>
       <article className={n.card} id={n.cardThree}></article>
       <article className={n.card} id={n.cardFour}></article>
-  </article>
-
+      </article>
       
   <div className={n.nextButtonContainer}>
 
