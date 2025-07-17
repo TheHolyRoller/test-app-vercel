@@ -132,7 +132,9 @@ export const QuizProvider = ({ children }) => {
                 const limit = 1000; 
                 let offset = 0;
                 let totalDocuments = 0;
-                let total; 
+                let total;
+                
+                
 
                 console.log('this is the limit \n', limit); 
                 console.log('this is the offset \n', offset); 
