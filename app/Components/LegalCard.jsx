@@ -136,7 +136,7 @@ export default function EmailPermission() {
 
         <div className={lc.supportingText} style={{fontWeight: 'lighter', fontSize: '0.7rem', outline: '0px solid lime'}}>
 
-        <article className={lc.mainSupportingTextContainer}  style={{fontWeight: 'lighter', fontSize: '1.2rem', outline: '0px solid lime'}}>
+        <article className={lc.mainSupportingTextContainer}  style={{fontWeight: 'lighter', outline: '0px solid lime'}}>
 
 <span className={lc.mainTextSpan}>
 

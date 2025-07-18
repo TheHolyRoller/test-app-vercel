@@ -118,7 +118,7 @@ export default function EmailPermission() {
                   {/* {question_text} */}
   
   
-                  <span style={{color:'rgb(40, 84, 168)', fontWeight: 'bolder', fontSize: '1.7rem' }}>
+                  <span className={ad.questionTextSpan} style={{color:'rgb(40, 84, 168)', fontWeight: 'bolder' }}>
                       Adult Dyslexia Can Affect:
                   </span>
               </h2>

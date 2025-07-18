@@ -19,8 +19,6 @@ import all from '../assets/All in one resource.svg';
 import IdealCard from '../Components/IdealCard'; 
 
 
-
-
 function IdealPage() {
   const router = useRouter();
   

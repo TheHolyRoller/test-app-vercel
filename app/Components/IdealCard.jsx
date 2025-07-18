@@ -114,22 +114,19 @@ export default function EmailPermission() {
       {question_text && (
           <div className={`${id.question_textContainer} ${nunito.className}`} style={{color:'#333333' }} >
               <h2 className={`${id.question_text} ${nunito.className}`} style={{color:'#333333' }}>
-                  {/* {question_text} */}
-  
-  
-                  <span style={{color:'rgb(40, 84, 168)', fontWeight: 'bolder', fontSize: '1.7rem' }}>
-                      {/* {currentQuestion?.question_text} */}
-                      {/* Understand how Dyslexia feels  */}
+
+                  <span style={{color:'rgb(40, 84, 168)', fontWeight: 'bolder'}}>
                       Ideal for University and the Workplace 
                   </span>
               </h2>
           </div>
+          
       )}
 
-      {/* Add in the supporting text section here  */}
-      <div className={id.supportingTextSectionContainer}>
 
 
+
+     <div className={id.supportingTextSectionContainer}>
         <p  className={id.supportingText} style={{fontWeight: 'lighter'}}>
         {/* This unique free screener will help you pinpoint how dyslexia unexpectedly affects your life.  */}
         Helps students and professionals understand when dyslexia gets in the way.
