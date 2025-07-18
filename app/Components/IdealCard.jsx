@@ -106,10 +106,6 @@ export default function EmailPermission() {
 
             <Image className={id.mainImage}  src={learn} width={170} height={170} alt='notes' /> 
             </header>
-
-
-
-
   
       {question_text && (
           <div className={`${id.question_textContainer} ${nunito.className}`} style={{color:'#333333' }} >
@@ -120,7 +116,7 @@ export default function EmailPermission() {
                   </span>
               </h2>
           </div>
-          
+
       )}
 
 
