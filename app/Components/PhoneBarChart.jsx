@@ -112,7 +112,9 @@ function PhoneBarChart({ writingPercentage,
 
             {!isExplanationPage && (
                 <div className={p.mainScore}>
-                    {percentage}
+                    {/* {percentage} */}
+                    {score}
+
                     <span className={p.refSpan}>
                         /100
                     </span>
@@ -121,22 +123,14 @@ function PhoneBarChart({ writingPercentage,
 
             {isExplanationPage && (
                 <div className={p.mainScore} style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>
-                    {percentage}
+                    {/* {percentage} */}
+                    {score}
                     <span className={p.refSpan} style={{ fontSize: '1.2rem' }}>
                         /100
                     </span>
                 </div>
             )}
             
-            {/* <div className={p.impactMessage}>
-                <p className={p.impactText}>
-                    {percentage >= 70 
-                        ? "This Indicates your work could be significantly impacted by Dyslexia"
-                        : "This indicates your work could be mildly impacted by Dyslexia"
-                    }
-                </p>
-            </div> */}
-
                 <section className={p.chartContainer} >
                 
                     <div className={p.mainChartSubContainerTextSection}>

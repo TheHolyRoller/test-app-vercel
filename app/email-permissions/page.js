@@ -27,7 +27,7 @@ export default function EmailPermission() {
     };
 
     const Section = "Audio Permission";
-    const audio_url = 'https://dyslexiaquizapp.s3.eu-west-2.amazonaws.com/audio+doodles/send+email-v1.mp3';
+    const audio_url = '';
     const question_text = `Shall We send a results Report to your email?
 Otherwise they won’t be saved.`;
     const currentQuestion = { question_text: "" };

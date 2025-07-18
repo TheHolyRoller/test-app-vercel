@@ -152,14 +152,7 @@ function ResultContent() {
 
 
         console.log('this is the percentage of each category in the useEffect hook just before save results \n', writingPercentage, memoryPercentage, readingPercentage, examResultsPercentage, organisationalPercentage);
-
-        // Call the function that saves the results to the database here 
         console.log('calling the save results function here '); 
-        // saveResults(databases, data);
-
-
-
-
 
     }, [writingPercentage, memoryPercentage, readingPercentage, examResultsPercentage, organisationalPercentage])
 
@@ -173,30 +166,13 @@ function ResultContent() {
         
         // Calculate raw percentage
         const rawPercentage = (finalScore / 5) * 10;
-        
-        // Apply scaling to map scores appropriately:
-        // - High scores (80%+ of max) should map to 90-100%
-        // - Medium scores (50% of max) should map to around 60%
-        // - Low scores should map to lower percentages
-        
-        // if (rawPercentage >= 80) {
-        //     // Most answers are "yes" - map to 90-100%
-        //     percentage = Math.floor(90 + ((rawPercentage - 80) / 20) * 10);
-        // } else if (rawPercentage >= 50) {
-        //     // Roughly half answers are "yes" - map to 60-89%
-        //     percentage = Math.floor(60 + ((rawPercentage - 50) / 30) * 29);
-        // } else {
-        //     // Lower scores - map to 30-59%
-        //     percentage = Math.floor(30 + (rawPercentage / 50) * 29);
-        // }
+      
         let percentage = rawPercentage; 
 
         console.log('this is the raw percentage::::: \n', rawPercentage); 
         console.log('this is the percentage:::::: \n', percentage); 
 
 
-        
-        // Ensure percentage doesn't exceed 100
         percentage = Math.min(percentage, 100);
         
         console.log('Raw percentage:', rawPercentage);

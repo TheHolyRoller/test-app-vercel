@@ -16,6 +16,7 @@ function CategoryCard({ Section, audio_url, categoryName }) {
     const actualCategory = Section || categoryName || currentQuestion?.categoryName || currentQuestion?.question_text?.toLowerCase();
 
     
+
     console.log('CategoryCard - Props:', { Section, categoryName, actualCategory });
     
     // Color logic extracted from QuizCard.js
@@ -87,7 +88,7 @@ function CategoryCard({ Section, audio_url, categoryName }) {
                     {/* Add in the logo here  */}
                 </article>
 
-                <footer className={c.ivviLogoContainer}>
+                <footer className={c.ivviLogoContainer} style={{}} >
                     <span className={c.bySpan}>by</span>
                     <figure className={c.logo}>
                         <Image src={logo} width={150} height={50} alt='logo' className={c.logoImage} />
@@ -113,8 +114,8 @@ function CategoryCard({ Section, audio_url, categoryName }) {
                 <article className={c.card} style={{backgroundColor: getColorBySection(actualCategory)}} id={c.cardFour}></article>
             </article>
 
-            <aside className={c.buttonSectionContainer}>
-                <div className={c.CTAButton} onClick={handleNext} style={{userSelect: 'none'}}>Next</div>
+            <aside className={c.buttonSectionContainer} onClick={handleNext} style={{cursor: 'pointer', marginTop: '-5em', zIndex: '999999999998999999999999999999999999'}} >
+                <div className={c.CTAButton} onClick={handleNext} style={{cursor: 'pointer', zIndex: '99999999999999'}}>Next</div>
             </aside>
         </>
     )

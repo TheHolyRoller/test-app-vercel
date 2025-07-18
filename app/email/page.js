@@ -35,7 +35,8 @@ export default function EmailPermission() {
         writingScore, 
         readingScore, 
         examResultsScore, 
-        organisationalScore 
+        organisationalScore,
+        email 
     } = useQuiz();
 
     
@@ -57,12 +58,13 @@ export default function EmailPermission() {
         try {
             const emailData = {
                 from: 'support@dyslexiaquiz.com',
-                toEmail: 'danielwakeley7@gmail.com',
+                toEmail: email || inputEmail,
                 subject: 'Your Quiz Results',
                 message: `Hi ${name},\n\nThank you for taking the quiz! Here are your results:\n \nFinal Score: ${finalScore}\nMemory Score: ${memoryScore}\nWriting Score: ${writingScore}\nReading Score: ${readingScore}\nExam Results Score: ${examResultsScore}\nOrganisational Score: ${organisationalScore}`,
                 name: name
                 
             };
+            
 
             console.log('📦 Sending email data:', emailData);
 

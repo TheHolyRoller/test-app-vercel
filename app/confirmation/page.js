@@ -110,11 +110,9 @@ export default function EmailPermission() {
         console.log('this is the response of the save results function \n', response); 
 
 
-
-
         setTimeout(() => {
-            // router.push('/postquiz');
-        }, 210);
+            router.push('/postquiz');
+        }, 310);
     };
 
 

@@ -19,7 +19,7 @@ function Page() {
   const audio_url = '';
   const question_text = "Shall i read out the questions for you?";
   const currentQuestion = { question_text: "" };
-  const currentIMG = 'https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/Turn_On_Audio/view?project=test-domain&mode=admin';
+  const currentIMG = 'https://fra.cloud.appwrite.io/v1/storage/buckets/onboarding_gifs/files/audio_permission/view?project=67d4d9140008273c9d84&mode=admin';
   
   // Placeholder functions
   const getLabelColorBySection = (section) => "#033699";
