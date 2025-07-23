@@ -1,9 +1,77 @@
+
+.cardMainContainer{
+
+
+
+
+
+
+}
+
+
+
+.cardSubContainer{
+
+
+
+    /* 
+    
+        width: '100%',
+            height: '120px',
+            backgroundColor: '#023597',
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            zIndex: 100
+    
+    
+    */
+
+    width: 100%; 
+    height: 120px;
+    background-color: #023597;
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    z-index: 100;
+
+
+
+
+}
+
+
+
+.mainContentContainer{
+
+
+
+    padding-top: 60px;
+    outline: 444px solid red;
+
+    background-color: red !important;
+    margin: 0 auto; 
+    display: grid;  
+    place-content:center; 
+    position: absolute;
+    bottom: 0;
+    left: 0; 
+    
+
+
+
+}
+
+
+
+
+
 .card {
 
 
     height: var(--card-height);
     width:320px;    
-    position: relative;
+    position: absolute;
     background-color: white !important;
     margin: 0 auto; 
     margin-bottom: 5.9rem;
@@ -17,27 +85,41 @@
 }
 
 .firstCARD{
+
+position: relative;
+z-index: 200;
+box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.06);
+margin-top: -40px;
+
+
+
+
 }
 
 .cardCategoryColorContainer{
     position: relative;
-    height: 3rem;
+    height: 3rem;   
     border-top-left-radius: 12px;
     border-top-right-radius: 12px; 
     display: grid; 
     place-content: center;
-    /* background-color: var(--category-color, #ccc); */
-    background-color: white;
     height: 4.5rem; 
+
+    background-color: #4168b3;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1), -2px 0 8px rgba(0, 0, 0, 0.1), 2px 0 8px rgba(0, 0, 0, 0.1); 
+
+
+
 }
 
 .categoryLabelContainer{
-    /* height: 4.5rem;  */
+
     height: 5.5rem; 
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
     display: grid; 
     place-content: center;
+
 
     
 
@@ -101,7 +183,7 @@
     font-family: var(--font-nunito), sans-serif;
     
     z-index: 9999999;
-    position: absolute;
+    position: relative;
     bottom: 13%;
     left: 50%;
     right: 50%;
@@ -131,7 +213,7 @@
 
 
 .supportingTextSectionContainer{
-        position: absolute;
+        position: relative;
         width: 90%;
         margin: 0 auto;
 
@@ -266,7 +348,7 @@ text-decoration: underline;
     position: relative; 
     z-index: 9;
     margin-top: 0rem !important; 
-    position: absolute; 
+    position: relative; 
     top: 80%; 
 
 
@@ -349,12 +431,12 @@ text-decoration: underline;
 }
 
 #cardFour{
-    position: relative;
+    position: absolute;
     z-index: -5;
     width: 320px;
     height: 400px;
     background-color: #fbfbfb;
-    position: absolute;
+    position: relative;
     bottom: 0;
     right: 0;
     border-radius: 0 0 1rem 1rem;
@@ -377,7 +459,7 @@ text-decoration: underline;
     margin-bottom: 7.5rem;
     margin-top: 0.65em;
     color: #69696f;
-    position: absolute;
+    position: relative;
     left: 50%;
     right: 50%;
     bottom: -10.45%;
@@ -389,8 +471,6 @@ text-decoration: underline;
     font-size: 1.5rem;
     max-width: 600px;
 }
-
-
 
 
 .affectsList{

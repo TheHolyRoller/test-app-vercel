@@ -61,34 +61,17 @@ export default function EmailPermission() {
 
         <>
 
-        <div>
+        <div className={lc.cardMainContainer} >
         {/* Top Blue Navbar Strip */}
         <div 
-          style={{
-            width: '100%',
-            height: '120px',
-            backgroundColor: '#023597',
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            zIndex: 100
-          }}
-        />
+        className={lc.cardSubContainer}/>
         
 
         {/* Main Content Container */}
-        <div style={{ paddingTop: '60px' }}>
+        <div className={lc.mainContentContainer}>
           <article 
           className={`${lc.card} ${nunito.className}`} 
-          id={lc.firstCARD} 
-          style={{
-              position: 'relative',
-              zIndex: 200,
-              boxShadow: '0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.06)',
-              marginTop: '-40px', 
-
-          }}
-          >
+          id={lc.firstCARD}>
       <div 
           className={lc.cardCategoryColorContainer} 
           style={{
