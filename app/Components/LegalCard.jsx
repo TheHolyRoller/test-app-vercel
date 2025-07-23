@@ -29,8 +29,6 @@ import group from '../assets/Multi Style Learning.svg';
 import legal from '../assets/Your notes are comprehensiv.svg'; 
 import lc from '../Styles/LegalCard.module.css'; 
 
-
-
 export default function EmailPermission() {
     const router = useRouter();
     const { finalScore } = useQuiz();
@@ -61,7 +59,7 @@ export default function EmailPermission() {
 
         <>
 
-        <div>
+        <div className={lc.cardMainContainer} >
         {/* Top Blue Navbar Strip */}
         <div 
           style={{
@@ -77,7 +75,7 @@ export default function EmailPermission() {
         
 
         {/* Main Content Container */}
-        <div style={{ paddingTop: '60px' }}>
+        <div className={lc.cardSubContainer}  style={{ paddingTop: '60px' }}>
           <article 
           className={`${lc.card} ${nunito.className}`} 
           id={lc.firstCARD} 
@@ -123,9 +121,10 @@ export default function EmailPermission() {
                   {/* {question_text} */}
   
   
-                  <span style={{color:'rgb(40, 84, 168)', fontWeight: 'bolder', fontSize: '1.7rem' }}>
+                  <span className={lc.legalSpan} style={{color:'rgb(40, 84, 168)', fontWeight: 'bolder', fontSize: '1.7rem' }}>
                       The Legals
                   </span>
+
               </h2>
           </div>
       )}
@@ -220,8 +219,6 @@ conditions
         Next
 
     </div>
-
-
 
   </div>
   

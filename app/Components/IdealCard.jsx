@@ -35,6 +35,7 @@ export default function EmailPermission() {
     };
 
 
+
     const handleNoClick = () => {
         // Set flag to trigger refresh when landing on home page
         sessionStoragid.setItem('needsRefreshFromEmailDecline', 'true');
@@ -106,10 +107,6 @@ export default function EmailPermission() {
 
             <Image className={id.mainImage}  src={learn} width={170} height={170} alt='notes' /> 
             </header>
-
-
-
-
   
       {question_text && (
           <div className={`${id.question_textContainer} ${nunito.className}`} style={{color:'#333333' }} >
@@ -117,7 +114,7 @@ export default function EmailPermission() {
                   {/* {question_text} */}
   
   
-                  <span style={{color:'rgb(40, 84, 168)', fontWeight: 'bolder', fontSize: '1.7rem' }}>
+                  <span className={id.idealSpan}  style={{color:'rgb(40, 84, 168)', fontWeight: 'bolder'}}>
                       {/* {currentQuestion?.question_text} */}
                       {/* Understand how Dyslexia feels  */}
                       Ideal for University and the Workplace 

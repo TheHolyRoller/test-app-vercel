@@ -14,6 +14,32 @@
     -moz-border-radius: 1rem;
     -ms-border-radius: 1rem;
     -o-border-radius: 1rem;
+
+
+
+}
+
+
+.cardMainContainer{
+
+
+    outline: 12px solid lime;
+
+
+
+
+}
+
+
+.cardSubContainer{
+
+
+
+    outline: 15px solid red;
+
+
+
+
 }
 
 .firstCARD{
@@ -87,6 +113,19 @@
 
 }
 
+.headerImageContainer{
+
+
+    outline: 2px solid red;
+    display: grid;  
+    place-content: center;
+    /* margin: 0 auto;  */
+
+
+
+
+
+}
 
 
 
@@ -101,9 +140,11 @@
     font-family: var(--font-nunito), sans-serif;
     
     z-index: 9999999;
-    position: absolute;
+    position: relative;
+
     bottom: 13%;
     left: 50%;
+    outline: 3px solid lime;
     right: 50%;
     transform:translate(-50%, -50%) !important;
     -webkit-transform:translate(-50%, -50%) !important;
@@ -147,6 +188,9 @@
 
         color: #65656C; 
         font-weight: lighter !important;
+
+        outline: 5px solid lime !important;
+        /* background-color: red !important; */
 }
 
 
@@ -154,7 +198,6 @@
 
     font-weight: lighter !important;
     font-size: 1rem !important;
-    outline: 2px solid lime;
 
 
 
@@ -201,6 +244,7 @@ text-decoration: underline;
     text-decoration: underline;
 
 }
+
 
 .paginationElementContainer{
     position: absolute;
@@ -388,6 +432,12 @@ text-decoration: underline;
     -o-transform: translate(-50%, 50%);
     font-size: 1.5rem;
     max-width: 600px;
+
+
+    outline: 5px solid ;
+
+
+
 }
 
 
@@ -403,7 +453,7 @@ text-decoration: underline;
 }
 
 .affectsListItem{
-    /* font-size: 1.22rem; */
+
     margin-bottom: 0.5rem;
     line-height: 1.4;
 }
@@ -485,3 +535,236 @@ text-decoration: underline;
     color: #7d879b; 
 
 }
+
+
+
+@media(min-width: 300px)  and (max-width: 1100px){
+
+
+    
+
+.question_textContainer{
+    font-size: 1rem !important;
+    width: 90%;
+    margin: 0 auto;
+    bottom: 19%;
+
+
+}
+
+.question_text{
+
+    position: relative; 
+    z-index: 99999;
+    /* margin-top: 2em;  */
+    /* margin-bottom: 4.5em;  */
+    margin: 4.5rem auto;
+    font-family: var(--font-nunito), sans-serif;
+    font-weight: 600;
+    width: 100%; 
+
+
+}
+
+
+
+.supportingTextSectionContainer{
+        position: absolute;
+        width: 90%;
+        margin: 0 auto;
+
+        bottom: 10%;
+        left: 50%;
+        right: 50%;
+        text-align: center;
+        transform:translate(-50%, -50%);
+        -webkit-transform:translate(-50%, -50%);
+        -moz-transform:translate(-50%, -50%);
+        -ms-transform:translate(-50%, -50%);
+        -o-transform:translate(-50%, -50%);
+
+        color: #65656C; 
+        font-weight: lighter !important;
+}
+
+
+.supportingText{
+
+    font-weight: lighter !important;
+    font-size: 1rem !important;
+
+
+
+
+
+}
+
+.mainTextSpan{
+
+
+
+
+}
+
+
+
+.legalSpan{
+
+
+    display: inline-block;
+    width: 15rem !important;
+    margin: 0 auto;  
+
+
+}
+
+
+
+
+.termsSpan{
+
+cursor: pointer;
+color: #f4ba4f;
+text-decoration: underline;
+
+}
+
+
+
+.conditionsSpan{
+
+
+    color: #f4ba4f;
+    text-decoration: underline;
+
+}
+
+
+}
+
+
+/* Purpose: 
+
+  Adjust the Button & Text Placement on the onboarding Cards 
+
+
+*/
+
+/* This is the Taller height media query here is it designed to be applied to phones like the 
+Samsung F41 And iPhone 13 Pro Max within that height range. It is designed to 
+not apply to phones like the iPhone 11 IOS version 18.5 
+and the Samsung S24 & Galaxy A40 not sure about the Samsung Galaxy A54 because it is a step taller than these  */
+@media(min-height: 410px) and (max-height: 747px){ 
+
+    .buttonSectionContainer{
+
+        margin-top: -4.2em; 
+
+    }
+
+
+
+
+    .ctaContainer{
+
+
+    }
+
+
+
+
+    .cta{
+
+
+        outline: 3px solid red  !important;
+        
+
+
+    }
+
+
+
+
+}
+
+
+
+/* This is the height media query for the shorter narrower phones. It is designed not to be applied to the taller phones like iPhone 13 Pro Max Samsung Galaxy F40+41 */
+@media(min-height: 410px) and (max-height: 717px){ 
+
+    .buttonSectionContainer{
+
+
+        margin-top: -4.2em; 
+
+    }
+
+
+
+
+    .ctaContainer{
+
+
+
+    }
+
+
+
+
+    .cta{
+
+
+        outline: 3px solid lime  !important;
+        
+
+
+    }
+
+
+
+
+}
+
+/* This is basically it's not applied to wider taller phones and we use the width as the differentiating factor  */
+/* This is the tablet media query here  */
+@media(min-width: 500px) and (max-width: 950px){ 
+
+    .buttonSectionContainer{
+
+
+        margin-top: -4.2em; 
+
+    }
+
+
+
+
+    .ctaContainer{
+
+
+
+    }
+
+
+
+
+    .cta{
+
+
+        outline: 3px solid blue  !important;
+        
+
+
+    }
+
+
+
+
+}
+
+
+/* Add in the laptop media query here  */
+
+
+
+

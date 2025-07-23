@@ -117,9 +117,11 @@ export default function EmailPermission() {
                   {/* {question_text} */}
   
   
-                  <span style={{color:'rgb(40, 84, 168)', fontWeight: 'bolder', fontSize: '1.7rem' }}>
+                  <span className={fc.functionSpan}  style={{color:'rgb(40, 84, 168)', fontWeight: 'bolder'}}>
                       {/* Adult Dyslexia Can Affect: */}
                       How the Screener Works
+
+                      
                   </span>
               </h2>
           </div>
@@ -129,11 +131,11 @@ export default function EmailPermission() {
       <div className={fc.supportingTextSectionContainer}>
 
 
-        <div className={fc.supportingText} style={{fontWeight: 'lighter', fontSize: '0.7rem'}}>
+        <div className={fc.supportingText} style={{fontWeight: 'lighter'}}>
 
-        <article className={fc.mainSupportingTextContainer}  style={{fontWeight: 'lighter', fontSize: '1.2rem'}}>
+        <article className={fc.mainSupportingTextContainer}  style={{fontWeight: 'lighter'}}>
 
-       <span style={{display: 'block'}}>
+       <span className={fc.supportingTextSpan} style={{display: 'block'}}>
 
        You can see and hear the questions.
        </span> 

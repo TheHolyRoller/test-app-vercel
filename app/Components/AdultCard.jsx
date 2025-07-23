@@ -115,10 +115,9 @@ export default function EmailPermission() {
       {question_text && (
           <div className={`${ad.question_textContainer} ${nunito.className}`} style={{color:'#333333' }} >
               <h2 className={`${ad.question_text} ${nunito.className}`} style={{color:'#333333' }}>
-                  {/* {question_text} */}
   
   
-                  <span style={{color:'rgb(40, 84, 168)', fontWeight: 'bolder', fontSize: '1.7rem' }}>
+                  <span className={ad.adultSpan} style={{color:'rgb(40, 84, 168)', fontWeight: 'bolder' }}>
                       Adult Dyslexia Can Affect:
                   </span>
               </h2>

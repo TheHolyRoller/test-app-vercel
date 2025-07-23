@@ -413,6 +413,8 @@ export const QuizProvider = ({ children }) => {
             }, 2000);
 
             router.push('/result');
+
+            
         }
     };
 

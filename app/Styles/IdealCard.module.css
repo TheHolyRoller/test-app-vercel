@@ -96,7 +96,7 @@
 
 .question_textContainer{
     font-size: 1.3rem;
-    width: 90%;
+    width: 70%;
     text-align: center;
     margin: 0 auto;
     text-transform: uppercase;
@@ -104,7 +104,7 @@
     
     z-index: 9999999;
     position: absolute;
-    bottom: -15%;
+    bottom: 19%;
     left: 50%;
     right: 50%;
     transform:translate(-50%, -50%) !important;
@@ -117,19 +117,32 @@
 
 }
 
-.question_text{
+#question_text{
 
     position: relative; 
     z-index: 99999;
-    /* margin-top: 2em;  */
-    /* margin-bottom: 4.5em;  */
-    margin: 4.5rem auto;
+    margin: 0 auto;
     font-family: var(--font-nunito), sans-serif;
     font-weight: 600;
-    width: 100%; 
+    width: 80%; 
+    margin-bottom: 5.5rem !important;
+    outline: 5px solid red;
+
 
 
 }
+
+
+
+.idealSpan{
+
+
+    font-size: 1.3rem; 
+
+}
+
+
+
 
 
 .supportingTextSectionContainer{
@@ -405,5 +418,128 @@
     place-content: center;
     margin-top: 0.5em; 
     color: #7d879b; 
+
+}
+
+
+@media(min-width: 1100px){
+
+
+    /* Add in the desktop changes here */
+    .question_textContainer{
+
+
+        margin: 0 !important; 
+        position: absolute; 
+        bottom: 21%;
+
+
+
+
+    }
+
+
+
+    .question_text{
+
+
+
+
+
+    }
+
+
+
+    .idealSpan{
+
+
+
+
+
+    }
+
+
+
+    .supportingTextSectionContainer{
+
+
+        position: absolute; 
+        bottom: 8%;
+
+
+
+
+
+    }
+
+
+    .supportingText{
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+}
+
+
+
+@media(min-width: 300px) and (max-width: 1100px){
+
+
+    .question_textContainer{
+
+        margin: 0 !important; 
+        position: absolute; 
+        bottom: 27%;
+
+
+    }
+
+    .question_text{
+
+    }
+
+
+    /* Increase the font size here  */
+
+    .idealSpan{
+
+
+
+
+
+    }
+
+
+
+    .supportingTextSectionContainer{
+
+
+        position: absolute; 
+        bottom: 15%;
+
+    }
+
+
+    .supportingText{
+
+
+
+
+
+
+
+    }
+
+
+
 
 }
