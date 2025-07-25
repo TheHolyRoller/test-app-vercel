@@ -1,16 +1,15 @@
 .card {
-    /* height: 625px; */
+
+
+
     height: var(--card-height);
 
     width:320px;    
     position: relative;
-    /* background-color: #ccc; */
-    /* background-color: #fbfbfb; */
     background-color: white !important;
     margin: 0 auto; 
     margin-bottom: 5.9rem;
     margin-top: -3rem !important; 
-
     border-radius: 1rem;
     -webkit-border-radius: 1rem;
     -moz-border-radius: 1rem;
@@ -28,13 +27,11 @@
     border-top-right-radius: 12px; 
     display: grid; 
     place-content: center;
-    /* background-color: var(--category-color, #ccc); */
     background-color: white;
     height: 4.5rem; 
 }
 
 .categoryLabelContainer{
-    /* height: 4.5rem;  */
     height: 5.5rem; 
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
@@ -95,7 +92,10 @@
 
 
 .question_textContainer{
-    font-size: 1.3rem;
+/* TO DO Clamp the font size here!!!!! */
+    /* font-size: 1.3rem; */
+    font-size: clamp(0.8rem + 1vw) !important; 
+
     width: 100%;
     text-align: center;
     margin: 0 auto;
@@ -103,15 +103,9 @@
     font-family: var(--font-nunito), sans-serif;
     
     z-index: 9999999;
-    position: absolute;
-    bottom: -6%;
-    left: 50%;
-    right: 50%;
-    transform:translate(-50%, -50%) !important;
-    -webkit-transform:translate(-50%, -50%) !important;
-    -moz-transform:translate(-50%, -50%) !important;
-    -ms-transform:translate(-50%, -50%) !important;
-    -o-transform:translate(-50%, -50%) !important;
+    position: relative; 
+    margin-bottom: -2rem !important; 
+    outline: 2px solid hotpink; 
 
 
 
@@ -126,6 +120,9 @@
     font-weight: 600;
     width: 100%; 
     margin-bottom: 5rem !important;
+
+    outline: 12px solid green; 
+
 
 }
 
@@ -143,19 +140,13 @@
 
 
 .supportingTextSectionContainer{
-        position: absolute;
+        /* position: absolute; */
+        position: relative !important; 
+
         width: 90%;
         margin: 0 auto;
+       text-align: center; 
 
-        bottom: 9.35%;
-        left: 50%;
-        right: 50%;
-        text-align: center;
-        transform:translate(-50%, -50%);
-        -webkit-transform:translate(-50%, -50%);
-        -moz-transform:translate(-50%, -50%);
-        -ms-transform:translate(-50%, -50%);
-        -o-transform:translate(-50%, -50%);
 
         color: #65656C; 
         font-weight: lighter !important;
@@ -280,6 +271,9 @@
    display: none;
     transform:  translate(0rem,3em) !important;
     box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+
+
+    
 }
 
 #cardTwo{
@@ -301,6 +295,9 @@
     -moz-transform:translate(0rem, 4em);
     -ms-transform:translate(0rem, 4em);
     -o-transform:translate(0rem, 4em);
+
+
+
 }
 
 #cardThree{
@@ -425,29 +422,11 @@
 
 }
 
+ @media(min-width: 1100px){
 
-@media(min-width: 1100px){
 
-
-    /* Add in the text container here  */
     .question_textContainer{
-        font-size: 1.3rem;
-        width: 100%;
-        text-align: center;
-        margin: 0 auto;
-        text-transform: uppercase;
-        font-family: var(--font-nunito), sans-serif;
-        
-        z-index: 9999999;
-        position: absolute;
-        bottom: -1%;
-        left: 50%;
-        right: 50%;
-        transform:translate(-50%, -50%) !important;
-        -webkit-transform:translate(-50%, -50%) !important;
-        -moz-transform:translate(-50%, -50%) !important;
-        -ms-transform:translate(-50%, -50%) !important;
-        -o-transform:translate(-50%, -50%) !important;
+       
     
     
     
@@ -459,12 +438,12 @@
 
     .question_text{
 
-        position: relative; 
+        /* position: relative; 
         z-index: 99999;
         margin: 4.5rem auto;
         font-family: var(--font-nunito), sans-serif;
         font-weight: 600;
-        width: 100%; 
+        width: 100%;  */
     
     
     
@@ -482,7 +461,7 @@
     
     .supportingText{
 
-        margin-bottom: 1.25rem !important;
+        /* margin-bottom: 1.25rem !important; */
 
         /* outline: 4px solid red; */
 
@@ -497,23 +476,7 @@
 @media(min-width: 300px) and (max-width: 1200px){
 
     .question_textContainer{
-    font-size: 1.3rem;
-    width: 100%;
-    text-align: center;
-    margin: 0 auto;
-    text-transform: uppercase;
-    font-family: var(--font-nunito), sans-serif;
-    
-    z-index: 9999999;
-    position: absolute;
-    bottom: -3%;
-    left: 50%;
-    right: 50%;
-    transform:translate(-50%, -50%) !important;
-    -webkit-transform:translate(-50%, -50%) !important;
-    -moz-transform:translate(-50%, -50%) !important;
-    -ms-transform:translate(-50%, -50%) !important;
-    -o-transform:translate(-50%, -50%) !important;
+  
 
 
 
@@ -525,26 +488,14 @@
 
     .question_text{
 
-        position: relative; 
-        z-index: 99999;
-        margin: 4.5rem auto;
-        font-family: var(--font-nunito), sans-serif;
-        font-weight: 600;
-        width: 90%; 
-        margin-bottom: 7rem !important;
-        /* line-height: 1.8rem; */
     
     }
 
 
-    /* Add in the main text paragraph here  */
 
     .supportingText{
 
 
-        /* outline: 2px solid red; */
-        /* margin-top: -5rem !important;  */
-        margin-bottom: 2.3rem !important;
 
 
 
@@ -554,4 +505,5 @@
 
 
 
-}
+} 
+

@@ -10,7 +10,13 @@
   overflow-x: hidden;
 
   --card-width: 20rem; 
-  --card-height: 70vh; 
+  /* --card-height: 70vh;  */
+
+  /* This is now a fixed height so the card won't be jumping around on different screen heights  */
+  /* --card-height: 57.5rem;  */
+  --card-height: 510px; 
+
+
   --max-card-height: 40rem; 
   --card-background-color: rgb(251, 251, 251); 
   --svg-fill-color: #60AB75; 

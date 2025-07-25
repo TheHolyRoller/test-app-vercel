@@ -39,7 +39,10 @@ export default function EmailPermission() {
     const getLabelColorBySection = (section) => "#033699";
 
     return (
-        <div>
+        <div className={uc.mainContainer}
+        
+        style={{outline: '44px solid red', position: 'relative'}}
+        >
         {/* Top Blue Navbar Strip */}
         <div 
           style={{
@@ -55,7 +58,7 @@ export default function EmailPermission() {
         
 
         {/* Main Content Container */}
-        <div style={{ paddingTop: '60px' }}>
+        <div style={{ paddingTop: '60px', backgroundColor: 'green', position: 'relative' }}>
           <article 
           className={`${uc.card} ${nunito.className}`} 
           id={uc.firstCARD} 
@@ -63,7 +66,6 @@ export default function EmailPermission() {
               position: 'relative',
               zIndex: 200,
               boxShadow: '0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.06)',
-              marginTop: '-40px', 
 
           }}
           >
