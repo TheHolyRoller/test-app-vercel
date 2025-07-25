@@ -159,7 +159,9 @@ const QuizCard = ({
     const getLabelColorBySection = (Section) => {
         // Handle undefined or null case
         if (!Section) {
-            return '#3a2850';
+            // return '#3a2850';
+            return '#ffff'; 
+
         }
 
         // Normalize the section name
@@ -195,11 +197,19 @@ const QuizCard = ({
 
     return (
         <>
+{/* 
+
+                // backgroundColor: getNavbarColorBySection(Section),
+
+
+*/}
+
+        {/*  This is the background color that is hiding behind the bottom navigation make it dynamic and tweak it's positioning  */}
         {/* Navbar background strip */}
         <div 
             className={q.navbarStrip}
             style={{
-                backgroundColor: getNavbarColorBySection(Section),
+                backgroundColor: 'red',
                 width: '100%',
                 height: '120px',
                 position: 'fixed',

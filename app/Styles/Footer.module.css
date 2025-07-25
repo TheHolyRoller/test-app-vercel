@@ -2,10 +2,13 @@
 
     background-color: #013699;
     width: 100vw; 
-    overflow: hidden;
+    /* overflow: hidden; */
     position: absolute; 
     height: 15em; 
     display: grid;
+
+    outline: 55px solid red; 
+    
 
 
 
