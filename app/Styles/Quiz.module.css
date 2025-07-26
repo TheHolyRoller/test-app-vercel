@@ -45,6 +45,33 @@ margin-bottom: 5em;
 
 
 
+    /* 
+    
+     backgroundColor: 'red',
+                width: '100%',
+                height: '920px',
+                position: 'fixed',
+                top: '20%',
+                left: 0,
+                zIndex: 100,
+                outline:'200px solid pink',
+                boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
+    
+    
+    
+    */
+
+    /* background-color: hotpink;
+    position: fixed; 
+    top: 5%; 
+    height: 900px; 
+    width: 100%; 
+    left: 0; 
+    z-index: 900000;
+    outline: 500px solid blue;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);  */
+    
+
 
 
 }

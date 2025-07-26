@@ -41,7 +41,7 @@ export default function EmailPermission() {
     return (
         <div className={uc.mainContainer}
         
-        style={{outline: '44px solid red', position: 'relative'}}
+        style={{outline: '0px solid red', position: 'relative'}}
         >
         {/* Top Blue Navbar Strip */}
         <div 

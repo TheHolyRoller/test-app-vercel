@@ -52,13 +52,13 @@ export default function RootLayout({ children }) {
           minHeight: '100vh'
         }}
       >
-      {/* <Navbar/> */}
+      <Navbar/>
         <UserProvider>
           <QuizProvider>
             {children}
           </QuizProvider>
         </UserProvider>
-        {/* <Footer/>  */}
+        <Footer/> 
         <Analytics />
         <SpeedInsights/>
         

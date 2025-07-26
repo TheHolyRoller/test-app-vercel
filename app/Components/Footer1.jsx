@@ -1,10 +1,14 @@
-// app/Components/Footer1.jsx or .tsx
+
+// Add in the style sheet here 
+
+import f1 from '../Styles/footer1.module.css'; 
+
 export default function Footer() {
+
+
+  // Add in code to dynamically color the footer here 
     return (
-        <footer className="footer sm:footer-horizontal footer-center  text-base-content p-4" style={{backgroundColor: '#013699'}} >
-  <aside>
-    <p>Copyright © {new Date().getFullYear()} - All right reserved by ivvi Assistant Ltd</p>
-  </aside>
+        <footer className="p-4 footer sm:footer-horizontal footer-center text-base-content" style={{backgroundColor: '#013699'}} >
 </footer> 
     );
   }

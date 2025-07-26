@@ -167,6 +167,7 @@ const QuizCard = ({
         // Normalize the section name
         const normalizedSection = Section.trim().toLowerCase();
 
+        // Add in a fallback function so that it uses the url path to find the color if no normalized Section is defined 
         switch(normalizedSection) {
             case 'reading': 
                 return 'rgb(90, 170, 115)'; // Darker green
@@ -209,14 +210,7 @@ const QuizCard = ({
         <div 
             className={q.navbarStrip}
             style={{
-                backgroundColor: 'red',
-                width: '100%',
-                height: '120px',
-                position: 'fixed',
-                top: 0,
-                left: 0,
-                zIndex: 100,
-                boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
+               
             }}
         />
 
@@ -331,7 +325,6 @@ const QuizCard = ({
                         />
                     )}
                     
-
                 </div>
             </div>
 

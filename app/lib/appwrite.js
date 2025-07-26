@@ -13,7 +13,8 @@ if (!projectID) {
 
 const client = new Client(); 
 
-client.setEndpoint("https://fra.cloud.appwrite.io/v1")
+// TO DO Change this to the newly configured sub domain from 123reg 
+client.setEndpoint("https://api.ivvidyslexiascreener.com")
 .setProject(projectID); 
 
 export const account = new Account(client); 
