@@ -13,6 +13,7 @@ if (!projectID) {
 
 const client = new Client(); 
 
+  
 // TO DO Change this to the newly configured sub domain from 123reg 
 client.setEndpoint("https://api.ivvidyslexiascreener.com")
 .setProject(projectID); 
