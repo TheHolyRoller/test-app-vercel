@@ -6,16 +6,12 @@ import { useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react'; 
 import { databases } from '../lib/appwrite';
 import emailSubmission from '../Styles/email.module.css'; 
-// import emailSubmission from '../Styles/Quiz.module.css'; 
-
     
 import { nunito } from '../fonts/nunito';
 import Image from 'next/image';
 
 const DATABASE_ID = process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID;
 const COLLECTION_ID = process.env.NEXT_PUBLIC_APPWRITE_RESULTS_COLLECTION_ID;
-
-
 
 export default function EmailPermission() {
     const router = useRouter();
@@ -36,10 +32,10 @@ export default function EmailPermission() {
         readingScore, 
         examResultsScore, 
         organisationalScore,
-        email 
+        email,
+        answers,
+        questions
     } = useQuiz();
-
-    
 
     const handleChange = (e) => {
         setInputEmail(e.target.value);
@@ -52,20 +48,79 @@ export default function EmailPermission() {
         setEmail(inputEmail); 
     }, [inputEmail]);
 
+    // Transform quiz context data to match DyslexiaResultsReport format
+    const transformQuizDataToResults = () => {
+        // Map sections to quiz context categories
+        const sectionMapping = {
+            'reading': { score: readingScore, key: 'reading' },
+            'writing': { score: writingScore, key: 'writing' },
+            'memory': { score: memoryScore, key: 'memory' },
+            'tests': { score: examResultsScore, key: 'tests' },
+            'plans': { score: organisationalScore, key: 'plans' }
+        };
+
+        const transformedResults = {};
+
+        // For each section, create the expected structure
+        Object.keys(sectionMapping).forEach(sectionKey => {
+            const sectionInfo = sectionMapping[sectionKey];
+            
+            // Filter answers for this section
+            const sectionAnswers = answers.filter(answer => {
+                // Find the corresponding question to get its section
+                const question = questions.find(q => q.id === answer.question_id);
+                return question && question.Section && 
+                       question.Section.toLowerCase().trim() === sectionInfo.key;
+            });
+
+            // Count answer types
+            const yesCounts = sectionAnswers.filter(a => a.answer === 'yes').length;
+            const sometimesCounts = sectionAnswers.filter(a => a.answer === 'sometimes').length;
+            const noCounts = sectionAnswers.filter(a => a.answer === 'no').length;
+
+            // Transform answers to expected format
+            const transformedQuestions = sectionAnswers.map(answer => ({
+                q: answer.question_text,
+                answer: answer.answer.charAt(0).toUpperCase() + answer.answer.slice(1) // Capitalize first letter
+            }));
+
+            transformedResults[sectionKey] = {
+                yes: yesCounts,
+                sometimes: sometimesCounts,
+                no: noCounts,
+                questions: transformedQuestions
+            };
+        });
+
+        return transformedResults;
+        
+    };
+
     const sendEmail = async () => {
         console.log('📤 Starting email send process...');
 
         try {
+            const transformedResults = transformQuizDataToResults();
+            
             const emailData = {
-                from: 'support@dyslexiaquiz.com',
+                from: 'results.ivvidyslexiascreener.com',
                 toEmail: email || inputEmail,
-                subject: 'Your Quiz Results',
-                message: `Hi ${name},\n\nThank you for taking the quiz! Here are your results:\n \nFinal Score: ${finalScore}\nMemory Score: ${memoryScore}\nWriting Score: ${writingScore}\nReading Score: ${readingScore}\nExam Results Score: ${examResultsScore}\nOrganisational Score: ${organisationalScore}`,
-                name: name
-                
+                subject: 'Your Dyslexia Screening Report',
+                message: `Hi ${name},\n\nThank you for taking the dyslexia screening assessment!`,
+                name: name,
+                // Pass the quiz data to the email template
+                quizData: {
+                    recipientName: name,
+                    results: transformedResults,
+                    finalScore,
+                    memoryScore,
+                    writingScore,
+                    readingScore,
+                    examResultsScore,
+                    organisationalScore
+                }
             };
             
-
             console.log('📦 Sending email data:', emailData);
 
             const res = await fetch('/api/send', {
@@ -123,12 +178,8 @@ export default function EmailPermission() {
 
             // Create the submission promise
             const submissionPromise = async () => {
-                // First, save to database
-               
-            
                 console.log('📧 Sending email...');
                 await sendEmail();
-                
                 return 'success';
             };
 
@@ -147,8 +198,6 @@ export default function EmailPermission() {
             setIsLoading(false);
         }
     };
-
-    
 
     const Section = "Results Email";
     const audio_url = '';
@@ -174,7 +223,6 @@ export default function EmailPermission() {
           }}
         />
         
-
         {/* Main Content Container */}
         <div style={{ paddingTop: '60px' }}>
           <article 
@@ -192,10 +240,9 @@ export default function EmailPermission() {
           style={{
               backgroundColor: '#4168b3',
               boxShadow: '0 -2px 8px rgba(0, 0, 0, 0.1), -2px 0 8px rgba(0, 0, 0, 0.1), 2px 0 8px rgba(0, 0, 0, 0.1)', 
-  
           }}
       >
-          {audio_url && (
+         {/*} {audio_url && (
               <audio 
                   key={audio_url} 
                   controls 
@@ -207,14 +254,12 @@ export default function EmailPermission() {
                   <source src={audio_url} type="audio/mp3" />
               </audio>
           )}
+
+          */}
           
-  
           <div className={`${emailSubmission.categoryLabelContainer} ${nunito.className}`}>
               <label className={`${emailSubmission.categoryLabel} ${nunito.className}`}>
-  
-  
                   <div className={`${emailSubmission.labelContainer} ${nunito.className}`} style={{backgroundColor: getLabelColorBySection(Section)}}>
-  
                   Email
                   </div>
               </label>
@@ -225,8 +270,6 @@ export default function EmailPermission() {
           <div className={`${emailSubmission.question_textContainer} ${nunito.className}`} >
               <h2 className={`${emailSubmission.question_text} ${nunito.className}`}>
                   {question_text}
-  
-  
                   <span>
                       {currentQuestion?.question_text}
                   </span>
@@ -234,9 +277,6 @@ export default function EmailPermission() {
           </div>
       )}
       
-  
-
-
         <div className={emailSubmission.inputContainer}>
         <article className={emailSubmission.userNameContainer}>
     <form onSubmit={handleSubmit} className={emailSubmission.detailsForm} id='emailForm'>
@@ -251,26 +291,16 @@ export default function EmailPermission() {
         className={emailSubmission.userNameInput}
         autoComplete="off"
         style={{color: '#2c2c2c'}}
-
      ></input>
     </form>
     </article>
         </div>
 
-
-
-
-
-
-
-  
       <article className={emailSubmission.card} id={emailSubmission.cardOne}></article>
       <article className={emailSubmission.card} id={emailSubmission.cardTwo}></article>
       <article className={emailSubmission.card} id={emailSubmission.cardThree}></article>
       <article className={emailSubmission.card} id={emailSubmission.cardFour}></article>
   </article>
-
-      
 
   <div className={emailSubmission.nextButtonContainer}>
 
@@ -298,7 +328,6 @@ export default function EmailPermission() {
             Sending...
         </div>
     ) : (
-
         'Next'
     )}
 </button>

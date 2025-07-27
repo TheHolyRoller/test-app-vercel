@@ -27,9 +27,9 @@ export async function POST(request: Request) {
     
     try {
         const body = await request.json();
-        const { toEmail, subject, message, name } = body;
+        const { toEmail, subject, message, name, quizData } = body;
 
-        console.log('📧 Email Details:', { toEmail, subject, message, name });
+        console.log('📧 Email Details:', { toEmail, subject, message, name, hasQuizData: !!quizData });
 
         if (!toEmail) {
             return NextResponse.json(
@@ -39,12 +39,13 @@ export async function POST(request: Request) {
         }
 
         const { data, error } = await resend.emails.send({
-            from: 'Quiz App <support@dyslexiaquiz.com>',
+            from: 'Quiz App <info@results.ivvidyslexiascreener.com>',
             to: [toEmail],
-            subject: subject || 'Your Quiz Results',
+            subject: subject || 'Your Dyslexia Screening Report',
             react: await EmailTemplate({ 
                 firstName: name,
-                message: message
+                message: message,
+                quizData: quizData 
             }),
         });
 
