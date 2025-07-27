@@ -64,26 +64,33 @@ const DyslexiaResultsReport = ({
   const DYSLEXIA_ZONE_THRESHOLD = 75;
 
   const getOverallMessage = () => {
-    if (normalizedScore >= DYSLEXIA_ZONE_THRESHOLD) {
+    if (normalizedScore >= 75) {
       return {
-        level: 'Significant Indicators Identified',
-        message: 'Your responses indicate a pattern of characteristics often associated with dyslexia across multiple areas. These results suggest that further professional evaluation could be highly beneficial in understanding your unique learning profile and accessing appropriate support.',
+        level: 'High Likelihood of Dyslexia',
+        message: 'Your responses strongly indicate characteristics commonly associated with dyslexia across multiple learning areas. This pattern suggests you may benefit significantly from professional evaluation and specialized learning strategies. Many successful individuals with dyslexia have found that understanding their learning differences opens doors to effective accommodations and personalized approaches that enhance their strengths.',
         color: '#dc2626',
         bgColor: '#fef2f2'
       };
     } else if (normalizedScore >= 50) {
       return {
-        level: 'Moderate Indicators Identified',
-        message: 'Your responses show some signs that may be associated with dyslexia. While not definitive, these patterns suggest it could be valuable to discuss your experiences with a professional to explore potential learning strategies or support.',
+        level: 'Moderate Likelihood of Dyslexia',
+        message: 'Your responses indicate several signs that could be related to dyslexia, suggesting a moderate likelihood of these learning differences. While these patterns aren\'t conclusive on their own, they point toward potential areas where targeted support or accommodations might be helpful. Consider discussing these results with an educational specialist to explore strategies that could enhance your learning experience.',
         color: '#d97706',
         bgColor: '#fffbeb'
       };
-    } else {
+    } else if (normalizedScore >= 25) {
       return {
-        level: 'Fewer Indicators Identified',
-        message: 'Your responses suggest fewer signs typically associated with dyslexia. This screening does not indicate significant challenges related to dyslexia based on your answers.',
+        level: 'Low Likelihood of Dyslexia',
+        message: 'Your responses show some characteristics that can be associated with dyslexia, but overall suggest a lower likelihood of significant dyslexic traits. While everyone has unique learning preferences, your patterns indicate that traditional learning approaches likely work well for you. However, if you continue to experience specific challenges, don\'t hesitate to seek guidance from learning specialists.',
         color: '#059669',
         bgColor: '#f0fdf4'
+      };
+    } else {
+      return {
+        level: 'Very Low Likelihood of Dyslexia',
+        message: 'Your responses indicate very few characteristics typically associated with dyslexia. This suggests that you likely process information in ways that align well with conventional learning and reading methods. Your learning profile appears to be well-suited to traditional educational approaches, though everyone can benefit from discovering their optimal learning strategies.',
+        color: '#10b981',
+        bgColor: '#ecfdf5'
       };
     }
   };
@@ -103,56 +110,76 @@ const DyslexiaResultsReport = ({
         </p>
         <p style={{ color: '#e0e7ff', fontSize: '14px', margin: '0' }}>
           Date of Report: {reportDate}
+         <span style={{fontWeight: '600', display: 'block', marginTop: '1rem'}} >
+
+          AdultDyslexiaScreener.com 
+          <span style={{display: 'block'}}></span>
+          by ivvi
+         </span>
         </p>
       </div>
 
       {/* Introduction */}
-      <div style={{ padding: '30px' }}>
-        <div style={{ backgroundColor: '#f9fafb', border: '1px solid #e5e7eb', borderRadius: '8px', padding: '24px', marginBottom: '32px', textAlign: 'center' }}>
-          <p style={{ color: '#374151', fontSize: '16px', lineHeight: '1.6', margin: '0' }}>
-            This report summarizes the results of the Dyslexia Screening Assessment.
-            Please remember this is a screening tool and not a diagnosis.
-            It helps identify patterns that may suggest dyslexia and highlights areas
-            where further professional evaluation or support might be beneficial.
-          </p>
-        </div>
 
-        {/* Overall Summary */}
+      {/* replace this text with a dynamic variable that you pass in through props  */}
+      <div style={{ padding: '30px' }}>
+                 <div style={{ backgroundColor: '#f9fafb', border: '1px solid #e5e7eb', borderRadius: '8px', padding: '24px', marginBottom: '32px', textAlign: 'center' }}>
+           <p style={{ color: '#374151', fontSize: '16px', lineHeight: '1.6', margin: '0' }}>
+           This report summarizes your results from the Adult Dyslexia Screening Assessment. This is a <span style={{fontWeight: '700'}}> screening tool  </span> and <span style={{fontWeight: '700'}}> not a diagnosis.   </span>  It helps identify potential signs of dyslexia and highlight if a Dyslexia Assessment or support might be beneficial.
+           </p>
+         </div>
+
+                   {/* Overall Summary */}
         <div style={{ backgroundColor: overallResult.bgColor, border: `2px solid ${overallResult.color}`, borderRadius: '12px', padding: '32px', marginBottom: '32px', textAlign: 'center' }}>
           <h2 style={{ color: '#1f2937', fontSize: '28px', fontWeight: 'bold', margin: '0 0 24px 0' }}>
-            Overall Assessment
+            Overall Result
           </h2>
 
           {/* Score Circle */}
           <div style={{ marginBottom: '24px' }}>
             <div style={{ 
-              width: '120px', 
-              height: '120px', 
-              borderRadius: '50%', 
-              backgroundColor: normalizedScore >= DYSLEXIA_ZONE_THRESHOLD ? '#dc2626' : '#2563eb',
-              color: '#ffffff',
-              fontSize: '36px',
-              fontWeight: 'bold',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              margin: '0 auto 8px auto',
-              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)'
+              // width: '120px', 
+              // height: '120px', 
+              // borderRadius: '50%', 
+              // backgroundColor: normalizedScore >= DYSLEXIA_ZONE_THRESHOLD ? '#dc2626' : '#2563eb',
+              // color: '#ffffff',
+              // fontSize: '36px',
+              // fontWeight: 'bold',
+              // display: 'flex',
+              // alignItems: 'center',
+              // justifyContent: 'center',
+              // margin: '0 auto 8px auto',
+              // boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)'
             }}>
-              {normalizedScore}%
             </div>
-            <p style={{ color: '#374151', fontSize: '16px', fontWeight: '600', margin: '0' }}>Overall Score</p>
+            <h1 style={{fontSize: '2rem',  color: '#4169E1'}} >
+
+              <span style={{fontSize: '3.3rem', fontWeight: '750'}} >
+
+              {normalizedScore}
+              </span>
+              /100
+            </h1>
+            {/* <p style={{ color: '#374151', fontSize: '16px', fontWeight: '600', margin: '0' }}>Overall Score</p> */}
           </div>
 
           {/* Zone Indicator */}
           <div style={{ marginBottom: '24px' }}>
-            {normalizedScore >= DYSLEXIA_ZONE_THRESHOLD ? (
+            {normalizedScore >= 75 ? (
               <div style={{ backgroundColor: '#fee2e2', color: '#991b1b', padding: '8px 16px', borderRadius: '20px', fontSize: '16px', fontWeight: 'bold', display: 'inline-block' }}>
-                🚨 Dyslexia Zone (75%+)
+                🚨 High Likelihood Zone (75-100%)
+              </div>
+            ) : normalizedScore >= 50 ? (
+              <div style={{ backgroundColor: '#fef3c7', color: '#92400e', padding: '8px 16px', borderRadius: '20px', fontSize: '16px', fontWeight: 'bold', display: 'inline-block' }}>
+                ⚠️ Moderate Likelihood Zone (50-74%)
+              </div>
+            ) : normalizedScore >= 25 ? (
+              <div style={{ backgroundColor: '#d1fae5', color: '#065f46', padding: '8px 16px', borderRadius: '20px', fontSize: '16px', fontWeight: 'bold', display: 'inline-block' }}>
+                ✓ Low Likelihood Zone (25-49%)
               </div>
             ) : (
-              <div style={{ backgroundColor: '#dbeafe', color: '#1e40af', padding: '8px 16px', borderRadius: '20px', fontSize: '16px', fontWeight: 'bold', display: 'inline-block' }}>
-                Below Dyslexia Zone
+              <div style={{ backgroundColor: '#ecfdf5', color: '#047857', padding: '8px 16px', borderRadius: '20px', fontSize: '16px', fontWeight: 'bold', display: 'inline-block' }}>
+                ✅ Very Low Likelihood Zone (0-24%)
               </div>
             )}
           </div>
@@ -161,7 +188,7 @@ const DyslexiaResultsReport = ({
           <div style={{ marginBottom: '24px' }}>
             <div style={{ backgroundColor: '#e5e7eb', height: '30px', borderRadius: '15px', position: 'relative', border: '2px solid #d1d5db' }}>
               <div style={{ 
-                backgroundColor: normalizedScore >= DYSLEXIA_ZONE_THRESHOLD ? '#dc2626' : '#2563eb',
+                backgroundColor: normalizedScore >= 75 ? '#dc2626' : normalizedScore >= 50 ? '#d97706' : '#059669',
                 height: '26px',
                 borderRadius: '13px',
                 width: `${Math.min(normalizedScore, 100)}%`,
@@ -173,23 +200,64 @@ const DyslexiaResultsReport = ({
                 fontWeight: 'bold',
                 fontSize: '14px'
               }}>
-                {normalizedScore}/100
+
+                {normalizedScore}
+                /100
               </div>
-              <div style={{ position: 'absolute', top: '-8px', left: '75%', color: '#dc2626', fontWeight: 'bold', fontSize: '12px' }}>
+              {/* Zone markers */}
+              {/* <div style={{ position: 'absolute', top: '-8px', left: '25%', color: '#6b7280', fontWeight: 'bold', fontSize: '10px' }}>
+                25%
+              </div>
+              <div style={{ position: 'absolute', top: '-8px', left: '50%', color: '#d97706', fontWeight: 'bold', fontSize: '10px' }}>
+                50%
+              </div>
+              <div style={{ position: 'absolute', top: '-8px', left: '75%', color: '#dc2626', fontWeight: 'bold', fontSize: '10px' }}>
                 75%
-              </div>
+              </div> */}
             </div>
           </div>
 
           <h3 style={{ color: overallResult.color, fontSize: '20px', fontWeight: 'bold', margin: '0 0 12px 0' }}>
             {overallResult.level}
           </h3>
-          <p style={{ color: '#374151', fontSize: '16px', lineHeight: '1.6', margin: '0' }}>
-            {overallResult.message}
-          </p>
-        </div>
+                     <p style={{ color: '#374151', fontSize: '16px', lineHeight: '1.6', margin: '0' }}>
+             {overallResult.message}
+           </p>
+         </div>
 
-        {/* Detailed Results by Area */}
+         {/* Understanding Your Results */}
+         <div style={{ backgroundColor: '#fffbeb', border: '2px solid #f59e0b', borderRadius: '12px', padding: '32px', marginBottom: '32px' }}>
+           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '16px' }}>
+             <div style={{ 
+               backgroundColor: '#f59e0b', 
+               width: '40px', 
+               height: '40px', 
+               borderRadius: '8px', 
+               display: 'flex', 
+               alignItems: 'center', 
+               justifyContent: 'center', 
+               color: '#ffffff', 
+               fontSize: '20px', 
+               marginRight: '12px'
+             }}>
+               💡
+             </div>
+             <h2 style={{ color: '#1f2937', fontSize: '24px', fontWeight: 'bold', margin: '0' }}>
+               Understanding Your Results
+             </h2>
+           </div>
+           
+           <div style={{ color: '#374151', fontSize: '16px', lineHeight: '1.6' }}>
+             <p style={{ marginBottom: '16px' }}>
+               This screener assesses common indicators of Dyslexia, informed by a meta-analysis of screening questions used by Dyslexia associations worldwide and Dyslexia researchers, to help identify those with a high probability of dyslexia. To properly identify dyslexia, you need to have a full 1-2 hour dyslexia assessment.
+             </p>
+             <p style={{ margin: '0' }}>
+               This short screener identifies where you may be affected across several key areas. A score above 75% is an indicator that dyslexia may be affecting your studies or work. Below are the questions you answered &#39;Yes&#39; to.
+             </p>
+           </div>
+         </div>
+
+         {/* Detailed Results by Area */}
         <div style={{ marginBottom: '32px' }}>
           <h2 style={{ color: '#1f2937', fontSize: '24px', fontWeight: 'bold', marginBottom: '24px' }}>
             📋 Detailed Results by Area
@@ -356,6 +424,8 @@ const DyslexiaResultsReport = ({
           </p>
         </div>
       </div>
+
+
     </div>
   );
 };

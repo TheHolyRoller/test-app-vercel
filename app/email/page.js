@@ -92,9 +92,46 @@ export default function EmailPermission() {
             };
         });
 
+        
         return transformedResults;
         
     };
+
+
+    // Use the dynamic context variables extracted from props here to decide what value to pass in through props to the email component. 
+    // Add in the functions to control the values passed into props here using the values extracted from the context. 
+
+    const quizResponse = async () => {
+
+        /**
+         *   finalScore, 
+        score, 
+        memoryScore, 
+        writingScore, 
+        readingScore, 
+        examResultsScore, 
+        organisationalScore,
+        email,
+        answers,
+        questions
+         * 
+         * 
+         */
+
+
+        // Create a hashmap of these values and Link them to different thresholds. 
+
+        
+        
+
+
+
+
+    }
+    
+
+
+
 
     const sendEmail = async () => {
         console.log('📤 Starting email send process...');

@@ -46,7 +46,8 @@ export const QuizProvider = ({ children }) => {
     const [organisationalScore, setOrganisationalScore] = useState(0);
     const [memoryScore, setMemoryScore] = useState(0);
     const [examResultsScore, setExamResultsScore] = useState(0);
-    const [answers, setAnswers] = useState([]); 
+    const [answers, setAnswers] = useState([]);
+    const [yesAnswers, setYesAnswers] = useState([]); 
 
 
     const [readingCounter, setReadingCounter] = useState(0);
@@ -369,14 +370,32 @@ export const QuizProvider = ({ children }) => {
         console.log('this is the question type#### \n', question.Type); 
         console.log('this is the question id ##### \n', question.id); 
         console.log('this is the question text ##### \n', question.question_text); 
+        console.log('this is the whole question #####', question); 
+
 
         const answerObject = {
-            
             question_id: question.id, 
             question_text: question.question_text, 
             answer: answer, 
         }; 
 
+        // Create the yes answers object here. Make sure to include the type and category of question as well as it's text. 
+
+        if(answer === 'yes'){
+
+            const YesAnswerObject = {
+                question_section: question.Section, 
+                question_answer: "yes", 
+                question_text: question.question_text,
+                question_id: question.id,
+            }; 
+
+            // Actually store the yes answer
+            setYesAnswers(prevYesAnswers => [...prevYesAnswers, YesAnswerObject]);
+            console.log('these are the yes answers \n', yesAnswers); 
+            
+        }
+         
 
         console.log('this is the current answer object in the quiz context:: \n', answerObject)
 
@@ -490,6 +509,7 @@ export const QuizProvider = ({ children }) => {
             handleAnswer,
             questions,
             answers,
+            yesAnswers,
             currentQuestion,
             quizLength,
             finalScore,
