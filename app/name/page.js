@@ -24,7 +24,7 @@ export default function EmailPermission() {
     const handleSubmit = (e) => {
         e.preventDefault();
         setUserName(userName);
-        handleAnswer('noop');
+        // handleAnswer('noop');
 
         setTimeout(() => {
             router.push('/email');

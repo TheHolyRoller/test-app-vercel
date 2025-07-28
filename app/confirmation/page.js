@@ -102,7 +102,7 @@ export default function EmailPermission() {
         
 
         setUserName(userName);
-        handleAnswer('noop');
+        // handleAnswer('noop');
         console.log('this is the handle change function in the confirmation file ')
         // Call the save answers to the database function here 
         console.log('calling the save answers function in the handle submit function')

@@ -10,7 +10,6 @@ import { Query } from 'appwrite';
 import { off } from 'process';
 
 
-
 // Environment variable checks
 const DATABASE_ID = process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID;
 const QUESTION_COLLECTION_ID = process.env.NEXT_PUBLIC_APPWRITE_QUESTION_COLLECTION_ID;
@@ -74,12 +73,12 @@ export const QuizProvider = ({ children }) => {
     };
 
     // Track quiz completion count
-    const incrementQuizCompletionCount = () => {
-        const currentCount = parseInt(localStorage.getItem('quizCompletionCount') || '0');
-        const newCount = currentCount + 1;
-        localStorage.setItem('quizCompletionCount', newCount.toString());
-        console.log('📊 Quiz completion count:', newCount);
-    }; 
+    // const incrementQuizCompletionCount = () => {
+    //     const currentCount = parseInt(localStorage.getItem('quizCompletionCount') || '0');
+    //     const newCount = currentCount + 1;
+    //     localStorage.setItem('quizCompletionCount', newCount.toString());
+    //     console.log('📊 Quiz completion count:', newCount);
+    // }; 
 
 
     const [email, setEmail] = useState(''); 
@@ -101,6 +100,13 @@ export const QuizProvider = ({ children }) => {
             gifURLsCount: gif_urls?.length || 0
         });
     }, [currentIndex, quizLength, score, finalScore, currentQuestion, questions, gif_urls, answers]);
+
+    useEffect(() => {
+
+        console.log('this is the current index being updated:::;;;; \n', currentIndex); 
+
+
+    }, [currentIndex])
 
 
     // Monitor category score changes
@@ -134,8 +140,6 @@ export const QuizProvider = ({ children }) => {
                 let offset = 0;
                 let totalDocuments = 0;
                 let total;
-                
-                
 
                 console.log('this is the limit \n', limit); 
                 console.log('this is the offset \n', offset); 
@@ -159,10 +163,6 @@ export const QuizProvider = ({ children }) => {
                       ]
                     );
                     
-
-                    // console.log(`📄 Fetched ${response.documents.length} questions (offset ${offset})`);
-
-                  
                     if (response.documents.length === 0) break;
                   
                     allQuestions.push(...response.documents);
@@ -181,12 +181,14 @@ export const QuizProvider = ({ children }) => {
                     hasInitialized.current = true;
                     setQuestions(allQuestions);
 
+
                     const gifURLS = allQuestions.map(doc => doc.gif_url);
                     setgif_urlS(gifURLS);
                     setQuizLength(allQuestions.length);
                     setCurrentQuestion(allQuestions[0]);
                     console.log('✅ Loaded all questions:', allQuestions.length);
-
+                    console.log('these are all the questions::::::::: \n', allQuestions); 
+     
                 }
 
 
@@ -211,13 +213,13 @@ export const QuizProvider = ({ children }) => {
 
         console.log('this is the current question \n', currentQuestion); 
 
-    }, [currentQuestion])
-
+    }, [currentQuestion]); 
+    
     useEffect(() => {
 
         setCurrentQuestion(questions[currentIndex]);
 
-    },[currentIndex, questions]); 
+    },[currentIndex, questions]);
 
 
     // Add in a useEffect hook here to track when counters from different question categories are incremented 
@@ -323,6 +325,8 @@ export const QuizProvider = ({ children }) => {
             const counterSetter = counterSetters[key]; 
             if(counterSetter){
                 counterSetter(prevCounter => prevCounter + 1); 
+                console.log('updating the counter setter \n', counterSetter); 
+
                 
             }
 
@@ -362,9 +366,9 @@ export const QuizProvider = ({ children }) => {
 
 
     const handleAnswer = async (answer) => {
-
         if(answer === 'noop') return
 
+        console.log(`[${new Date().toLocaleTimeString()}] Button clicked handle answer function called`);
         console.log(`🎯 QuizContext: Handling answer: ${answer}`);
         const question = questions[currentIndex];
         console.log('this is the question type#### \n', question.Type); 
@@ -380,6 +384,7 @@ export const QuizProvider = ({ children }) => {
         }; 
 
         // Create the yes answers object here. Make sure to include the type and category of question as well as it's text. 
+        // This yesAnswers array will be formatted and sent to the email template for detailed reporting
 
         if(answer === 'yes'){
 
@@ -390,9 +395,9 @@ export const QuizProvider = ({ children }) => {
                 question_id: question.id,
             }; 
 
-            // Actually store the yes answer
+            // Actually store the yes answer - this gets passed to email template
             setYesAnswers(prevYesAnswers => [...prevYesAnswers, YesAnswerObject]);
-            console.log('these are the yes answers \n', yesAnswers); 
+            console.log('📝 Updated yesAnswers:', yesAnswers.length + 1, 'total yes answers'); 
             
         }
          
@@ -405,8 +410,11 @@ export const QuizProvider = ({ children }) => {
         await calculateScore(answer);
 
         if (currentIndex < quizLength - 1) {
-            console.log(`📝 QuizContext: Moving to next question (${currentIndex + 1}/${quizLength})`);
+            // console.log(`📝 QuizContext: Moving to next question (${currentIndex + 1}/${quizLength})`);
             setCurrentIndex(prevIndex => prevIndex + 1);
+            // setCurrentIndex(prevIndex => prevIndex);
+
+            console.log('updating current index in real time...::::: \n', currentIndex); 
         } else {
             console.log('🏁 QuizContext: Quiz completed, setting final score');
 
@@ -421,18 +429,11 @@ export const QuizProvider = ({ children }) => {
             }, 200); 
 
 
-
-            setFinalScore(percentage);
-           await incrementQuizCompletionCount();
-
-
-
             setTimeout(() => {
                 console.log('just about to navigate to the result page'); 
             }, 2000);
 
             router.push('/result');
-
             
         }
     };
@@ -453,7 +454,6 @@ export const QuizProvider = ({ children }) => {
                 if (!DATABASE_ID || !QUESTION_COLLECTION_ID) {
                     throw new Error('Missing required Appwrite configuration');
                 }
-    
                                         
                 const allQuestions = [];
                 const limit = 1000; 
@@ -482,10 +482,12 @@ export const QuizProvider = ({ children }) => {
 
                     total = resultsResponse.total;
                     offset += resultsResponse.documents.length;
+
+                    console.log('this is the offset \n', offset); 
     
                 }
                 while(offset < total); 
-    
+                
                 console.log(`✅ Total questions fetched: ${allQuestions.length}`);
 
 
@@ -509,12 +511,12 @@ export const QuizProvider = ({ children }) => {
             handleAnswer,
             questions,
             answers,
-            yesAnswers,
+            yesAnswers, // Array of all "yes" answers - used in email template for detailed reporting
             currentQuestion,
             quizLength,
-            finalScore,
-            score,
-            memoryScore,
+            finalScore, // Main score used in email template (0-100)
+            score, // Raw accumulated score 
+            memoryScore, // Category-specific scores used in email template
             writingScore,
             readingScore,
             examResultsScore,

@@ -85,7 +85,6 @@ function PhoneBarChart({ writingPercentage,
                 readingScore, 
                 examResultsScore, 
                 organisationalScore); 
-                
                 console.log('this is the final score in the phone bar chart \n', percentage); 
 
   return (
@@ -110,16 +109,15 @@ function PhoneBarChart({ writingPercentage,
 
             </div>
 
-            {!isExplanationPage && (
+            {/* {!isExplanationPage && (
                 <div className={p.mainScore}>
-                    {/* {percentage} */}
                     {score}
 
                     <span className={p.refSpan}>
                         /100
                     </span>
                 </div>
-            )}
+            )} */}
 
             {isExplanationPage && (
                 <div className={p.mainScore} style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>

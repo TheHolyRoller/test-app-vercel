@@ -34,7 +34,8 @@ export default function EmailPermission() {
         organisationalScore,
         email,
         answers,
-        questions
+        questions,
+        yesAnswers
     } = useQuiz();
 
     const handleChange = (e) => {
@@ -50,6 +51,8 @@ export default function EmailPermission() {
 
     // Transform quiz context data to match DyslexiaResultsReport format
     const transformQuizDataToResults = () => {
+        console.log('🔄 Transforming quiz data with yesAnswers:', yesAnswers);
+        
         // Map sections to quiz context categories
         const sectionMapping = {
             'reading': { score: readingScore, key: 'reading' },
@@ -65,23 +68,39 @@ export default function EmailPermission() {
         Object.keys(sectionMapping).forEach(sectionKey => {
             const sectionInfo = sectionMapping[sectionKey];
             
-            // Filter answers for this section
-            const sectionAnswers = answers.filter(answer => {
-                // Find the corresponding question to get its section
-                const question = questions.find(q => q.id === answer.question_id);
-                return question && question.Section && 
-                       question.Section.toLowerCase().trim() === sectionInfo.key;
+            // Filter yesAnswers for this section
+            const sectionYesAnswers = yesAnswers.filter(yesAnswer => {
+                // Match section names (case-insensitive)
+                const answerSection = yesAnswer.question_section?.toLowerCase().trim();
+                return answerSection === sectionInfo.key || 
+                       answerSection === sectionKey ||
+                       (sectionKey === 'tests' && (answerSection === 'exam results' || answerSection === 'examresults')) ||
+                       (sectionKey === 'plans' && (answerSection === 'planning & organization' || answerSection === 'planning' || answerSection === 'organization'));
             });
 
-            // Count answer types
-            const yesCounts = sectionAnswers.filter(a => a.answer === 'yes').length;
-            const sometimesCounts = sectionAnswers.filter(a => a.answer === 'sometimes').length;
-            const noCounts = sectionAnswers.filter(a => a.answer === 'no').length;
+            console.log(`📊 Section ${sectionKey}: Found ${sectionYesAnswers.length} yes answers`);
 
-            // Transform answers to expected format
-            const transformedQuestions = sectionAnswers.map(answer => ({
-                q: answer.question_text,
-                answer: answer.answer.charAt(0).toUpperCase() + answer.answer.slice(1) // Capitalize first letter
+            // For all answers in this section (to get counts)
+            const allSectionAnswers = answers.filter(answer => {
+                const question = questions.find(q => q.id === answer.question_id);
+                if (!question || !question.Section) return false;
+                
+                const questionSection = question.Section.toLowerCase().trim();
+                return questionSection === sectionInfo.key || 
+                       questionSection === sectionKey ||
+                       (sectionKey === 'tests' && (questionSection === 'exam results' || questionSection === 'examresults')) ||
+                       (sectionKey === 'plans' && (questionSection === 'planning & organization' || questionSection === 'planning' || questionSection === 'organization'));
+            });
+
+            // Count answer types from all answers
+            const yesCounts = allSectionAnswers.filter(a => a.answer === 'yes').length;
+            const sometimesCounts = allSectionAnswers.filter(a => a.answer === 'sometimes').length;
+            const noCounts = allSectionAnswers.filter(a => a.answer === 'no').length;
+
+            // Transform yesAnswers to expected format for display
+            const transformedQuestions = sectionYesAnswers.map(yesAnswer => ({
+                q: yesAnswer.question_text,
+                answer: 'Yes' // These are all yes answers
             }));
 
             transformedResults[sectionKey] = {
@@ -90,11 +109,12 @@ export default function EmailPermission() {
                 no: noCounts,
                 questions: transformedQuestions
             };
+
+            console.log(`✅ Section ${sectionKey} result:`, transformedResults[sectionKey]);
         });
 
-        
+        console.log('🎯 Final transformed results:', transformedResults);
         return transformedResults;
-        
     };
 
 
@@ -120,11 +140,7 @@ export default function EmailPermission() {
 
 
         // Create a hashmap of these values and Link them to different thresholds. 
-
-        
-        
-
-
+  
 
 
     }
@@ -138,6 +154,30 @@ export default function EmailPermission() {
 
         try {
             const transformedResults = transformQuizDataToResults();
+            
+            // Format yesAnswers for better email template usage
+            const formattedYesAnswers = yesAnswers.map(yesAnswer => ({
+                section: yesAnswer.question_section,
+                question: yesAnswer.question_text,
+                answer: yesAnswer.question_answer,
+                questionId: yesAnswer.question_id
+            }));
+
+            // Group yesAnswers by section for easier template usage
+            const yesAnswersBySection = yesAnswers.reduce((acc, yesAnswer) => {
+                const section = yesAnswer.question_section?.toLowerCase().trim() || 'other';
+                if (!acc[section]) {
+                    acc[section] = [];
+                }
+                acc[section].push({
+                    question: yesAnswer.question_text,
+                    questionId: yesAnswer.question_id
+                });
+                return acc;
+            }, {});
+
+            console.log('📊 Yes Answers by Section:', yesAnswersBySection);
+            console.log('📋 Formatted Yes Answers:', formattedYesAnswers);
             
             const emailData = {
                 from: 'results.ivvidyslexiascreener.com',
@@ -154,7 +194,11 @@ export default function EmailPermission() {
                     writingScore,
                     readingScore,
                     examResultsScore,
-                    organisationalScore
+                    organisationalScore,
+                    // Add the raw and formatted yesAnswers
+                    yesAnswers: formattedYesAnswers,
+                    yesAnswersBySection: yesAnswersBySection,
+                    totalYesAnswers: yesAnswers.length
                 }
             };
             

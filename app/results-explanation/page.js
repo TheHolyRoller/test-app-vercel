@@ -119,6 +119,7 @@ function ResultsExplanationContent() {
                 isExplanationPage={true}
                 onNext={handleNext}
                 
+                
             />
         </>
     );

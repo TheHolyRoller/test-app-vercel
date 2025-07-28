@@ -114,6 +114,7 @@ export default function Quiz() {
 
 
                     <CategoryCard 
+                        key={`category-${currentIndex}-${currentQuestion?.$id}`}
                         Section={Section}
                         categoryName={currentQuestion?.categoryName || currentQuestion?.question_text}
                         audio_url={audio_url}
@@ -121,6 +122,7 @@ export default function Quiz() {
                     </div>
                 ) : (
                     <QuizCard
+                        key={`quiz-${currentIndex}-${currentQuestion?.$id}`}
                         question_text={question_text}
                         Section={Section}
                         audio_url={audio_url}   

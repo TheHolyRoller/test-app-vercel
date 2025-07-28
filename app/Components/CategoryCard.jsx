@@ -58,7 +58,8 @@ function CategoryCard({ Section, audio_url, categoryName }) {
 
     const handleNext = () => {
         console.log('CategoryCard - Moving to next question');
-        handleAnswer('category_viewed'); // Use a special answer type for category cards
+        handleAnswer('category_viewed');
+         // Use a special answer type for category cards
     };
 
     return (
@@ -115,7 +116,7 @@ function CategoryCard({ Section, audio_url, categoryName }) {
             </article>
 
             <aside className={c.buttonSectionContainer} onClick={handleNext} style={{cursor: 'pointer', marginTop: '-5em', zIndex: '999999999998999999999999999999999999'}} >
-                <div className={c.CTAButton} onClick={handleNext} style={{cursor: 'pointer', zIndex: '99999999999999'}}>Next</div>
+                <div className={c.CTAButton}  style={{cursor: 'pointer', zIndex: '99999999999999'}}>Next</div>
             </aside>
         </>
     )

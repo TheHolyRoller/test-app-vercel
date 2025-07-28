@@ -7,11 +7,15 @@ interface EmailTemplateProps {
     recipientName: string;
     results: any;
     finalScore: number;
+    score: number;
     memoryScore: number;
     writingScore: number;
     readingScore: number;
     examResultsScore: number;
     organisationalScore: number;
+    yesAnswers?: any[];
+    yesAnswersBySection?: any;
+    totalYesAnswers?: number;
   };
 }
 
@@ -24,7 +28,10 @@ const DyslexiaResultsReport = ({
     tests: { yes: 0, sometimes: 0, no: 0, questions: [] },
     plans: { yes: 0, sometimes: 0, no: 0, questions: [] }
   },
-  showDetailedQuestions = true
+  showDetailedQuestions = true,
+  finalScore = 0,
+  yesAnswers = [],
+  yesAnswersBySection = {}
 }) => {
   const sections = [
     { key: 'reading', title: 'Reading', icon: '📖', color: '#10b981' },
@@ -52,7 +59,8 @@ const DyslexiaResultsReport = ({
       }
     });
 
-    const normalizedScore = totalPossibleYesQuestions > 0 ? (totalScore / totalPossibleYesQuestions) * 100 : 0;
+    // const normalizedScore = totalPossibleYesQuestions > 0 ? (totalScore / totalPossibleYesQuestions) * 100 : 0;
+    const normalizedScore = finalScore; 
     return {
       score: totalScore,
       maxScore: totalPossibleYesQuestions,
@@ -164,7 +172,7 @@ const DyslexiaResultsReport = ({
           </div>
 
           {/* Zone Indicator */}
-          <div style={{ marginBottom: '24px' }}>
+          {/* <div style={{ marginBottom: '24px' }}>
             {normalizedScore >= 75 ? (
               <div style={{ backgroundColor: '#fee2e2', color: '#991b1b', padding: '8px 16px', borderRadius: '20px', fontSize: '16px', fontWeight: 'bold', display: 'inline-block' }}>
                 🚨 High Likelihood Zone (75-100%)
@@ -182,10 +190,10 @@ const DyslexiaResultsReport = ({
                 ✅ Very Low Likelihood Zone (0-24%)
               </div>
             )}
-          </div>
+          </div> */}
 
           {/* Progress Bar */}
-          <div style={{ marginBottom: '24px' }}>
+          {/* <div style={{ marginBottom: '24px' }}>
             <div style={{ backgroundColor: '#e5e7eb', height: '30px', borderRadius: '15px', position: 'relative', border: '2px solid #d1d5db' }}>
               <div style={{ 
                 backgroundColor: normalizedScore >= 75 ? '#dc2626' : normalizedScore >= 50 ? '#d97706' : '#059669',
@@ -204,8 +212,7 @@ const DyslexiaResultsReport = ({
                 {normalizedScore}
                 /100
               </div>
-              {/* Zone markers */}
-              {/* <div style={{ position: 'absolute', top: '-8px', left: '25%', color: '#6b7280', fontWeight: 'bold', fontSize: '10px' }}>
+              <div style={{ position: 'absolute', top: '-8px', left: '25%', color: '#6b7280', fontWeight: 'bold', fontSize: '10px' }}>
                 25%
               </div>
               <div style={{ position: 'absolute', top: '-8px', left: '50%', color: '#d97706', fontWeight: 'bold', fontSize: '10px' }}>
@@ -213,9 +220,9 @@ const DyslexiaResultsReport = ({
               </div>
               <div style={{ position: 'absolute', top: '-8px', left: '75%', color: '#dc2626', fontWeight: 'bold', fontSize: '10px' }}>
                 75%
-              </div> */}
+              </div>
             </div>
-          </div>
+          </div> */}
 
           <h3 style={{ color: overallResult.color, fontSize: '20px', fontWeight: 'bold', margin: '0 0 12px 0' }}>
             {overallResult.level}
@@ -326,7 +333,10 @@ const DyslexiaResultsReport = ({
                             padding: '4px 12px', 
                             borderRadius: '12px', 
                             fontSize: '12px', 
-                            fontWeight: 'bold'
+                            fontWeight: 'bold', 
+                            height: '1.1rem', 
+                            maxHeight: '1.1rem', 
+
                           }}>
                             YES
                           </div>
@@ -442,6 +452,9 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
         recipientName={quizData.recipientName || firstName}
         results={quizData.results}
         showDetailedQuestions={true}
+        finalScore={quizData.finalScore || 0}
+        yesAnswers={quizData.yesAnswers || []}
+        yesAnswersBySection={quizData.yesAnswersBySection || {}}
       />
     );
   }

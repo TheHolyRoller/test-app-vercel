@@ -30,6 +30,28 @@ export async function POST(request: Request) {
         const { toEmail, subject, message, name, quizData } = body;
 
         console.log('📧 Email Details:', { toEmail, subject, message, name, hasQuizData: !!quizData });
+        
+        // Log yesAnswers data if available
+        if (quizData?.yesAnswers) {
+            console.log('✅ Yes Answers Found:', quizData.yesAnswers.length, 'total yes answers');
+            console.log('📊 Yes Answers by Section:', quizData.yesAnswersBySection);
+            console.log('🔍 Sample Yes Answers:', quizData.yesAnswers.slice(0, 3));
+        }
+
+        // Log score data
+        if (quizData) {
+            console.log('📊 Score Data Received:', {
+                finalScore: quizData.finalScore,
+                score: quizData.score,
+                memoryScore: quizData.memoryScore,
+                writingScore: quizData.writingScore,
+                readingScore: quizData.readingScore,
+                examResultsScore: quizData.examResultsScore,
+                organisationalScore: quizData.organisationalScore,
+                totalYesAnswers: quizData.totalYesAnswers
+            });
+            console.log('🔍 Full Quiz Data:', quizData);
+        }
 
         if (!toEmail) {
             return NextResponse.json(
@@ -45,6 +67,12 @@ export async function POST(request: Request) {
             react: await EmailTemplate({ 
                 firstName: name,
                 message: message,
+                // quizData now includes:
+                // - results: transformed quiz results by section
+                // - yesAnswers: formatted array of all yes answers
+                // - yesAnswersBySection: yes answers grouped by section
+                // - totalYesAnswers: total count of yes answers
+                // - individual scores: finalScore, memoryScore, etc.
                 quizData: quizData 
             }),
         });
