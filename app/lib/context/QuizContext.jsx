@@ -56,6 +56,10 @@ export const QuizProvider = ({ children }) => {
     const [testsCounter, setTestsCounter] = useState(0);
     const [updateCounter, setUpdateCounter] = useState(0); 
 
+    const [ cardSection, setCardSection] = useState(); 
+    const [cardType, setCardType] = useState(); 
+
+
 
     // Button click counters that persist across renders
     const [buttonCounters, setButtonCounters] = useState({
@@ -218,6 +222,28 @@ export const QuizProvider = ({ children }) => {
     useEffect(() => {
 
         setCurrentQuestion(questions[currentIndex]);
+
+        // Setup the card type and Section here 
+        // setCardType(questions[currentIndex].Type); 
+        if(currentQuestion && currentQuestion.Type && currentQuestion.Section){
+
+
+            // console.log("Testing this extraction method \n", questions[currentIndex].Type); 
+            //   console.log('this is the question type::::::: \n', currentQuestion.Type); 
+            //   console.log('this is the question Section :::::::!!!!! \n', currentQuestion.Section); 
+            //    console.log('this is the current question :::::!!!!!!!! \n', currentQuestion);
+               
+            // Now set the state values of the Card Section and Card type state variables 
+            setCardSection(questions[currentIndex].Section)
+            setCardType(questions[currentIndex].Type); 
+            console.error('this is the value of the card Section \n', cardSection); 
+            console.log('this is the value of the card Type \n', cardType); 
+
+
+
+        }
+      
+
 
     },[currentIndex, questions]);
 
@@ -508,6 +534,8 @@ export const QuizProvider = ({ children }) => {
     return (
         <QuizContext.Provider value={{
             currentIndex,
+            cardSection, 
+            cardType, 
             handleAnswer,
             questions,
             answers,

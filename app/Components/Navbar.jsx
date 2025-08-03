@@ -23,12 +23,12 @@ export default function Navbar(){
             <header  class={ns.navbarLogoSection} >
             <div class={ns.logoSubContainer} >
             <a href='/' className={ns.logoLink} >
-            <Image
+            {/* <Image
                 src={logo}
                 alt="Logo"
                 width={110}
                 height={50}
-                />
+                /> */}
 
 
             </a>

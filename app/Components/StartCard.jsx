@@ -10,7 +10,6 @@ import { nunito } from '../fonts/nunito';
 import Image from 'next/image';
 import logo from '../assets/ivvi_Logo.svg'; 
 
-
 export default function EmailPermission() {
     const router = useRouter();
     const { finalScore } = useQuiz();
@@ -19,6 +18,7 @@ export default function EmailPermission() {
     const handleYesClick = () => {
         router.push('/understand');
     };
+
 
 
 

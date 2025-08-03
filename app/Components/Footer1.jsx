@@ -8,7 +8,7 @@ export default function Footer() {
 
   // Add in code to dynamically color the footer here 
     return (
-        <footer className="p-4 footer sm:footer-horizontal footer-center text-base-content" style={{backgroundColor: '#013699'}} >
+        <footer className="p-4 footer sm:footer-horizontal footer-center text-base-content" style={{backgroundColor: '#013699', position: 'fixed', bottom: '0%', height: '4.3em'}} >
 </footer> 
     );
   }
