@@ -532,11 +532,13 @@ export const QuizProvider = ({ children }) => {
 
 
     return (
+
+        
         <QuizContext.Provider value={{
+            handleAnswer,
             currentIndex,
             cardSection, 
             cardType, 
-            handleAnswer,
             questions,
             answers,
             yesAnswers, // Array of all "yes" answers - used in email template for detailed reporting
