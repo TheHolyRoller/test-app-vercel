@@ -11,11 +11,7 @@ import mute from '../assets/mute.svg';
 
 import soundOn from '../assets/volume.svg'; 
 import styled from "styled-components";
-// Import the cardScection and cardType from context 
-import {cardSection, cardType} from '../lib/context/QuizContext'; 
-import { colorNav } from '../lib/hooks/colorNav';
-// Import the current nav color from the quiz context
-import { navColor } from '../lib/context/QuizContext'; 
+// All context values are accessed through useQuiz hook 
 
 
 const QuizCard = ({ 
@@ -28,7 +24,7 @@ const QuizCard = ({
 }) => {
 
     // Answer button state and logic from QuizAnswer
-    const { handleAnswer, buttonCounters, incrementButtonCounter } = useQuiz();
+    const { handleAnswer, buttonCounters, incrementButtonCounter, navColor, cardSection, cardType } = useQuiz();
     const { sound, toggleUserSound } = useUser();
     const pathname = usePathname(); 
     const [answer, setAnswer] = useState();
@@ -187,8 +183,7 @@ const QuizCard = ({
     console.log('Selected card color:', getColorBySection(Section));
     console.log('Selected navbar color:', getNavbarColorBySection(Section));
 
-    // Call the colorNav module function here 
-    colorNav(); 
+    // Color is now handled automatically in the context 
 
     const StyledSVG = styled.svg`
   width: 5px;

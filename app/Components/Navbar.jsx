@@ -8,17 +8,16 @@ import ns from '../Styles/Nav.module.css';
 // Import the static assets here 
 import logo from '../assets/ivvi_Logo.svg'; 
 import Image from 'next/image';
-
+import { useQuiz } from '../lib/context/QuizContext';
 
 // Create the functional component here 
 
 export default function Navbar(){
+    const { navColor } = useQuiz();
 
 
     return(
-
-
-        <nav class={ns.navContainer}>
+        <nav class={ns.navContainer} style={{backgroundColor: navColor || '#809ACC'}}>
 
             <header  class={ns.navbarLogoSection} >
             <div class={ns.logoSubContainer} >

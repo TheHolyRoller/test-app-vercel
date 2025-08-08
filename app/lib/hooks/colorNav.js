@@ -1,100 +1,83 @@
 
-// Import the context Type and Section variables 
-import { cardType, cardSection} from '../context/QuizContext'; 
-import { useState, useEffect } from 'react';
-// Okay so now create a function that can check for both type and section and if they are not defined fall back on them
+// Import the context hook to access state variables
+import { useQuiz } from '../context/QuizContext';
 
-export const colorNav = async () => {
+// Create a custom hook that returns the color based on current context
+export const useColorNav = () => {
+    const { cardType, cardSection } = useQuiz();
+    
+    console.log('this is the color Nav module:::');
+    console.log('cardType from context:', cardType);
+    console.log('cardSection from context:', cardSection);
 
+    let color;
 
-const [navColor, setNavColor] = useState(); 
+    if (!cardType && !cardSection) {
+        // Find out why these values are undefined 
+        console.log('this is the card type in the color Nav first function  \n', cardType); 
+        console.log('this is the cardSection \n', cardSection); 
 
-let color; 
+        color = '#809acc'; 
+        console.log('this is the color in color nav module \n', color); 
 
-if(!cardType && ! cardSection){
+        return color;
+    } else {
+        console.log('this is the else statement in the color nav module ');
 
-    color = '#809ACC'; 
+        if (cardType == 'Question') {
+            color = colorQuestion(); 
+            console.log('this is the color after calling color question function \n', color); 
+            console.log('this is the returned color value in color nav module \n', color); 
 
+            return color;
+        } else {
+            color = colorCategory(); 
+            console.log('this is the color category value in the else statement after calling color category function \n', color); 
 
-}
-else {
+            console.log('this is the color value in else in nav mod', color); 
 
-
-
-    // Check the Card Type here 
-
-    if(cardType == 'Question'){
-
-        // Now call color question function here 
-        color = colorQuestion(); 
-        console.log('this is the color after calling color question function \n', color); 
-
-        // Add in a timeout function here 
-
-
-        // return the set color variable here 
-        return color; 
-
-
-
+            return color;
+        }
     }
-
-    else{
-
-
-        // Call the color category card function here 
-        color = await colorCategory(); 
-        console.log('this is the color category value in the else statement after calling color category funciont \n', color); 
-
-        // Add in a timeout function here 
-        setTimeout(() => {
-            console.log('timeout function waiting for other function calls'); 
-          }, 200);
-
-        return color; 
-
-    }
-}
-
-}
-
+};
 
 // Add in each of the functions to color in the sections
 // Pass in the type and section variables here 
 const colorCategory = () => {
-
+    console.log('this is the color category function');
 
     const colorMap = { 
-
         reading: '#5EA772',
         writing: '#3B73A6', 
         memory: '#B3631C', 
         tests: '#BC990B', 
         plans: '#B53C31'
-    }
+    };
 
     const key = cardSection.toLowerCase(); 
+    console.log('this is the category key \n', key); 
+    console.log('this is the returned value in color category \n', colorMap[key]); 
 
-    return colorMap[key] || '#FFFFF'; 
-
-
-}
+    return colorMap[key] || '#FFFFFF'; 
+};
 
 // Pass in the type and section variables here 
 const colorQuestion = () => {
+    console.log('this is the color question function'); 
 
-            const colorMap = {
-                reading: "#78D591",
-                writing: "#4D95D5",
-                memory: "#E77E22",
-                tests: "#F3C70E",
-                plans: "#CB3E32",
-              };
+    const colorMap = {
+        reading: "#78D591",
+        writing: "#4D95D5",
+        memory: "#E77E22",
+        tests: "#F3C70E",
+        plans: "#CB3E32",
+    };
 
-              const key = cardSection.toLowerCase(); 
-              
+    console.log('this is the color map \n', colorMap); 
 
-              return colorMap[key] || '#FFFFFF';
+    const key = cardSection.toLowerCase(); 
+    console.log('this is the key \n', key); 
+    console.log('this is the returned value in color question \n', colorMap[key]); 
 
-
-}   
+    return colorMap[key] || '#FFFFFF';
+};   

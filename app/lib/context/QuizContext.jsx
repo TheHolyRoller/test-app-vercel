@@ -8,8 +8,7 @@ import { databases } from '../appwrite';
 import { useRef } from 'react';
 import { Query } from 'appwrite';
 
-// import the color picker function here 
-import { colorNav } from '../hooks/colorNav';
+// Color logic is now handled directly in the context
 
 // Environment variable checks
 const DATABASE_ID = process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID;
@@ -91,12 +90,6 @@ export const QuizProvider = ({ children }) => {
 
     // Monitor quiz-related state changes
     useEffect(() => {
-
-
-        // Call the color nav function and set the color state varabile to the value of it's retrun value 
-        setNavColor(colorNav());
-        
-
         console.log('📊 Quiz State Update:', {
             currentIndex,
             quizLength,
@@ -221,10 +214,38 @@ export const QuizProvider = ({ children }) => {
     }, []);
 
     useEffect(() => {
-
         console.log('this is the current question \n', currentQuestion); 
-
     }, [currentQuestion]); 
+
+    // Calculate nav color based on cardType and cardSection
+    useEffect(() => {
+        let color = '#809acc'; // default color
+        
+        if (cardType && cardSection) {
+            if (cardType === 'Question') {
+                const colorMap = {
+                    reading: "#78D591",
+                    writing: "#4D95D5",
+                    memory: "#E77E22",
+                    tests: "#F3C70E",
+                    plans: "#CB3E32",
+                };
+                color = colorMap[cardSection.toLowerCase()] || '#FFFFFF';
+            } else {
+                const colorMap = { 
+                    reading: '#5EA772',
+                    writing: '#3B73A6', 
+                    memory: '#B3631C', 
+                    tests: '#BC990B', 
+                    plans: '#B53C31'
+                };
+                color = colorMap[cardSection.toLowerCase()] || '#FFFFFF';
+            }
+        }
+        
+        setNavColor(color);
+        console.log('Nav color updated:', color, 'for cardType:', cardType, 'cardSection:', cardSection);
+    }, [cardType, cardSection]);
     
     useEffect(() => {
 

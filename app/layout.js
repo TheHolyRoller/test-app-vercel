@@ -16,8 +16,7 @@ import { useAnonymousAuth } from "./lib/hooks/useAnonymousAuth";
 import { use } from "react";
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from "@vercel/speed-insights/next"
-import { navColor } from './lib/context/QuizContext'; 
-
+// Removed direct navColor import as it's now handled in the Footer component 
 
 
 const inter = Inter({
@@ -33,8 +32,7 @@ export default function RootLayout({ children }) {
   const pathname = usePathname();
   const isQuizOrResultsPage = pathname.includes('/quiz') || pathname.includes('/result');
   const isCategoryPage = pathname.includes('/category');
-  const isHomePage = pathname === '/';
-  console.log('this is the nav color \n', navColor); 
+  const isHomePage = pathname === '/'; 
 
 
 
@@ -57,13 +55,13 @@ export default function RootLayout({ children }) {
           minHeight: '100vh'
         }}
       >
-      <Navbar color={navColor}  />
         <UserProvider>
           <QuizProvider>
+            <Navbar />
             {children}
+            <Footer /> 
           </QuizProvider>
         </UserProvider>
-        <Footer color={navColor} /> 
         <Analytics />
         <SpeedInsights/>
         
