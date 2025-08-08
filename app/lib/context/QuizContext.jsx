@@ -7,8 +7,9 @@ import { useUser } from './UserContext';
 import { databases } from '../appwrite';
 import { useRef } from 'react';
 import { Query } from 'appwrite';
-import { off } from 'process';
 
+// import the color picker function here 
+import { colorNav } from '../hooks/colorNav';
 
 // Environment variable checks
 const DATABASE_ID = process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID;
@@ -58,6 +59,7 @@ export const QuizProvider = ({ children }) => {
 
     const [ cardSection, setCardSection] = useState(); 
     const [cardType, setCardType] = useState(); 
+    const [navColor, setNavColor] = useState(); 
 
 
 
@@ -89,6 +91,12 @@ export const QuizProvider = ({ children }) => {
 
     // Monitor quiz-related state changes
     useEffect(() => {
+
+
+        // Call the color nav function and set the color state varabile to the value of it's retrun value 
+        setNavColor(colorNav());
+        
+
         console.log('📊 Quiz State Update:', {
             currentIndex,
             quizLength,
@@ -180,7 +188,6 @@ export const QuizProvider = ({ children }) => {
                   console.log(`✅ Total questions fetched: ${allQuestions.length}`);
 
                 if (!hasInitialized.current ) {
-                    
 
                     hasInitialized.current = true;
                     setQuestions(allQuestions);
@@ -223,8 +230,6 @@ export const QuizProvider = ({ children }) => {
 
         setCurrentQuestion(questions[currentIndex]);
 
-        // Setup the card type and Section here 
-        // setCardType(questions[currentIndex].Type); 
         if(currentQuestion && currentQuestion.Type && currentQuestion.Section){
 
 
@@ -307,7 +312,7 @@ export const QuizProvider = ({ children }) => {
                 tests: setExamResultsScore
             };
 
-            setUpdateCounter(prev => prev + 1); 
+            setUpdateCounter(prev => prev + 1);  
             
             const key = type.trim().toLowerCase();
             const scoreSetter = scoreSetters[key];
@@ -409,8 +414,6 @@ export const QuizProvider = ({ children }) => {
             answer: answer, 
         }; 
 
-        // Create the yes answers object here. Make sure to include the type and category of question as well as it's text. 
-        // This yesAnswers array will be formatted and sent to the email template for detailed reporting
 
         if(answer === 'yes'){
 
@@ -530,13 +533,13 @@ export const QuizProvider = ({ children }) => {
 
     }, [])
 
-
     return (
-
         
+
         <QuizContext.Provider value={{
             handleAnswer,
             currentIndex,
+            navColor,
             cardSection, 
             cardType, 
             questions,

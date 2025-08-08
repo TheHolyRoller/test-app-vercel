@@ -16,6 +16,9 @@ import { useAnonymousAuth } from "./lib/hooks/useAnonymousAuth";
 import { use } from "react";
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { navColor } from './lib/context/QuizContext'; 
+
+
 
 const inter = Inter({
   subsets: ["latin"],
@@ -31,7 +34,9 @@ export default function RootLayout({ children }) {
   const isQuizOrResultsPage = pathname.includes('/quiz') || pathname.includes('/result');
   const isCategoryPage = pathname.includes('/category');
   const isHomePage = pathname === '/';
-  
+  console.log('this is the nav color \n', navColor); 
+
+
 
   return (
     <html 
@@ -52,13 +57,13 @@ export default function RootLayout({ children }) {
           minHeight: '100vh'
         }}
       >
-      <Navbar/>
+      <Navbar color={navColor}  />
         <UserProvider>
           <QuizProvider>
             {children}
           </QuizProvider>
         </UserProvider>
-        <Footer/> 
+        <Footer color={navColor} /> 
         <Analytics />
         <SpeedInsights/>
         

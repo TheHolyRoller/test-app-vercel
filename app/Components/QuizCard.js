@@ -11,6 +11,11 @@ import mute from '../assets/mute.svg';
 
 import soundOn from '../assets/volume.svg'; 
 import styled from "styled-components";
+// Import the cardScection and cardType from context 
+import {cardSection, cardType} from '../lib/context/QuizContext'; 
+import { colorNav } from '../lib/hooks/colorNav';
+// Import the current nav color from the quiz context
+import { navColor } from '../lib/context/QuizContext'; 
 
 
 const QuizCard = ({ 
@@ -18,7 +23,7 @@ const QuizCard = ({
     audio_url, 
     Section, 
     currentIMG,
-    currentQuestion
+    currentQuestion, 
     
 }) => {
 
@@ -31,7 +36,9 @@ const QuizCard = ({
 
 
     console.log('this is the sound instance variable \n', sound); 
-
+    console.log('this is the current nav color \n', navColor);
+    
+    
     const handleClick = async (userAnswer) => {
         console.log('🎯 Answer Selected:', {
             answer: userAnswer,
@@ -45,21 +52,12 @@ const QuizCard = ({
 
 
 
-    // Create the color hash map here 
-    const colorMap = {
-
-
-
-
-
-
-    }
-
-
     useEffect(() => {
 
         console.log('this is the current icon color \n', iconColor); 
         console.log('this is the current section \n', Section);
+        console.log('this is the section and card type \n', cardSection, cardType); 
+
     }, [iconColor, Section]);
 
 
@@ -189,6 +187,8 @@ const QuizCard = ({
     console.log('Selected card color:', getColorBySection(Section));
     console.log('Selected navbar color:', getNavbarColorBySection(Section));
 
+    // Call the colorNav module function here 
+    colorNav(); 
 
     const StyledSVG = styled.svg`
   width: 5px;
@@ -200,7 +200,6 @@ const QuizCard = ({
         <>
 {/* 
 
-                // backgroundColor: getNavbarColorBySection(Section),
 
 
 */}
