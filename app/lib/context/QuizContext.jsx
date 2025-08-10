@@ -110,6 +110,7 @@ export const QuizProvider = ({ children }) => {
 
         console.log('this is the current index being updated:::;;;; \n', currentIndex); 
 
+        
 
     }, [currentIndex])
 
