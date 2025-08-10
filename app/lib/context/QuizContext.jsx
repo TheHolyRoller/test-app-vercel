@@ -222,6 +222,7 @@ export const QuizProvider = ({ children }) => {
     useEffect(() => {
         let color = '#809acc'; // default color
         
+
         if (cardType && cardSection) {
             if (cardType === 'Question') {
                 const colorMap = {
@@ -231,16 +232,16 @@ export const QuizProvider = ({ children }) => {
                     tests: "#F3C70E",
                     plans: "#CB3E32",
                 };
-                color = colorMap[cardSection.toLowerCase()] || '#FFFFFF';
+                color = colorMap[cardSection.toLowerCase()] || '#809acc';
             } else {
                 const colorMap = { 
-                    reading: '#5EA772',
+                    // reading: '#5EA772',
                     writing: '#3B73A6', 
                     memory: '#B3631C', 
                     tests: '#BC990B', 
                     plans: '#B53C31'
                 };
-                color = colorMap[cardSection.toLowerCase()] || '#FFFFFF';
+                color = colorMap[cardSection.toLowerCase()] || '#809acc';
             }
         }
         
@@ -300,9 +301,6 @@ export const QuizProvider = ({ children }) => {
         return percentage; 
 
     }
-
-
-
 
 
     const calculateScore = async (answer) => {

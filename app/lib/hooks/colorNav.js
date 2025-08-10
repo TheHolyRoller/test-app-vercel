@@ -45,7 +45,7 @@ import { useQuiz } from '../context/QuizContext';
     console.log('this is the color category function');
 
     const colorMap = { 
-        reading: '#5EA772',
+        // reading: '#5EA772',
         writing: '#3B73A6', 
         memory: '#B3631C', 
         tests: '#BC990B', 

@@ -16,6 +16,7 @@ export default function Navbar(){
     const { navColor } = useQuiz();
 
 
+    
     return(
         <nav class={ns.navContainer} style={{backgroundColor: navColor || '#809ACC'}}>
 
@@ -28,6 +29,7 @@ export default function Navbar(){
                 width={110}
                 height={50}
                 /> */}
+
 
 
             </a>

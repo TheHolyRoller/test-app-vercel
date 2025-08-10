@@ -58,13 +58,13 @@ export default function RootLayout({ children }) {
         <UserProvider>
           <QuizProvider>
             <Navbar />
+            
             {children}
             <Footer /> 
           </QuizProvider>
         </UserProvider>
         <Analytics />
         <SpeedInsights/>
-        
 
       </body>
     </html>
