@@ -39,6 +39,7 @@ export default function EmailPermission() {
     };
 
 
+
     const handleNoClick = () => {
         // Set flag to trigger refresh when landing on home page
         sessionStoragfc.setItem('needsRefreshFromEmailDecline', 'true');
@@ -65,7 +66,8 @@ export default function EmailPermission() {
             position: 'fixed',
             top: 0,
             left: 0,
-            zIndex: 100
+            zIndex: 100, 
+            display: 'none'
           }}
         />
         

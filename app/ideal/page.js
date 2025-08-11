@@ -31,6 +31,7 @@ function IdealPage() {
   return (
 
     <>
+    
 
     <IdealCard/>
 

@@ -52,7 +52,8 @@ export default function EmailPermission() {
             position: 'fixed',
             top: 0,
             left: 0,
-            zIndex: 100
+            zIndex: 100, 
+            display: 'none'
           }}
         />
         

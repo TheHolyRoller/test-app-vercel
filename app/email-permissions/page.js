@@ -47,7 +47,8 @@ Otherwise they won’t be saved.`;
             position: 'fixed',
             top: 0,
             left: 0,
-            zIndex: 100
+            zIndex: 100, 
+            display: 'none'
           }}
         />
         

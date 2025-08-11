@@ -233,7 +233,7 @@ export const QuizProvider = ({ children }) => {
                     tests: "#F3C70E",
                     plans: "#CB3E32",
                 };
-                color = colorMap[cardSection.toLowerCase()] || '#809acc';
+                color = colorMap[cardSection.toLowerCase()];
             } else {
                 const colorMap = { 
                     reading: '#5EA772',
@@ -242,7 +242,7 @@ export const QuizProvider = ({ children }) => {
                     tests: '#BC990B', 
                     plans: '#B53C31'
                 };
-                color = colorMap[cardSection.toLowerCase()] || '#809acc';
+                color = colorMap[cardSection.toLowerCase()];
             }
         }
         
