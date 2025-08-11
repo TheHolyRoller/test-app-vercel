@@ -23,9 +23,10 @@ export default function EmailPermission() {
     };
 
 
+
     const handleNoClick = () => {
         // Set flag to trigger refresh when landing on home page
-        sessionStoraguc.setItem('needsRefreshFromEmailDecline', 'true');
+        sessionStorage.setItem('needsRefreshFromEmailDecline', 'true');
         router.push('/');
     };
 
@@ -41,23 +42,12 @@ export default function EmailPermission() {
     return (
         <div className={uc.mainContainer}
         
-        style={{outline: '0px solid red', position: 'relative'}}
+        style={{outline: '200px solid red', position: 'relative'}}
         >
-        {/* Top Blue Navbar Strip */}
-        <div 
-          style={{
-            width: '100%',
-            height: '120px',
-            display:  'none',            position: 'fixed',
-            top: 0,
-            left: 0,
-            zIndex: 100
-          }}
-        />
         
-
+        
         {/* Main Content Container */}
-        <div style={{ paddingTop: '60px', position: 'relative' }}>
+        <div style={{ paddingTop: '60px', position: 'relative', outline: '4px solid red' }}>
           <article 
           className={`${uc.card} ${nunito.className}`} 
           id={uc.firstCARD} 
@@ -82,8 +72,8 @@ export default function EmailPermission() {
                   controls 
                   autoPlay 
                   style={{ opacity: '0', position: 'absolute' }}
-                  onPlay={() => consoluc.log('🎵 Audio Started Playing:', audio_url)}
-                  onError={(e) => consoluc.error('❌ Audio Error:', e)}
+                  onPlay={() => console.log('🎵 Audio Started Playing:', audio_url)}
+                  onError={(e) => console.error('❌ Audio Error:', e)}
               >
                   <source src={audio_url} type="audio/mp3" />
               </audio>
@@ -108,26 +98,19 @@ export default function EmailPermission() {
             </header>
 
 
-
-
   
       {question_text && (
           <div className={`${uc.question_textContainer} ${nunito.className}`} style={{color:'#333333' }} >
               <h2 className={`${uc.question_text} ${nunito.className}`} style={{color:'#333333' }}>
-                  {/* {question_text} */}
-  
   
                   <span className={uc.understandSpan} style={{color:'rgb(40, 84, 168)',}}>
-                      {/* {currentQuestion?.question_text} */}
                       Understand how Dyslexia feels 
                   </span>
               </h2>
           </div>
       )}
 
-      {/* Add in the supporting text section here  */}
       <div className={uc.supportingTextSectionContainer}>
-
 
         <p  className={uc.supportingText} style={{fontWeight: 'lighter'}}>
         This unique free screener will help you pinpoint how dyslexia unexpectedly affects your life. 

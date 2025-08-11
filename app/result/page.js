@@ -7,12 +7,16 @@ import r from '../Styles/Results.module.css';
 import resultStyles from '../Styles/Result.module.css'; 
 import { useRouter } from 'next/navigation'; 
 import { useState } from 'react';
+import { databases } from '../lib/appwrite';
+// import rc from '../Styles/UnderstandCard.module.css'; 
+import rc from '../Styles/resultsCard.module.css'; 
 
-import Barchart from '../Components/Barchart'; 
-import PhoneBarChart from '../Components/PhoneBarChart'; 
+import { nunito } from '../fonts/nunito';
+
+
 
 // Import the appwrite credentials here 
-import { databases } from '../lib/appwrite';
+import UnderstandCard from '../Components/UnderstandCard'; 
 
   
 function ResultContent() {
@@ -189,7 +193,114 @@ function ResultContent() {
     
     return (
         <>
-        <main className={resultStyles.mainChartContainer} style={{outline: '5px solid red'}}>
+        {/* <UnderstandCard/>  */}
+
+        <main className={rc.mainContainer} style={{outline: '4px solid red', paddingTop: '60px'}}>
+            
+        <article 
+          className={`${rc.card} ${nunito.className}`} 
+          id={rc.firstCARD} 
+          style={{
+              position: 'relative',
+              zIndex: 200,
+              boxShadow: '0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.06)',
+
+          }}
+          >
+      <div 
+          className={rc.cardCategoryColorContainer} 
+          style={{
+              backgroundColor: '#4168b3',
+              boxShadow: '0 -2px 8px rgba(0, 0, 0, 0.1), -2px 0 8px rgba(0, 0, 0, 0.1), 2px 0 8px rgba(0, 0, 0, 0.1)', 
+  
+          }}
+      >
+          {/* {audio_url && (
+              <audio 
+                  key={audio_url} 
+                  controls 
+                  autoPlay 
+                  style={{ opacity: '0', position: 'absolute' }}
+                  onPlay={() => console.log('🎵 Audio Started Playing:', audio_url)}
+                  onError={(e) => console.error('❌ Audio Error:', e)}
+              >
+                  <source src={audio_url} type="audio/mp3" />
+              </audio>
+          )} */}
+          
+  
+          <div className={`${rc.categoryLabelContainer} ${nunito.className}`}>
+              <label className={`${rc.categoryLabel} ${nunito.className}`}>
+  
+  
+                  <div className={`${rc.labelContainer} ${nunito.className}`}>
+                  Welcome
+                  </div>
+              </label>
+          </div>
+      </div>
+
+
+      <header className={rc.headerImageContainer}>
+
+            {/* <Image className={rc.mainImage}  src={ivvi_group} width={170} height={170} alt='notes' />  */}
+            </header>
+   
+          <div className={`${rc.question_textContainer} ${nunito.className}`} style={{color:'#333333' }} >
+              <h2 className={`${rc.question_text} ${nunito.className}`} style={{color:'#333333' }}>
+  
+                  <span className={rc.understandSpan} style={{color:'white',}}>
+                      {/* Understand how Dyslexia feels 
+                       */}
+                       Your Dyslexia Screener Score
+
+                  </span>
+              </h2>
+          </div>
+   
+
+          <div className={resultStyles.mainScore}>
+                    {score}
+                    <span className={resultStyles.refSpan}>
+                        /100
+                    </span>
+                </div>
+                
+                <div className={resultStyles.impactMessage} 
+                >
+                    <p className={resultStyles.impactText}>
+                    
+                        {finalScore >= 70 
+                            ? "This Indicates your work could be significantly impacted by Dyslexia"
+                            : "This indicates your work could be mildly impacted by Dyslexia"
+                        }
+                    </p>
+                </div>
+
+      <article className={rc.card} id={rc.cardOne}></article>
+      <article className={rc.card} id={rc.cardTwo}></article>
+      <article className={rc.card} id={rc.cardThree}></article>
+      <article className={rc.card} id={rc.cardFour}></article>
+  </article>
+
+  <div className={resultStyles.buttonContainer}
+                    
+                    >
+
+                        <div 
+                            className={resultStyles.button} 
+                            onClick={() => router.push('/results-explanation')} 
+                            style={{cursor: 'pointer', fontSize: '2rem', letterSpacing: '1px'}}
+                        >
+                            See Breakdown  
+                        </div>
+                    </div>
+
+  </main>
+
+
+
+         {/* <main className={resultStyles.mainChartContainer} style={{outline: '5px solid red'}}>
             <div className={resultStyles.mainChartSubContainer}>
 
                 <div className={resultStyles.mainHeadlineContainer}>
@@ -222,30 +333,17 @@ function ResultContent() {
                     <div className={resultStyles.mainChartSubContainerTextSection}>
                         <div className={resultStyles.mainTitleContainer}>
                             <div className={resultStyles.mainTitleSubContainer}>
-                                {/* Chart content area - ready for future enhancements */}
                             </div>
                         </div>
                     </div>
 
-                    {/* Navigation Button with Expert UI Design */}
-                    <div className={resultStyles.buttonContainer}
-                    
-                    >
-
-                        <div 
-                            className={resultStyles.button} 
-                            onClick={() => router.push('/results-explanation')} 
-                            style={{cursor: 'pointer', fontSize: '2rem', letterSpacing: '1px'}}
-                        >
-                          
-Next    
-                        </div>
-                    </div>
+                   
 
                 </section>
 
             </div>
-        </main>
+        </main>  */}
+        
         </>
     );
 }

@@ -207,7 +207,6 @@ export default function EmailTest(){
 
     return(
         <div style={{ padding: '20px' }}>
-        
 
             <div style={{ marginBottom: '60px', border: '2px solid #ddd', borderRadius: '10px', padding: '20px' }}>
                 <h2 style={{ color: '#dc2626', marginBottom: '20px' }}>Test Case 4: High Likelihood (75-100%)</h2>

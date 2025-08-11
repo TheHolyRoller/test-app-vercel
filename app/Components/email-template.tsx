@@ -445,6 +445,7 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
   message,
   quizData
 }) => {
+
   // If quiz data is available, render the full report
   if (quizData) {
     return (
@@ -452,7 +453,7 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
         recipientName={quizData.recipientName || firstName}
         results={quizData.results}
         showDetailedQuestions={true}
-        finalScore={quizData.finalScore || 0}
+        finalScore={quizData.score}
         yesAnswers={quizData.yesAnswers || []}
         yesAnswersBySection={quizData.yesAnswersBySection || {}}
       />

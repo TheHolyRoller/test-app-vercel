@@ -48,15 +48,18 @@
 }
 
 .mainScore {
-    outline: 12px solid white;
-    width: 150px;
-    height: 150px;
+    outline: 8px solid white;
+    width: 110px;
+    height: 110px;
     font-size: 4rem;
     color: white;
     background-color: #99bb9a;
     display: grid;
     place-content: center;
-    margin: 0.5rem auto;
+    /* margin: 0.5rem auto; */
+    margin: 0 auto; 
+    margin-top: -3rem; 
+
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -81,18 +84,20 @@
     font-size: 1.5rem; 
     font-weight: bolder;
     margin: 2rem auto; 
-    width: 30%; 
+     width: 80%; 
+     /* outline: 4px solid lime; */
     text-align: center;
-    margin-top: 3.5rem;
-    margin-bottom: -3rem;
-    
+
+
+
 }
 
 .impactText {
     margin: 0; 
-    width: 100%; 
     text-align: center;
-    line-height: 1.4;
+    /* line-height: 1.4; */
+    font-size: 1.3rem;
+
 }
 
 .chartContainer {
@@ -111,10 +116,13 @@
 
 .buttonContainer {
     width: 99.99vw; 
-    
-    margin: 6em auto;  
+
+    margin: 0 auto; 
+    outline: 2px solid lime;
     display: grid;
     place-content: center;
+    margin-top: -7rem; 
+
 
 }
 
@@ -164,10 +172,9 @@
     -moz-user-select: none;    /* Firefox */
     -ms-user-select: none;     /* IE/Edge */
     user-select: none;  
-
     font-size: 2.2rem;
-    
-    
+
+
 }
 
 .button:hover {

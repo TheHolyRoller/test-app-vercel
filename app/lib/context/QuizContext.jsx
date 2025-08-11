@@ -387,7 +387,6 @@ export const QuizProvider = ({ children }) => {
                 setScore(prevScore => prevScore + sometimes_weight);
                 updateScoreCategory(Section, sometimes_weight);
                 console.log('this is the question Section \n', Section); 
-
             }
 
             // change this to just work for an adult 
@@ -474,7 +473,7 @@ export const QuizProvider = ({ children }) => {
                 console.log('just about to navigate to the result page'); 
             }, 2000);
 
-            // router.push('/result');
+            router.push('/result');
             
         }
     };

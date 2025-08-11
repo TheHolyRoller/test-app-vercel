@@ -189,7 +189,7 @@ export default function EmailPermission() {
                 quizData: {
                     recipientName: name,
                     results: transformedResults,
-                    finalScore,
+                    score,
                     memoryScore,
                     writingScore,
                     readingScore,
@@ -304,6 +304,7 @@ export default function EmailPermission() {
             display: 'none'
           }}
         />
+        
         
         {/* Main Content Container */}
         <div style={{ paddingTop: '60px' }}>
@@ -425,8 +426,6 @@ export default function EmailPermission() {
 </div>
 
         </div>
-
-        
       </div>
     );
 } 

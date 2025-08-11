@@ -76,7 +76,7 @@ export default function EmailPermission() {
             ); 
             console.log('document successfully created'); 
             console.log('this is the result saved to the database \n', result); 
-            alert('Results saved to the database!'); 
+            // alert('Results saved to the database!'); 
             return result; 
 
 

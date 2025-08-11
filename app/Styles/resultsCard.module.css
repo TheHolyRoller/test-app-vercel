@@ -6,9 +6,11 @@
 
     width:320px;    
     position: relative;
-    background-color: white !important;
+    background-color: #013699;
+
     margin: 0 auto; 
     margin-bottom: 5.9rem;
+
     margin-top: -3rem !important; 
     border-radius: 1rem;
     -webkit-border-radius: 1rem;
@@ -16,6 +18,20 @@
     -ms-border-radius: 1rem;
     -o-border-radius: 1rem;
     
+}
+
+
+.mainContainer{
+
+
+
+    margin: 0 auto; 
+    width: 99.99vw; 
+    display: grid;
+    justify-content: center;
+
+
+
 }
 
 .firstCARD{
@@ -28,7 +44,9 @@
     border-top-right-radius: 12px; 
     display: grid; 
     place-content: center;
-    background-color: white;
+    /* background-color: white; */
+    background-color: #013699;
+
     height: 4.5rem; 
 }
 
@@ -93,11 +111,9 @@
 
 
 .question_textContainer{
-/* TO DO Clamp the font size here!!!!! */
-    /* font-size: 1.3rem; */
-    font-size: clamp(0.8rem + 1vw) !important; 
 
-    width: 100%;
+    font-size: clamp(0.8rem + 1vw) !important; 
+    width: 90%;
     text-align: center;
     margin: 0 auto;
     text-transform: uppercase;
@@ -105,7 +121,8 @@
     
     z-index: 9999999;
     position: relative; 
-    margin-bottom: -2rem !important; 
+    /* outline: 5px solid red; */
+    margin-top: -2.5rem; 
 
 
 
@@ -128,8 +145,10 @@
 
 .understandSpan{
     
-    width: 70%; 
 
+    width: 40%; 
+    text-align: center;
+    /* outline: 2px solid lime; */
 
 
 }
@@ -255,7 +274,9 @@
     position: relative;
     width: 320px;
     height: 555px;
-    background-color: #fbfbfb;
+    /* background-color: #fbfbfb; */
+    background-color: #013699;  
+
     border-radius: 0rem;
     -webkit-border-radius: 0rem;
     -moz-border-radius: 0rem;
@@ -282,7 +303,9 @@
     height: 555px;
     max-height: 777px;
     width: 320px;
-    background-color: #fbfbfb;
+    /* background-color: #fbfbfb; */
+    background-color: #013699;  
+
     box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
     transform:translate(0rem, 4em);
     -webkit-transform:translate(0rem, 4em);
@@ -297,7 +320,9 @@
 #cardThree{
  width: 320px;
  height: 400px;
- background-color: #fbfbfb;
+ /* background-color: #fbfbfb; */
+ background-color: #013699;
+
  border-radius: 1rem;
  -webkit-border-radius: 1rem;
  -moz-border-radius: 1rem;
@@ -316,7 +341,9 @@
     z-index: -5;
     width: 320px;
     height: 400px;
-    background-color: #fbfbfb;
+    /* background-color: #fbfbfb; */
+    background-color: #013699;
+
     position: absolute;
     bottom: 0;
     right: 0;
