@@ -1,43 +1,44 @@
-
+'use client'
 // Import the context hook to access state variables
 import { useQuiz } from '../context/QuizContext';
+import { useRouter } from 'next/router';    
+
+
+
     export const useColorNav = () => {
     const { cardType, cardSection } = useQuiz();
-    
+    const router = useRouter(); 
+
+
+
+
     console.log('this is the color Nav module:::');
     console.log('cardType from context:', cardType);
     console.log('cardSection from context:', cardSection);
 
     let color;
 
+    // Check if we're on the quiz page first
+    if (router.pathname === '/quiz') {
+        console.log('this is the quiz page in the color nav module');
 
-
-    if (!cardType && !cardSection) {
-        // Find out why these values are undefined 
-        console.log('this is the card type in the color Nav first function  \n', cardType); 
-        console.log('this is the cardSection \n', cardSection); 
-
-        color = '#809acc'; 
-        console.log('this is the color in color nav module \n', color); 
-
-        return color;
-    } else {
-        console.log('this is the else statement in the color nav module ');
-
-        if (cardType == 'Question') {
-            color = colorQuestion(); 
+        if (cardType === 'Question') {
+            // color = colorQuestion(); 
             console.log('this is the color after calling color question function \n', color); 
             console.log('this is the returned color value in color nav module \n', color); 
-
             return color;
         } else {
-            color = colorCategory(); 
+            // color = colorCategory(); 
             console.log('this is the color category value in the else statement after calling color category function \n', color); 
-
             console.log('this is the color value in else in nav mod', color); 
-
             return color;
         }
+    } else {
+        // Not on quiz page - return default blue color
+        console.log('this is NOT the quiz page - returning default blue color');
+        color = '#809acc'; 
+        console.log('this is the color in color nav module \n', color); 
+        return color;
     }
 };
 
@@ -45,7 +46,7 @@ import { useQuiz } from '../context/QuizContext';
     console.log('this is the color category function');
 
     const colorMap = { 
-        // reading: '#5EA772',
+        reading: '#5EA772',
         writing: '#3B73A6', 
         memory: '#B3631C', 
         tests: '#BC990B', 

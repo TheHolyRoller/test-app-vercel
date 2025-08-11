@@ -16,22 +16,13 @@ export default function Navbar(){
     const { navColor } = useQuiz();
 
 
-    
-    return(
-        <nav class={ns.navContainer} style={{backgroundColor: navColor || '#809ACC'}}>
 
+    return(
+
+        <nav class={ns.navContainer} style={{backgroundColor: navColor}}>
             <header  class={ns.navbarLogoSection} >
             <div class={ns.logoSubContainer} >
             <a href='/' className={ns.logoLink} >
-            {/* <Image
-                src={logo}
-                alt="Logo"
-                width={110}
-                height={50}
-                /> */}
-
-
-
             </a>
             </div>
             </header>

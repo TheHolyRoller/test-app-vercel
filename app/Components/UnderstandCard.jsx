@@ -48,8 +48,7 @@ export default function EmailPermission() {
           style={{
             width: '100%',
             height: '120px',
-            backgroundColor: '#023597',
-            position: 'fixed',
+            display:  'none',            position: 'fixed',
             top: 0,
             left: 0,
             zIndex: 100
@@ -58,7 +57,7 @@ export default function EmailPermission() {
         
 
         {/* Main Content Container */}
-        <div style={{ paddingTop: '60px', backgroundColor: 'green', position: 'relative' }}>
+        <div style={{ paddingTop: '60px', position: 'relative' }}>
           <article 
           className={`${uc.card} ${nunito.className}`} 
           id={uc.firstCARD} 

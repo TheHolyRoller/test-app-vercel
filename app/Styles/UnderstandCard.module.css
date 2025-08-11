@@ -15,8 +15,6 @@
     -moz-border-radius: 1rem;
     -ms-border-radius: 1rem;
     -o-border-radius: 1rem;
-
-
     
 }
 
@@ -108,7 +106,6 @@
     z-index: 9999999;
     position: relative; 
     margin-bottom: -2rem !important; 
-    outline: 2px solid hotpink; 
 
 
 
@@ -124,7 +121,6 @@
     width: 100%; 
     margin-bottom: 5rem !important;
 
-    outline: 12px solid green; 
 
 
 }
@@ -464,9 +460,6 @@
     
     .supportingText{
 
-        /* margin-bottom: 1.25rem !important; */
-
-        /* outline: 4px solid red; */
 
     }
 

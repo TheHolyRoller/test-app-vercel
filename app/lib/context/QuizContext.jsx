@@ -2,12 +2,11 @@
 
 /* eslint-disable no-unused-vars */
 import { createContext, useContext, useState, useEffect, use } from 'react';
-import { useRouter } from 'next/navigation';
 import { useUser } from './UserContext';
 import { databases } from '../appwrite';
 import { useRef } from 'react';
 import { Query } from 'appwrite';
-
+import { usePathname, useRouter } from 'next/navigation';
 // Color logic is now handled directly in the context
 
 // Environment variable checks
@@ -22,9 +21,11 @@ export const QuizProvider = ({ children }) => {
     // Add in the use Ref instance here 
     const hasInitialized = useRef(false); 
 
+    const pathname = usePathname();
     const router = useRouter();
     // const { userAge } = useUser();
     const userAge = 'adult'; 
+
 
 
     // Set the score to the percentage score 
@@ -222,8 +223,8 @@ export const QuizProvider = ({ children }) => {
     useEffect(() => {
         let color = '#809acc'; // default color
         
-
-        if (cardType && cardSection) {
+        // Only apply quiz-specific colors if we're on the quiz page
+        if (pathname === '/quiz' && cardType && cardSection) {
             if (cardType === 'Question') {
                 const colorMap = {
                     reading: "#78D591",
@@ -235,7 +236,7 @@ export const QuizProvider = ({ children }) => {
                 color = colorMap[cardSection.toLowerCase()] || '#809acc';
             } else {
                 const colorMap = { 
-                    // reading: '#5EA772',
+                    reading: '#5EA772',
                     writing: '#3B73A6', 
                     memory: '#B3631C', 
                     tests: '#BC990B', 
@@ -246,8 +247,8 @@ export const QuizProvider = ({ children }) => {
         }
         
         setNavColor(color);
-        console.log('Nav color updated:', color, 'for cardType:', cardType, 'cardSection:', cardSection);
-    }, [cardType, cardSection]);
+        console.log('Nav color updated:', color, 'for cardType:', cardType, 'cardSection:', cardSection, 'pathname:', pathname);
+    }, [cardType, cardSection, pathname]);
     
     useEffect(() => {
 
@@ -255,19 +256,10 @@ export const QuizProvider = ({ children }) => {
 
         if(currentQuestion && currentQuestion.Type && currentQuestion.Section){
 
-
-            // console.log("Testing this extraction method \n", questions[currentIndex].Type); 
-            //   console.log('this is the question type::::::: \n', currentQuestion.Type); 
-            //   console.log('this is the question Section :::::::!!!!! \n', currentQuestion.Section); 
-            //    console.log('this is the current question :::::!!!!!!!! \n', currentQuestion);
-               
-            // Now set the state values of the Card Section and Card type state variables 
             setCardSection(questions[currentIndex].Section)
             setCardType(questions[currentIndex].Type); 
             console.error('this is the value of the card Section \n', cardSection); 
             console.log('this is the value of the card Type \n', cardType); 
-
-
 
         }
       
@@ -482,7 +474,7 @@ export const QuizProvider = ({ children }) => {
                 console.log('just about to navigate to the result page'); 
             }, 2000);
 
-            router.push('/result');
+            // router.push('/result');
             
         }
     };

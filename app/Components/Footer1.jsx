@@ -8,9 +8,9 @@ export default function Footer() {
 
   console.log('this is the footers color \n', navColor); 
 
-
+  
   return (
-        <footer className="p-4 footer sm:footer-horizontal footer-center text-base-content" style={{backgroundColor: navColor || '#809acc', position: 'fixed', bottom: '0%', height: '4.3em'}} >
+        <footer className="p-4 footer sm:footer-horizontal footer-center text-base-content" style={{ backgroundColor: navColor, position: 'fixed', bottom: '0%', height: '4.3em'}} >
 </footer> 
     );
   }
