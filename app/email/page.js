@@ -323,6 +323,7 @@ export default function EmailPermission() {
           style={{
               backgroundColor: '#4168b3',
               boxShadow: '0 -2px 8px rgba(0, 0, 0, 0.1), -2px 0 8px rgba(0, 0, 0, 0.1), 2px 0 8px rgba(0, 0, 0, 0.1)', 
+              outline: '5px solid red'
           }}
       >
          {/*} {audio_url && (

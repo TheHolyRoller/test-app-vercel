@@ -193,9 +193,7 @@ function ResultContent() {
     
     return (
         <>
-        {/* <UnderstandCard/>  */}
-
-        <main className={rc.mainContainer} style={{outline: '4px solid red', paddingTop: '60px'}}>
+        <main className={rc.mainContainer} style={{outline: '0px solid red', paddingTop: '60px'}}>
             
         <article 
           className={`${rc.card} ${nunito.className}`} 
@@ -207,45 +205,23 @@ function ResultContent() {
 
           }}
           >
-      <div 
+        <div 
           className={rc.cardCategoryColorContainer} 
           style={{
-              backgroundColor: '#4168b3',
+              backgroundColor: '#012973',
               boxShadow: '0 -2px 8px rgba(0, 0, 0, 0.1), -2px 0 8px rgba(0, 0, 0, 0.1), 2px 0 8px rgba(0, 0, 0, 0.1)', 
-  
           }}
       >
-          {/* {audio_url && (
-              <audio 
-                  key={audio_url} 
-                  controls 
-                  autoPlay 
-                  style={{ opacity: '0', position: 'absolute' }}
-                  onPlay={() => console.log('🎵 Audio Started Playing:', audio_url)}
-                  onError={(e) => console.error('❌ Audio Error:', e)}
-              >
-                  <source src={audio_url} type="audio/mp3" />
-              </audio>
-          )} */}
+      
           
-  
           <div className={`${rc.categoryLabelContainer} ${nunito.className}`}>
               <label className={`${rc.categoryLabel} ${nunito.className}`}>
-  
-  
-                  <div className={`${rc.labelContainer} ${nunito.className}`}>
-                  Welcome
+                  <div className={`${rc.labelContainer} ${nunito.className}`} style={{backgroundColor: '#033699'}}>
+                  results
                   </div>
               </label>
           </div>
       </div>
-
-
-      <header className={rc.headerImageContainer}>
-
-            {/* <Image className={rc.mainImage}  src={ivvi_group} width={170} height={170} alt='notes' />  */}
-            </header>
-   
           <div className={`${rc.question_textContainer} ${nunito.className}`} style={{color:'#333333' }} >
               <h2 className={`${rc.question_text} ${nunito.className}`} style={{color:'#333333' }}>
   

@@ -64,6 +64,37 @@
 .categoryLabel {
 }
 
+
+
+
+.cardCategoryColorContainer{
+    position: relative;
+    height: 3rem;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px; 
+    display: grid; 
+    place-content: center;
+    background-color: var(--category-color, #ccc);
+    height: 4.5rem; 
+}
+
+
+.categoryLabelContainer{
+    /* height: 4.5rem;  */
+    height: 5.5rem; 
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    display: grid; 
+    place-content: center;
+
+    
+
+}
+
+
+
+
+
 .labelContainer{
     height: 2.5rem;
     width: 300px;
@@ -116,12 +147,14 @@
     width: 90%;
     text-align: center;
     margin: 0 auto;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
+
     font-family: var(--font-nunito), sans-serif;
     
+
     z-index: 9999999;
     position: relative; 
-    /* outline: 5px solid red; */
+    
     margin-top: -2.5rem; 
 
 
@@ -443,18 +476,44 @@
 
 }
 
- @media(min-width: 1100px){
 
+
+@media(max-width: 900px){
 
     .question_textContainer{
-       
+
+        /* font-size: clamp(1.1rem + 55vw) !important;  */
+        font-size: 1.5rem;
+        font-weight: 900;        
+        
+        
+        width: 90%;
+        text-align: center;
+        margin: 0 auto;
+        /* text-transform: uppercase; */
     
+        font-family: var(--font-nunito), sans-serif;
+
     
+        z-index: 9999999;
+        position: relative; 
+        margin-top: -2.5rem; 
+
+        
     
     
     }
 
 
+
+}
+
+
+
+
+
+
+ @media(min-width: 1100px){
 
 
     .question_text{

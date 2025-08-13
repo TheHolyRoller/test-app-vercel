@@ -4,8 +4,12 @@
 
     width:320px;    
     position: relative;
- 
-    background-color: #013699 !important; 
+    
+    background-color: #fbfbfb;
+    color: #404F6F !important; 
+
+
+    /* background-color: #013699 !important;  */
     
     margin: 0 auto; 
     margin-bottom: 5.9rem;
@@ -19,7 +23,9 @@
 }
 
 .firstCARD{
-    background-color: #013699; 
+    background-color:#fbfbfb; 
+
+
 
 }
 
@@ -78,7 +84,7 @@
     /*position: relative;
     */z-index: 9999999;
     position: absolute;
-    top: 30%;
+    top: 35%;
     left: 50%;
     right: 50%;
     transform:translate(-50%, -30%);
@@ -86,6 +92,13 @@
     -moz-transform:translate(-50%, -30%);
     -ms-transform:translate(-50%, -30%);
     -o-transform:translate(-50%, -30%);
+
+
+    color: #404F6F !important; 
+
+
+
+
 }
 
 .question_text{
@@ -96,6 +109,12 @@
     margin-bottom: 4.5em; 
     font-family: var(--font-nunito), sans-serif;
     font-weight: 600;
+
+    color: #404F6F !important; 
+    font-weight: 900;
+    font-size: 1.8rem !important;
+
+
 }
 
 
@@ -170,9 +189,6 @@
     position: absolute; 
     top: 80%; 
 
-
-
-
 }
 
 .doodleContainer{
@@ -199,8 +215,8 @@
     position: relative;
     width: 320px;
     height: 555px;
-    /* background-color: #fbfbfb; */
-    background-color: #013699; 
+    background-color: #fbfbfb;
+    /* background-color: #013699;  */
 
     border-radius: 0rem;
     -webkit-border-radius: 0rem;
@@ -225,8 +241,8 @@
     height: 555px;
     max-height: 777px;
     width: 320px;
-    /* background-color: #fbfbfb; */
-    background-color: #013699; 
+    background-color: #fbfbfb;
+    /* background-color: #013699;  */
 
     box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
     transform:translate(0rem, 4em);
@@ -239,8 +255,8 @@
 #cardThree{
  width: 320px;
  height: 400px;
- /* background-color: /#fbfbfb; */
- background-color: #013699; 
+ background-color: #fbfbfb;
+ /* background-color: #013699;  */
 
  border-radius: 1rem;
  -webkit-border-radius: 1rem;
@@ -260,8 +276,8 @@
     z-index: -5;
     width: 320px;
     height: 400px;
-    /* background-color: #fbfbfb; */
-    background-color: #013699; 
+    background-color: #fbfbfb;
+    /* background-color: #013699;  */
 
     position: absolute;
     bottom: 0;
@@ -287,7 +303,8 @@
     display: grid;
     place-content: center;
     margin: 0 auto; 
-    margin-top: -5em !important; 
+    margin-top: -3.2rem; 
+
 
 
 }
@@ -402,12 +419,11 @@
     width: 99.99vw; 
     margin: 0 auto; 
     /* margin-top: -0.8em; */
-    margin-top: 2em !important; 
+    /* margin-top: 2em !important;  */
 
     display: grid;
     place-content: center;
     /* color: white; */
-    color: charcoal; 
 
     cursor: pointer;
     
@@ -418,12 +434,24 @@
 
 
 .secondaryButton{
+    margin-top: -1.5em;
+    height: 60px;
+    width: 300px;
+    color: white !important;
+    background-color: #686886 !important;
 
 
+    display: grid;
+    place-content: center;
 
-margin-top: -1.5em; 
+    font-size: 2rem;
+    font-weight: 900;   
+    margin-top: -4.5rem; 
 
 
-
-
+    border-radius:23px ;
+    -webkit-border-radius:23px ;
+    -moz-border-radius:23px ;
+    -ms-border-radius:23px ;
+    -o-border-radius:23px ;
 }

@@ -175,61 +175,42 @@ export default function PostQuizCard() {
       {question_text && (
           <div className={`${pc.question_textContainer} ${nunito.className}`}  >
               <h2 className={`${pc.question_text} ${nunito.className}`} style={{color: 'white' }}>
-                  Want to screen your friends or family? 
+                  Want to screen your friends or family for Dyslexia? 
   
 
   
               </h2>
-          </div>
-      )}
-      
-      <div className={pc.imageSectionContainer}>
-          <div className={pc.doodleContainer}>
-              {currentIMG && (
-                  <Image 
-                      src={currentIMG}
-                      className={pc.currentIMG}
-                      alt='quiz illustration'
-                      width={300}
-                      height={300}
-                      unoptimized
-                      onLoad={() => consolpc.log('🖼️ Image Loaded:', currentIMG)}
-                      onError={(e) => consolpc.error('❌ Image Error:', e)}
-                      style={{
-                          marginTop: '-4.5rem',
-                          objectFit: 'contain', 
-                          zIndex: '0', 
-                      }}
-                  />
-              )}
-          </div>
-      </div>
-
-      <footer className={pc.ivviLogoContainer}>
-                    <span className={pc.bySpan}>by</span>
-                    <figure className={pc.logo}>
-                        <Image src={logo} width={150} height={50} alt='logo' className={pc.logoImage} />
-                    </figure>
-                </footer>
-  
-      <article className={pc.card} id={pc.cardOne}></article>
-      <article className={pc.card} id={pc.cardTwo}></article>
-      <article className={pc.card} id={pc.cardThree}></article>
-      <article className={pc.card} id={pc.cardFour}></article>
-  </article>
-
-
-
-<aside className={pc.buttonSectionContainer}>
+              <aside className={pc.buttonSectionContainer} style={{zIndex: '99999'}} >
           {isMobile ? (
             <div className={pc.CTAButton} onClick={handleShare}>Share Screener</div>
           ) : (
             <div className={pc.CTAButton} onClick={handleCopyToClipboard} style={{fontSize: '1.9rem', letterSpacing: '1px'}}>Copy Link</div>
           )}
         </aside>
+
+          </div>
+      )}
+
+      
+
+  
+      <article className={pc.card} id={pc.cardOne}></article>
+      <article className={pc.card} id={pc.cardTwo}></article>
+      <article className={pc.card} id={pc.cardThree}></article>
+      <article className={pc.card} id={pc.cardFour}></article>
+
+    
+
+
+
+  </article>
+
+
+
+
         <div className={pc.secondaryButtonContainer}>
           <div className={pc.secondaryButton} onClick={handleGoToIdeal}>
-            *or Click here to Screen them now
+            Screen Now
           </div>
         </div>
   

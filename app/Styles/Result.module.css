@@ -85,7 +85,6 @@
     font-weight: bolder;
     margin: 2rem auto; 
      width: 80%; 
-     /* outline: 4px solid lime; */
     text-align: center;
 
 
@@ -118,11 +117,10 @@
     width: 99.99vw; 
 
     margin: 0 auto; 
-    outline: 2px solid lime;
     display: grid;
     place-content: center;
     margin-top: -7rem; 
-
+    
 
 }
 
@@ -195,20 +193,10 @@
         padding: 0.5rem;
     }
     
-    .mainScore {
-        width: 120px;
-        height: 120px;
-        font-size: 3rem;
-        outline-width: 8px;
-    }
-    
     .impactMessage {
         font-size: 1.2rem;
         width: 95%;
         margin-top: 4rem;
-
-
-
 
     }
 
@@ -222,6 +210,20 @@
 
 
     }
+
+    
+.mainScore {
+    outline: 8px solid white;
+    max-width: 100px !important;
+    max-height: 100px !important;
+
+    /* outline: 5px solid red !important; */
+    margin-top: -3rem !important;
+}
+
+
+
+
 }
 
 @media (max-width: 480px) {
@@ -275,6 +277,7 @@
         text-align: center;
         line-height: 1.4;
         margin-top: -1.5em !important; 
+        font-size: 1.2rem;
 
 
 

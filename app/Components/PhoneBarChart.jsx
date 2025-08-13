@@ -1,4 +1,6 @@
 import React from 'react'
+import { nunito } from '../fonts/nunito';
+
 
 import p from '../Styles/PhoneBarChart.module.css'; 
 
@@ -93,51 +95,53 @@ function PhoneBarChart({ writingPercentage,
 
     {/* Add in the overall compound score here  */}
 
-     <main className={p.mainChartContainer}>
-            <div className={p.mainChartSubContainer}>
+    {/* Replace this main container with the card element and it's main container */}
+
+    {/* Add in the relevant styles from the classes into the style sheet and then place the phone bar chart component into the card element. */}
 
 
-            <div className={p.mainHeadlineContainer}>
-
-                <h1 className={p.mainHeadline}>
-
-                    {isExplanationPage ? "The 5 Areas" : "Your Dyslexia Score"}
-
-                </h1>
-
-
-
-            </div>
-
-            {/* {!isExplanationPage && (
-                <div className={p.mainScore}>
-                    {score}
-
-                    <span className={p.refSpan}>
-                        /100
-                    </span>
-                </div>
-            )} */}
-
-            {isExplanationPage && (
-                <div className={p.mainScore} style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>
-                    {/* {percentage} */}
-                    {score}
-                    <span className={p.refSpan} style={{ fontSize: '1.2rem' }}>
-                        /100
-                    </span>
-                </div>
-            )}
+    <main className={p.mainContainer} style={{outline: '0px solid red', paddingTop: '60px'}}>
             
-                <section className={p.chartContainer} >
-                
-                    <div className={p.mainChartSubContainerTextSection}>
-                    <div className={p.mainTitleContainer}>
-                <div className={p.mainTitleSubContainer}>
+            <article 
+              className={`${p.card} ${nunito.className}`} 
+              id={p.firstCARD} 
+              style={{
+                  position: 'relative',
+                  zIndex: 200,
+                  boxShadow: '0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.06)',
+    
+              }}
+              >
+            <div 
+              className={p.cardCategoryColorContainer} 
+              style={{
+                  backgroundColor: '#012973',
+                  boxShadow: '0 -2px 8px rgba(0, 0, 0, 0.1), -2px 0 8px rgba(0, 0, 0, 0.1), 2px 0 8px rgba(0, 0, 0, 0.1)', 
+              }}
+          >
+
+          
+              
+              <div className={`${p.categoryLabelContainer} ${nunito.className}`} style={{}} >
+                  <label className={`${p.categoryLabel} ${nunito.className}`}>
+                      <div className={`${p.labelContainer} ${nunito.className}`} style={{}}>
+                      results
+                      </div>
+                  </label>
+              </div>
+          </div>
+    
+                  <div className={p.mainScore}>
+                        <span className={p.scoreSpan}>
+
+                        {score}
+                        </span>
+                        <span className={p.refSpan}>
+                            /100
+                        </span>
+                    </div>
 
 
-                </div>
-                </div>
 
                     <div className={p.barChartSection}>
                         {categoryData.map((category, index) => (
@@ -176,35 +180,29 @@ function PhoneBarChart({ writingPercentage,
                             </div>
                         ))}
                     </div>
-
-                    <ul className={p.barChartMainList}>
-                        <li className={p.barChartListItem}>
-
-                            <article className={p.resultExplanationContainer}>
-
-                            <div className={p.resultExplanationTitleContainer}>
-                            </div>
-                          
-                            </article>
-                        </li>
-                    </ul>
-                    </div>
-
-                {/* Add in the button here  */}
-                    <div className={p.buttonContainer}>
-
-                        <div className={p.button} onClick={onNext} style={{cursor: 'pointer', fontSize: '2rem', letterSpacing: '1px'}}>
-
-                        Next
-
-                        </div>
+                  
+    
+          <article className={p.card} id={p.cardOne}></article>
+          <article className={p.card} id={p.cardTwo}></article>
+          <article className={p.card} id={p.cardThree}></article>
+          <article className={p.card} id={p.cardFour}></article>
 
 
-                    </div>
+      </article>
+    
+                        
 
-                </section>
-            </div>
-        </main>
+      <div className={p.buttonContainer}>
+
+<div className={p.button} onClick={onNext} style={{cursor: 'pointer', fontSize: '2rem', letterSpacing: '1px'}}>
+
+Next
+
+</div>
+</div>
+
+    
+      </main>
         </>
   )
 }
