@@ -1,11 +1,12 @@
 'use client'
 import React from 'react'
 import Image from 'next/image'; 
-import c from '../Styles/categories.module.css';
+import c from '../Styles/categoryCardTest.module.css';
 import { nunito } from '../fonts/nunito';
 import { useQuiz } from '../lib/context/QuizContext';
 import { usePathname } from 'next/navigation';
 import logo from '../assets/ivvi_Logo.svg'; 
+
 
 function CategoryCard({ Section, audio_url, categoryName }) {
     const { handleAnswer, currentQuestion } = useQuiz();
