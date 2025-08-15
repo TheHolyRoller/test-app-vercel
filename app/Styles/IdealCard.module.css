@@ -4,8 +4,7 @@
 
     width:320px;    
     position: relative;
-    /* background-color: #ccc; */
-    /* background-color: #fbfbfb; */
+    display: grid;
     background-color: white !important;
     margin: 0 auto; 
     margin-bottom: 5.9rem;
@@ -69,10 +68,14 @@
 .headerImageContainer{
 
 
+    position: relative; 
+
     display: grid; 
+
     place-content: center;
 
-    margin-top: 0.6em; 
+    /* margin-top: -10.5rem;  */
+    margin-top: 0.5rem; 
 
 
 
@@ -96,37 +99,29 @@
 
 .question_textContainer{
     font-size: 1.3rem;
-    width: 70%;
+    width: 100%;
     text-align: center;
     margin: 0 auto;
     text-transform: uppercase;
     font-family: var(--font-nunito), sans-serif;
-    
     z-index: 9999999;
-    position: absolute;
-    bottom: 19%;
-    left: 50%;
-    right: 50%;
-    transform:translate(-50%, -50%) !important;
-    -webkit-transform:translate(-50%, -50%) !important;
-    -moz-transform:translate(-50%, -50%) !important;
-    -ms-transform:translate(-50%, -50%) !important;
-    -o-transform:translate(-50%, -50%) !important;
-
-
+    position: relative;
+    display: grid;  
+    place-content: center;
+    /* outline: 1px solid red; */
 
 }
 
-#question_text{
+.question_text{
 
     position: relative; 
     z-index: 99999;
     margin: 0 auto;
     font-family: var(--font-nunito), sans-serif;
     font-weight: 600;
-    width: 80%; 
-    margin-bottom: 5.5rem !important;
-    outline: 5px solid red;
+    margin-bottom: 2rem;
+
+
 
 
 
@@ -138,6 +133,10 @@
 
 
     font-size: 1.3rem; 
+    margin: 0 auto; 
+    width: 70%;
+    display: block; 
+    position: relative; 
 
 }
 
@@ -146,20 +145,16 @@
 
 
 .supportingTextSectionContainer{
-        position: absolute;
-        width: 90%;
+
+
+        width: 100%;    
+        position: relative; 
+        display: flex;
+        align-items: flex-end;
+        
         margin: 0 auto;
-
-        bottom: 4.35%;
-        left: 50%;
-        right: 50%;
+         margin-bottom: 5rem;
         text-align: center;
-        transform:translate(-50%, -50%);
-        -webkit-transform:translate(-50%, -50%);
-        -moz-transform:translate(-50%, -50%);
-        -ms-transform:translate(-50%, -50%);
-        -o-transform:translate(-50%, -50%);
-
         color: #65656C; 
         font-weight: lighter !important;
 }
@@ -168,7 +163,8 @@
 .supportingText{
 
     font-weight: lighter !important;
-
+    width: 90%;
+    margin: 0 auto;
 
 
 
@@ -422,10 +418,9 @@
 }
 
 
-@media(min-width: 1100px){
+/* @media(min-width: 1100px){
 
 
-    /* Add in the desktop changes here */
     .question_textContainer{
 
 
@@ -443,7 +438,7 @@
     .question_text{
 
 
-
+        
 
 
     }
@@ -460,17 +455,7 @@
 
 
 
-    .supportingTextSectionContainer{
-
-
-        position: absolute; 
-        bottom: 8%;
-
-
-
-
-
-    }
+    
 
 
     .supportingText{
@@ -508,7 +493,6 @@
     }
 
 
-    /* Increase the font size here  */
 
     .idealSpan{
 
@@ -542,4 +526,4 @@
 
 
 
-}
+} */
