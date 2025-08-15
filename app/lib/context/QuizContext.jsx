@@ -111,8 +111,6 @@ export const QuizProvider = ({ children }) => {
 
         console.log('this is the current index being updated:::;;;; \n', currentIndex); 
 
-        
-
     }, [currentIndex])
 
 
@@ -234,6 +232,12 @@ export const QuizProvider = ({ children }) => {
                     plans: "#CB3E32",
                 };
                 color = colorMap[cardSection.toLowerCase()];
+                console.log('nav color index contents \n', colorMap[cardSection.toLowerCase()]);
+                console.log('this is the current hash map key \n', cardSection.toLowerCase()); 
+                console.log('this is the color{}::::: \n', color); 
+
+
+
             } else {
                 const colorMap = { 
                     reading: '#5EA772',
@@ -243,10 +247,55 @@ export const QuizProvider = ({ children }) => {
                     plans: '#B53C31'
                 };
                 color = colorMap[cardSection.toLowerCase()];
+                console.log('nav color index contents \n', colorMap[cardSection.toLowerCase()]);
+                console.log('this is the current hash map key \n', cardSection.toLowerCase()); 
+                console.log('this is the color{}::::: \n', color); 
+
+
             }
+        }
+
+        if(color === undefined){
+
+
+            console.error('color is undefined!!! \n', color);    
+
+            console.error('this is the current question in error  \n', currentQuestion); 
+            console.error('this is the current index \n', currentIndex); 
+
+            // Log the current keys here 
+            console.log('this is the current key!!!!@@@@:::: \n', cardSection); 
+            console.log('this is the current Card type \n', cardType);
+            
+          
+            if(cardType === 'Category'){
+
+                color = '#3B73A6'; 
+                console.log('this is the fallback option:::: \n', color); 
+                console.log('this is the current card Section \n', cardSection); 
+                console.log('this is the card type in the last fallback \n', cardType); 
+
+            }
+
+            else{
+
+                color = '#78D591'; 
+                console.log('this is the first callback color \n', color); 
+                console.log('this is the current card Section \n', cardSection); 
+
+
+            }
+
+
+
+
         }
         
         setNavColor(color);
+        console.log('this is the current card section \n', cardSection); 
+        console.log('this is the current Card Type \n', cardType); 
+             
+        // Find out why it's undefined on the 8th question & category cards 
         console.log('Nav color updated:', color, 'for cardType:', cardType, 'cardSection:', cardSection, 'pathname:', pathname);
     }, [cardType, cardSection, pathname]);
     
@@ -256,7 +305,8 @@ export const QuizProvider = ({ children }) => {
 
         if(currentQuestion && currentQuestion.Type && currentQuestion.Section){
 
-            setCardSection(questions[currentIndex].Section)
+            setCardSection(questions[currentIndex].Section); 
+
             setCardType(questions[currentIndex].Type); 
             console.error('this is the value of the card Section \n', cardSection); 
             console.log('this is the value of the card Type \n', cardType); 
@@ -474,6 +524,7 @@ export const QuizProvider = ({ children }) => {
             }, 2000);
 
             router.push('/result');
+
             
         }
     };
@@ -500,7 +551,6 @@ export const QuizProvider = ({ children }) => {
                 let offset = 0;
                 let totalDocuments = 0;
                 let total; 
-    
     
                 do {
     

@@ -371,9 +371,13 @@ margin-bottom: 5em;
 
 
     position: relative; 
-    display: grid; 
+    display: flex;
+    justify-content: flex-end; 
+
     margin-right: -6em; 
     margin-top: -1.35em; 
+    outline: 5px solid red;
+
 
 
 
@@ -394,8 +398,8 @@ margin-bottom: 5em;
 
 
 .iconBackground{
-    /*outline: 2px solid red;
-    */width: 2em;
+
+    width: 2em;
     height: 2em;
     background-color: rgba(240, 240, 240, 0.7);
     border-radius:50% ;
@@ -403,13 +407,12 @@ margin-bottom: 5em;
     -moz-border-radius:50% ;
     -ms-border-radius:50% ;
     -o-border-radius:50% ;
-    justify-self: right;
-    /*margin-top: -1em;
-    */display: grid;
+    /* justify-self: right; */
+    display: grid;
     place-content: center;
     margin-right: -0.7em;
-    /*margin-bottom: -8px;
-    */padding-bottom: 0px;
+    
+    padding-bottom: 0px;
     transform:translate(0, -1.6px) ;
     -webkit-transform:translate(0, -1.6px) ;
     -moz-transform:translate(0, -1.6px) ;

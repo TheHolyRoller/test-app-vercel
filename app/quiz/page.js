@@ -100,7 +100,7 @@ export default function Quiz() {
 
 
     return (    
-        <section className={q.quizMainSection} style={{color: 'white', overflowX: 'hidden', width: '349px'}}>
+        <section className={q.quizMainSection} style={{color: 'white'}}>
             <main className={q.quizComponentContainer} id='quizElement' style={{position: 'relative', zIndex: '9999999'}}>
           
 
