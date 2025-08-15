@@ -6,6 +6,9 @@
     position: absolute; 
     height: 4.5rem;
     bottom: 0%; 
+    min-width: 110vw; 
+    right: 0; 
+    
     
     
 }
@@ -19,10 +22,11 @@
         bottom: -9%; 
 
 
-
-
     }
 
 
 
 }
+
+
+
