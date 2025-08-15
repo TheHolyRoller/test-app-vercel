@@ -1,0 +1,28 @@
+
+
+
+#footer{
+
+    position: absolute; 
+    height: 4.5rem;
+    bottom: 0%; 
+    
+    
+}
+
+
+@media (min-width: 200px) and (max-width: 900px) {
+    
+
+    #footer{
+
+        bottom: -9%; 
+
+
+
+
+    }
+
+
+
+}
