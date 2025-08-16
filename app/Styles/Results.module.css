@@ -1,3 +1,8 @@
+.mainBarChartContainer{
+
+}
+
+
 .quizResultsSection {
     height: 100vh; 
     width: 80vw; 
@@ -78,6 +83,7 @@
     -ms-transform: translate(-0em, -16.0em);
     -o-transform: translate(-0em, -16.0em);
 }
+
 
 .scoreSupportingTextContainer {
     position: relative;

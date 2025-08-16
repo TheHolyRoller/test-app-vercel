@@ -95,7 +95,6 @@ margin-bottom: 5em;
 
 
 
-
 }
 
 .card::-webkit-scrollbar{
@@ -119,23 +118,12 @@ margin-bottom: 5em;
 }
 
 
-
-
-
-
-#firstCARD{
-  
-
-
-}
-
-
-
 #audioFirstCard{
 
 
 
     margin-top: 0 !important;
+
 
 
 }
@@ -155,6 +143,10 @@ margin-bottom: 5em;
     -moz-transform:translate(0, 4.5em) !important;
     -ms-transform:translate(0, 4.5em) !important;
     -o-transform:translate(0, 4.5em) !important;
+
+
+
+
 }
 
 
@@ -190,7 +182,7 @@ margin-bottom: 5em;
  position: absolute;
  bottom: 0; 
  z-index: -2;
- margin-bottom: -1rem;
+ margin-bottom: -1.2rem;
  /* margin-bottom: 0.8em; */
  box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
 
@@ -210,7 +202,7 @@ margin-bottom: 5em;
 
     background-color: #fbfbfb;
     position: absolute;
-    bottom: -1.8rem;
+    bottom: -1.95rem;
     right: 0;
     border-radius: 0 0 1rem 1rem;
 
@@ -412,7 +404,7 @@ margin-bottom: 5em;
     height: 6rem;
     z-index: 9999999;
     position: absolute;
-    top: 30%;
+    top: 31%;
     left: 50%;
     right: 50%;
     transform:translate(-50%, -30%);
@@ -1400,27 +1392,13 @@ font-size: 1.76rem !important;
     margin-top: -3rem !important; 
 }
 
-#cardOne.emailCardOne{
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    position: relative;
-    width: 345px;
-    height: 555px;
-    background-color: #fbfbfb;
-    border-radius: 0rem;
-    -webkit-border-radius: 0rem;
-    -moz-border-radius: 0rem;
-    -ms-border-radius: 0rem;
-    -o-border-radius: 0rem;
-    z-index: -2;
+#cardOne .emailCardOne{
+    
     display: none;
-    transform: translate(0rem,3em) !important;
-    box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+    
 }
 
-#cardTwo.emailCardTwo{
+#cardTwo .emailCardTwo{
     position: absolute; 
     top: 0; 
     left: 0; 
@@ -1439,9 +1417,10 @@ font-size: 1.76rem !important;
     -moz-transform:translate(0rem, 4em);
     -ms-transform:translate(0rem, 4em);
     -o-transform:translate(0rem, 4em);
+
 }
 
-#cardThree.emailCardThree{
+#cardThree .emailCardThree{
     width: 340px;
     height: 400px;
     background-color: #fbfbfb;
@@ -1455,9 +1434,10 @@ font-size: 1.76rem !important;
     z-index: -2;
     margin-bottom: 0.8em;
     box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+
 }
 
-#cardFour.emailCardFour{
+#cardFour .emailCardFour{
     position: relative;
     z-index: -5;
     width: 340px;
@@ -1477,6 +1457,7 @@ font-size: 1.76rem !important;
     -moz-border-radius: 0 0 1rem 1rem;
     -ms-border-radius: 0 0 1rem 1rem;
     -o-border-radius: 0 0 1rem 1rem;
+
 }
 
 

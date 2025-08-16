@@ -113,7 +113,7 @@ function Page() {
 
     {question_text && (
         <div className={`${a.question_textContainer} ${nunito.className}`} style={{outline: '0px solid red', marginTop: '-2.7rem'}} >
-            <h2 className={`${a.question_textt} ${nunito.className}`}>
+            <h2 className={`${a.question_text} ${nunito.className}`}>
                 {question_text}
 
                 <span>
@@ -123,7 +123,7 @@ function Page() {
         </div>
     )}
     
-    <div className={a.imageSectionContainer} style={{outline: '0px solid red', top: '61%'}} >
+    <div className={a.imageSectionContainer} style={{outline: '0px solid red', top: '69%'}} >
         <div className={a.doodleContainer}>
             {currentIMG && (
                 <Image 
@@ -153,9 +153,6 @@ function Page() {
 
         <div className={a.audioButtonSectionContainer}>
         <div className={a.audioButtonsSubContainer}>
-
-
-
 
         <AudioButtons/> 
         </div>

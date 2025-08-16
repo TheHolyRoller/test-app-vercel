@@ -4,7 +4,6 @@ import { nunito } from '../fonts/nunito';
 
 import p from '../Styles/PhoneBarChart.module.css'; 
 
-
 function PhoneBarChart({ writingPercentage,
     memoryPercentage,
     readingPercentage,

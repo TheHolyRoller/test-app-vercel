@@ -4,7 +4,7 @@
 #footer{
 
     position: absolute; 
-    height: 4.5rem;
+    height: 4rem;
     bottom: 0%; 
     min-width: 110vw; 
     right: 0; 
@@ -19,7 +19,7 @@
 
     #footer{
 
-        bottom: -9%; 
+        bottom: -11%; 
 
 
     }

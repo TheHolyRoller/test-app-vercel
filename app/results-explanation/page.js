@@ -102,6 +102,9 @@ function ResultsExplanationContent() {
     
     return (
         <>
+
+            <div className={r.mainBarChartContainer}>
+
             <PhoneBarChart
                 percentage={percentage || 0}
                 score={score}
@@ -121,6 +124,7 @@ function ResultsExplanationContent() {
                 
                 
             />
+            </div>
         </>
     );
 }
