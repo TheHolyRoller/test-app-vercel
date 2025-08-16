@@ -58,7 +58,7 @@ export default function EmailPermission() {
     return (
         <div>
         {/* Top Blue Navbar Strip */}
-        <div 
+        <div
           style={{
             width: '100%',
             height: '120px',
@@ -70,9 +70,8 @@ export default function EmailPermission() {
             display: 'none'
           }}
         />
-        
 
-        {/* Main Content Container */}
+
         <div style={{ paddingTop: '60px' }}>
           <article 
           className={`${fc.card} ${nunito.className}`} 
@@ -93,9 +92,7 @@ export default function EmailPermission() {
   
           }}
       >
-      
-          
-  
+
           <div className={`${fc.categoryLabelContainer} ${nunito.className}`}>
               <label className={`${fc.categoryLabel} ${nunito.className}`}>
   

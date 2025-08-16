@@ -166,7 +166,6 @@ text-decoration: underline;
     left: 50%;
     right: 50%;
     bottom: 23%;
-    /* outline: 11px solid lime; */
     display: grid;
     place-content: center;
     border-radius:19px;
@@ -206,7 +205,6 @@ text-decoration: underline;
 
 
 .paginationElementContainer{
-    /* outline: 22px solid lime; */
     position: absolute;
     bottom: 31%;
     left: 50%;

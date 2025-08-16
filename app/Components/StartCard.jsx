@@ -15,10 +15,10 @@ export default function EmailPermission() {
     const { finalScore } = useQuiz();
     const { name, sound } = useUser();
 
+
     const handleYesClick = () => {
         router.push('/understand');
     };
-
 
     const handleNoClick = () => {
         // Set flag to trigger refresh when landing on home page
@@ -36,22 +36,9 @@ export default function EmailPermission() {
     const getLabelColorBySection = (section) => "#033699";
 
     return (
-        <div>
-        {/* Top Blue Navbar Strip */}
-        {/* <div 
-          style={{
-            width: '100%',
-            height: '120px',
-            backgroundColor: '#023597',
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            zIndex: 100
-          }}
-        /> */}
-        
 
-        {/* Main Content Container */}
+
+            <div className={st.cardElementContainer} >
         <div style={{ paddingTop: '60px' }}>
           <article 
           className={`${st.card} ${nunito.className}`} 
@@ -63,39 +50,6 @@ export default function EmailPermission() {
               marginTop: '-40px', 
           }}
           >
-      {/* <div 
-          className={st.cardCategoryColorContainer} 
-          style={{
-              backgroundColor: '#4168b3',
-              boxShadow: '0 -2px 8px rgba(0, 0, 0, 0.1), -2px 0 8px rgba(0, 0, 0, 0.1), 2px 0 8px rgba(0, 0, 0, 0.1)', 
-  
-          }}
-      >
-          {audio_url && (
-              <audio 
-                  key={audio_url} 
-                  controls 
-                  autoPlay 
-                  style={{ opacity: '0', position: 'absolute' }}
-                  onPlay={() => consolst.log('🎵 Audio Started Playing:', audio_url)}
-                  onError={(e) => consolst.error('❌ Audio Error:', e)}
-              >
-                  <source src={audio_url} type="audio/mp3" />
-              </audio>
-          )}
-          
-  
-          <div className={`${st.categoryLabelContainer} ${nunito.className}`}>
-              <label className={`${st.categoryLabel} ${nunito.className}`}>
-  
-  
-                  <div className={`${st.labelContainer} ${nunito.className}`} style={{backgroundColor: getLabelColorBySection(Section)}}>
-                  ready
-                  </div>
-              </label>
-          </div>
-      </div> */}
-      
   
       {question_text && (
           <div className={`${st.question_textContainer} ${nunito.className}`} style={{color: 'white'}} >
@@ -108,36 +62,9 @@ export default function EmailPermission() {
                     Adult Dyslexia
                     Screener
 
-
-
               </h2>
           </div>
       )}
-      
-      {/* <div className={st.imageSectionContainer}>
-          <div className={st.doodleContainer}>
-              {currentIMG && (
-                  <Image 
-                      src={currentIMG}
-                      className={st.currentIMG}
-                      alt='quiz illustration'
-                      width={300}
-                      height={300}
-                      unoptimized
-                      onLoad={() => consolst.log('🖼️ Image Loaded:', currentIMG)}
-                      onError={(e) => consolst.error('❌ Image Error:', e)}
-                      style={{
-                          marginTop: '-4.5rem',
-                          objectFit: 'contain', 
-                          zIndex: '0', 
-                      }}
-                  />
-              )}
-          </div>
-      </div> */}
-
-
-        {/* Add in the by ivvi section here  */}
 
         <footer className={st.ivviLogoContainer}>
                     <span className={st.bySpan}>by</span>
@@ -145,9 +72,6 @@ export default function EmailPermission() {
                         <Image src={logo} width={150} height={50} alt='logo' className={st.logoImage} />
                     </figure>
                 </footer>
-
-
-
 
   
       <article className={st.card} id={st.cardOne}></article>
@@ -165,8 +89,6 @@ export default function EmailPermission() {
         Start Screener 
 
     </div>
-
-
   </div>
 
   

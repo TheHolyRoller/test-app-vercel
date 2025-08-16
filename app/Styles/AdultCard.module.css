@@ -103,16 +103,8 @@
     font-family: var(--font-nunito), sans-serif;
     
     z-index: 9999999;
-    position: absolute;
-    bottom: 2%;
-    left: 50%;
-    right: 50%;
-    transform:translate(-50%, -50%) !important;
-    -webkit-transform:translate(-50%, -50%) !important;
-    -moz-transform:translate(-50%, -50%) !important;
-    -ms-transform:translate(-50%, -50%) !important;
-    -o-transform:translate(-50%, -50%) !important;
-
+    position: relative; 
+    margin-top: -4rem; 
 
 
 }
@@ -143,19 +135,10 @@
 
 
 .supportingTextSectionContainer{
-        position: absolute;
-        width: 90%;
-        margin: 0 auto;
-
-        bottom: 0%;
-        left: 50%;
-        right: 50%;
-        text-align: center;
-        transform:translate(-50%, -50%);
-        -webkit-transform:translate(-50%, -50%);
-        -moz-transform:translate(-50%, -50%);
-        -ms-transform:translate(-50%, -50%);
-        -o-transform:translate(-50%, -50%);
+       width: 90%; 
+       margin: 0 auto; 
+       position: relative;
+       padding-bottom: 7.4rem;
 
         color: #65656C; 
         font-weight: lighter !important;
@@ -450,115 +433,5 @@
     place-content: center;
     margin-top: 0.5em; 
     color: #7d879b; 
-
-}
-
-
-
-@media(min-width: 1100px){
-
-    .question_textContainer{
-      
-        
-        bottom: 3.5%;
-        /* outline: 2px solid red; */
-    
-    
-    
-    }
-    
-    .question_text{
-    
-        position: relative; 
-        z-index: 99999;
-        /* margin-top: 2em;  */
-        /* margin-bottom: 4.5em;  */
-        margin: 4.5rem auto;
-        font-family: var(--font-nunito), sans-serif;
-        font-weight: 600;
-        width: 100%; 
-    
-    
-    }
-    
-    
-    .adultSpan{
-    
-    
-        font-size: 1.5rem;
-    
-    }
-    
-    
-    .supportingTextSectionContainer{
-          
-        
-        bottom: 0%;
-            
-    }
-    
-    
-    .supportingText{
-    
-        font-weight: lighter !important;
-    
-    }
-
-
-
-
-
-
-}
-
-
-
-@media(min-width: 300px) and (max-width: 1100px){
-
-
-    .question_textContainer{
-
-        bottom: 9%;
-
-    }
-    
-    .question_text{
-    
-        position: relative; 
-        margin: 4.5rem auto;
-        width: 100%; 
-    
-    
-    }
-    
-    
-    .adultSpan{
-    
-    
-        font-size: 1.5rem;
-    
-    
-    
-    }
-    
-    
-    .supportingTextSectionContainer{
-            width: 90%;
-            bottom: 5%;
-          
-    }
-    
-    
-    .supportingText{
-    
-        font-weight: lighter !important;
-    
-    }   
-
-
-
-
-
-
 
 }

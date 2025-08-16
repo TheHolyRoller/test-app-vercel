@@ -93,11 +93,9 @@
 
 
 .question_textContainer{
-/* TO DO Clamp the font size here!!!!! */
-    /* font-size: 1.3rem; */
-    font-size: clamp(0.8rem + 1vw) !important; 
+    font-size: clamp(1rem, 7vw, 1.4rem) !important; 
 
-    width: 100%;
+    width: 95%;
     text-align: center;
     margin: 0 auto;
     text-transform: uppercase;
@@ -105,7 +103,7 @@
     
     z-index: 9999999;
     position: relative; 
-    margin-bottom: -2rem !important; 
+    margin-top: -4rem; 
 
 
 
@@ -139,16 +137,19 @@
 
 
 .supportingTextSectionContainer{
-        /* position: absolute; */
         position: relative !important; 
 
         width: 90%;
         margin: 0 auto;
        text-align: center; 
 
+       color: #65656C; 
+       font-weight: lighter !important;
+       /* clamp the font size here  */
+       font-size: clamp(1rem, 8vw, 1.15rem);
 
-        color: #65656C; 
-        font-weight: lighter !important;
+       margin-top: -5rem; 
+
 
 }
 

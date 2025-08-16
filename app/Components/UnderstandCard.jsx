@@ -42,12 +42,11 @@ export default function EmailPermission() {
     return (
         <div className={uc.mainContainer}
         
-        style={{outline: '200px solid red', position: 'relative'}}
+        style={{ position: 'relative'}}
         >
-        
-        
-        {/* Main Content Container */}
-        <div style={{ paddingTop: '60px', position: 'relative', outline: '4px solid red' }}>
+
+
+        <div style={{ paddingTop: '60px', position: 'relative' }}>
           <article 
           className={`${uc.card} ${nunito.className}`} 
           id={uc.firstCARD} 

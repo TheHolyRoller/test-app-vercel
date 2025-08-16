@@ -9,7 +9,9 @@
   --foreground: #171717;
   overflow-x: hidden;
 
-  --card-width: 20rem; 
+  /* --card-width: 20rem;  */
+  --card-width: 320px; 
+  
   /* --card-height: 70vh;  */
 
   /* This is now a fixed height so the card won't be jumping around on different screen heights  */

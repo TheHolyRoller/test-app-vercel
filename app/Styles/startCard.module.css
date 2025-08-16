@@ -1,8 +1,45 @@
+
+
+/* Add in the more aggressive padding into a desktop & laptop media query here to account for mobile screens  */
+.cardElementContainer{
+
+
+    padding-top: 5.3rem; 
+
+
+
+}
+
+@media(min-width: 1000px) and (max-width: 3000px){
+
+
+    .cardElementContainer{
+
+
+    
+        padding-top: 4rem; 
+    
+    
+    }
+
+
+
+
+}
+
+
+
+
+
 .card {
 
     
-    height: calc( var(--card-height) - 6rem);
-    width: 300px; 
+    /* height: calc( var(--card-height) - 6rem); */
+    height: var(--card-height);
+
+    /* width: 300px;  */
+    width: var(--card-width); 
+
     position: relative;
     background-color: rgb(1, 54, 153) !important;
     margin: 0 auto; 
@@ -17,6 +54,10 @@
 }
 
 .firstCARD{
+
+    min-width: 320px;
+
+
 }
 
 
@@ -40,7 +81,6 @@
     display: grid; 
     place-content: center;
 
-    
 
 }
 
@@ -72,29 +112,43 @@
     text-transform: uppercase;
     font-family: var(--font-nunito), sans-serif;
     z-index: 9999999;
-    position: absolute;
-    /* top: 30%;     */
-    /* top: 25%; */
-    top: 18%;
-    left: 50%;
-    right: 50%;
-    transform: translate(-50%,-30%)!important;
-    -webkit-transform: translate(-50%,-30%)!important;
-    -moz-transform: translate(-50%,-30%)!important;
-    -ms-transform: translate(-50%,-30%)!important;
-    -o-transform: translate(-50%,-30%)!important;
-    -webkit-transform:translate(-50%, -30%) !important;
+    padding-top: 3rem;
+
+
+
 }
 
 .question_text{
 
     position: relative; 
     z-index: 99999;
-    margin-top: 2em; 
-    margin-bottom: 4.5em; 
+    margin-top: 1em; 
+    margin-bottom: 3.5em; 
     font-family: var(--font-nunito), sans-serif;
     font-weight: 600;
+    font-size: 2.5rem !important; 
+
+    /* Clamp the font size here  */
 }
+
+/* Add in a media query for the font size here  */
+@media(min-width: 1000px) {
+
+    
+.question_text{
+
+
+    /* font-size: clamp(1.5rem, 5vw, 3rem); */
+
+
+}
+
+
+
+
+}
+
+
 
 .imageSectionContainer{
     display: grid;  
@@ -118,16 +172,9 @@
     margin: 0 auto;
     display: grid;
     place-content: center;
-    margin-top: 4em;
-    position: absolute;
-    /* bottom: 0%; */
-    bottom: -3%; 
-    left: 50%;
-    transform:translate(-50%, -5%);
-    -webkit-transform:translate(-50%, -5%);
-    -moz-transform:translate(-50%, -5%);
-    -ms-transform:translate(-50%, -5%);
-    -o-transform:translate(-50%, -5%);
+    position: relative; 
+    margin-top: -4.5rem !important; 
+
 
 
 }
@@ -184,9 +231,9 @@
     right: 0;
     top: 0;
     position: relative;
-    /* width: 320px; */
-    width: 300px; 
-    
+    width: 320px;
+    min-width: 320px; 
+
     height: 555px;
     background-color: #fbfbfb;
     border-radius: 0rem;
@@ -216,11 +263,12 @@
     height: 555px;
     max-height: 777px;
     /* width: 320px; */
-    width: 300px; 
+    /* width: 300px;  */
+    width: 320px;
+    min-width: 320px; 
+
     background-color: #fbfbfb;
-    /* box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3); */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
-    outline: 2px solid lime;
 
     transform:translate(0rem, 4em);
     -webkit-transform:translate(0rem, 4em);
@@ -231,7 +279,10 @@
 
 #cardThree{
  /* width: 320px; */
- width: 300px; 
+ /* width: 300px;  */
+ width: 320px;
+    min-width: 320px; 
+
 
  height: 400px;
  background-color: #fbfbfb;
@@ -258,14 +309,14 @@
 #cardFour{
     position: relative;
     z-index: -5;
-    /* width: 320px; */
-    width: 300px;
+    width: 320px;
+    min-width: 320px; 
+
     height: 400px;
     background-color: #fbfbfb;
     position: absolute;
     bottom: 0;
     right: 0;
-    /* border-radius: 0 0 1rem 1rem; */
     border-radius: 1rem;
     -webkit-border-radius: 1rem;
     -moz-border-radius: 1rem;

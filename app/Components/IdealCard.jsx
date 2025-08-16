@@ -125,23 +125,18 @@ export default function EmailPermission() {
           </div>
       )}
 
-      {/* Add in the supporting text section here  */}
+
       <div className={id.supportingTextSectionContainer}>
 
-
         <p  className={id.supportingText} style={{fontWeight: 'lighter'}}>
-        {/* This unique free screener will help you pinpoint how dyslexia unexpectedly affects your life.  */}
-        Helps students and professionals understand when dyslexia gets in the way.
+          Helps students and professionals understand when dyslexia gets in the way.
 
         </p>
 
       </div>
 
-      <div className={id.paginationElementContainer}
-      
-      style={{ margin: '0 auto'}}
 
-      >
+      <div className={id.paginationElementContainer} style={{ margin: '0 auto'}}>
       <div className={id.paginationElementSubContainer}>
 
         <ul className={id.paginationList}

@@ -130,7 +130,6 @@
 
     width: 40%; 
     text-align: center;
-    /* outline: 2px solid lime; */
 
 
 }
@@ -144,7 +143,6 @@
     position: relative;
     width: 320px;
     height: 555px;
-    /* background-color: #fbfbfb; */
     background-color: #013699;  
 
     border-radius: 0rem;
@@ -695,8 +693,7 @@
     box-sizing: border-box;
     display: grid !important;
     align-content: center;
-    /*outline: 2px solid lime;
-    */transform:translate(0, 8.5rem) ;
+    transform:translate(0, 8.5rem) ;
     -webkit-transform:translate(0, rem) ;
     -moz-transform:translate(0, rem) ;
     -ms-transform:translate(0, rem) ;

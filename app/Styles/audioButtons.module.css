@@ -1,21 +1,42 @@
 .mainAnswerContainer {
-    position: absolute;
-    bottom:2.5em;
-    left: 0;
+
+    position: relative;
     display: grid;
+    
     place-content: center;
     text-transform: uppercase;
     background: none;
     z-index: 1000;
-    width: 100%;
+    width: 100%;    
+    margin-top: -2.5rem !important; 
 
 
+
+}
+
+
+@media(max-width: 1000px){
+
+
+    
+    .mainAnswerContainer {
+
+
+        margin-top: -3.25rem !important; 
+
+
+
+    
+    }
     
 
 
 
 
 }
+
+
+
 
 .answerSection {
 
@@ -524,7 +545,6 @@
     .buttonList {
         display: flex; 
         gap: 3.5rem; 
-        /* outline: 2px solid lime; */  
     
     
     }
