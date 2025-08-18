@@ -3,12 +3,22 @@
 import { useQuiz } from '../lib/context/QuizContext';
 import { useUser } from '../lib/context/UserContext';
 import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
+
+
+// import the browser OS function here 
+
+import { browserOS } from '../lib/browserOS'; 
+
+
+
 import QuizCard from '../Components/QuizCard';
 import {PermissionAnswer} from '../Components/PermissionAnswer'; 
 import st from '../Styles/startCard.module.css'; 
 import { nunito } from '../fonts/nunito';
 import Image from 'next/image';
 import logo from '../assets/ivvi_Logo.svg'; 
+import { type } from 'os';
 
 export default function EmailPermission() {
     const router = useRouter();
@@ -22,7 +32,7 @@ export default function EmailPermission() {
 
     const handleNoClick = () => {
         // Set flag to trigger refresh when landing on home page
-        sessionStoragst.setItem('needsRefreshFromEmailDecline', 'true');
+        sessionStorage.setItem('needsRefreshFromEmailDecline', 'true');
         router.push('/');
     };
 
@@ -34,6 +44,28 @@ export default function EmailPermission() {
     
     // Placeholder functions
     const getLabelColorBySection = (section) => "#033699";
+    useEffect(() => {
+
+        (async () => {
+            const isMacChrome = await browserOS();
+            console.log("Mac Chrome?", isMacChrome);
+
+            if(isMacChrome === true){
+
+
+                
+
+
+            }
+
+          })();
+
+
+    }, []); 
+
+    // ensure browserOS is only invoked client-side inside useEffect
+    
+
 
     return (
 
