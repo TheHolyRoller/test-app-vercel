@@ -701,7 +701,7 @@
 }
 
 
-@media(min-width: 300px) and (max-width: 1700px) {
+@media(min-width: 300px) and (max-width: 2000px) {
 
 
     .barChartSection {
@@ -715,12 +715,15 @@
         box-sizing: border-box;
         display: grid !important;
         align-content: center;
-        transform:translate(0, 11.5rem) ;
-        -webkit-transform:translate(0, 11.5rem) ;
-        -moz-transform:translate(0, 11.5rem) ;
-        -ms-transform:translate(0, 11.5rem) ;
-        -o-transform:translate(0, 11.5rem) ;
-}
+        transform:translate(0, 10.3rem) ;
+        -webkit-transform:translate(0, 10.3rem) ;
+        -moz-transform:translate(0, 10.3rem) ;
+        -ms-transform:translate(0, 10.3rem) ;
+        -o-transform:translate(0, 10.3rem) ;
+        
+
+
+    }
 
 
 

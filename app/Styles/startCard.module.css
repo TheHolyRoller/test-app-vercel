@@ -1,10 +1,12 @@
 
 
+/* put these changes into a laptop media query add back the padding for desktop  */
+
 /* Add in the more aggressive padding into a desktop & laptop media query here to account for mobile screens  */
 .cardElementContainer{
 
 
-    /* padding-top: 5.3rem;  */
+    padding-top: 5.3rem; 
     /* padding: 2rem;  */
     
 
@@ -12,7 +14,22 @@
 
 }
 
-@media(min-width: 1000px) and (max-width: 3000px){
+@media(min-width: 2550px) and (max-width: 3000px){
+
+
+    .cardElementContainer{
+
+        
+        padding-top: 5rem !important; 
+    
+    }
+
+
+
+
+}
+
+@media(min-width: 1000px) and (max-width: 2000px){
 
 
     .cardElementContainer{

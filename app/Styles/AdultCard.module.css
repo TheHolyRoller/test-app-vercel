@@ -127,7 +127,9 @@
 .adultSpan{
 
 
-    font-size: 1.5rem;
+    /* font-size: 1.5rem; */
+    /* clamp the font size here  */
+    font-size: clamp(1.25rem, 7vw, 1.45rem);
 
 
 
