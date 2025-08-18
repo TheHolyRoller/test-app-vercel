@@ -52,9 +52,7 @@ export default function EmailPermission() {
 
             if(isMacChrome === true){
 
-
-                
-
+                    console.log('you`re on a mac using chrome '); 
 
             }
 
@@ -71,7 +69,7 @@ export default function EmailPermission() {
 
 
             <div className={st.cardElementContainer} >
-        <div style={{ paddingTop: '60px' }}>
+        <div style={{}}>
           <article 
           className={`${st.card} ${nunito.className}`} 
           id={st.firstCARD} 
