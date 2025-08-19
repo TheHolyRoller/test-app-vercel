@@ -193,7 +193,6 @@ export default function EmailPermission() {
     </div>
 
 
-
   </div>
   
 </section>

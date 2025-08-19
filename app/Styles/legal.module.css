@@ -11,6 +11,17 @@
 
 }
 
+
+.card{
+
+
+    margin-top: -2rem !important; 
+    
+
+
+
+}
+
 /* Now do the same thing for all the button spacing and then make them easier to click and then add the remaining hover effects  */
 
 @media(min-width: 1100px){

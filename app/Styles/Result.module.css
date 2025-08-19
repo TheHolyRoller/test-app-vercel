@@ -1,5 +1,11 @@
 /* Result Page Styles */
+.card{
 
+    outline: 55px solid red !important;
+    
+
+
+}
 
 
 .mainContainer{
@@ -12,17 +18,7 @@
 
 
 .mainChartContainer {
-    /* min-height: 100vh;
-    position: relative; 
-    width: 99.99vw; 
-    margin: 0 auto; 
-    background-color: #013699;  
-    color: white; 
-    padding-top: 2rem;
-    padding-bottom: 2rem;
 
-    outline: 44px solid red !important; 
-    background-color: red !important; */
 
 
 }

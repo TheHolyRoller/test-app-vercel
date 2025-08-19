@@ -10,10 +10,7 @@ import { useState } from 'react';
 import { databases } from '../lib/appwrite';
 // import rc from '../Styles/UnderstandCard.module.css'; 
 import rc from '../Styles/resultsCard.module.css'; 
-
 import { nunito } from '../fonts/nunito';
-
-
 
 // Import the appwrite credentials here 
 import UnderstandCard from '../Components/UnderstandCard'; 
@@ -193,7 +190,7 @@ function ResultContent() {
     
     return (
         <>
-        <main className={rc.mainContainer} style={{paddingTop: '90px'}}>
+        <main className={rc.mainContainer} style={{paddingTop: '80px'}}>
             
         <article 
           className={`${rc.card} ${nunito.className}`} 

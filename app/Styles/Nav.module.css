@@ -14,9 +14,10 @@
     left: 0; 
     right: 0; 
     width: 100vw; 
-    height: 7rem;
+    height: 8rem;
     background-color: #013699;
     overflow: hidden;
+    
 
 
 
@@ -36,7 +37,6 @@
         height: 9.2rem;
         background-color: #013699;
         overflow: hidden;
-    
     
     
     }

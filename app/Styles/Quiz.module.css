@@ -1362,7 +1362,7 @@ font-size: 1.76rem !important;
     width: 99.99vw; 
     display: grid;
     place-content: center;
-    margin-top: -5rem !important; 
+    margin-top: -4.5rem !important; 
 }
 
 .nextButton{

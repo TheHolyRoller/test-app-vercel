@@ -8,7 +8,7 @@
     background-color: #fbfbfb;
     margin: 0 auto; 
     margin-bottom: 5.9rem;
-    margin-top: -3rem !important; 
+    margin-top: -2rem !important; 
 
     border-radius: 1rem;
     -webkit-border-radius: 1rem;
@@ -246,10 +246,6 @@
     -o-border-radius: 22px;
     cursor: pointer;
 
-    /* Add in a shadow here  */
-
-
-
 
 
 }
@@ -412,7 +408,7 @@
     width: 99.99vw; 
     display: grid;
     place-content: center;
-    margin-top: -5rem !important; 
+    margin-top: -4.5rem !important; 
     cursor: pointer;
     
 

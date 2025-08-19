@@ -7,7 +7,6 @@ import { useState } from 'react';
 // import e from '../Styles/emailPermission.modul.css'; 
 import n from '../Styles/name.module.css'; 
 
-
 import { nunito } from '../fonts/nunito';
 import Image from 'next/image';
 import { databases } from '../lib/appwrite';
