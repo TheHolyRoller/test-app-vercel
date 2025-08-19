@@ -130,6 +130,7 @@ function PhoneBarChart({ writingPercentage,
               </div>
           </div>
     
+    
                   <div className={p.mainScore}>
                         <span className={p.scoreSpan}>
 
