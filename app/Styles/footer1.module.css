@@ -14,12 +14,31 @@
 }
 
 
+
 @media (min-width: 200px) and (max-width: 900px) {
     
 
     #footer{
 
         bottom: -11%; 
+
+
+    }
+
+
+
+}
+
+@media(min-width: 1300px) and (max-width: 1700px){
+
+
+
+    #footer{
+
+
+        height: 1em;
+
+
 
 
     }

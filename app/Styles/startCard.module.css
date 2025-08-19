@@ -24,21 +24,6 @@
 
 }
 
-@media(min-width: 1000px) and (max-width: 2000px){
-
-
-    .cardElementContainer{
-
-    
-    }
-
-
-
-
-}
-
-
-
 
 
 .card {
@@ -62,6 +47,9 @@
     -ms-border-radius: 1rem;
     -o-border-radius: 1rem;
 }
+
+
+
 
 .firstCARD{
 
@@ -466,5 +454,24 @@
     place-content: center;
     margin-top: 0.5em; 
     color: #7d879b; 
+
+}
+
+
+
+@media(min-width: 1300px) and (max-width: 1700px){
+
+    .card{
+
+
+        margin-top: -10rem !important; 
+        
+
+
+    }
+
+
+
+
 
 }
