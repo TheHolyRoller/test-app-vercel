@@ -18,45 +18,35 @@
     background-color: #013699;
     overflow: hidden;
 
-    /* Add in the bottom shadow here  */
+
+
+}
+
+/* Add in a desktop and laptop media query here  */
+
+@media(min-width: 1000px) and (max-width: 3000px){
+
+    .navContainer{
+
+        position: absolute;
+        top: 0; 
+        left: 0; 
+        right: 0; 
+        width: 100vw; 
+        height: 9.2rem;
+        background-color: #013699;
+        overflow: hidden;
     
-
-
-}
-
-.navbarLogoSection{
-
-    height: 100%; 
-    width: 100%; 
-    position: relative; 
-
-}
-
-
-.logoSubContainer{
-    position: absolute;
-    top: 50%;
-    left: 3%;
     
-    transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
-}
-
-
-.logoLink{
-
-
-}
-
-.logoImage{
+    
+    }
 
 
 
 
 }
+
+
 
 
 

@@ -1,7 +1,18 @@
 /* Result Page Styles */
 
+
+
+.mainContainer{
+  
+    
+
+
+}
+
+
+
 .mainChartContainer {
-    min-height: 100vh;
+    /* min-height: 100vh;
     position: relative; 
     width: 99.99vw; 
     margin: 0 auto; 
@@ -9,24 +20,43 @@
     color: white; 
     padding-top: 2rem;
     padding-bottom: 2rem;
+
+    outline: 44px solid red !important; 
+    background-color: red !important; */
+
+
 }
 
+
+@media(min-width: 1100px){
+
+    .card {
+
+
+       
+    }
+
+
+
+}
+
+
+
+
+
 .mainChartSubContainer {
-    width: 100vw; 
+    /* width: 100vw; 
     margin: 0 auto; 
     display: flex;
     flex-direction: column;
     align-items: center;
     color: rgb(41, 39, 39);
     position: relative; 
-    min-height: auto;
+    min-height: auto; */
 
 }
 
 .mainChartSubContainerTextSection {
-    /* Text section container */
-
-
 
 
 
@@ -185,6 +215,7 @@
     transform: translateY(0);
     box-shadow: 0 2px 8px rgba(244, 155, 83, 0.2);
 }
+
 
 /* Responsive Design */
 @media (max-width: 768px) {

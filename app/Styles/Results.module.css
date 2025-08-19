@@ -1,5 +1,30 @@
 .mainBarChartContainer{
 
+
+    
+
+
+
+
+}
+
+
+@media(min-width: 1200px){
+
+    .mainBarChartContainer{
+
+
+        padding-top: 2 rem !important;
+    
+
+
+
+
+    }
+
+
+
+
 }
 
 

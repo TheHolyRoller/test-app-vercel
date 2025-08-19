@@ -193,7 +193,7 @@ function ResultContent() {
     
     return (
         <>
-        <main className={rc.mainContainer} style={{outline: '0px solid red', paddingTop: '60px'}}>
+        <main className={rc.mainContainer} style={{paddingTop: '90px'}}>
             
         <article 
           className={`${rc.card} ${nunito.className}`} 

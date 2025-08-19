@@ -18,6 +18,24 @@
     -o-border-radius: 1rem;
 }
 
+
+@media(min-width: 1100px){
+
+    .card {
+
+
+        margin-top: -1rem !important; 
+       
+    }
+
+
+
+}
+
+
+
+
+
 .firstCARD{
 }
 
