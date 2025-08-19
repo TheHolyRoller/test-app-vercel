@@ -233,9 +233,9 @@ export default function EmailPermission() {
   </article>
 
 
-<section className={ad.buttonSectionContainer}>
+<section className={ad.buttonSectionContainer} style={{cursor: 'pointer'}} onClick={handleYesClick}>
 
-  <div className={ad.ctaContainer}>
+  <div className={ad.ctaContainer} style={{cursor: 'pointer'}} onClick={handleYesClick}>
 
     <div className={ad.cta} onClick={handleYesClick} style={{cursor: 'pointer', fontSize: '2rem', letterSpacing: '1px'}} >
         Next

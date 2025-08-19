@@ -497,3 +497,14 @@
     color: #7d879b; 
 
 }
+
+@media(min-width: 1100px){
+
+    .cta {
+
+
+        margin-top: 0.7rem !important; 
+       
+    }
+
+}

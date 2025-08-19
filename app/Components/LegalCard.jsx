@@ -212,9 +212,9 @@ conditions
   </article>
 
 
-<section className={lc.buttonSectionContainer}>
+<section className={lc.buttonSectionContainer} style={{cursor: 'pointer'}} onClick={handleYesClick}>
 
-  <div className={lc.ctaContainer}>
+  <div className={lc.ctaContainer} style={{cursor: 'pointer'}} onClick={handleYesClick}>
 
     <div className={lc.cta} onClick={handleYesClick} style={{cursor: 'pointer', fontSize: '2rem', letterSpacing: '1px'}} >
         Next

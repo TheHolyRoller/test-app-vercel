@@ -21,6 +21,20 @@
 }
 
 
+@media(min-width: 1100px){
+
+    .card {
+
+
+        margin-top: -1rem !important; 
+       
+    }
+
+
+
+}w
+
+
 
 
 
@@ -1093,6 +1107,17 @@
 
 
 
+
+}
+
+@media(min-width: 1100px){
+
+    .cta {
+
+
+        margin-top: 0.7rem !important; 
+       
+    }
 
 }
 

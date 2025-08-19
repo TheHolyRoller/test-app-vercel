@@ -4,12 +4,7 @@ import { useQuiz } from '../lib/context/QuizContext';
 import { useUser } from '../lib/context/UserContext';
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
-
-
-// import the browser OS function here 
-
 import { browserOS } from '../lib/browserOS'; 
-
 
 
 import QuizCard from '../Components/QuizCard';
@@ -29,6 +24,7 @@ export default function EmailPermission() {
     const handleYesClick = () => {
         router.push('/understand');
     };
+
 
     const handleNoClick = () => {
         // Set flag to trigger refresh when landing on home page

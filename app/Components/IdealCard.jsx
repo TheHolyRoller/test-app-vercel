@@ -70,7 +70,7 @@ export default function EmailPermission() {
         
 
         {/* Main Content Container */}
-        <div style={{ paddingTop: '60px' }}>
+        <div style={{ paddingTop: '60px', }}>
           <article 
           className={`${id.card} ${nunito.className}`} 
           id={id.firstCARD} 
@@ -78,7 +78,7 @@ export default function EmailPermission() {
               position: 'relative',
               zIndex: 200,
               boxShadow: '0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.06)',
-              marginTop: '-40px', 
+              marginTop: '-40px',
 
           }}
           >
@@ -183,9 +183,9 @@ export default function EmailPermission() {
   </article>
 
 
-<section className={id.buttonSectionContainer}>
+<section className={id.buttonSectionContainer} style={{cursor: 'pointer',}} onClick={handleYesClick} >
 
-  <div className={id.ctaContainer}>
+  <div className={id.ctaContainer}style={{cursor: 'pointer'}} onClick={handleYesClick} >
 
     <div className={id.cta} onClick={handleYesClick} style={{cursor: 'pointer', fontSize: '2rem', letterSpacing: '1px'}} >
         Next
