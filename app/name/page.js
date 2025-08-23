@@ -117,10 +117,6 @@ export default function EmailPermission() {
           </div>
       )}
       
-  
-  
-
-
         <div className={n.inputContainer}>
         <article className={n.userNameContainer}>
     <form onSubmit={handleSubmit} className={n.detailsForm} id='nameForm'>
@@ -139,11 +135,6 @@ export default function EmailPermission() {
     </form>
     </article>
         </div>
-
-
-
-
-
 
 
   

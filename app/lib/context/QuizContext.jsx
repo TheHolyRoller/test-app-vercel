@@ -1,10 +1,9 @@
 'use client';
 
 /* eslint-disable no-unused-vars */
-import { createContext, useContext, useState, useEffect, use } from 'react';
+import { createContext, useContext, useState, useEffect, useRef } from 'react';
 import { useUser } from './UserContext';
 import { databases } from '../appwrite';
-import { useRef } from 'react';
 import { Query } from 'appwrite';
 import { usePathname, useRouter } from 'next/navigation';
 // Color logic is now handled directly in the context
@@ -27,8 +26,6 @@ export const QuizProvider = ({ children }) => {
     const userAge = 'adult'; 
 
 
-
-    // Set the score to the percentage score 
     const [score, setScore] = useState(0);
     const [questions, setQuestions] = useState([]);
     const [weights, setWeights] = useState([]);
@@ -77,15 +74,6 @@ export const QuizProvider = ({ children }) => {
             [buttonType]: prev[buttonType] + 1
         })); 
     };
-
-    // Track quiz completion count
-    // const incrementQuizCompletionCount = () => {
-    //     const currentCount = parseInt(localStorage.getItem('quizCompletionCount') || '0');
-    //     const newCount = currentCount + 1;
-    //     localStorage.setItem('quizCompletionCount', newCount.toString());
-    //     console.log('📊 Quiz completion count:', newCount);
-    // }; 
-
 
     const [email, setEmail] = useState(''); 
 
@@ -177,10 +165,11 @@ export const QuizProvider = ({ children }) => {
                     offset += response.documents.length;
                   
                   } while (offset < total);
+                    
 
                   console.log(`✅ Total questions fetched: ${allQuestions.length}`);
 
-                if (!hasInitialized.current ) {
+                if (!hasInitialized.current ) { 
 
                     hasInitialized.current = true;
                     setQuestions(allQuestions);
@@ -194,7 +183,6 @@ export const QuizProvider = ({ children }) => {
                     console.log('these are all the questions::::::::: \n', allQuestions); 
      
                 }
-
 
             } catch (error) {
                 console.error('❌ QuizContext: Error fetching questions:', error);

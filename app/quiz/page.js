@@ -112,7 +112,6 @@ export default function Quiz() {
 
                     <div className={q.categoryCardContainer}>
 
-
                     <CategoryCard 
                         key={`category-${currentIndex}-${currentQuestion?.$id}`}
                         Section={Section}
