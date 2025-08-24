@@ -7,7 +7,9 @@ export default function Footer() {
   const { navColor } = useQuiz();
 
   console.log('this is the footers color \n', navColor); 
+
   
+
   return (
         <footer id={f1.footer} className="p-4 footer sm:footer-horizontal footer-center text-base-content" style={{ backgroundColor: navColor,  }} >
 </footer> 
