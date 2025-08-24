@@ -459,13 +459,33 @@
 
 
 
-@media(min-width: 1300px) and (max-width: 1700px){
+@media(min-width: 1280px) and (max-width: 1900px){
+
 
     .card{
 
 
-        margin-top: -10rem !important; 
+        margin-top: -12rem !important; 
+
+
+    }
+
+    /* Adjust the button placement here  */
+    .buttonSectionContainer{
+
+
+        margin-top: -5rem; 
         
+
+
+
+    }
+
+
+    .question_textContainer{
+
+
+
 
 
     }
@@ -475,3 +495,5 @@
 
 
 }
+
+

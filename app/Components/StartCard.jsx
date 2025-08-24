@@ -21,9 +21,11 @@ export default function EmailPermission() {
     const { name, sound } = useUser();
 
 
+    
     const handleYesClick = () => {
         router.push('/understand');
     };
+
 
 
     const handleNoClick = () => {
