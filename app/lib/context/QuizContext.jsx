@@ -320,6 +320,9 @@ export const QuizProvider = ({ children }) => {
         console.log('this is the format score function'); 
         console.log('this is the inputted score \n', score); 
 
+
+
+        
         let percentage; 
         // percentage = Math.floor((score));
         percentage = score; 
