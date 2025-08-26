@@ -234,7 +234,11 @@ function ResultContent() {
    
 
           <div className={resultStyles.mainScore}>
+                        
+                    <div className={resultStyles.scoreSpan}>
+
                     {score}
+                    </div>
                     <span className={resultStyles.refSpan}>
                         /100
                     </span>

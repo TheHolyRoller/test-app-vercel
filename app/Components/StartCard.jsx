@@ -68,13 +68,12 @@ export default function EmailPermission() {
             <div className={st.cardElementContainer} >
         <div style={{}}>
           <article 
-          className={`${st.card} ${nunito.className}`} 
+          className={`${st.card} ${nunito.className} [@media(min-width:428px)_and_(max-width:767px)]:-translate-y-[5rem]`} 
           id={st.firstCARD} 
           style={{
               position: 'relative',
               zIndex: 200,
               boxShadow: '0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.06)',
-              marginTop: '-40px', 
           }}
           >
   
@@ -110,9 +109,9 @@ export default function EmailPermission() {
 
 <section className={st.buttonSectionContainer}>
 
-  <div className={st.ctaContainer}>
+  <div  className={`${st.ctaContainer} [@media(min-width:428px)_and_(max-width:767px)]:-translate-y-[5rem] `}>
 
-    <div className={st.cta} onClick={handleYesClick} style={{cursor: 'pointer', fontSize: '2rem', letterSpacing: '1px'}} >
+    <div className={`${st.cta}`} onClick={handleYesClick} style={{cursor: 'pointer', fontSize: '2rem', letterSpacing: '1px'}} >
         Start Screener 
 
     </div>

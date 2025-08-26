@@ -496,3 +496,45 @@
 
 
 }
+
+
+@media(min-width: 350px) and (max-width: 465px){
+
+
+    .card{
+
+
+        margin-top: -12rem !important; 
+
+    }
+
+
+
+
+}
+
+/* TO DO Add in a height media query so that the start card is placed up higher on the screen for the wider taller modern iPhones  */
+
+@media(min-width: 945px) and (max-width: 1300px){
+
+
+    .card{
+        outline: 55px solid red !important;
+        transform:translate(0, 9rem) !important ;
+        -webkit-transform:translate(0, 9rem) !important ;
+        -moz-transform:translate(0, 9rem) !important ;
+        -ms-transform:translate(0, 9rem) !important ;
+        -o-transform:translate(0, 9rem) !important ;
+        position: absolute !important; 
+        bottom: 0 !important;
+
+        
+
+
+}
+
+
+
+
+}
+
