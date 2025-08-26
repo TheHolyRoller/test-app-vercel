@@ -16,6 +16,7 @@ import logo from '../assets/ivvi_Logo.svg';
 import { type } from 'os';
 
 export default function EmailPermission() {
+    
     const router = useRouter();
     const { finalScore } = useQuiz();
     const { name, sound } = useUser();

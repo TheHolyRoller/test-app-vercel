@@ -223,6 +223,24 @@ font-size: clamp(1.5rem + 1vw, 2rem, 3rem);
 }
 
 
+@media(min-width: 1300px) and (max-width: 1700px){
+
+    .card{
+
+
+        margin-top: -10rem !important; 
+        
+
+
+    }
+
+
+
+
+
+}
+
+
 
 
 

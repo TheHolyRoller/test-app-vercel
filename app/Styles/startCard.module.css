@@ -452,7 +452,7 @@
     margin: 0 auto; 
     display: grid; 
     place-content: center;
-    margin-top: 0.5em; 
+    margin-top: 0.5em;  
     color: #7d879b; 
 
 }
