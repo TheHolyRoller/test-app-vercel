@@ -566,11 +566,28 @@
 
         .card{
     
-    
-            margin-top: -10rem !important; 
+            margin-top: -2rem !important; 
+            outline: 5px solid red !important;
             
+    
+        }
+    
+        .ctaContainer{
+    
+            margin: 0 !important; 
+    
+        }
+    
+    
+        .cta{
+    
+    
+            margin: 0 !important; 
+            margin-top: -0.5rem !important; 
+    
+    
     
     
         }
-
+    
     }

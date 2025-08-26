@@ -1135,12 +1135,37 @@
 
     .card{
 
+        margin-top: -2rem !important; 
 
-        margin-top: -10rem !important; 
-        
+    }
+
+    .ctaContainer{
+
+        margin: 0 !important; 
+
+    }
+
+
+    .cta{
+
+
+        margin: 0 !important; 
+        margin-top: -0.5rem !important; 
+
+
 
 
     }
+
+    /* Add in the main score container here  */
+
+    .mainScore{
+
+        margin-top: -1.5rem !important; 
+        margin-bottom: 1.95rem !important;
+
+    }
+
 
 
 

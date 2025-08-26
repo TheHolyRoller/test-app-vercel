@@ -524,11 +524,33 @@
     .card{
 
 
-        margin-top: -10rem !important; 
+        margin-top: -2rem !important; 
         
 
 
     }
+
+    .ctaContainer{
+
+        /* outline: 5px solid red; */
+        margin: 0 !important; 
+
+
+
+    }
+
+
+    .cta{
+
+
+        margin: 0 !important; 
+        margin-top: -0.5rem !important; 
+
+
+
+
+    }
+
 
 
 

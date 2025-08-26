@@ -12,6 +12,8 @@ import { databases } from '../lib/appwrite';
 import rc from '../Styles/resultsCard.module.css'; 
 import { nunito } from '../fonts/nunito';
 
+
+
 // Import the appwrite credentials here 
 import UnderstandCard from '../Components/UnderstandCard'; 
 
@@ -41,7 +43,7 @@ function ResultContent() {
     } = useQuiz();
 
     const formattedAnswers = JSON.stringify(answers, null, 4); 
-
+    
     console.log('this is the formatted Answer object \n', formattedAnswers);
     console.log('this is the type of formatted Answers \n', typeof formattedAnswers); 
     
@@ -181,7 +183,6 @@ function ResultContent() {
 
         return percentage; 
         
-
 
     }
 

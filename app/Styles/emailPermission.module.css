@@ -327,19 +327,29 @@
 
 
 
+
 @media(min-width: 1300px) and (max-width: 1700px){
 
     .card{
 
+        margin-top: -2rem !important; 
 
-        margin-top: -10rem !important; 
-        
+    }
 
+    .ctaContainer{
+
+        margin: 0 !important; 
 
     }
 
 
+    .cta{
 
+
+        margin: 0 !important; 
+        margin-top: -0.5rem !important; 
+
+    }
 
 
 }

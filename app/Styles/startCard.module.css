@@ -464,13 +464,34 @@
     .card{
 
 
-        margin-top: -10rem !important; 
-        
+        margin-top: -12rem !important; 
+
 
 
     }
 
 
+    .ctaContainer{
+
+        /* outline: 5px solid red; */
+        margin: 0 !important; 
+
+
+
+    }
+
+
+    .cta{
+
+
+        margin: 0 !important; 
+        
+
+
+
+    }
+
+    /* Add in the button here  */
 
 
 
