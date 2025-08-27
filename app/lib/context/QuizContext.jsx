@@ -543,17 +543,23 @@ export const QuizProvider = ({ children }) => {
                 do {
                     
                     // TO DO Replace this with a call the the server query route 
-                    const resultsResponse = await databases.listDocuments(
-                        DATABASE_ID,
-                        QUESTION_COLLECTION_ID,
-                        [
-                          Query.limit(1000),
-                          Query.offset(offset)
-                        ]
-                      );
+                    // const resultsResponse = await databases.listDocuments(
+                    //     DATABASE_ID,
+                    //     QUESTION_COLLECTION_ID,
+                    //     [
+                    //       Query.limit(1000),
+                    //       Query.offset(offset)
+                    //     ]
+                    //   );
     
-                    // DO TO Add in the code 
-                      allQuestions.push(...resultsResponse.documents);
+                    // // DO TO Add in the code 
+                    //   allQuestions.push(...resultsResponse.documents);
+                    const res = await fetch('/api/questions', { cache: 'no-store' });
+                    const allQuestions = await res.json();
+                    
+
+
+
                       console.log('this is the length of all QUESTIONS \n', allQuestions.length); 
                       
                     // Check the length of the response object here 
