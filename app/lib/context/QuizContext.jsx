@@ -541,7 +541,8 @@ export const QuizProvider = ({ children }) => {
                 let total; 
     
                 do {
-    
+                    
+                    // TO DO Replace this with a call the the server query route 
                     const resultsResponse = await databases.listDocuments(
                         DATABASE_ID,
                         QUESTION_COLLECTION_ID,
@@ -551,7 +552,7 @@ export const QuizProvider = ({ children }) => {
                         ]
                       );
     
-                      
+                    // DO TO Add in the code 
                       allQuestions.push(...resultsResponse.documents);
                       console.log('this is the length of all QUESTIONS \n', allQuestions.length); 
                       
