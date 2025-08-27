@@ -516,7 +516,6 @@
 
 
     .card{
-        outline: 55px solid red !important;
         transform:translate(0, 9rem) !important ;
         -webkit-transform:translate(0, 9rem) !important ;
         -moz-transform:translate(0, 9rem) !important ;
