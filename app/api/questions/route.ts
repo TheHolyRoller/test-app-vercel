@@ -8,7 +8,6 @@ import { Client, Databases, Query } from 'node-appwrite'; // <-- server SDK
 
 
 
-
 const redis = Redis.fromEnv();
 const limiter = new Ratelimit({
   redis,

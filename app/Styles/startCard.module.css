@@ -516,13 +516,13 @@
 
 
     .card{
-        transform:translate(0, 9rem) !important ;
+        /* transform:translate(0, 9rem) !important ;
         -webkit-transform:translate(0, 9rem) !important ;
         -moz-transform:translate(0, 9rem) !important ;
         -ms-transform:translate(0, 9rem) !important ;
         -o-transform:translate(0, 9rem) !important ;
         position: absolute !important; 
-        bottom: 0 !important;
+        bottom: 0 !important; */
 
         
 
