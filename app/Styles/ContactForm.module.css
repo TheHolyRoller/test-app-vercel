@@ -4,7 +4,7 @@
     color: white;
     background-color: white;
     margin: 0 auto;
-    height: 600px;
+    height: 565px;
     /*margin-bottom: 22rem;
     *//*padding-bottom: 22rem;
     */margin-top: 12rem;
@@ -22,7 +22,7 @@
     position: relative;
     z-index: 99;
     max-width: 325px;
-    height: 500px;
+    height: 450px;
     margin: 0 auto;
     padding-top: 2rem;
     outline: 1px solid #808080;
@@ -40,12 +40,13 @@
 }
 
 .formBackdrop{
-
-
     background-color: #013699;
-    height: 170px; 
+    height: 190px;
     border-top-right-radius: 12px;
     border-top-left-radius: 12px;
+    
+    /* padding-top: 0.5rem;  */
+
 
 
 
@@ -61,12 +62,18 @@
 .legend {
 
     margin-left: 1.8rem; 
-    margin-top: 4rem;
-    padding-top: 1rem; 
+    /* margin-top: 4rem; */
+    padding-top: 1.5rem; 
+
+
+    font-size: 1.25rem;
+
 }
 
 .textSpan{
     margin-left: 1.8rem; 
+    padding-top: 0.3rem; 
+    font-size: 0.9rem;
 
 }
 
@@ -74,7 +81,9 @@
 .label {
 
     margin-left: 1.4rem; 
-    color: #33363F;
+    color: #565a67;
+
+    
 	
 }
 
@@ -91,7 +100,11 @@
     width: 90%; 
     margin: 0 auto; 
     height: 38px; 
+    color: #33363F;
 
+    padding-left: 1rem;
+
+    
 
 }
 
@@ -101,8 +114,13 @@
     background-color: white;
 
     width: 90%; 
-    margin: 0 auto; 
+    margin: 0 auto;
+    height: 86px; 
 
+    color: #33363F;
+    padding-left: 1rem;
+    padding-top: 0.3rem; 
+    
 
     border-radius: 12px;
     -webkit-border-radius: 12px;
@@ -113,7 +131,27 @@
 
 /* Button */
 .button {
-	
+
+
+    color: white;
+    height: 45px;
+    width: 190px;
+    margin: 0 auto;
+
+
+    background-color: #013699;
+
+
+
+
+    border-radius:8px;
+    -webkit-border-radius:8px;
+    -moz-border-radius:8px;
+    -ms-border-radius:8px;
+    -o-border-radius:8px;
+
+
+
 }
 
 
