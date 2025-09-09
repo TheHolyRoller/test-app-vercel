@@ -1,0 +1,151 @@
+/* Contact Form Container */
+.contactFormContainer {
+    max-width: 355px;
+    color: white;
+    background-color: white;
+    margin: 0 auto;
+    height: 600px;
+    /*margin-bottom: 22rem;
+    *//*padding-bottom: 22rem;
+    */margin-top: 12rem;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+}
+
+/* Contact Form */
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 99;
+    max-width: 325px;
+    height: 500px;
+    margin: 0 auto;
+    padding-top: 2rem;
+    outline: 1px solid #808080;
+    background-color: white;
+    transform:translate(0, 1rem);
+    -webkit-transform:translate(0, 1rem);
+    -moz-transform:translate(0, 1rem);
+    -ms-transform:translate(0, 1rem);
+    -o-transform:translate(0, 1rem);
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+}
+
+.formBackdrop{
+
+
+    background-color: #013699;
+    height: 170px; 
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+
+
+
+}
+
+.fieldSet {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+
+}
+
+.legend {
+
+    margin-left: 1.8rem; 
+    margin-top: 4rem;
+    padding-top: 1rem; 
+}
+
+.textSpan{
+    margin-left: 1.8rem; 
+
+}
+
+
+.label {
+
+    margin-left: 1.4rem; 
+    color: #33363F;
+	
+}
+
+/* Input */
+.input {
+
+    outline: 1px solid #808080;
+    background-color: white;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    width: 90%; 
+    margin: 0 auto; 
+    height: 38px; 
+
+
+}
+
+/* Textarea */
+.textarea {
+    outline: 1px solid #808080;
+    background-color: white;
+
+    width: 90%; 
+    margin: 0 auto; 
+
+
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+}
+
+/* Button */
+.button {
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

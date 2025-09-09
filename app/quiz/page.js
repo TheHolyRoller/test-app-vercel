@@ -8,14 +8,33 @@ import q from '../Styles/Quiz.module.css';
 import Image from 'next/image';
 import QuizCard from '../Components/QuizCard';
 import CategoryCard from '../Components/CategoryCard';
+import ProgressBar from '../Components/QuizProgressBar'; 
 
 
 
 export default function Quiz() {
     const router = useRouter();
     const { name, sound, userAge } = useUser();
-    const { questions, currentQuestion, handleAnswer, currentIndex, quizLength, gif_urls } = useQuiz();
+    const { questions, currentQuestion, handleAnswer, currentIndex, quizLength, gif_urls, navColor } = useQuiz();
     
+    // Calculate progress as percentage of completed questions
+    const progress = quizLength > 0 ? Math.round(((currentIndex + 1) / quizLength) * 100) : 0; 
+
+    // Function to lighten a hex color
+    const lightenColor = (hex, percent) => {
+        const num = parseInt(hex.replace('#', ''), 16);
+        const amt = Math.round(2.55 * percent);
+        const R = (num >> 16) + amt;
+        const G = (num >> 8 & 0x00FF) + amt;
+        const B = (num & 0x0000FF) + amt;
+        return '#' + (0x1000000 + (R < 255 ? R < 1 ? 0 : R : 255) * 0x10000 +
+            (G < 255 ? G < 1 ? 0 : G : 255) * 0x100 +
+            (B < 255 ? B < 1 ? 0 : B : 255)).toString(16).slice(1);
+    };
+
+    // Create lighter version of navbar color for progress bar
+    const progressBarColor = navColor ? lightenColor(navColor, 30) : '#4f46e5';
+
     const [answer, setAnswer] = useState();
 
 
@@ -48,6 +67,7 @@ export default function Quiz() {
         console.log('🔄 Quiz State Update:', {
             currentIndex,
             quizLength,
+            progress: `${progress}%`,
             questionsCount: questions?.length,
             currentQuestion: currentQuestion ? {
                 id: currentQuestion.$id,
@@ -57,7 +77,7 @@ export default function Quiz() {
             } : null,
             gifURLsCount: gif_urls?.length
         });
-    }, [currentIndex, quizLength, questions, currentQuestion, gif_urls]);
+    }, [currentIndex, quizLength, questions, currentQuestion, gif_urls, progress]);
 
     // Initialize currentQuestion properties safely
     const question_text = currentQuestion?.question_text || '';
@@ -104,7 +124,30 @@ export default function Quiz() {
             <main className={q.quizComponentContainer} id='quizElement' style={{position: 'relative', zIndex: '9999999'}}>
           
 
-            <div className={q.quizCardContainer}>
+            <div className={q.quizCardContainer} style={{}}>
+
+
+                {/* Add in the color & next question props here  */}
+                <progress 
+                    className={q.progressBar}  
+                    value={progress} 
+                    max="100"  
+                    style={{
+                        position: 'fixed', 
+                        top: '0', 
+                        left:'0', 
+                        right: '0', 
+                        height: '5px', 
+                        background: '#e0e0e0', 
+                        borderRadius: '10px',
+                        border: 'none',
+                        overflow: 'hidden',
+                        '--progress-color': progressBarColor
+                    }} 
+                >
+
+                {/* <ProgressBar  />  */}
+                </progress>
 
            
                 {/* Conditionally render CategoryCard or QuizCard based on Type */}

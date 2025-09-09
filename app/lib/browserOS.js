@@ -155,6 +155,7 @@ export const browserOS = async () => {
 
         if (os === 'macOS') {
             if (parsedOsVersion === 15 || parsedOsVersion > 15) {
+
                 console.log('fallback macOS parsedOsVersion:', parsedOsVersion);
                 if (browserBrand === 'Chrome') {
                     console.log('returning TRUE: macOS >= 15 and Chrome detected via UA fallback');

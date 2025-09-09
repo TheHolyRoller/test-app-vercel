@@ -43,13 +43,32 @@ margin-bottom: 5em;
 
 .navbarStrip{
 
+}
 
+.progressBar{
+    border-radius: 10px !important;
+    -webkit-border-radius: 10px !important;
+    -moz-border-radius: 10px !important;
+    -ms-border-radius: 10px !important;
+    -o-border-radius: 10px !important;
+    border: none !important;
+    overflow: hidden !important;
+}
 
- 
-    
+/* Style the progress bar fill */
+.progressBar::-webkit-progress-value {
+    background: var(--progress-color, #4f46e5) !important;
+    border-radius: 10px !important;
+}
 
+.progressBar::-moz-progress-bar {
+    background: var(--progress-color, #4f46e5) !important;
+    border-radius: 10px !important;
+}
 
-
+.progressBar::-ms-fill {
+    background: var(--progress-color, #4f46e5) !important;
+    border-radius: 10px !important;
 }
 
 
@@ -1308,6 +1327,7 @@ font-size: 1.76rem !important;
 #name{
     /* Name input ID styling */
 }
+
 
 .userNameInput{
     all: unset;

@@ -219,6 +219,7 @@ export const QuizProvider = ({ children }) => {
                     tests: "#F3C70E",
                     plans: "#CB3E32",
                 };
+                
                 color = colorMap[cardSection.toLowerCase()];
                 console.log('nav color index contents \n', colorMap[cardSection.toLowerCase()]);
                 console.log('this is the current hash map key \n', cardSection.toLowerCase()); 
@@ -238,7 +239,6 @@ export const QuizProvider = ({ children }) => {
                 console.log('nav color index contents \n', colorMap[cardSection.toLowerCase()]);
                 console.log('this is the current hash map key \n', cardSection.toLowerCase()); 
                 console.log('this is the color{}::::: \n', color); 
-
 
             }
         }
@@ -271,11 +271,7 @@ export const QuizProvider = ({ children }) => {
                 console.log('this is the first callback color \n', color); 
                 console.log('this is the current card Section \n', cardSection); 
 
-
             }
-
-
-
 
         }
         
@@ -382,7 +378,6 @@ export const QuizProvider = ({ children }) => {
 
             } 
         };
-
         
         const updateQuestionTypeCounter = (type, score) => {
 
@@ -557,8 +552,6 @@ export const QuizProvider = ({ children }) => {
                     const res = await fetch('/api/questions', { cache: 'no-store' });
                     const allQuestions = await res.json();
                     
-
-
 
                       console.log('this is the length of all QUESTIONS \n', allQuestions.length); 
                       

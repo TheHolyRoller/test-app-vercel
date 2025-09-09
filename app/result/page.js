@@ -278,7 +278,7 @@ function ResultContent() {
 
 
 
-         {/* <main className={resultStyles.mainChartContainer} style={{outline: '5px solid red'}}>
+         {/* <main className={resultStyles.mainChartContainer} style={{}}>
             <div className={resultStyles.mainChartSubContainer}>
 
                 <div className={resultStyles.mainHeadlineContainer}>

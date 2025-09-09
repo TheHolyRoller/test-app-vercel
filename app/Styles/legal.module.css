@@ -455,13 +455,14 @@ text-decoration: underline;
         position: absolute;
         bottom: 25%;
         left: 50%;
+
+        
         transform:translate(-50%, 550%);
         -webkit-transform:translate(-50%, 550%);
         -moz-transform:translate(-50%, 550%);
         -ms-transform:translate(-50%, 550%);
         -o-transform:translate(-50%, 550%);
 }
-    
     
     
     }
@@ -475,7 +476,6 @@ text-decoration: underline;
         }
     
     }
-
 
     @media(min-width: 1300px) and (max-width: 1700px){
 
