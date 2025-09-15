@@ -62,7 +62,7 @@ export default function PostQuizCard() {
 
   const handleCopyToClipboard = async () => {
     try {
-      const textToCopy = `Take this quick dyslexia screening assessment to better understand your learning style and get personalized insights. ${window.location.origin}`;
+      const textToCopy = ` ${window.location.origin}`;
       
       if (navigator.clipboard && window.isSecureContext) {
         await navigator.clipboard.writeText(textToCopy);
