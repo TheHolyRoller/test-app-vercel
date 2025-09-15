@@ -1,14 +1,9 @@
 
 
-/* put these changes into a laptop media query add back the padding for desktop  */
-
-/* Add in the more aggressive padding into a desktop & laptop media query here to account for mobile screens  */
-
-
 .cardElementContainer{
 
-
     padding-top: 9.3rem; 
+
 
 }
 
@@ -16,7 +11,6 @@
 
 
     .cardElementContainer{
-
         
         padding-top: 9rem !important;
     
@@ -39,13 +33,14 @@
     background-color: rgb(1, 54, 153) !important;
     margin: 0 auto; 
     margin-bottom: 5.9rem;
-    margin-top: -15rem !important; 
+    margin-top: -17rem !important; 
     
     border-radius: 1rem;
     -webkit-border-radius: 1rem;
     -moz-border-radius: 1rem;
     -ms-border-radius: 1rem;
     -o-border-radius: 1rem;
+
 }
 
 
@@ -369,8 +364,7 @@
 
 
     cursor: pointer;
-
-
+    margin-top: -1rem;
 
 }
 
@@ -417,6 +411,8 @@
     
         
     }
+
+  
 
 
 
@@ -534,3 +530,19 @@
 
 }
 
+
+@media(max-width: 550px){
+
+    .ctaContainer{
+
+
+        margin-top: 0.4rem; 
+        
+
+
+
+    }
+
+
+
+}

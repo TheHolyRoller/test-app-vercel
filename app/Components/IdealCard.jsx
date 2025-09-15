@@ -128,15 +128,16 @@ export default function EmailPermission() {
 
       <div className={id.supportingTextSectionContainer}>
 
-        <p  className={id.supportingText} style={{fontWeight: 'lighter'}}>
+        <p  className={id.supportingText} style={{fontWeight: 'lighter', }}>
           Helps students and professionals understand when dyslexia gets in the way.
 
         </p>
 
       </div>
 
+      
 
-      <div className={id.paginationElementContainer} style={{ margin: '0 auto'}}>
+      <div className={id.paginationElementContainer} style={{ margin: '0 auto',}}>
       <div className={id.paginationElementSubContainer}>
 
         <ul className={id.paginationList}
@@ -185,7 +186,7 @@ export default function EmailPermission() {
 
 <section className={id.buttonSectionContainer} style={{cursor: 'pointer',}} onClick={handleYesClick} >
 
-  <div className={id.ctaContainer}style={{cursor: 'pointer'}} onClick={handleYesClick} >
+  <div className={id.ctaContainer} style={{cursor: 'pointer'}} onClick={handleYesClick} >
 
     <div className={id.cta} onClick={handleYesClick} style={{cursor: 'pointer', fontSize: '2rem', letterSpacing: '1px'}} >
         Next

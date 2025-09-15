@@ -168,21 +168,22 @@
 .supportingTextSectionContainer{
 
 
-        width: 100%;    
-        position: relative; 
+        width: 100%;   
+
+        position: relative;
+        max-height: 2rem;
         display: flex;
-        align-items: flex-end;
         
          margin: 0 auto;
          padding-bottom: 8rem;
 
-         /* margin-top: -5rem !important;  */
-
-         /* margin-bottom: 44rem; */
         text-align: center;
         color: #65656C; 
         font-weight: lighter !important;
        font-size: clamp(1rem, 8vw, 1.15rem);
+              
+
+
 
 }
 

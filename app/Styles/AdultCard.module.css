@@ -122,8 +122,6 @@
 
     position: relative; 
     z-index: 99999;
-    /* margin-top: 2em;  */
-    /* margin-bottom: 4.5em;  */
     margin: 4.5rem auto;
     font-family: var(--font-nunito), sans-serif;
     font-weight: 600;
@@ -135,12 +133,7 @@
 
 .adultSpan{
 
-
-    /* font-size: 1.5rem; */
-    /* clamp the font size here  */
     font-size: clamp(1.25rem, 7vw, 1.45rem);
-
-
 
 }
 
@@ -153,6 +146,8 @@
 
         color: #65656C; 
         font-weight: lighter !important;
+
+
 }
 
 

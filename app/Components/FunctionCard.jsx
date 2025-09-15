@@ -70,6 +70,7 @@ export default function EmailPermission() {
               marginTop: '-40px',
               outline: '5px solid red', 
               overflow: 'hidden'
+
             
           }}
           >

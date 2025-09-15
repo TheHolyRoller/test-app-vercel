@@ -214,6 +214,11 @@
 
 #noButton {
     background-color: rgb(241, 52, 39); 
+    /* outline: 2px solid lime !important; */
+    width: 110%;
+    margin-right: -7px; 
+
+
 }
 
 #noStackOne {
@@ -385,7 +390,7 @@
 
 #yesButton {
 
-
+    
 
 
 }

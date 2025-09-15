@@ -27,21 +27,23 @@ function AudioButtons() {
                 <div className={ab.buttonStackContainer} 
                   onClick={() => handleSoundChoice(false)}
                   onMouseEnter={() => console.log('🖱️ Hovering Audio Off Button')}
+                  style={{ outline: '0px solid red', cursor: 'pointer'}}
                 >
-                    <div className={`${ab.button} ${chewy.className}`} id={ab.noButton}>
+                    <div className={`${ab.button} ${chewy.className}`} id={ab.noButton} style={{outline: '0px solid red', cursor: 'pointer'}} >
                         
                         NO 
 
                     </div>
-                    <div className={ab.buttonStack} id={ab.noStackOne}></div>
-                    <div className={ab.buttonStack} id={ab.noStackTwo}></div>
-                    <div className={ab.buttonStack} id={ab.noStackThree}></div>
-                    <div className={ab.buttonStack} id={ab.noStackFour}></div>
-                    <div className={ab.buttonStack} id={ab.noStackFive}></div>
-                    <div className={ab.buttonStack} id={ab.noStackSix}></div>
+                    <div className={ab.buttonStack} id={ab.noStackOne} style={{ cursor: 'pointer'}}></div>
+                    <div className={ab.buttonStack} id={ab.noStackTwo} style={{ cursor: 'pointer'}}></div>
+                    <div className={ab.buttonStack} id={ab.noStackThree} style={{ cursor: 'pointer'}}></div>
+                    <div className={ab.buttonStack} id={ab.noStackFour} style={{ cursor: 'pointer'}}></div>
+                    <div className={ab.buttonStack} id={ab.noStackFive} style={{ cursor: 'pointer'}}></div>
+                    <div className={ab.buttonStack} id={ab.noStackSix} style={{ cursor: 'pointer'}} ></div>
                 </div>
 
-                <div className={ab.buttonStackContainer}   
+                <div className={ab.buttonStackContainer}
+                style={{outline: '0px solid red', cursor: 'pointer'}}   
                 onClick={() => handleSoundChoice(true)}
                 onMouseEnter={() => console.log('🖱️ Hovering Audio On Button')}>
                     <div className={`${ab.button} ${chewy.className}`} id={ab.yesButton}>

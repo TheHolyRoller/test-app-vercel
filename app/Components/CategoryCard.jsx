@@ -7,22 +7,20 @@ import { useQuiz } from '../lib/context/QuizContext';
 import { usePathname } from 'next/navigation';
 import logo from '../assets/ivvi_Logo.svg'; 
 
+
 function CategoryCard({ Section, audio_url, categoryName }) {
     const { handleAnswer, currentQuestion } = useQuiz();
     const pathname = usePathname();
     
-    // Use categoryName prop, or try to extract from question data, or fallback to Section
-    // const actualCategory = categoryName || currentQuestion?.categoryName || currentQuestion?.question_text?.toLowerCase() || Section;
-    const actualCategory = Section || categoryName || currentQuestion?.categoryName || currentQuestion?.question_text?.toLowerCase();
 
-    
+    const actualCategory = Section || categoryName || currentQuestion?.categoryName || currentQuestion?.question_text?.toLowerCase();
 
     console.log('CategoryCard - Props:', { Section, categoryName, actualCategory });
     
     // Color logic extracted from QuizCard.js
     const getColorBySection = (Section) => {
 
-        console.log('this is the section in getClororBySection function:::: \n', Section); 
+        console.log('this is the section in getColorBySection function:::: \n', Section); 
         // Handle undefined or null case
         if (!Section) {
             return '#4c2a74';
