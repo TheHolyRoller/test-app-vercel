@@ -1,3 +1,4 @@
+
 'use client'
 import Image from 'next/image';
 import q from '../Styles/Quiz.module.css';
@@ -11,7 +12,6 @@ import mute from '../assets/mute.svg';
 
 import soundOn from '../assets/volume.svg'; 
 import styled from "styled-components";
-// All context values are accessed through useQuiz hook 
 
 
 const QuizCard = ({ 
@@ -22,6 +22,8 @@ const QuizCard = ({
     currentQuestion, 
     
 }) => {
+
+
 
     // Answer button state and logic from QuizAnswer
     const { handleAnswer, buttonCounters, incrementButtonCounter, navColor, cardSection, cardType } = useQuiz();
@@ -36,10 +38,29 @@ const QuizCard = ({
     
     
     const handleClick = async (userAnswer) => {
+        
+        
+        console.log('this is the user answer type::::!!!@@@ \n', userAnswer); 
+
+        
         console.log('🎯 Answer Selected:', {
             answer: userAnswer,
-            question_text: currentQuestion?.question_text
+            // question_text: currentQuestion?.question_text
         });
+
+        // Call the increment button counter function here and call the user answer as it's function argument 
+        const answerMap = {
+
+         yes: "yesNum", 
+         no: "noNum", 
+         sometimes: "sometimesNum"
+
+        }
+
+
+        console.log('this is the mapped user answer \n', answerMap[userAnswer]);
+        
+        incrementButtonCounter(answerMap[userAnswer]); 
         
         await setAnswer(userAnswer);
         await setIconColor(Section); 
@@ -337,13 +358,20 @@ const QuizCard = ({
                         <div className={q.buttonStackContainer} 
                           onClick={() => handleClick('no')}
                           onMouseEnter={() => console.log('🖱️ Hovering No Button')}
-                        >
-                            <div className={`${q.button} ${chewy.className}`} id={q.noButton} onClick={() => incrementButtonCounter('noNum')} >
+                        >   
+
+                            {/* Add the increment Button Counter function call to the handle click function  */}
+                            {/* onClick={() => incrementButtonCounter('noNum')} */}
+                            <div className={`${q.button} ${chewy.className}`} id={q.noButton}  >
                                 {buttonCounters.noNum > 0 && (
-                                    <span className={q.numSpan}>
+                                    <span 
+
+                                    className={q.numSpan}>
                                     {buttonCounters.noNum}
                                     </span>
                                 )}
+
+                             
                                 No 
                             </div>
                             <div className={q.buttonStack} id={q.noStackOne}></div>
@@ -355,7 +383,7 @@ const QuizCard = ({
                         </div>
 
                         <div className={q.buttonStackContainer} onClick={() => handleClick('sometimes')} onMouseEnter={() => console.log('🖱️ Hovering Sometimes Button')} >
-                            <div className={`${q.button} ${chewy.className}`} id={q.sometimesButton} onClick={() => incrementButtonCounter('sometimesNum')} >
+                            <div className={`${q.button} ${chewy.className}`} id={q.sometimesButton}>
                                 {buttonCounters.sometimesNum > 0 && (
                                     <span className={q.numSpan}>
                                     {buttonCounters.sometimesNum}
@@ -375,7 +403,7 @@ const QuizCard = ({
                         <div className={q.buttonStackContainer}   
                         onClick={() => handleClick('yes')}
                         onMouseEnter={() => console.log('🖱️ Hovering Yes Button')}>
-                            <div className={`${q.button} ${chewy.className}`} id={q.yesButton} onClick={() => incrementButtonCounter('yesNum')}>
+                            <div className={`${q.button} ${chewy.className}`} id={q.yesButton} >
                                 {buttonCounters.yesNum > 0 && (
                                     <span className={q.numSpan}>
                                     {buttonCounters.yesNum}

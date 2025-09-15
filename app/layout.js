@@ -57,10 +57,10 @@ export default function RootLayout({ children }) {
       >
         <UserProvider>
           <QuizProvider>
-            {/* <Navbar /> */}
+             <Navbar /> 
             
             {children}
-            {/* <Footer />  */}
+          <Footer />  
           </QuizProvider>
         </UserProvider>
         <Analytics />

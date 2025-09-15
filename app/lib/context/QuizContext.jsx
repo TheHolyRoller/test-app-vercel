@@ -61,6 +61,7 @@ export const QuizProvider = ({ children }) => {
 
 
     // Button click counters that persist across renders
+    // Add in values that can be used straight from the quiz buttons 
     const [buttonCounters, setButtonCounters] = useState({
         yesNum: 0, 
         noNum: 0, 

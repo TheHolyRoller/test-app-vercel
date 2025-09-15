@@ -811,7 +811,8 @@ font-size: 1.76rem !important;
 .buttonStackContainer{
     position: relative;
     display: grid;
-    place-content: center;      
+    place-content: center; 
+    cursor: pointer;     
     height: calc(3rem + 10px); 
 
 }
@@ -822,6 +823,8 @@ font-size: 1.76rem !important;
     right: 0;
     top: 0;
     bottom: 0;
+
+
      height: 100%;
      z-index: -1;
     border-radius: 12px;
@@ -831,6 +834,7 @@ font-size: 1.76rem !important;
     -o-border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 
+    
     
 }
 
@@ -875,6 +879,8 @@ font-size: 1.76rem !important;
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
+
+
     
     
     width: 1.85em;

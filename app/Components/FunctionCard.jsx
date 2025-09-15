@@ -5,10 +5,7 @@ import { useUser } from '../lib/context/UserContext';
 import { useRouter } from 'next/navigation';
 import QuizCard from '../Components/QuizCard';
 import {PermissionAnswer} from '../Components/PermissionAnswer'; 
-// import uc from '../Styles/emailPermission.module.css'; 
-// import uc from '../Styles/UnderstandCard.module.css'; 
-// import id from '../Styles/IdealCard.module.css'; 
-// import ad from '../Styles/AdultCard.module.css'; 
+
 import fc from '../Styles/FunctionCard.module.css'; 
 
 
@@ -29,19 +26,23 @@ import group from '../assets/Multi Style Learning.svg';
 
 
 
+
 export default function EmailPermission() {
     const router = useRouter();
     const { finalScore } = useQuiz();
     const { name, sound } = useUser();
 
     const handleYesClick = () => {
-        router.push('/legal');
+        
+       router.push('/legal');
+
     };
 
 
+
     const handleNoClick = () => {
-        // Set flag to trigger refresh when landing on home page
-        sessionStoragfc.setItem('needsRefreshFromEmailDecline', 'true');
+
+      sessionStorage.setItem('needsRefreshFromEmailDecline', 'true');
         router.push('/');
     };
 
@@ -55,23 +56,10 @@ export default function EmailPermission() {
     const getLabelColorBySection = (section) => "#033699";
 
     return (
-        <div>
+        <div style={{}}>
         {/* Top Blue Navbar Strip */}
-        <div
-          style={{
-            width: '100%',
-            height: '120px',
-            backgroundColor: '#023597',
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            zIndex: 100, 
-            display: 'none'
-          }}
-        />
 
-
-        <div style={{ paddingTop: '60px' }}>
+        <div style={{ paddingTop: '60px', outline: '5px solid lime' }}>
           <article 
           className={`${fc.card} ${nunito.className}`} 
           id={fc.firstCARD} 
@@ -79,8 +67,10 @@ export default function EmailPermission() {
               position: 'relative',
               zIndex: 200,
               boxShadow: '0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.06)',
-              marginTop: '-40px', 
-
+              marginTop: '-40px',
+              outline: '5px solid red', 
+              overflow: 'hidden'
+            
           }}
           >
       <div 
@@ -195,12 +185,12 @@ export default function EmailPermission() {
       <article className={fc.card} id={fc.cardOne}></article>
       <article className={fc.card} id={fc.cardTwo}></article>
       <article className={fc.card} id={fc.cardThree}></article>
-      <article className={fc.card} id={fc.cardFour}></article>
+      <article className={fc.card} id={fc.cardFour} style={{backgroundColor: 'red'}} ></article>
   </article>
 
 
 
-<section className={fc.buttonSectionContainer} style={{cursor: 'pointer',}} onClick={handleYesClick}>
+<section className={fc.buttonSectionContainer} style={{cursor: 'pointer', backgroundColor: 'red'}} onClick={handleYesClick}>
 
   <div className={fc.ctaContainer} style={{cursor: 'pointer'}} onClick={handleYesClick}>
 
