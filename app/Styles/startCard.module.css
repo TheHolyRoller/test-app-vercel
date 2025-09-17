@@ -545,14 +545,11 @@
 
     .cardElementContainer{
 
-        padding-top: 9.3rem !important; 
+        padding-top: 5.3rem !important; 
+        outline: 5px solid lime;
         
         
     }
-
-
-
-    
 
 }
 
