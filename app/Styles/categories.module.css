@@ -19,8 +19,8 @@
     -o-border-radius: 1rem;
 
     /* Add this into a laptop media query here  */
-    margin-top: 10rem !important; 
-    /* margin-top: 6rem !important;  */
+    /* margin-top: 10rem !important;  */
+    margin-top: 6rem !important; 
 
 
 
