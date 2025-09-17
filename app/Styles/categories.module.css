@@ -18,7 +18,10 @@
     -ms-border-radius: 1rem;
     -o-border-radius: 1rem;
 
-    margin-top: 6rem !important; 
+    margin-top: 8rem !important; 
+    /* margin-top: 6rem !important;  */
+
+
 
 
 
@@ -29,12 +32,11 @@
 .mainCategoryCardContainer{
 
 
-    margin-top: -4rem !important; 
+    /* margin-top: -3rem !important;  */
+    margin-top: 99rem !important; 
+
     height: 70vh; 
     max-height: 650px;
-
-
-
 
 
 }
