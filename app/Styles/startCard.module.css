@@ -512,15 +512,6 @@
 
 
     .card{
-        /* transform:translate(0, 9rem) !important ;
-        -webkit-transform:translate(0, 9rem) !important ;
-        -moz-transform:translate(0, 9rem) !important ;
-        -ms-transform:translate(0, 9rem) !important ;
-        -o-transform:translate(0, 9rem) !important ;
-        position: absolute !important; 
-        bottom: 0 !important; */
-
-        
 
 
 }
@@ -546,3 +537,42 @@
 
 
 }
+
+
+@media(min-width: 1270px) and (max-width: 1700px){
+
+
+
+    .cardElementContainer{
+
+        padding-top: 9.3rem !important; 
+        
+        
+    }
+
+
+
+    
+
+}
+
+@media (min-width: 1704px) and (max-width: 2560px) {
+    .cardElementContainer {
+      /* outline: 55px solid lime; */
+        
+      margin-top: 1rem; 
+
+     
+
+
+    }
+
+
+
+
+  }
+  
+
+
+
+/* Add in the large desktop media query here  */
