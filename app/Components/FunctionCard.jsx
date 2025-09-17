@@ -59,7 +59,7 @@ export default function EmailPermission() {
         <div style={{}}>
         {/* Top Blue Navbar Strip */}
 
-        <div style={{ paddingTop: '60px', outline: '5px solid lime' }}>
+        <div style={{ paddingTop: '60px', }}>
           <article 
           className={`${fc.card} ${nunito.className}`} 
           id={fc.firstCARD} 
@@ -68,7 +68,6 @@ export default function EmailPermission() {
               zIndex: 200,
               boxShadow: '0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.06)',
               marginTop: '-40px',
-              outline: '5px solid red', 
               overflow: 'hidden'
 
             
@@ -186,12 +185,12 @@ export default function EmailPermission() {
       <article className={fc.card} id={fc.cardOne}></article>
       <article className={fc.card} id={fc.cardTwo}></article>
       <article className={fc.card} id={fc.cardThree}></article>
-      <article className={fc.card} id={fc.cardFour} style={{backgroundColor: 'red'}} ></article>
+      <article className={fc.card} id={fc.cardFour}  ></article>
   </article>
 
 
 
-<section className={fc.buttonSectionContainer} style={{cursor: 'pointer', backgroundColor: 'red'}} onClick={handleYesClick}>
+<section className={fc.buttonSectionContainer} style={{cursor: 'pointer'}} onClick={handleYesClick}>
 
   <div className={fc.ctaContainer} style={{cursor: 'pointer'}} onClick={handleYesClick}>
 
