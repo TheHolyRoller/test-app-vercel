@@ -268,7 +268,8 @@ function ResultContent() {
                         <div 
                             className={resultStyles.button} 
                             onClick={() => router.push('/results-explanation')} 
-                            style={{cursor: 'pointer', fontSize: '2rem', letterSpacing: '1px'}}
+                            style={{cursor: 'pointer', fontSize: '2rem', letterSpacing: '1px', boxShadow: '0px 4px 1px 0px #c17a41;'
+                            }}
                         >
                             See Breakdown  
                         </div>

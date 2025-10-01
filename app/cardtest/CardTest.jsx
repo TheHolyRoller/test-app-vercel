@@ -3,10 +3,10 @@ import '../Styles/cardTest.css';
 
 function CardTest() {
   return (
-    <div class="card-stack">
-  <div class="card card-back"></div>
-  <div class="card card-middle"></div>
-  <div class="card card-top">Top Card</div>
+    <div className="card-stack">
+  <div className="card card-back"></div>
+  <div className="card card-middle"></div>
+  <div className="card card-top">Top Card</div>
 </div>
   )
 }

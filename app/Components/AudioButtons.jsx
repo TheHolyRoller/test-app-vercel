@@ -27,9 +27,9 @@ function AudioButtons() {
                 <div className={ab.buttonStackContainer} 
                   onClick={() => handleSoundChoice(false)}
                   onMouseEnter={() => console.log('🖱️ Hovering Audio Off Button')}
-                  style={{ outline: '0px solid red', cursor: 'pointer'}}
+                  style={{ cursor: 'pointer',}}
                 >
-                    <div className={`${ab.button} ${chewy.className}`} id={ab.noButton} style={{outline: '0px solid red', cursor: 'pointer'}} >
+                    <div className={`${ab.button} ${chewy.className}`} id={ab.noButton} style={{ cursor: 'pointer'}} >
                         
                         NO 
 
@@ -43,7 +43,7 @@ function AudioButtons() {
                 </div>
 
                 <div className={ab.buttonStackContainer}
-                style={{outline: '0px solid red', cursor: 'pointer'}}   
+                style={{cursor: 'pointer'}}   
                 onClick={() => handleSoundChoice(true)}
                 onMouseEnter={() => console.log('🖱️ Hovering Audio On Button')}>
                     <div className={`${ab.button} ${chewy.className}`} id={ab.yesButton}>

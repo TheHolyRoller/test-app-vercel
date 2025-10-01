@@ -19,9 +19,9 @@ export default function Navbar(){
 
     return(
 
-        <nav class={ns.navContainer} style={{backgroundColor: navColor}}>
-            <header  class={ns.navbarLogoSection} >
-            <div class={ns.logoSubContainer} >
+        <nav className={ns.navContainer} style={{backgroundColor: navColor}}>
+            <header  className={ns.navbarLogoSection} >
+            <div className={ns.logoSubContainer} >
             <a href='/' className={ns.logoLink} >
             </a>
             </div>

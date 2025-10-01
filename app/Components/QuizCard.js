@@ -1,4 +1,4 @@
-
+    
 'use client'
 import Image from 'next/image';
 import q from '../Styles/Quiz.module.css';
@@ -214,14 +214,7 @@ const QuizCard = ({
 
     return (
         <>
-{/* 
 
-
-
-*/}
-
-        {/*  This is the background color that is hiding behind the bottom navigation make it dynamic and tweak it's positioning  */}
-        {/* Navbar background strip */}
         <div 
             className={q.navbarStrip}
             style={{

@@ -127,30 +127,21 @@ export default function Quiz() {
             <div className={q.quizCardContainer} style={{}}>
 
 
-                {/* Add in the color & next question props here  */}
-                <progress 
-                    className={q.progressBar}  
-                    value={progress} 
-                    max="100"  
-                    style={{
-                        position: 'fixed', 
-                        top: '0', 
-                        left:'0', 
-                        right: '0', 
-                        height: '5px', 
-                        background: '#e0e0e0', 
-                        borderRadius: '10px',
-                        border: 'none',
-                        overflow: 'hidden',
-                        '--progress-color': progressBarColor
-                    }} 
-                >
+                
+                <div className={q.progressBarContainer} style={{}}>
+                    
+                    <div className={q.progressBarFill} style={{
 
-                {/* <ProgressBar  />  */}
-                </progress>
+                        width: `${progress}%`, 
+                        height: '100%', 
+                        background: progressBarColor, 
+                        borderRadius: '10px', 
+                        transition: 'width 0.3s ease'
+                        }}>
+                    </div>
+                </div>
 
-           
-                {/* Conditionally render CategoryCard or QuizCard based on Type */}
+
                 {Type.toLowerCase() === 'category' ? (
 
                     <div className={q.categoryCardContainer}>

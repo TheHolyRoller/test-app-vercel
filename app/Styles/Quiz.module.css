@@ -481,6 +481,24 @@ margin-bottom: 5em;
 
 }
 
+.progressBarContainer{
+
+
+
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    right: 0;
+    width: 100vw; 
+    min-width: 100vw;
+    height: 10px; 
+    background-color: #404F6F;
+
+    
+
+
+}
+
 .categoryCardContainer{
 
 
@@ -552,15 +570,6 @@ margin-bottom: 5em;
 }
 
 
-
-
-.noButtonContainer{
-
-
-
-    
-}
-
 .button{
     padding: 0.75rem;
     /* padding: 0.75rem 0.5em !important;  */
@@ -574,6 +583,8 @@ margin-bottom: 5em;
     text-transform: capitalize !important;
     text-transform: uppercase !important; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+
+
     
 
 }
@@ -660,6 +671,7 @@ margin-bottom: 5em;
     -moz-transform: scale(0.98);
     -ms-transform: scale(0.98);
     -o-transform: scale(0.98);
+
 
 
 
@@ -813,7 +825,10 @@ font-size: 1.76rem !important;
     display: grid;
     place-content: center; 
     cursor: pointer;     
-    height: calc(3rem + 10px); 
+    height: calc(3rem + 10px);
+    
+    
+
 
 }
 
@@ -835,7 +850,7 @@ font-size: 1.76rem !important;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 
     
-    
+
 }
 
 #noButton{
@@ -846,20 +861,9 @@ font-size: 1.76rem !important;
 }
 
 #noButton::before {
-    /* content: "";
-    position: absolute;
-    top: 65px;
-    left:15px;
-    width: 50%;
-    height: 50%;
-    background-color: #bbb;
-    box-shadow: 0 0 10px 10px #bbb;
-    z-index: -1;
-    transform: skew(-19deg, -4deg);
-    -webkit-transform: skew(-19deg, -4deg);
-    -moz-transform: skew(-19deg, -4deg);
-    -ms-transform: skew(-19deg, -4deg);
-    -o-transform: skew(-19deg, -4deg); */
+
+    
+
 }   
 
 .numSpan{

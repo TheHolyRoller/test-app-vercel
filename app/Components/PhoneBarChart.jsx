@@ -41,31 +41,31 @@ function PhoneBarChart({ writingPercentage,
         {
             name: 'Reading',
             percentage: (readingScore / MAX_SCORE) * 100,
-            color: '#FF6B6B',
+            color: '#78d591',
             score: readingScore
         },
         {
             name: 'Writing',
             percentage: (writingScore / MAX_SCORE) * 100,
-            color: '#4ECDC4',
+            color: '#4d95d5',
             score: writingScore
         },
         {
             name: 'Memory',
             percentage: (memoryScore / MAX_SCORE) * 100,
-            color: '#45B7D1',
+            color: '#e77e22',
             score: memoryScore
         },
         {
             name: 'Tests',
             percentage: (examResultsScore / MAX_SCORE) * 100,
-            color: '#96CEB4',
+            color: '#f3c70e',
             score: examResultsScore
         },
         {
             name: 'Planning',
             percentage: (organisationalScore / MAX_SCORE) * 100,
-            color: '#FECA57',
+            color: '#b53c31',
             score: organisationalScore
         }
     ];
@@ -90,12 +90,6 @@ function PhoneBarChart({ writingPercentage,
   return (
     <>
 
-
-    {/* Add in the overall compound score here  */}
-
-    {/* Replace this main container with the card element and it's main container */}
-
-    {/* Add in the relevant styles from the classes into the style sheet and then place the phone bar chart component into the card element. */}
 
 
     <main className={p.mainContainer} style={{outline: '0px solid red', paddingTop: '60px'}}>
@@ -193,7 +187,8 @@ function PhoneBarChart({ writingPercentage,
 
       <div className={p.buttonContainer}>
 
-<div className={p.button} onClick={onNext} style={{cursor: 'pointer', fontSize: '2rem', letterSpacing: '1px'}}>
+
+<div className={p.button} onClick={onNext} style={{cursor: 'pointer', fontSize: '2rem', letterSpacing: '1px', boxShadow: '0px 4px 1px 0px #c17a41;'}}>
 
 Next
 

@@ -11,8 +11,8 @@ export default function Card() {
     return(
         <>
             <ul id="cards">
-      <li class="card" id="card-1">
-        <div class="card-content">
+      <li className="card" id="card-1">
+        <div className="card-content">
           <div>
             <h2>Card One</h2>
             <p>This is the content of card one. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -23,8 +23,8 @@ export default function Card() {
         </div>
       </li>
 
-      <li class="card" id="card-2">
-        <div class="card-content">
+      <li className="card" id="card-2">
+        <div className="card-content">
           <div>
             <h2>Card Two</h2>
             <p>This is the content of card two. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -35,8 +35,8 @@ export default function Card() {
         </div>
       </li>
 
-      <li class="card" id="card-3">
-        <div class="card-content">
+      <li className="card" id="card-3">
+        <div className="card-content">
           <div>
             <h2>Card Three</h2>
             <p>This is the content of card three. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -47,8 +47,8 @@ export default function Card() {
         </div>
       </li>
 
-      <li class="card" id="card-4">
-        <div class="card-content">
+      <li className="card" id="card-4">
+        <div className="card-content">
           <div>
             <h2>Card Four</h2>
             <p>This is the content of card four. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
