@@ -16,7 +16,7 @@ export default function StartQuiz() {
 
     return (
         <main className={t.landingPageMainContainer}>
-           
+
 
             <section className={t.mainSection}>
                 
