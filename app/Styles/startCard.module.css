@@ -387,7 +387,6 @@
     cursor: pointer !important; 
     box-shadow: 0px 4px 1px 0px #c17a41;
 
-
 }
 
 
@@ -556,7 +555,7 @@
 
 @media (min-width: 1704px) and (max-width: 2560px) {
     .cardElementContainer {
-      outline: 55px solid lime;
+      
         
       margin-top: 1rem; 
 
