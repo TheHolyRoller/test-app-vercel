@@ -2,7 +2,8 @@
 
     
     /* height: 625px; */
-    height: var(--card-height);
+    height: calc(var(--card-height) + 1.566rem) ;
+
 
     width:320px;    
     position: relative;
@@ -20,7 +21,7 @@
 
     /* Add this into a laptop media query here  */
     /* margin-top: 10rem !important;  */
-    margin-top: 6rem !important; 
+    margin-top: -5rem !important; 
 
 
 

@@ -1,7 +1,5 @@
 .card {
 
-
-
     height: var(--card-height);
 
     width:320px;    
@@ -183,10 +181,8 @@
     height: 555px;
     max-height: 777px;
     width: 320px;
-    /* background-color: #fbfbfb; */
-    background-color: #013699;  
-
-    box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+    background-color: #fbfbfb;
+    box-shadow: 0 4px 9px -4px rgba(55, 174, 248, 0.3);
     transform:translate(0rem, 4em);
     -webkit-transform:translate(0rem, 4em);
     -moz-transform:translate(0rem, 4em);
@@ -200,8 +196,8 @@
 #cardThree{
  width: 320px;
  height: 400px;
- /* background-color: #fbfbfb; */
  background-color: #013699;
+ box-shadow: 0 4px 6px -4px rgba(255, 255, 255, 0.3) !important;
 
  border-radius: 1rem;
  -webkit-border-radius: 1rem;
@@ -221,14 +217,14 @@
     z-index: -5;
     width: 320px;
     height: 400px;
-    /* background-color: #fbfbfb; */
-    background-color: #013699;
+    background-color: #053895;
+    box-shadow: 0 4px 8px -4px rgba(255, 255, 255, 0.3) !important;
 
     position: absolute;
     bottom: 0;
     right: 0;
     border-radius: 0 0 1rem 1rem;
-    box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+    /* box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3); */
     transform:translate(0, 5.5em);
     -webkit-transform:translate(0, 5.5em);
     -moz-transform:translate(0, 5.5em);
@@ -291,13 +287,12 @@
 
 
 .supportingTextSectionContainer{
-        /* position: absolute; */
+
         position: relative !important; 
 
         width: 90%;
         margin: 0 auto;
        text-align: center; 
-
 
         color: #65656C; 
         font-weight: lighter !important;
@@ -786,6 +781,7 @@
     font-weight: 600;
     color: white;
     text-transform: capitalize;
+    outline: 3px solid hotpink;
 }
 
 /* Removed - percentage now displays inside bars */
@@ -822,7 +818,7 @@
     justify-content: flex-end;
     min-width: 50px;
     min-height: 55px;
-
+    
 
 }
 
@@ -836,6 +832,38 @@
     opacity: 1;
     transition: opacity 0.3s ease;
     padding-right: 8px;
+}
+
+.categoryNameSpan{
+
+
+
+    min-width: 70px;
+    text-align: left;
+
+
+}
+
+.scoreContainer{
+
+
+    margin-left: auto; 
+
+
+
+
+
+}
+
+
+
+.categoryScore{
+
+
+
+
+
+
 }
 
 
@@ -874,6 +902,8 @@
     background-color: #f49b53;
     font-weight: bolder;
     font-size: 1.885rem;
+    box-shadow: 0px 4px 1px 0px #c17a41;
+
 
 
     -webkit-user-select: none; /* Safari */
@@ -939,6 +969,8 @@
     
     .categoryName {
         font-size: 1rem;
+
+
     }
     
     .barPercentageText {

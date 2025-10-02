@@ -157,15 +157,20 @@ function PhoneBarChart({ writingPercentage,
                                         >
                                             <div style={{ 
                                                 display: 'flex', 
-                                                alignItems: 'center', 
+                                                alignItems: 'center',
+                                                textAlign: 'right',
                                                 gap: '12px',
                                                 color: 'white',
                                                 fontWeight: '600',
                                                 fontSize: '1rem', 
                                                 paddingTop: '15px'
                                             }}>
-                                                <span>{category.name}</span>
-                                                <span>{Math.round(category.score)}</span>
+                                                <span className={p.categoryNameSpan} >{category.name}</span>
+                                                <div className={p.scoreContainer}>
+
+                                                <span className={p.categoryScore} >{Math.round(category.score)}</span>
+
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

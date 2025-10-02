@@ -733,7 +733,8 @@ margin-bottom: 5em;
 #sometimesButton{
 
 
-    font-size: 1.25rem !important;
+    font-size: 1.15rem !important;
+
 
 
 }
@@ -856,6 +857,11 @@ font-size: 1.76rem !important;
 #noButton{
     background-color: rgb(241, 52, 39); 
     font-size: 1.76rem !important;
+
+    /* outline: 3px solid lime; */
+    text-align: center;
+    margin-right: -0px !important; 
+
 
 
 }
@@ -1386,6 +1392,7 @@ font-size: 1.76rem !important;
     font-weight: bold;
     background-color: #013699;
 }
+
 
 .nextButtonContainer{
     margin: 0 auto; 

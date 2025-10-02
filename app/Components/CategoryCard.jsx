@@ -8,6 +8,7 @@ import { usePathname } from 'next/navigation';
 import logo from '../assets/ivvi_Logo.svg'; 
 
 
+
 function CategoryCard({ Section, audio_url, categoryName }) {
     const { handleAnswer, currentQuestion } = useQuiz();
     const pathname = usePathname();
@@ -91,7 +92,7 @@ function CategoryCard({ Section, audio_url, categoryName }) {
                 <footer className={c.ivviLogoContainer} style={{}} >
                     <span className={c.bySpan}>by</span>
                     <figure className={c.logo}>
-                        <Image src={logo} width={150} height={50} alt='logo' className={c.logoImage} />
+                        <Image src={logo} width={135} height={50} alt='logo' className={c.logoImage} />
                     </figure>
                 </footer>
 
