@@ -19,6 +19,7 @@ function Start() {
     console.log('📊 Current quiz completion count:', count);
 
     
+    
     setShowRefreshMessage(false);
 
   }, []);
