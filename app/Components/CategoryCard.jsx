@@ -8,7 +8,6 @@ import { usePathname } from 'next/navigation';
 import logo from '../assets/ivvi_Logo.svg'; 
 
 
-
 function CategoryCard({ Section, audio_url, categoryName }) {
     const { handleAnswer, currentQuestion } = useQuiz();
     const pathname = usePathname();

@@ -19,8 +19,6 @@
     -ms-border-radius: 1rem;
     -o-border-radius: 1rem;
 
-    /* Add this into a laptop media query here  */
-    /* margin-top: 10rem !important;  */
     margin-top: -5rem !important; 
 
 
@@ -437,7 +435,8 @@
     .card{
 
 
-        margin-top: 7.5rem !important; 
+        margin-top: 5.5rem !important; 
+
         
     }
 
