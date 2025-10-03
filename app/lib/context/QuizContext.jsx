@@ -94,6 +94,14 @@ export const QuizProvider = ({ children }) => {
             questionsCount: questions.length,
             gifURLsCount: gif_urls?.length || 0
         });
+
+        
+        // Detailed answers logging
+        console.log('📝 ANSWERS ARRAY CONTENTS:', answers);
+        console.log('📝 ANSWERS COUNT:', answers.length);
+        if (answers.length > 0) {
+            console.log('📝 LAST ANSWER:', answers[answers.length - 1]);
+        }
     }, [currentIndex, quizLength, score, finalScore, currentQuestion, questions, gif_urls, answers]);
 
     useEffect(() => {
