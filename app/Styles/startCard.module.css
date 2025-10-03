@@ -5,14 +5,19 @@
     padding-top: 9.3rem; 
 
 
+
 }
 
-@media(min-width: 1550px) and (max-width: 3000px){
+
+/* Laptop media query  */
+@media(min-width: 1530px) and (max-width: 3000px){
 
 
     .cardElementContainer{
         
         padding-top: 9rem !important;
+        margin-bottom: -5.5rem; 
+
     
     }
 
@@ -23,17 +28,13 @@
 .card {
 
     
-    /* height: calc( var(--card-height) - 6rem); */
     height: var(--card-height);
-
-    /* width: 300px;  */
     width: var(--card-width); 
 
     position: relative;
     background-color: rgb(1, 54, 153) !important;
     margin: 0 auto; 
-    margin-bottom: 5.9rem;
-    margin-top: -17rem !important; 
+     margin-bottom: 5.9rem;
     
     border-radius: 1rem;
     -webkit-border-radius: 1rem;
@@ -67,7 +68,8 @@
 }
 
 .categoryLabelContainer{
-    /* height: 4.5rem;  */
+
+
     height: 5.5rem; 
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
