@@ -7,7 +7,6 @@ import { Redis } from '@upstash/redis';
 import { Client, Databases, Query } from 'node-appwrite'; // <-- server SDK
 
 
-
 const redis = Redis.fromEnv();
 const limiter = new Ratelimit({
   redis,
@@ -23,6 +22,7 @@ async function rateLimit(req: Request, routeKey: string) {
   const { success } = await limiter.limit(`${routeKey}:${ip}`);
   return success;
 }
+
 
 function getDb() {
   const client = new Client()

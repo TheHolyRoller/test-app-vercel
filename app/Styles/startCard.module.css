@@ -337,6 +337,7 @@
     -ms-transform:translate(0, 5.5em);
     -o-transform:translate(0, 5.5em);
 
+    
 
     border-radius: 1rem;
     -webkit-border-radius: 1rem;
@@ -413,8 +414,7 @@
         -o-border-radius: 22px;
         cursor: pointer !important;
         margin-top: 0.5em !important; 
-
-    
+        
         
     }
 
@@ -468,7 +468,7 @@
 
         margin-top: -12rem !important; 
 
-
+        outline: 5px solid;
 
     }
 
@@ -492,6 +492,21 @@
 
     /* Add in the button here  */
 
+
+
+}
+
+
+
+@media(min-width: 1400px){
+
+    .card{
+
+
+        margin-top: -20rem !important; 
+
+
+    }
 
 
 }

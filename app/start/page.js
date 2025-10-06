@@ -20,7 +20,6 @@ export default function StartQuiz() {
 
             <section className={t.mainSection}>
                 
-                {/* <Start/> */}
                 <StartCard/> 
                 
               
