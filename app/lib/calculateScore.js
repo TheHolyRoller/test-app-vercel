@@ -56,5 +56,3 @@ export const calculateScore = async (finalScore, router) => {
     throw error;
   }
 };
-
-

@@ -5,6 +5,7 @@ import { useUser } from '../lib/context/UserContext';
 // import { useRouter } from 'next/router';
 import { useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
+import UserType from '../type/page';
 
 
 function TypeControls() {
@@ -13,22 +14,22 @@ function TypeControls() {
     const router = useRouter();
     const [user, setUser] = useState();
     const { setUserType } = useUser();
+
     
     const handleUserType = async (type) => {
         await setUserType(type);
         setUser(type);
 
-        // Add a small delay before navigation
         setTimeout(() => {
-            router.push('/details');
+            router.push('/audiopermission');
         }, 210);
     };
+
 
     useEffect(() => {
         console.log('User type updated:', user);
     }, [user]);
 
-  
   
     return (
 

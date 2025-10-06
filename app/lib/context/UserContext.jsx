@@ -12,6 +12,7 @@ export const UserProvider = ({ children }) => {
   const [name, setName] = useState('');
   const [userAge, setUserAge] = useState(); 
 
+
   const setUserSound = (userSound) => {
     setSound(userSound);
   };
@@ -20,11 +21,10 @@ export const UserProvider = ({ children }) => {
 
     setSound(!sound)  
 
-
   }
 
   const setUserType = (age) => {
-    setUserAge('adult'); 
+    setUserAge(age); 
   };
 
   const setUserName = (userName) => {

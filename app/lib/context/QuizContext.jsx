@@ -12,6 +12,15 @@ import { usePathname, useRouter } from 'next/navigation';
 const DATABASE_ID = process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID;
 const QUESTION_COLLECTION_ID = process.env.NEXT_PUBLIC_APPWRITE_QUESTION_COLLECTION_ID;
 
+const KIDS_QUESTION_COLLECTION_ID = ''; 
+const STUDENT_QUESTION_COLLECTION_ID = ''; 
+const ADULT_QUESTION_COLLECTION_ID = ''; 
+
+let CURRENT_QUESTION_COLLECTION_ID; 
+
+
+
+
 const QuizContext = createContext(null);
 
 export const QuizProvider = ({ children }) => {
@@ -22,8 +31,8 @@ export const QuizProvider = ({ children }) => {
 
     const pathname = usePathname();
     const router = useRouter();
-    // const { userAge } = useUser();
-    const userAge = 'adult'; 
+    const { userAge } = useUser();
+    console.log('this is the user age in the quiz context extracted from the user context::: \n', userAge); 
 
 
     const [score, setScore] = useState(0);
@@ -104,6 +113,7 @@ export const QuizProvider = ({ children }) => {
         }
     }, [currentIndex, quizLength, score, finalScore, currentQuestion, questions, gif_urls, answers]);
 
+
     useEffect(() => {
 
         console.log('this is the current index being updated:::;;;; \n', currentIndex); 
@@ -153,9 +163,30 @@ export const QuizProvider = ({ children }) => {
                     collectionId: QUESTION_COLLECTION_ID
                 });
 
+                // TO DO add in the functionality to check the type of user and assign the right question collection id to fetch the right questions 
+                // TO DO Assign the current question collection ID to the right question collection b
+
+                // Use a hash map here 
+                const ageMap = {}
+
+                ageMap["adult"] = ADULT_QUESTION_COLLECTION_ID; 
+                ageMap["child"] = KIDS_QUESTION_COLLECTION_ID; 
+                ageMap["student"] = STUDENT_QUESTION_COLLECTION_ID; 
+
+                CURRENT_QUESTION_COLLECTION_ID = ageMap[userAge]   
+
+                console.log('this is the current question collection', CURRENT_QUESTION_COLLECTION_ID); 
+                console.log('this is the current user age mag \n', ageMap[userAge]); 
+
+
+
+
                 do {
                     const response = await databases.listDocuments(
+
+                    
                       DATABASE_ID,
+                    // TO DO add in the current question collection here 
                       QUESTION_COLLECTION_ID,
                       [
                         Query.limit(1000),
