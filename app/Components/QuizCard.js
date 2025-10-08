@@ -107,9 +107,11 @@ const QuizCard = ({
         console.log('getColorBySection called with:', Section);
         
         // Handle undefined or null case
+
+        // TO DO Change this to the Default blue 
         if (!Section) {
             console.warn('Section is undefined or null, using default color');
-            return '#4c2a74';
+            return 'rgb(65, 104, 179)';
         }
 
         // Normalize the section name
@@ -132,7 +134,7 @@ const QuizCard = ({
             default: 
                 console.warn('Unknown section:', Section, 'using default color');
 
-                return '#4c2a74';  
+                return 'rgb(65, 104, 179)';  
         }
     }
 
@@ -167,7 +169,7 @@ const QuizCard = ({
                 return 'rgb(220, 170, 10)'; 
             default: 
                 console.warn('Unknown navbar section:', Section, 'using default navbar color');
-                return '#2c1a3e';  
+                return 'rgb(65, 104, 179)';  
         }
     }
 
@@ -195,7 +197,7 @@ const QuizCard = ({
             case 'tests': 
                 return 'rgb(200, 150, 0)'; // Darker yellow
             default: 
-                return '#3a2850';  // Darker purple
+                return 'rgb(3, 54, 153)';  // Darker purple
         }
     }
 

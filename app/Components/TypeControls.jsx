@@ -37,10 +37,10 @@ function TypeControls() {
     <article className={tp.answerSection}>
         <div className={tp.buttonList}>
 
-        <div className={tp.buttonStackContainer} onClick={() => handleUserType('adult')}>
-        <div className={tp.button} id={tp.adult} onClick={() => handleUserType('adult')}>
+        <div className={tp.buttonStackContainer} onClick={() => handleUserType('child')}>
+        <div className={tp.button} id={tp.adult} onClick={() => handleUserType('child')}>
 
-            Adult
+            Child 
 
         </div>
 
@@ -55,11 +55,11 @@ function TypeControls() {
 
       
 
-        <div className={tp.buttonStackContainer} onClick={() => handleUserType('child')}>
-        <div className={tp.button} id={tp.child} onClick={() => handleUserType('child')}>
+        <div className={tp.buttonStackContainer} onClick={() => handleUserType('student')}>
+        <div className={tp.button} id={tp.child} onClick={() => handleUserType('student')}>
 
 
-            Child
+            Student
             
         </div>
 
@@ -71,6 +71,29 @@ function TypeControls() {
         <div className={tp.buttonStack} id={tp.yesStackSix}></div>
 
         </div>
+
+
+        
+        <div className={tp.buttonStackContainer} onClick={() => handleUserType('adult')}>
+        <div className={tp.button} id={tp.child} onClick={() => handleUserType('adult')}>
+
+
+            Adult
+            
+        </div>
+
+        <div className={tp.buttonStack} id={tp.yesStackOne}></div>
+        <div className={tp.buttonStack} id={tp.yesStackTwo}></div>
+        <div className={tp.buttonStack} id={tp.yesStackThree}></div>
+        <div className={tp.buttonStack} id={tp.yesStackFour}></div>
+        <div className={tp.buttonStack} id={tp.yesStackFive}></div>
+        <div className={tp.buttonStack} id={tp.yesStackSix}></div>
+
+        </div>
+
+
+
+
         </div>
 
 
