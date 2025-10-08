@@ -14,8 +14,9 @@ function AudioButtons() {
 
     const handleSoundChoice = (soundEnabled) => {
         setUserSound(soundEnabled);
-        router.push('/quiz');
+        router.push('/type');
     };
+    
     
 
   return (

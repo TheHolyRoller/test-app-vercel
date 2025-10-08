@@ -195,6 +195,7 @@ export const QuizProvider = ({ children }) => {
                         
                       ]
                     );
+
                     
                     if (response.documents.length === 0) break;
                   
@@ -535,6 +536,7 @@ export const QuizProvider = ({ children }) => {
 
             let percentage = await formatScore(score); 
             console.log('this is the percentage result of calling the format score function in handle Answer \n', percentage); 
+            console.log('this is the FINAL MAIN SCORE::::', score); 
 
 
             setTimeout(() => {
@@ -633,6 +635,7 @@ export const QuizProvider = ({ children }) => {
             cardType, 
             questions,
             answers,
+            setAnswers,
             yesAnswers, // Array of all "yes" answers - used in email template for detailed reporting
             currentQuestion,
             quizLength,

@@ -34,6 +34,7 @@ export default function EmailPermission() {
         organisationalScore,
         email,
         answers,
+        setAnswers,
         questions,
         yesAnswers
     } = useQuiz();
@@ -45,12 +46,22 @@ export default function EmailPermission() {
 
     // Add in the useEffect hook that will run when the Input Email changes 
     useEffect(() => {
+        
         console.log('this is the input email in the useEffect hook \n', inputEmail); 
+
         setEmail(inputEmail); 
+
     }, [inputEmail]);
+
+    useEffect(() => {
+
+        console.log('this is the answers Array updated with the email \n', answers); 
+
+    }, [answers]);
 
     // Transform quiz context data to match DyslexiaResultsReport format
     const transformQuizDataToResults = () => {
+        
         console.log('🔄 Transforming quiz data with yesAnswers:', yesAnswers);
         
         // Map sections to quiz context categories
@@ -122,25 +133,6 @@ export default function EmailPermission() {
     // Add in the functions to control the values passed into props here using the values extracted from the context. 
 
     const quizResponse = async () => {
-
-        /**
-         *   finalScore, 
-        score, 
-        memoryScore, 
-        writingScore, 
-        readingScore, 
-        examResultsScore, 
-        organisationalScore,
-        email,
-        answers,
-        questions
-         * 
-         * 
-         */
-
-
-        // Create a hashmap of these values and Link them to different thresholds. 
-  
 
 
     }
@@ -250,6 +242,9 @@ export default function EmailPermission() {
         console.log('📝 Form submission started');
 
         setIsLoading(true);
+
+        // Append the set email the the answers array here 
+        setAnswers(prev => [...prev, inputEmail]); 
 
         try {
             // Create a promise that will resolve after 2 seconds maximum
