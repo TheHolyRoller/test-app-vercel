@@ -8,7 +8,6 @@ import { browserOS } from '../lib/browserOS';
 
 
 
-
 import QuizCard from '../Components/QuizCard';
 import {PermissionAnswer} from '../Components/PermissionAnswer'; 
 import st from '../Styles/startCard.module.css'; 
@@ -57,9 +56,6 @@ export default function EmailPermission() {
 
 
     }, []); 
-
-    // ensure browserOS is only invoked client-side inside useEffect
-    
 
 
     return (

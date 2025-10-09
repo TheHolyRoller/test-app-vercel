@@ -7,13 +7,7 @@
 :root {
   overflow-x: hidden;
 
-  /* --card-width: 20rem;  */
   --card-width: 320px; 
-  
-  /* --card-height: 70vh;  */
-
-  /* This is now a fixed height so the card won't be jumping around on different screen heights  */
-  /* --card-height: 57.5rem;  */
   --card-height: 510px; 
 
 
@@ -27,10 +21,10 @@
 }
 
 @theme inline {
-  --color-background: var(--foreground);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* --color-background: var(--foreground); */
+  /* --color-foreground: var(--foreground); */
+  /* --font-sans: var(--font-geist-sans); */
+  /* --font-mono: var(--font-geist-mono); */
 }
 
 
@@ -64,7 +58,7 @@ body {
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    /* --background: 55, 174, 248, 0.3;
     --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;
     --card-foreground: 240 10% 3.9%;
@@ -88,12 +82,12 @@ body {
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
-    --radius: 0.5rem; 
+    --radius: 0.5rem;  */
 
   
   }
   .dark {
-    --background: 240 10% 3.9%;
+    /* --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
     --card: 240 10% 3.9%;
     --card-foreground: 0 0% 98%;
@@ -116,7 +110,7 @@ body {
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%; 
+    --chart-5: 340 75% 55%;  */
 
   
   } 
