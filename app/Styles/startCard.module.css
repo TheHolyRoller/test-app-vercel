@@ -3,6 +3,8 @@
 .cardElementContainer{
 
     padding-top: 9.3rem; 
+    /* color: rgba(55, 174, 248, 0.3); */
+    /* color: white !important;  */
 
 
 
@@ -279,7 +281,6 @@
     -o-transform:translate(0rem, 4em);
 
     background-color: rgb(241, 246, 249) !important;
-    outline: 5px solid lime !important;
 
 }
 
