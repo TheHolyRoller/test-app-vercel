@@ -476,14 +476,9 @@ margin-bottom: 5em;
 
 .quizCardContainer{
 
-
-
-
 }
 
 .progressBarContainer{
-
-
 
     position: fixed;
     top: 0; 
@@ -492,20 +487,13 @@ margin-bottom: 5em;
     width: 100vw; 
     min-width: 100vw;
     height: 10px; 
-    background-color: #404F6F;
-
-    
-
+    background-color: #92a0c2;
 
 }
 
 .categoryCardContainer{
 
-
     margin-top: -9em; 
-    
-
-
 
 }
 

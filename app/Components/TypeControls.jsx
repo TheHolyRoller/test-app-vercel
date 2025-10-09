@@ -5,6 +5,7 @@ import { useUser } from '../lib/context/UserContext';
 // import { useRouter } from 'next/router';
 import { useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
+import UserType from '../type/page';
 
 
 function TypeControls() {
@@ -13,22 +14,22 @@ function TypeControls() {
     const router = useRouter();
     const [user, setUser] = useState();
     const { setUserType } = useUser();
+
     
     const handleUserType = async (type) => {
         await setUserType(type);
         setUser(type);
 
-        // Add a small delay before navigation
         setTimeout(() => {
-            router.push('/details');
+            router.push('/audiopermission');
         }, 210);
     };
+
 
     useEffect(() => {
         console.log('User type updated:', user);
     }, [user]);
 
-  
   
     return (
 
@@ -36,10 +37,10 @@ function TypeControls() {
     <article className={tp.answerSection}>
         <div className={tp.buttonList}>
 
-        <div className={tp.buttonStackContainer} onClick={() => handleUserType('adult')}>
-        <div className={tp.button} id={tp.adult} onClick={() => handleUserType('adult')}>
+        <div className={tp.buttonStackContainer} onClick={() => handleUserType('child')}>
+        <div className={tp.button} id={tp.adult} onClick={() => handleUserType('child')}>
 
-            Adult
+            Child 
 
         </div>
 
@@ -54,11 +55,11 @@ function TypeControls() {
 
       
 
-        <div className={tp.buttonStackContainer} onClick={() => handleUserType('child')}>
-        <div className={tp.button} id={tp.child} onClick={() => handleUserType('child')}>
+        <div className={tp.buttonStackContainer} onClick={() => handleUserType('student')}>
+        <div className={tp.button} id={tp.child} onClick={() => handleUserType('student')}>
 
 
-            Child
+            Student
             
         </div>
 
@@ -70,6 +71,29 @@ function TypeControls() {
         <div className={tp.buttonStack} id={tp.yesStackSix}></div>
 
         </div>
+
+
+        
+        <div className={tp.buttonStackContainer} onClick={() => handleUserType('adult')}>
+        <div className={tp.button} id={tp.child} onClick={() => handleUserType('adult')}>
+
+
+            Adult
+            
+        </div>
+
+        <div className={tp.buttonStack} id={tp.yesStackOne}></div>
+        <div className={tp.buttonStack} id={tp.yesStackTwo}></div>
+        <div className={tp.buttonStack} id={tp.yesStackThree}></div>
+        <div className={tp.buttonStack} id={tp.yesStackFour}></div>
+        <div className={tp.buttonStack} id={tp.yesStackFive}></div>
+        <div className={tp.buttonStack} id={tp.yesStackSix}></div>
+
+        </div>
+
+
+
+
         </div>
 
 

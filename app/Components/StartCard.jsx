@@ -23,11 +23,9 @@ export default function EmailPermission() {
     const { finalScore } = useQuiz();
     const { name, sound } = useUser();
 
-
     const handleYesClick = () => {
         router.push('/understand');
     };
-
 
     const handleNoClick = () => {
         // Set flag to trigger refresh when landing on home page

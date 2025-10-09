@@ -3,8 +3,8 @@
 import { useQuiz } from '../lib/context/QuizContext';
 import { useUser } from '../lib/context/UserContext';
 import { useRouter } from 'next/navigation';
-import { useState } from 'react'; 
-// import e from '../Styles/emailPermission.modul.css'; 
+import { useEffect, useState } from 'react'; 
+
 import n from '../Styles/name.module.css'; 
 
 import { nunito } from '../fonts/nunito';
@@ -16,20 +16,42 @@ export default function EmailPermission() {
     const { handleAnswer } = useQuiz();
     const { setUserName, sound } = useUser();
     const [userName, setName] = useState('');
+    const {answers, setAnswers } = useQuiz(); 
+
 
     const handleChange = (e) => {
         setName(e.target.value);
+        console.log('this is the current input \n', e.target.value); 
+
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
         setUserName(userName);
-        // handleAnswer('noop');
+        console.log('this is the user name:::: \n', userName); 
+
+        setAnswers(prev => [...prev, userName]); 
 
         setTimeout(() => {
             router.push('/email');
         }, 210);
     };
+
+
+    useEffect(() => {
+
+        console.log('this is the updated user name \n', userName); 
+
+    }, [userName]); 
+
+
+    useEffect(() => {
+
+        console.log('this is the answers array. This should only run once \n', answers); 
+
+    }, [answers, userName]); 
+
+
 
 
     const Section = "Audio Permission";
@@ -56,7 +78,6 @@ export default function EmailPermission() {
             display: 'none'
           }}
         />
-        
 
         {/* Main Content Container */}
         <div style={{ paddingTop: '60px' }}>

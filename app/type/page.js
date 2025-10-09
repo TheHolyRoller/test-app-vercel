@@ -3,7 +3,8 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 // import q from '../../Styles/Quiz.module.css';
-import q from '../Styles/Quiz.module.css'; 
+// import q from '../Styles/Quiz.module.css';
+const q = '';  
 import { useUser } from '../lib/context/UserContext';
 
 import QuizCard from '../Components/QuizCard';
@@ -28,7 +29,7 @@ export default function UserType() {
     }, [user]);
 
     return (
-        <section style={{color: 'white'}}>
+        <section style={{color: 'white', marginTop:'9rem'}}>
             <main className={q.quizComponentContainer} id='quizElement'>
             <QuizCard 
                         question_text="I can quiz different people for you. who is it this time?"
@@ -37,11 +38,10 @@ export default function UserType() {
                             question_text: ""
                         }}
                         
-                        
                         audio_url={sound ? "https://dyslexiaquizapp.s3.eu-west-2.amazonaws.com/audio+doodles/quizzer+who-v1.mp3" : null}
                         currentIMG='https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/Age_Bracket/view?project=test-domain&mode=admin'
                     />
-                    <div style={{marginTop: '-5.5rem', position: 'relative', zIndex: '99999999'}}>
+                    <div style={{marginTop: '-2.5rem', position: 'relative', zIndex: '99999999'}}>
 
 
                 <TypeControls/>
