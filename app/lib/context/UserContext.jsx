@@ -19,7 +19,7 @@ export const UserProvider = ({ children }) => {
 
   const toggleUserSound = () => {
 
-    setSound(!sound)  
+    setSound(!sound);
 
   }
 
