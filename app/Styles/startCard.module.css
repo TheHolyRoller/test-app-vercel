@@ -1,33 +1,21 @@
-
-
 .cardElementContainer{
 
     padding-top: 9.3rem; 
     color: #013699 !important; 
-
-
-
-
-
 }
 
 
 /* Laptop media query  */
 @media(min-width: 2000px){
 
-
     .cardElementContainer{
-        
 
         padding: 0 !important; 
         margin-bottom: 9rem; 
-        
-
     
     }
 
 }
-
 
 @media(min-width: 1530px) and (max-width: 2000px){
 
