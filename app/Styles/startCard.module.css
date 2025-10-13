@@ -13,13 +13,32 @@
 
 
 /* Laptop media query  */
-@media(min-width: 1530px) and (max-width: 3000px){
+@media(min-width: 2000px){
+
+
+    .cardElementContainer{
+        
+
+        padding: 0 !important; 
+        margin-bottom: 9rem; 
+        outline: 5px solid blue;
+        
+
+    
+    }
+
+}
+
+
+@media(min-width: 1530px) and (max-width: 2000px){
 
 
     .cardElementContainer{
         
         padding-top: 9rem !important;
         margin-bottom: -5.5rem; 
+
+        outline: 5px solid red;
         
 
     
