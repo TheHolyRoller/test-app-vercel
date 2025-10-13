@@ -18,9 +18,6 @@ const ADULT_QUESTION_COLLECTION_ID = '';
 
 let CURRENT_QUESTION_COLLECTION_ID; 
 
-
-
-
 const QuizContext = createContext(null);
 
 export const QuizProvider = ({ children }) => {
@@ -384,6 +381,9 @@ export const QuizProvider = ({ children }) => {
             Section 
         } = currentQuestion;
 
+        console.log('this is the yes weight in the context::::::: \n', currentQuestion[yes_weight]); 
+
+
         
         console.log(`📊 QuizContext: Current section: ${Section}`);
 
@@ -449,11 +449,20 @@ export const QuizProvider = ({ children }) => {
 
         }
 
+        if(userAge === 'adult'){
 
+            console.error('user age is adult'); 
+
+
+        }
 
         if (userAge === 'adult') {
             console.log('👤 QuizContext: Calculating score for adult');
             if (answer === 'yes') {
+
+
+                console.log('this is the yes weight!! \n', yes_weight); 
+
                 setScore(prevScore => prevScore + yes_weight);
                 updateScoreCategory(Section, yes_weight);
                 console.log('this is the question Section \n', Section); 
@@ -463,12 +472,12 @@ export const QuizProvider = ({ children }) => {
                 console.log('this is the question Section \n', Section); 
             }
 
-            // change this to just work for an adult 
+
         } else {
             console.log('👶 QuizContext: Calculating score for child');
             if (answer === 'yes') {
-                setScore(prevScore => prevScore + sometimes_weight);
-                updateScoreCategory(Section, sometimes_weight);
+                setScore(prevScore => prevScore + yes_weight);
+                updateScoreCategory(Section, yes_weight);
                 console.log('this is the question Section \n', Section); 
 
             } else if (answer === 'sometimes') {
