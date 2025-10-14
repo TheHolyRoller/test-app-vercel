@@ -4,6 +4,11 @@ import { useQuiz } from '../lib/context/QuizContext';
 import { useUser } from '../lib/context/UserContext';
 import { useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react'; 
+import axios from 'axios'; 
+
+
+
+
 import { databases } from '../lib/appwrite';
 import emailSubmission from '../Styles/email.module.css'; 
     
@@ -12,6 +17,7 @@ import Image from 'next/image';
 
 const DATABASE_ID = process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID;
 const COLLECTION_ID = process.env.NEXT_PUBLIC_APPWRITE_RESULTS_COLLECTION_ID;
+
 
 export default function EmailPermission() {
     const router = useRouter();
@@ -55,9 +61,56 @@ export default function EmailPermission() {
 
     useEffect(() => {
 
-        console.log('this is the answers Array updated with the email \n', answers); 
+        console.log('this is the answers Array updated with the email::::!!!MAIL \n', answers); 
+
+
+        const sendResults = async () => {
+
+
+            console.log('this is the send Results function used to run the save results function')
+
+        if(answers.length > 56){
+
+            console.log('the answers length evaluation ran true \n', answers.length); 
+            const res = await saveResults(); 
+            console.log('this is the result from the save results function \n', res); 
+
+
+        }
+
+
+        }
+
+
+        sendResults(); 
+
 
     }, [answers]);
+
+
+    const saveResults = async () => {
+
+        console.log('this is the save results function'); 
+
+        console.log('this is the answers object in the function argument \n', answers); 
+
+        try{
+
+            const response = await axios.post('http://localhost:3000/api/create', answers); 
+            console.log('this is the response form the server \n', response); 
+
+        }
+        catch(error){
+
+            console.error("Could not push results to the server! \n", error); 
+
+        }
+
+
+    }
+
+
+
 
     // Transform quiz context data to match DyslexiaResultsReport format
     const transformQuizDataToResults = () => {
@@ -129,16 +182,8 @@ export default function EmailPermission() {
     };
 
 
-    // Use the dynamic context variables extracted from props here to decide what value to pass in through props to the email component. 
-    // Add in the functions to control the values passed into props here using the values extracted from the context. 
 
-    const quizResponse = async () => {
-
-
-    }
     
-
-
 
 
     const sendEmail = async () => {
@@ -245,6 +290,10 @@ export default function EmailPermission() {
 
         // Append the set email the the answers array here 
         setAnswers(prev => [...prev, inputEmail]); 
+        console.log('this is the input email set to answers \n', inputEmail); 
+        console.log('this is the answers array which should be updated with the email \n', answers); 
+
+
 
         try {
             // Create a promise that will resolve after 2 seconds maximum
@@ -255,7 +304,14 @@ export default function EmailPermission() {
             // Create the submission promise
             const submissionPromise = async () => {
                 console.log('📧 Sending email...');
-                await sendEmail();
+                // Call the save answers fuction here
+                console.log("just about to call the save results function ");
+                // Call this function in a useEffect hook 
+                // await saveResults(); 
+
+                console.log('just about to call the send email function'); 
+
+                // await sendEmail();
                 return 'success';
             };
 
@@ -264,12 +320,12 @@ export default function EmailPermission() {
             
             // Navigate to confirmation page after successful submission or timeout
             console.log('🔄 Navigating to confirmation page...');
-            router.push('/confirmation');
+            // router.push('/confirmation');
             
         } catch (error) {
-            console.error('❌ Error in form submission:', error);
+            console.log('❌ Error in form submission:', error);
             // Still navigate to confirmation page even if there's an error
-            router.push('/confirmation');
+            // router.push('/confirmation');
         } finally {
             setIsLoading(false);
         }

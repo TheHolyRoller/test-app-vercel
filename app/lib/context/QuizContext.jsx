@@ -330,7 +330,7 @@ export const QuizProvider = ({ children }) => {
             setCardSection(questions[currentIndex].Section); 
 
             setCardType(questions[currentIndex].Type); 
-            console.error('this is the value of the card Section \n', cardSection); 
+            console.log('this is the value of the card Section \n', cardSection); 
             console.log('this is the value of the card Type \n', cardType); 
 
         }

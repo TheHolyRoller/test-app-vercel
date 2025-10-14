@@ -24,7 +24,6 @@ function UserInput({
      
 }) {
 
-
     const router = useRouter();
     const [email, setEmail] = useState('');
     const { name, userAge } = useUser();
@@ -51,11 +50,21 @@ function UserInput({
 
             // Then send email
             console.log('📧 Sending email...');
-            await sendEmail();
+
+            console.log('these are the values being sent through::!!:: \n', answers, score, memoryScore);
+            
+            // Save the data to the appwrite database here and then return the response and sent that in a post request to the Create api. Then that api route will create a post request of it's own 
+            // To the airtable Create api route using the personal access token as auth and it will send the data after mapping the different JSON elements to the right fields once they have been extracted from the 
+            // Response object using object destructuring
+            
+
+
+            // Hold of sending the email until you have sorted out the saving of the information to the appwrite database
+            // await sendEmail();
             
             // Navigate to results page after successful submission
             console.log('🔄 Navigating to results page...');
-            await router.push('/result');
+            // await router.push('/result');
         } catch (error) {
             console.error('❌ Error in form submission:', error);
             alert('An error occurred. Please try again.');

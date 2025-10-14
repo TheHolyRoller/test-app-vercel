@@ -5,6 +5,7 @@ import { NextResponse } from 'next/server';
 
 // Check for API key
 const apiKey = process.env.NEXT_RESEND_API_KEY;
+console.log('this is the api key in the SEND route \n', apiKey); 
 if (!apiKey) {
     console.error('❌ NEXT_RESEND_API_KEY is not set in environment variables');
 }
