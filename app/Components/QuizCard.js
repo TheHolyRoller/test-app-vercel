@@ -41,7 +41,6 @@ const QuizCard = ({
         
         
         console.log('this is the user answer type::::!!!@@@ \n', userAnswer); 
-
         
         console.log('🎯 Answer Selected:', {
             answer: userAnswer,
