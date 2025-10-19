@@ -25,6 +25,8 @@ export default function EmailPermission() {
     const { name, userAge } = useUser();
     const [inputEmail, setInputEmail] = useState('');
     const [isLoading, setIsLoading] = useState(false);
+    const [submit, setSubmit] = useState(false); 
+
 
     // Extract the set email function from the quiz context here 
     const { setEmail } = useQuiz(); 
@@ -45,6 +47,16 @@ export default function EmailPermission() {
         yesAnswers
     } = useQuiz();
 
+
+    console.log('these are the category scores in the Email Route::!! finalScore, score, memoryScore, writingScore, readingScore, examResultsScore, organisationalScore, email, answers, setAnswers, questions, yesAnswers  \n', finalScore, score, memoryScore, writingScore, readingScore, examResultsScore, organisationalScore, email, answers, setAnswers, questions, yesAnswers
+     ); 
+
+     console.log('these are the answers in the email route \n', answers); 
+     console.log('this is the type of answers \n', typeof answers); 
+
+
+
+
     const handleChange = (e) => {
         setInputEmail(e.target.value);
         console.log('this is the input \n', e.target.value); 
@@ -55,7 +67,7 @@ export default function EmailPermission() {
         
         console.log('this is the input email in the useEffect hook \n', inputEmail); 
 
-        setEmail(inputEmail); 
+        setEmail(inputEmail);   
 
     }, [inputEmail]);
 
@@ -69,12 +81,11 @@ export default function EmailPermission() {
 
             console.log('this is the send Results function used to run the save results function')
 
-        if(answers.length > 56){
+        if(answers.length > 55 && email !== null && email !== undefined && email !== '' && submit){
 
             console.log('the answers length evaluation ran true \n', answers.length); 
             const res = await saveResults(); 
             console.log('this is the result from the save results function \n', res); 
-
 
         }
 
@@ -85,19 +96,39 @@ export default function EmailPermission() {
         sendResults(); 
 
 
-    }, [answers]);
+    }, [answers, submit]);
 
 
     const saveResults = async () => {
 
         console.log('this is the save results function'); 
 
-        console.log('this is the answers object in the function argument \n', answers); 
+        console.log('this is the answers object in the function argument \n', answers);
+
+        console.log('this is the user name \n', name); 
+        console.log('this is the user email \n', email); 
+
+        
+
+        // setAnswers({...answers,  score, memoryScore, writingScore, readingScore, examResultsScore, organisationalScore});
+        // const payload = {...answers,  score, memoryScore, writingScore, readingScore, examResultsScore, organisationalScore}; 
+        const payload = {
+            answers: answers, 
+            score,
+            memoryScore,
+            writingScore,
+            readingScore,
+            examResultsScore,
+            organisationalScore,
+            email: inputEmail || email,
+            name: name  
+                };
+
 
         try{
 
-            const response = await axios.post('http://localhost:3000/api/create', answers); 
-            console.log('this is the response form the server \n', response); 
+            const response = await axios.post('http://localhost:3000/api/create', payload); 
+            console.log('this is the response form the server for the Create api route  \n', response); 
 
         }
         catch(error){
@@ -287,11 +318,12 @@ export default function EmailPermission() {
         console.log('📝 Form submission started');
 
         setIsLoading(true);
+        setSubmit(true); 
 
         // Append the set email the the answers array here 
-        setAnswers(prev => [...prev, inputEmail]); 
-        console.log('this is the input email set to answers \n', inputEmail); 
-        console.log('this is the answers array which should be updated with the email \n', answers); 
+        // setAnswers(prev => [...prev, inputEmail]); 
+        // console.log('this is the input email set to answers \n', inputEmail); 
+        // console.log('this is the answers array which should be updated with the email \n', answers); 
 
 
 

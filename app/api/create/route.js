@@ -4,7 +4,6 @@ import { NextResponse } from "next/server";
 import axios from 'axios'; 
 import EmailPermission from "@/app/Components/StartCard";
 import { rejects } from "assert";
-import { an } from "@upstash/redis/zmscore-CgRD7oFR";
 const Airtable = require('airtable'); 
 
 
@@ -17,73 +16,81 @@ export async function POST(req){
     
     try{
 
+        console.log('this is the create post request ')
 
         const base = new Airtable({apiKey: ACCESS_TOKEN}).base(BASE_ID); 
+
+        console.log('this is the base from air table \n', base); 
+
 
 
         console.log("this is the request object \n", req);
 
-        const body = await req.json(); 
+            const body = await req.json(); 
 
-        console.log('this is the body of the request \n', body); 
+            console.log('this is the body of the request \n', body); 
+
+            const {score, memoryScore, writingScore, readingScore, examResultsScore, organisationalScore} = await body; 
+
+            console.log("these are the score, memoryScore, writingScore, readingScore, examResultsScore, organisationalScore Score \n", score, memoryScore, writingScore, readingScore, examResultsScore, organisationalScore); 
 
 
-        const name = await body[body.length -2]; 
+            console.log('this is the type of main score and reading score \n', typeof score, typeof readingScore, typeof writingScore, typeof memoryScore, typeof examResultsScore, typeof organisationalScore);
+
+
+
+        // const name = await body[body.length -2]; 
+        const { name } = body; 
+        const { email } = body; 
+        const { answers } = body; 
+
+        console.log('these are the quiz answers in the create route \n', answers); 
+
 
         console.log('this is the name \n', name); 
         
-        const email = await body[body.length -1]; 
+        // const email = await body[body.length -1]; 
         console.log('this is the email \n', email); 
 
-        const quizAnswers = await body.slice(0, body.length -2); 
+        // const quizAnswers = await body.slice(0, body.length -2); 
 
-        console.log('these are the quiz answers with the last two records sliced out \n', quizAnswers); 
+
+        console.log('these are the quiz answers with the last two records sliced out \n', answers); 
 
         const fields = {
 
                 User_Name: name, 
-                User_Email: email
-
+                User_Email: email, 
+                Main_Score: score, 
+                Reading_Score: readingScore, 
+                Writing_Score: writingScore, 
+                Memory_Score: memoryScore, 
+                Tests_Score: examResultsScore, 
+                Organisational_Score: organisationalScore                
 
 
         }
 
-        // format the question key here 
-
-        quizAnswers.forEach((item, index) => {
+        console.log('these are the initial fields \n', fields); 
 
 
-            const key = `Q${index + 1}`; 
-            console.log('this is the field key \n', key); 
-
-            const questionText = item.questionText; 
-            console.log('this is the question text \n', questionText); 
-
-            const answer = item.quetionAnswer; 
-            console.log("this is the question answer \n", answer); 
-            console.log('this is the extracted answer \n', item.quetionAnswer); 
+        answers.forEach((item, index) => {
+                const qNum = index + 1;
+                fields[`Q${qNum}_Text`] = item.question_text;
+                fields[`Q${qNum}_Answer`] = item.answer;
 
 
-            fields[key] = `${questionText}: ${answer}`; 
-            console.log('this is the fields key \n', fields[key]); 
+                });
 
 
-
-
-        }); 
 
         console.log('these are the fields \n', fields); 
 
+        const response = await base("Table 1").create([{ fields }]);
 
-        // await base(("Table 1").create([{fields}])); 
+        console.log('this is the resonse from the database server \n', response); 
 
-
-
-
-        
-
-
-        return NextResponse.json({message: "Data received successfull", status: 200}); 
+        return NextResponse.json({message: `Data received successfull ${response}`}, {status: 200}); 
 
     }
     catch(error){
