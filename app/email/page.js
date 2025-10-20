@@ -81,7 +81,7 @@ export default function EmailPermission() {
 
             console.log('this is the send Results function used to run the save results function')
 
-        if(answers.length > 55 && email !== null && email !== undefined && email !== '' && submit){
+        if(answers.length > 55 && email && submit){
 
             console.log('the answers length evaluation ran true \n', answers.length); 
             const res = await saveResults(); 
@@ -89,6 +89,7 @@ export default function EmailPermission() {
 
         }
 
+        
 
         }
 

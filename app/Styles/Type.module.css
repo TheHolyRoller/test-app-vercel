@@ -1,0 +1,81 @@
+
+
+.mainCardSectionContainer{
+
+
+
+
+
+
+
+}
+
+
+
+
+.quizComponentContainer{
+
+
+
+    outline: 5px solid red;
+
+
+
+}
+
+
+.ageBracketContainer{
+
+
+
+    width: 10rem; 
+    margin: auto; 
+    outline: 5px solid lime;
+    position: absolute; 
+    left: 48%; 
+    top: 50%;
+    z-index: 99999999; 
+
+
+
+}
+
+
+
+.buttonGroupContainer{
+
+
+
+
+
+}
+
+
+
+.ageButton{
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
