@@ -7,8 +7,6 @@ import { useState, useEffect } from 'react';
 import axios from 'axios'; 
 
 
-
-
 import { databases } from '../lib/appwrite';
 import emailSubmission from '../Styles/email.module.css'; 
     
@@ -44,7 +42,8 @@ export default function EmailPermission() {
         answers,
         setAnswers,
         questions,
-        yesAnswers
+        yesAnswers, 
+        
     } = useQuiz();
 
 
@@ -72,6 +71,7 @@ export default function EmailPermission() {
     }, [inputEmail]);
 
     useEffect(() => {
+
 
         console.log('this is the answers Array updated with the email::::!!!MAIL \n', answers); 
 
@@ -109,8 +109,6 @@ export default function EmailPermission() {
         console.log('this is the user name \n', name); 
         console.log('this is the user email \n', email); 
 
-        
-
         // setAnswers({...answers,  score, memoryScore, writingScore, readingScore, examResultsScore, organisationalScore});
         // const payload = {...answers,  score, memoryScore, writingScore, readingScore, examResultsScore, organisationalScore}; 
         const payload = {
@@ -122,8 +120,14 @@ export default function EmailPermission() {
             examResultsScore,
             organisationalScore,
             email: inputEmail || email,
-            name: name  
+            name: name,
+            ageRange: userAge
                 };
+
+
+
+                console.log(`this is the payload and just about to send it off in the try block ${payload}`); 
+                
 
 
         try{

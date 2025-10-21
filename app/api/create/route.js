@@ -11,7 +11,6 @@ const ACCESS_TOKEN = process.env.PERSONAL_ACCESS_TOKEN;
 const BASE_ID = process.env.BASE_ID;
 // const TABLE_ID = process.env.TABLE_ID; 
 
-
 export async function POST(req){
     
     try{
@@ -30,14 +29,15 @@ export async function POST(req){
 
             console.log('this is the body of the request \n', body); 
 
-            const {score, memoryScore, writingScore, readingScore, examResultsScore, organisationalScore} = await body; 
+            const {score, memoryScore, writingScore, readingScore, examResultsScore, organisationalScore, ageRange} = await body; 
 
             console.log("these are the score, memoryScore, writingScore, readingScore, examResultsScore, organisationalScore Score \n", score, memoryScore, writingScore, readingScore, examResultsScore, organisationalScore); 
 
 
             console.log('this is the type of main score and reading score \n', typeof score, typeof readingScore, typeof writingScore, typeof memoryScore, typeof examResultsScore, typeof organisationalScore);
 
-
+            console.log(`this is the age range in create route ${ageRange}`); 
+            
 
         // const name = await body[body.length -2]; 
         const { name } = body; 
