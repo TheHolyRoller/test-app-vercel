@@ -16,8 +16,7 @@
 .quizComponentContainer{
 
 
-
-    outline: 5px solid red;
+    position: relative;
 
 
 
@@ -29,11 +28,7 @@
 
 
     width: 10rem; 
-    margin: auto; 
-    outline: 5px solid lime;
-    position: absolute; 
-    left: 48%; 
-    top: 50%;
+   
     z-index: 99999999; 
 
 
@@ -52,15 +47,83 @@
 
 
 
-.ageButton{
+    .ageButton{
 
 
+        width: 260px; 
+        height: 58px; 
+        border-radius: 5px;
+        background-color: #79A479;
+
+        font-size: 2rem; 
+        font-weight: 600;
+        display: grid;
+        place-content: center; 
+        margin-bottom: 1rem;
+
+
+
+
+
+    }
+
+    .childButton{
+
+
+        background-color: #79A479;
+
+
+
+    }
+
+
+    .studentButton{
+
+
+        background-color: #013699 !important;
+
+    }
+
+    .adultButton{
+
+
+        background-color: #00143D;
+
+
+
+
+    }
+
+
+
+.ageTextContainer{
+
+
+    width: 15.6rem;
+    margin: 0 auto; 
 
 
 
 
 }
 
+.ageTextSpan{
+
+
+    /* outline: 2px solid lime; */
+    text-align: center;
+    font-size: 0.7rem;
+    color: #404F6F ; 
+    margin: auto; 
+    margin-left: 0.7rem; 
+
+
+    
+
+
+
+
+}
 
 
 

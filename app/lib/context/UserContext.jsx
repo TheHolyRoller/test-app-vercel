@@ -46,6 +46,7 @@ export const UserProvider = ({ children }) => {
 };
 
 
+
 // Custom hook to consume the context
 export const useUser = () => {
   const context = useContext(UserContext);

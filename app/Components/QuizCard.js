@@ -20,7 +20,7 @@ const QuizCard = ({
     Section, 
     currentIMG,
     currentQuestion, 
-    
+    children
 }) => {
 
 
@@ -48,6 +48,7 @@ const QuizCard = ({
             // question_text: currentQuestion?.question_text
         });
 
+
         // Call the increment button counter function here and call the user answer as it's function argument 
         const answerMap = {
 
@@ -56,6 +57,8 @@ const QuizCard = ({
          sometimes: "sometimesNum"
 
         }
+
+
 
 
         console.log('this is the mapped user answer \n', answerMap[userAnswer]);
@@ -261,8 +264,6 @@ const QuizCard = ({
                 <div className={`${q.categoryLabelContainer} ${nunito.className}`}>
                     <label className={`${q.categoryLabel} ${nunito.className}`}>
 
-                        {/* Add in the category section container here  */}
-
 
                         <div className={`${q.labelContainer} ${nunito.className}`} style={{backgroundColor: getLabelColorBySection(Section)}}>
 
@@ -313,8 +314,10 @@ const QuizCard = ({
                     </h2>
                 </div>
             )}
+
             
             <div className={q.imageSectionContainer}>
+
                 <div className={q.doodleContainer}>
                     {currentIMG && (
                         <Image 
@@ -336,7 +339,19 @@ const QuizCard = ({
                     )}
                     
                 </div>
+
+                <div  style={{outline: '0px solid red', width: '16.25rem', marginTop: '-7rem'}}>
+
+                {children && <div style={{}}  className={q.childElement}>{children}</div>}
+                </div>
+
+                
+
+
+
+
             </div>
+
 
             <article className={q.card} id={q.cardOne}></article>
             <article className={q.card} id={q.cardTwo}></article>
