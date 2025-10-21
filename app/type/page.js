@@ -16,11 +16,18 @@ export default function UserType() {
     const [user, setUser] = useState();
     const { setUserType, sound } = useUser();
 
+
     const handleUserType = async (type) => {
         await setUserType(type);
+
+
+
         setUser(type);
         setTimeout(() => {
-            router.push('/details');
+
+            alert(`this is the user type ${type}`); 
+
+            router.push('/quiz');
         }, 210);
     };
 
@@ -48,16 +55,16 @@ export default function UserType() {
                     <div className={q.buttonGroupContainer}>
 
 
-                        <button className={`${q.ageButton} ${q.childButton}`} >
+                        <button className={`${q.ageButton} ${q.childButton}`} onClick={(() => handleUserType('child'))} >
                             
                             Child 13+ 
                         </button>
-                            <button className={`${q.ageButton} ${q.studentButton}`} id={q.studentButton}>
+                            <button className={`${q.ageButton} ${q.studentButton}`} onClick={(() => handleUserType('student'))}>
                             
                             Student 18+
                         </button>
 
-                            <button className={`${q.ageButton} ${q.adultButton}`} id={q.adultButton}>
+                            <button className={`${q.ageButton} ${q.adultButton}`} onClick={(() => handleUserType('adult'))}>
                             
                             Adult 25+
                         </button>

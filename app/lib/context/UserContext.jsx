@@ -13,6 +13,11 @@ export const UserProvider = ({ children }) => {
   const [userAge, setUserAge] = useState(); 
 
 
+  useEffect(() => {
+    console.log('this is the updated user age \n', userAge); 
+  }, [userAge]); 
+
+
   const setUserSound = (userSound) => {
     setSound(userSound);
   };
@@ -37,7 +42,7 @@ export const UserProvider = ({ children }) => {
       console.log('User state updated:', { name, sound, userAge });
     }
   }, [name, sound, userAge]);
-
+  
   return (
     <UserContext.Provider value={{ name, sound, userAge, setUserName, setUserSound, setUserType, toggleUserSound }}>
       {children}
