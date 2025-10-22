@@ -12,30 +12,31 @@ const BASE_ID = process.env.BASE_ID;
 // const TABLE_ID = process.env.TABLE_ID; 
 
 export async function POST(req){
+
+
+    console.log('this is the create route outside the try block'); 
     
     try{
 
         console.log('this is the create post request ')
-
         const base = new Airtable({apiKey: ACCESS_TOKEN}).base(BASE_ID); 
-
         console.log('this is the base from air table \n', base); 
 
 
 
         console.log("this is the request object \n", req);
 
-            const body = await req.json(); 
+            
 
+                  const body = await req.json(); 
             console.log('this is the body of the request \n', body); 
+          
+
 
             const {score, memoryScore, writingScore, readingScore, examResultsScore, organisationalScore, ageRange} = await body; 
 
-            console.log("these are the score, memoryScore, writingScore, readingScore, examResultsScore, organisationalScore Score \n", score, memoryScore, writingScore, readingScore, examResultsScore, organisationalScore); 
-
-
-            console.log('this is the type of main score and reading score \n', typeof score, typeof readingScore, typeof writingScore, typeof memoryScore, typeof examResultsScore, typeof organisationalScore);
-
+            console.log("these are the score, memoryScore, writingScore, readingScore, examResultsScore, organisationalScore Score \n", score, memoryScore, writingScore, readingScore, examResultsScore, organisationalScore, ageRange); 
+            console.log('this is the type of main score and reading score \n', typeof score, typeof readingScore, typeof writingScore, typeof memoryScore, typeof examResultsScore, typeof organisationalScore, typeof ageRange);
             console.log(`this is the age range in create route ${ageRange}`); 
             
 
@@ -45,17 +46,11 @@ export async function POST(req){
         const { answers } = body; 
 
         console.log('these are the quiz answers in the create route \n', answers); 
-
-
         console.log('this is the name \n', name); 
-        
-        // const email = await body[body.length -1]; 
         console.log('this is the email \n', email); 
-
-        // const quizAnswers = await body.slice(0, body.length -2); 
-
-
         console.log('these are the quiz answers with the last two records sliced out \n', answers); 
+
+
 
         const fields = {
 
@@ -66,8 +61,8 @@ export async function POST(req){
                 Writing_Score: writingScore, 
                 Memory_Score: memoryScore, 
                 Tests_Score: examResultsScore, 
-                Organisational_Score: organisationalScore                
-
+                Organisational_Score: organisationalScore, 
+                ageRange: ageRange
 
         }
 
@@ -78,7 +73,6 @@ export async function POST(req){
                 const qNum = index + 1;
                 fields[`Q${qNum}_Text`] = item.question_text;
                 fields[`Q${qNum}_Answer`] = item.answer;
-
 
                 });
 

@@ -9,8 +9,6 @@ import { usePathname } from 'next/navigation';
 import AudioButtons from '../Components/AudioButtons'; 
 // import currentIMG from '../../public/v.mp4'; 
 
-
-
 function Page() {
   
   // Default values for missing variables
@@ -18,19 +16,12 @@ function Page() {
   const audio_url = '';
   const question_text = "Shall i read out the questions for you?";
   const currentQuestion = { question_text: "" };
-  // const currentIMG = 'https://fra.cloud.appwrite.io/v1/storage/buckets/onboarding_gifs/files/audio_permission/view?project=67d4d9140008273c9d84&mode=admin';
 
-
-  // public token
-  // const currentIMG = 'https://fra.cloud.appwrite.io/v1/storage/buckets/onboarding_gifs/files/test_video/view?project=67d4d9140008273c9d84&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbklkIjoiNjhmNzc4ZGNhMjM4N2U4NTkwNTAiLCJyZXNvdXJjZUlkIjoib25ib2FyZGluZ19naWZzOnRlc3RfdmlkZW8iLCJyZXNvdXJjZVR5cGUiOiJmaWxlcyIsInJlc291cmNlSW50ZXJuYWxJZCI6IjI1OTU4OjQiLCJpYXQiOjE3NjEwNDg3OTZ9.CcRKJm8aMaMXf4tp7TnDKGrzN4Vy742PYAr8ipkNwKw'; 
-  const currentIMG = 'https://fra.cloud.appwrite.io/v1/storage/buckets/onboarding_gifs/files/gif_test/view?project=67d4d9140008273c9d84&mode=admin'; 
-  
-  
+  const currentIMG = 'https://fra.cloud.appwrite.io/v1/storage/buckets/onboarding_gifs/files/reading_test/view?project=67d4d9140008273c9d84&mode=admin'; 
   
   // Placeholder functions
   const getLabelColorBySection = (section) => "#033699";
 
-  // Scroll down on load for laptop dimensions
   useEffect(() => {
     const scrollOnLaptop = () => {
       // Check if screen width is in laptop range (typically 1024px to 1440px)

@@ -21,7 +21,6 @@ export default function UserType() {
         await setUserType(type);
 
 
-
         setUser(type);
         setTimeout(() => {
 

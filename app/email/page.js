@@ -89,10 +89,7 @@ export default function EmailPermission() {
 
         }
 
-        
-
         }
-
 
         sendResults(); 
 
@@ -109,8 +106,6 @@ export default function EmailPermission() {
         console.log('this is the user name \n', name); 
         console.log('this is the user email \n', email); 
 
-        // setAnswers({...answers,  score, memoryScore, writingScore, readingScore, examResultsScore, organisationalScore});
-        // const payload = {...answers,  score, memoryScore, writingScore, readingScore, examResultsScore, organisationalScore}; 
         const payload = {
             answers: answers, 
             score,
