@@ -12,6 +12,7 @@ import emailSubmission from '../Styles/email.module.css';
     
 import { nunito } from '../fonts/nunito';
 import Image from 'next/image';
+import { Link } from 'lucide-react';
 
 const DATABASE_ID = process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID;
 const COLLECTION_ID = process.env.NEXT_PUBLIC_APPWRITE_RESULTS_COLLECTION_ID;
@@ -20,10 +21,12 @@ const COLLECTION_ID = process.env.NEXT_PUBLIC_APPWRITE_RESULTS_COLLECTION_ID;
 export default function EmailPermission() {
     const router = useRouter();
     const { handleAnswer } = useQuiz();
-    const { name, userAge } = useUser();
+    const { name, userAge, setResultsConsent, setNameConsent, answerConsent, nameEmailConsent } = useUser();
     const [inputEmail, setInputEmail] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const [submit, setSubmit] = useState(false); 
+    const [checked, setChecked] = useState(false); 
+    const [resultChecked, setResultChecked] = useState(false); 
 
 
     // Extract the set email function from the quiz context here 
@@ -45,6 +48,70 @@ export default function EmailPermission() {
         yesAnswers, 
         
     } = useQuiz();
+
+
+
+    const handleChecked = async (e) => {
+        
+        e.preventDefault(); 
+        console.log(`handle checked function`); 
+       
+        setChecked(!checked); 
+    
+    
+    }
+
+    useEffect(() => {
+        console.log(`this is checked being updated ${checked}`); 
+         }, [checked]); 
+
+
+         useEffect(() => {
+
+            if(checked !== null && checked !== undefined){
+
+                setNameConsent(checked);
+
+            }
+
+
+         }, [checked]); 
+
+
+         useEffect(() => {
+
+            console.log(`updating the name & email consent in the email route page  ${nameEmailConsent} + ${answerConsent}`); 
+
+        }, [nameEmailConsent, answerConsent]); 
+        
+        
+
+        const handleResultChecked = async (e) => {
+            e.preventDefault(); 
+            
+            console.log(`result consent update function`); 
+
+            setResultChecked(!resultChecked); 
+
+        }; 
+
+
+        useEffect(() => {
+
+
+            console.log(`updating result checked ${resultChecked}`); 
+            if(resultChecked !== null && resultChecked !== undefined){
+
+                setResultsConsent(resultChecked); 
+
+            }
+
+
+        }, [resultChecked]); 
+
+        
+        
+        
 
 
     console.log('these are the category scores in the Email Route::!! finalScore, score, memoryScore, writingScore, readingScore, examResultsScore, organisationalScore, email, answers, setAnswers, questions, yesAnswers  \n', finalScore, score, memoryScore, writingScore, readingScore, examResultsScore, organisationalScore, email, answers, setAnswers, questions, yesAnswers
@@ -122,8 +189,6 @@ export default function EmailPermission() {
 
 
                 console.log(`this is the payload and just about to send it off in the try block ${payload}`); 
-                
-
 
         try{
 
@@ -313,6 +378,9 @@ export default function EmailPermission() {
         }
     };
 
+
+
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         console.log('📝 Form submission started');
@@ -461,6 +529,67 @@ export default function EmailPermission() {
     </form>
     </article>
         </div>
+
+      {/* Add in the child element here  */}
+      <section className={`${emailSubmission.emailConsentForm}`}>
+
+
+      {/* Add in the first consent form here  */}
+      <div className={`${emailSubmission.nameEmailConsent}`}>
+
+        <input className={`${emailSubmission.nameEmailCheckbox}`}
+        type='checkbox'
+        onChange={handleChecked}
+        checked={checked}
+        ></input>
+
+        {/* Add in the text here  */}
+        <p className={`${emailSubmission.nameEmailConsentText}`}>
+            
+         I give my explicit consent for ivvi Assist ltd to store and process my screener responses for the purpose of generating my personalised results and identifying patterns in future assessments, in accordance with the 
+            <span >
+                <a target='_blank' rel="noopener noreferer" href=''>
+            Privacy Policy
+                </a>
+            </span> 
+
+        </p>
+
+      </div>
+
+
+      <div className={`${emailSubmission.resultsConsentContainer}`}>
+
+        <input 
+        className={`${emailSubmission.resultCheckbox}`}
+        type='checkbox'
+        onChange={handleResultChecked}
+        checked={resultChecked}
+
+        
+        />
+
+        <div className={`${emailSubmission.resultConsentTextContainer}`}>
+
+            <p className={`${emailSubmission.resultConsentText}`}>
+
+            I confirm that I am 13 years or older and I give my explicit consent for ivvi Assist ltd to store and process my name, age, and screener responses in accordance with the 
+            
+            
+            <span>
+            <a href="#" target="_blank" rel="noopener noreferer" >
+            Privacy Policy
+            </a>
+            </span>
+
+
+            </p>
+
+        </div>
+
+      </div>
+
+      </section>
 
       <article className={emailSubmission.card} id={emailSubmission.cardOne}></article>
       <article className={emailSubmission.card} id={emailSubmission.cardTwo}></article>

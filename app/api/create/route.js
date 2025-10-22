@@ -65,6 +65,8 @@ export async function POST(req){
                 ageRange: ageRange
 
         }
+        
+
 
         console.log('these are the initial fields \n', fields); 
 

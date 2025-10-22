@@ -11,6 +11,8 @@ export const UserProvider = ({ children }) => {
   const [sound, setSound] = useState(true); 
   const [name, setName] = useState('');
   const [userAge, setUserAge] = useState(); 
+  const [nameEmailConsent, setNameEmailConsent] = useState(false); 
+  const [answerConsent, setAnswerConsent] = useState(false); 
 
 
   useEffect(() => {
@@ -36,6 +38,19 @@ export const UserProvider = ({ children }) => {
     setName(userName);
   };
 
+  const setNameConsent = (nameEmailConsent) => {
+
+    setNameEmailConsent(!nameEmailConsent); 
+
+  }
+
+  const setResultsConsent = (answerConsent) => {
+
+      setAnswerConsent(!answerConsent); 
+  }
+
+
+
   // Debug effect - remove in production
   useEffect(() => {
     if (process.env.NODE_ENV === 'development') {
@@ -44,7 +59,7 @@ export const UserProvider = ({ children }) => {
   }, [name, sound, userAge]);
   
   return (
-    <UserContext.Provider value={{ name, sound, userAge, setUserName, setUserSound, setUserType, toggleUserSound }}>
+    <UserContext.Provider value={{ name, sound, userAge,nameEmailConsent, answerConsent, setUserName, setUserSound, setUserType, toggleUserSound, setResultsConsent, setNameConsent }}>
       {children}
     </UserContext.Provider>
     
