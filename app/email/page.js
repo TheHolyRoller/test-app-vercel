@@ -249,12 +249,11 @@ export default function EmailPermission() {
 
         console.log('this is the payload being sent to the server \n', payload); 
         console.log('this is the type of payload being sent to the server \n', typeof payload); 
-        
+
 
 
         const response = await axios.post('http://localhost:3000/api/fetchip', payload); 
         console.log('this is the response from the fetch IP post server route \n', response); 
-
 
 
 
@@ -266,7 +265,7 @@ export default function EmailPermission() {
         console.log('updating result checked \n', resultChecked); 
         console.log('updating checked \n', checked); 
 
-        if(checked !== undefined && checked !== null && resultChecked !== undefined && resultChecked !== null && submit == true){
+        if(checked !== undefined && checked !== null && resultChecked !== undefined && resultChecked !== null && email !== undefined && email !== ''){
 
             prove_consent(); 
             
