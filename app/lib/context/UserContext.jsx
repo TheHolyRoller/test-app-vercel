@@ -11,8 +11,8 @@ export const UserProvider = ({ children }) => {
   const [sound, setSound] = useState(true); 
   const [name, setName] = useState('');
   const [userAge, setUserAge] = useState(); 
-  const [nameEmailConsent, setNameEmailConsent] = useState(false); 
-  const [answerConsent, setAnswerConsent] = useState(false); 
+  const [nameEmailConsent, setNameEmailConsent] = useState(); 
+  const [answerConsent, setAnswerConsent] = useState(); 
 
 
   useEffect(() => {
@@ -48,6 +48,28 @@ export const UserProvider = ({ children }) => {
 
       setAnswerConsent(!answerConsent); 
   }
+
+  // Create the IP capturing function here and call it from the use Effect hook
+
+  const captureIP = async () => {
+
+
+    console.log('capture user IP function \n'); 
+
+
+
+
+
+  }
+
+
+  useEffect(() => {
+
+    console.log('')
+
+
+
+  }, []); 
 
 
 

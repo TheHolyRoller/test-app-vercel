@@ -3,7 +3,7 @@
 import { useQuiz } from '../lib/context/QuizContext';
 import { useUser } from '../lib/context/UserContext';
 import { useRouter } from 'next/navigation';
-import { useState, useEffect } from 'react'; 
+import { useState, useEffect, use } from 'react'; 
 import axios from 'axios'; 
 
 
@@ -13,6 +13,7 @@ import emailSubmission from '../Styles/email.module.css';
 import { nunito } from '../fonts/nunito';
 import Image from 'next/image';
 import { Link } from 'lucide-react';
+import UserType from '../type/page';
 
 const DATABASE_ID = process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID;
 const COLLECTION_ID = process.env.NEXT_PUBLIC_APPWRITE_RESULTS_COLLECTION_ID;
@@ -50,21 +51,50 @@ export default function EmailPermission() {
     } = useQuiz();
 
 
+    // Add in a function here that sends the request to the fetch IP server route that logs the user's ip 
+    const logIP = async (checked, resultChecked) => {
+
+
+        console.log(`this is the checked and result checked variables in the log IP function ${checked} ${resultChecked}`); 
+
+
+        console.log(`Logging IP address`); 
+
+        const response = await axios.post('http://localhost:3000/api/fetchip', {
+
+            resultChecked, 
+            checked, 
+            name: checked ? name : 'anonymous', 
+            email: checked ? email : 'anonymousEmail',
+            age: checked ? userAge : 'anonymousAge'
+
+
+
+        }); 
+
+        console.log('this is the response from the server \n', response); 
+
+        return response; 
+
+
+    }
+
+
+
 
     const handleChecked = async (e) => {
         
-        e.preventDefault(); 
+        // e.preventDefault(); 
         console.log(`handle checked function`); 
-       
-        setChecked(!checked); 
-    
-    
+        setChecked(e.target.checked);
+
+
+        
     }
 
     useEffect(() => {
         console.log(`this is checked being updated ${checked}`); 
          }, [checked]); 
-
 
          useEffect(() => {
 
@@ -84,14 +114,12 @@ export default function EmailPermission() {
 
         }, [nameEmailConsent, answerConsent]); 
         
-        
-
         const handleResultChecked = async (e) => {
-            e.preventDefault(); 
             
             console.log(`result consent update function`); 
+            setResultChecked(e.target.checked); 
 
-            setResultChecked(!resultChecked); 
+            console.log(`set Result checked update function ${resultChecked}`); 
 
         }; 
 
@@ -107,14 +135,20 @@ export default function EmailPermission() {
             }
 
 
+
         }, [resultChecked]); 
 
-        
-        
-        
+        useEffect(() => {
+
+            console.log(`updating the checked variable:::::::::: ${checked}`);
+
+            setNameConsent(checked); 
+
+        }, [checked]); 
+
+        console.log('these are the category scores in the Email Route::!! finalScore, score, memoryScore, writingScore, readingScore, examResultsScore, organisationalScore, email, answers, setAnswers, questions, yesAnswers  \n', finalScore, score, memoryScore, writingScore, readingScore, examResultsScore, organisationalScore, email, answers, setAnswers, questions, yesAnswers
 
 
-    console.log('these are the category scores in the Email Route::!! finalScore, score, memoryScore, writingScore, readingScore, examResultsScore, organisationalScore, email, answers, setAnswers, questions, yesAnswers  \n', finalScore, score, memoryScore, writingScore, readingScore, examResultsScore, organisationalScore, email, answers, setAnswers, questions, yesAnswers
      ); 
 
      console.log('these are the answers in the email route \n', answers); 
@@ -148,11 +182,22 @@ export default function EmailPermission() {
 
             console.log('this is the send Results function used to run the save results function')
 
-        if(answers.length > 55 && email && submit){
-
+        // answers.length > 55 && email && submit &&
+        if(resultChecked !== undefined && checked !== undefined && resultChecked === true || checked === true){
+           
             console.log('the answers length evaluation ran true \n', answers.length); 
-            const res = await saveResults(); 
+            if(resultChecked === true){
+
+                const res = await saveResults(); 
+
+            }
+            const result = await logIP(checked, resultChecked); 
+
             console.log('this is the result from the save results function \n', res); 
+            console.log(`this is the result from the Log IP GET server route ${result}`); 
+
+
+
 
         }
 
@@ -162,6 +207,7 @@ export default function EmailPermission() {
 
 
     }, [answers, submit]);
+
 
 
     const saveResults = async () => {
@@ -181,12 +227,13 @@ export default function EmailPermission() {
             readingScore,
             examResultsScore,
             organisationalScore,
-            email: inputEmail || email,
-            name: name,
-            ageRange: userAge
+            email: checked ? (inputEmail || email) : "Anonymous Email", 
+            name: checked ? name : "default Name", 
+            userAge: checked ? userAge : "Anonymous"
+
+
+
                 };
-
-
 
                 console.log(`this is the payload and just about to send it off in the try block ${payload}`); 
 
@@ -411,7 +458,13 @@ export default function EmailPermission() {
 
                 console.log('just about to call the send email function'); 
 
-                // await sendEmail();
+
+                if(checked == true){
+
+                    // await sendEmail();
+
+
+                }
                 return 'success';
             };
 
@@ -420,6 +473,10 @@ export default function EmailPermission() {
             
             // Navigate to confirmation page after successful submission or timeout
             console.log('🔄 Navigating to confirmation page...');
+
+            // Call the save IP Address function here 
+
+
             // router.push('/confirmation');
             
         } catch (error) {
@@ -533,17 +590,14 @@ export default function EmailPermission() {
       {/* Add in the child element here  */}
       <section className={`${emailSubmission.emailConsentForm}`}>
 
-
-      {/* Add in the first consent form here  */}
       <div className={`${emailSubmission.nameEmailConsent}`}>
 
         <input className={`${emailSubmission.nameEmailCheckbox}`}
         type='checkbox'
         onChange={handleChecked}
         checked={checked}
-        ></input>
+       />
 
-        {/* Add in the text here  */}
         <p className={`${emailSubmission.nameEmailConsentText}`}>
             
          I give my explicit consent for ivvi Assist ltd to store and process my screener responses for the purpose of generating my personalised results and identifying patterns in future assessments, in accordance with the 

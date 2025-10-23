@@ -1,4 +1,9 @@
+
+
+
 .card {
+
+    
     height: var(--card-height);
     max-height: var(--max-card-height);
 
@@ -463,9 +468,6 @@
 
 
 
-
-
-
 }
 
 .resultCheckbox{
@@ -482,10 +484,6 @@
 .resultConsentTextContainer{
 
 
-
-
-
-
 }
 
 
@@ -493,14 +491,7 @@
 .resultConsentText{
 
 
-
-
-
-
 }
-
-
-
 
 
 
