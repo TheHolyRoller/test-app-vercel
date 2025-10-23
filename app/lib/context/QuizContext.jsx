@@ -64,10 +64,6 @@
         const [cardType, setCardType] = useState(); 
         const [navColor, setNavColor] = useState(); 
 
-
-
-        // Button click counters that persist across renders
-        // Add in values that can be used straight from the quiz buttons 
         const [buttonCounters, setButtonCounters] = useState({
             yesNum: 0, 
             noNum: 0, 
@@ -360,12 +356,11 @@
             console.log('this is just an experiment not using flooring the score percentage:::: \n', percentage )
             
             console.log('this is the final percentage of the quiz::::: \n', percentage); 
+            console.log('returning percentage'); 
 
-            console.log('returning percentage')
             return percentage; 
 
         }
-
 
         const calculateScore = async (answer) => {
             if (!currentQuestion || answer === 'noop') {
