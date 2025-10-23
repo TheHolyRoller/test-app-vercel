@@ -13,6 +13,7 @@ import emailSubmission from '../Styles/email.module.css';
 import { nunito } from '../fonts/nunito';
 import Image from 'next/image';
 import { Link } from 'lucide-react';
+import { unescape } from 'querystring';
 
 
 const DATABASE_ID = process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID;
@@ -33,8 +34,8 @@ export default function EmailPermission() {
     // Extract the set email function from the quiz context here 
     const { setEmail } = useQuiz(); 
     
-    // Add in the percentage here 
     const { 
+
         finalScore, 
         score, 
         memoryScore, 
@@ -48,17 +49,17 @@ export default function EmailPermission() {
         questions,
         yesAnswers, 
         
-    } = useQuiz();
 
+    } = useQuiz();
 
 
     const handleChecked = async (e) => {
         
-        e.preventDefault(); 
+        // e.preventDefault(); 
         console.log(`handle checked function`); 
        
-        setChecked(!checked); 
-    
+        setChecked(e.target.checked);
+         
     
     }
 
@@ -110,17 +111,12 @@ export default function EmailPermission() {
 
         }, [resultChecked]); 
 
-        
-        
-        
-
 
     console.log('these are the category scores in the Email Route::!! finalScore, score, memoryScore, writingScore, readingScore, examResultsScore, organisationalScore, email, answers, setAnswers, questions, yesAnswers  \n', finalScore, score, memoryScore, writingScore, readingScore, examResultsScore, organisationalScore, email, answers, setAnswers, questions, yesAnswers
      ); 
 
      console.log('these are the answers in the email route \n', answers); 
      console.log('this is the type of answers \n', typeof answers); 
-
 
 
 
@@ -152,8 +148,18 @@ export default function EmailPermission() {
         if(answers.length > 55 && email && submit){
 
             console.log('the answers length evaluation ran true \n', answers.length); 
-            const res = await saveResults(); 
-            console.log('this is the result from the save results function \n', res); 
+            if(resultChecked){
+
+
+                const res = await saveResults(); 
+                console.log('this is the result from the save results function \n', res); 
+            }
+            else{
+
+                console.log("Permissions not give to save results \n", resultChecked); 
+
+
+            }
 
         }
 
@@ -168,13 +174,13 @@ export default function EmailPermission() {
     const saveResults = async () => {
 
         console.log('this is the save results function'); 
-
         console.log('this is the answers object in the function argument \n', answers);
-
         console.log('this is the user name \n', name); 
         console.log('this is the user email \n', email); 
 
+
         const payload = {
+            ...(resultChecked ? {
             answers: answers, 
             score,
             memoryScore,
@@ -182,17 +188,32 @@ export default function EmailPermission() {
             readingScore,
             examResultsScore,
             organisationalScore,
-            email: inputEmail || email,
-            name: name,
             ageRange: userAge
+            
+        }
+
+            : {
+                
+            answers: {}, 
+            score: 0,
+            memoryScore: 0,
+            writingScore: 0,
+            readingScore: 0,
+            examResultsScore: 0,
+            organisationalScore: 0,
+            ageRange: 'anonymous'
+
+            }
+        
+        
+        ),
+            email: checked ? (inputEmail || email) : 'anonymous',
+            name: name,
                 };
-
-
-
+                
                 console.log(`this is the payload and just about to send it off in the try block ${payload}`); 
 
         try{
-            
 
             const response = await axios.post('http://localhost:3000/api/create', payload); 
             console.log('this is the response form the server for the Create api route  \n', response); 
@@ -206,6 +227,51 @@ export default function EmailPermission() {
 
 
     }
+
+
+    // Add in the proof of consent here 
+
+    const prove_consent = async () => {
+
+
+        console.log('this is the prove consent function'); 
+
+        // Now take the state variables and push them to the server 
+        const payload = {
+
+            checked, 
+            resultChecked, 
+            name, 
+            email
+
+
+        }
+
+        console.log('this is the payload being sent to the server \n', payload); 
+        console.log('this is the type of payload being sent to the server \n', typeof payload); 
+        
+
+
+        const response = await axios.post('http://localhost:3000/api/fetchip', payload); 
+        console.log('this is the response from the fetch IP post server route \n', response); 
+
+
+
+
+    }
+
+
+    useEffect(() => {
+
+        console.log('updating result checked \n', resultChecked); 
+        console.log('updating checked \n', checked); 
+
+        if(checked !== undefined && checked !== null && resultChecked !== undefined && resultChecked !== null && submit == true){
+
+            prove_consent(); 
+            
+        }
+    }, [resultChecked, checked])
 
 
 
@@ -403,6 +469,7 @@ export default function EmailPermission() {
                 setTimeout(() => resolve('timeout'), 2000);
             });
 
+
             // Create the submission promise
             const submissionPromise = async () => {
                 console.log('📧 Sending email...');
@@ -412,8 +479,10 @@ export default function EmailPermission() {
                 // await saveResults(); 
 
                 console.log('just about to call the send email function'); 
+                
 
-                // await sendEmail();
+                    await sendEmail();
+                
                 return 'success';
             };
 

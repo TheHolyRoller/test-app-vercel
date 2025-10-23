@@ -2,23 +2,21 @@
 
 import { NextResponse, NextRequest } from "next/server";
 import axios from 'axios'; 
+import { databases } from "@/app/lib/appwrite";
 
 
-
-// Add in the environment variable credentials here 
-// Add in the Appwrite Collection ID here 
-
-// Add in the Appwrite Database ID here 
-
-
-
-// Create the route here 
 export async function POST(req){
 
 
     const db = process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID; 
     const table = process.env.NEXT_PUBLIC_APPWRITE_QUESTION_COLLECTION_ID; 
-    const project = process.env.
+    const project = process.env.NEXT_PUBLIC_APPWRITE_PROJECT_ID; 
+
+    console.log('this is the db \n', db); 
+    console.log('this is the table id \n', table); 
+    console.log('this is the project id \n', project); 
+
+
 
     // Extract the IP from the request headers here 
     try{
@@ -28,7 +26,7 @@ export async function POST(req){
     console.log('this is the json ified request body \n', body); 
 
     
-    const {resultChecked, checked, name, email, age } = await body; 
+    const {resultChecked, checked, name, email } = await body; 
 
     console.log('this is the result Checked \n', resultChecked); 
     console.log(`this is the checked state variable ${checked}`); 
@@ -36,8 +34,7 @@ export async function POST(req){
 
     console.log('this is the name extracted from the body \n', name); 
     console.log('this is the email extracted from the body \n', email); 
-    console.log('this is the user`s age \n', age); 
-    console.log('this it the type of the user`s age \n', typeof age); 
+    
     
     const forwardedFor = req.headers.get('x-forwarded-for'); 
     console.log(`this is the forwarded for object extracted from the header of the request using the .get() method using a string to search for its header ${forwardedFor}`); 
@@ -51,11 +48,22 @@ export async function POST(req){
     // Collect the timestamp here 
     const timestamp = new Date().toISOString(); 
     console.log(`this is the timestamp ${timestamp}`); 
-    const response = {timestamp, ip}; 
 
 
+    const payload = { Name:name, email:email, IP_ADDRESS:ip}; 
+    console.log('this is the payload \n', payload); 
+    console.log('this is the type of payload \n', typeof payload); 
 
     // Save the user details to the appwrite database here 
+    // const response = await databases.createDocument(
+
+    //     db, 
+    //     table, 
+    //     "unique()", 
+    //     payload
+    // ); 
+
+
 
 
 
