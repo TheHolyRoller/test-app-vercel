@@ -1,14 +1,10 @@
-'use client';
-
-// import them from appwrite here 
-
+'use client'
 import { Client, Databases, Account } from 'appwrite'; 
-import { use } from 'react';
 const projectID = process.env.NEXT_PUBLIC_APPWRITE_PROJECT_ID; 
 
 if (!projectID) {
-  throw new Error('NEXT_PUBLIC_APPWRITE_PROJECT_ID is not defined');
   console.log('No PROJECT ID \n'); 
+  throw new Error('NEXT_PUBLIC_APPWRITE_PROJECT_ID is not defined');
 }
 
 
@@ -17,8 +13,6 @@ if (!projectID) {
 const client = new Client(); 
 
   
-// TO DO Change this to the newly configured sub domain from 123reg 
-// client.setEndpoint("https://api.ivvidyslexiascreener.com")
 client.setEndpoint("https://fra.cloud.appwrite.io/v1")
 .setProject(projectID); 
 
@@ -51,7 +45,7 @@ export const createAnonymousSession = async () => {
 
 
       // Now check the error code and if it matches 401 and not like 500 or 404 then you can proceed with account creation because it just means that the user does not exist and we should create one 
-      if(error.code === 401){
+      if(error?.code === 401){
 
         console.log("🔐 No session found, creating anonymous session...");
 

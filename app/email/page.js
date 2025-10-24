@@ -250,10 +250,18 @@ export default function EmailPermission() {
         console.log('this is the payload being sent to the server \n', payload); 
         console.log('this is the type of payload being sent to the server \n', typeof payload); 
 
+        try{
 
+            const response = await axios.post('http://localhost:3000/api/fetchip', payload); 
+            console.log('this is the response from the fetch IP post server route \n', response); 
 
-        const response = await axios.post('http://localhost:3000/api/fetchip', payload); 
-        console.log('this is the response from the fetch IP post server route \n', response); 
+        }
+        catch(error){
+
+            console.error('could not send payload to fetch ip \n', error); 
+            
+            
+        }
 
 
 
@@ -265,14 +273,22 @@ export default function EmailPermission() {
         console.log('updating result checked \n', resultChecked); 
         console.log('updating checked \n', checked); 
 
-        if(checked !== undefined && checked !== null && resultChecked !== undefined && resultChecked !== null && email !== undefined && email !== ''){
+        if(checked !== undefined && checked !== null && resultChecked !== undefined && resultChecked !== null && email !== undefined && email !== '' && submit === true){
+
+            console.log('now calling the prove consent function '); 
+            try{
 
             prove_consent(); 
+
+            }
+            catch(error){
+
+                console.error('could not prove consent in the useEffect hook \n', error); 
+
+            }
             
         }
-    }, [resultChecked, checked])
-
-
+    }, [resultChecked, checked, submit]); 
 
 
     // Transform quiz context data to match DyslexiaResultsReport format

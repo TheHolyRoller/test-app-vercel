@@ -1,16 +1,21 @@
 
 
-import { NextResponse, NextRequest } from "next/server";
-import axios from 'axios'; 
-import { databases } from "@/app/lib/appwrite";
-
+import { NextResponse } from "next/server";
+import { databases, ID } from '@/app/lib/appwrite.server'; 
 
 export async function POST(req){
 
 
-    const db = process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID; 
-    const table = process.env.NEXT_PUBLIC_APPWRITE_QUESTION_COLLECTION_ID; 
-    const project = process.env.NEXT_PUBLIC_APPWRITE_PROJECT_ID; 
+    // Create the client instance here 
+
+    console.log('this is the databases import in the fetch ip server route \n', databases); 
+
+
+
+    const db = process.env.APPWRITE_DATABASE_ID; 
+    const table = process.env.APPWRITE_TABLE_ID; 
+    const project = process.env.APPWRITE_PROJECT_ID; 
+
 
     console.log('this is the db \n', db); 
     console.log('this is the table id \n', table); 
@@ -22,7 +27,7 @@ export async function POST(req){
     try{
 
 
-    const body = req.json(); 
+    const body = await req.json(); 
     console.log('this is the json ified request body \n', body); 
 
     
@@ -50,26 +55,22 @@ export async function POST(req){
     console.log(`this is the timestamp ${timestamp}`); 
 
 
-    const payload = { Name:name, email:email, IP_ADDRESS:ip}; 
-    console.log('this is the payload \n', payload); 
-    console.log('this is the type of payload \n', typeof payload); 
+    const data = {Name:name, email:email, IP_ADDRESS:ip, result_consent:resultChecked, email_consent:checked }; 
+
+    console.log('this is the payload \n', data); 
+    console.log('this is the type of payload \n', typeof data); 
+    
 
     // Save the user details to the appwrite database here 
-    // const response = await databases.createDocument(
-
-    //     db, 
-    //     table, 
-    //     "unique()", 
-    //     payload
-    // ); 
-
+        const response = await databases.createDocument({
+        databaseId: db,
+        collectionId: table,
+        documentId: ID.unique(),
+        data: data,
+        });
 
 
-
-
-
-
-
+    console.log('this is the response \n', response); 
 
     return NextResponse.json({message: `Successfully Saved user IP address ${ip} this is the timestapm ${timestamp}`}, {status: 200}); 
 
@@ -78,9 +79,9 @@ export async function POST(req){
 
        catch(error){
 
-        console.log(`could not extract IP ${error}`);
+        console.log(`could not extract IP in fetch IP Route:::::!!! ${error}`);
 
-        return NextResponse.json({message: 'Could not extract IP address'}, {status: 404}); 
+        return NextResponse.json({message: 'Could not extract IP address'}, {status: 500}); 
 
     }
 
