@@ -11,7 +11,6 @@ export async function POST(req){
     console.log('this is the databases import in the fetch ip server route \n', databases); 
 
 
-
     const db = process.env.APPWRITE_DATABASE_ID; 
     const table = process.env.APPWRITE_TABLE_ID; 
     const project = process.env.APPWRITE_PROJECT_ID; 
@@ -59,7 +58,7 @@ export async function POST(req){
 
     console.log('this is the payload \n', data); 
     console.log('this is the type of payload \n', typeof data); 
-    
+
 
     // Save the user details to the appwrite database here 
         const response = await databases.createDocument({
@@ -72,8 +71,8 @@ export async function POST(req){
 
     console.log('this is the response \n', response); 
 
-    return NextResponse.json({message: `Successfully Saved user IP address ${ip} this is the timestapm ${timestamp}`}, {status: 200}); 
 
+    return NextResponse.json({message: `Successfully Saved user IP address ${ip} this is the timestapm ${timestamp} ${response}`}, {status: 200}); 
 
     }
 

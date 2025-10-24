@@ -259,12 +259,7 @@ export default function EmailPermission() {
         catch(error){
 
             console.error('could not send payload to fetch ip \n', error); 
-            
-            
         }
-
-
-
     }
 
 
