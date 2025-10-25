@@ -7,7 +7,8 @@ import { useState, useEffect } from 'react';
 import axios from 'axios'; 
 
 
-import { databases } from '../lib/appwrite';
+// import { databases } from '../lib/appwrite';
+// import { getDatabases, ID } from '../lib/appwrite.server';
 import emailSubmission from '../Styles/email.module.css'; 
     
 import { nunito } from '../fonts/nunito';

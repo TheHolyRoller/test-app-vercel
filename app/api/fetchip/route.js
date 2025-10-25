@@ -1,28 +1,28 @@
 
 
 import { NextResponse } from "next/server";
-import { databases, ID } from '@/app/lib/appwrite.server'; 
+// import { databases, ID } from '@/app/lib/appwrite.server'; 
+import { getDatabases, ID } from "@/app/lib/appwrite.server";
 
 export async function POST(req){
 
 
     // Create the client instance here 
 
-    console.log('this is the databases import in the fetch ip server route \n', databases); 
-
-
+    
+    
     const db = process.env.APPWRITE_DATABASE_ID; 
     const table = process.env.APPWRITE_TABLE_ID; 
     const project = process.env.APPWRITE_PROJECT_ID; 
+    const databases = getDatabases();
+    console.log('this is the databases import in the fetch ip server route \n', databases); 
+    
 
 
     console.log('this is the db \n', db); 
     console.log('this is the table id \n', table); 
     console.log('this is the project id \n', project); 
 
-
-
-    // Extract the IP from the request headers here 
     try{
 
 
