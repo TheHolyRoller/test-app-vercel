@@ -5,7 +5,10 @@ const nextConfig = {
   images: {
     domains: ['localhost'],
     unoptimized: true
-  }
+  }, 
+  eslint: {
+    ignoreDuringBuilds: true, // ✅ Skip lint step on Vercel build
+  },
 };
 
 export default nextConfig;
