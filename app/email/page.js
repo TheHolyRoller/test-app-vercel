@@ -216,7 +216,7 @@ export default function EmailPermission() {
 
         try{
 
-            const response = await axios.post('http://localhost:3000/api/create', payload); 
+            const response = await axios.post('/api/create', payload); 
             console.log('this is the response form the server for the Create api route  \n', response); 
 
         }
@@ -253,7 +253,7 @@ export default function EmailPermission() {
 
         try{
 
-            const response = await axios.post('http://localhost:3000/api/fetchip', payload); 
+            const response = await axios.post('/api/fetchip', payload); 
             console.log('this is the response from the fetch IP post server route \n', response); 
 
         }
