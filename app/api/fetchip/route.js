@@ -15,6 +15,8 @@ export async function POST(req){
     const table = process.env.APPWRITE_TABLE_ID; 
     const project = process.env.APPWRITE_PROJECT_ID; 
     const databases = getDatabases();
+    if (!databases) {
+    return NextResponse.json({ message: 'Databases not initialized' }, { status: 500 });
     console.log('this is the databases import in the fetch ip server route \n', databases); 
     
 
@@ -30,7 +32,7 @@ export async function POST(req){
     console.log('this is the json ified request body \n', body); 
 
     
-    const {resultChecked, checked, name, email } = await body; 
+    const {resultChecked, checked, name, email } = body; 
 
     console.log('this is the result Checked \n', resultChecked); 
     console.log(`this is the checked state variable ${checked}`); 
@@ -44,8 +46,9 @@ export async function POST(req){
     console.log(`this is the forwarded for object extracted from the header of the request using the .get() method using a string to search for its header ${forwardedFor}`); 
 
     // Extract the ip address from the forwarded for object 
-    const ip = forwardedFor ? forwardedFor.split(',')[0] : 
-    req.ip ?? "no IP found";
+    // const ip = forwardedFor ? forwardedFor.split(',')[0] : 
+    // req.ip ?? "no IP found";
+    const ip = forwardedFor?.split(',')[0]?.trim() || "IP not found";
     console.log(`this is the IP address ${ip}`); 
 
 
@@ -72,7 +75,13 @@ export async function POST(req){
     console.log('this is the response \n', response); 
 
 
-    return NextResponse.json({message: `Successfully Saved user IP address ${ip} this is the timestapm ${timestamp} ${response}`}, {status: 200}); 
+    // return NextResponse.json({message: `Successfully Saved user IP address ${ip} this is the timestapm ${timestamp} ${response}`}, {status: 200}); 
+    return NextResponse.json({
+  message: `Successfully saved user IP`,
+  ip,
+  timestamp,
+  document: response
+}, { status: 200 });
 
     }
 

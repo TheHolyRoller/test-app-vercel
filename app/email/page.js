@@ -159,7 +159,6 @@ export default function EmailPermission() {
 
                 console.log("Permissions not give to save results \n", resultChecked); 
 
-
             }
 
         }
@@ -229,8 +228,6 @@ export default function EmailPermission() {
 
     }
 
-
-    // Add in the proof of consent here 
 
     const prove_consent = async () => {
 
