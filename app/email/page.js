@@ -15,6 +15,7 @@ import { nunito } from '../fonts/nunito';
 import Image from 'next/image';
 import { Link } from 'lucide-react';
 import { unescape } from 'querystring';
+import { NextResponse } from 'next/server';
 
 
 const DATABASE_ID = process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID;

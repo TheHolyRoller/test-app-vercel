@@ -8,18 +8,17 @@ export async function POST(req){
 
 
     // Create the client instance here 
-
-    
     
     const db = process.env.APPWRITE_DATABASE_ID; 
     const table = process.env.APPWRITE_TABLE_ID; 
     const project = process.env.APPWRITE_PROJECT_ID; 
     const databases = getDatabases();
     if (!databases) {
-    return NextResponse.json({ message: 'Databases not initialized' }, { status: 500 });
-    console.log('this is the databases import in the fetch ip server route \n', databases); 
+        console.log('this is the databases import in the fetch ip server route \n', databases); 
+        return NextResponse.json({ message: 'Databases not initialized' }, { status: 500 });
     
-
+    }
+    
 
     console.log('this is the db \n', db); 
     console.log('this is the table id \n', table); 
@@ -77,21 +76,20 @@ export async function POST(req){
 
     // return NextResponse.json({message: `Successfully Saved user IP address ${ip} this is the timestapm ${timestamp} ${response}`}, {status: 200}); 
     return NextResponse.json({
-  message: `Successfully saved user IP`,
-  ip,
-  timestamp,
-  document: response
-}, { status: 200 });
+        message: `Successfully saved user IP`,
+        ip,
+        timestamp,
+        document: response
+        }, { status: 200 });
+
 
     }
 
        catch(error){
-
         console.log(`could not extract IP in fetch IP Route:::::!!! ${error}`);
-
         return NextResponse.json({message: 'Could not extract IP address'}, {status: 500}); 
 
     }
 
 
-    }}
+    }
