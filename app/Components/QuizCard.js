@@ -223,6 +223,7 @@ const QuizCard = ({
         <div 
             className={q.navbarStrip}
             style={{
+
                
             }}
         />
@@ -271,8 +272,6 @@ const QuizCard = ({
 
                         {Section}
                         </span>
-                        
-
 
                         <div className={q.soundIconContainer} onClick={toggleUserSound} >
                                 {/* <Image src={soundOn} width={20} height={20} alt='sound on' className={q.soundIcon}  /> */}

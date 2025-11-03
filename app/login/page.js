@@ -1,17 +1,32 @@
 import React from 'react'
 import log from '../Styles/LoginPage.module.css'; 
+// import the card element here
+import SignInCard from '../Components/SignInCard'; 
 
 
 function login() {
+  
+  
+  
   return (
+  
+  <>
+
+    <section className={log.loginSectionContainer}>
+
+      {/* Add in the card component element here  */}
+      <SignInCard/> 
+      
 
 
-    // Add in the Card baseline code here 
+      {/* Add in the sign in button as a child component here  */}
 
-    // Add in the Login button here as a child component 
 
-    
-    <div>login</div>
+
+    </section>
+
+
+    </>
   )
 }
 

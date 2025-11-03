@@ -18,8 +18,16 @@
     -moz-border-radius: 1rem;
     -ms-border-radius: 1rem;
     -o-border-radius: 1rem;
+    margin-top: 5rem !important; 
 
-    margin-top: -5rem !important; 
+
+}
+
+.mainSignInContainer{
+
+
+    outline: 5px solid red;
+
 
 
 }
@@ -405,8 +413,10 @@
 .categoryMainHeader{
 
 
-    font-size: 2.6rem;
+    font-size: 1.8rem;
     font-weight: bolder;
+    color: #404F6F; 
+
 
 
 }
@@ -424,6 +434,70 @@
 
 
 }
+
+
+.cardCategoryColorContainer {
+    position: relative;
+    z-index: 999;
+    height: 3rem;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px; 
+    display: grid; 
+    place-content: center;
+    margin-top: -2em; 
+    background-color: var(--category-color, #ccc);
+    height: 4.5rem; 
+}
+
+.categoryLabelContainer {
+    height: 5.5rem; 
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    display: grid; 
+    place-content: center;
+    position: relative; 
+}
+
+.labelContainer {
+    height: 2.5rem;
+    width: 300px;
+    border-radius: 25px;
+    display: grid;
+    place-content: center;
+    text-transform: uppercase;
+    margin-bottom: -0.5em;
+    font-family: var(--font-nunito), sans-serif;
+    font-weight: 700;
+    color: white;
+}
+
+.soundIconContainer {
+    position: relative; 
+    display: flex;
+    justify-content: flex-end; 
+    margin-right: -6em; 
+    margin-top: -1.35em; 
+}
+
+.soundIcon {
+    justify-self: end;
+    stroke: var(--svg-fill-color);
+    fill: var(--svg-fill-color);
+    opacity: 1;
+}
+
+.iconBackground {
+    width: 2em;
+    height: 2em;
+    background-color: rgba(240, 240, 240, 0.7);
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+    margin-right: -0.7em;
+    padding-bottom: 0px;
+    transform: translate(0, -1.6px);
+}
+
 
 
 

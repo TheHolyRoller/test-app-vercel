@@ -48,10 +48,9 @@ function LoginButton() {
 
         <button className={ll.loginButton} onClick={() => handleGoogleLogin()}>
 
-        {/* Add in the icon container here  */}
         <span>
 
-        <Image src={''} quality={100} priority alt="google icon"></Image>
+        {/* <Image src={''} quality={100} priority alt="google icon"></Image> */}
 
         </span>
 
