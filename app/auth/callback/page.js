@@ -2,7 +2,7 @@
 import React from 'react'
 import { useEffect } from 'react';
 import { account } from '../../lib/appwrite'; 
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 export default function CallbackPage() {
 

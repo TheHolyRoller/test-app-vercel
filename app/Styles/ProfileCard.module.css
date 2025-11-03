@@ -1,13 +1,12 @@
 
 .card {
 
-    
-    /* height: 625px; */
+
+
     height: calc(var(--card-height) + 1.566rem) ;
-
-
     width:320px;    
-    position: relative;
+
+            position: relative;
     background-color: #ccc;
     background-color: #fbfbfb;
     margin: 0 auto; 
@@ -20,7 +19,6 @@
     -ms-border-radius: 1rem;
     -o-border-radius: 1rem;
     margin-top: 5rem !important; 
-
 
 }
 
@@ -596,3 +594,306 @@
         margin-top: -0.5rem !important;
     }
 }
+
+
+.mainLogoContainer {
+
+    font-size: 0.8rem !important; 
+    outline: 4px solid lime;
+    color: #404F6F !important; 
+    
+     
+     
+     
+     
+}
+
+
+.profilePageContentContainer {
+     
+     
+     
+     
+     
+}
+
+
+.profileDetailContainer {
+     
+     
+     
+     
+     
+}
+
+
+.profileDetailSubContainer {
+     
+     
+     
+     
+     
+}
+
+
+.profileImageContainer {
+     
+     
+     
+     
+     
+}
+
+
+.profileTextSectionContainer {
+     
+     
+     
+     
+     
+}
+
+
+.profileNameContainer {
+     
+     
+     
+     
+     
+}
+
+
+.profileNameText {
+     
+     
+     
+     
+     
+}
+
+
+.profileEmailContainer {
+     
+     
+     
+     
+     
+}
+
+
+.profileEmail {
+     
+     
+     
+     
+     
+}
+
+
+.permissionsSectionContainer {
+     
+     
+     
+     
+     
+}
+
+
+.permissionSectionSubContainer {
+     
+     
+     
+     
+     
+}
+
+
+.permissionMainTitle {
+     
+     
+     
+     
+     
+}
+
+
+.permissionsToggleSectionContainer {
+     
+     
+     
+     
+     
+}
+
+
+.marketingPermissionSection {
+     
+     
+     
+     
+     
+}
+
+
+.marketingPermissionText {
+     
+     
+     
+     
+     
+}
+
+
+#marketingCheckBoxContainer {
+     
+     
+     
+     
+     
+}
+
+
+#marketingToggle {
+     
+     
+     
+     
+     
+}
+
+
+.resultsPermissionSection {
+     
+     
+     
+     
+     
+}
+
+
+.resultsPermissionText {
+     
+     
+     
+     
+     
+}
+
+
+#resultsToggle {
+     
+     
+     
+     
+     
+}
+
+
+.controlsContainer {
+     
+     
+     
+     
+     
+}
+
+
+.controlsSubContainer {
+     
+     
+     
+     
+     
+}
+
+
+.homeButtonContainer {
+     
+     
+     
+     
+     
+}
+
+
+.homeIconContainer {
+     
+     
+     
+     
+     
+}
+
+
+.hometext {
+     
+     
+     
+     
+     
+}
+
+
+.contactButtonContainer {
+     
+     
+     
+     
+     
+}
+
+
+.contactIconContainer {
+     
+     
+     
+     
+     
+}
+
+
+.contactTextContainer {
+     
+     
+     
+     
+     
+}
+
+
+.alterationSection {
+     
+     
+     
+     
+     
+}
+
+
+.alterationSubContainer {
+     
+     
+     
+     
+     
+}
+
+
+.accountDetailsLinkContainer {
+     
+     
+     
+     
+     
+}
+
+
+.singoutLinkContainer {
+     
+     
+     
+     
+     
+}
+
+
