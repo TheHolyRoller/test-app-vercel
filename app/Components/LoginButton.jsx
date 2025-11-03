@@ -4,10 +4,11 @@ import {account} from '../lib/appwrite';
 import React from 'react'; 
 
 import ll from '../Styles/LoginButton.module.css'; 
+import google from '../assets/Google.svg'; 
+import Image from 'next/image';
 
 
 function LoginButton() {
-
 
     console.log("this is the account object instance \n", account); 
 
@@ -20,7 +21,6 @@ function LoginButton() {
         account.createOAuth2Session('google', redirectULR, redirectULR); 
 
     }
-
 
 
   return (
@@ -48,9 +48,9 @@ function LoginButton() {
 
         <button className={ll.loginButton} onClick={() => handleGoogleLogin()}>
 
-        <span>
-
-        {/* <Image src={''} quality={100} priority alt="google icon"></Image> */}
+        <span className={ll.iconContainer} >
+        
+        <Image src={google} width={30} height={20}  quality={100} priority alt="google icon"></Image>
 
         </span>
 

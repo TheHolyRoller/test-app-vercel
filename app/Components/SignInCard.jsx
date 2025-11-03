@@ -8,26 +8,24 @@ import { usePathname } from 'next/navigation';
 import LoginButton from '../Components/LoginButton'; 
 
 
-
 function SignInCard() {
     
 
     return (
         <>  
 
-          
 
             <article 
                 className={`${si.card} ${nunito.className}`} 
                 id={si.firstCARD} 
                 style={{
                     backgroundcolor: 'blue',
-                    outline: '0px solid red',
                     position: 'relative',
                     zIndex: 200,
                     boxShadow: '0 6px 20px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.08)',
 
                     }}>
+
 
 
                       <div 
@@ -39,12 +37,22 @@ function SignInCard() {
             >
 
 
-                <div className={`${si.categoryLabelContainer} ${nunito.className}`}>
+                <div className={`${si.categoryLabelContainer} ${nunito.className}`} >
                     <label className={`${si.categoryLabel} ${nunito.className}`}>
 
+
                         <div className={`${si.labelContainer} ${nunito.className}`} style={{backgroundColor: '#033699'}}>
+
+                            <div className={si.cardLabelText}>
+
+                                Login
+
+                            </div>
+
                         <div className={si.soundIconContainer} >
-                                <div className={si.iconBackground} style={{marginTop: '-5px'}} >
+
+
+                                <div className={si.iconBackground}>
 
 
                                             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 512 512" style={{ position: 'relative', zIndex: '9999999'}} className={si.soundIcon} >
@@ -53,7 +61,6 @@ function SignInCard() {
                                             <path d="M0 0 C5.3985366 5.12494631 8.8992443 10.85325504 12 17.5625 C12.42224854 18.46581055 12.84449707 19.36912109 13.27954102 20.29980469 C20.28361161 35.78290668 24.74510189 52.17499101 27 69 C27.0928125 69.65097656 27.185625 70.30195313 27.28125 70.97265625 C31.8781369 106.50002498 26.20762689 152.76740411 4.1796875 182.453125 C-0.93432797 187.91113254 -6.35120852 190.12788956 -13.8125 190.5 C-20.98180937 190.28465153 -26.77966744 188.2537385 -31.8828125 183.09765625 C-36.45462116 177.34424487 -38.5233546 171.74460489 -38.3046875 164.3828125 C-37.73280934 159.910432 -35.84550838 156.08062408 -34 152 C-18.8110151 117.93886434 -15.06593812 82.71265736 -28.44921875 47.09375 C-30.51384404 41.74616089 -32.67780061 36.47194572 -35.3125 31.375 C-38.19254325 25.6149135 -39.04227963 19.89913042 -37.3515625 13.57421875 C-34.90892075 6.69515503 -31.49512585 1.26373244 -24.828125 -2.09375 C-16.25711969 -5.2857106 -7.80794336 -4.99331521 0 0 Z " fill="--svg-fill-color" transform="translate(361,163)"/>
                                             </svg>
 
-                          
                                 </div>
 
                         </div>
@@ -71,7 +78,6 @@ function SignInCard() {
                             We need to verify your identity; Continue Securely with Google 
 
                         </h1>
-
                       
                     </div>
                 </article>
@@ -84,18 +90,12 @@ function SignInCard() {
 
                 </section>
 
-
-             
-
                 <article className={si.card}  id={si.cardOne}></article>
                 <article className={si.card}  id={si.cardTwo}></article>
                 <article className={si.card}  id={si.cardThree}></article>
                 <article className={si.card}  id={si.cardFour}></article>
             </article>
 
-            <aside className={si.buttonSectionContainer}  style={{cursor: 'pointer', marginTop: '-5em', zIndex: '999999'}} >
-            <div className={si.CTAButton}  style={{cursor: 'pointer', zIndex: '99999'}}>Next</div>
-            </aside>
         </>
     )
 }

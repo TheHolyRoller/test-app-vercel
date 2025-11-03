@@ -1,5 +1,6 @@
-import React from 'react'; 
 
+import React from 'react'; 
+import ProfileCard from '../Components/ProfileCard'; 
 
 function Profile() {
   
@@ -12,7 +13,15 @@ function Profile() {
   return (
     <>
     
+    <section>
+
+
+
+    <ProfileCard/> 
     
+
+
+    </section>
     
     
     

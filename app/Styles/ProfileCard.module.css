@@ -1,3 +1,4 @@
+
 .card {
 
     
@@ -505,6 +506,8 @@
 }
 
 .iconBackground {
+
+
     width: 2em;
     height: 2em;
     background-color: rgba(240, 240, 240, 0.7);
@@ -514,6 +517,8 @@
     margin-right: -0.7em;
     padding-bottom: 0px;
     transform: translate(0, -1.6px);
+
+
 }
 
 
@@ -528,4 +533,66 @@
         
     }
 
+}
+
+/* === From ProfileCard.module.css === */
+
+/* Outer section that holds the button area */
+.buttonSectionContainer {
+    width: 99.999vw;
+    margin: 0 auto;
+    display: grid;
+    place-content: center;
+    margin-top: -4.5em;
+}
+
+/* Container that wraps the CTA button */
+.ctaContainer {
+    cursor: pointer;
+}
+
+/* Main Call-To-Action button */
+.cta {
+    background-color: #f49b53;
+    width: 300px;
+    height: 55px;
+    display: grid;
+    place-content: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: bolder;
+    border-radius: 22px;
+    cursor: pointer !important;
+    box-shadow: 0px 4px 1px 0px #c17a41;
+}
+
+/* Hover state for button */
+.cta:hover {
+    background-color: #e8894a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(244, 155, 83, 0.3);
+}
+
+/* Active/pressed state for button */
+.cta:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(244, 155, 83, 0.2);
+}
+
+/* Responsive styling for larger screens */
+@media (min-width: 1100px) {
+    .cta {
+        margin-top: 0.7rem !important;
+    }
+}
+
+@media (min-width: 1300px) and (max-width: 1700px) {
+    .ctaContainer {
+        margin: 0 !important;
+    }
+
+    .cta {
+        margin: 0 !important;
+        margin-top: -0.5rem !important;
+    }
 }
