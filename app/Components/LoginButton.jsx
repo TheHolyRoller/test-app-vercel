@@ -14,12 +14,10 @@ function LoginButton() {
 
     const handleGoogleLogin = async () => {
 
+        const redirectULR = `${window.location.origin}/auth/callback`; 
+        console.log('this is the redirect ULR \n', redirectULR);
 
-         
-
-
-
-
+        account.createOAuth2Session('google', redirectULR, redirectULR); 
 
     }
 
@@ -42,12 +40,10 @@ function LoginButton() {
 
     </span>
 
-
-
     </div>
 
 
-    {/* Add in the button container here  */}
+
     <div className={ll.buttonContainer}>
 
         <button className={ll.loginButton} onClick={() => handleGoogleLogin()}>
@@ -58,7 +54,6 @@ function LoginButton() {
         <Image src={''} quality={100} priority alt="google icon"></Image>
 
         </span>
-
 
         <div className={ll.buttonText}>
 
