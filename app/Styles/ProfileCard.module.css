@@ -596,12 +596,12 @@
 }
 
 
+
 .mainLogoContainer {
 
     font-size: 0.8rem !important; 
-    outline: 4px solid lime;
     color: #404F6F !important; 
-    
+
      
      
      
@@ -619,8 +619,23 @@
 
 
 .profileDetailContainer {
+    
      
-     
+    width: 290px; 
+    height: 150px;
+
+    margin-top: 2rem; 
+    background-color: #D9D9D9;
+    border-radius: 10px; 
+
+
+    display: grid;
+    place-content: center; 
+
+
+
+
+
      
      
      
@@ -639,10 +654,31 @@
 .profileImageContainer {
      
      
-     
+     margin-bottom: 0.5rem; 
+
      
      
 }
+
+
+
+
+.profileImg{
+
+
+    width: 75px; 
+    height: 75px; 
+    object-fit: cover;
+    object-position: center;
+    margin: 0 auto; 
+
+    border-radius: 50%;
+
+}
+
+
+
+
 
 
 .profileTextSectionContainer {
@@ -664,6 +700,12 @@
 
 
 .profileNameText {
+
+
+
+    font-size: 1.2rem; 
+    /* margin: 0.5rem auto;  */
+
      
      
      
@@ -692,7 +734,16 @@
 
 .permissionsSectionContainer {
      
-     
+
+
+    width: 250px;
+    margin: 1rem auto; 
+    
+    background-color: #D9D9D9; 
+    border-radius: 10px; 
+    display: grid;
+    place-content: center;
+
      
      
      
@@ -711,6 +762,7 @@
 .permissionMainTitle {
      
      
+    padding-top: 0.5rem; 
      
      
      
@@ -728,7 +780,14 @@
 
 .marketingPermissionSection {
      
-     
+
+    display: grid;
+    place-content: center;
+    grid-template-columns: 3fr 1fr;
+    gap: 1rem; 
+
+    margin-top: 1rem; 
+    
      
      
      
@@ -738,7 +797,8 @@
 .marketingPermissionText {
      
      
-     
+     margin-bottom: -5px; 
+
      
      
 }
@@ -762,9 +822,18 @@
 }
 
 
-.resultsPermissionSection {
+.resultsPermissionSectionSubContainer {
      
      
+     display: grid;
+    place-content: center;
+    grid-template-columns:3fr 1fr;
+    gap: 1rem; 
+
+    margin: auto; 
+    margin-bottom: 1rem; 
+    margin-top: 1rem; 
+
      
      
      
@@ -774,6 +843,7 @@
 .resultsPermissionText {
      
      
+     margin-bottom: -5px; 
      
      
      
@@ -801,7 +871,14 @@
 .controlsSubContainer {
      
      
-     
+        display: grid; 
+        grid-template-columns: 1fr 1fr;
+        /* gap: 1rem;  */
+        width: 250px; 
+        margin: 1rem auto; 
+        padding-bottom: 0.35rem; 
+
+
      
      
 }
@@ -809,7 +886,15 @@
 
 .homeButtonContainer {
      
-     
+
+    background-color: #D9D9D9;  
+    border-radius: 10px; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem; 
+    width: 110px; 
+
      
      
      
@@ -837,9 +922,17 @@
 .contactButtonContainer {
      
      
-     
-     
-     
+        display: flex; 
+        padding: 0.5rem 0; 
+        gap: 0.45rem;
+        align-items: center;
+        justify-content: center;
+        
+        background-color: #D9D9D9;
+        border-radius: 10px; 
+         
+
+
 }
 
 
@@ -882,7 +975,7 @@
 .accountDetailsLinkContainer {
      
      
-     
+    text-decoration: underline;
      
      
 }
@@ -891,7 +984,7 @@
 .singoutLinkContainer {
      
      
-     
+    text-decoration: underline;
      
      
 }

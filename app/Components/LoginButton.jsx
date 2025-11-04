@@ -16,6 +16,7 @@ function LoginButton() {
     const handleGoogleLogin = async () => {
 
         const redirectULR = `${window.location.origin}/auth/callback`; 
+        
         console.log('this is the redirect ULR \n', redirectULR);
 
         account.createOAuth2Session('google', redirectULR, redirectULR); 

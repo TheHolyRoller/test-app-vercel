@@ -12,9 +12,6 @@ export default function CallbackPage() {
     console.log('this is the type of the router instance \n', typeof router); 
 
 
-    // Add in the use Effect hook here to check for a valid user session on component mount once 
-
-
     useEffect(() => {
 
         console.log('this is the callback success url from the success url callback'); 
@@ -23,7 +20,6 @@ export default function CallbackPage() {
 
 
             try{
-
 
             const user = await account.get(); 
             console.log('this is the fetched user session \n', user); 

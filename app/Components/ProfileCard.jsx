@@ -13,8 +13,9 @@ import {Switch} from "@heroui/switch";
 // import { ThemeProvider } from '@heroui/theme';
 import ThemeProvider from '@heroui/theme';
 import Link from 'next/link';
-
-
+import cabin from '../assets/cabin.jpg'; 
+import homeIcon from '../assets/homeIcon.svg'; 
+import contact from '../assets/contact.svg'; 
 
 
 
@@ -107,12 +108,8 @@ function ProfileCard() {
 
                         {/* Add in the profile image container here  */}
 
-                        <div className={pc.profileImageContainer}>
-
-                        {/* add in the image here  */}
-                        {/* <Image */}
-
-                        Profile Img 
+                        <div className={pc.profileImageContainer} >
+                        <Image src={cabin} alt="cabin" height={1} width={1} className={pc.profileImg} /> 
 
                         </div>
 
@@ -195,30 +192,31 @@ function ProfileCard() {
                         </div>
 
 
-                        <di v className={pc.resultsPermissionSection}>
+                        <div className={pc.resultsPermissionSection}>
 
 
-                            <div className={pc.resultsPermissionSection}>
+                            <div className={pc.resultsPermissionSectionSubContainer}>
 
 
                                 <div className={pc.resultsPermissionText}>
 
                                 Screener Results 
 
-
                                 </div>
 
+                            <div className={pc.resultsPermissionToggleContainer}>
 
-                                {/* Add in the togle switch here */}
+
                             <input type="checkbox" defaultChecked className="toggle" id={pc.resultsToggle} />
 
 
+                            </div>
 
 
 
                             </div>
 
-                        </di>
+                        </div>
                     </div>
 
                     </section>
@@ -241,7 +239,8 @@ function ProfileCard() {
                         <div className={pc.homeIconContainer}>
 
                         {/* Add in the icon herer  */}
-                        Home Icon 
+                        <Image src={homeIcon} width={15} height={15} alt="home icon"/>
+
 
                         </div>
 
@@ -267,8 +266,7 @@ function ProfileCard() {
                         
                         <div className={pc.contactIconContainer}>
 
-                            contact icon 
-
+                            <Image src={contact} alt="contact" width={22} height={22} /> 
 
                         </div>
 

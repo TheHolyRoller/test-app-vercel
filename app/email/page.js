@@ -7,14 +7,11 @@ import { useState, useEffect } from 'react';
 import axios from 'axios'; 
 
 
-// import { databases } from '../lib/appwrite';
-// import { getDatabases, ID } from '../lib/appwrite.server';
 import emailSubmission from '../Styles/email.module.css'; 
     
 import { nunito } from '../fonts/nunito';
 import Image from 'next/image';
 import { Link } from 'lucide-react';
-import { unescape } from 'querystring';
 import { NextResponse } from 'next/server';
 
 
@@ -57,7 +54,6 @@ export default function EmailPermission() {
 
     const handleChecked = async (e) => {
         
-        // e.preventDefault(); 
         console.log(`handle checked function`); 
        
         setChecked(e.target.checked);
@@ -116,6 +112,7 @@ export default function EmailPermission() {
 
     console.log('these are the category scores in the Email Route::!! finalScore, score, memoryScore, writingScore, readingScore, examResultsScore, organisationalScore, email, answers, setAnswers, questions, yesAnswers  \n', finalScore, score, memoryScore, writingScore, readingScore, examResultsScore, organisationalScore, email, answers, setAnswers, questions, yesAnswers
      ); 
+     
 
      console.log('these are the answers in the email route \n', answers); 
      console.log('this is the type of answers \n', typeof answers); 
@@ -313,6 +310,7 @@ export default function EmailPermission() {
                        (sectionKey === 'tests' && (answerSection === 'exam results' || answerSection === 'examresults')) ||
                        (sectionKey === 'plans' && (answerSection === 'planning & organization' || answerSection === 'planning' || answerSection === 'organization'));
             });
+
 
             console.log(`📊 Section ${sectionKey}: Found ${sectionYesAnswers.length} yes answers`);
 
