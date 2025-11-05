@@ -58,6 +58,7 @@ export const UserProvider = ({ children }) => {
     }
   }, [name, sound, userAge]);
   
+  
   return (
     <UserContext.Provider value={{ name, sound, userAge,nameEmailConsent, answerConsent, setUserName, setUserSound, setUserType, toggleUserSound, setResultsConsent, setNameConsent }}>
       {children}
