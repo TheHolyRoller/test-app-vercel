@@ -14,6 +14,7 @@ function LoginButton() {
     
     const [isLoading, setIsLoading] = useState(); 
     const [email, setEmail] = useState(''); 
+    const [name, setName] = useState(''); 
 
 
     console.log("this is the account object instance \n", account);
@@ -39,6 +40,8 @@ const handleLogin = async (e) => {
   try {
     const currentURL = `${window.location.origin}/auth/callback`; 
     console.log(`this is the callback url ${currentURL}`);
+
+    
     
     // ✅ Correct for Web SDK v21
     const response = await account.createMagicURLToken({
@@ -79,6 +82,7 @@ const handleLogin = async (e) => {
 
         {/* Add in the form section here  */}
     <form onSubmit={handleLogin}>
+        <input type='name' placeholder='name' value={name} onChange={(e) => setName(e.target.value)} />
         <input type='email' placeholder='email' value={email} onChange={(e) => setEmail(e.target.value)} ></input>
         <button type='submit'>
 

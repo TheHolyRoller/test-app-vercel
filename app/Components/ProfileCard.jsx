@@ -39,11 +39,8 @@ function ProfileCard() {
     // TO DO Set a default toggle state for the permissions toggle 
 
 
-
-
   const router = useRouter();
   const [isSelected, setIsSelected] = React.useState(true); 
-
 
 
 //   TO DO add in the function here that reads the response back from the server and sets the user info 
@@ -55,8 +52,6 @@ function ProfileCard() {
     account.get().
     then(setUser).
     catch((err) => router.push('/login')); 
-
-    
 
 
   }, [router]); 
@@ -74,7 +69,26 @@ function ProfileCard() {
 
 
 
-  }, [user])
+  }, [user]); 
+
+
+
+  const handleMail = async () => {
+
+    // Setup the email details here 
+
+    const email = 'danny@ivvi.app';
+    const subject = 'inquiry'; 
+    
+    const mailToLink = `mailto:${email}?subject=${encodeURIComponent(subject)}`; 
+    console.log('this is th mailto link \n', mailToLink); 
+    console.log('this is the type of the mailto link \n', typeof mailToLink); 
+    window.open(mailToLink, "_blank"); 
+
+    
+
+
+  }
 
 
   
@@ -305,6 +319,7 @@ function ProfileCard() {
                     
                     {/* Add in the home button container here  */}
 
+                            <Link href="/">
                         <div className={pc.homeButtonContainer}>
 
                         {/* Add in the icon container here */}
@@ -330,8 +345,11 @@ function ProfileCard() {
                         </div>
 
                         {/* Add in the contact button container */}
+                            </Link>
 
-                        <div className={pc.contactButtonContainer}>
+
+
+                        <div className={pc.contactButtonContainer} onClick={() => handleMail} >
 
 
                             {/* Add in the icon container here  */}
