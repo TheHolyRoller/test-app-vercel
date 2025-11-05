@@ -73,9 +73,44 @@ function ProfileCard() {
 
 
 
+
+  const signOut = async () => {
+
+
+    console.log('this is the sign out function'); 
+    try{
+
+
+
+            const currentSession = await account.getSession("current"); 
+            console.log('this is the current session \n', currentSession); 
+    
+            const response = await account.deleteSession(); 
+
+            console.log(`this is the response from the delete session request ${response}`); 
+
+            // Add in the route redirect here 
+            router.push('/'); 
+            return response; 
+
+
+
+
+    }
+    catch(error){
+
+
+        console.error("Could not find the current session \n", currentSession); 
+        return error; 
+
+    }
+
+
+  }
+
+
   const handleMail = async () => {
 
-    // Setup the email details here 
 
     const email = 'danny@ivvi.app';
     const subject = 'inquiry'; 
@@ -317,16 +352,14 @@ function ProfileCard() {
                     <section className={pc.controlsSubContainer}>
 
                     
-                    {/* Add in the home button container here  */}
-
-                            <Link href="/">
-                        <div className={pc.homeButtonContainer}>
+                            <Link href="/" style={{cursor: 'pointer', minHeight: '35px'}} >
+                        <div className={pc.homeButtonContainer} style={{minHeight: '35px', position: 'relative'}}>
 
                         {/* Add in the icon container here */}
-                        <div className={pc.homeIconContainer}>
+                        <div className={pc.homeIconContainer}  >
 
                         {/* Add in the icon herer  */}
-                        <Image src={homeIcon} width={15} height={15} alt="home icon"/>
+                        <Image src={homeIcon} width={15} height={15} alt="home icon" style={{}}  />
 
 
                         </div>
@@ -347,9 +380,7 @@ function ProfileCard() {
                         {/* Add in the contact button container */}
                             </Link>
 
-
-
-                        <div className={pc.contactButtonContainer} onClick={() => handleMail} >
+                        <div className={pc.contactButtonContainer} onClick={() => handleMail()} style={{cursor: 'pointer'}} >
 
 
                             {/* Add in the icon container here  */}
@@ -384,15 +415,15 @@ function ProfileCard() {
                     <section className={pc.alterationSubContainer}>
 
                         {/* Add in the first link container here  */}
-                        <div className={pc.accountDetailsLinkContainer}>
-                            {/* <Link/>  */}
+                        <div className={pc.accountDetailsLinkContainer} onClick={() => handleMail()} style={{cursor: 'pointer'}} >
+
 
                             Alter Account Details 
 
 
                         </div>
 
-                        <div className={pc.singoutLinkContainer}>
+                        <div className={pc.singoutLinkContainer}  >
 
 
                             Sign Out 
