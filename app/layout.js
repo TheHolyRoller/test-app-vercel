@@ -12,7 +12,7 @@ import { nunito } from './fonts/nunito';
 import { usePathname } from 'next/navigation';
 
 // Import the auth hook here 
-import { useAnonymousAuth } from "./lib/hooks/useAnonymousAuth";
+// import { useAnonymousAuth } from "./lib/hooks/useAnonymousAuth";
 import { use } from "react";
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from "@vercel/speed-insights/next"
@@ -26,8 +26,8 @@ const inter = Inter({
 
 export default function RootLayout({ children }) {
   
-  console.log('this is the anonymous auth function being called in layout \n', useAnonymousAuth); 
-  useAnonymousAuth(); 
+  // console.log('this is the anonymous auth function being called in layout \n', useAnonymousAuth); 
+  // useAnonymousAuth(); 
   
   const pathname = usePathname();
   const isQuizOrResultsPage = pathname.includes('/quiz') || pathname.includes('/result');

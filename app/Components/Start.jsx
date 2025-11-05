@@ -3,12 +3,12 @@ import s from '../Styles/start.module.css';
 import { useRouter } from 'next/navigation';
 import logo from '../assets/ivvi_Logo.svg'; 
 import Image from 'next/image';
-import { useUserDetection } from '../lib/hooks/useUserDetection';
+// import { useUserDetection } from '../lib/hooks/useUserDetection';
 
 function Start() {
 
   const router = useRouter();
-  const { user, loading, isNewUser } = useUserDetection();
+  // const { user, loading, isNewUser } = useUserDetection();
   const [quizCompletionCount, setQuizCompletionCount] = useState(0);
   const [showRefreshMessage, setShowRefreshMessage] = useState(false);
 
@@ -24,28 +24,37 @@ function Start() {
 
   }, []);
 
-  console.log('this is the value of new user \n', isNewUser); 
-  console.log('this is the user \n', user); 
+  // console.log('this is the value of new user \n', isNewUser); 
+  // console.log('this is the user \n', user); 
 
     
 
 
   const handleStartScreener = () => {
-    if (loading || isNewUser === null) {
-      console.log('Still determining user status...');
-      return;
-    }
 
-    if (isNewUser) {
-      console.log('this is the value of new user \n', isNewUser);
-      console.log('New user detected, routing to /understand');
-      router.push('/understand');
-    } else {
-      console.log('Returning user detected, routing to /audiopermission');
-      // router.push('/audiopermission');
-      router.push('/understand');
 
-    }
+    // TO DO refoctor this so work with new login 
+
+    // if (loading || isNewUser === null) {
+    //   console.log('Still determining user status...');
+    //   return;
+    // }
+
+    // if (isNewUser) {
+    //   console.log('this is the value of new user \n', isNewUser);
+    //   console.log('New user detected, routing to /understand');
+    //   router.push('/understand');
+    // } else {
+    //   console.log('Returning user detected, routing to /audiopermission');
+    //   // router.push('/audiopermission');
+    //   router.push('/understand');
+
+    // }
+
+
+    router.push('/understand'); 
+
+
   };
 
   return (

@@ -1,10 +1,8 @@
 'use client'; 
-import {account} from '../lib/appwrite'; 
-
 import React from 'react'; 
-
 import ll from '../Styles/LoginButton.module.css'; 
 import google from '../assets/Google.svg'; 
+import { account, ID } from '../lib/appwrite';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { setConstantValue } from 'typescript';
@@ -12,52 +10,52 @@ import { setConstantValue } from 'typescript';
 
 function LoginButton() {
     
+    console.log('this is the login button component')
     
     const [isLoading, setIsLoading] = useState(); 
     const [email, setEmail] = useState(''); 
 
 
-    console.log("this is the account object instance \n", account); 
+    console.log("this is the account object instance \n", account);
+    console.log("Available methods on account:", Object.keys(account));
 
 
     useEffect(() => {
     
         console.log('this is the email input in the login button comoponent \n', email); 
 
-    }, [email])
+    }, [email]); 
+    useEffect(() => {
 
+        console.log('this is the is loading status \n', isLoading); 
 
-    const handleLogin = async (e) => {
-
-
-        e.preventDefault(); 
-
-        setIsLoading("Logging you in....."); 
-
-        try{
-
-         await account.createMagicURLSession({
-            email,
-            url: `${window.location.origin}/auth/callback`,
-});
-
-            console.log('this is the response from the email login \n', response); 
-            setIsLoading('check your email for magic link!'); 
-            alert('check email for magic link!'); 
+    }, [isLoading])
 
 
 
-        }
-        catch(error){
-
-            console.error('could not login \n', error); 
-            setIsLoading(error); 
-            alert('could not log user in! \n', error);
-
-        }
-
-
-    }
+const handleLogin = async (e) => {
+  e.preventDefault();
+  setIsLoading("Logging you in...");
+  try {
+    const currentURL = `${window.location.origin}/auth/callback`; 
+    console.log(`this is the callback url ${currentURL}`);
+    
+    // ✅ Correct for Web SDK v21
+    const response = await account.createMagicURLToken({
+      userId: ID.unique(),
+      email: email,
+      url: currentURL
+    });
+    
+    console.log('✅ Magic link sent:', response);
+    setIsLoading('Check your email for the magic link!');
+    alert('Check your email for the magic link!');
+  } catch (error) {
+    console.error('❌ Could not login:', error);
+    setIsLoading('Error logging in');
+    alert(`Could not log user in! ${error.message}`);
+  }
+};
 
 
   return (

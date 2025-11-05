@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useState } from "react";
-import { createAnonymousSession } from '../appwrite'; 
+// import { createAnonymousSession } from '../appwrite'; 
 
 export const useUserDetection = () => {
     const [user, setUser] = useState(null);
@@ -28,18 +28,18 @@ export const useUserDetection = () => {
                 };
                 
                 // Call the auth function
-                const authResult = await createAnonymousSession();
+                // const authResult = await createAnonymousSession();
                 
                 // Restore original console.log
-                console.log = originalLog;
+                // console.log = originalLog;
                 
-                setUser(authResult);
-                setIsNewUser(isNewUserDetected);
+                // setUser(authResult);
+                // setIsNewUser(isNewUserDetected);
                 
-                console.log('🎯 User Detection Result:', {
-                    userId: authResult.$id,
-                    isNewUser: isNewUserDetected
-                });
+                // console.log('🎯 User Detection Result:', {
+                //     userId: authResult.$id,
+                //     isNewUser: isNewUserDetected
+                // });
                 
             } catch (error) {
                 console.error('❌ User detection error:', error);

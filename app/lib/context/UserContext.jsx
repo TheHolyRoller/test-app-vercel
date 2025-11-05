@@ -49,28 +49,6 @@ export const UserProvider = ({ children }) => {
       setAnswerConsent(!answerConsent); 
   }
 
-  // Create the IP capturing function here and call it from the use Effect hook
-
-  const captureIP = async () => {
-
-
-    console.log('capture user IP function \n'); 
-
-
-
-
-
-  }
-
-
-  useEffect(() => {
-
-    console.log('')
-
-
-
-  }, []); 
-
 
 
   // Debug effect - remove in production
