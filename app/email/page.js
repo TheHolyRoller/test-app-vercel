@@ -21,7 +21,6 @@ const COLLECTION_ID = process.env.NEXT_PUBLIC_APPWRITE_RESULTS_COLLECTION_ID;
 
 export default function EmailPermission() {
     const router = useRouter();
-    const { handleAnswer } = useQuiz();
     const { name, userAge, setResultsConsent, setNameConsent, answerConsent, nameEmailConsent } = useUser();
     const [inputEmail, setInputEmail] = useState('');
     const [isLoading, setIsLoading] = useState(false);
@@ -55,10 +54,9 @@ export default function EmailPermission() {
     const handleChecked = async (e) => {
         
         console.log(`handle checked function`); 
-       
         setChecked(e.target.checked);
-         
     
+        
     }
 
     useEffect(() => {
@@ -90,7 +88,6 @@ export default function EmailPermission() {
             e.preventDefault(); 
             
             console.log(`result consent update function`); 
-
             setResultChecked(!resultChecked); 
 
         }; 
@@ -112,7 +109,7 @@ export default function EmailPermission() {
 
     console.log('these are the category scores in the Email Route::!! finalScore, score, memoryScore, writingScore, readingScore, examResultsScore, organisationalScore, email, answers, setAnswers, questions, yesAnswers  \n', finalScore, score, memoryScore, writingScore, readingScore, examResultsScore, organisationalScore, email, answers, setAnswers, questions, yesAnswers
      ); 
-     
+
 
      console.log('these are the answers in the email route \n', answers); 
      console.log('this is the type of answers \n', typeof answers); 
@@ -358,6 +355,7 @@ export default function EmailPermission() {
 
     const sendEmail = async () => {
         console.log('📤 Starting email send process...');
+
 
         try {
             const transformedResults = transformQuizDataToResults();

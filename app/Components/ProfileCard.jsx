@@ -7,23 +7,75 @@ import { nunito } from '../fonts/nunito';
 import { useRouter } from 'next/navigation'; 
 import Image from 'next/image';
 import profile from '../assets/profile.svg'; 
-import {useState} from 'react'; 
 
-import {Switch} from "@heroui/switch";
-// import { ThemeProvider } from '@heroui/theme';
-import ThemeProvider from '@heroui/theme';
+
 import Link from 'next/link';
+
+
+import { useUser } from '../lib/context/UserContext';
+
+import { useState, useEffect } from 'react'; 
+import axios from 'axios'; 
+
+
 import cabin from '../assets/cabin.jpg'; 
 import homeIcon from '../assets/homeIcon.svg'; 
 import contact from '../assets/contact.svg'; 
+import { account } from '../lib/appwrite';
 
+
+
+const DATABASE_ID = process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID;
+const COLLECTION_ID = process.env.NEXT_PUBLIC_APPWRITE_RESULTS_COLLECTION_ID;
 
 
 function ProfileCard() {
 
 
+    const [emailChecked, setEmailChecked] = useState(false); 
+    const [resultChecked, setResultChecked] = useState(false); 
+    const [user, setUser] = useState(); 
+
+    // TO DO Set a default toggle state for the permissions toggle 
+
+
+
+
   const router = useRouter();
   const [isSelected, setIsSelected] = React.useState(true); 
+
+
+
+//   TO DO add in the function here that reads the response back from the server and sets the user info 
+
+
+  useEffect(() => {
+
+
+    account.get().
+    then(setUser).
+    catch((err) => router.push('/login')); 
+
+    
+
+
+  }, [router]); 
+
+
+  useEffect(() => {
+
+    console.log('this is the user \n', user); 
+
+    // TO DO extract the elements from user including email and query the appwrite database for the user's set permissions 
+
+
+    // TO DO include the code to handle the case when no user is found 
+
+
+
+
+  }, [user])
+
 
   
   const handleYesClick = () => {
@@ -32,13 +84,33 @@ function ProfileCard() {
 
     };
 
+       const handleChecked = async (e) => {
+        
+        console.log(`handle checked function`); 
+        setEmailChecked(e.target.checked);
+        
+    }
 
 
+     const handleResultChecked = async (e) => {
+            e.preventDefault(); 
+            
+            console.log(`result consent update function`); 
+            setResultChecked(!resultChecked); 
+
+        }; 
+
+
+
+        if(!user) return <p>No user found....</p>
 
   return (
 
 
     <>
+    
+
+    {/* TO DO Add in the dynamic content extracted from the user  */}
     
     <article 
                 className={`${pc.card} ${nunito.className}`} 

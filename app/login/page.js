@@ -16,9 +16,6 @@ function login() {
 
       {/* Add in the card component element here  */}
       <SignInCard/> 
-      
-
-
       {/* Add in the sign in button as a child component here  */}
 
 

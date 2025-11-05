@@ -6,10 +6,20 @@ import { nunito } from '../fonts/nunito';
 import { useQuiz } from '../lib/context/QuizContext';
 import { usePathname } from 'next/navigation';
 import LoginButton from '../Components/LoginButton'; 
+import {account} from '../lib/appwrite'; 
+import { useState } from 'react';
 
 
 function SignInCard() {
+
+
+
     
+
+
+
+
+
 
     return (
         <>  
