@@ -3,6 +3,7 @@
 import { NextResponse } from "next/server";
 // import { databases, ID } from '@/app/lib/appwrite.server'; 
 import { getDatabases, ID } from "@/app/lib/appwrite.server";
+import { v4 as uuidv4 } from 'uuid';
 
 export async function POST(req){
 
@@ -12,17 +13,40 @@ export async function POST(req){
     const db = process.env.APPWRITE_DATABASE_ID; 
     const table = process.env.APPWRITE_TABLE_ID; 
     const project = process.env.APPWRITE_PROJECT_ID; 
-    const databases = getDatabases();
-    if (!databases) {
-        console.log('this is the databases import in the fetch ip server route \n', databases); 
-        return NextResponse.json({ message: 'Databases not initialized' }, { status: 500 });
-    
-    }
-    
 
-    console.log('this is the db \n', db); 
-    console.log('this is the table id \n', table); 
-    console.log('this is the project id \n', project); 
+
+    
+            console.log('this is the create post request ')
+            const base = new Airtable({apiKey: ACCESS_TOKEN}).base(BASE_ID); 
+            console.log('this is the base from air table \n', base); 
+    
+    
+    
+            console.log("this is the request object \n", req);
+
+
+
+    
+        const ACCESS_TOKEN = process.env.PERSONAL_ACCESS_TOKEN; 
+        const BASE_ID = process.env.BASE_ID;
+
+
+    // const databases = getDatabases();
+    // if (!databases) {
+    //     console.log('this is the databases import in the fetch ip server route \n', databases); 
+    //     return NextResponse.json({ message: 'Databases not initialized' }, { status: 500 });
+    
+    // }
+
+
+    // console.log('this is the db \n', db); 
+    // console.log('this is the table id \n', table); 
+    // console.log('this is the project id \n', project); 
+    const userId = uuidv4();
+
+    console.log('this is the user ID::::!!!!! \n', userId); 
+    console.log('this is the type of user id \n', typeof userId); 
+
 
     try{
 
@@ -51,24 +75,22 @@ export async function POST(req){
     console.log(`this is the IP address ${ip}`); 
 
 
-    // Collect the timestamp here 
-    const timestamp = new Date().toISOString(); 
-    console.log(`this is the timestamp ${timestamp}`); 
+    
+    // const timestamp = new Date().toISOString(); 
+    // console.log(`this is the timestamp ${timestamp}`); 
 
 
-    const data = {Name:name, email:email, IP_ADDRESS:ip, result_consent:resultChecked, email_consent:checked }; 
+    const data = { user_id: userId, Name:name, Email:email, IP_ADDRESS:ip, result_consent:resultChecked, email_consent:checked }; 
+
+
 
     console.log('this is the payload \n', data); 
     console.log('this is the type of payload \n', typeof data); 
 
-
-    // Save the user details to the appwrite database here 
-        const response = await databases.createDocument({
-        databaseId: db,
-        collectionId: table,
-        documentId: ID.unique(),
-        data: data,
-        });
+    // Save the user details to the appwrite database here
+    
+        // TO DO refactor this for airtable 
+        const response = await base("Consent").create([{ fields }]);
 
 
     console.log('this is the response \n', response); 
@@ -90,6 +112,7 @@ export async function POST(req){
         return NextResponse.json({message: 'Could not extract IP address'}, {status: 500}); 
 
     }
+
 
 
     }

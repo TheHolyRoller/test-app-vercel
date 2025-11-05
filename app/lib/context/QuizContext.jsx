@@ -19,6 +19,7 @@
     let CURRENT_QUESTION_COLLECTION_ID; 
 
     const QuizContext = createContext(null);
+    
 
     export const QuizProvider = ({ children }) => {
 

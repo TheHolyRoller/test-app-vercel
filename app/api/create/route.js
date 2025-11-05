@@ -13,7 +13,7 @@ const BASE_ID = process.env.BASE_ID;
 
 export async function POST(req){
 
-
+    
     console.log('this is the create route outside the try block'); 
     
     try{
