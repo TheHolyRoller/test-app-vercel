@@ -173,13 +173,12 @@ const queryConsentDataBase = async () => {
     else{
 
 
-        console.log('could not find user in airtable database \n', )
+        console.log('could not find user in airtable database \n', ); 
 
+        // Set the baseline consent state to false or Just keep it as false 
 
     }
 }
-
-
 
 
 
