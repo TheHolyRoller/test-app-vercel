@@ -22,8 +22,6 @@ export async function POST(req){
         const base = new Airtable({apiKey: ACCESS_TOKEN}).base(BASE_ID); 
         console.log('this is the base from air table \n', base); 
 
-
-
         console.log("this is the request object \n", req);
 
             

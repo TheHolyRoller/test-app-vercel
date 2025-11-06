@@ -8,7 +8,6 @@ import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import profile from '../assets/profile.svg'; 
 
-
 import Link from 'next/link';
 
 
@@ -25,6 +24,7 @@ import { account } from '../lib/appwrite';
 
 
 
+
 const DATABASE_ID = process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID;
 const COLLECTION_ID = process.env.NEXT_PUBLIC_APPWRITE_RESULTS_COLLECTION_ID;
 
@@ -35,6 +35,15 @@ function ProfileCard() {
     const [emailChecked, setEmailChecked] = useState(false); 
     const [resultChecked, setResultChecked] = useState(false); 
     const [user, setUser] = useState(); 
+    const [email, setEmail] = useState(); 
+    const [name, setName] = useState(); 
+
+
+
+
+    // console.log('this is the base from appwrite in the profile CARD::: \n', base); 
+
+    // TO DO find a way of extracting the user name 
 
     // TO DO Set a default toggle state for the permissions toggle 
 
@@ -60,6 +69,22 @@ function ProfileCard() {
   useEffect(() => {
 
     console.log('this is the user \n', user); 
+    // console.log(`this is the user's email \n`, user.email); 
+    if(user){
+        const {email} = user; 
+        console.log('this is the email extracted from user \n', email); 
+
+        setEmail(email); 
+
+
+    }
+
+
+    // Set the values state values of the user details here 
+    // setEmail(user.email); 
+
+
+    
 
     // TO DO extract the elements from user including email and query the appwrite database for the user's set permissions 
 
@@ -73,6 +98,142 @@ function ProfileCard() {
 
 
 
+//   create a useEffect hook to query the database for the user and if you find them set the permissions 
+
+useEffect(() => {
+
+
+    console.log('this is the use Effect function to query the consent database for the user \n'); 
+
+    console.log('email is being updated \n', email); 
+
+    if(email !== undefined){
+
+        console.log("just about to call the query function email is defined \n", email); 
+        queryConsentDataBase(); 
+
+    }
+
+
+
+
+}, [name, email]); 
+
+
+
+
+
+const queryConsentDataBase = async () => {
+
+
+
+    console.log('this is the consent query function \n'); 
+
+    // Now use the users email address and name to find them in the airtable database 
+
+    // Call the api GET route with the email as the query parameter 
+    const response = await axios.post('http://localhost:3000/api/fetchConsentRecords', {
+
+        email: email
+
+    }); 
+
+    console.log('this is the response from the server \n', response); 
+    console.log('this is the data from the server \n', response.data); 
+
+    // Add in the logic here to handle when to data is returned back from the server 
+
+    // const status = response.status; 
+     const status = 200; 
+    if(status === 200){
+
+        const mockResponse = {
+            status: 200, // HTTP status code
+            data: {
+                message: "Latest consent record fetched successfully",
+                data: {
+                user_id: "rec123ABC",
+                name: "Emily Johnson",
+                email: "emily.johnson@example.com",
+                IP_ADDRESS: "192.168.1.100",
+                result_consent: true,
+                email_consent: false,
+                time_stamp: "2025-11-06T12:00:00Z",
+                },
+            },
+            };
+
+        // Call the function here that takes the information and records from the response and updates the consent logic and everything else. 
+        updateConsent(mockResponse); 
+
+
+
+    }
+
+    else{
+
+
+        console.log('could not find user in airtable database \n', )
+
+
+    }
+}
+
+
+
+
+
+const updateConsent = async (response) => {
+
+    // Now take the response and extract all the values from it 
+
+    console.log('this is the response from the server \n', response); 
+
+    console.log('this is the type of response from the server \n', typeof response); 
+
+    
+    // So now you want to start extracting values from this data and evaluate them 
+
+    // First of all extract the data 
+
+    const data = response.data; 
+    console.log('this is the data from the response \n', data); 
+
+
+    // Now extract the values from the data 
+    // Extract the result consent first 
+    const resultConsent = data.result_consent; 
+    console.log('this is the result consent \n', resultConsent); 
+
+    // Now extract the mail consent 
+
+    const emailConsent = data.email_consent; 
+
+    console.log('this is the email consent \n', emailConsent);
+    console.log('this is the type of email consent \n', typeof emailConsent); 
+    
+    
+    // Now you'll want to set the consent value of each state boolean variable to the value of the extracted consent boolean variable 
+    setEmailChecked(emailConsent); 
+    setResultChecked(resultConsent); 
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   const signOut = async () => {
 
@@ -82,25 +243,26 @@ function ProfileCard() {
 
 
 
-            const currentSession = await account.getSession("current"); 
-            console.log('this is the current session \n', currentSession); 
-    
-            const response = await account.deleteSession(); 
+            const currentSession = await account.getSession({ sessionId: "current" });
+
+           
+
+            console.log('this is the current session \n', currentSession || "no current session found!!!!!"); 
+
+            const response = await account.deleteSession({sessionId: "current"}); 
 
             console.log(`this is the response from the delete session request ${response}`); 
+                 console.log('redirecting to logout'); 
+                router.push("/login");  
 
-            // Add in the route redirect here 
-            router.push('/'); 
             return response; 
-
-
 
 
     }
     catch(error){
 
 
-        console.error("Could not find the current session \n", currentSession); 
+        console.error("Could not find the current session \n", error); 
         return error; 
 
     }
@@ -307,7 +469,7 @@ function ProfileCard() {
                             
                             <div className="flex flex-col gap-2" id={pc.marketingCheckBoxContainer} >
 
-                            <input type="checkbox" defaultChecked className="toggle" id={pc.marketingToggle} />
+                            <input type="checkbox" defaultChecked className="toggle" checked={emailChecked} id={pc.marketingToggle} />
                     
                         </div>
                         </div>
@@ -327,9 +489,7 @@ function ProfileCard() {
 
                             <div className={pc.resultsPermissionToggleContainer}>
 
-
-                            <input type="checkbox" defaultChecked className="toggle" id={pc.resultsToggle} />
-
+                            <input type="checkbox" defaultChecked className="toggle" checked={resultChecked} id={pc.resultsToggle} />
 
                             </div>
 
@@ -423,7 +583,7 @@ function ProfileCard() {
 
                         </div>
 
-                        <div className={pc.singoutLinkContainer}  >
+                        <div className={pc.singoutLinkContainer}  style={{cursor: 'pointer'}} onClick={() => signOut()}>
 
 
                             Sign Out 

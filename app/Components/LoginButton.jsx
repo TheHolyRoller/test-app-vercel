@@ -47,6 +47,7 @@ const handleLogin = async (e) => {
     const response = await account.createMagicURLToken({
       userId: ID.unique(),
       email: email,
+      name: name,
       url: currentURL
     });
     

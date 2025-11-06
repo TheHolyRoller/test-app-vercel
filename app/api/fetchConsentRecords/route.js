@@ -1,0 +1,85 @@
+import { getAirtableBase } from '../../lib/airtable'; 
+import { NextResponse } from 'next/server';
+
+
+export async function POST(req){
+
+
+    try{
+
+
+        const BASE_ID = process.env.CONSENT_BASE_ID; 
+        
+
+            console.log('this is the query airtable post route'); 
+            console.log('this is the requst from the front end \n', req); 
+
+            const body = await req.json(); 
+            console.log('this is the body of the request extracted with object destructuring after turning the request object into a JSON string \n', body); 
+            const { email } = body; 
+            console.log('this is the extracted email from the body of the request \n', email || "no email found"); 
+
+
+            // Now query the airtable base for the record in question 
+
+            if(!email){
+
+                return NextResponse.json({messsage: 'could not extract the email from the request'}, {status: 404});
+
+            }
+
+
+            // Now setup the airtable query 
+
+            const base = await getAirtableBase();
+
+            console.log('this is the base returned from the get airtable base function \n', base); 
+            console.log('this is the type of base \n', typeof base); 
+
+            if(!base){
+
+
+                return NextResponse.json({message: 'Could not return the airtable base'}, {status: 404}); 
+
+            }
+
+
+            // Now use the base to create a custom query 
+            const records = await base(BASE_ID).
+            select({
+
+                filterByFormula: `{email} = "${email}"`, 
+                sort: [{field: "Created", direction: "desc"}], 
+                maxRecords: 1, 
+
+
+
+            })
+            .firstPage(); 
+
+
+            if(!records){
+
+                return NextResponse.json({message: 'could not find the email in the airtable database'}, {response: 404}); 
+
+            }
+
+            console.log('these are the records \n', records); 
+            console.log('this is the type of records \n', typeof records); 
+
+
+            return NextResponse.json({message: 'all okay records fetched', data: records[0].fields}, {status: 200});
+              
+
+    }
+
+    catch(error){
+
+        console.error('could not handle request \n', error); 
+        return NextResponse.json({mesage: 'could not handle request'}, {status: 500}); 
+
+
+    }
+
+}
+
