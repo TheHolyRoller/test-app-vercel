@@ -13,7 +13,7 @@ import Link from 'next/link';
 
 import { useUser } from '../lib/context/UserContext';
 
-import { useState, useEffect } from 'react'; 
+import { useState, useEffect, useReducer } from 'react'; 
 import axios from 'axios'; 
 
 
@@ -21,6 +21,7 @@ import cabin from '../assets/cabin.jpg';
 import homeIcon from '../assets/homeIcon.svg'; 
 import contact from '../assets/contact.svg'; 
 import { account } from '../lib/appwrite';
+import { todo } from 'node:test';
 
 
 
@@ -32,11 +33,22 @@ const COLLECTION_ID = process.env.NEXT_PUBLIC_APPWRITE_RESULTS_COLLECTION_ID;
 function ProfileCard() {
 
 
+
+
+    // TO DO Define the Global Action Reducer object here 
+
+
+
     const [emailChecked, setEmailChecked] = useState(false); 
     const [resultChecked, setResultChecked] = useState(false); 
     const [user, setUser] = useState(); 
     const [email, setEmail] = useState(); 
     const [name, setName] = useState(); 
+
+    
+    
+
+
 
 
 
@@ -50,6 +62,27 @@ function ProfileCard() {
 
   const router = useRouter();
   const [isSelected, setIsSelected] = React.useState(true); 
+
+
+
+// TO DO Define the recuducer function here 
+
+function reducer(state, action){
+
+    // Create the switch statement to find the current action 
+    switch(action.type){
+
+        // case 
+
+
+
+    }
+
+
+
+
+}
+
 
 
 //   TO DO add in the function here that reads the response back from the server and sets the user info 
@@ -120,7 +153,11 @@ useEffect(() => {
 }, [name, email]); 
 
 
+// Add in a use Effect hook to track the state updates of the consent boolean variables 
 
+useEffect(() => {
+    console.log(`this is the baseline consent being updated: email => ${emailChecked} results => ${resultChecked}`); 
+}, [emailChecked, resultChecked]); 
 
 
 const queryConsentDataBase = async () => {
@@ -132,14 +169,14 @@ const queryConsentDataBase = async () => {
     // Now use the users email address and name to find them in the airtable database 
 
     // Call the api GET route with the email as the query parameter 
-    const response = await axios.post('http://localhost:3000/api/fetchConsentRecords', {
+    // const response = await axios.post('http://localhost:3000/api/fetchConsentRecords', {
 
-        email: email
+    //     email: email
 
-    }); 
+    // }); 
 
-    console.log('this is the response from the server \n', response); 
-    console.log('this is the data from the server \n', response.data); 
+    // console.log('this is the response from the server \n', response); 
+    // console.log('this is the data from the server \n', response.data); 
 
     // Add in the logic here to handle when to data is returned back from the server 
 
@@ -180,20 +217,12 @@ const queryConsentDataBase = async () => {
     }
 }
 
-
-
 const updateConsent = async (response) => {
 
     // Now take the response and extract all the values from it 
 
     console.log('this is the response from the server \n', response); 
-
     console.log('this is the type of response from the server \n', typeof response); 
-
-    
-    // So now you want to start extracting values from this data and evaluate them 
-
-    // First of all extract the data 
 
     const data = response.data; 
     console.log('this is the data from the response \n', data); 
@@ -215,8 +244,6 @@ const updateConsent = async (response) => {
     // Now you'll want to set the consent value of each state boolean variable to the value of the extracted consent boolean variable 
     setEmailChecked(emailConsent); 
     setResultChecked(resultConsent); 
-
-
 
 
 }
@@ -468,7 +495,7 @@ const updateConsent = async (response) => {
                             
                             <div className="flex flex-col gap-2" id={pc.marketingCheckBoxContainer} >
 
-                            <input type="checkbox" defaultChecked className="toggle" checked={emailChecked} id={pc.marketingToggle} />
+                            <input type="checkbox" defaultChecked className="toggle" checked={emailChecked} onChange={() => handleChecked()} id={pc.marketingToggle} />
                     
                         </div>
                         </div>

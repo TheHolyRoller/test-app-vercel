@@ -9,8 +9,15 @@ export async function POST(req){
 
 
         const BASE_ID = process.env.CONSENT_BASE_ID; 
-        
 
+
+            console.log('this is the base ID \n', BASE_ID); 
+
+            console.log('this is the result of the get Airtable method call \n', getAirtableBase); 
+            console.log('this is the type of get Airtable Base method \n', typeof getAirtableBase); 
+            const baseTest = getAirtableBase(); 
+            console.log('this is the base test from the get airtable base function call \n', baseTest); 
+            
             console.log('this is the query airtable post route'); 
             console.log('this is the requst from the front end \n', req); 
 
@@ -45,6 +52,7 @@ export async function POST(req){
 
 
             // Now use the base to create a custom query 
+            console.log('just about to query the airtable database api \n'); 
             const records = await base(BASE_ID).
             select({
 
