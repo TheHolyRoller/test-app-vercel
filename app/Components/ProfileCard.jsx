@@ -10,7 +10,6 @@ import profile from '../assets/profile.svg';
 
 import Link from 'next/link';
 
-
 import { useUser } from '../lib/context/UserContext';
 
 import { useState, useEffect, useReducer } from 'react'; 
@@ -21,8 +20,8 @@ import cabin from '../assets/cabin.jpg';
 import homeIcon from '../assets/homeIcon.svg'; 
 import contact from '../assets/contact.svg'; 
 import { account } from '../lib/appwrite';
-import { todo } from 'node:test';
-
+import {ACTIONS} from '../lib/hooks/useConsentManager'; 
+import useConsentManager from '../lib/hooks/useConsentManager';
 
 
 
@@ -33,10 +32,17 @@ const COLLECTION_ID = process.env.NEXT_PUBLIC_APPWRITE_RESULTS_COLLECTION_ID;
 function ProfileCard() {
 
 
+    console.log('this is the use Consent manager import \n', useConsentManager);
+    console.log('this is the type of useConsentManager \n', typeof useConsentManager); 
+
+    const {state, dispatch, isDirty, isDirtyAndFalse} = useConsentManager(); 
+    console.log('these are the values extracted from the useConsent Manager hook through object destructuring \n', state, dispatch, isDirty, isDirtyAndFalse); 
 
 
-    // TO DO Define the Global Action Reducer object here 
+    const { emailConsent, resultConsent } = state; 
 
+
+    console.log('this is the email consent and the result consent \n', emailConsent, resultConsent); 
 
 
     const [emailChecked, setEmailChecked] = useState(false); 
@@ -45,47 +51,12 @@ function ProfileCard() {
     const [email, setEmail] = useState(); 
     const [name, setName] = useState(); 
 
-    
-    
 
-
-
-
-
-
-    // console.log('this is the base from appwrite in the profile CARD::: \n', base); 
-
-    // TO DO find a way of extracting the user name 
-
-    // TO DO Set a default toggle state for the permissions toggle 
 
 
   const router = useRouter();
   const [isSelected, setIsSelected] = React.useState(true); 
 
-
-
-// TO DO Define the recuducer function here 
-
-function reducer(state, action){
-
-    // Create the switch statement to find the current action 
-    switch(action.type){
-
-        // case 
-
-
-
-    }
-
-
-
-
-}
-
-
-
-//   TO DO add in the function here that reads the response back from the server and sets the user info 
 
 
   useEffect(() => {
@@ -102,151 +73,100 @@ function reducer(state, action){
   useEffect(() => {
 
     console.log('this is the user \n', user); 
-    // console.log(`this is the user's email \n`, user.email); 
     if(user){
         const {email} = user; 
         console.log('this is the email extracted from user \n', email); 
 
         setEmail(email); 
 
-
     }
-
-
-    // Set the values state values of the user details here 
-    // setEmail(user.email); 
-
-
-    
-
-    // TO DO extract the elements from user including email and query the appwrite database for the user's set permissions 
-
-
-    // TO DO include the code to handle the case when no user is found 
-
-
-
 
   }, [user]); 
 
 
-
-//   create a useEffect hook to query the database for the user and if you find them set the permissions 
-
 useEffect(() => {
 
-
-    console.log('this is the use Effect function to query the consent database for the user \n'); 
-
-    console.log('email is being updated \n', email); 
-
-    if(email !== undefined){
-
-        console.log("just about to call the query function email is defined \n", email); 
-        queryConsentDataBase(); 
-
-    }
-
-
+    
+    // Set boolean state variables 
+    setEmailChecked(emailConsent); 
+    setResultChecked(resultConsent); 
 
 
 }, [name, email]); 
 
 
-// Add in a use Effect hook to track the state updates of the consent boolean variables 
-
 useEffect(() => {
     console.log(`this is the baseline consent being updated: email => ${emailChecked} results => ${resultChecked}`); 
-}, [emailChecked, resultChecked]); 
-
-
-const queryConsentDataBase = async () => {
+}, [emailChecked, resultChecked]);
 
 
 
-    console.log('this is the consent query function \n'); 
 
-    // Now use the users email address and name to find them in the airtable database 
+useEffect(() => {
 
-    // Call the api GET route with the email as the query parameter 
-    // const response = await axios.post('http://localhost:3000/api/fetchConsentRecords', {
+    console.log('email and resul consent have just been updated:::!!!`` \n', emailConsent, resultConsent); 
 
-    //     email: email
+    // Now update the state variables that control the toggle switches 
 
-    // }); 
-
-    // console.log('this is the response from the server \n', response); 
-    // console.log('this is the data from the server \n', response.data); 
-
-    // Add in the logic here to handle when to data is returned back from the server 
-
-    // const status = response.status; 
-     const status = 200; 
-    if(status === 200){
-
-        const mockResponse = {
-            status: 200, // HTTP status code
-            data: {
-                message: "Latest consent record fetched successfully",
-                data: {
-                user_id: "rec123ABC",
-                name: "Emily Johnson",
-                email: "emily.johnson@example.com",
-                IP_ADDRESS: "192.168.1.100",
-                result_consent: true,
-                email_consent: false,
-                time_stamp: "2025-11-06T12:00:00Z",
-                },
-            },
-            };
-
-        // Call the function here that takes the information and records from the response and updates the consent logic and everything else. 
-        updateConsent(mockResponse); 
-
-
-
-    }
-
-    else{
-
-
-        console.log('could not find user in airtable database \n', ); 
-
-        // Set the baseline consent state to false or Just keep it as false 
-
-    }
-}
-
-const updateConsent = async (response) => {
-
-    // Now take the response and extract all the values from it 
-
-    console.log('this is the response from the server \n', response); 
-    console.log('this is the type of response from the server \n', typeof response); 
-
-    const data = response.data; 
-    console.log('this is the data from the response \n', data); 
-
-
-    // Now extract the values from the data 
-    // Extract the result consent first 
-    const resultConsent = data.result_consent; 
-    console.log('this is the result consent \n', resultConsent); 
-
-    // Now extract the mail consent 
-
-    const emailConsent = data.email_consent; 
-
-    console.log('this is the email consent \n', emailConsent);
-    console.log('this is the type of email consent \n', typeof emailConsent); 
-    
-    
-    // Now you'll want to set the consent value of each state boolean variable to the value of the extracted consent boolean variable 
     setEmailChecked(emailConsent); 
     setResultChecked(resultConsent); 
 
 
-}
+}, [emailConsent, resultConsent]); 
+
+
+useEffect(() => {
+
+    console.log('this is the email and result checked being updated in the use Effect hook:::::###### \n', emailChecked, resultChecked); 
+
+}, [emailChecked, resultChecked])
+
+
+
+
+// const queryConsentDataBase = async () => {
+
+
+
+//     console.log('this is the consent query function \n'); 
+
+//      const status = 200; 
+//     if(status === 200){
+
+//         const mockResponse = {
+//             status: 200, // HTTP status code
+//             data: {
+//                 message: "Latest consent record fetched successfully",
+//                 data: {
+//                 user_id: "rec123ABC",
+//                 name: "Emily Johnson",
+//                 email: "emily.johnson@example.com",
+//                 IP_ADDRESS: "192.168.1.100",
+//                 result_consent: true,
+//                 email_consent: false,
+//                 time_stamp: "2025-11-06T12:00:00Z",
+//                 },
+//             },
+//             };
+
+//         // Call the function here that takes the information and records from the response and updates the consent logic and everything else. 
+
+//         // Don't call this function instaed set the values of the 
+//         updateConsent(mockResponse); 
+
+
+
+//     }
+
+//     else{
+
+
+//         console.log('could not find user in airtable database \n', ); 
+
+//         // Set the baseline consent state to false or Just keep it as false 
+
+//     }
+// }
 
 
 
@@ -256,11 +176,39 @@ const updateConsent = async (response) => {
 
 
 
+// Instead of using this for query just use the imported custom hook and set the consent values to the values that it imports in after it's own code has run 
+// const updateConsent = async (response) => {
+
+//     // Now take the response and extract all the values from it 
+
+//     console.log('this is the response from the server \n', response); 
+//     console.log('this is the type of response from the server \n', typeof response); 
+
+//     const data = response.data; 
+//     console.log('this is the data from the response \n', data); 
+
+//     const resultConsent = data.result_consent; 
+//     console.log('this is the result consent \n', resultConsent); 
+
+//     // Now extract the mail consent 
+
+//     const emailConsent = data.email_consent; 
+
+//     console.log('this is the email consent \n', emailConsent);
+//     console.log('this is the type of email consent \n', typeof emailConsent); 
+    
+    
+//     // Now you'll want to set the consent value of each state boolean variable to the value of the extracted consent boolean variable 
+//     setEmailChecked(emailConsent); 
+//     setResultChecked(resultConsent); 
+
+
+// }
 
 
 
 
-
+// Mock this function 
   const signOut = async () => {
 
 
@@ -308,35 +256,69 @@ const updateConsent = async (response) => {
     console.log('this is the type of the mailto link \n', typeof mailToLink); 
     window.open(mailToLink, "_blank"); 
 
-    
-
-
   }
 
 
   
-  const handleYesClick = () => {
+  const handleYesClick = async () => {
         
-       router.push('/');
+
+        console.log('this is the handle click function'); 
+
+        console.log('this is the is dirty boolean variable \n', isDirty); 
+        console.log('this is the isDirtyAndFalse boolean variables \n', isDirtyAndFalse); 
+
+
+         const consentPayload = {
+
+            name: name, 
+            email: email,
+            emailConsent: emailChecked,
+            resultConsent: resultChecked    
+
+
+        }
+
+                console.log('this is the consent payload \n', consentPayload); 
+
+
+        // Add in the logic here to check if the consent database needs updating 
+        if(isDirty){
+
+            // Call the consent capture api here 
+            // This is to ensure that the latest consent configuration is changed and recorded for future use 
+
+
+
+        }
+
+        if(isDirtyAndFalse){
+
+
+            // Call the send email api here 
+            const response = await axios.post('/api/updateConsent', consentPayload); 
+
+            console.log('this is the response from the email api route \n', response); 
+            console.log('this is thet type of response from the api route \n', typeof response); 
+
+
+
+
+        }
+
+       
+
+      
+      // Call the update baseline dispatch here 
+
+      dispatch({type: ACTIONS.FETCH_START}); 
+      dispatch({type: ACTIONS.SAVE_BASELINE, payload: consentPayload }); 
+      
+      // Add in a timeout promise here 
+        router.push('/');
+
 
     };
-
-       const handleChecked = async (e) => {
-        
-        console.log(`handle checked function`); 
-        setEmailChecked(e.target.checked);
-        
-    }
-
-
-     const handleResultChecked = async (e) => {
-            e.preventDefault(); 
-            
-            console.log(`result consent update function`); 
-            setResultChecked(!resultChecked); 
-
-        }; 
-
 
 
         if(!user) return <p>No user found....</p>
@@ -345,9 +327,6 @@ const updateConsent = async (response) => {
 
 
     <>
-    
-
-    {/* TO DO Add in the dynamic content extracted from the user  */}
     
     <article 
                 className={`${pc.card} ${nunito.className}`} 
@@ -495,7 +474,7 @@ const updateConsent = async (response) => {
                             
                             <div className="flex flex-col gap-2" id={pc.marketingCheckBoxContainer} >
 
-                            <input type="checkbox" defaultChecked className="toggle" checked={emailChecked} onChange={() => handleChecked()} id={pc.marketingToggle} />
+                            <input type="checkbox" defaultChecked className="toggle" checked={emailChecked} onChange={() => dispatch({type: ACTIONS.TOGGLE_EMAIL})} id={pc.marketingToggle} />
                     
                         </div>
                         </div>
@@ -515,7 +494,7 @@ const updateConsent = async (response) => {
 
                             <div className={pc.resultsPermissionToggleContainer}>
 
-                            <input type="checkbox" defaultChecked className="toggle" checked={resultChecked} id={pc.resultsToggle} />
+                            <input type="checkbox" defaultChecked className="toggle" checked={resultChecked} id={pc.resultsToggle} onChange={() => dispatch({type: ACTIONS.TOGGLE_RESULTS})} />
 
                             </div>
 
