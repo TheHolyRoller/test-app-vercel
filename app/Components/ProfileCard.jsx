@@ -315,7 +315,7 @@ useEffect(() => {
       dispatch({type: ACTIONS.SAVE_BASELINE, payload: consentPayload }); 
       
       // Add in a timeout promise here 
-        router.push('/');
+        // router.push('/');
 
 
     };

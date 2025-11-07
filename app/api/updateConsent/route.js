@@ -1,5 +1,8 @@
 // import { EmailTemplate } from '../../../components/EmailTemplate';
-import { EmailTemplate } from '../../Components/email-template';
+// import { EmailTemplate } from '../../Components/email-template';
+import { EmailConsentTemplate } from '../../Components/emailConsentTemplate'; 
+
+
 import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
 
@@ -9,8 +12,9 @@ console.log('this is the api key in the SEND route \n', apiKey);
 if (!apiKey) {
     console.error('❌ NEXT_RESEND_API_KEY is not set in environment variables');
 }
-const resend = new Resend(process.env.NEXT_RESEND_API_KEY);
 
+
+const resend = new Resend(process.env.NEXT_RESEND_API_KEY);
 
 export async function POST(request) {
     console.log('🚀 API Route Hit - POST /api/updateConsent');
@@ -46,12 +50,12 @@ export async function POST(request) {
             from: 'Quiz App <info@results.ivvidyslexiascreener.com>',
             to: ['danny@ivvi.app'],
             subject: 'User Updated their consent',
-            react: await EmailTemplate({ 
+            react: await EmailConsentTemplate({ 
                 // TO DO Refactor for consent data and the user details here 
                 name: name,
                 email: email, 
-                resultConsent: resultConsent, 
-                emailConsent: emailConsent
+                emailConsent: emailConsent,
+                resultConsent: resultConsent
             
             }),
         });
