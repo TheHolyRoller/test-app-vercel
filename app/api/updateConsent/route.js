@@ -42,9 +42,6 @@ export async function POST(request) {
         const { name, email, resultConsent, emailConsent } = body;
 
         console.log('this is the consent data', name, email, resultConsent, emailConsent);
-        
-        
-
       
         const { data, error } = await resend.emails.send({
             from: 'Quiz App <info@results.ivvidyslexiascreener.com>',

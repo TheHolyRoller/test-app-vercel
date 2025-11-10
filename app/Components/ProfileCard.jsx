@@ -219,8 +219,6 @@ useEffect(() => {
 
             const currentSession = await account.getSession({ sessionId: "current" });
 
-           
-
             console.log('this is the current session \n', currentSession || "no current session found!!!!!"); 
 
             const response = await account.deleteSession({sessionId: "current"}); 
@@ -273,8 +271,8 @@ useEffect(() => {
 
             name: name, 
             email: email,
-            emailConsent: emailChecked,
-            resultConsent: resultChecked    
+            result_consent: resultChecked,    
+            email_consent: emailChecked
 
 
         }
@@ -287,6 +285,10 @@ useEffect(() => {
 
             // Call the consent capture api here 
             // This is to ensure that the latest consent configuration is changed and recorded for future use 
+
+            const response = await axios.post('/api/fetchip', consentPayload); 
+            console.log('this is the response Payload from the airtable api request \n', consentPayload); 
+
 
 
 

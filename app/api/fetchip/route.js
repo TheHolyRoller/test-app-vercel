@@ -22,7 +22,6 @@ export async function POST(req){
             console.log('this is the base from air table \n', base); 
             console.log("this is the request object \n", req);
 
-
             const userId = uuidv4();
 
             console.log('this is the user ID::::!!!!! \n', userId); 
@@ -66,7 +65,7 @@ export async function POST(req){
     const ip = forwardedFor?.split(',')[0]?.trim() || "IP not found";
     console.log(`this is the IP address ${ip}`); 
 
-    const fields = { user_id: userId, Name:name, Email:email, IP_ADDRESS:ip, result_consent:results_consent, email_consent:email_consent }; 
+    const fields = { user_id: userId, name:name, email:email, IP_ADDRESS:ip, result_consent:results_consent, email_consent:email_consent }; 
 
     console.log('this is the payload \n', fields); 
     console.log('this is the type of payload \n', typeof fields); 
