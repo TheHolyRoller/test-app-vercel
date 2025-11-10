@@ -1,6 +1,6 @@
 // import { EmailTemplate } from '../../../components/EmailTemplate';
 // import { EmailTemplate } from '../../Components/email-template';
-import { EmailConsentTemplate } from '../../Components/emailConsentTemplate'; 
+import  EmailConsentTemplate  from '../../Components/emailConsentTemplate'; 
 
 
 import { Resend } from 'resend';
@@ -50,14 +50,12 @@ export async function POST(request) {
             from: 'Quiz App <info@results.ivvidyslexiascreener.com>',
             to: ['danny@ivvi.app'],
             subject: 'User Updated their consent',
-            react: await EmailConsentTemplate({ 
-                // TO DO Refactor for consent data and the user details here 
-                name: name,
-                email: email, 
-                emailConsent: emailConsent,
-                resultConsent: resultConsent
-            
-            }),
+            react: <EmailConsentTemplate 
+                name='danny'
+                email={email}
+                emailConsent={emailConsent}
+                resultConsent={resultConsent}
+                />,
         });
 
         if (error) {

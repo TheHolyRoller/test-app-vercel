@@ -4,8 +4,6 @@ import React from 'react'
 
 function EmailConsentTemplate({name, email, emailConsent, resultConsent}) {
 
-
-
     console.log('these are the values parsed in through props \n', name, email, emailConsent, resultConsent); 
 
   return (
@@ -13,13 +11,12 @@ function EmailConsentTemplate({name, email, emailConsent, resultConsent}) {
     
     <span>Name: {name} </span>
     <span>Email {email} </span>
-    <span> emailConsent: {emailConsent} </span>
-    <span>resultConsent: {resultConsent} </span>
-
-
+    <span> emailConsent: {String(emailConsent)} </span>
+    <span>resultConsent: {String(resultConsent)} </span>
 
     </div>
-  )
+  ); 
+  
 }
 
 export default EmailConsentTemplate
