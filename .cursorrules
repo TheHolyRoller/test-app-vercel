@@ -1,0 +1,173 @@
+# Cursor Rules: UI/UX Improvements for Large Codebases
+
+## Core Principles
+
+- **Consistency First**: Always match existing design patterns, component libraries, and style conventions in the codebase before suggesting new patterns
+- **Progressive Enhancement**: Make incremental improvements rather than wholesale redesigns
+- **Accessibility by Default**: Every UI change must maintain or improve accessibility (WCAG 2.1 AA minimum)
+- **Performance Aware**: Consider the performance impact of visual changes, especially animations and heavy components
+
+## UI Analysis Protocol
+
+When analyzing existing UI code:
+
+1. **Identify the design system**: Look for component libraries (Material-UI, Ant Design, shadcn/ui, custom design system)
+2. **Find style patterns**: Check for CSS-in-JS, Tailwind, CSS modules, or traditional stylesheets
+3. **Locate theme configuration**: Find color schemes, spacing scales, typography systems
+4. **Map component architecture**: Understand the component hierarchy and shared components
+5. **Review state management**: Identify how UI state is managed (Redux, Context, Zustand, etc.)
+
+## UI Improvement Suggestions
+
+### Visual Hierarchy
+- Suggest clearer heading structures (h1 → h6)
+- Recommend spacing improvements using the project's spacing scale
+- Propose color contrast fixes for better readability
+- Identify where visual weight can guide user attention
+
+### Component Design
+- Suggest breaking down large components into smaller, reusable pieces
+- Recommend extracting common patterns into shared components
+- Propose consolidating duplicate UI code
+- Identify opportunities for compound components
+
+### Responsive Design
+- Check for mobile-first approaches
+- Suggest breakpoint improvements matching existing patterns
+- Recommend touch-target sizing (minimum 44x44px)
+- Propose responsive typography scales
+
+### Interaction States
+- Ensure hover, focus, active, and disabled states are defined
+- Suggest loading states for async operations
+- Recommend error states with clear messaging
+- Propose empty states with helpful guidance
+
+### Animation & Transitions
+- Suggest subtle transitions (200-300ms) for state changes
+- Recommend `prefers-reduced-motion` support
+- Propose skeleton screens for loading states
+- Keep animations purposeful and performance-optimized
+
+## UX Enhancement Guidelines
+
+### User Feedback
+- Every action should have immediate visual feedback
+- Suggest toast notifications or inline messages for operations
+- Recommend optimistic UI updates for perceived performance
+- Propose confirmation dialogs for destructive actions
+
+### Form Design
+- Suggest inline validation with clear error messages
+- Recommend field labels above inputs (not placeholders as labels)
+- Propose helpful hint text for complex inputs
+- Ensure tab order follows visual flow
+
+### Navigation & Information Architecture
+- Suggest breadcrumbs for deep navigation hierarchies
+- Recommend clear active states for navigation items
+- Propose search functionality for content-heavy sections
+- Ensure keyboard navigation works throughout
+
+### Data Display
+- Suggest tables for structured data, cards for mixed content
+- Recommend pagination or infinite scroll based on use case
+- Propose filters and sorting for large datasets
+- Ensure loading states don't cause layout shift
+
+### Error Handling
+- Suggest user-friendly error messages (avoid technical jargon)
+- Recommend recovery actions when possible
+- Propose fallback UI for critical failures
+- Ensure errors are logged for debugging
+
+## Code Quality for UI
+
+### Prefer Semantic HTML
+```jsx
+// Good
+<button onClick={handleClick}>Submit</button>
+
+// Avoid
+<div onClick={handleClick}>Submit</div>
+```
+
+### Accessibility Attributes
+- Always include `aria-label` for icon-only buttons
+- Suggest `aria-describedby` for form hints
+- Recommend `role` attributes when semantic HTML isn't possible
+- Ensure keyboard focus is visible and logical
+
+### Component Props
+- Suggest descriptive prop names over generic ones
+- Recommend TypeScript interfaces for complex components
+- Propose default props for optional values
+- Document props with JSDoc comments
+
+### Style Organization
+- Colocate styles with components when using CSS-in-JS
+- Suggest utility-first approaches if Tailwind is present
+- Recommend CSS custom properties for themeable values
+- Avoid inline styles except for dynamic values
+
+## Testing UI Changes
+
+Suggest tests for:
+- Component rendering with different prop combinations
+- Interaction states (click, hover, focus)
+- Accessibility with tools like jest-axe or Testing Library queries
+- Responsive behavior at key breakpoints
+- Edge cases (long text, empty states, error states)
+
+## Documentation Guidelines
+
+When proposing UI changes, include:
+- **Before/After**: Explain current behavior and proposed improvement
+- **Rationale**: Why this change improves UX
+- **Impact**: What parts of the codebase are affected
+- **Alternatives**: Other approaches considered
+- **Accessibility**: How it maintains/improves accessibility
+
+## Common Patterns to Avoid
+
+- ❌ Using only color to convey information (add icons/text)
+- ❌ Tiny click targets on mobile (< 44x44px)
+- ❌ Placeholder text as labels (disappears on input)
+- ❌ Automatic carousels (user loses control)
+- ❌ Modal dialogs for non-critical information
+- ❌ Disabled submit buttons without explanation
+- ❌ CAPTCHAs without accessible alternatives
+- ❌ Infinite scroll without keyboard navigation
+
+## Migration Strategy for Large Changes
+
+When proposing significant UI changes:
+1. Suggest feature flags for gradual rollout
+2. Recommend building new components alongside old ones
+3. Propose migration path from old to new patterns
+4. Ensure backward compatibility during transition
+5. Document migration guide for other developers
+
+## Questions to Ask Before Changes
+
+- Does this match the existing design system?
+- Is this pattern used elsewhere in the codebase?
+- Will this work for all user types (mobile, keyboard, screen reader)?
+- Does this improve task completion or just aesthetics?
+- What's the simplest way to achieve this improvement?
+
+## Performance Checklist
+
+- [ ] Images are optimized and lazy-loaded
+- [ ] Fonts are subset and preloaded
+- [ ] Animations use `transform` and `opacity` (GPU-accelerated)
+- [ ] Large lists are virtualized
+- [ ] Code splitting is used for heavy components
+- [ ] Bundle size impact is measured
+
+## Final Notes
+
+- **User context matters**: Consider who uses this feature and in what situations
+- **Data-driven decisions**: Reference analytics or user research when available
+- **Prototype first**: For major changes, suggest building a prototype
+- **Iterate**: Small improvements compounded are better than perfect redesigns

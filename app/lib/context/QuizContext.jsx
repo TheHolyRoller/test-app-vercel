@@ -80,10 +80,8 @@ export const QuizProvider = ({ children }) => {
         console.log('📊 Quiz completion count:', newCount);
     }; 
 
-
     const [email, setEmail] = useState(''); 
 
-    // Monitor quiz-related state changes
     useEffect(() => {
         console.log('📊 Quiz State Update:', {
             currentIndex,
