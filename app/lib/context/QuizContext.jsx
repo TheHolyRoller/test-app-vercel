@@ -82,6 +82,7 @@ export const QuizProvider = ({ children }) => {
 
     const [email, setEmail] = useState(''); 
 
+    
     useEffect(() => {
         console.log('📊 Quiz State Update:', {
             currentIndex,
