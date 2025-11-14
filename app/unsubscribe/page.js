@@ -2,34 +2,39 @@
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useParams } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
+
 import Link from 'next/link';
 
 const Unsubscribe = () => {
   const [unsubscribe, setUnsubscribe] = useState(false);
-  const params = useParams();
-//   const email = params.email;
-const email = 'danielwakeley7@gmail.com'; 
+    
+  const searchParams = useSearchParams(); 
+
+ 
+//   const email = 'danielwakeley7@gmail.com'; 
+// const email = params.email; 
+
+
+    const email = searchParams.get("email"); 
+    console.log('this is the email extracted from the params \n', email); 
+    console.log('this is the type of email extracted from the params \n', typeof email);
+
+
+
 
   if (!email) {
     console.error('No email found in the URL!');
   }
 
   const unsubscribeUser = async () => {
-    // if (!email) return;
 
     try {
 
         // This is mocked for now for testing purposes 
       const response = await axios.post('/api/unsubscribe', { email });
-        // const response = {
+      console.log('this is the simple response from the api route call \n', response);
 
-        //     status: 'success', 
-        //     data: 'usubbed'
-
-        // }
-        console.log('this is the simple response from the api route call \n', response);
-        
       console.log('Response from server:', response.data);
       setUnsubscribe(true); // mark as unsubscribed
     } catch (error) {

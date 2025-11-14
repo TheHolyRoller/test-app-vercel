@@ -3,6 +3,7 @@ import * as React from 'react';
 interface EmailTemplateProps {
   firstName: string;
   message?: string;
+  toEmail?: string;
   quizData?: {
     recipientName: string;
     results: any;
@@ -28,6 +29,7 @@ const DyslexiaResultsReport = ({
     tests: { yes: 0, sometimes: 0, no: 0, questions: [] },
     plans: { yes: 0, sometimes: 0, no: 0, questions: [] }
   },
+  toEmail,
   showDetailedQuestions = true,
   finalScore = 0,
   yesAnswers = [],
@@ -40,6 +42,12 @@ const DyslexiaResultsReport = ({
     { key: 'tests', title: 'Tests', icon: '📝', color: '#eab308' },
     { key: 'plans', title: 'Planning & Organization', icon: '📋', color: '#ef4444' }
   ];
+
+  const unsubscribeURL = `http://localhost:3000/unsubscribe?email=${encodeURI(toEmail)}`
+
+
+  console.log('this is the users email destination \n', toEmail); 
+  console.log('this is the unsubscribe email url \n', unsubscribeURL); 
 
   // Calculate the score for a single section: Only 'Yes' answers contribute points
   const getSectionScore = (sectionData: any) => {
@@ -145,21 +153,6 @@ const DyslexiaResultsReport = ({
 
           {/* Score Circle */}
           <div style={{ marginBottom: '24px' }}>
-            <div style={{ 
-              // width: '120px', 
-              // height: '120px', 
-              // borderRadius: '50%', 
-              // backgroundColor: normalizedScore >= DYSLEXIA_ZONE_THRESHOLD ? '#dc2626' : '#2563eb',
-              // color: '#ffffff',
-              // fontSize: '36px',
-              // fontWeight: 'bold',
-              // display: 'flex',
-              // alignItems: 'center',
-              // justifyContent: 'center',
-              // margin: '0 auto 8px auto',
-              // boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)'
-            }}>
-            </div>
             <h1 style={{fontSize: '2rem',  color: '#4169E1'}} >
 
               <span style={{fontSize: '3.3rem', fontWeight: '750'}} >
@@ -168,61 +161,7 @@ const DyslexiaResultsReport = ({
               </span>
               /100
             </h1>
-            {/* <p style={{ color: '#374151', fontSize: '16px', fontWeight: '600', margin: '0' }}>Overall Score</p> */}
           </div>
-
-          {/* Zone Indicator */}
-          {/* <div style={{ marginBottom: '24px' }}>
-            {normalizedScore >= 75 ? (
-              <div style={{ backgroundColor: '#fee2e2', color: '#991b1b', padding: '8px 16px', borderRadius: '20px', fontSize: '16px', fontWeight: 'bold', display: 'inline-block' }}>
-                🚨 High Likelihood Zone (75-100%)
-              </div>
-            ) : normalizedScore >= 50 ? (
-              <div style={{ backgroundColor: '#fef3c7', color: '#92400e', padding: '8px 16px', borderRadius: '20px', fontSize: '16px', fontWeight: 'bold', display: 'inline-block' }}>
-                ⚠️ Moderate Likelihood Zone (50-74%)
-              </div>
-            ) : normalizedScore >= 25 ? (
-              <div style={{ backgroundColor: '#d1fae5', color: '#065f46', padding: '8px 16px', borderRadius: '20px', fontSize: '16px', fontWeight: 'bold', display: 'inline-block' }}>
-                ✓ Low Likelihood Zone (25-49%)
-              </div>
-            ) : (
-              <div style={{ backgroundColor: '#ecfdf5', color: '#047857', padding: '8px 16px', borderRadius: '20px', fontSize: '16px', fontWeight: 'bold', display: 'inline-block' }}>
-                ✅ Very Low Likelihood Zone (0-24%)
-              </div>
-            )}
-          </div> */}
-
-          {/* Progress Bar */}
-          {/* <div style={{ marginBottom: '24px' }}>
-            <div style={{ backgroundColor: '#e5e7eb', height: '30px', borderRadius: '15px', position: 'relative', border: '2px solid #d1d5db' }}>
-              <div style={{ 
-                backgroundColor: normalizedScore >= 75 ? '#dc2626' : normalizedScore >= 50 ? '#d97706' : '#059669',
-                height: '26px',
-                borderRadius: '13px',
-                width: `${Math.min(normalizedScore, 100)}%`,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'flex-end',
-                paddingRight: '8px',
-                color: '#ffffff',
-                fontWeight: 'bold',
-                fontSize: '14px'
-              }}>
-
-                {normalizedScore}
-                /100
-              </div>
-              <div style={{ position: 'absolute', top: '-8px', left: '25%', color: '#6b7280', fontWeight: 'bold', fontSize: '10px' }}>
-                25%
-              </div>
-              <div style={{ position: 'absolute', top: '-8px', left: '50%', color: '#d97706', fontWeight: 'bold', fontSize: '10px' }}>
-                50%
-              </div>
-              <div style={{ position: 'absolute', top: '-8px', left: '75%', color: '#dc2626', fontWeight: 'bold', fontSize: '10px' }}>
-                75%
-              </div>
-            </div>
-          </div> */}
 
           <h3 style={{ color: overallResult.color, fontSize: '20px', fontWeight: 'bold', margin: '0 0 12px 0' }}>
             {overallResult.level}
@@ -435,14 +374,37 @@ const DyslexiaResultsReport = ({
         </div>
       </div>
 
+       <div style={{ marginTop: '20px', textAlign: 'center' }}>
+    <a
+      href={unsubscribeURL}
+      style={{
+        display: 'inline-block',
+        padding: '10px 16px',
+        backgroundColor: '#e5e7eb',
+        color: '#374151',
+        textDecoration: 'none',
+        borderRadius: '6px',
+        fontSize: '13px',
+        border: '1px solid #d1d5db'
+      }}
+    >
+      Unsubscribe
+    </a>
+  </div>
+      
+
 
     </div>
+
+
+
   );
 };
 
 export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
   firstName,
   message,
+  toEmail,
   quizData
 }) => {
 
@@ -451,15 +413,16 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
     return (
       <DyslexiaResultsReport 
         recipientName={quizData.recipientName || firstName}
+        toEmail={toEmail}
         results={quizData.results}
         showDetailedQuestions={true}
         finalScore={quizData.score}
         yesAnswers={quizData.yesAnswers || []}
         yesAnswersBySection={quizData.yesAnswersBySection || {}}
+        
       />
     );
   }
-
   // Otherwise, render the simple template
   return (
     <div>

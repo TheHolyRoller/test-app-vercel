@@ -18,8 +18,7 @@ const resend = new Resend(process.env.NEXT_RESEND_API_KEY);
 
 export async function POST(request) {
     console.log('🚀 API Route Hit - POST /api/updateConsent');
-    
-    // Check if API key is available
+
     if (!apiKey) {
         return NextResponse.json(
             { 

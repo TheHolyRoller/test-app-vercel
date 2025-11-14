@@ -68,12 +68,7 @@ export async function POST(request: Request) {
             react: await EmailTemplate({ 
                 firstName: name,
                 message: message,
-                // quizData now includes:
-                // - results: transformed quiz results by section
-                // - yesAnswers: formatted array of all yes answers
-                // - yesAnswersBySection: yes answers grouped by section
-                // - totalYesAnswers: total count of yes answers
-                // - individual scores: finalScore, memoryScore, etc.
+                toEmail: toEmail,
                 quizData: quizData 
             }),
         });
