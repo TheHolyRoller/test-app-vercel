@@ -72,7 +72,6 @@ export async function POST(req){
 
 
             return NextResponse.json({message: 'all okay records fetched', data: records[0].fields}, {status: 200});
-              
 
     }
 

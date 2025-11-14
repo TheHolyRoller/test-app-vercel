@@ -49,7 +49,8 @@ export async function POST(req) {
             console.log('this is the type of base \n', typeof base); 
 
 
-               if(!base){
+               
+             if(!base){
 
 
                 return NextResponse.json({message: 'Could not return the airtable base'}, {status: 404}); 
@@ -59,17 +60,38 @@ export async function POST(req) {
 
 
             console.log('just about to query the airtable database api \n'); 
-            const records = await base(BASE_ID).
-            select({
+            // const records = await base(BASE_ID).
+            // select({
 
-                filterByFormula: `{email} = "${email}"`, 
-                sort: [{field: "Created", direction: "desc"}], 
-                maxRecords: 1, 
+            //     filterByFormula: `{email} = "${email}"`, 
+            //     sort: [{field: "Created", direction: "desc"}], 
+            //     maxRecords: 1, 
 
 
 
-            })
-            .firstPage(); 
+            // })
+            // .firstPage(); 
+
+            // Mock the records response here and then send it over to the email api call to tell the customer support to remove that email from the mailing list
+
+            const records = {
+            user_id: '99bdf1bc-6db6-4f30-bc76-6225cc2c0416',
+            name: 'Danny', 
+            email: 'danny@ivvi.app', 
+            IP_ADDRESS: '127.0.0.1', 
+            result_consent: true, 
+            email_consent: true, 
+            subscribed: true
+
+            }
+
+            console.log('these are the records fetched from the airtable database for now they have been mocked \n', records); 
+            console.log('this is the type of records \n', typeof records); 
+
+
+            // Now call the email sending route and pass in the name and email address as well as the state of the marketing email consent
+            
+
 
 
             if(!records){
