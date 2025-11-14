@@ -31,7 +31,6 @@ const Unsubscribe = () => {
 
     try {
 
-        // This is mocked for now for testing purposes 
       const response = await axios.post('/api/unsubscribe', { email });
       console.log('this is the simple response from the api route call \n', response);
 
