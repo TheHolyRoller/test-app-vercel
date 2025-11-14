@@ -21,13 +21,15 @@ const email = 'danielwakeley7@gmail.com';
     try {
 
         // This is mocked for now for testing purposes 
-    //   const response = await axios.post('/api/unsubscribe', { email });
-        const response = {
+      const response = await axios.post('/api/unsubscribe', { email });
+        // const response = {
 
-            status: 'success', 
-            data: 'usubbed'
+        //     status: 'success', 
+        //     data: 'usubbed'
 
-        }
+        // }
+        console.log('this is the simple response from the api route call \n', response);
+        
       console.log('Response from server:', response.data);
       setUnsubscribe(true); // mark as unsubscribed
     } catch (error) {

@@ -10,7 +10,6 @@ export async function POST(req){
 
         const BASE_ID = process.env.CONSENT_BASE_ID; 
 
-
             console.log('this is the base ID \n', BASE_ID); 
 
             console.log('this is the result of the get Airtable method call \n', getAirtableBase); 
@@ -50,8 +49,6 @@ export async function POST(req){
 
             }
 
-
-            // Now use the base to create a custom query 
             console.log('just about to query the airtable database api \n'); 
             const records = await base(BASE_ID).
             select({
@@ -59,8 +56,6 @@ export async function POST(req){
                 filterByFormula: `{email} = "${email}"`, 
                 sort: [{field: "Created", direction: "desc"}], 
                 maxRecords: 1, 
-
-
 
             })
             .firstPage(); 
