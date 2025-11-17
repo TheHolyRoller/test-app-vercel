@@ -210,7 +210,8 @@ export default function EmailPermission() {
 
         try{
 
-            const response = await axios.post('/api/create', payload); 
+            
+            const response = await axios.post('/api/create', payload);
             console.log('this is the response form the server for the Create api route  \n', response); 
 
         }
@@ -621,7 +622,7 @@ export default function EmailPermission() {
         {/* Add in the text here  */}
         <p className={`${emailSubmission.nameEmailConsentText}`}>
             
-☐ I give my explicit consent for ivvi Assist ltd to store and process my screener responses for the purpose of generating my personalised results and identifying patterns in future assessments, in accordance with the Privacy Policy & click 
+ I give my consent for ivvi Assist ltd to store and process my screener responses for the purpose of generating my personalised results and identifying patterns in future assessments, in accordance with the Privacy Policy & click 
 <span style={{textDecoration: 'underline', cursor: 'pointer', margin:'0 3px'}} >
     <a href='/login' style={{unset: 'all'}} >
 

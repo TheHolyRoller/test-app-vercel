@@ -3,26 +3,27 @@
 import { NextResponse } from "next/server";
 // import { databases, ID } from '@/app/lib/appwrite.server'; 
 import { getDatabases, ID } from "@/app/lib/appwrite.server";
-import { v4 as uuidv4 } from 'uuid';
+// import { v4 as uuidv4 } from 'uuid';
+import { ulid } from "ulid";
 const Airtable = require('airtable'); 
 
 
 export async function POST(req){
 
 
-        
-        const ACCESS_TOKEN = process.env.CONSENT_PERSONAL_ACCESS_TOKEN; 
-        const BASE_ID = process.env.CONSENT_BASE_ID;
-        const TABLE_ID = process.env.CONTENT_TABLE_ID; 
-
-
+        // TODO refactor for support@ivvi airable creds 
+        const ACCESS_TOKEN = process.env.IVVI_SUPPORT_AIRTABLE_PA_TOKEN; 
+        const BASE_ID = process.env.IVVI_SUPPORT_CONSENT_BASE_ID;
+        const TABLE_ID = process.env.IVVI_SUPPORT_CONSENT_TABLE_ID; 
 
             console.log('this is the create post request ')
             const base = new Airtable({apiKey: ACCESS_TOKEN}).base(BASE_ID); 
             console.log('this is the base from air table \n', base); 
             console.log("this is the request object \n", req);
 
-            const userId = uuidv4();
+            // TODO Abstract this away to a utility function. 
+            // const userId = uuidv4();
+            const userId = ulid();
 
             console.log('this is the user ID::::!!!!! \n', userId); 
             console.log('this is the type of user id \n', typeof userId); 

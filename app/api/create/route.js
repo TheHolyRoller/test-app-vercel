@@ -7,9 +7,9 @@ import { rejects } from "assert";
 const Airtable = require('airtable'); 
 
 
+// TODO Refactor for support@ivvi airtable creds 
 const ACCESS_TOKEN = process.env.PERSONAL_ACCESS_TOKEN; 
 const BASE_ID = process.env.BASE_ID;
-// const TABLE_ID = process.env.TABLE_ID; 
 
 export async function POST(req){
 
@@ -23,8 +23,6 @@ export async function POST(req){
         console.log('this is the base from air table \n', base); 
 
         console.log("this is the request object \n", req);
-
-            
 
                   const body = await req.json(); 
             console.log('this is the body of the request \n', body); 

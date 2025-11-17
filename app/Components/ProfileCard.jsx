@@ -44,7 +44,6 @@ function ProfileCard() {
 
     console.log('this is the email consent and the result consent \n', emailConsent, resultConsent); 
 
-
     const [emailChecked, setEmailChecked] = useState(false); 
     const [resultChecked, setResultChecked] = useState(false); 
     const [user, setUser] = useState(); 
@@ -119,89 +118,6 @@ useEffect(() => {
 
 }, [emailChecked, resultChecked])
 
-
-
-
-// const queryConsentDataBase = async () => {
-
-
-
-//     console.log('this is the consent query function \n'); 
-
-//      const status = 200; 
-//     if(status === 200){
-
-//         const mockResponse = {
-//             status: 200, // HTTP status code
-//             data: {
-//                 message: "Latest consent record fetched successfully",
-//                 data: {
-//                 user_id: "rec123ABC",
-//                 name: "Emily Johnson",
-//                 email: "emily.johnson@example.com",
-//                 IP_ADDRESS: "192.168.1.100",
-//                 result_consent: true,
-//                 email_consent: false,
-//                 time_stamp: "2025-11-06T12:00:00Z",
-//                 },
-//             },
-//             };
-
-//         // Call the function here that takes the information and records from the response and updates the consent logic and everything else. 
-
-//         // Don't call this function instaed set the values of the 
-//         updateConsent(mockResponse); 
-
-
-
-//     }
-
-//     else{
-
-
-//         console.log('could not find user in airtable database \n', ); 
-
-//         // Set the baseline consent state to false or Just keep it as false 
-
-//     }
-// }
-
-
-
-
-
-
-
-
-
-// Instead of using this for query just use the imported custom hook and set the consent values to the values that it imports in after it's own code has run 
-// const updateConsent = async (response) => {
-
-//     // Now take the response and extract all the values from it 
-
-//     console.log('this is the response from the server \n', response); 
-//     console.log('this is the type of response from the server \n', typeof response); 
-
-//     const data = response.data; 
-//     console.log('this is the data from the response \n', data); 
-
-//     const resultConsent = data.result_consent; 
-//     console.log('this is the result consent \n', resultConsent); 
-
-//     // Now extract the mail consent 
-
-//     const emailConsent = data.email_consent; 
-
-//     console.log('this is the email consent \n', emailConsent);
-//     console.log('this is the type of email consent \n', typeof emailConsent); 
-    
-    
-//     // Now you'll want to set the consent value of each state boolean variable to the value of the extracted consent boolean variable 
-//     setEmailChecked(emailConsent); 
-//     setResultChecked(resultConsent); 
-
-
-// }
 
 
 
@@ -287,9 +203,7 @@ useEffect(() => {
             const response = await axios.post('/api/fetchip', consentPayload); 
             console.log('this is the response Payload from the airtable api request \n', consentPayload); 
 
-
-
-
+                
         }
 
         if(isDirtyAndFalse){
