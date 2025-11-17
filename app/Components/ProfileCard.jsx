@@ -52,8 +52,6 @@ function ProfileCard() {
     const [name, setName] = useState(); 
 
 
-
-
   const router = useRouter();
   const [isSelected, setIsSelected] = React.useState(true); 
 

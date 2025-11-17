@@ -7,8 +7,8 @@ export async function POST(req){
 
     try{
 
-
-        const BASE_ID = process.env.CONSENT_BASE_ID; 
+        
+        const BASE_ID = process.env.IVVI_SUPPORT_CONSENT_BASE_ID; 
 
             console.log('this is the base ID \n', BASE_ID); 
 
@@ -26,16 +26,12 @@ export async function POST(req){
             console.log('this is the extracted email from the body of the request \n', email || "no email found"); 
 
 
-            // Now query the airtable base for the record in question 
-
             if(!email){
 
                 return NextResponse.json({messsage: 'could not extract the email from the request'}, {status: 404});
 
             }
 
-
-            // Now setup the airtable query 
 
             const base = await getAirtableBase();
 
