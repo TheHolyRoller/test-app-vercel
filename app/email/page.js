@@ -18,7 +18,6 @@ import { NextResponse } from 'next/server';
 const DATABASE_ID = process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID;
 const COLLECTION_ID = process.env.NEXT_PUBLIC_APPWRITE_RESULTS_COLLECTION_ID;
 
-
 export default function EmailPermission() {
     const router = useRouter();
     const { name, userAge, setResultsConsent, setNameConsent, answerConsent, nameEmailConsent } = useUser();
@@ -162,7 +161,6 @@ export default function EmailPermission() {
 
         sendResults(); 
 
-
     }, [answers, submit]);
 
 
@@ -172,7 +170,6 @@ export default function EmailPermission() {
         console.log('this is the answers object in the function argument \n', answers);
         console.log('this is the user name \n', name); 
         console.log('this is the user email \n', email); 
-
 
         const payload = {
             ...(resultChecked ? {
@@ -200,7 +197,6 @@ export default function EmailPermission() {
 
             }
         
-        
         ),
             email: checked ? (inputEmail || email) : 'anonymous',
             name: name,
@@ -210,7 +206,6 @@ export default function EmailPermission() {
 
         try{
 
-            
             const response = await axios.post('/api/create', payload);
             console.log('this is the response form the server for the Create api route  \n', response); 
 
@@ -245,6 +240,7 @@ export default function EmailPermission() {
 
         try{
 
+            // NOTE: this is part of the consent capture 
             const response = await axios.post('/api/fetchip', payload); 
             console.log('this is the response from the fetch IP post server route \n', response); 
 

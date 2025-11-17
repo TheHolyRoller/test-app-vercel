@@ -8,6 +8,7 @@ import { ulid } from "ulid";
 const Airtable = require('airtable'); 
 
 
+// NOTE: This is the consent capture route 
 export async function POST(req){
 
 
@@ -20,10 +21,62 @@ export async function POST(req){
             const base = new Airtable({apiKey: ACCESS_TOKEN}).base(BASE_ID); 
             console.log('this is the base from air table \n', base); 
             console.log("this is the request object \n", req);
+            let data; 
+            let user_email; 
+
+    
+            try{
+
+
+        
+                 data = await req.json(); 
+                 console.log('this is the data extract from the request \n', data); 
+                //  Now extract the email from the data 
+               const {email} = data; 
+                user_email = email; 
+
+
+
+
+
+            }
+            catch(error){
+
+                console.error('could not extract data! \n', error); 
+                return NextResponse.json({message: 'failure to extract data'}, {status: 500}); 
+
+
+            }
+
+
+            // TODO Extract the user's email from the request body here 
+            
+
 
             // TODO Abstract this away to a utility function. 
             // const userId = uuidv4();
+            // TODO Call the inti_ULID api roture here 
             const userId = ulid();
+            // That API will then take the user email and search the airtable database for it. 
+            // If none is found then the utility function is called and the ULID is returned in the response 
+            const response = await axios.post('/api/init_ulid', {email: user_email}); 
+
+            console.log('this is the response from the route that checks for an existing email \n', response); 
+
+
+            // Extract the UILD from the response here 
+
+
+            // Assign it to the userId here 
+
+            // TODO extract the isDirtyAndFalse flag here 
+            
+
+            // TODO check if isDirty flag is true and if so take the user details and call the updated consent api route here 
+
+            // TODO Take the user name email address and 
+
+
 
             console.log('this is the user ID::::!!!!! \n', userId); 
             console.log('this is the type of user id \n', typeof userId); 
@@ -32,7 +85,10 @@ export async function POST(req){
     try{
 
 
+
     const body = await req.json(); 
+
+
     console.log('this is the json ified request body \n', body); 
 
         
@@ -48,7 +104,6 @@ export async function POST(req){
     console.log('this is the type of results consent \n', typeof results_consent); 
     console.log('this is the type of email consent \n', typeof email_consent); 
 
-    
 
     console.log('this is the result Checked \n', resultChecked); 
     console.log(`this is the checked state variable ${checked}`); 
@@ -71,6 +126,7 @@ export async function POST(req){
     console.log('this is the payload \n', fields); 
     console.log('this is the type of payload \n', typeof fields); 
 
+        
         const response = await base("Consent").create([{ fields }]);
         console.log('this is the response \n', response); 
 

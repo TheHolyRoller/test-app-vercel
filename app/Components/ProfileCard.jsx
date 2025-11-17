@@ -181,12 +181,14 @@ useEffect(() => {
         console.log('this is the isDirtyAndFalse boolean variables \n', isDirtyAndFalse); 
 
 
+        // TODO Refactor this to include the isDirty and false flags 
          const consentPayload = {
 
             name: name, 
             email: email,
             result_consent: resultChecked,    
-            email_consent: emailChecked
+            email_consent: emailChecked, 
+            isDirtyAndFalse
 
 
         }
@@ -203,8 +205,10 @@ useEffect(() => {
             const response = await axios.post('/api/fetchip', consentPayload); 
             console.log('this is the response Payload from the airtable api request \n', consentPayload); 
 
-                
+
         }
+
+        // TODO 
 
         if(isDirtyAndFalse){
 

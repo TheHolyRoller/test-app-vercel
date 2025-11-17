@@ -15,7 +15,6 @@ const Unsubscribe = () => {
 //   const email = 'danielwakeley7@gmail.com'; 
 // const email = params.email; 
 
-
     const email = searchParams.get("email"); 
     console.log('this is the email extracted from the params \n', email); 
     console.log('this is the type of email extracted from the params \n', typeof email);
