@@ -133,8 +133,6 @@ const RESULT_TABLE_ID = process.env.TABLE_ID
 
   console.log("Airtable response:", airtableResp);
 
-
-
 //   TODO create the payload for the results capture api call here 
 /**         
  *          answers,
@@ -147,6 +145,20 @@ const RESULT_TABLE_ID = process.env.TABLE_ID
             ageRange: userAge
  */
 
+        const payload = {
+
+            answers,
+            score,
+            memoryScore,
+            writingScore,
+            readingScore,
+            examResultsScore,
+            organisationalScore,
+            ageRange: userAge
+
+
+        }
+
 // TODO 
 //   Check the Result and email consent here 
 if(resultChecked){
@@ -154,8 +166,12 @@ if(resultChecked){
     // TODO Call the create api method with the answers object and the ULID here 
 
     // Call using the new fetch api pattern 
-    
+    const response = await fetch("http://localhost:3000/api/init_ulid", {
 
+        method: "POST", 
+        headers: {"Content-Type": "application/json"}, 
+        body: JSON.stringify({payload})
+    }); 
 
 }
 
