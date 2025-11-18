@@ -208,7 +208,7 @@ useEffect(() => {
 
         }
 
-        // TODO 
+        // TODO remove this and refactor it into the fetch IP route 
 
         if(isDirtyAndFalse){
 
@@ -218,9 +218,6 @@ useEffect(() => {
 
             console.log('this is the response from the email api route \n', response); 
             console.log('this is thet type of response from the api route \n', typeof response); 
-
-
-
 
         }
 
@@ -266,9 +263,7 @@ useEffect(() => {
                     boxShadow: '0 -2px 8px rgba(0, 0, 0, 0.1), -2px 0 8px rgba(0, 0, 0, 0.1), 2px 0 8px rgba(0, 0, 0, 0.1)', 
                 }}
             >
-
-
-                <div className={`${pc.categoryLabelContainer} ${nunito.className}`} >
+                 <div className={`${pc.categoryLabelContainer} ${nunito.className}`} >
                     <label className={`${pc.categoryLabel} ${nunito.className}`}>
 
 

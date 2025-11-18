@@ -30,7 +30,7 @@ export async function POST(req){
             console.log('this is the body of the request \n', body); 
           
 
-
+            // TODO Check if your passing in these actual values 
             const {score, memoryScore, writingScore, readingScore, examResultsScore, organisationalScore, ageRange} = await body; 
 
             console.log("these are the score, memoryScore, writingScore, readingScore, examResultsScore, organisationalScore Score \n", score, memoryScore, writingScore, readingScore, examResultsScore, organisationalScore, ageRange); 

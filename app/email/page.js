@@ -171,6 +171,9 @@ export default function EmailPermission() {
         console.log('this is the user name \n', name); 
         console.log('this is the user email \n', email); 
 
+
+        // TODO refactor this to include all the data and all the consent variables in the payload 
+        // Then check in the other api route where you call the create api route 
         const payload = {
             ...(resultChecked ? {
             answers: answers, 
@@ -207,8 +210,10 @@ export default function EmailPermission() {
         // TODO refactor this to to call the create in the ULID server route after all the other api calls have run 
         try{
 
-            const response = await axios.post('/api/create', payload);
-            console.log('this is the response form the server for the Create api route  \n', response); 
+            // const response = await axios.post('/api/create', payload);
+
+            // console.log('this is the response form the server for the Create api route  \n', response); 
+            console.log('this used to be where the create api call used to be ')
 
         }
         catch(error){
@@ -220,18 +225,28 @@ export default function EmailPermission() {
     }
 
 
+    // this should be the only api cll to the backend 
     const prove_consent = async () => {
 
 
         console.log('this is the prove consent function'); 
 
         // Now take the state variables and push them to the server 
-        const payload = {
 
+        // TODO Add in the answers here so that You can use them when you record the results in the other api call 
+        const payload = {
+            answers: answers,
             checked, 
             resultChecked, 
             name, 
-            email
+            email, 
+            score,
+            memoryScore,
+            writingScore,
+            readingScore,
+            examResultsScore,
+            organisationalScore,
+            ageRange: userAge
 
 
         }

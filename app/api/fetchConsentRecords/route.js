@@ -70,7 +70,6 @@ export async function POST(req){
             console.log('these are the records \n', records); 
             console.log('this is the type of records \n', typeof records); 
 
-
             return NextResponse.json({message: 'all okay records fetched', data: records[0].fields}, {status: 200});
 
     }

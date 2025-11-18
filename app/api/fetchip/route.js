@@ -1,167 +1,175 @@
-
-
 import { NextResponse } from "next/server";
-// import { databases, ID } from '@/app/lib/appwrite.server'; 
-import { getDatabases, ID } from "@/app/lib/appwrite.server";
-// import { v4 as uuidv4 } from 'uuid';
 import { ulid } from "ulid";
-const Airtable = require('airtable'); 
+import axios from "axios";
+const Airtable = require("airtable");
+
+export async function POST(req) {
+  console.log("Incoming request to /api/fetchip");
+
+  // ------------------------------
+  // 1. Parse the body ONCE
+  // ------------------------------
+  let body;
+  let subsribed; 
+
+  try {
+    body = await req.json();
+  } catch (error) {
+    console.error("Failed to parse JSON:", error);
+    return NextResponse.json({ message: "Invalid JSON body" }, { status: 400 });
+  }
+
+//   TODO Extract these values from the request body 
+/**         score,
+            memoryScore,
+            writingScore,
+            readingScore,
+            examResultsScore,
+            organisationalScore,
+            ageRange: userAge */
+  const { answers, email, name, resultChecked, checked } = body;
+
+  if(checked){
+
+    subsribed = true; 
+
+  }
+
+  console.log('this is the subscribed value \n', subsribed); 
 
 
-// NOTE: This is the consent capture route 
-export async function POST(req){
+  if (!email) {
+    return NextResponse.json(
+      { message: "Email is required" },
+      { status: 400 }
+    );
+  }
+
+  console.log("Parsed body:", body);
+
+  // ------------------------------
+  // 2. Call /api/init_ulid to get user ID
+  // ------------------------------
+  let initUlidRes;
+  try {
+    initUlidRes = await fetch("http://localhost:3000/api/init_ulid", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email }),
+    });
+  } catch (error) {
+    console.error("Failed calling /api/init_ulid:", error);
+    return NextResponse.json(
+      { message: "Failed to initialize ULID" },
+      { status: 500 }
+    );
+  }
+
+  if (!initUlidRes.ok) {
+    const text = await initUlidRes.text();
+    console.error("init_ulid returned error:", text);
+    return NextResponse.json(
+      { message: "init_ulid route failed", details: text },
+      { status: 500 }
+    );
+  }
+
+  const initUlidData = await initUlidRes.json();
+  const userId = initUlidData.ulid || ulid();
+
+  console.log("ULID returned:", userId);
+
+  // ------------------------------
+  // 3. Extract IP
+  // ------------------------------
+  const forwardedFor = req.headers.get("x-forwarded-for");
+  const ip = forwardedFor?.split(",")[0].trim() ?? "IP not found";
+
+  console.log("Client IP:", ip);
+
+  // ------------------------------
+  // 4. Prepare Airtable payload
+  // ------------------------------
+
+//   TO DO add in the subscribed field her and set it depending on the value of the email checked 
+  const fields = {
+    user_id: userId,
+    name,
+    email,
+    IP_ADDRESS: ip,
+    result_consent: JSON.stringify(resultChecked),
+    email_consent: JSON.stringify(checked),
+    subsribed: subsribed
+  };
+
+  console.log("Airtable payload:", fields);
+
+  // ------------------------------
+  // 5. Save to Airtable
+  // ------------------------------
+  const ACCESS_TOKEN = process.env.IVVI_SUPPORT_AIRTABLE_PA_TOKEN;
+  const BASE_ID = process.env.IVVI_SUPPORT_CONSENT_BASE_ID;
 
 
-        // TODO refactor for support@ivvi airable creds 
-        const ACCESS_TOKEN = process.env.IVVI_SUPPORT_AIRTABLE_PA_TOKEN; 
-        const BASE_ID = process.env.IVVI_SUPPORT_CONSENT_BASE_ID;
-        const TABLE_ID = process.env.IVVI_SUPPORT_CONSENT_TABLE_ID; 
+const RESULT_ACCESS_TOKEN = process.env.PERSONAL_ACCESS_TOKEN; 
 
-            console.log('this is the create post request ')
-            const base = new Airtable({apiKey: ACCESS_TOKEN}).base(BASE_ID); 
-            console.log('this is the base from air table \n', base); 
-            console.log("this is the request object \n", req);
-            let data; 
-            let user_email; 
+const RESULT_BASE_ID = process.env.BASE_ID; 
 
+const RESULT_TABLE_ID = process.env.TABLE_ID
+
+  const base = new Airtable({ apiKey: ACCESS_TOKEN }).base(BASE_ID);
+
+  let airtableResp;
+
+  try {
+    airtableResp = await base("Consent").create([{ fields }]);
+  } catch (error) {
+    console.error("Airtable create error:", error);
+    return NextResponse.json(
+      { message: "Failed to save Airtable record" },
+      { status: 500 }
+    );
+  }
+
+  console.log("Airtable response:", airtableResp);
+
+
+
+//   TODO create the payload for the results capture api call here 
+/**         
+ *          answers,
+ *          score,
+            memoryScore,
+            writingScore,
+            readingScore,
+            examResultsScore,
+            organisationalScore,
+            ageRange: userAge
+ */
+
+// TODO 
+//   Check the Result and email consent here 
+if(resultChecked){
+
+    // TODO Call the create api method with the answers object and the ULID here 
+
+    // Call using the new fetch api pattern 
     
-            try{
 
 
-        
-                 data = await req.json(); 
-                 console.log('this is the data extract from the request \n', data); 
-                //  Now extract the email from the data 
-               const {email} = data; 
-                user_email = email; 
+}
 
 
-            }
-            catch(error){
-
-                console.error('could not extract data! \n', error); 
-                return NextResponse.json({message: 'failure to extract data'}, {status: 500}); 
-
-
-            }
-
-
-            // TODO Extract the user's email from the request body here 
-            
-
-
-            // TODO Abstract this away to a utility function. 
-            // const userId = uuidv4();
-            // TODO Call the inti_ULID api roture here 
-            const userId = ulid();
-            // That API will then take the user email and search the airtable database for it. 
-            // If none is found then the utility function is called and the ULID is returned in the response 
-            const response = await axios.post('/api/init_ulid', {email: user_email}); 
-
-            console.log('this is the response from the route that checks for an existing email \n', response); 
-
-
-            // Extract the UILD from the response here 
-            
-
-            // Assign it to the userId here 
-
-            // TODO extract the consent flags form the request body here 
-
-
-
-            // TODO extract the isDirtyAndFalse flag here 
-            
-
-
-            // TODO check if isDirty flag is true and if so take the user details and call the updated consent api route here 
-            
-            
-
-            // TODO workout how to tell the difference between the isDirty flags and email and result consent 
-
-
-
-
-            // TODO Take the user name email address and 
-
-
-
-            // TODO extract the user consent status from the request body 
-
-
-
-            // TODO if the consent is correct then update the user records database 
-
-
-
-
-            console.log('this is the user ID::::!!!!! \n', userId); 
-            console.log('this is the type of user id \n', typeof userId); 
-
-
-    try{
-
-
-
-    const body = await req.json(); 
-
-
-    console.log('this is the json ified request body \n', body); 
-
-        
-    // TO DO stringify these boolean values 
-    const {resultChecked, checked, name, email } = body;
-    
-    const results_consent = JSON.stringify(resultChecked); 
-    const email_consent = JSON.stringify(checked); 
-
-    console.log('this is the results consent in string FORM \n', results_consent); 
-    console.log("this is the email consent in string FORM \n", email_consent); 
-    
-    console.log('this is the type of results consent \n', typeof results_consent); 
-    console.log('this is the type of email consent \n', typeof email_consent); 
-
-
-    console.log('this is the result Checked \n', resultChecked); 
-    console.log(`this is the checked state variable ${checked}`); 
-
-
-    console.log('this is the name extracted from the body \n', name); 
-    console.log('this is the email extracted from the body \n', email); 
-    
-    
-    const forwardedFor = req.headers.get('x-forwarded-for'); 
-    console.log(`this is the forwarded for object extracted from the header of the request using the .get() method using a string to search for its header ${forwardedFor}`); 
-
-
-
-    const ip = forwardedFor?.split(',')[0]?.trim() || "IP not found";
-    console.log(`this is the IP address ${ip}`); 
-
-    const fields = { user_id: userId, name:name, email:email, IP_ADDRESS:ip, result_consent:results_consent, email_consent:email_consent }; 
-
-    console.log('this is the payload \n', fields); 
-    console.log('this is the type of payload \n', typeof fields); 
-
-        
-        const response = await base("Consent").create([{ fields }]);
-        console.log('this is the response \n', response); 
-
-    // return NextResponse.json({message: `Successfully Saved user IP address ${ip} this is the timestapm ${timestamp} ${response}`}, {status: 200}); 
-    return NextResponse.json({
-        message: `Successfully saved user IP`,
-        ip,
-        document: response
-        }, { status: 200 });
-
-
-    }
-
-       catch(error){
-        console.log(`could not extract IP in fetch IP Route:::::!!! ${error}`);
-        return NextResponse.json({message: 'Could not extract IP address'}, {status: 500}); 
-
-    }
-
-    }
+  // ------------------------------
+  // 6. Return success response
+  // ------------------------------
+  return NextResponse.json(
+    {
+      message: "Successfully saved consent + IP",
+      ip,
+      userId,
+      airtableRecord: airtableResp,
+    },
+    { status: 200 }
+  );
+}

@@ -25,7 +25,7 @@ export async function POST(req){
     // Add in the environment variables here 
     // These will the the consent support airtable records. 
 
-    const body = req.json(); 
+    const body = await req.json(); 
     console.log('this is the body of the request \n', body); 
 
     // Extract the user's email address here 
@@ -39,21 +39,30 @@ export async function POST(req){
 
 
         // Query the airtable Database for that email address here 
+       
+       
+       
+       
+    // TODO Call the fetch consent records api route here 
         // Use the fetchConsent records route here 
+        // Add in the user email here
+        const response = await axios.post('/api/fetchConsentRecords', {email: email});
         
+        console.log('this is the response from the fetch consent records \n', response); 
 
         
         // If there is one extract the user's ULID here 
-        
-        
+        // Just check the response status and add in the rest of the logic in the else statement if it's anything but 404 
 
-        // If none was found call the utility function here 
+
+
+        // ELSE: Extract thet ULID here 
+        
 
 
         // Return the ULID in the response here 
-
-
-
+        // Add in the ULID into the response 
+        return NextResponse.json({message: 'successfully extracted the ULID', response}, {status: 200}); 
         
         
         
@@ -61,6 +70,7 @@ export async function POST(req){
     catch(error){
 
         console.error('could not query email from airtable \n', error); 
+        return NextResponse.json({message: 'could not extract user ULID'}, {status: 500}); 
 
     }
 
