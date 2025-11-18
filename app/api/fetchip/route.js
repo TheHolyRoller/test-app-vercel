@@ -170,6 +170,15 @@ if(resultChecked){
 
 
 
+Okay so let's just talk things through. P
+
+
+
+
+Okay so as far as I know everything works on the backend once the user clicks on submit. 
+
+So what I need to do now is run that code to get the ULID and then use that in the consent capture code and then if the result consent variable is 
+true I'll then work on implementing the ULID in that as well. 
 
 
 
