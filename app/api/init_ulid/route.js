@@ -23,16 +23,20 @@ import {generateULID} from '../../utils/generateULID';
 
 export async function POST(req){
 
+    console.log('this is the init ulid server route is it running \n'); 
+
 
     // Add in the environment variables here 
     // These will the the consent support airtable records. 
-    let ulid; 
+    let generated_ulid; 
     const body = await req.json(); 
     console.log('this is the body of the request \n', body); 
 
     // Extract the user's email address here 
 
-    const { email } = body; 
+    // const { email } = body; 
+    const {email} = body; 
+
     console.log('this is the user email from the ulid api route \n', email); 
 
 
@@ -63,12 +67,16 @@ export async function POST(req){
         
         // If there is one extract the user's ULID here 
         // Just check the response status and add in the rest of the logic in the else statement if it's anything but 404 
-        console.log('this is the status of the response \n', response.status); 
+        console.log('this is the status of the response in the init route from the fetch Consent Records API call::: \n', response.status); 
 
         if(response.status === 404){
 
+            console.log('generating a ULID in the init ULID server router!!!!');
+            generated_ulid = await generateULID(); 
 
-            ulid = generateULID(); 
+            console.log('this is the newly genreated ULID in the init ulid route \n', generated_ulid); 
+
+
 
         }
 
@@ -77,14 +85,18 @@ export async function POST(req){
 
         // parse throuh the response and extract it's ulid 
 
+        console.log("could not find a 404 response extracting the ULID from the response \n"); 
+
 
 
         }
 
         const payload = {
 
-            ulid: ulid
+            user_ulid: generated_ulid
         }
+
+        console.log('this is the payload in the init ULID server route about to be sent back to fetch ip \n', payload); 
 
 
         

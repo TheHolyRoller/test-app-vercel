@@ -1,32 +1,25 @@
 import { NextResponse } from "next/server";
 import { ulid } from "ulid";
 import axios from "axios";
+import { resolveNaptr } from "dns";
 const Airtable = require("airtable");
 
 export async function POST(req) {
   console.log("Incoming request to /api/fetchip");
 
-  // ------------------------------
-  // 1. Parse the body ONCE
-  // ------------------------------
+
   let body;
   let subscribed; 
 
   try {
     body = await req.json();
+    console.log('this is the body of the request at the beginning of fetch ip server route \n', body); 
   } catch (error) {
     console.error("Failed to parse JSON:", error);
     return NextResponse.json({ message: "Invalid JSON body" }, { status: 400 });
   }
 
-//   TODO Extract these values from the request body 
-/**         score,
-            memoryScore,
-            writingScore,
-            readingScore,
-            examResultsScore,
-            organisationalScore,
-            ageRange: userAge */
+
   const { answers, email, name, resultChecked, checked } = body;
     
   const {score,
@@ -55,56 +48,17 @@ export async function POST(req) {
   }
 
   console.log("Parsed body:", body);
-
-  // ------------------------------
-  // 2. Call /api/init_ulid to get user ID
-  // ------------------------------
-  let initUlidRes;
-  try {
-    initUlidRes = await fetch("http://localhost:3000/api/init_ulid", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email }),
-    });
-
-    console.log('this is the unitUlidRes from the initULID call \n', initUlidRes); 
-    
-
-  } catch (error) {
-    console.error("Failed calling /api/init_ulid:", error);
-    return NextResponse.json(
-      { message: "Failed to initialize ULID" },
-      { status: 500 }
-    );
-  }
-
-  if (!initUlidRes.ok) {
-    const text = await initUlidRes.text();
-    console.error("init_ulid returned error:", text);
-    return NextResponse.json(
-      { message: "init_ulid route failed", details: text },
-      { status: 500 }
-    );
-  }
-
-  const initUlidData = await initUlidRes.json();
-  const userId = initUlidData.ulid || ulid();
+  // TODO Refactor this to be defined after the init ULID api route is called 
+  const userId = ulid(); 
 
   console.log("ULID returned:", userId);
 
-  // ------------------------------
-  // 3. Extract IP
-  // ------------------------------
   const forwardedFor = req.headers.get("x-forwarded-for");
   const ip = forwardedFor?.split(",")[0].trim() ?? "IP not found";
 
   console.log("Client IP:", ip);
 
-  // ------------------------------
-  // 4. Prepare Airtable payload
-  // ------------------------------
 
-//   TO DO add in the subscribed field her and set it depending on the value of the email checked 
   const fields = {
     user_id: userId,
     name,
@@ -117,9 +71,6 @@ export async function POST(req) {
 
   console.log("Airtable payload:", fields);
 
-  // ------------------------------
-  // 5. Save to Airtable
-  // ------------------------------
   const ACCESS_TOKEN = process.env.IVVI_SUPPORT_AIRTABLE_PA_TOKEN;
   const BASE_ID = process.env.IVVI_SUPPORT_CONSENT_BASE_ID;
 
@@ -134,6 +85,8 @@ const RESULT_TABLE_ID = process.env.TABLE_ID
 
   let airtableResp;
 
+
+  // TODO Refactor this to be called after the init ulid route is called 
   try {
     airtableResp = await base("Consent").create([{ fields }]);
   } catch (error) {
@@ -145,21 +98,12 @@ const RESULT_TABLE_ID = process.env.TABLE_ID
   }
 
   console.log("Airtable response:", airtableResp);
+     
 
-//   TODO create the payload for the results capture api call here 
-/**         
- *          answers,
- *          score,
-            memoryScore,
-            writingScore,
-            readingScore,
-            examResultsScore,
-            organisationalScore,
-            ageRange: userAge
- */
+if(resultChecked){
 
-        const payload = {
-
+     const payload = {
+            email: email,
             answers,
             score,
             memoryScore,
@@ -168,16 +112,13 @@ const RESULT_TABLE_ID = process.env.TABLE_ID
             examResultsScore,
             organisationalScore,
             ageRange: userAge
-
-
         }
 
-// TODO 
-//   Check the Result and email consent here 
-if(resultChecked){
+    console.log('this is result checked in the fetch ip if statement \n', resultChecked); 
+    console.log('this is the type of result checked \n', typeof resultChecked); 
+
 
     // TODO Call the create api method with the answers object and the ULID here 
-
     // Call using the new fetch api pattern 
     const response = await fetch("http://localhost:3000/api/init_ulid", {
 
@@ -186,11 +127,25 @@ if(resultChecked){
         body: JSON.stringify({payload})
     }); 
 
+    const data = await response.json(); 
+
+    console.log('this is the JSON ifide response in the if statement \n', data); 
+
+    console.log('this is the response in the result checked if statement  \n', response); 
+    const api_payload = data.payload;
+    console.log('this is the payload from the init ulid route in the fetch ip route \n', api_payload); 
+
+    const {user_ulid} = api_payload; 
+
+    if(user_ulid){
+
+      console.log('this is the user ULID \n', user_ulid);
+
+
+    }
+
 }
 
-  // ------------------------------
-  // 6. Return success response
-  // ------------------------------
   return NextResponse.json(
     {
       message: "Successfully saved consent + IP",
@@ -201,3 +156,40 @@ if(resultChecked){
     { status: 200 }
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
