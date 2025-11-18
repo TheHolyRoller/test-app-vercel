@@ -203,7 +203,8 @@ export default function EmailPermission() {
                 };
                 
                 console.log(`this is the payload and just about to send it off in the try block ${payload}`); 
-
+        
+        // TODO refactor this to to call the create in the ULID server route after all the other api calls have run 
         try{
 
             const response = await axios.post('/api/create', payload);
@@ -241,6 +242,7 @@ export default function EmailPermission() {
         try{
 
             // NOTE: this is part of the consent capture 
+            // TODO refactor fetchip to check the consent status and pass them down to ULID server route 
             const response = await axios.post('/api/fetchip', payload); 
             console.log('this is the response from the fetch IP post server route \n', response); 
 

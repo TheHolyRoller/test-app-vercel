@@ -1,5 +1,3 @@
-// import { EmailTemplate } from '../../../components/EmailTemplate';
-// import { EmailTemplate } from '../../Components/email-template';
 import  EmailConsentTemplate  from '../../Components/emailConsentTemplate'; 
 
 
@@ -28,6 +26,7 @@ export async function POST(request) {
             { status: 500 }
         );
     }
+    
     
     try {
         const body = await request.json();

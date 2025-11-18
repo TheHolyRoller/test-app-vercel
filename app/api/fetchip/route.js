@@ -36,9 +36,6 @@ export async function POST(req){
                 user_email = email; 
 
 
-
-
-
             }
             catch(error){
 
@@ -65,16 +62,37 @@ export async function POST(req){
 
 
             // Extract the UILD from the response here 
-
+            
 
             // Assign it to the userId here 
+
+            // TODO extract the consent flags form the request body here 
+
+
 
             // TODO extract the isDirtyAndFalse flag here 
             
 
+
             // TODO check if isDirty flag is true and if so take the user details and call the updated consent api route here 
+            
+            
+
+            // TODO workout how to tell the difference between the isDirty flags and email and result consent 
+
+
+
 
             // TODO Take the user name email address and 
+
+
+
+            // TODO extract the user consent status from the request body 
+
+
+
+            // TODO if the consent is correct then update the user records database 
+
 
 
 
