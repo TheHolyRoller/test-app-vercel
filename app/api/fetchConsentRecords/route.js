@@ -4,15 +4,13 @@ import { NextResponse } from 'next/server';
 
 
 
-
-
 export async function POST(req){
 
 
     try{
 
-        
-        const BASE_ID = process.env.IVVI_SUPPORT_CONSENT_BASE_ID; 
+        // TODO Change this temporarily to the old consent airtable base 
+        const BASE_ID = process.env.CONSENT_BASE_ID; 
 
             console.log('this is the base ID \n', BASE_ID); 
 
@@ -37,7 +35,7 @@ export async function POST(req){
             }
 
 
-            const base = await getAirtableBase();
+            const base = getAirtableBase();
 
             console.log('this is the base returned from the get airtable base function \n', base); 
             console.log('this is the type of base \n', typeof base); 
@@ -50,7 +48,7 @@ export async function POST(req){
             }
 
             console.log('just about to query the airtable database api \n'); 
-            const records = await base(BASE_ID).
+            const records = await base("Consent").
             select({
 
                 filterByFormula: `{email} = "${email}"`, 
@@ -61,7 +59,7 @@ export async function POST(req){
             .firstPage(); 
 
 
-            if(!records){
+            if(!records || records.length === 0){
 
                 return NextResponse.json({message: 'could not find the email in the airtable database'}, {response: 404}); 
 

@@ -10,7 +10,7 @@ export async function POST(req) {
   // 1. Parse the body ONCE
   // ------------------------------
   let body;
-  let subsribed; 
+  let subscribed; 
 
   try {
     body = await req.json();
@@ -28,14 +28,23 @@ export async function POST(req) {
             organisationalScore,
             ageRange: userAge */
   const { answers, email, name, resultChecked, checked } = body;
+    
+  const {score,
+            memoryScore,
+            writingScore,
+            readingScore,
+            examResultsScore,
+            organisationalScore,
+            ageRange: userAge} = body; 
+
 
   if(checked){
 
-    subsribed = true; 
+    subscribed = true; 
 
   }
 
-  console.log('this is the subscribed value \n', subsribed); 
+  console.log('this is the subscribed value \n', subscribed); 
 
 
   if (!email) {
@@ -57,6 +66,10 @@ export async function POST(req) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email }),
     });
+
+    console.log('this is the unitUlidRes from the initULID call \n', initUlidRes); 
+    
+
   } catch (error) {
     console.error("Failed calling /api/init_ulid:", error);
     return NextResponse.json(
@@ -99,7 +112,7 @@ export async function POST(req) {
     IP_ADDRESS: ip,
     result_consent: JSON.stringify(resultChecked),
     email_consent: JSON.stringify(checked),
-    subsribed: subsribed
+    subscribed: JSON.stringify(subscribed)
   };
 
   console.log("Airtable payload:", fields);
@@ -174,7 +187,6 @@ if(resultChecked){
     }); 
 
 }
-
 
   // ------------------------------
   // 6. Return success response

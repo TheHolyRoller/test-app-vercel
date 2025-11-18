@@ -11,6 +11,7 @@ export async function POST(req) {
         const BASE_ID = process.env.IVVI_SUPPORT_CONSENT_BASE_ID;
         const TABLE_ID = process.env.IVVI_SUPPORT_CONSENT_TABLE_ID; 
 
+        
 
         console.log('this is the access token \n', ACCESS_TOKEN); 
         console.log('this is the base id \n', BASE_ID); 

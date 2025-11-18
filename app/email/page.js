@@ -474,11 +474,6 @@ export default function EmailPermission() {
         setIsLoading(true);
         setSubmit(true); 
 
-        // Append the set email the the answers array here 
-        // setAnswers(prev => [...prev, inputEmail]); 
-        // console.log('this is the input email set to answers \n', inputEmail); 
-        // console.log('this is the answers array which should be updated with the email \n', answers); 
-
 
 
         try {
