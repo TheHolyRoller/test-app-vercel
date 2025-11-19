@@ -363,7 +363,9 @@ const DyslexiaResultsReport = ({
         {/* Footer */}
         <div style={{ textAlign: 'center', color: '#6b7280', fontSize: '14px', borderTop: '1px solid #e5e7eb', paddingTop: '24px' }}>
           <p style={{ margin: '0 0 8px 0' }}>
-            Questions? Contact us at{' '}
+
+            Questions? Or want to find out how we store your data? Contact us at{' '}
+            
             <a href="mailto:support@dyslexiaquiz.com" style={{ color: '#2563eb' }}>
               support@dyslexiaquiz.com
             </a>
