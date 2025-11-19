@@ -541,7 +541,6 @@ export default function EmailPermission() {
         />
         
         
-        {/* Main Content Container */}
         <div style={{ paddingTop: '60px' }}>
           <article 
           className={`${emailSubmission.card} ${nunito.className}`} 
@@ -560,20 +559,6 @@ export default function EmailPermission() {
               boxShadow: '0 -2px 8px rgba(0, 0, 0, 0.1), -2px 0 8px rgba(0, 0, 0, 0.1), 2px 0 8px rgba(0, 0, 0, 0.1)', 
           }}
       >
-         {/*} {audio_url && (
-              <audio 
-                  key={audio_url} 
-                  controls 
-                  autoPlay 
-                  style={{ opacity: '0', position: 'absolute' }}
-                  onPlay={() => console.log('🎵 Audio Started Playing:', audio_url)}
-                  onError={(e) => console.error('❌ Audio Error:', e)}
-              >
-                  <source src={audio_url} type="audio/mp3" />
-              </audio>
-          )}
-
-          */}
           
           <div className={`${emailSubmission.categoryLabelContainer} ${nunito.className}`}>
               <label className={`${emailSubmission.categoryLabel} ${nunito.className}`}>
@@ -630,16 +615,34 @@ export default function EmailPermission() {
         {/* Add in the text here  */}
         <p className={`${emailSubmission.nameEmailConsentText}`}>
             
- I give my consent for ivvi Assist ltd to store and process my screener responses for the purpose of generating my personalised results and identifying patterns in future assessments, in accordance with the Privacy Policy & click 
-<span style={{textDecoration: 'underline', cursor: 'pointer', margin:'0 3px'}} >
-    <a href='/login' style={{unset: 'all'}} >
+ I give my consent for ivvi Assist ltd to store and process my screener responses for the purpose of generating my personalised results and identifying patterns in future assessments, in accordance with the 
+ 
+ <span style={{margin: '0 3.5px', cursor: 'pointer', textDecoration: 'underline'}} >
+<a href="/privacyPolicy" target="_blank" rel='noopener noreferer' >
 
-here
+ Privacy Policy 
+</a>
+ </span>
+ 
+ 
+ & click 
+<span style={{textDecoration: 'underline', cursor: 'pointer', margin:'0 3px'}} >
+    <a href='/login' target="_blank" rel="noopener noreferer" style={{unset: 'all'}} >
+    
+    here
+    
     </a>
+
 </span>
- to change your consent            <span >
-                <a target='_blank' rel="noopener noreferer" href=''>
+
+
+     to change your consent            
+     
+     <span >
+     <a target='_blank' rel="noopener noreferer" href='privacyPolicy'>
+
             Privacy Policy
+            
                 </a>
             </span> 
 
@@ -666,8 +669,8 @@ here
             I confirm that I am 13 years or older and I give my explicit consent for ivvi Assist ltd to store and process my name, age, and screener responses in accordance with the 
             
             
-            <span>
-            <a href="#" target="_blank" rel="noopener noreferer" >
+            <span style={{cursor: 'pointer', marginLeft: '3.5px'}} >
+            <a href="privacyPolicy" target="_blank" rel="noopener noreferer" style={{cursor: 'pointer'}} >
             Privacy Policy
             </a>
             </span>

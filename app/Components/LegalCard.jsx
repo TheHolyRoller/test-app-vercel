@@ -144,14 +144,17 @@ This is a screener, not a formal assessment of Dyslexia.
 </span>
 
 <span className={lc.legalSpan}>
-By Clicking ‘next’ you agree to our <a className={lc.termsSpan}>
-terms</a>
-&nbsp; and &nbsp;
+By Clicking ‘next’ you agree to our 
+
+<a className={lc.termsSpan} href='/Terms_of_Service' target='_blank' rel="noopener noreferer" >
+
+terms of service </a>
+{/* &nbsp;  &nbsp; */}
 <span className={lc.conditionsSpan}>
 
-conditions
-</span> 
-.   
+
+</span>   
+
 </span>
 
 

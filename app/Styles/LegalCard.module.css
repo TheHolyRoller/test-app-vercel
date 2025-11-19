@@ -217,7 +217,6 @@
     width: 15rem !important;
     margin: 0 auto;  
 
-
 }
 
 
@@ -228,6 +227,7 @@
 cursor: pointer;
 color: #f4ba4f;
 text-decoration: underline;
+display: block;
 
 }
 
