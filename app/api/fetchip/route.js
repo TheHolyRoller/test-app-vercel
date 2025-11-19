@@ -22,7 +22,7 @@ export async function POST(req) {
 
   const { answers, email, name, resultChecked, checked } = body;
     
-  const {score,
+  const {   score,
             memoryScore,
             writingScore,
             readingScore,
@@ -84,42 +84,22 @@ const RESULT_TABLE_ID = process.env.TABLE_ID
   const base = new Airtable({ apiKey: ACCESS_TOKEN }).base(BASE_ID);
 
   let airtableResp;
+  let global_ULID; 
 
 
-  // TODO Refactor this to be called after the init ulid route is called 
-  try {
-    airtableResp = await base("Consent").create([{ fields }]);
-  } catch (error) {
-    console.error("Airtable create error:", error);
-    return NextResponse.json(
-      { message: "Failed to save Airtable record" },
-      { status: 500 }
-    );
-  }
 
-  console.log("Airtable response:", airtableResp);
-     
 
-if(resultChecked){
+  try{
 
-     const payload = {
-            email: email,
-            answers,
-            score,
-            memoryScore,
-            writingScore,
-            readingScore,
-            examResultsScore,
-            organisationalScore,
-            ageRange: userAge
+
+    const payload = {
+            email: email
         }
 
     console.log('this is result checked in the fetch ip if statement \n', resultChecked); 
     console.log('this is the type of result checked \n', typeof resultChecked); 
 
 
-    // TODO Call the create api method with the answers object and the ULID here 
-    // Call using the new fetch api pattern 
     const response = await fetch("http://localhost:3000/api/init_ulid", {
 
         method: "POST", 
@@ -129,7 +109,7 @@ if(resultChecked){
 
     const data = await response.json(); 
 
-    console.log('this is the JSON ifide response in the if statement \n', data); 
+    console.log('this is the JSON formatted response in the if statement \n', data); 
 
     console.log('this is the response in the result checked if statement  \n', response); 
     const api_payload = data.payload;
@@ -143,6 +123,80 @@ if(resultChecked){
 
 
     }
+
+    global_ULID = user_ulid; 
+    console.log('this is the global ULID \n', global_ULID); 
+
+  }
+
+  catch(error){
+
+
+    console.error('there was a problem generating the ULID \n', error); 
+    return NextResponse.json({message: 'could not generate ULID'}, {status: 500}); 
+
+
+
+  }
+   
+
+  // TODO Add in the consent Capture here and write 
+
+  try{
+
+    // Add in an api call tho the capture consent status route here 
+    // Include the user identification details 
+    // The consent status variables and the ULID 
+
+    // Create the payload here 
+
+    const consentPayload = {
+
+      user_id: global_ULID, 
+      name: name, 
+      email: email, 
+      result_consent: resultChecked, 
+      email_consent: checked 
+
+    }
+
+    console.log('this is the consent payload in the fetch IP consent capture IP call \n', consentPayload); 
+
+    const response = await fetch("http://localhost:3000/api/capture_consent_status", {
+
+      method: "POST", 
+      headers: {"Content-Type": 'application/json'}, 
+      body: JSON.stringify({consentPayload})
+
+
+
+    }); 
+
+
+    console.log('this is the response from the consent capture api call', response); 
+    
+
+
+
+
+  }
+  catch(error){
+
+    console.log('could not capture user consent status', error); 
+
+
+  }
+
+
+
+
+if(resultChecked){
+// TODO Add in the API call to the create route passing in the global ULID and the results variables extracted above 
+
+
+
+
+    
 
 }
 
