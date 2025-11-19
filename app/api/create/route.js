@@ -11,7 +11,6 @@ const Airtable = require('airtable');
 const ACCESS_TOKEN = process.env.PERSONAL_ACCESS_TOKEN; 
 const BASE_ID = process.env.BASE_ID;
 
-
 // TODO refactor this to use the global ULID 
 export async function POST(req){
 
@@ -38,22 +37,19 @@ export async function POST(req){
             console.log(`this is the age range in create route ${ageRange}`); 
             
 
-        // const name = await body[body.length -2]; 
-        const { name } = body; 
-        const { email } = body; 
-        const { answers } = body; 
+        // const { answers } = body; 
+        const {resultPayload} = body; 
+
+        const {answers} = resultPayload; 
+        
 
         console.log('these are the quiz answers in the create route \n', answers); 
-        console.log('this is the name \n', name); 
-        console.log('this is the email \n', email); 
         console.log('these are the quiz answers with the last two records sliced out \n', answers); 
 
 
 
         const fields = {
 
-                User_Name: name, 
-                User_Email: email, 
                 Main_Score: score, 
                 Reading_Score: readingScore, 
                 Writing_Score: writingScore, 

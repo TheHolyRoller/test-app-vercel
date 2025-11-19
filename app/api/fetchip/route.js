@@ -1,7 +1,5 @@
 import { NextResponse } from "next/server";
 import { ulid } from "ulid";
-import axios from "axios";
-import { resolveNaptr } from "dns";
 const Airtable = require("airtable");
 
 export async function POST(req) {
@@ -10,6 +8,10 @@ export async function POST(req) {
 
   let body;
   let subscribed; 
+  let user_id; 
+  let global_ULID; 
+
+
 
   try {
     body = await req.json();
@@ -18,7 +20,6 @@ export async function POST(req) {
     console.error("Failed to parse JSON:", error);
     return NextResponse.json({ message: "Invalid JSON body" }, { status: 400 });
   }
-
 
   const { answers, email, name, resultChecked, checked } = body;
     
@@ -49,9 +50,6 @@ export async function POST(req) {
 
   console.log("Parsed body:", body);
   // TODO Refactor this to be defined after the init ULID api route is called 
-  const userId = ulid(); 
-
-  console.log("ULID returned:", userId);
 
   const forwardedFor = req.headers.get("x-forwarded-for");
   const ip = forwardedFor?.split(",")[0].trim() ?? "IP not found";
@@ -60,7 +58,7 @@ export async function POST(req) {
 
 
   const fields = {
-    user_id: userId,
+    user_id: global_ULID,
     name,
     email,
     IP_ADDRESS: ip,
@@ -81,12 +79,10 @@ const RESULT_BASE_ID = process.env.BASE_ID;
 
 const RESULT_TABLE_ID = process.env.TABLE_ID
 
+// TODO find out what this does and remove it if necessary 
   const base = new Airtable({ apiKey: ACCESS_TOKEN }).base(BASE_ID);
 
   let airtableResp;
-  let global_ULID; 
-
-
 
 
   try{
@@ -144,19 +140,19 @@ const RESULT_TABLE_ID = process.env.TABLE_ID
 
   try{
 
-    // Add in an api call tho the capture consent status route here 
-    // Include the user identification details 
-    // The consent status variables and the ULID 
 
-    // Create the payload here 
+    console.log('this is the subscribed varible in the consent capture api call in the fetch ip routeSSSS ', subscribed); 
+
 
     const consentPayload = {
 
-      user_id: global_ULID, 
+      user_id: global_ULID || "default_ID", 
       name: name, 
       email: email, 
-      result_consent: resultChecked, 
-      email_consent: checked 
+      IP_ADDRESS: ip,
+      result_consent: JSON.stringify(resultChecked),
+      email_consent: JSON.stringify(checked),
+      subscribed: JSON.stringify(subscribed)
 
     }
 
@@ -168,22 +164,15 @@ const RESULT_TABLE_ID = process.env.TABLE_ID
       headers: {"Content-Type": 'application/json'}, 
       body: JSON.stringify({consentPayload})
 
-
-
     }); 
 
 
     console.log('this is the response from the consent capture api call', response); 
-    
-
-
-
 
   }
   catch(error){
 
     console.log('could not capture user consent status', error); 
-
 
   }
 
@@ -193,10 +182,67 @@ const RESULT_TABLE_ID = process.env.TABLE_ID
 if(resultChecked){
 // TODO Add in the API call to the create route passing in the global ULID and the results variables extracted above 
 
+console.log("this is the result capture if statement")
 
+    // create the payload here 
 
+    // Map out the payload like this 
+    /**
+     * answers, score, memoryScore, writingScore, readingScore, examResultsScore, organisationalScore, ageRange 
+     */
 
+    /**
+     * 
+     *   const {   
+     * answers
+     * score,
+    memoryScore,
+    writingScore,
+    readingScore,
+    examResultsScore,
+    organisationalScore,
+    ageRange: userAge} = body;
+     * 
+     * 
+     */
     
+    // TODO Change the structure of the Airtable Database to accomodate for not having personal user details anymore 
+    const resultPayload = {
+      answers: answers,
+      ageRange: userAge, 
+      score: score, 
+      readingScore: readingScore, 
+      writingScore: writingScore, 
+      memoryScore: memoryScore, 
+      examResultsScore: examResultsScore, 
+      organisationalScore: organisationalScore             
+
+    }
+
+
+    // Call the create api route here with the result payload 
+
+    try{
+
+      const response = await fetch("http://localhost:3000/api/create", {
+
+        method: "POST", 
+        headers: {"Content-Type": "application/json"}, 
+        body: JSON.stringify({resultPayload})
+
+      }); 
+
+      console.log('this is the result of the results saving api request in the fetch ip server route \n', response); 
+
+
+    }
+    catch(error){
+
+      console.error('could not save results to airtable \n', error); 
+      return NextResponse.json({message: "could not save results to airtable"}, {status: 500}); 
+
+
+    }
 
 }
 
@@ -204,103 +250,10 @@ if(resultChecked){
     {
       message: "Successfully saved consent + IP",
       ip,
-      userId,
+      global_ULID,
       airtableRecord: airtableResp,
     },
     { status: 200 }
   );
 }
-
-
-
-
-
-
-
-
-
-/** 
-
-
-
-
-Okay so let's just talk things through. P
-
-
-
-
-Okay so as far as I know everything works on the backend once the user clicks on submit. 
-
-So what I need to do now is run that code to get the ULID and then use that in the consent capture code and then if the result consent variable is 
-true I'll then work on implementing the ULID in that as well. 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
