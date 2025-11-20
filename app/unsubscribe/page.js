@@ -9,12 +9,8 @@ function Unsub() {
     <div>
 
       <Suspense fallback={<div>Loading...</div>} >
-
       <Unsubscribe/> 
-
       </Suspense>
-
-
     </div>
   )
 }
