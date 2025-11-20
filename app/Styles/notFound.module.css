@@ -1,0 +1,547 @@
+.card {
+    height: calc(var(--card-height) + 1.566rem);
+    width: 320px;
+    position: relative;
+    background-color: #fbfbfb !important;
+    margin: 0 auto;
+    margin-bottom: 5.9rem;
+    border-radius: 1rem;
+    margin-top: 5rem !important;
+
+
+}
+
+
+.cardCategoryColorContainer {
+    position: relative;
+    z-index: 999;
+    height: 4.5rem;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    display: grid;
+    place-content: center;
+    margin-top: -2em;
+    background-color: var(--category-color, #ccc);
+}
+
+.categoryLabelContainer {
+    height: 5.5rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    display: grid;
+    place-content: center;
+    position: relative;
+
+
+
+}
+
+.categoryLabel {
+    height: 5.5rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    display: grid;
+    place-content: center;
+}
+
+.labelContainer {
+    height: 2.5rem;
+    width: 300px;
+    border-radius: 25px;
+    display: grid;
+    place-content: center;
+    text-transform: uppercase;
+    margin-bottom: -0.5em;
+    font-family: var(--font-nunito), sans-serif;
+    font-weight: 700;
+    color: white;
+}
+
+.cardLabelText {
+
+
+    position: absolute;
+    left: 25%; 
+    top: 42.5%; 
+
+
+
+}
+
+.soundIconContainer {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: -8.2em;
+    margin-top: 0.25em;
+}
+
+.iconBackground {
+    width: 2em;
+    height: 2em;
+    background-color: rgba(240, 240, 240, 0.7);
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+    margin-right: -0.7em;
+    transform: translate(0, -2px);
+}
+
+
+.icon{
+
+
+    display: grid;
+    place-content: center;
+    margin-bottom: -5px; 
+
+
+
+
+
+}
+
+
+.mainImageSectionContainer{
+
+
+    position: relative; 
+
+
+
+}
+
+
+
+
+.mainImageSectionSubContainer{
+
+
+
+    height: 20rem;
+    position: relative;
+    display: grid;
+    place-content: center;
+
+
+
+
+}
+
+
+.puddleContainer{
+
+
+    position: absolute;
+    left: 17%; 
+    top: 27%; 
+
+}
+
+
+
+.trashCotnainer{
+
+
+    position: absolute;
+    top: 15%; 
+
+
+
+
+
+
+}
+
+
+
+.splashContainer{
+
+
+    position: absolute;
+    top: 65%; 
+
+
+
+}
+
+
+
+
+
+
+
+#firstCARD {}
+
+#cardOne {
+    position: relative;
+    width: 45px;
+    height: var(--card-height);
+    background-color: #fbfbfb;
+    display: none;
+    transform: translate(0rem, 3em) !important;
+    box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+
+}
+
+#cardTwo {
+    display: none;
+}
+
+#cardThree {
+    width: 320px;
+    height: 400px;
+    background-color: #fbfbfb;
+    border-radius: 1rem;
+    position: absolute;
+    bottom: 0;
+    z-index: -2;
+    margin-bottom: 0.8em;
+    box-shadow: 0 4px 6px -4px rgba(0,0,0,0.3);
+}
+
+#cardFour {
+    z-index: -5;
+    width: 320px;
+    height: 400px;
+    background-color: #fbfbfb;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-radius: 0 0 1rem 1rem;
+    transform: translate(0, 5.5em);
+    box-shadow: 0 4px 6px -4px rgba(0,0,0,0.3);
+
+}
+
+.mainLogoContainer {
+    font-size: 0.8rem !important;
+    color: #404F6F !important;
+    display: grid !important;
+    place-content: center;
+}
+
+.profilePageContentContainer {}
+
+.profileDetailContainer {
+    width: 290px;
+    height: 150px;
+    margin-top: 2rem;
+    background-color: #D9D9D9;
+    border-radius: 10px;
+    display: grid;
+    place-content: center;
+}
+
+.profileDetailSubContainer {}
+
+.profileImageContainer {
+    margin-bottom: 0.5rem;
+}
+
+.profileImg {
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+    object-position: center;
+    margin: 0 auto;
+    border-radius: 50%;
+}
+
+.profileTextSectionContainer {}
+
+.profileNameContainer {}
+
+.profileNameText {
+    font-size: 1.2rem;
+}
+
+.profileEmailContainer {}
+
+.profileEmail {}
+
+.permissionsSectionContainer {
+    width: 250px;
+    margin: 1rem auto;
+    background-color: #D9D9D9;
+    border-radius: 10px;
+    display: grid;
+    place-content: center;
+}
+
+.permissionSectionSubContainer {}
+
+.permissionMainTitle {
+    padding-top: 0.5rem;
+}
+
+.permissionsToggleSectionContainer {}
+
+.marketingPermissionSection {
+    display: grid;
+    place-content: center;
+    grid-template-columns: 3fr 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.marketingPermissionText {
+    margin-bottom: -5px;
+}
+
+#marketingCheckBoxContainer {}
+
+#marketingToggle {}
+
+.resultsPermissionSection {}
+
+.resultsPermissionSectionSubContainer {
+    display: grid;
+    place-content: center;
+    grid-template-columns: 3fr 1fr;
+    gap: 1rem;
+    margin: auto;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.resultsPermissionText {
+    margin-bottom: -5px;
+}
+
+#resultsToggle {}
+
+.controlsContainer {}
+
+.controlsSubContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 250px;
+    margin: 1rem auto;
+    padding-bottom: 0.35rem;
+}
+
+.homeButtonContainer {
+    background-color: #D9D9D9;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
+    width: 110px;
+}
+
+.homeIconContainer {}
+
+.hometext {}
+
+.contactButtonContainer {
+    display: flex;
+    padding: 0.5rem 0;
+    gap: 0.45rem;
+    align-items: center;
+    justify-content: center;
+    background-color: #D9D9D9;
+    border-radius: 10px;
+}
+
+.contactIconContainer {}
+
+.contactTextContainer {}
+
+.alterationSection {}
+
+.alterationSubContainer {}
+
+.accountDetailsLinkContainer {
+    text-decoration: underline;
+}
+
+.singoutLinkContainer {
+    text-decoration: underline;
+}
+
+.buttonSectionContainer {
+    width: 99.999vw;
+    margin: 0 auto;
+    display: grid;
+    place-content: center;
+    margin-top: -4.5em;
+    position: relative;
+    z-index: 10;
+}
+
+.ctaContainer {
+    cursor: pointer;
+}
+
+.cta {
+    background-color: #f49b53;
+    width: 300px;
+    height: 55px;
+    display: grid;
+    place-content: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: bolder;
+    border-radius: 22px;
+    cursor: pointer;
+    box-shadow: 0px 4px 1px 0px #c17a41;
+}
+
+.cta:hover {
+    background-color: #e8894a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(244,155,83,0.3);
+}
+
+.cta:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(244,155,83,0.2);
+}
+
+
+.question_textContainer {
+    color: #404F6F !important;
+    font-size: 1.3rem;
+    width: 70%;
+    text-align: center;
+    margin: 0 auto;
+    text-transform: uppercase;
+    font-family: var(--font-nunito), sans-serif;
+    font-size: 1.5rem !important;
+    height: 6rem;
+    z-index: 9999999;
+    position: absolute;
+
+    bottom:20%; 
+
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, -30%);
+    -webkit-transform: translate(-50%, -30%);
+    -moz-transform: translate(-50%, -30%);
+    -ms-transform: translate(-50%, -30%);
+    -o-transform: translate(-50%, -30%);
+}
+
+.question_textContainer.emailStyle {
+    top: 42%;
+}
+
+.question_text {
+    color: #404F6F !important;
+    position: relative;
+    z-index: 99999;
+    margin-top: 2em;
+    margin-bottom: 4.5em;
+    font-family: var(--font-nunito), sans-serif;
+    font-weight: 600;
+}
+
+
+
+.unsubscribeSection{
+
+    position: absolute;
+    bottom: 0%; 
+    height: 199px; 
+    left: 50%; 
+    transform: translate(-50%, -20%);
+    width: 90%; 
+    display: grid;
+    place-content: center;
+    text-align: center;
+    color: #404F6F; 
+
+    
+
+
+
+
+}
+
+
+
+.subscribeSubContainer{
+
+
+
+
+
+
+
+
+}
+
+.unsubscribeButton{
+
+
+
+
+    text-decoration: underline; 
+    
+
+
+
+}
+
+
+.staySubscribedButtonContainer{
+
+
+
+    display: grid;
+    place-content: center;
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.staySubscribedButton{
+
+
+    background-color: #79A479;
+    width: 250px; 
+    height: 55px; 
+    border-radius: 20px;
+    color: white; 
+
+    margin-bottom: 1rem; 
+    margin-top: 1rem; 
+    font-size: 1.3rem; 
+    text-transform: uppercase;
+
+    box-shadow: 0px 4px 1px 0px #698e69;
+
+
+}
+
+
+.staySubscribedButton:hover{
+
+
+    box-shadow: 0 4px 13px #5a795a;
+    background-color: #6f946f; 
+    transform: translateY(-2px);
+
+
+
+
+}
+
+.staySubscribedButton:active{
+
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(244,155,83,0.2);
+
+}
