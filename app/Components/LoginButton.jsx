@@ -12,7 +12,6 @@ function LoginButton() {
     
     console.log('this is the login button component')
     
-    
     const [isLoading, setIsLoading] = useState(); 
     const [email, setEmail] = useState(''); 
     const [name, setName] = useState(''); 
@@ -66,7 +65,7 @@ const handleLogin = async (e) => {
   return (
    <>
    
-   <section className={ll.loginSectionContainer} style={{outline: '3px solid red'}} >
+   <section className={ll.loginSectionContainer}>
 
     {/* Add in the text cotnainer here  */}
     <div className={ll.loginTextContainer}>
@@ -74,29 +73,25 @@ const handleLogin = async (e) => {
     
     <span className={ll.loginSupportingText}>
 
-
         Sign in or Sign up 
-
 
     </span>
 
     </div>
+    
 
         {/* Add in the form section here  */}
-    <form onSubmit={handleLogin}>
-        <input type='name' placeholder='name' value={name} onChange={(e) => setName(e.target.value)} />
-        <input type='email' placeholder='email' value={email} onChange={(e) => setEmail(e.target.value)} ></input>
-        <button type='submit'>
+    <form className={ll.loginForm}   onSubmit={handleLogin}>
+        <input  className={ll.nameInput}  type='name' placeholder='name' value={name} onChange={(e) => setName(e.target.value)} />
+        <input   className={ll.emailInput} type='email' placeholder='email' value={email} onChange={(e) => setEmail(e.target.value)}/>
+       
+        <button className={ll.continueButton}  type='submit'>
 
             Continue 
 
         </button>
 
-
     </form>
-
-   
-
    </section>
    
    </>

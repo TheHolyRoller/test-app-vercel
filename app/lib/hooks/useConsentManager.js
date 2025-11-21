@@ -98,7 +98,6 @@ export default function useConsentManager(){
     useEffect(() =>{
 
 
-
         const fetchConsent = async () => {
 
 
@@ -108,14 +107,17 @@ export default function useConsentManager(){
             
             try{
 
+
+
+                // TODO Refactor this to actually call the fetch consent api route 
                 const response = {
             status: 200, // HTTP status code
             data: {
                 message: "Latest consent record fetched successfully",
                 data: {
                 user_id: "rec123ABC",
-                name: "Emily Johnson",
-                email: "emily.johnson@example.com",
+                userName: "Emily Johnson",
+                userEmail: "emily.johnson@example.com",
                 IP_ADDRESS: "192.168.1.100",
                 result_consent: true,
                 email_consent: false,
@@ -141,10 +143,7 @@ export default function useConsentManager(){
 
         }
 
-
         fetchConsent(); 
-
-
 
     }, []); 
 

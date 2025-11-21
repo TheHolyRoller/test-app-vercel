@@ -37,7 +37,11 @@ function ProfileCard() {
     const {state, dispatch, isDirty, isDirtyAndFalse} = useConsentManager(); 
     console.log('these are the values extracted from the useConsent Manager hook through object destructuring \n', state, dispatch, isDirty, isDirtyAndFalse); 
 
-    const { emailConsent, resultConsent } = state; 
+    const { emailConsent, resultConsent, userEmail, userName } = state; 
+
+    console.log('this is the state from the useConsentManager custom hook \n', state); 
+
+    console.log('this is the user email \n', userEmail); 
 
     console.log('this is the email consent and the result consent \n', emailConsent, resultConsent); 
 
@@ -46,7 +50,6 @@ function ProfileCard() {
     const [user, setUser] = useState(); 
     const [email, setEmail] = useState(); 
     const [name, setName] = useState(); 
-
 
   const router = useRouter();
   const [isSelected, setIsSelected] = React.useState(true); 
@@ -72,8 +75,13 @@ function ProfileCard() {
         console.log('this is the email extracted from user \n', email); 
 
         setEmail(email); 
+        setName(userName); 
+
 
     }
+
+    console.log('this is the user exatracted in the useEffect hook \n', user); 
+
 
   }, [user]); 
 
@@ -226,6 +234,8 @@ useEffect(() => {
       dispatch({type: ACTIONS.FETCH_START}); 
       dispatch({type: ACTIONS.SAVE_BASELINE, payload: consentPayload }); 
       
+
+    //   TODO add this in once everything runs perfectly on the backend 
       // Add in a timeout promise here 
         // router.push('/');
 
@@ -324,8 +334,7 @@ useEffect(() => {
 
                             <h1 className={pc.profileNameText}>
 
-                                Emily 
-
+                                {userName}
 
                             </h1>
 
@@ -338,8 +347,11 @@ useEffect(() => {
                         <div className={pc.profileEmailContainer}>
                             
                         <div className={pc.profileEmail}>
+
+                            {/* TODO Make this email dynamic  */}
                             
-                            email@02.io 
+                            {/* email@02.io  */}
+                            {email}
                             
                             </div>     
                             
@@ -386,7 +398,7 @@ useEffect(() => {
                             
                             <div className="flex flex-col gap-2" id={pc.marketingCheckBoxContainer} >
 
-                            <input type="checkbox" defaultChecked className="toggle" checked={emailChecked} onChange={() => dispatch({type: ACTIONS.TOGGLE_EMAIL})} id={pc.marketingToggle} />
+                            <input type="checkbox" className="toggle" checked={emailChecked} onChange={() => dispatch({type: ACTIONS.TOGGLE_EMAIL})} id={pc.marketingToggle} />
                     
                         </div>
                         </div>
@@ -406,7 +418,7 @@ useEffect(() => {
 
                             <div className={pc.resultsPermissionToggleContainer}>
 
-                            <input type="checkbox" defaultChecked className="toggle" checked={resultChecked} id={pc.resultsToggle} onChange={() => dispatch({type: ACTIONS.TOGGLE_RESULTS})} />
+                            <input type="checkbox" className="toggle" checked={resultChecked} id={pc.resultsToggle} onChange={() => dispatch({type: ACTIONS.TOGGLE_RESULTS})} />
 
                             </div>
 
@@ -538,9 +550,9 @@ useEffect(() => {
 
                    <section className={pc.buttonSectionContainer} style={{cursor: 'pointer'}} onClick={handleYesClick}>
 
-  <div className={pc.ctaContainer} style={{cursor: 'pointer'}} onClick={handleYesClick}>
+  <div className={pc.ctaContainer} style={{cursor: 'pointer'}}>
 
-    <div className={pc.cta} onClick={handleYesClick} style={{cursor: 'pointer', fontSize: '2rem', letterSpacing: '1px'}} >
+    <div className={pc.cta}  style={{cursor: 'pointer', fontSize: '2rem', letterSpacing: '1px'}} >
         Confirm
 
     </div>

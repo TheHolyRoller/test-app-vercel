@@ -8,9 +8,6 @@ import pf from '../Styles/Profile.module.css';
 
 function Profile() {
   
-
-  
-  
   
   return (
     <>

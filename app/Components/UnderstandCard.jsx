@@ -12,7 +12,6 @@ import Image from 'next/image';
 import ivvi_group from '../assets/ivvi_group.svg'; 
 
 
-
 export default function EmailPermission() {
     const router = useRouter();
     const { finalScore } = useQuiz();

@@ -1,27 +1,15 @@
 
 
-
 .loginSectionContainer{
 
-
-
-    margin-top: -4rem; 
-
-
-
-
+    margin-top: -6rem; 
 
 }
 
 
 .loginTextContainer{
 
-
-
     margin-bottom:1rem; 
-
-
-
 
 }
 
@@ -35,9 +23,126 @@
     place-content: center;
     color: #404F6F; 
 
+}
+
+
+.loginForm{
+
+
+display: grid;
+place-content: center;
 
 
 }
+
+
+
+.nameInput{
+
+
+    all: unset;
+    outline: 2px solid rgb(193, 187, 187);
+    border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -ms-border-radius: 10px ;
+    -o-border-radius: 10px ;
+
+    height: 2.5rem; 
+    width: 17rem; 
+     color: #333333; 
+     
+
+    text-align: center;
+    font-weight: bold;
+    background-color: white;
+    margin-top: 0.5rem; 
+    
+
+
+}
+
+
+
+.emailInput{
+
+
+
+    all: unset;
+    outline: 2px solid rgb(193, 187, 187);
+    border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -ms-border-radius: 10px ;
+    -o-border-radius: 10px ;
+
+    height: 2.5rem; 
+    width: 17rem; 
+     color: #333333; 
+     
+
+    text-align: center;
+    font-weight: bold;
+    background-color: white;
+    margin: 1.65rem auto; 
+
+
+
+
+}
+
+
+
+.continueButton{
+
+
+    background-color: #f49b53;
+    width: 300px;
+    height: 55px;
+    display: grid;
+    place-content: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: bolder;
+    border-radius: 22px;
+    -webkit-border-radius: 22px;
+    -moz-border-radius: 22px;
+    -ms-border-radius: 22px;
+    -o-border-radius: 22px;
+    cursor: pointer !important; 
+    box-shadow: 0px 4px 1px 0px #c17a41;
+
+
+    /* Add in the positioning here  */
+    position: absolute;
+    bottom: -15%; 
+    left: 3%; 
+
+
+
+
+
+}
+
+
+
+
+.continueButton:hover {
+    background-color: #e8894a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(244, 155, 83, 0.3);
+}
+
+
+.continueButton:active {
+transform: translateY(0);
+box-shadow: 0 2px 8px rgba(244, 155, 83, 0.2);
+}
+
+
+
+
+
 
 
 
@@ -49,43 +154,27 @@
     display: grid;
     place-content: center;
     color: #3C4043 !important; 
-    
-
-
-
-
 }
 
 
 
 .loginButton{
 
-
     outline: 2px solid #DADCE0;
     width: 300px; 
     height: 45px; 
     border-radius: 20px;
     position: relative;
-
-    
     margin-bottom: 6em;
-
-
 
 }
 
 
 .iconContainer{
 
-
-
     position: absolute;
     left: 10px;
     top: 5px; 
-
-
-
-
 
 }
 

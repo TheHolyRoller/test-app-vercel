@@ -21,7 +21,6 @@
     display: grid; 
     place-content: center; 
     min-height: 100vh;
-    outline: 4px solid lime;
 
 }
 

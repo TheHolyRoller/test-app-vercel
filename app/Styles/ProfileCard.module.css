@@ -1,8 +1,6 @@
 
 .card {
 
-
-
     height: calc(var(--card-height) + 1.566rem) ;
     width:320px;    
 
@@ -34,19 +32,12 @@
 
 .mainCategoryCardContainer{
 
-
-    /* margin-top: -3rem !important;  */
     margin-top: 99rem !important; 
-
     height: 70vh; 
     max-height: 650px;
 
 
 }
-
-
-
-
 
 
 .cardCategoryColorContainer {
@@ -517,6 +508,7 @@
     transform: translate(0, -1.6px);
 
 
+
 }
 
 
@@ -625,15 +617,24 @@
     height: 150px;
 
     margin-top: 2rem; 
-    background-color: #D9D9D9;
+    /* background-color: #D9D9D9; */
+    /* background-color: #e5e5e5; */
+    background-color: #f2f4f5;
+
     border-radius: 10px; 
-
-
     display: grid;
     place-content: center; 
 
+    /* box-shadow:
+  -12px -12px 50px 5px #ffffff,   
+  12px 12px 14px 5px #d1d9e6;     */
 
 
+        box-shadow:
+        -12px -12px 30px #ffffff,     /* top-left highlight */
+        10px 10px 40px #d1d9e6;       /* bottom-right shadow */
+        outline: 0.5px #e2e7e9;
+            
 
 
      
@@ -655,6 +656,7 @@
      
      
      margin-bottom: 0.5rem; 
+     
 
      
      
@@ -739,10 +741,18 @@
     width: 250px;
     margin: 1rem auto; 
     
-    background-color: #D9D9D9; 
+    /* background-color: #D9D9D9;  */
+    background-color: #f2f4f5;
+
     border-radius: 10px; 
     display: grid;
     place-content: center;
+
+    box-shadow:
+    -12px -12px 30px #ffffff,     /* top-left highlight */
+    10px 10px 40px #d1d9e6;       /* bottom-right shadow */
+    outline: 0.5px #e2e7e9;
+
 
      
      
@@ -850,19 +860,14 @@
 #resultsToggle {
      
      
-
-     
      
 }
 
 
 .controlsContainer {
      
-     
-     
-     
-     
-}
+
+    }
 
 
 .controlsSubContainer {
@@ -884,7 +889,12 @@
 .homeButtonContainer {
      
 
-    background-color: #D9D9D9;  
+    box-shadow:
+    10px 10px 40px #d1d9e6;       /* bottom-right shadow */
+    /* outline: 2px #e2e7e9; */
+    outline: 5px #b1bfc5;
+
+    
     border-radius: 10px; 
     display: flex; 
     justify-content: center;
@@ -925,9 +935,13 @@
         align-items: center;
         justify-content: center;
         
-        background-color: #D9D9D9;
+        /* background-color: #D9D9D9; */
         border-radius: 10px; 
          
+        
+    box-shadow:
+    10px 10px 40px #d1d9e6;       /* bottom-right shadow */
+    outline: 5px #b1bfc5;
 
 
 }

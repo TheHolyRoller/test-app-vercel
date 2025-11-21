@@ -18,7 +18,6 @@ export default function EmailPermission() {
     const [userName, setName] = useState('');
     const {answers, setAnswers } = useQuiz(); 
 
-
     const handleChange = (e) => {
         setName(e.target.value);
         console.log('this is the current input \n', e.target.value); 
@@ -50,8 +49,6 @@ export default function EmailPermission() {
         console.log('this is the answers array. This should only run once \n', answers); 
 
     }, [answers, userName]); 
-
-
 
 
     const Section = "Audio Permission";
