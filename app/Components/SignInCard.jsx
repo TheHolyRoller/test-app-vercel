@@ -1,5 +1,5 @@
-'use client'
-import React from 'react'
+'use client';
+import React from 'react';
 import Image from 'next/image'; 
 import si from '../Styles/SignInCard.module.css';
 import { nunito } from '../fonts/nunito';
@@ -14,9 +14,8 @@ function SignInCard() {
 
 
     return (
+        
         <>  
-
-
             <article 
                 className={`${si.card} ${nunito.className}`} 
                 id={si.firstCARD} 
@@ -25,7 +24,7 @@ function SignInCard() {
                     position: 'relative',
                     zIndex: 200,
                     boxShadow: '0 6px 20px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.08)',
-
+                    outline: '2px solid lime'
                     }}>
 
 
@@ -77,8 +76,7 @@ function SignInCard() {
                     <div className={si.logoContainer}>
                         <h1 className={si.categoryMainHeader}> 
 
-                            We need to verify your identity; Continue Securely with Google 
-
+                        Enter your name and email to verify your identity
                         </h1>
                       
                     </div>

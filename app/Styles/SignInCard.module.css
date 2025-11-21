@@ -74,8 +74,6 @@
     place-content: center;
     position: relative; 
 
-
-
 }
 
 .cardLabelText{
@@ -430,6 +428,7 @@
     font-size: 1.8rem;
     font-weight: bolder;
     color: #404F6F; 
+    
 
 
 

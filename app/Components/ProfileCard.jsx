@@ -16,14 +16,13 @@ import { useState, useEffect, useReducer } from 'react';
 import axios from 'axios'; 
 
 
-import cabin from '../assets/cabin.jpg'; 
+import rabbit from '../assets/rabbit.png';
+ 
 import homeIcon from '../assets/homeIcon.svg'; 
 import contact from '../assets/contact.svg'; 
 import { account } from '../lib/appwrite';
 import {ACTIONS} from '../lib/hooks/useConsentManager'; 
 import useConsentManager from '../lib/hooks/useConsentManager';
-
-
 
 const DATABASE_ID = process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID;
 const COLLECTION_ID = process.env.NEXT_PUBLIC_APPWRITE_RESULTS_COLLECTION_ID;
@@ -38,9 +37,7 @@ function ProfileCard() {
     const {state, dispatch, isDirty, isDirtyAndFalse} = useConsentManager(); 
     console.log('these are the values extracted from the useConsent Manager hook through object destructuring \n', state, dispatch, isDirty, isDirtyAndFalse); 
 
-
     const { emailConsent, resultConsent } = state; 
-
 
     console.log('this is the email consent and the result consent \n', emailConsent, resultConsent); 
 
@@ -282,6 +279,8 @@ useEffect(() => {
 
                                       {/* Add in a next.js image here with the src as the imported icon  */}
 
+                                      {/* Add in a random generated avatar here  */}
+
                                           <Image src={profile} alt="profile" width={12} height={12} quality={100}/> 
 
                                 </div>
@@ -310,7 +309,7 @@ useEffect(() => {
                         {/* Add in the profile image container here  */}
 
                         <div className={pc.profileImageContainer} >
-                        <Image src={cabin} alt="cabin" height={1} width={1} className={pc.profileImg} /> 
+                        <Image src={rabbit} alt="rabbit" height={1} width={1} className={pc.profileImg} /> 
 
                         </div>
 

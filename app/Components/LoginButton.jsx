@@ -12,6 +12,7 @@ function LoginButton() {
     
     console.log('this is the login button component')
     
+    
     const [isLoading, setIsLoading] = useState(); 
     const [email, setEmail] = useState(''); 
     const [name, setName] = useState(''); 
@@ -65,7 +66,7 @@ const handleLogin = async (e) => {
   return (
    <>
    
-   <section className={ll.loginSectionContainer}>
+   <section className={ll.loginSectionContainer} style={{outline: '3px solid red'}} >
 
     {/* Add in the text cotnainer here  */}
     <div className={ll.loginTextContainer}>
