@@ -14,20 +14,8 @@ export const ACTIONS = {
   SAVE_ERROR: "SAVE_ERROR",
 };
 
-const initialState = {
+let initialState; 
 
-    resultConsent: false, 
-    emailConsent: false, 
-
-    baseline: {
-        resultConsent: false, 
-        emailConsent: false
-    }, 
-     loading: false,
-     error: null,
-     saving: false,
-
-}; 
 
 // Create the useReducer update function here 
 const reducer = (state, action) => {
@@ -84,13 +72,47 @@ const reducer = (state, action) => {
 
     }
 
+}
+
+
+
+export default function useConsentManager(){
+
+
+    // Add in the useEffect hook here 
+useEffect(() => {
+
+// Query the user from cookies here 
+
+// Extract the details from cookies here and assign them to variables here 
+
+
+
+// Setup the intial state based on those variables
+// Fill this in with the extracted variables  
+initialState = {
+
+    // TODO Set to variables extracted from cookies 
+// Instead of false fill it in with the extracted variables w
+        resultConsent: false, 
+    emailConsent: false, 
+
+    baseline: {
+        resultConsent: false, 
+        emailConsent: false
+    }, 
+     loading: false,
+     error: null,
+     saving: false,
+
 
 
 }
 
 
 
-export default function useConsentManager(){
+}, []); 
+
 
 
     const [state, dispatch] = useReducer(reducer, initialState); 
@@ -101,33 +123,13 @@ export default function useConsentManager(){
         const fetchConsent = async () => {
 
 
-            // Call the fetch start dispatch here 
             dispatch({type: ACTIONS.FETCH_START}); 
 
             
             try{
 
-
-
-                // TODO Refactor this to actually call the fetch consent api route 
-                const response = {
-            status: 200, // HTTP status code
-            data: {
-                message: "Latest consent record fetched successfully",
-                data: {
-                user_id: "rec123ABC",
-                userName: "Emily Johnson",
-                userEmail: "emily.johnson@example.com",
-                IP_ADDRESS: "192.168.1.100",
-                result_consent: true,
-                email_consent: false,
-                time_stamp: "2025-11-06T12:00:00Z",
-                },
-            },
-            };
-
-            // Call the reducer dispatch function indicating success
-            dispatch({type:ACTIONS.FETCH_SUCCESS, payload: response.data}); 
+            // Send over the inital set state as the payload instead 
+            dispatch({type:ACTIONS.FETCH_SUCCESS, payload: initialState}); 
 
 
 
@@ -147,13 +149,6 @@ export default function useConsentManager(){
 
     }, []); 
 
-
-
-
-
-    // Return the state the dispatch and the isDirty flags here 
-
-
     
             const isDirty = state.resultConsent !== state.baseline.resultConsent || 
 
@@ -167,8 +162,6 @@ export default function useConsentManager(){
 
 
                 return{ state, dispatch, isDirty, isDirtyAndFalse}; 
-
-
 
 
 }

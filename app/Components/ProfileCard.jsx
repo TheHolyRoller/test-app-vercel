@@ -43,6 +43,7 @@ function ProfileCard() {
 
     console.log('this is the user email \n', userEmail); 
 
+
     console.log('this is the email consent and the result consent \n', emailConsent, resultConsent); 
 
     const [emailChecked, setEmailChecked] = useState(false); 

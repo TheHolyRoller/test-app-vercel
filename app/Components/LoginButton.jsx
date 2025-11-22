@@ -6,7 +6,7 @@ import { account, ID } from '../lib/appwrite';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { setConstantValue } from 'typescript';
-
+import axios from 'axios';
 
 function LoginButton() {
     
@@ -50,6 +50,18 @@ const handleLogin = async (e) => {
       name: name,
       url: currentURL
     });
+
+    const payload = {
+
+
+      email: email, 
+      name: name, 
+
+    }
+
+    // TODO call the utility function here and pass in the name and email
+    const consentResponse = await axios.post('/api/set_consent_in_cookies', {payload})
+
     
     console.log('✅ Magic link sent:', response);
     setIsLoading('Check your email for the magic link!');

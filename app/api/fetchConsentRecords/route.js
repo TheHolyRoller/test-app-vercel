@@ -7,6 +7,8 @@ import { NextResponse } from 'next/server';
 export async function POST(req){
 
 
+    console.log('fetch consent records api route '); 
+
     try{
 
         // TODO Change this temporarily to the old consent airtable base 
@@ -61,7 +63,7 @@ export async function POST(req){
 
             if(!records || records.length === 0){
 
-                return NextResponse.json({message: 'could not find the email in the airtable database'}, {response: 404}); 
+                return NextResponse.json({message: 'could not find the email in the airtable database'}, {status: 404}); 
 
             }
 
