@@ -78,36 +78,82 @@ const reducer = (state, action) => {
 
 export default function useConsentManager(){
 
+    let user = null; 
+    let result_consent; 
+    let email_consent; 
+    let user_name;
+    let user_email; 
+
+
+
+    initialState = {
+
+        // TODO Set to variables extracted from cookies 
+    // Instead of false fill it in with the extracted variables w
+            resultConsent: false, 
+        emailConsent: false, 
+    
+        baseline: {
+            resultConsent: result_consent, 
+            emailConsent: email_consent
+        }, 
+         loading: false,
+         error: null,
+         saving: false,
+    
+    }
+    
+
 
     // Add in the useEffect hook here 
 useEffect(() => {
 
 // Query the user from cookies here 
+const cookieMap = Object.fromEntries(
+    document.cookie.split("; ").map((c) => c.split("="))
+); 
 
-// Extract the details from cookies here and assign them to variables here 
-
-
-
-// Setup the intial state based on those variables
-// Fill this in with the extracted variables  
-initialState = {
-
-    // TODO Set to variables extracted from cookies 
-// Instead of false fill it in with the extracted variables w
-        resultConsent: false, 
-    emailConsent: false, 
-
-    baseline: {
-        resultConsent: false, 
-        emailConsent: false
-    }, 
-     loading: false,
-     error: null,
-     saving: false,
+console.log('this is the cookied map \n', cookieMap); 
+console.log('this is the type of cookie map \n', typeof cookieMap); 
 
 
+if (cookieMap.user) {
+    try {
+    //   const decodedUser = decodeURIComponent(cookieMap.user);
+        const decodedUser = decodeURIComponent(decodeURIComponent(cookieMap.user));
 
-}
+      console.log('this is the decoded user \n', decodedUser); 
+      console.log('this is the type of decoded user \n', typeof decodedUser); 
+  
+      // Remove surrounding quotes if present (sometimes added accidentally)
+      const cleaned = decodedUser.replace(/^"|"$/g, "");
+
+      console.log('this is the cleaned element \n', cleaned); 
+
+  
+      user = JSON.parse(cleaned);
+
+      console.log('this is the user \n', user); 
+      console.log('this is the type of user \n', typeof user); 
+
+
+
+
+
+
+
+    } catch (err) {
+      console.error("Failed to parse cookie:", cookieMap.user, err);
+    }
+  }
+  
+  if (!user) {
+    user = { name: "", email: "", resultConsent: false, emailConsent: false };
+    console.log('NO USER FOUND!!');  
+
+  }
+  
+  console.log("user object:", user);
 
 
 

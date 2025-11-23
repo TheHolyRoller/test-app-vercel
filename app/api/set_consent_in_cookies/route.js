@@ -53,15 +53,8 @@ export async function POST(req){
             console.log('running the code in the response 404 block::!!!'); 
 
 
-
-            // Run the code that sets the email and result consent variables to false here 
-
-            // Set the variables here 
             resultConsent = false; 
             emailConsent = false; 
-
-
-            // Add in the timeout promise here if necessary 
 
 
             const userData = {
@@ -71,10 +64,9 @@ export async function POST(req){
                 resultConsent, 
                 emailConsent
             }
-    
-    
-    
-            // create the cookie encodable value here 
+
+
+            console.log('this is the user data \n', userData); 
     
             const cookieData = encodeURIComponent(JSON.stringify(userData)); 
             console.log('this is the cookie data after it has been convreted to a strig and cookie safe format \n', cookieData); 
@@ -90,18 +82,19 @@ export async function POST(req){
                 sameSite: "Lax"
     
             }); 
+
+
+            console.log('this is the cookie response in the set consent cookies \n', cookieResponse); 
     
             return cookieResponse; 
 
         }
 
 
-        // Extract the details from the response here 
-
         const data = await response.json(); 
 
-        console.log('this is the data from the airtable database \n', data); 
-        // Now extract the consent values
+        console.log('this is the data from the airtable database in set consent cookies route \n', data); 
+
         const { result_consent, email_consent} = data; 
 
         console.log('these are the consent vairables from airtable \n', result_consent, email_consent); 
@@ -113,30 +106,23 @@ export async function POST(req){
         console.log('this is the updated result consent \n', resultConsent); 
 
 
-        // Save the name, email and consent variables to persisten cookies here 
-        // Create the cookie payload here 
+
         const userData = {
 
             name, 
             email, 
             resultConsent, 
             emailConsent
+
         }
 
 
+        console.log('this is the user data in the default part of the set consent cookies route \n', userData); 
 
-        // create the cookie encodable value here 
 
         const cookieData = encodeURIComponent(JSON.stringify(userData)); 
         console.log('this is the cookie data after it has been convreted to a strig and cookie safe format \n', cookieData); 
 
-
-
-        // Refactor this to work on the server 
-
-
-
-        // Set it to a next response so that you can give it the properties of a response. That way you can alter certain key properties including the cookies of the HTTP response 
         const cookieResponse = NextResponse.json({mesage: 'successfully saved user details and consent details to persistent cookies'}, {status: 200}); 
 
         cookieResponse.cookies.set("user", cookieData, {
@@ -148,8 +134,8 @@ export async function POST(req){
         }); 
 
 
+        console.log('this is the cookie response in the default of set cookie data \n', cookieResponse); 
 
-        // return the cookie response here 
 
         return cookieResponse; 
         
