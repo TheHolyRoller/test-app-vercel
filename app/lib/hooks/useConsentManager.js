@@ -137,9 +137,20 @@ if (cookieMap.user) {
       console.log('this is the type of user \n', typeof user); 
 
 
+      const {name, email, resultConsent, emailConsent } = user; 
+
+      console.log('this is the name, email, result & email consent extracted from the user with object destructuring \n', name, email, resultConsent, emailConsent); 
 
 
+    //   Set the intial state variables to these extracted variables 
 
+    result_consent = resultConsent; 
+    email_consent = emailConsent; 
+
+
+    console.log('this is now the initial state \n', initialState); 
+
+    console.log('these are the new values of the initial state variables \n', result_consent, email_consent); 
 
 
     } catch (err) {
@@ -154,6 +165,9 @@ if (cookieMap.user) {
   }
   
   console.log("user object:", user);
+
+
+
 
 
 
