@@ -142,7 +142,7 @@ const RESULT_TABLE_ID = process.env.TABLE_ID
 
 
     console.log('this is the subscribed varible in the consent capture api call in the fetch ip routeSSSS ', subscribed); 
-
+    
 
     const consentPayload = {
 

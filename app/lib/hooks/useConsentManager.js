@@ -113,7 +113,7 @@ const cookieMap = Object.fromEntries(
     document.cookie.split("; ").map((c) => c.split("="))
 ); 
 
-console.log('this is the cookied map \n', cookieMap); 
+console.log('this is the cookie map \n', cookieMap); 
 console.log('this is the type of cookie map \n', typeof cookieMap); 
 
 
@@ -225,29 +225,3 @@ if (cookieMap.user) {
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
