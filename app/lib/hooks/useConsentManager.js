@@ -94,8 +94,8 @@ export default function useConsentManager(){
         emailConsent: false, 
     
         baseline: {
-            resultConsent: result_consent, 
-            emailConsent: email_consent
+            resultConsent: result_consent || false, 
+            emailConsent: email_consent || false
         }, 
          loading: false,
          error: null,
@@ -167,10 +167,6 @@ if (cookieMap.user) {
   console.log("user object:", user);
 
 
-
-
-
-
 }, []); 
 
 
@@ -179,6 +175,7 @@ if (cookieMap.user) {
 
     useEffect(() =>{
 
+        
 
         const fetchConsent = async () => {
 
@@ -190,8 +187,6 @@ if (cookieMap.user) {
 
             // Send over the inital set state as the payload instead 
             dispatch({type:ACTIONS.FETCH_SUCCESS, payload: initialState}); 
-
-
 
             }
             catch(error){
