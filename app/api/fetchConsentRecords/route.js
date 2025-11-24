@@ -12,8 +12,8 @@ export async function POST(req){
     try{
 
         // TODO Change this temporarily to the old consent airtable base 
-        const BASE_ID = process.env.CONSENT_BASE_ID; 
-
+        const BASE_ID = process.env.IVVI_SUPPORT_CONSENT_BASE_ID; 
+        
             console.log('this is the base ID \n', BASE_ID); 
 
             console.log('this is the result of the get Airtable method call \n', getAirtableBase); 
@@ -68,7 +68,10 @@ export async function POST(req){
             }
 
             console.log('these are the records \n', records); 
-            console.log('this is the type of records \n', typeof records); 
+            console.log('this is the type of records \n', typeof records);
+            
+            console.log('this is the returned valued \n', { data: records[0].fields});
+             
 
             return NextResponse.json({message: 'all okay records fetched', data: records[0].fields}, {status: 200});
 
