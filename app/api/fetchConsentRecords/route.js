@@ -37,6 +37,9 @@ export async function POST(req){
             }
 
 
+    
+
+
             const base = getAirtableBase();
 
             console.log('this is the base returned from the get airtable base function \n', base); 
