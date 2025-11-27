@@ -2,6 +2,22 @@ import { NextResponse } from "next/server";
 import axios from "axios";
 
 
+// Create the utility function here that returns the Kajabi access token 
+
+
+const getAccessToken = async () => {
+
+
+
+    
+
+
+
+
+}
+
+
+
 
 
 
