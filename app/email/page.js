@@ -54,7 +54,6 @@ export default function EmailPermission() {
         
         console.log(`handle checked function`); 
         setChecked(e.target.checked);
-    
         
     }
 
@@ -101,8 +100,6 @@ export default function EmailPermission() {
                 setResultsConsent(resultChecked); 
 
             }
-
-
         }, [resultChecked]); 
 
 
@@ -364,9 +361,6 @@ export default function EmailPermission() {
 
 
 
-    
-
-
     const sendEmail = async () => {
         console.log('📤 Starting email send process...');
 
@@ -482,7 +476,6 @@ export default function EmailPermission() {
                 setTimeout(() => resolve('timeout'), 2000);
             });
 
-
             // Create the submission promise
             const submissionPromise = async () => {
                 console.log('📧 Sending email...');
@@ -494,7 +487,10 @@ export default function EmailPermission() {
                 console.log('just about to call the send email function'); 
                 
 
-                    await sendEmail();
+                  const emailResponse = await sendEmail();
+
+                  console.log('this is the response from send email \n', emailResponse); 
+
                 
                 return 'success';
             };

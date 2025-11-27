@@ -13,8 +13,10 @@ const updateKajabiEmailList = async (email) => {
         const response = await axios.post("http://localhost:3000/api/kajabi_email_update", { email }); 
 
         console.log('this is the response \n', response); 
+
+        console.log('this is the data of the response \n', response.data); 
     
-        return response; 
+        return response.data; 
 
     }
     catch(error){
@@ -52,11 +54,11 @@ export async function POST(req){
         let emailConsent; 
         let resultConsent; 
 
-
         const emailPayload = {
 
             email: email
         }; 
+
 
         console.log('this is the payload being sent to fetch consent records \n', emailPayload); 
         console.log('this is the type of payload sent to fetch consent records \n', typeof emailPayload); 

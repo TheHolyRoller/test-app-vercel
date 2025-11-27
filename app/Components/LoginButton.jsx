@@ -63,7 +63,8 @@ const handleLogin = async (e) => {
     const consentResponse = await axios.post('/api/set_consent_in_cookies', {payload})
 
     
-    console.log('✅ Magic link sent:', response);
+    
+    console.log('✅ Magic link sent:', consentResponse);
     setIsLoading('Check your email for the magic link!');
     alert('Check your email for the magic link!');
   } catch (error) {
