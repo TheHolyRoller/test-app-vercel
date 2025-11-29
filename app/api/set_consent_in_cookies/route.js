@@ -3,31 +3,7 @@ import { NextResponse } from "next/server";
 
 
 
-const updateKajabiEmailList = async (email) => {
 
-
-    if(!email) return null; 
-
-    try{
-
-        const response = await axios.post("http://localhost:3000/api/kajabi_email_update", { email }); 
-
-        console.log('this is the response \n', response); 
-
-        console.log('this is the data of the response \n', response.data); 
-    
-        return response.data; 
-
-    }
-    catch(error){
-
-        console.error('could not send email to the Kajabi email update route! \n', error); 
-        return error
-
-
-    }
-
-} 
 
 
 
@@ -137,26 +113,6 @@ export async function POST(req){
 
         console.log('this is the updated email consent \n', emailConsent); 
         console.log('this is the updated result consent \n', resultConsent); 
-
-
-        // Evaluate the email consent here and 
-
-        try{
-
-            
-        const kajabiEmailUpdate = await updateKajabiEmailList(email); 
-
-        console.log('this is the response from the Kajabi update function \n', kajabiEmailUpdate); 
-
-        console.log('this is the type of the response from the utility function. \n', typeof kajabiEmailUpdate); 
-
-        }
-        catch(error){
-
-
-            console.error('could not call the Kajabi update api route \n', error); 
-
-        }
 
 
 

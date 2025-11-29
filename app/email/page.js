@@ -536,7 +536,6 @@ export default function EmailPermission() {
           }}
         />
         
-        
         <div style={{ paddingTop: '60px' }}>
           <article 
           className={`${emailSubmission.card} ${nunito.className}`} 
