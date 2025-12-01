@@ -16,6 +16,48 @@ export const ACTIONS = {
 
 let initialState; 
 
+/**
+
+Okay so let's just talk things through. 
+
+First of all I need follow the flow of data and workout how I can pipe it down to where it's needed. 
+
+Next I need to workout when the state is being queried. 
+
+This is an excellent use case for a debugger. 
+
+So I'll setup and use a debugger. 
+
+Next I'll work on adding in some sort of tracing and something that can help me monitor what happens and when it happens. 
+
+Then I'll put it all together. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
+
+
+
+
+
+
+
+
+
+
 
 // Create the useReducer update function here 
 const reducer = (state, action) => {
@@ -84,24 +126,6 @@ export default function useConsentManager(){
     let user_name;
     let user_email; 
 
-
-
-    initialState = {
-
-        // TODO Set to variables extracted from cookies 
-    // Instead of false fill it in with the extracted variables w
-            resultConsent: false, 
-        emailConsent: false, 
-    
-        baseline: {
-            resultConsent: result_consent || false, 
-            emailConsent: email_consent || false
-        }, 
-         loading: false,
-         error: null,
-         saving: false,
-    
-    }
     
 
 
@@ -132,10 +156,8 @@ if (cookieMap.user) {
 
   
       user = JSON.parse(cleaned);
-
       console.log('this is the user \n', user); 
       console.log('this is the type of user \n', typeof user); 
-
 
       const {name, email, resultConsent, emailConsent } = user; 
 
@@ -151,6 +173,25 @@ if (cookieMap.user) {
     console.log('this is now the initial state \n', initialState); 
 
     console.log('these are the new values of the initial state variables \n', result_consent, email_consent); 
+
+     debugger;  
+     
+     initialState = {
+
+        // TODO Set to variables extracted from cookies 
+    // Instead of false fill it in with the extracted variables w
+            resultConsent: false, 
+        emailConsent: false, 
+    
+        baseline: {
+            resultConsent: result_consent || false, 
+            emailConsent: email_consent || false
+        }, 
+         loading: false,
+         error: null,
+         saving: false,
+    
+    }
 
 
     } catch (err) {
@@ -181,11 +222,10 @@ if (cookieMap.user) {
 
 
             dispatch({type: ACTIONS.FETCH_START}); 
-
             
             try{
 
-            // Send over the inital set state as the payload instead 
+            // Send over the initial set state as the payload instead 
             dispatch({type:ACTIONS.FETCH_SUCCESS, payload: initialState}); 
 
             }

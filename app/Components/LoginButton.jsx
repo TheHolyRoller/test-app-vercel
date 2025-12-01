@@ -9,13 +9,12 @@ import { setConstantValue } from 'typescript';
 import axios from 'axios';
 
 function LoginButton() {
-    
     console.log('this is the login button component')
     
     const [isLoading, setIsLoading] = useState(); 
     const [email, setEmail] = useState(''); 
     const [name, setName] = useState(''); 
-
+    const [payload, setPayload] = useState({}); 
 
     console.log("this is the account object instance \n", account);
     console.log("Available methods on account:", Object.keys(account));
@@ -23,7 +22,10 @@ function LoginButton() {
 
     useEffect(() => {
     
-        console.log('this is the email input in the login button comoponent \n', email); 
+        console.log('this is the email input in the login button component \n', email); 
+       setPayload({name: name, email: email}); 
+        console.log('this is the new payload in the useEffect hook \n', payload); 
+
 
     }, [email]); 
     useEffect(() => {
@@ -41,30 +43,32 @@ const handleLogin = async (e) => {
     const currentURL = `${window.location.origin}/auth/callback`; 
     console.log(`this is the callback url ${currentURL}`);
 
+  
     
-    
-    // ✅ Correct for Web SDK v21
-    const response = await account.createMagicURLToken({
-      userId: ID.unique(),
-      email: email,
-      name: name,
-      url: currentURL
-    });
-
-    const payload = {
+    if(email){
 
 
-      email: email, 
-      name: name, 
-
+      console.log('this is the email before being used in the magic url creation \n', email); 
+      const response = await account.createMagicURLToken({
+        userId: ID.unique(),
+        email: email,
+        name: name,
+        url: currentURL
+      });
+      
+      console.log('this is the response from the create magic url token \n', response); 
+      
     }
 
-    // TODO call the utility function here and pass in the name and email
-    const consentResponse = await axios.post('/api/set_consent_in_cookies', {payload})
+    if(email){
 
+      const consentResponse = await axios.post('/api/set_consent_in_cookies', {payload})
+      console.log('✅ Magic link sent:', consentResponse);
+      setIsLoading('Check your email for the magic link!');
     
-    console.log('✅ Magic link sent:', response);
-    setIsLoading('Check your email for the magic link!');
+    }
+    
+    
     alert('Check your email for the magic link!');
   } catch (error) {
     console.error('❌ Could not login:', error);
@@ -79,7 +83,7 @@ const handleLogin = async (e) => {
    
    <section className={ll.loginSectionContainer}>
 
-    {/* Add in the text cotnainer here  */}
+    {/* Add in the text container here  */}
     <div className={ll.loginTextContainer}>
 
     
