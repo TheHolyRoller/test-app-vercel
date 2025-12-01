@@ -6,14 +6,12 @@ import EmailPermission from "@/app/Components/StartCard";
 import { rejects } from "assert";
 const Airtable = require('airtable'); 
 
-
-// TODO this is part of the results records and is not part of the consent capture 
 const ACCESS_TOKEN = process.env.PERSONAL_ACCESS_TOKEN; 
 const BASE_ID = process.env.BASE_ID;
 
-// TODO refactor this to use the global ULID 
-export async function POST(req){
 
+
+export async function POST(req){
     
     console.log('this is the create route outside the try block'); 
     

@@ -4,8 +4,8 @@ import { useState, useEffect, useReducer } from "react";
 import axios from "axios";
 
 export const ACTIONS = {
-  TOGGLE_EMAIL: "TOGGLE_EMAIL_CONSENT",     // maps to your reducer case
-  TOGGLE_RESULTS: "TOGGLE_QUIZ_CONSENT",   // maps to your reducer case
+  TOGGLE_EMAIL: "TOGGLE_EMAIL_CONSENT",
+  TOGGLE_RESULTS: "TOGGLE_QUIZ_CONSENT",
   FETCH_START: "FETCH_START",
   FETCH_SUCCESS: "FETCH_SUCCESS",
   FETCH_ERROR: "FETCH_ERROR",
@@ -61,62 +61,45 @@ Then I'll put it all together.
 
 // Create the useReducer update function here 
 const reducer = (state, action) => {
-    
-
     switch(action.type){
-
         case(ACTIONS.TOGGLE_EMAIL): 
-        return {...state, emailConsent: !state.emailConsent }
+            return {...state, emailConsent: !state.emailConsent }
         
         case(ACTIONS.TOGGLE_RESULTS): 
-        return {...state, resultConsent: !state.resultConsent}
-
+            return {...state, resultConsent: !state.resultConsent}
 
         case(ACTIONS.FETCH_START): 
             return {...state, loading: true, error: null}
 
-
-            // Refactor this to 
         case(ACTIONS.FETCH_SUCCESS): 
             return {...state, loading: false,
-                
+                resultConsent: action.payload.data.result_consent,
+                emailConsent: action.payload.data.email_consent,
+                baseline: {
                     resultConsent: action.payload.data.result_consent,
                     emailConsent: action.payload.data.email_consent,
-                    baseline: {
-                    
-                        resultConsent: action.payload.data.result_consent,
-                        emailConsent: action.payload.data.email_consent,
-
-                    }, 
-                
+                }, 
                 error: null}; 
 
         case(ACTIONS.FETCH_ERROR): 
             return {...state, loading: false, error: action.payload}; 
 
-
         case(ACTIONS.SAVE_START): 
-        return {...state, saving: true, error: null}
+            return {...state, saving: true, error: null}
 
         case(ACTIONS.SAVE_BASELINE): 
-        return {...state, saving: false, baseline: {
-
-            resultConsent: state.resultConsent,     
-            emailConsent: state.emailConsent
-
-        }}
+            return {...state, saving: false, baseline: {
+                resultConsent: state.resultConsent,     
+                emailConsent: state.emailConsent
+            }}
 
         case(ACTIONS.SAVE_ERROR): 
-        return {...state, saving: false, error: action.payload }; 
+            return {...state, saving: false, error: action.payload }; 
 
         default: 
-        return state; 
-
+            return state; 
     }
-
 }
-
-
 
 export default function useConsentManager(){
 
@@ -137,9 +120,7 @@ const cookieMap = Object.fromEntries(
     document.cookie.split("; ").map((c) => c.split("="))
 ); 
 
-console.log('this is the cookie map \n', cookieMap); 
-console.log('this is the type of cookie map \n', typeof cookieMap); 
-
+        console.log('this is the cookie map \n', cookieMap);
 
 if (cookieMap.user) {
     try {
@@ -194,30 +175,36 @@ if (cookieMap.user) {
     }
 
 
-    } catch (err) {
-      console.error("Failed to parse cookie:", cookieMap.user, err);
+            } catch (err) {
+                console.error("Failed to parse cookie:", err);
+            }
+        }
+
+        if (!user) {
+            console.log('NO USER FOUND!!');
+        }
     }
-  }
-  
-  if (!user) {
-    user = { name: "", email: "", resultConsent: false, emailConsent: false };
-    console.log('NO USER FOUND!!');  
 
-  }
-  
-  console.log("user object:", user);
+    // NOW create initialState with the extracted values
+    const initialState = {
+        resultConsent: result_consent,
+        emailConsent: email_consent,
+        baseline: {
+            resultConsent: result_consent,
+            emailConsent: email_consent
+        },
+        loading: false,
+        error: null,
+        saving: false,
+    };
 
+    console.log('this is the initial state \n', initialState);
 
-}, []); 
+    // Initialize useReducer with properly set initialState
+    const [state, dispatch] = useReducer(reducer, initialState);
 
-
-
-    const [state, dispatch] = useReducer(reducer, initialState); 
-
-    useEffect(() =>{
-
-        
-
+    // This useEffect can stay for any async fetching if needed
+    useEffect(() => {
         const fetchConsent = async () => {
 
 
@@ -236,27 +223,18 @@ if (cookieMap.user) {
                 dispatch({type: ACTIONS.FETCH_ERROR, payload: error}); 
 
             }
+        };
 
+        fetchConsent();
+    }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-        }
+    const isDirty = state.resultConsent !== state.baseline.resultConsent || 
+                    state.emailConsent !== state.baseline.emailConsent;
 
-        fetchConsent(); 
+    console.log('this is the is dirty flag \n', isDirty);
 
-    }, []); 
+    const isDirtyAndFalse = isDirty && (!state.emailConsent || !state.resultConsent);
+    console.log('this is the is dirty and false flag \n', isDirtyAndFalse);
 
-    
-            const isDirty = state.resultConsent !== state.baseline.resultConsent || 
-
-                state.emailConsent !== state.baseline.emailConsent; 
-
-                console.log('this is the is dirty flag \n', isDirty); 
-
-
-                const isDirtyAndFalse = isDirty && !state.emailConsent || !state.resultConsent; 
-             console.log('this is the is dirty and false flag \n', isDirtyAndFalse); 
-
-
-                return{ state, dispatch, isDirty, isDirtyAndFalse}; 
-
-
+    return { state, dispatch, isDirty, isDirtyAndFalse };
 }

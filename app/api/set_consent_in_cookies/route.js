@@ -38,13 +38,16 @@ export async function POST(req){
 
 
         // Call the api here 
-        const response = await fetch("http://localhost:3000/fetchConsentRecords", {
+        const response = await fetch("http://localhost:3000/api/fetchConsentRecords", {
 
             method: "POST", 
             headers: {"Content-Type": "application/json"}, 
             body: JSON.stringify({email})
 
-        }); 
+        });
+        
+        console.log('this is the response from the fetch consent records api \n', response); 
+
 
         if(!response.ok){
 
@@ -91,8 +94,9 @@ export async function POST(req){
         }
 
 
-        const data = await response.json(); 
+        const consentData = await response.json(); 
 
+        const { data } = consentData; 
         console.log('this is the data from the airtable database in set consent cookies route \n', data); 
 
         const { result_consent, email_consent} = data; 

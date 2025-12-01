@@ -72,7 +72,6 @@ export async function POST(req) {
   const ACCESS_TOKEN = process.env.IVVI_SUPPORT_AIRTABLE_PA_TOKEN;
   const BASE_ID = process.env.IVVI_SUPPORT_CONSENT_BASE_ID;
 
-
 const RESULT_ACCESS_TOKEN = process.env.PERSONAL_ACCESS_TOKEN; 
 
 const RESULT_BASE_ID = process.env.BASE_ID; 
