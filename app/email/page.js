@@ -14,6 +14,7 @@ import Image from 'next/image';
 import { Link } from 'lucide-react';
 import { NextResponse } from 'next/server';
 
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
 
 const DATABASE_ID = process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID;
 const COLLECTION_ID = process.env.NEXT_PUBLIC_APPWRITE_RESULTS_COLLECTION_ID;
@@ -255,7 +256,7 @@ export default function EmailPermission() {
 
             // NOTE: this is part of the consent capture 
             // TODO refactor fetchip to check the consent status and pass them down to ULID server route 
-            const response = await axios.post('/api/fetchip', payload); 
+            const response = await axios.post(`${baseUrl}/api/fetchip`, payload); 
             console.log('this is the response from the fetch IP post server route \n', response); 
 
         }
@@ -417,7 +418,7 @@ export default function EmailPermission() {
             
             console.log('📦 Sending email data:', emailData);
 
-            const res = await fetch('/api/send', {
+            const res = await fetch(`${baseUrl}/api/send`, {
                 method: 'POST',
                 headers: { 
                     'Content-Type': 'application/json'

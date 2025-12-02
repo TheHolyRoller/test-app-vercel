@@ -34,45 +34,43 @@ function LoginButton() {
 
 
 
-const handleLogin = async (e) => {
-  e.preventDefault();
-  setIsLoading("Logging you in...");
-  try {
-    const currentURL = `${window.location.origin}/auth/callback`; 
-    console.log(`this is the callback url ${currentURL}`);
+    const handleLogin = async (e) => {
+      e.preventDefault();
+      setIsLoading("Logging you in...");
+      try {
+        const currentURL = `${window.location.origin}/auth/callback`; 
+        console.log(`this is the callback url ${currentURL}`);
+        
+        // Create magic link
+        const response = await account.createMagicURLToken({
+          userId: ID.unique(),
+          email: email,
+          name: name,
+          url: currentURL
+        });
+        
+        // ✅ FIXED: Send payload directly, not nested
+        const payload = {
+          email: email, 
+          name: name, 
+        };
+        
+        const consentResponse = await axios.post('/api/set_consent_in_cookies', payload);
+        
+        console.log('✅ Magic link sent:', consentResponse);
+        setIsLoading('Check your email for the magic link!');
+        alert('Check your email for the magic link!');
+      } catch (error) {
+        console.error('❌ Could not login:', error);
+        setIsLoading('Error logging in');
+        console.log(`this is the callback url ${currentURL}`);
+        alert(`Could not log user in! ${error.message}`);
 
-    
-    
-    // ✅ Correct for Web SDK v21
-    const response = await account.createMagicURLToken({
-      userId: ID.unique(),
-      email: email,
-      name: name,
-      url: currentURL
-    });
 
-    const payload = {
+        
 
-
-      email: email, 
-      name: name, 
-
-    }
-
-    // TODO call the utility function here and pass in the name and email
-    const consentResponse = await axios.post('/api/set_consent_in_cookies', {payload})
-
-    
-    
-    console.log('✅ Magic link sent:', consentResponse);
-    setIsLoading('Check your email for the magic link!');
-    alert('Check your email for the magic link!');
-  } catch (error) {
-    console.error('❌ Could not login:', error);
-    setIsLoading('Error logging in');
-    alert(`Could not log user in! ${error.message}`);
-  }
-};
+      }
+    };
 
 
   return (

@@ -10,7 +10,7 @@ export async function POST(req) {
          const ACCESS_TOKEN = process.env.IVVI_SUPPORT_AIRTABLE_PA_TOKEN; 
         const BASE_ID = process.env.IVVI_SUPPORT_CONSENT_BASE_ID;
         const TABLE_ID = process.env.IVVI_SUPPORT_CONSENT_TABLE_ID; 
-
+        const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
         
 
         console.log('this is the access token \n', ACCESS_TOKEN); 
@@ -90,7 +90,7 @@ export async function POST(req) {
 
 
             // Now call the email sending  route and pass in the name and email address as well as the state of the marketing email consent
-            const emailResponse = await axios.post('/api/unsubscribe_notification', {email: records.email}); 
+            const emailResponse = await axios.post(`${baseUrl}/api/unsubscribe_notification`, {email: records.email}); 
             console.log('this is the email response from the server \n', emailResponse.data); 
 
             if(!records){

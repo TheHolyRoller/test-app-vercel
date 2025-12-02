@@ -5,6 +5,8 @@ import {generateULID} from '../../utils/generateULID';
 export async function POST(req){
 
     console.log('this is the init ulid server route is it running \n'); 
+    const baseUrl = process.env.BASE_URL_PRODUCTION; 
+
 
     let generated_ulid; 
     const body = await req.json(); 
@@ -17,7 +19,7 @@ export async function POST(req){
 
     try{
 
-        const response = await fetch('/api/fetchConsentRecords', {
+        const response = await fetch(`${baseUrl}/api/fetchConsentRecords`, {
 
             method: "POST", 
             headers: {"Content-Type": "application/json"}, 

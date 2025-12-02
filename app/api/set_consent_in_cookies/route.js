@@ -2,14 +2,18 @@ import axios from "axios";
 import { NextResponse } from "next/server";
 
 
+// const baseULR = process.env.NEXT_PUBLIC_BASE_URL; 
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL 
+    || (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : null)
+    || 'http://localhost:3000';
 
-
-
+    
 
 
 export async function POST(req){
 
-
+    
+    const baseUrl = process.env.BASE_URL_PRODUCTION; 
     console.log('this is the set consent in cookies post server route::'); 
 
     try{
@@ -40,7 +44,7 @@ export async function POST(req){
         console.log('this is the type of payload sent to fetch consent records \n', typeof emailPayload); 
 
 
-        const response = await fetch("/api/fetchConsentRecords", {
+        const response = await fetch(`${baseUrl}/api/fetchConsentRecords`, {
 
             method: "POST", 
             headers: {"Content-Type": "application/json"}, 

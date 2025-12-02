@@ -3,12 +3,18 @@ import { ulid } from "ulid";
 import Airtable from "airtable";
 import axios from "axios";
 
+
+
+const baseUrl = process.env.BASE_URL_PRODUCTION; 
+
+
+
 // Utility function to update Kajabi email list
 const updateKajabiEmailList = async (email) => {
   if (!email) return null;
 
   try {
-    const response = await axios.post("/api/kajabi_email_update", { email });
+    const response = await axios.post(`${baseUrl}/api/kajabi_email_update`, { email });
     console.log("Kajabi update response:", response.data);
     return response.data;
   } catch (error) {
@@ -66,7 +72,7 @@ export async function POST(req) {
 
   // Generate or fetch ULID
   try {
-    const ulidResponse = await fetch("/api/init_ulid", {
+    const ulidResponse = await fetch(`${baseUrl}/api/init_ulid`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email }),
@@ -103,7 +109,7 @@ export async function POST(req) {
     
 
     // Save consent status to Airtable
-    const airtableResponse = await fetch("/api/capture_consent_status", {
+    const airtableResponse = await fetch(`${baseUrl}/api/capture_consent_status`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ consentPayload }),
@@ -128,7 +134,7 @@ export async function POST(req) {
         organisationalScore,
       };
 
-      const resultResponse = await fetch("/api/create", {
+      const resultResponse = await fetch(`${baseUrl}/api/create`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ resultPayload }),
