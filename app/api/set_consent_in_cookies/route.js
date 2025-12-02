@@ -40,7 +40,7 @@ export async function POST(req){
         console.log('this is the type of payload sent to fetch consent records \n', typeof emailPayload); 
 
 
-        const response = await fetch("http://localhost:3000/api/fetchConsentRecords", {
+        const response = await fetch("/api/fetchConsentRecords", {
 
             method: "POST", 
             headers: {"Content-Type": "application/json"}, 

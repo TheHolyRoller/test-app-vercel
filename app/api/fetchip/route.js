@@ -8,7 +8,7 @@ const updateKajabiEmailList = async (email) => {
   if (!email) return null;
 
   try {
-    const response = await axios.post("http://localhost:3000/api/kajabi_email_update", { email });
+    const response = await axios.post("/api/kajabi_email_update", { email });
     console.log("Kajabi update response:", response.data);
     return response.data;
   } catch (error) {
@@ -66,7 +66,7 @@ export async function POST(req) {
 
   // Generate or fetch ULID
   try {
-    const ulidResponse = await fetch("http://localhost:3000/api/init_ulid", {
+    const ulidResponse = await fetch("/api/init_ulid", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email }),
@@ -100,9 +100,10 @@ export async function POST(req) {
     //     console.error("Could not update Kajabi:", error);
     //   }
     // }
+    
 
     // Save consent status to Airtable
-    const airtableResponse = await fetch("http://localhost:3000/api/capture_consent_status", {
+    const airtableResponse = await fetch("/api/capture_consent_status", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ consentPayload }),
@@ -127,7 +128,7 @@ export async function POST(req) {
         organisationalScore,
       };
 
-      const resultResponse = await fetch("http://localhost:3000/api/create", {
+      const resultResponse = await fetch("/api/create", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ resultPayload }),

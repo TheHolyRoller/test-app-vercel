@@ -17,7 +17,7 @@ export async function POST(req){
 
     try{
 
-        const response = await fetch('http://localhost:3000/api/fetchConsentRecords', {
+        const response = await fetch('/api/fetchConsentRecords', {
 
             method: "POST", 
             headers: {"Content-Type": "application/json"}, 

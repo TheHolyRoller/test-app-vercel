@@ -43,7 +43,7 @@ const DyslexiaResultsReport = ({
     { key: 'plans', title: 'Planning & Organization', icon: '📋', color: '#ef4444' }
   ];
 
-  const unsubscribeURL = `http://localhost:3000/unsubscribe?email=${encodeURI(toEmail)}`
+  const unsubscribeURL = `http://:3000/unsubscribe?email=${encodeURI(toEmail)}`
 
 
   console.log('this is the users email destination \n', toEmail); 

@@ -90,7 +90,7 @@ export async function POST(req) {
 
 
             // Now call the email sending  route and pass in the name and email address as well as the state of the marketing email consent
-            const emailResponse = await axios.post('http://localhost:3000/api/unsubscribe_notification', {email: records.email}); 
+            const emailResponse = await axios.post('/api/unsubscribe_notification', {email: records.email}); 
             console.log('this is the email response from the server \n', emailResponse.data); 
 
             if(!records){
