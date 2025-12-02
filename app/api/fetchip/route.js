@@ -91,14 +91,15 @@ export async function POST(req) {
       subscribed: JSON.stringify(subscribed),
     };
 
-    if (subscribed) {
-      try {
-        const kajabiResponse = await updateKajabiEmailList(email);
-        console.log("Kajabi update response:", kajabiResponse);
-      } catch (error) {
-        console.error("Could not update Kajabi:", error);
-      }
-    }
+    // TODO This should be added back in after soft launch 
+    // if (subscribed) {
+    //   try {
+    //     const kajabiResponse = await updateKajabiEmailList(email);
+    //     console.log("Kajabi update response:", kajabiResponse);
+    //   } catch (error) {
+    //     console.error("Could not update Kajabi:", error);
+    //   }
+    // }
 
     // Save consent status to Airtable
     const airtableResponse = await fetch("http://localhost:3000/api/capture_consent_status", {

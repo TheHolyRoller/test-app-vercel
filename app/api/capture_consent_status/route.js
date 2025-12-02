@@ -6,10 +6,28 @@ const Airtable = require("airtable");
 
 export async function POST(req){
 
+  console.log('this is the capture consent status api route::::::::'); 
+
     // Add in the Airtable Credentials here 
     const ACCESS_TOKEN = process.env.IVVI_SUPPORT_AIRTABLE_PA_TOKEN;
     const BASE_ID = process.env.IVVI_SUPPORT_CONSENT_BASE_ID;
     const base = new Airtable({ apiKey: ACCESS_TOKEN }).base(BASE_ID);
+
+    const TABLE_ID = process.env.IVVI_SUPPORT_CONSENT_TABLE_ID; 
+
+    console.log('this is the TABLE_ID \n', TABLE_ID); 
+    console.log('this is the type of table ID \n', typeof TABLE_ID); 
+
+
+    // Log out the credentails here 
+
+    console.log('This is the access token \n', ACCESS_TOKEN); 
+    console.log('this is the base id \n', BASE_ID); 
+    console.log('this is the base \n', base); 
+    console.log('this is the type of the Acess token in capture consent status api route:::::: \n', typeof ACCESS_TOKEN); 
+    console.log('this is the type of base id \n', typeof BASE_ID); 
+    console.log("this is the type of base \n", typeof base); 
+
 
     try{
 
@@ -41,7 +59,7 @@ export async function POST(req){
 
 
         try {
-               const airtableResp = await base("Consent").create([{ fields }]);
+               const airtableResp = await base(TABLE_ID).create([{ fields }]);
 
                console.log('this is the response from airtable in the consent capture api route', airtableResp); 
 

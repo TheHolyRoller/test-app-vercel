@@ -29,9 +29,9 @@ export async function POST(req){
             const { email } = body; 
             console.log('this is the extracted email from the body of the request \n', email || "no email found"); 
 
-
             if(!email){
 
+                console.log('no email found in fetch consent records!!!!!:::::::');
                 return NextResponse.json({messsage: 'could not extract the email from the request'}, {status: 404});
 
             }
