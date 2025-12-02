@@ -223,48 +223,79 @@ export default function EmailPermission() {
     }
 
 
-    // this should be the only api cll to the backend 
-    const prove_consent = async () => {
+    // this should be the only api call to the backend 
+const prove_consent = async () => {
+    console.log('🔐 Starting prove_consent function');
+    
+    // Check environment variable
+    console.log('🌍 Environment:', {
+        baseUrl,
+        nodeEnv: process.env.NODE_ENV,
+        hasBaseUrl: !!baseUrl
+    });
 
-
-        console.log('this is the prove consent function'); 
-
-        // Now take the state variables and push them to the server 
-
-        // TODO Add in the answers here so that You can use them when you record the results in the other api call 
-        const payload = {
-            answers: answers,
-            checked, 
-            resultChecked, 
-            name, 
-            email, 
-            score,
-            memoryScore,
-            writingScore,
-            readingScore,
-            examResultsScore,
-            organisationalScore,
-            ageRange: userAge
-
-
-        }
-
-        console.log('this is the payload being sent to the server \n', payload); 
-        console.log('this is the type of payload being sent to the server \n', typeof payload); 
-
-        try{
-
-            // NOTE: this is part of the consent capture 
-            // TODO refactor fetchip to check the consent status and pass them down to ULID server route 
-            const response = await axios.post(`${baseUrl}/api/fetchip`, payload); 
-            console.log('this is the response from the fetch IP post server route \n', response); 
-
-        }
-        catch(error){
-
-            console.error('could not send payload to fetch ip \n', error); 
-        }
+    // Validate data before sending
+    if (!email || !name) {
+        console.error('❌ Missing required data:', { email: !!email, name: !!name });
+        alert('Please ensure name and email are provided');
+        return;
     }
+
+    const payload = {
+        answers: answers || [],
+        checked, 
+        resultChecked, 
+        name, 
+        email: email || inputEmail, // Ensure email is set
+        score: score || 0,
+        memoryScore: memoryScore || 0,
+        writingScore: writingScore || 0,
+        readingScore: readingScore || 0,
+        examResultsScore: examResultsScore || 0,
+        organisationalScore: organisationalScore || 0,
+        ageRange: userAge || 'unknown'
+    };
+
+    console.log('📦 Payload being sent:', {
+        ...payload,
+        answersCount: payload.answers.length,
+        // Don't log full answers array in production
+        answers: '(answers array - see count above)'
+    });
+
+    try {
+        console.log('🚀 Sending POST request to:', `${baseUrl}/api/fetchip`);
+        
+        const response = await axios.post(`${baseUrl}/api/fetchip`, payload, {
+            timeout: 10000, // 10 second timeout
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        
+        console.log('✅ Response received:', response.data);
+        return response.data;
+        
+    } catch (error) {
+        console.error('❌ Error in prove_consent:', {
+            message: error.message,
+            response: error.response?.data,
+            status: error.response?.status,
+            url: error.config?.url
+        });
+        
+        // Show user-friendly error
+        if (error.response?.status === 500) {
+            alert('Server error. Please try again or contact support.');
+        } else if (error.code === 'ECONNABORTED') {
+            alert('Request timeout. Please check your connection and try again.');
+        } else {
+            alert('An error occurred. Please try again.');
+        }
+        
+        throw error;
+    }
+};
 
 
     useEffect(() => {
@@ -374,7 +405,7 @@ export default function EmailPermission() {
                 section: yesAnswer.question_section,
                 question: yesAnswer.question_text,
                 answer: yesAnswer.question_answer,
-                questionId: yesAnswer.question_id
+                questionId: yesAnswer.question_id   
             }));
 
             // Group yesAnswers by section for easier template usage

@@ -17,6 +17,8 @@ export async function POST(req){
 
     console.log('this is the user email from the ulid api route \n', email); 
 
+    console.log(` this is the full ulr \n ${baseUrl}/api/fetchConsentRecords`)
+
     try{
 
         const response = await fetch(`${baseUrl}/api/fetchConsentRecords`, {
