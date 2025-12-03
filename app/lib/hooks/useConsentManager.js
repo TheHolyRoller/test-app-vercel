@@ -186,7 +186,7 @@ if (cookieMap.user) {
     }
 
     // NOW create initialState with the extracted values
-    const initialState = {
+     initialState = {
         resultConsent: result_consent,
         emailConsent: email_consent,
         baseline: {
