@@ -32,6 +32,7 @@ function Page() {
         });
       }
     };
+    
 
     // Small delay to ensure the page is fully loaded
     const timer = setTimeout(scrollOnLaptop, 100);

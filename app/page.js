@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 import { useUser } from './lib/context/UserContext';
 import { Suspense, useEffect } from 'react';
 import StartQuiz from './start/page';
+import { Analytics } from "@vercel/analytics/next"
 
 export default function Home() {
   const router = useRouter();
