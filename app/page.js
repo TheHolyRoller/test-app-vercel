@@ -9,6 +9,7 @@ import { Analytics } from "@vercel/analytics/next"
 export default function Home() {
   const router = useRouter();
   const { setUserType } = useUser();
+  
 
   // Refresh the page when component mounts to reset quiz state
   useEffect(() => {
