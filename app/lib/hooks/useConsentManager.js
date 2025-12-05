@@ -137,6 +137,7 @@ export default function useConsentManager(){
             }
         };
 
+        
         fetchConsent();
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
