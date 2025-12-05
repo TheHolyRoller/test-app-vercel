@@ -178,6 +178,7 @@ export async function POST(req) {
         examResultsScore,
         organisationalScore,
       };
+      
 
       console.log("💾 Saving results...");
 

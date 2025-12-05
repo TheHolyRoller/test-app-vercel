@@ -39,7 +39,12 @@ export default function UserType() {
     return (
         <section className={q.mainCardSectionContainer} style={{color: 'white', marginTop:'9rem'}}>
             <main className={q.quizComponentContainer} style={{}} id='quizElement'>
+            {/* 
+We can screen different people for you, who is it going to be this time?
+
+*/}
             <QuizCard 
+
                         question_text="Who is being quizzed"
                         Section="Details"
                         currentQuestion={{

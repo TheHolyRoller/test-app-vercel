@@ -14,7 +14,7 @@ function Page() {
   // Default values for missing variables
   const Section = "Audio Permission";
   const audio_url = '';
-  const question_text = "Shall i read out the questions for you?";
+  const question_text = "Hello. Welcome to our Dyslexia Screener. Shall I read out the questions for you? Press the audio button to switch audio on or off during the screener.";
   const currentQuestion = { question_text: "" };
 
   const currentIMG = 'https://fra.cloud.appwrite.io/v1/storage/buckets/onboarding_gifs/files/reading_test/view?project=67d4d9140008273c9d84&mode=admin'; 
@@ -32,6 +32,7 @@ function Page() {
         });
       }
     };
+    
 
     // Small delay to ensure the page is fully loaded
     const timer = setTimeout(scrollOnLaptop, 100);
@@ -109,8 +110,8 @@ function Page() {
     </div>
 
     {question_text && (
-        <div className={`${a.question_textContainer} ${nunito.className}`} style={{outline: '0px solid red', marginTop: '-2.7rem'}} >
-            <h2 className={`${a.question_text} ${nunito.className}`}>
+        <div className={`${a.question_textContainer} ${nunito.className}`} style={{outline: '0px solid red', marginTop: '-2.7rem', fontSize: '0.1rem'}} >
+            <h2 className={`${a.question_text} ${nunito.className}`} style={{fontSize: '1rem'}} >
                 {question_text}
 
                 <span>
