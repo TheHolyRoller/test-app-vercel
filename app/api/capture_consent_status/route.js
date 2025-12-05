@@ -26,7 +26,9 @@ export async function POST(req){
     console.log('this is the base \n', base); 
     console.log('this is the type of the Acess token in capture consent status api route:::::: \n', typeof ACCESS_TOKEN); 
     console.log('this is the type of base id \n', typeof BASE_ID); 
-    console.log("this is the type of base \n", typeof base); 
+    console.log("this is the type of base \n", typeof base);
+    console.log('this is the base function', base); 
+
 
 
     try{
@@ -63,12 +65,11 @@ export async function POST(req){
 
                console.log('this is the response from airtable in the consent capture api route', airtableResp); 
 
-
             } catch (error) {
               console.error("Airtable create error:", error);
               return NextResponse.json(
                 { message: "Failed to save Airtable record" },
-                { status: 500 }
+                { status: 404 }
               );
             }
 

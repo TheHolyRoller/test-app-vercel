@@ -13,6 +13,7 @@ const getBaseUrl = (req) => {
   return process.env.BASE_URL_PRODUCTION || 'http://localhost:3000';
 };
 
+
 export async function POST(req) {
   console.log("🚀 Incoming request to /api/fetchip");
   console.log("Environment:", process.env.VERCEL_ENV || 'development');
@@ -141,7 +142,9 @@ export async function POST(req) {
     console.log("📝 Consent payload prepared");
 
     // Save consent status to Airtable
-    const airtableResponse = await fetch(`${baseUrl}/api/capture_consent_status`, {
+    // const airtableResponse = await fetch(`${baseUrl}/api/capture_consent_status`, {
+    const airtableResponse = await fetch(`http://localhost:3000/api/capture_consent_status`, {
+
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ consentPayload }),
