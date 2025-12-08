@@ -23,8 +23,11 @@ export async function POST(req) {
   let airtableResp;
 
   // Get base URL (empty in production for relative URLs)
-  const baseUrl = getBaseUrl(req);
+  const baseUrl = process.env.BASE_URL_PRODUCTION; 
+
   console.log("Using baseUrl:", baseUrl || '(relative)');
+  console.log('this is the base url \n', baseUrl); 
+  
 
   try {
     body = await req.json();
