@@ -5,7 +5,7 @@ import {generateULID} from '../../utils/generateULID';
 export async function POST(req){
 
     console.log('this is the init ulid server route is it running \n'); 
-    const baseUrl = process.env.BASE_URL_PRODUCTION; 
+    const baseUrl = process.env.BASE_URL_PRODUCTION || "http://localhost:3000"; 
 
 
     let generated_ulid; 
@@ -63,8 +63,6 @@ export async function POST(req){
         
         console.log('this is the latest updted generated ulid \n', generated_ulid); 
         console.log('this is the type of genreated ulid \n', typeof generated_ulid); 
-        
-        
 
 
         }
