@@ -27,7 +27,9 @@ export async function POST(req) {
 
   console.log("Using baseUrl:", baseUrl || '(relative)');
   console.log('this is the base url \n', baseUrl); 
-  
+
+  console.log('this is the type of base ULR \n', typeof baseUrl); 
+
 
   try {
     body = await req.json();
@@ -81,6 +83,7 @@ export async function POST(req) {
   const forwardedFor = req.headers.get("x-forwarded-for");
   const ip = forwardedFor?.split(",")[0].trim() ?? "IP not found";
   console.log("🌐 Client IP:", ip);
+  console.log('this is the type of the IP \n', typeof ip);  
 
   // Validate environment variables
   const ACCESS_TOKEN = process.env.IVVI_SUPPORT_AIRTABLE_PA_TOKEN;
