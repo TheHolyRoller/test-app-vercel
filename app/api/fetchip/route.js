@@ -68,7 +68,8 @@ export async function POST(req) {
       message: "Name is required",
       received: { email, name }
     }, { status: 400 });
-  }
+  } 
+
 
   // Set subscription status
   if (checked) subscribed = true;
@@ -109,6 +110,8 @@ export async function POST(req) {
       },
       body: JSON.stringify({ email }),
     });
+
+    console.log('this is the response from init ULID \n', ulidResponse); 
 
     if (!ulidResponse.ok) {
       const errorText = await ulidResponse.text();
