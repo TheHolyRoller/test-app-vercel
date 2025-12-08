@@ -24,7 +24,7 @@
     "google-auth-library": "^10.5.0",
     "lucide-react": "^0.542.0",
     "motion": "^12.23.12",
-    "next": "^15.0.3",
+    "next": "15.0.5",
     "ngrok": "^5.0.0-beta.2",
     "node-appwrite": "^18.0.0",
     "react": "^18.3.1",
