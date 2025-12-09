@@ -2,8 +2,6 @@ import { getAirtableBase } from '../../lib/airtable';
 import { NextResponse } from 'next/server';
 
 
-
-
 export async function POST(req){
 
 
@@ -22,7 +20,7 @@ export async function POST(req){
             console.log('this is the base test from the get airtable base function call \n', baseTest); 
             
             console.log('this is the query airtable post route'); 
-            console.log('this is the requst from the front end \n', req); 
+            console.log('this is the request from the front end \n', req); 
 
             const body = await req.json(); 
             console.log('this is the body of the request extracted with object destructuring after turning the request object into a JSON string \n', body); 
@@ -32,7 +30,7 @@ export async function POST(req){
             if(!email){
 
                 console.log('no email found in fetch consent records!!!!!:::::::');
-                return NextResponse.json({messsage: 'could not extract the email from the request'}, {status: 404});
+                return NextResponse.json({message: 'could not extract the email from the request'}, {status: 404});
 
             }
 
@@ -83,7 +81,7 @@ export async function POST(req){
     catch(error){
 
         console.error('could not handle request \n', error); 
-        return NextResponse.json({mesage: 'could not handle request'}, {status: 500}); 
+        return NextResponse.json({message: 'could not handle request'}, {status: 500}); 
 
 
     }
