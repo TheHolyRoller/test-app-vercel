@@ -60,6 +60,12 @@ function LoginButton() {
         console.log('✅ Magic link sent:', consentResponse);
         setIsLoading('Check your email for the magic link!');
         alert('Check your email for the magic link!');
+
+
+        
+
+
+
       } catch (error) {
         console.error('❌ Could not login:', error);
         setIsLoading('Error logging in');
