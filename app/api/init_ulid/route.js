@@ -46,7 +46,7 @@ export async function POST(req){
         
         console.log("could not find a 404 response extracting the ULID from the response \n"); 
         const body = await response.json(); 
-        å
+        
         
         console.log('this is the body of the response from the fetch consent records route \n', body); 
 

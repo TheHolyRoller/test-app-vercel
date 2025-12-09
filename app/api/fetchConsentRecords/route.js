@@ -40,26 +40,38 @@ export async function POST(req){
 
             const base = getAirtableBase();
 
-            console.log('this is the base returned from the get airtable base function \n', base); 
+            console.log('this is the base returned from the get airtable base function in fetch Consent records \n', base); 
             console.log('this is the type of base \n', typeof base); 
 
             if(!base){
 
+
+                console.log('Could not find airtable base!!!!'); 
 
                 return NextResponse.json({message: 'Could not return the airtable base'}, {status: 404}); 
 
             }
 
             console.log('just about to query the airtable database api \n'); 
-            const records = await base("Consent").
-            select({
+            // const records = await base("Consent").
+            // select({
 
-                filterByFormula: `{email} = "${email}"`, 
-                sort: [{field: "Created", direction: "desc"}], 
-                maxRecords: 1, 
+            //     filterByFormula: `{email} = "${email}"`, 
+            //     sort: [{field: "Created", direction: "desc"}], 
+            //     maxRecords: 1, 
 
-            })
-            .firstPage(); 
+            // })
+            // .firstPage(); 
+
+            // TODO Mocked Consent records response from Airtable here 
+
+
+            const records = {
+
+                user_id: "234234234234"
+
+            }
+
 
 
             if(!records || records.length === 0){
@@ -70,11 +82,16 @@ export async function POST(req){
 
             console.log('these are the records \n', records); 
             console.log('this is the type of records \n', typeof records);
-            
-            console.log('this is the returned valued \n', { data: records[0].fields});
-             
+            console.log('this is the returned valued \n', { data: records});
 
-            return NextResponse.json({message: 'all okay records fetched', data: records[0].fields}, {status: 200});
+
+
+            // TODO mocked response 
+            return NextResponse.json({message: "returned mocked records from airtable with ULID", data: records}, {status:200}); 
+
+            // TODO use the mocked response records here 
+            // return NextResponse.json({message: 'all okay records fetched', data: records[0].fields}, {status: 200});
+
 
     }
 
