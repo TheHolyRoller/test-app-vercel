@@ -53,6 +53,8 @@ export async function POST(req){
             }
 
             console.log('just about to query the airtable database api \n'); 
+
+            // TODO Add this back in when you have fixed the 403 Airtable Authorization error 
             // const records = await base("Consent").
             // select({
 
