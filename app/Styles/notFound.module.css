@@ -12,6 +12,7 @@
 }
 
 
+
 .cardCategoryColorContainer {
     position: relative;
     z-index: 999;
@@ -124,8 +125,6 @@
     place-content: center;
 
 
-
-
 }
 
 
@@ -140,11 +139,37 @@
 
 
 
-.trashCotnainer{
+.trashContainer{
 
 
     position: absolute;
     top: 15%; 
+
+
+}
+
+.trash{
+
+
+
+
+
+
+}
+
+
+
+.notFoundText{
+
+
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 72%; 
+
+    color: #51a3e2; 
+    font-size: 2rem;
+
 
 
 }

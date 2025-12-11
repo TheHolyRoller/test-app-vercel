@@ -24,7 +24,7 @@ export default function UserType() {
         setUser(type);
         setTimeout(() => {
 
-            alert(`this is the user type ${type}`); 
+            // alert(`this is the user type ${type}`); 
 
             router.push('/quiz');
         }, 210);
@@ -61,16 +61,16 @@ We can screen different people for you, who is it going to be this time?
 
                         <button className={`${q.ageButton} ${q.childButton}`} onClick={(() => handleUserType('child'))} >
                             
-                            Child 13+ 
+                            Teen (13+) 
                         </button>
                             <button className={`${q.ageButton} ${q.studentButton}`} onClick={(() => handleUserType('student'))}>
                             
-                            Student 18+
+                            Student
                         </button>
 
                             <button className={`${q.ageButton} ${q.adultButton}`} onClick={(() => handleUserType('adult'))}>
                             
-                            Adult 25+
+                            Adult 
                         </button>
 
                         <div className={q.ageTextContainer}>

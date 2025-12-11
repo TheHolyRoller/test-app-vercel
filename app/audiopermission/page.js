@@ -11,13 +11,15 @@ import AudioButtons from '../Components/AudioButtons';
 
 function Page() {
   
+  
   // Default values for missing variables
   const Section = "Audio Permission";
-  const audio_url = '';
-  const question_text = "Hello. Welcome to our Dyslexia Screener. Shall I read out the questions for you? Press the audio button to switch audio on or off during the screener.";
+  const audio_url = 'https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/Audio_On_Off_Voice_Clip/view?project=67d4d9140008273c9d84&mode=admin';
+  const question_text = "Hello. Welcome to our Dyslexia Screener. Shall I read out the questions for you?";
   const currentQuestion = { question_text: "" };
 
-  const currentIMG = 'https://fra.cloud.appwrite.io/v1/storage/buckets/onboarding_gifs/files/reading_test/view?project=67d4d9140008273c9d84&mode=admin'; 
+
+  const currentIMG = 'https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/audo_preference/view?project=67d4d9140008273c9d84&mode=admin'; 
   
   // Placeholder functions
   const getLabelColorBySection = (section) => "#033699";
