@@ -532,7 +532,7 @@ const prove_consent = async () => {
             
             // Navigate to confirmation page after successful submission or timeout
             console.log('🔄 Navigating to confirmation page...');
-            // router.push('/confirmation');
+            router.push('/confirmation');
             
         } catch (error) {
             console.log('❌ Error in form submission:', error);

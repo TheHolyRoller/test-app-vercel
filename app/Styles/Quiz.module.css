@@ -99,8 +99,6 @@ margin-bottom: 5em;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
    
     
-
-
     position: relative;
     background-color: var(--card-background-color);
     margin: 0 auto; 
@@ -120,9 +118,6 @@ margin-bottom: 5em;
 
     display: none !important; 
 
-
-
-
 }
 
 
@@ -131,8 +126,7 @@ margin-bottom: 5em;
 .currentIMG{
 
 
-   
-
+    margin: auto; 
 
 }
 
@@ -514,6 +508,9 @@ margin-bottom: 5em;
     width: 95%; 
     margin: 0 auto;
 
+    display: grid;
+    place-content: center;
+
 
 
 
@@ -521,8 +518,6 @@ margin-bottom: 5em;
 }
 
 .imageDoodle{
-
-
 
 
 }
@@ -535,11 +530,7 @@ margin-bottom: 5em;
 
 
     display: grid;  
-    place-content: center; 
-    
-
-
-
+    place-content: center;
 
 
 }
@@ -851,8 +842,6 @@ font-size: 1.76rem !important;
 
     text-align: center;
     margin-right: -0px !important; 
-
-
 
 }
 

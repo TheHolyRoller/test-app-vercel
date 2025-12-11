@@ -43,7 +43,7 @@ export default function UserType() {
 We can screen different people for you, who is it going to be this time?
 
 */}
-            <QuizCard 
+                     <QuizCard 
 
                         question_text="Who is being quizzed"
                         Section="Details"

@@ -31,7 +31,7 @@ export default function EmailPermission() {
     const question_text = `Shall We send a results Report to your email?
 Otherwise they won’t be saved.`;
     const currentQuestion = { question_text: "" };
-    const currentIMG = 'https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/EMAIL_SEND_TEST/view?project=test-domain&mode=admin';
+    const currentIMG = 'https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/Send_Results/view?project=67d4d9140008273c9d84&mode=admin';
     
     // Placeholder functions
     const getLabelColorBySection = (section) => "#033699";
@@ -124,7 +124,7 @@ Otherwise they won’t be saved.`;
                       onLoad={() => console.log('🖼️ Image Loaded:', currentIMG)}
                       onError={(e) => console.error('❌ Image Error:', e)}
                       style={{
-                          marginTop: '-4.5rem',
+                          marginTop: '-9.5rem',
                           objectFit: 'contain', 
                           zIndex: '0', 
                       }}

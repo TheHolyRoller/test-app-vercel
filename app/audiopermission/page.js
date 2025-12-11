@@ -113,7 +113,7 @@ function Page() {
 
     {question_text && (
         <div className={`${a.question_textContainer} ${nunito.className}`} style={{outline: '0px solid red', marginTop: '-2.7rem', fontSize: '0.1rem'}} >
-            <h2 className={`${a.question_text} ${nunito.className}`} style={{fontSize: '1rem'}} >
+            <h2 className={`${a.question_text} ${nunito.className}`} style={{fontSize: '1.2rem'}} >
                 {question_text}
 
                 <span>
@@ -130,8 +130,8 @@ function Page() {
                 className={a.gifImage}
                     src={currentIMG}
                     alt='quiz illustration'
-                    width={250}
-                    height={250}
+                    width={310}
+                    height={310}
                     unoptimized
                     onLoad={() => console.log('🖼️ Image Loaded:', currentIMG)}
                     onError={(e) => console.error('❌ Image Error:', e)}

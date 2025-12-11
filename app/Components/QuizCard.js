@@ -323,13 +323,14 @@ const QuizCard = ({
                             src={currentIMG}
                             className={q.currentIMG}
                             alt='quiz illustration'
-                            width={200}
-                            height={200}
+                            width={270}
+                            height={270}
                             unoptimized
                             onLoad={() => console.log('🖼️ Image Loaded:', currentIMG)}
                             onError={(e) => console.error('❌ Image Error:', e)}
                             style={{
                                 marginTop: '-3.5rem',
+                                marginRight: '-0.2rem',
                                 objectFit: 'contain', 
                                 zIndex: '0', 
                                
@@ -339,7 +340,7 @@ const QuizCard = ({
                     
                 </div>
 
-                <div  style={{outline: '0px solid red', width: '16.25rem', marginTop: '-7rem'}}>
+                <div  style={{outline: '0px solid red', width: '19.25rem', marginTop: '-7rem', display: 'grid', placeContent: 'center'}}>
 
                 {children && <div style={{}}  className={q.childElement}>{children}</div>}
                 </div>
