@@ -10,6 +10,7 @@ import Start from './Components/Start';
 import { chewy } from './fonts/chewy';
 import { nunito } from './fonts/nunito';
 import { usePathname } from 'next/navigation';
+import MyStatsig from "./my-statsig";
 
 // Import the auth hook here 
 // import { useAnonymousAuth } from "./lib/hooks/useAnonymousAuth";
@@ -58,8 +59,7 @@ export default function RootLayout({ children }) {
         <UserProvider>
           <QuizProvider>
              <Navbar /> 
-            
-            {children}
+             <MyStatsig>{children}</MyStatsig>
           <Footer />  
           </QuizProvider>
         </UserProvider>
