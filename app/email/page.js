@@ -642,12 +642,18 @@ const prove_consent = async () => {
         {/* Add in the text here  */}
         <p className={`${emailSubmission.nameEmailConsentText}`}>
             
- I give my consent for ivvi Assist ltd to store and process my screener responses for the purpose of generating my personalised results and identifying patterns in future assessments, in accordance with the 
+ I consent to ivvi Assist Ltd storing my email to send me personalised emails, in accordance with the 
+ 
+ <span style={{textDecoration: 'underline', marginLeft: '5px'}} >
+
+ Privacy Policy
+ </span>
+
  
  <span style={{margin: '0 3.5px', cursor: 'pointer', textDecoration: 'underline'}} >
 <a href="/privacyPolicy" target="_blank" rel='noopener noreferer' >
 
- Privacy Policy 
+ {/* Privacy Policy  */}
 </a>
  </span>
  
@@ -668,7 +674,7 @@ const prove_consent = async () => {
      <span >
      <a target='_blank' rel="noopener noreferer" href='privacyPolicy'>
 
-            Privacy Policy
+            {/* Privacy Policy */}
             
                 </a>
             </span> 
@@ -697,7 +703,7 @@ const prove_consent = async () => {
             
             
             <span style={{cursor: 'pointer', marginLeft: '3.5px'}} >
-            <a href="privacyPolicy" target="_blank" rel="noopener noreferer" style={{cursor: 'pointer'}} >
+            <a href="privacyPolicy" target="_blank" rel="noopener noreferer" style={{cursor: 'pointer', textDecoration: "underline"}} >
             Privacy Policy
             </a>
             </span>
