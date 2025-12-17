@@ -371,6 +371,9 @@ margin-bottom: 5em;
     stroke: var(--svg-fill-color);
     fill: var(--svg-fill-color);
     opacity: 1;
+
+    
+
     
 }
 
@@ -510,10 +513,6 @@ margin-bottom: 5em;
 
     display: grid;
     place-content: center;
-
-
-
-
     
 }
 
