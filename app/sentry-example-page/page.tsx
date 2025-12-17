@@ -190,7 +190,6 @@ export default function Page() {
 
         .connectivity-error {
           padding: 12px 16px;
-          background-color: #E50045;
           border-radius: 8px;
           width: 500px;
           color: #FFFFFF;
