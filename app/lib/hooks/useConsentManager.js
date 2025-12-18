@@ -60,6 +60,9 @@ export default function useConsentManager(){
     let user = null;
     let result_consent = false;
     let email_consent = false;
+    let name; 
+    let email; 
+
 
     // This runs synchronously during render (not in useEffect)
     if (typeof document !== 'undefined') {
@@ -78,11 +81,16 @@ export default function useConsentManager(){
                 console.log('this is the cleaned element \n', cleaned);
                 
                 user = JSON.parse(cleaned);
-                console.log('this is the user \n', user);
+                console.log('this is the user extracted from the browser cookies in consent manager  \n', user);
 
                 // Extract the consent values
                 result_consent = user.resultConsent || false;
                 email_consent = user.emailConsent || false;
+                name = user.name; 
+                email = user.email; 
+
+
+                
 
                 console.log('extracted consent values:', result_consent, email_consent);
 
@@ -100,6 +108,8 @@ export default function useConsentManager(){
     const initialState = {
         resultConsent: result_consent,
         emailConsent: email_consent,
+        name: name, 
+        email: email,
         baseline: {
             resultConsent: result_consent,
             emailConsent: email_consent
@@ -113,6 +123,8 @@ export default function useConsentManager(){
 
     // Initialize useReducer with properly set initialState
     const [state, dispatch] = useReducer(reducer, initialState);
+
+    console.log('this is the state passed to the client ', state);
 
     // This useEffect can stay for any async fetching if needed
     useEffect(() => {

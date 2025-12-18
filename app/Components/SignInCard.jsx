@@ -13,8 +13,9 @@ import Image from 'next/image';
 import profile from '../assets/profile.svg'; 
 
 
-function SignInCard() {
+    
 
+function SignInCard() {
 
     return (
         
@@ -23,7 +24,6 @@ function SignInCard() {
                 className={`${si.card} ${nunito.className}`} 
                 id={si.firstCARD} 
                 style={{
-                    backgroundcolor: 'blue',
                     position: 'relative',
                     zIndex: 200,
                     boxShadow: '0 6px 20px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.08)',

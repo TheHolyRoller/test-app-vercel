@@ -4,7 +4,7 @@ import { useQuiz } from '../lib/context/QuizContext';
 import { useUser } from '../lib/context/UserContext';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react'; 
-// import e from '../Styles/emailPermission.modul.css'; 
+
 import n from '../Styles/name.module.css'; 
 
 import { nunito } from '../fonts/nunito';
@@ -35,8 +35,6 @@ export default function EmailPermission() {
 
 
     console.log('this is the answers object that will be saved to the database here \n', answers); 
-
-
     
     const formattedAnswers = JSON.stringify(answers, null, 4); 
 
@@ -91,7 +89,7 @@ export default function EmailPermission() {
 
 
     const handleChange =  (e) => {
-        setName(e.target.value);
+        setName(n.target.value);
         console.log('this is the handle change function in the confirmation file ')
 
     };
@@ -120,7 +118,7 @@ export default function EmailPermission() {
     const Section = "Audio Permission";
     const audio_url = '';
     const currentQuestion = { question_text: "" };
-    const currentIMG = '';
+    const currentIMG = 'https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/Email_Sent_Confirmation/view?project=67d4d9140008273c9d84&mode=admin';
 
     console.log('this is the answers object from the quiz context \n', answers); 
     
@@ -200,13 +198,34 @@ export default function EmailPermission() {
               Check your inbox for the report.
   
   
-                  <span>
-                      {currentQuestion?.question_text}
-                  </span>
+                
               </h2>
-          </div>
-      
 
+
+              <div className={n.imageSectionContainer}>
+          <div className={n.doodleContainer}>
+              {currentIMG && (
+                  <Image 
+                      src={currentIMG}
+                    //   className={n.currentIMG}
+                      alt='quiz illustration'
+                      width={300}
+                      height={300}
+                      unoptimized
+                      onLoad={() => console.log('🖼️ Image Loaded:', currentIMG)}
+                      onError={(e) => console.error('❌ Image Error:', e)}
+                      style={{
+                          objectFit: 'contain', 
+                          zIndex: '0', 
+                          marginTop: '9rem',
+                          marginLeft: '-1rem'
+                      }}
+                  />
+              )}
+          </div>
+      </div>
+
+          </div>
   
       <article className={n.card} id={n.cardOne}></article>
       <article className={n.card} id={n.cardTwo}></article>

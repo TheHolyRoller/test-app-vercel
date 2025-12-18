@@ -21,6 +21,16 @@
 
     width: 10rem; 
     z-index: 99999999; 
+    position: relative;
+    display: grid;
+    place-content: center;
+    width: 19rem;
+    height: 22rem;
+    
+    margin: auto; 
+    overflow: hidden;   
+    margin-top: -3.5rem;
+
 }
 
 

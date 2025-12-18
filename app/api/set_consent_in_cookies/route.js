@@ -2,17 +2,12 @@ import axios from "axios";
 import { NextResponse } from "next/server";
 
 
-// const baseULR = process.env.NEXT_PUBLIC_BASE_URL; 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL 
-    || (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : null)
-    || 'http://localhost:3000';
-
-    
+const baseULR = process.env.BASE_URL; 
+console.log('this is the base url', baseULR); 
 
 
 export async function POST(req){
 
-    
     const baseUrl = process.env.BASE_URL_PRODUCTION; 
     console.log('this is the set consent in cookies post server route::'); 
 
@@ -22,13 +17,9 @@ export async function POST(req){
         const body = await req.json(); 
         console.log('this is the body of the request \n', body); 
 
-        const {payload} = body; 
-        console.log('this is the user data \n', payload); 
+        const {email, name} = body; 
 
-        const {email, name} = payload; 
-
-
-        console.log('this is the email and name extracted from payload \n', email, name); 
+        console.log('this is the email and name extracted from the body of the request \n', email, name); 
 
 
         let emailConsent; 
@@ -78,11 +69,11 @@ export async function POST(req){
             console.log('this is the user data \n', userData); 
     
             const cookieData = encodeURIComponent(JSON.stringify(userData)); 
-            console.log('this is the cookie data after it has been convreted to a strig and cookie safe format \n', cookieData); 
+            console.log('this is the cookie data after it has been converted to a string and cookie safe format \n', cookieData); 
             
 
 
-            const cookieResponse = NextResponse.json({mesage: 'successfully saved user details and consent details to persistent cookies'}, {status: 200}); 
+            const cookieResponse = NextResponse.json({message: 'successfully saved user details and consent details to persistent cookies'}, {status: 200}); 
 
             cookieResponse.cookies.set("user", cookieData, {
     
@@ -107,7 +98,7 @@ export async function POST(req){
 
         const { result_consent, email_consent} = data; 
 
-        console.log('these are the consent vairables from airtable \n', result_consent, email_consent); 
+        console.log('these are the consent variables from airtable \n', result_consent, email_consent); 
 
         resultConsent = result_consent; 
         emailConsent = email_consent; 

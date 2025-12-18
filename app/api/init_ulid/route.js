@@ -47,6 +47,7 @@ export async function POST(req){
         console.log("could not find a 404 response extracting the ULID from the response \n"); 
         const body = await response.json(); 
         
+        
         console.log('this is the body of the response from the fetch consent records route \n', body); 
 
         const { data } = body; 
@@ -61,10 +62,8 @@ export async function POST(req){
 
         generated_ulid = user_id; 
         
-        console.log('this is the latest updted generated ulid \n', generated_ulid); 
-        console.log('this is the type of genreated ulid \n', typeof generated_ulid); 
-        
-        
+        console.log('this is the latest updated generated ulid \n', generated_ulid); 
+        console.log('this is the type of generated ulid \n', typeof generated_ulid); 
 
 
         }

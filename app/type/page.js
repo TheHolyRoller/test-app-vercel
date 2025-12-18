@@ -24,7 +24,7 @@ export default function UserType() {
         setUser(type);
         setTimeout(() => {
 
-            alert(`this is the user type ${type}`); 
+            // alert(`this is the user type ${type}`); 
 
             router.push('/quiz');
         }, 210);
@@ -43,7 +43,7 @@ export default function UserType() {
 We can screen different people for you, who is it going to be this time?
 
 */}
-            <QuizCard 
+                     <QuizCard 
 
                         question_text="Who is being quizzed"
                         Section="Details"
@@ -51,7 +51,7 @@ We can screen different people for you, who is it going to be this time?
                             question_text: ""
                         }}
                         
-                        audio_url={sound ? "https://dyslexiaquizapp.s3.eu-west-2.amazonaws.com/audio+doodles/quizzer+who-v1.mp3" : null}
+                        audio_url={sound ? "https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/Audio_Permissions/view?project=67d4d9140008273c9d84&mode=admin" : null}
                         currentIMG=''
                     >
 
@@ -61,16 +61,16 @@ We can screen different people for you, who is it going to be this time?
 
                         <button className={`${q.ageButton} ${q.childButton}`} onClick={(() => handleUserType('child'))} >
                             
-                            Child 13+ 
+                            Teen (13+) 
                         </button>
                             <button className={`${q.ageButton} ${q.studentButton}`} onClick={(() => handleUserType('student'))}>
                             
-                            Student 18+
+                            Student
                         </button>
 
                             <button className={`${q.ageButton} ${q.adultButton}`} onClick={(() => handleUserType('adult'))}>
                             
-                            Adult 25+
+                            Adult 
                         </button>
 
                         <div className={q.ageTextContainer}>

@@ -2,8 +2,6 @@ import { getAirtableBase } from '../../lib/airtable';
 import { NextResponse } from 'next/server';
 
 
-
-
 const baseUrl = 'http://localhost:3000';
 
 export async function POST(req){
@@ -24,7 +22,7 @@ export async function POST(req){
             console.log('this is the base test from the get airtable base function call \n', baseTest); 
             
             console.log('this is the query airtable post route'); 
-            console.log('this is the requst from the front end \n', req); 
+            console.log('this is the request from the front end \n', req); 
 
             const body = await req.json(); 
             console.log('this is the body of the request extracted with object destructuring after turning the request object into a JSON string \n', body); 
@@ -34,7 +32,7 @@ export async function POST(req){
             if(!email){
 
                 console.log('no email found in fetch consent records!!!!!:::::::');
-                return NextResponse.json({messsage: 'could not extract the email from the request'}, {status: 404});
+                return NextResponse.json({message: 'could not extract the email from the request'}, {status: 404});
 
             }
 
@@ -44,26 +42,40 @@ export async function POST(req){
 
             const base = getAirtableBase();
 
-            console.log('this is the base returned from the get airtable base function \n', base); 
+            console.log('this is the base returned from the get airtable base function in fetch Consent records \n', base); 
             console.log('this is the type of base \n', typeof base); 
 
             if(!base){
 
+
+                console.log('Could not find airtable base!!!!'); 
 
                 return NextResponse.json({message: 'Could not return the airtable base'}, {status: 404}); 
 
             }
 
             console.log('just about to query the airtable database api \n'); 
-            const records = await base("Consent").
-            select({
 
-                filterByFormula: `{email} = "${email}"`, 
-                sort: [{field: "Created", direction: "desc"}], 
-                maxRecords: 1, 
+            // TODO Add this back in when you have fixed the 403 Airtable Authorization error 
+            // const records = await base("Consent").
+            // select({
 
-            })
-            .firstPage(); 
+            //     filterByFormula: `{email} = "${email}"`, 
+            //     sort: [{field: "Created", direction: "desc"}], 
+            //     maxRecords: 1, 
+
+            // })
+            // .firstPage(); 
+
+            // TODO Mocked Consent records response from Airtable here 
+
+
+            const records = {
+
+                user_id: "234234234234"
+
+            }
+
 
 
             if(!records || records.length === 0){
@@ -74,18 +86,23 @@ export async function POST(req){
 
             console.log('these are the records \n', records); 
             console.log('this is the type of records \n', typeof records);
-            
-            console.log('this is the returned valued \n', { data: records[0].fields});
-             
+            console.log('this is the returned valued \n', { data: records});
 
-            return NextResponse.json({message: 'all okay records fetched', data: records[0].fields}, {status: 200});
+
+
+            // TODO mocked response 
+            return NextResponse.json({message: "returned mocked records from airtable with ULID", data: records}, {status:200}); 
+
+            // TODO use the mocked response records here 
+            // return NextResponse.json({message: 'all okay records fetched', data: records[0].fields}, {status: 200});
+
 
     }
 
     catch(error){
 
         console.error('could not handle request \n', error); 
-        return NextResponse.json({mesage: 'could not handle request'}, {status: 500}); 
+        return NextResponse.json({message: 'could not handle request'}, {status: 500}); 
 
 
     }

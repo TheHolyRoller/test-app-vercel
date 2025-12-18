@@ -35,7 +35,7 @@ const Unsubscribe = () => {
             }}
           >
 
-            {/* 🔵 TOP BLUE PROF ILE SECTION */}
+            {/* 🔵 TOP BLUE PROFILE SECTION */}
             <div 
               className={nf.cardCategoryColorContainer}
               style={{
@@ -68,10 +68,18 @@ const Unsubscribe = () => {
               <Image className={nf.puddle} src={puddle} alt='puddle' quality={100} priority/> 
               </div>
 
-              <div  className={nf.trashCotnainer}>
+              <div  className={nf.trashContainer}>
 
               <Image className={nf.trash} src={trash} alt="trash" priority quality={100} /> 
 
+              {/* Add in the 404 text here  */}
+              <div className={nf.notFoundText}>
+
+
+                404
+
+
+              </div>
 
 
               </div>

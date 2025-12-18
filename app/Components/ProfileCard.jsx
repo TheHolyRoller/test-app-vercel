@@ -37,11 +37,19 @@ function ProfileCard() {
     const {state, dispatch, isDirty, isDirtyAndFalse} = useConsentManager(); 
     console.log('these are the values extracted from the useConsent Manager hook through object destructuring \n', state, dispatch, isDirty, isDirtyAndFalse); 
 
-    const { emailConsent, resultConsent, userEmail, userName } = state; 
+    const { emailConsent, resultConsent } = state;
+    const {name, email} = state; 
+
+    console.log('this is the name extracted from the state in profile card ', name); 
+    console.log('this is the extracted email from the state in profile card ', email); 
+
+
+
+
+
 
     console.log('this is the state from the useConsentManager custom hook \n', state); 
 
-    console.log('this is the user email \n', userEmail); 
 
 
     console.log('this is the email consent and the result consent \n', emailConsent, resultConsent); 
@@ -49,8 +57,11 @@ function ProfileCard() {
     const [emailChecked, setEmailChecked] = useState(false); 
     const [resultChecked, setResultChecked] = useState(false); 
     const [user, setUser] = useState(); 
-    const [email, setEmail] = useState(); 
-    const [name, setName] = useState(); 
+
+    const [userEmail, setUserEmail] = useState(); 
+    const [userName, setUserName] = useState(); 
+
+
 
   const router = useRouter();
   const [isSelected, setIsSelected] = React.useState(true); 
@@ -73,18 +84,31 @@ function ProfileCard() {
     console.log('this is the user \n', user); 
     if(user){
         const {email} = user; 
+        const {name} = user; 
+        
+        
         console.log('this is the email extracted from user \n', email); 
 
-        setEmail(email); 
-        setName(userName); 
+
+        console.log('this is the updated user name', name); 
+
+
+        // Set the user name and email here 
+        setUserName(name); 
+        setUserEmail(email); 
+
+
 
 
     }
 
-    console.log('this is the user exatracted in the useEffect hook \n', user); 
+    console.log('this is the user extracted in the useEffect hook \n', user); 
 
 
   }, [user]); 
+
+
+
 
 
 useEffect(() => {
@@ -94,8 +118,15 @@ useEffect(() => {
     setEmailChecked(emailConsent); 
     setResultChecked(resultConsent); 
 
+    console.log('this is the updated user name', name); 
+    console.log('this is the user email updated in the state and originally extracted from useConsentManager hook', email); 
 
-}, [name, email]); 
+
+    console.log('these are the updated user name and email', userName, userEmail); 
+
+
+
+}, [userName, userEmail]); 
 
 
 useEffect(() => {
@@ -108,8 +139,6 @@ useEffect(() => {
 useEffect(() => {
 
     console.log('email and resul consent have just been updated:::!!!`` \n', emailConsent, resultConsent); 
-
-    // Now update the state variables that control the toggle switches 
 
     setEmailChecked(emailConsent); 
     setResultChecked(resultConsent); 
@@ -176,7 +205,6 @@ useEffect(() => {
 
   }
 
-
   
   const handleYesClick = async () => {
         
@@ -188,6 +216,11 @@ useEffect(() => {
 
 
         // TODO Refactor this to include the isDirty and false flags 
+
+        console.log('this is the user name and email right before being put in the consent payload ', name, email); 
+        
+
+
          const consentPayload = {
 
             name: name, 

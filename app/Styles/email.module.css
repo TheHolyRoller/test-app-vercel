@@ -87,6 +87,77 @@
     color: white;
 }
 
+
+
+
+.soundIconContainer{
+
+
+    position: relative; 
+    display: flex;
+    justify-content: flex-end; 
+
+    margin-right: -6em; 
+    margin-top: -1.35em; 
+
+
+
+
+}
+
+
+.soundIcon{
+
+
+    justify-self: end;
+    stroke: var(--svg-fill-color);
+    fill: var(--svg-fill-color);
+    opacity: 1;
+
+    
+
+    
+}
+
+
+
+
+.iconBackground{
+
+    width: 2em;
+    height: 2em;
+    background-color: rgba(240, 240, 240, 0.7);
+    border-radius:50% ;
+    -webkit-border-radius:50% ;
+    -moz-border-radius:50% ;
+    -ms-border-radius:50% ;
+    -o-border-radius:50% ;
+    /* justify-self: right; */
+    display: grid;
+    place-content: center;
+    margin-right: -0.7em;
+    
+    padding-bottom: 0px;
+    transform:translate(0, -1.6px) ;
+    -webkit-transform:translate(0, -1.6px) ;
+    -moz-transform:translate(0, -1.6px) ;
+    -ms-transform:translate(0, -1.6px) ;
+    -o-transform:translate(0, -1.6px) ;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .question_textContainer{
 
 

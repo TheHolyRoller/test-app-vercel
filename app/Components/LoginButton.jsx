@@ -37,9 +37,11 @@ function LoginButton() {
     const handleLogin = async (e) => {
       e.preventDefault();
       setIsLoading("Logging you in...");
+
       try {
         const currentURL = `${window.location.origin}/auth/callback`; 
-        console.log(`this is the callback url ${currentURL}`);
+
+        console.log(`this is the current url ${currentURL}`);
         
         // Create magic link
         const response = await account.createMagicURLToken({
@@ -48,12 +50,16 @@ function LoginButton() {
           name: name,
           url: currentURL
         });
+
+        console.log('this is the magic url response ', response); 
         
         // ✅ FIXED: Send payload directly, not nested
         const payload = {
           email: email, 
           name: name, 
         };
+
+        console.log('this is the payload being sent to set consent in cookies ', payload); 
         
         const consentResponse = await axios.post('/api/set_consent_in_cookies', payload);
         
@@ -61,9 +67,10 @@ function LoginButton() {
         setIsLoading('Check your email for the magic link!');
         alert('Check your email for the magic link!');
       } catch (error) {
+
         console.error('❌ Could not login:', error);
         setIsLoading('Error logging in');
-        console.log(`this is the callback url ${currentURL}`);
+        // console.log(`this is the callback url ${currentURL}`);
         alert(`Could not log user in! ${error.message}`);
 
 
