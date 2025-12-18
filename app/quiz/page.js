@@ -9,13 +9,16 @@ import Image from 'next/image';
 import QuizCard from '../Components/QuizCard';
 import CategoryCard from '../Components/CategoryCard';
 import ProgressBar from '../Components/QuizProgressBar'; 
-
+import { useGifPreloader } from '../lib/hooks/useGifPreloader';
 
 
 export default function Quiz() {
     const router = useRouter();
     const { name, sound, userAge } = useUser();
     const { questions, currentQuestion, handleAnswer, currentIndex, quizLength, gif_urls, navColor } = useQuiz();
+
+
+    useGifPreloader(gif_urls, currentIndex, 2);
     
     // Calculate progress as percentage of completed questions
     const progress = quizLength > 0 ? Math.round(((currentIndex + 1) / quizLength) * 100) : 0; 
@@ -79,6 +82,9 @@ export default function Quiz() {
         });
     }, [currentIndex, quizLength, questions, currentQuestion, gif_urls, progress]);
 
+    console.log('this is the gif_urls array \n', gif_urls); 
+
+
     // Initialize currentQuestion properties safely
     const question_text = currentQuestion?.question_text || '';
     const audio_url = sound ? (currentQuestion?.audio_url || '') : '';
@@ -86,6 +92,9 @@ export default function Quiz() {
     const Type = currentQuestion?.Type || '';
     const gif_url = currentQuestion?.gif_url || '';
     const currentIMG = gif_urls?.[currentIndex] || '';
+
+    console.log('this is the gif url \n', gif_url); 
+
 
     // Log question details
     useEffect(() => {
@@ -154,6 +163,7 @@ export default function Quiz() {
                     />
                     </div>
                 ) : (
+
                     <QuizCard
                         key={`quiz-${currentIndex}-${currentQuestion?.$id}`}
                         question_text={question_text}
