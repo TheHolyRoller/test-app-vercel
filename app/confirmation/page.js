@@ -117,7 +117,7 @@ export default function EmailPermission() {
     const Section = "Audio Permission";
     const audio_url = '';
     const currentQuestion = { question_text: "" };
-    const currentIMG = 'https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/Email_Sent_Confirmation/view?project=67d4d9140008273c9d84&mode=admin';
+    const currentIMG = 'https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/69440aa20005ab99eec3/view?project=67d4d9140008273c9d84&mode=admin';
 
     console.log('this is the answers object from the quiz context \n', answers); 
     
