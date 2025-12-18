@@ -4,6 +4,8 @@ import { NextResponse } from 'next/server';
 
 
 
+const baseUrl = 'http://localhost:3000';
+
 export async function POST(req){
 
 

@@ -5,12 +5,7 @@ import axios from "axios";
 
 // Helper to get the base URL for internal API calls
 const getBaseUrl = (req) => {
-  // In production, use relative URLs for internal calls
-  if (process.env.VERCEL_ENV === 'production') {
-    return ''; // Empty string means relative URLs like '/api/create'
-  }
-  // In development, use localhost
-  return process.env.BASE_URL_PRODUCTION || 'http://localhost:3000';
+  return 'http://localhost:3000';
 };
 
 export async function POST(req) {

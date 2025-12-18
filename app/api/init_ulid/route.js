@@ -5,7 +5,7 @@ import {generateULID} from '../../utils/generateULID';
 export async function POST(req){
 
     console.log('this is the init ulid server route is it running \n'); 
-    const baseUrl = process.env.BASE_URL_PRODUCTION; 
+    const baseUrl = 'http://localhost:3000'; 
 
 
     let generated_ulid; 

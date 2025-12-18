@@ -10,7 +10,7 @@ export async function POST(req) {
          const ACCESS_TOKEN = process.env.IVVI_SUPPORT_AIRTABLE_PA_TOKEN; 
         const BASE_ID = process.env.IVVI_SUPPORT_CONSENT_BASE_ID;
         const TABLE_ID = process.env.IVVI_SUPPORT_CONSENT_TABLE_ID; 
-        const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
+        const baseUrl = 'http://localhost:3000'
         
 
         console.log('this is the access token \n', ACCESS_TOKEN); 

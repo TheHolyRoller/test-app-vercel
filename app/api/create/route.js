@@ -8,6 +8,7 @@ const Airtable = require('airtable');
 
 const ACCESS_TOKEN = process.env.PERSONAL_ACCESS_TOKEN; 
 const BASE_ID = process.env.BASE_ID;
+const baseUrl = 'http://localhost:3000';
 
 
 
