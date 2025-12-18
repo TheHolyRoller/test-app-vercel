@@ -547,7 +547,7 @@ const prove_consent = async () => {
     const audio_url = 'https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/email/view?project=67d4d9140008273c9d84&mode=admin';
     const question_text = `Enter your email to receive results`;
     const currentQuestion = { question_text: "" };
-    const currentIMG = '';
+    const currentIMG = 'https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/Test_gif/view?project=67d4d9140008273c9d84&mode=admin';
 
     
     // Placeholder functions

@@ -19,8 +19,6 @@ function Page() {
   const currentQuestion = { question_text: "" };
   const { sound, toggleUserSound } = useUser();
 
-
-
   const currentIMG = 'https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/audo_preference/view?project=67d4d9140008273c9d84&mode=admin'; 
   
   // Placeholder functions
