@@ -10,6 +10,7 @@ import uc from '../Styles/UnderstandCard.module.css';
 import { nunito } from '../fonts/nunito';
 import Image from 'next/image';
 import ivvi_group from '../assets/ivvi_group.svg'; 
+import Link from 'next/link';
 
 
 export default function EmailPermission() {
@@ -17,9 +18,9 @@ export default function EmailPermission() {
     const { finalScore } = useQuiz();
     const { name, sound } = useUser();
 
-    const handleYesClick = () => {
-        router.push('/ideal');
-    };
+    // const handleYesClick = () => {
+    //     router.push('/ideal');
+    // };
 
 
 
@@ -168,19 +169,26 @@ export default function EmailPermission() {
   </article>
 
 
-<section className={uc.buttonSectionContainer} style={{cursor: 'pointer'}} onClick={handleYesClick}>
+{/* TODO Wrap this in a link and preload the route  */}
+<Link   
 
-  <div className={uc.ctaContainer} style={{cursor: 'pointer'}} onClick={handleYesClick}>
+href='/ideal' prefetch
 
-    <div className={uc.cta} onClick={handleYesClick} style={{cursor: 'pointer', fontSize: '2rem', letterSpacing: '1px'}} >
+>
+  {/* onClick={handleYesClick} */}
+<section className={uc.buttonSectionContainer} style={{cursor: 'pointer'}}>
+
+  <div className={uc.ctaContainer} style={{cursor: 'pointer'}}>
+
+    <div className={uc.cta}  style={{cursor: 'pointer', fontSize: '2rem', letterSpacing: '1px'}} >
         Next
 
     </div>
 
-
   </div>
   
 </section>
+</Link>
         </div>
       </div>
     );

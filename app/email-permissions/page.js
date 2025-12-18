@@ -29,11 +29,11 @@ export default function EmailPermission() {
 
 
     const Section = "Audio Permission";
-    const audio_url = 'https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/result_permission/view?project=67d4d9140008273c9d84&mode=admin';
+    const audio_url = 'https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/6943fecb000ff0da0ae4/view?project=67d4d9140008273c9d84&mode=admin';
     const question_text = `Shall We send a results Report to your email?
 Otherwise they won’t be saved.`;
     const currentQuestion = { question_text: "" };
-    const currentIMG = 'https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/Send_Results/view?project=67d4d9140008273c9d84&mode=admin';
+    const currentIMG = 'https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/69440aa20005ab99eec3/view?project=67d4d9140008273c9d84&mode=admin';
     
     // Placeholder functions
     const getLabelColorBySection = (section) => "#033699";

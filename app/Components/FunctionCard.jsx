@@ -25,6 +25,8 @@ import all from '../assets/All in one resource.svg';
 import group from '../assets/Multi Style Learning.svg'; 
 
 
+import Link from 'next/link';
+
 
 
 export default function EmailPermission() {
@@ -32,19 +34,19 @@ export default function EmailPermission() {
     const { finalScore } = useQuiz();
     const { name, sound } = useUser();
 
-    const handleYesClick = () => {
+    // const handleYesClick = () => {
         
-       router.push('/legal');
+    //    router.push('/legal');
 
-    };
+    // };
 
 
 
-    const handleNoClick = () => {
+    // const handleNoClick = () => {
 
-      sessionStorage.setItem('needsRefreshFromEmailDecline', 'true');
-        router.push('/');
-    };
+    //   sessionStorage.setItem('needsRefreshFromEmailDecline', 'true');
+    //     router.push('/');
+    // };
 
     const Section = "Audio Permission";
     const audio_URL = '';
@@ -188,21 +190,26 @@ export default function EmailPermission() {
       <article className={fc.card} id={fc.cardFour}  ></article>
   </article>
 
+  <Link   
 
-<section className={fc.buttonSectionContainer} style={{cursor: 'pointer'}} onClick={handleYesClick}>
+href='/legal' prefetch
 
-  <div className={fc.ctaContainer} style={{cursor: 'pointer'}} onClick={handleYesClick}>
+>
 
-    <div className={fc.cta} onClick={handleYesClick} style={{cursor: 'pointer', fontSize: '2rem', letterSpacing: '1px'}} >
+
+<section className={fc.buttonSectionContainer} style={{cursor: 'pointer'}}>
+
+  <div className={fc.ctaContainer} style={{cursor: 'pointer'}} >
+
+    <div className={fc.cta}  style={{cursor: 'pointer', fontSize: '2rem', letterSpacing: '1px'}} >
         Next
 
     </div>
 
-
-
   </div>
   
 </section>
+  </Link>
         </div>
       </div>
     );

@@ -498,8 +498,8 @@
 
 .soundIcon {
     justify-self: end;
-    stroke: var(--svg-fill-color);
-    fill: var(--svg-fill-color);
+    stroke: #033699;
+    fill: #033699;
     opacity: 1;
 }
 

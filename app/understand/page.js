@@ -15,9 +15,9 @@ function Understand() {
   console.log('CSS Module classes:', u);
   console.log('mainContainer class:', u.mainContainer);
   
-  const handleNext = () => {
-    router.push('/ideal');
-  };
+  // const handleNext = () => {
+  //   router.push('/ideal');
+  // };
   
 
   return (

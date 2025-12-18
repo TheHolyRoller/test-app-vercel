@@ -106,7 +106,6 @@ export default function EmailPermission() {
         const response = saveResults(databases, data); 
         console.log('this is the response of the save results function \n', response); 
 
-
         setTimeout(() => {
             router.push('/postquiz');
         }, 310);

@@ -29,6 +29,10 @@ import group from '../assets/Multi Style Learning.svg';
 import legal from '../assets/Your notes are comprehensiv.svg'; 
 import lc from '../Styles/LegalCard.module.css'; 
 
+
+
+import Link from 'next/link';
+
 export default function EmailPermission() {
     const router = useRouter();
     const { finalScore } = useQuiz();
@@ -214,12 +218,17 @@ terms of service </a>
       <article className={lc.card} id={lc.cardFour}></article>
   </article>
 
+  <Link   
 
-<section className={lc.buttonSectionContainer} style={{cursor: 'pointer'}} onClick={handleYesClick}>
+href='/audiopermission' prefetch
 
-  <div className={lc.ctaContainer} style={{cursor: 'pointer'}} onClick={handleYesClick}>
+>
 
-    <div className={lc.cta} onClick={handleYesClick} style={{cursor: 'pointer', fontSize: '2rem', letterSpacing: '1px'}} >
+<section className={lc.buttonSectionContainer} style={{cursor: 'pointer'}}>
+
+  <div className={lc.ctaContainer} style={{cursor: 'pointer'}} >
+
+    <div className={lc.cta} style={{cursor: 'pointer', fontSize: '2rem', letterSpacing: '1px'}} >
         Next
 
     </div>
@@ -227,6 +236,7 @@ terms of service </a>
   </div>
   
 </section>
+</Link>
         </div>
       </div>
 

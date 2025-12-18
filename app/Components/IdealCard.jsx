@@ -24,24 +24,26 @@ import high from '../assets/Highlight Key Info.svg';
 import all from '../assets/All in one resource.svg';
 
 
+import Link from 'next/link';
+
 
 export default function EmailPermission() {
     const router = useRouter();
     const { finalScore } = useQuiz();
     const { name, sound } = useUser();
 
-    const handleYesClick = () => {
-        router.push('/adult');
-    };
+    // const handleYesClick = () => {
+    //     router.push('/adult');
+    // };
 
 
 
 
-    const handleNoClick = () => {
-        // Set flag to trigger refresh when landing on home page
-        sessionStoragid.setItem('needsRefreshFromEmailDecline', 'true');
-        router.push('/');
-    };
+    // const handleNoClick = () => {
+    //     // Set flag to trigger refresh when landing on home page
+    //     sessionStoragid.setItem('needsRefreshFromEmailDecline', 'true');
+    //     router.push('/');
+    // };
 
     const Section = "Audio Permission";
     const audio_url = '';
@@ -183,12 +185,17 @@ export default function EmailPermission() {
       <article className={id.card} id={id.cardFour}></article>
   </article>
 
+  <Link   
 
-<section className={id.buttonSectionContainer} style={{cursor: 'pointer',}} onClick={handleYesClick} >
+href='/adult' prefetch
 
-  <div className={id.ctaContainer} style={{cursor: 'pointer'}} onClick={handleYesClick} >
+>
+  
+<section className={id.buttonSectionContainer} style={{cursor: 'pointer',}} >
 
-    <div className={id.cta} onClick={handleYesClick} style={{cursor: 'pointer', fontSize: '2rem', letterSpacing: '1px'}} >
+  <div className={id.ctaContainer} style={{cursor: 'pointer'}} >
+
+    <div className={id.cta} style={{cursor: 'pointer', fontSize: '2rem', letterSpacing: '1px'}} >
         Next
 
     </div>
@@ -197,6 +204,7 @@ export default function EmailPermission() {
   </div>
   
 </section>
+  </Link>
         </div>
       </div>
     );
