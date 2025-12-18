@@ -697,43 +697,10 @@ const prove_consent = async () => {
         {/* Add in the text here  */}
         <p className={`${emailSubmission.nameEmailConsentText}`}>
             
- I consent to ivvi Assist Ltd storing my email to send me personalised emails, in accordance with the 
- 
- <span style={{textDecoration: 'underline', marginLeft: '5px'}} >
-
- Privacy Policy
- </span>
-
- 
- <span style={{margin: '0 3.5px', cursor: 'pointer', textDecoration: 'underline'}} >
-<a href="/privacyPolicy" target="_blank" rel='noopener noreferer' >
-
- {/* Privacy Policy  */}
-</a>
- </span>
+ {/* I consent to ivvi Assist Ltd storing my email to send me personalised emails, in accordance with the  */}
+ I confirm that I am 13 years or older and I give my explicit consent for ivvi Assist ltd to send me personalized emails
  
  
- & click 
-<span style={{textDecoration: 'underline', cursor: 'pointer', margin:'0 3px'}} >
-    <a href='/login' target="_blank" rel="noopener noreferer" style={{unset: 'all'}} >
-    
-    here
-    
-    </a>
-
-</span>
-
-
-     to change your consent            
-     
-     <span >
-     <a target='_blank' rel="noopener noreferer" href='privacyPolicy'>
-
-            {/* Privacy Policy */}
-            
-                </a>
-            </span> 
-
         </p>
 
       </div>
@@ -754,7 +721,45 @@ const prove_consent = async () => {
 
             <p className={`${emailSubmission.resultConsentText}`}>
 
-            I confirm that I am 13 years or older and I give my explicit consent for ivvi Assist ltd to store and process my name, age, and screener responses in accordance with the 
+            {/* I confirm that I am 13 years or older and I give my explicit consent for ivvi Assist ltd to send me personalized emails  */}
+
+            I consent to ivvi Assist Ltd collecting and storing my name and email address for the purposes of identifying me as a user. To view our Terms of service Click here
+
+
+            <span style={{textDecoration: 'underline', marginLeft: '5px', marginRight: '3px'}} >
+                <a href='/Terms_of_Service' >
+                
+                Terms of Service 
+ 
+                </a>    
+
+
+             </span>
+
+
+ 
+ 
+ & click 
+<span style={{textDecoration: 'underline', cursor: 'pointer', margin:'0 3px'}} >
+    <a href='/login' target="_blank" rel="noopener noreferer" style={{unset: 'all'}} >
+    
+    here
+    
+    </a>
+
+</span>
+
+
+     to change your consent. And click here to view our           
+     
+     <span >
+     <a target='_blank' rel="noopener noreferer" href='privacyPolicy'>
+
+            {/* Privacy Policy */}
+            
+                </a>
+            </span> 
+
             
             
             <span style={{cursor: 'pointer', marginLeft: '3.5px'}} >
