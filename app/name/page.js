@@ -55,7 +55,7 @@ export default function EmailPermission() {
     const audio_url = 'https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/name/view?project=67d4d9140008273c9d84&mode=admin';
     const question_text = `Enter your full name`;
     const currentQuestion = { question_text: "" };
-    const currentIMG = '';
+    const currentIMG = 'https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/69440aa90005c8ac8aa8/view?project=67d4d9140008273c9d84&mode=admin'; 
     
     // Placeholder functions
     const getLabelColorBySection = (section) => "#033699";
@@ -160,7 +160,28 @@ export default function EmailPermission() {
 
 
         {/* Add in the gif container here  */}
-        
+
+        <div className={n.imageSectionContainer}>
+        <div className={n.doodleContainer}>
+            {/* {currentIMG && ( */}
+                <Image 
+                className={n.gifImage}
+                    src={currentIMG}
+                    alt='quiz illustration'
+                    width={310}
+                    height={110}
+                    unoptimized
+                    onLoad={() => console.log('🖼️ Image Loaded:', currentIMG)}
+                    onError={(e) => console.error('❌ Image Error:', e)}
+                    style={{
+                        objectFit: 'contain', 
+                        zIndex: '0', 
+                    }}
+                />
+            {/* )} */}
+        </div>
+    </div>
+
 
 
 
@@ -169,8 +190,6 @@ export default function EmailPermission() {
           <div className={`${n.question_textContainer} ${nunito.className}`} >
               <h2 className={`${n.question_text} ${nunito.className}`}>
                   {question_text}
-  
-  
                   <span>
                       {currentQuestion?.question_text}
                   </span>
@@ -196,6 +215,7 @@ export default function EmailPermission() {
     </form>
     </article>
         </div>
+
 
 
   

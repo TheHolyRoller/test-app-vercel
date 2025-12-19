@@ -1,5 +1,6 @@
 .card {
-    /* height: 625px; */
+
+
     height: var(--card-height);
     max-height: var(--max-card-height);
     width:320px;    
@@ -160,7 +161,7 @@
     z-index: 9999999;
     position: absolute;
     height: 7rem;
-    top: 65%;
+    top: 25%;
     left: 50%;
     right: 50%;
 
@@ -188,14 +189,15 @@
 }
 
 .imageSectionContainer{
-    display: grid;  
+    /* display: grid;  
     place-content: center; 
     margin: 0 auto; 
     width: 100%;
     position: relative; 
     z-index: 9;
     margin-top: 0rem !important; 
-    position: absolute; 
+    position: absolute;  */
+
         
 }
 
@@ -458,14 +460,17 @@
 
 
         position: absolute;
-        top: 10%;
+        top: 5rem;
+
         opacity: 1;
 
 
 }
 
 .doodleContainer{
-    margin-top: 2.8em;     
+
+
+
 }
 
 .currentIMG{
@@ -619,33 +624,4 @@
         margin-top: -0.5rem !important; 
 
     }
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -5,7 +5,9 @@ import { useUser } from '../lib/context/UserContext';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react'; 
 
-import n from '../Styles/name.module.css'; 
+// import n from '../Styles/name.module.css'; 
+import c from '../Styles/confirmation.module.css'; 
+
 
 import { nunito } from '../fonts/nunito';
 import Image from 'next/image';
@@ -89,7 +91,7 @@ export default function EmailPermission() {
 
 
     const handleChange =  (e) => {
-        setName(n.target.value);
+        setName(e.target.value);
         console.log('this is the handle change function in the confirmation file ')
 
     };
@@ -144,8 +146,8 @@ export default function EmailPermission() {
         {/* Main Content Container */}
         <div style={{ paddingTop: '60px' }}>
           <article 
-          className={`${n.card} ${nunito.className}`} 
-          id={n.firstCARD} 
+          className={`${c.card} ${nunito.className}`} 
+          id={c.firstCARD} 
           style={{
               position: 'relative',
               zIndex: 200,
@@ -154,7 +156,7 @@ export default function EmailPermission() {
           }}
           >
       <div 
-          className={n.cardCategoryColorContainer} 
+          className={c.cardCategoryColorContainer} 
           style={{
               backgroundColor: '#4168b3',
               boxShadow: '0 -2px 8px rgba(0, 0, 0, 0.1), -2px 0 8px rgba(0, 0, 0, 0.1), 2px 0 8px rgba(0, 0, 0, 0.1)', 
@@ -175,11 +177,11 @@ export default function EmailPermission() {
           )}
           
   
-          <div className={`${n.categoryLabelContainer} ${nunito.className}`}>
-              <label className={`${n.categoryLabel} ${nunito.className}`}>
+          <div className={`${c.categoryLabelContainer} ${nunito.className}`}>
+              <label className={`${c.categoryLabel} ${nunito.className}`}>
   
   
-                  <div className={`${n.labelContainer} ${nunito.className}`} style={{backgroundColor: getLabelColorBySection(Section)}}>
+                  <div className={`${c.labelContainer} ${nunito.className}`} style={{backgroundColor: getLabelColorBySection(Section)}}>
   
                   ready
                   </div>
@@ -188,8 +190,8 @@ export default function EmailPermission() {
       </div>
   
     
-          <div className={`${n.question_textContainer} ${nunito.className}`} >
-              <h2 className={`${n.question_text} ${nunito.className}`}>
+          <div className={`${c.question_textContainer} ${nunito.className}`} >
+              <h2 className={`${c.question_text} ${nunito.className}`}>
             <span style={{display: 'block'}}>
 
               Email Sent!
@@ -201,12 +203,12 @@ export default function EmailPermission() {
               </h2>
 
 
-              <div className={n.imageSectionContainer}>
-          <div className={n.doodleContainer}>
+              <div className={c.imageSectionContainer}>
+          <div className={c.doodleContainer}>
               {currentIMG && (
                   <Image 
                       src={currentIMG}
-                    //   className={n.currentIMG}
+                    //   className={c.currentIMG}
                       alt='quiz illustration'
                       width={300}
                       height={300}
@@ -226,15 +228,15 @@ export default function EmailPermission() {
 
           </div>
   
-      <article className={n.card} id={n.cardOne}></article>
-      <article className={n.card} id={n.cardTwo}></article>
-      <article className={n.card} id={n.cardThree}></article>
-      <article className={n.card} id={n.cardFour}></article>
+      <article className={c.card} id={c.cardOne}></article>
+      <article className={c.card} id={c.cardTwo}></article>
+      <article className={c.card} id={c.cardThree}></article>
+      <article className={c.card} id={c.cardFour}></article>
       </article>
       
-  <div className={n.nextButtonContainer}>
+  <div className={c.nextButtonContainer}>
 
-<button className={n.nextButton} onClick={handleSubmit} style={{fontSize: '2rem', letterSpacing: '1px'}} >
+<button className={c.nextButton} onClick={handleSubmit} style={{fontSize: '2rem', letterSpacing: '1px'}} >
     Next 
 </button>
 </div>
