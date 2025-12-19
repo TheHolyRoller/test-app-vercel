@@ -14,7 +14,7 @@ function Page() {
   
   // Default values for missing variables
   const Section = "Audio Permission";
-  const audio_url = 'https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/Audio_Permission/view?project=67d4d9140008273c9d84&mode=admin';
+  const audio_url = 'https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/6943fef60015171f5d65/view?project=67d4d9140008273c9d84&mode=admin';
 
   const question_text = "Hello. Welcome to our Dyslexia Screener. Shall I read out the questions for you?";
   const currentQuestion = { question_text: "" };
@@ -115,7 +115,7 @@ function Page() {
 
                         <div className={a.soundIconContainer} onClick={toggleUserSound} >
 
-                                <div className={a.iconBackground} style={{position: 'absolute', top: '-0.3rem', right: '-0.4rem' }}>
+                                <div className={a.iconBackground} style={{position: 'absolute', top: '-4.5px'}}  >
 
                 
                                      {sound === true ? (
