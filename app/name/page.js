@@ -62,7 +62,7 @@ export default function EmailPermission() {
 
     return (
         <div>
-        {/* Top Blue Navbar Strip */}
+        {/* Top Blue Navbar Strip */}   
         <div 
           style={{
             width: '100%',
@@ -156,6 +156,14 @@ export default function EmailPermission() {
               </label>
           </div>
       </div>
+
+
+
+        {/* Add in the gif container here  */}
+        
+
+
+
   
       {question_text && (
           <div className={`${n.question_textContainer} ${nunito.className}`} >
