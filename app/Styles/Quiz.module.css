@@ -351,13 +351,16 @@ margin-bottom: 5em;
 .soundIconContainer{
 
 
-    position: relative; 
+    position: absolute; 
     display: flex;
     justify-content: flex-end; 
 
-    margin-right: -6em; 
-    margin-top: -1.35em; 
+    right: 5%;
+    top: 43%; 
 
+
+    /* Set a fixed width here  */
+    min-width: 22rem;
 
 
 
@@ -368,13 +371,10 @@ margin-bottom: 5em;
 
 
     justify-self: end;
-    stroke: #033699;
-    fill: #033699;
+    stroke: var(--progress-color);
+    fill: var(--svg-fill-color); 
     opacity: 1;
 
-    
-
-    
 }
 
 
