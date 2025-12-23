@@ -262,6 +262,9 @@
 }
 
 #cardTwo{
+
+
+
     position: absolute;
     top: 0;
     left: 0;
@@ -277,9 +280,6 @@
     width: 320px;
     min-width: 320px; 
 
-
-
-
     transform:translate(0rem, 4em);
     -webkit-transform:translate(0rem, 4em);
     -moz-transform:translate(0rem, 4em);
@@ -288,6 +288,9 @@
 
 
 }
+
+
+
 
 #cardThree{
  
@@ -315,12 +318,12 @@ border-bottom: 4px solid  #073384;
 
 
 
-
-
-
 }
 
 #cardFour{
+
+
+
     position: relative;
     z-index: -5;
     width: 317px;
@@ -519,11 +522,24 @@ border-bottom: 4px solid  #073384;
 
 
     .card{
+      
 
-
-        /* margin-top: -12rem !important;  */
+        outline: 2px solid red;
 
     }
+
+    .cardElementContainer{
+
+        /* removed padding  */
+        outline: 5px solid blue;
+        padding: 0;
+
+
+
+
+    }
+
+
 
 
 
@@ -537,6 +553,8 @@ border-bottom: 4px solid  #073384;
 
     .card{
 
+
+        outline: 5px solid lime;
 
 }
 
