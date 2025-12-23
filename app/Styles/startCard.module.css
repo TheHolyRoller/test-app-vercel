@@ -524,14 +524,14 @@ border-bottom: 4px solid  #073384;
     .card{
       
 
-        outline: 2px solid red;
+        /* outline: 2px solid red; */
 
     }
 
     .cardElementContainer{
 
         /* removed padding  */
-        outline: 5px solid blue;
+        /* outline: 5px solid blue; */
         padding: 0;
         /* moved up higher  */
         margin-top: -1.5rem; 
