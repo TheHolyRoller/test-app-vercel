@@ -76,6 +76,7 @@ export async function POST(req){
         console.log('these are the fields \n', fields); 
 
         const response = await base("Table 1").create([{ fields }]);
+        
 
         console.log('this is the resonse from the database server \n', response); 
 
