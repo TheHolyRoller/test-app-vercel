@@ -255,6 +255,13 @@ function ResultContent() {
 </div>
 
 
+        {/* TODO only render this if the audio boolean variable is true  */}
+
+
+            {sound && 
+            
+
+
              <audio 
                 key={audio_url} 
                 controls 
@@ -266,6 +273,9 @@ function ResultContent() {
             >
                 <source src={audio_url} type="audio/mp3" />
             </audio>
+
+            }
+
 
               </label>
           </div>

@@ -588,7 +588,8 @@ const prove_consent = async () => {
               boxShadow: '0 -2px 8px rgba(0, 0, 0, 0.1), -2px 0 8px rgba(0, 0, 0, 0.1), 2px 0 8px rgba(0, 0, 0, 0.1)', 
           }}
       >
-           {audio_url && (
+        
+           {audio_url && sound && (
               <audio 
                   key={audio_url} 
                   controls 
@@ -696,8 +697,7 @@ const prove_consent = async () => {
         {/* Add in the text here  */}
         <p className={`${emailSubmission.nameEmailConsentText}`}>
             
- {/* I consent to ivvi Assist Ltd storing my email to send me personalised emails, in accordance with the  */}
- I confirm that I am 13 years or older and I give my explicit consent for ivvi Assist ltd to send me personalized emails
+             I confirm that I am 13 years or older and I give my explicit consent for ivvi Assist ltd to send me personalized emails
  
  
         </p>
@@ -720,54 +720,25 @@ const prove_consent = async () => {
 
             <p className={`${emailSubmission.resultConsentText}`}>
 
-            {/* I confirm that I am 13 years or older and I give my explicit consent for ivvi Assist ltd to send me personalized emails  */}
 
-            I consent to ivvi Assist Ltd collecting and storing my name and email address for the purposes of identifying me as a user. To view our Terms of service Click here
+                I’d like to receive emails about dyslexia.
 
-
-            <span style={{textDecoration: 'underline', marginLeft: '5px', marginRight: '3px'}} >
-                <a href='/Terms_of_Service' >
-                
-                Terms of Service 
- 
-                </a>    
-
-
-             </span>
-
-
- 
- 
- & click 
-<span style={{textDecoration: 'underline', cursor: 'pointer', margin:'0 3px'}} >
-    <a href='/login' target="_blank" rel="noopener noreferer" style={{unset: 'all'}} >
-    
-    here
-    
-    </a>
-
-</span>
-
-
-     to change your consent. And click here to view our           
-     
-     <span >
-     <a target='_blank' rel="noopener noreferer" href='privacyPolicy'>
-
-            {/* Privacy Policy */}
-            
+               Click 
+               <span>
+                <a href='/Terms_of_Service'  style={{textDecoration:'underline', margin: '0 2.5px'}} >
+               here
                 </a>
-            </span> 
+               </span>
+                to read 
+                <a  href='/Terms_of_Service'  style={{textDecoration:'underline', margin: '0 2.5px'}} >
 
-            
-            
-            <span style={{cursor: 'pointer', marginLeft: '3.5px'}} >
-            <a href="privacyPolicy" target="_blank" rel="noopener noreferer" style={{cursor: 'pointer', textDecoration: "underline"}} >
-            Privacy Policy
-            </a>
-            </span>
+                Terms of Service
+                </a>
+                 and 
+                <a href='/privacyPolicy' style={{textDecoration:'underline', margin: '0 2.5px'}} >
+                Privacy Policy
 
-
+                </a>
             </p>
 
         </div>

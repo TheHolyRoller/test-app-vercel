@@ -74,8 +74,12 @@ Otherwise they won’t be saved.`;
               boxShadow: '0 -2px 8px rgba(0, 0, 0, 0.1), -2px 0 8px rgba(0, 0, 0, 0.1), 2px 0 8px rgba(0, 0, 0, 0.1)', 
   
           }}
+
+          
       >
-          {audio_url && (
+
+
+          {audio_url && sound &&  (
               <audio 
                   key={audio_url} 
                   controls 
@@ -87,6 +91,9 @@ Otherwise they won’t be saved.`;
                   <source src={audio_url} type="audio/mp3" />
               </audio>
           )}
+
+          
+
           
   
           <div className={`${e.categoryLabelContainer} ${nunito.className}`}>

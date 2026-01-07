@@ -52,7 +52,7 @@ export default function EmailPermission() {
 
 
     const Section = "Audio Permission";
-    const audio_url = 'https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/name/view?project=67d4d9140008273c9d84&mode=admin';
+    const audio_url = 'https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/6943fea500373acfa5d5/view?project=67d4d9140008273c9d84&mode=admin';
     const question_text = `Enter your full name`;
     const currentQuestion = { question_text: "" };
     const currentIMG = 'https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/69440aa90005c8ac8aa8/view?project=67d4d9140008273c9d84&mode=admin'; 
@@ -96,7 +96,7 @@ export default function EmailPermission() {
   
           }}
       >
-          {audio_url && (
+          {audio_url && sound && (
               <audio 
                   key={audio_url} 
                   controls 
@@ -108,6 +108,7 @@ export default function EmailPermission() {
                   <source src={audio_url} type="audio/mp3" />
               </audio>
           )}
+
           
   
           <div className={`${n.categoryLabelContainer} ${nunito.className}`}>
