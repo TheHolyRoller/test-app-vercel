@@ -92,7 +92,7 @@ function PhoneBarChart({ writingPercentage,
 
 
 
-    <main className={p.mainContainer} style={{outline: '5px solid lime'}} >
+    <main className={p.mainContainer}>
             
             <article 
               className={`${p.card} ${nunito.className}`} 

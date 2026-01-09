@@ -104,7 +104,7 @@ function ResultsExplanationContent() {
     return (
         <>
 
-            <div className={r.mainBarChartContainer} style={{outline: '3px solid red'}} >
+            <div className={r.mainBarChartContainer}>
 
             <PhoneBarChart
                 percentage={percentage || 0}

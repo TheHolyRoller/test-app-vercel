@@ -1,6 +1,8 @@
 .card {
 
-    height: var(--card-height);
+    /* height: var(--card-height); */
+    height: 500px; 
+
 
     width:320px;    
     position: relative;
@@ -137,21 +139,19 @@
 
 #cardOne{
     position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    position: relative;
+    top: 0;    
+    
     width: 320px;
-    height: 555px;
-    background-color: #013699;  
+    height: 505px;
+    background-color: #013699;
+    outline: 5px solid lime;  
 
-    border-radius: 0rem;
-    -webkit-border-radius: 0rem;
-    -moz-border-radius: 0rem;
-    -ms-border-radius: 0rem;
-    -o-border-radius: 0rem;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
     z-index: -2;
-   display: none;
     transform:  translate(0rem,3em) !important;
     box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
 
@@ -362,11 +362,11 @@
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
-    transform:translate(0, 3.8rem);
-    -webkit-transform:translate(0, 3.8rem);
-    -moz-transform:translate(0, 3.8rem);
-    -ms-transform:translate(0, 3.8rem);
-    -o-transform:translate(0, 3.8rem);
+    transform:translate(0, 2.4rem);
+    -webkit-transform:translate(0,2.4rem);
+    -moz-transform:translate(0,2.4rem);
+    -ms-transform:translate(0,2.4rem);
+    -o-transform:translate(0,2.4rem);
 }
 
 .mainChartSubContainer {
@@ -694,13 +694,12 @@
     box-sizing: border-box;
     display: grid !important;
     align-content: center;
-    transform:translate(0, 6.5rem) ;
-    -webkit-transform:translate(0, 6.5rem) ;
-    -moz-transform:translate(0, 6.5rem) ;
-    -ms-transform:translate(0, 6.5rem) ;
-    -o-transform:translate(0, 6.5rem) ;
+    transform:translate(0, 5rem) ;
+    -webkit-transform:translate(0, 5rem) ;
+    -moz-transform:translate(0, 5rem) ;
+    -ms-transform:translate(0, 5rem) ;
+    -o-transform:translate(0, 5rem) ;
 
-    outline: 4px solid lime;
 
 }
 
