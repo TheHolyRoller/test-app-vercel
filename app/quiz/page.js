@@ -5,10 +5,8 @@ import { useUser } from '../lib/context/UserContext';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import q from '../Styles/Quiz.module.css';
-import Image from 'next/image';
 import QuizCard from '../Components/QuizCard';
 import CategoryCard from '../Components/CategoryCard';
-import ProgressBar from '../Components/QuizProgressBar'; 
 import { useGifPreloader } from '../lib/hooks/useGifPreloader';
 
 
@@ -111,20 +109,6 @@ export default function Quiz() {
             categoryName: currentQuestion?.categoryName
         });
     }, [currentQuestion, currentIndex]);
-
-    const handleClick = async (userAnswer) => {
-        console.log('🎯 Answer Selected:', {
-            answer: userAnswer,
-            currentIndex,
-            questionId: currentQuestion?.$id,
-            question_text: currentQuestion?.question_text
-        });
-        
-        await setAnswer(userAnswer);
-        handleAnswer(userAnswer);
-    };
-
-
 
 
 

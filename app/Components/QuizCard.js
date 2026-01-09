@@ -357,10 +357,9 @@ const QuizCard = ({
             <article className={q.card} id={q.cardTwo}></article>
             <article className={q.card} id={q.cardThree}></article>
             <article className={q.card} id={q.cardFour}></article>
-        </article>
 
-        {/* Integrated Answer Section - Only show on /quiz route */}
-        {pathname === '/quiz' && (
+
+            {pathname === '/quiz' && (
             <section className={`${q.mainAnswerContainer} ${nunito.className}`}>
                 <article className={`${q.answerSection} ${nunito.className}`}>
                     <div className={`${q.buttonList} ${nunito.className}`}>
@@ -434,6 +433,13 @@ const QuizCard = ({
                 </article>
             </section>
         )}
+
+
+
+        </article>
+
+        {/* Integrated Answer Section - Only show on /quiz route */}
+     
         </>
     );
 };
