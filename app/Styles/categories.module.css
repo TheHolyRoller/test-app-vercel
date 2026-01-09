@@ -1,44 +1,38 @@
+
+
+.mainContainer{
+
+
+
+
+
+}
+
+
+
+
 .card {
 
     
-    /* height: 625px; */
-    height: calc(var(--card-height) + 1.566rem) ;
-
+    height:  510px; 
+    position: absolute;
+    top: -9px; 
 
     width:320px;    
     position: relative;
     background-color: #ccc;
     background-color: #fbfbfb;
-    margin: 0 auto; 
 
 
-    margin-bottom: 5.9rem;
     border-radius: 1rem;
     -webkit-border-radius: 1rem;
     -moz-border-radius: 1rem;
     -ms-border-radius: 1rem;
     -o-border-radius: 1rem;
 
-    margin-top: -5rem !important; 
 
 
 }
-
-
-
-.mainCategoryCardContainer{
-
-
-    /* margin-top: -3rem !important;  */
-    margin-top: 99rem !important; 
-
-    height: 70vh; 
-    max-height: 650px;
-
-
-}
-
-
 
 
 
@@ -426,17 +420,21 @@
 }
 
 
+@media(max-width: 900px){
 
-@media(min-width: 1300px) and (max-width: 1700px){
+    .card {
 
-    .card{
-
-
-        margin-top: 5.5rem !important; 
-
-        
+    
+       top: -8px; 
+    
     }
+    
+
+
+
+
 
 }
+
 
 

@@ -130,7 +130,9 @@ export default function Quiz() {
 
     return (    
         <section className={q.quizMainSection} style={{color: 'white'}}>
-            <main className={q.quizComponentContainer} id='quizElement' style={{position: 'relative', zIndex: '9999999'}}>
+
+            {/* TODO put the position relative back */}
+            <main className={q.quizComponentContainer} id='quizElement' style={{ zIndex: '9999999'}}>
           
 
             <div className={q.quizCardContainer} style={{}}>
@@ -153,13 +155,13 @@ export default function Quiz() {
 
                 {Type.toLowerCase() === 'category' ? (
 
-                    <div className={q.categoryCardContainer}>
+                    <div className={q.categoryCardContainer} >
 
                     <CategoryCard 
                         key={`category-${currentIndex}-${currentQuestion?.$id}`}
                         Section={Section}
                         categoryName={currentQuestion?.categoryName || currentQuestion?.question_text}
-                        audio_url={audio_url}
+                        audio_url={audio_url}   
                     />
                     </div>
                 ) : (

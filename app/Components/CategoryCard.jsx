@@ -8,11 +8,9 @@ import { usePathname } from 'next/navigation';
 import logo from '../assets/ivvi_Logo.svg'; 
 
 
-
 function CategoryCard({ Section, audio_url, categoryName }) {
     const { handleAnswer, currentQuestion } = useQuiz();
     const pathname = usePathname();
-    
 
     const actualCategory = Section || categoryName || currentQuestion?.categoryName || currentQuestion?.question_text?.toLowerCase();
 
@@ -63,17 +61,22 @@ function CategoryCard({ Section, audio_url, categoryName }) {
     
 
     return (
-        <>
+
+            <div className={c.mainContainer} >
+
             <article 
                 className={`${c.card} ${nunito.className}`} 
                 id={c.firstCARD} 
                 style={{
-                    marginTop: pathname === '/quiz' ? '-1em' : '0',
-                    position: 'relative',
-                    zIndex: 200,
+                    // marginTop: pathname === '/quiz' ? '-1em' : '0',
                     boxShadow: '0 6px 20px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.08)',
-                    backgroundColor: getColorBySection(actualCategory)
-                }}>
+                    backgroundColor: getColorBySection(actualCategory), 
+
+
+
+
+
+                    }}>
 
                 <article className={c.mainLogoContainer}>
                     {/* Add in the Logo container here  */}
@@ -115,10 +118,11 @@ function CategoryCard({ Section, audio_url, categoryName }) {
                 <article className={c.card} style={{backgroundColor: getColorBySection(actualCategory)}} id={c.cardFour}></article>
             </article>
 
-            <aside className={c.buttonSectionContainer} onClick={handleNext} style={{cursor: 'pointer', marginTop: '-5em', zIndex: '999999999998999999999999999999999999'}} >
+            <aside className={c.buttonSectionContainer} onClick={handleNext} style={{cursor: 'pointer', zIndex: '999999999998999999999999999999999999'}} >
                 <div className={c.CTAButton}  style={{cursor: 'pointer', zIndex: '99999999999999'}}>Next</div>
             </aside>
-        </>
+            </div>
+
     )
 }
 
