@@ -1,11 +1,7 @@
 'use client';
 
-// import { useQuiz } from '../lib/context/QuizContext';
-// import { useUser } from '../lib/context/UserContext';
 import { useRouter } from 'next/navigation';
-// import QuizCard from '../Components/QuizCard';
-// import {PermissionAnswer} from '../Components/PermissionAnswer'; 
-// import uc from '../Styles/emailPermission.module.css'; 
+
 import uc from '../Styles/UnderstandCard.module.css'; 
 import { nunito } from '../fonts/nunito';
 import Image from 'next/image';
@@ -15,28 +11,11 @@ import Link from 'next/link';
 
 
 export default function EmailPermission() {
-    const router = useRouter();
-    // const { finalScore } = useQuiz();
-    // const { name, sound } = useUser();
-
-    // const handleYesClick = () => {
-    //     router.push('/ideal');
-    // };
-
-
-
-    const handleNoClick = () => {
-        // Set flag to trigger refresh when landing on home page
-        sessionStorage.setItem('needsRefreshFromEmailDecline', 'true');
-        router.push('/');
-    };
+    const router = useRouter();    
 
     const Section = "Audio Permission";
     const audio_url = '';
     const question_text = `t`;
-    const currentQuestion = { question_text: "" };
-    const currentIMG = 'https://fra.cloud.appwrituc.io/v1/storage/buckets/dood_gifs/files/EMAIL_SEND_TEST/view?project=test-domain&mode=admin';
-    
     // Placeholder functions
     const getLabelColorBySection = (section) => "#033699";
 
@@ -51,7 +30,7 @@ export default function EmailPermission() {
           style={{
             boxShadow: '0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.06)',
               height: '500px', 
-              
+              position: 'relative'
 
 
 
@@ -120,7 +99,7 @@ export default function EmailPermission() {
 
       <div className={uc.paginationElementContainer}
       
-      style={{ margin: '0 auto'}}
+      style={{ margin: '0 auto', }}
 
       >
       <div className={uc.paginationElementSubContainer}>

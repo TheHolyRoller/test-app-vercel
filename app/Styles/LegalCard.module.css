@@ -1,16 +1,5 @@
 
-
-
-
-
-
-
 .cardMainContainer{
-
-
-
-
-
 
 
 }
@@ -24,10 +13,6 @@
     position: absolute;
     top: 1rem; 
 
-
-
-
-
 }
 
 .firstCARD{
@@ -37,7 +22,6 @@
 .card {
 
 
-    /* height: var(--card-height); */
     width:320px;    
     position: relative;
     background-color: white !important;
@@ -62,7 +46,6 @@
     border-top-right-radius: 12px; 
     display: grid; 
     place-content: center;
-    /* background-color: var(--category-color, #ccc); */
     background-color: white;
     height: 4.5rem; 
 }

@@ -1,11 +1,13 @@
-/* Add in the root variables here  */
+
+.mainContainer{
 
 
-/* Add in the global styles here  */
+    outline: 2px solid red;
 
 
+}
 
-/* Add in the main classes here  */
+
 
 .quizComponentContainer{
 
@@ -129,20 +131,6 @@ margin-bottom: 5em;
     margin: auto; 
 
 }
-
-
-#audioFirstCard{
-
-
-
-    margin-top: 0 !important;
-
-
-
-}
-
-
-
 
 
 
@@ -360,6 +348,7 @@ margin-bottom: 5em;
     min-width: 22rem;
 
 }
+
 
 
 .soundIcon{
@@ -1469,27 +1458,3 @@ font-size: 1.76rem !important;
     -o-border-radius: 0 0 1rem 1rem;
 
 }
-
-@media(min-width: 1300px) and (max-width: 1700px){
-
-    .card{
-
-
-        /* margin-top: -10rem !important;  */
-        
-
-
-    }
-
-
-
-
-
-}
-
-
-
-
-
-
-

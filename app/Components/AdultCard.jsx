@@ -1,7 +1,5 @@
 'use client';
 
-import { useQuiz } from '../lib/context/QuizContext';
-import { useUser } from '../lib/context/UserContext';
 import { useRouter } from 'next/navigation';
 import ad from '../Styles/AdultCard.module.css'; 
 
@@ -18,18 +16,9 @@ export default function EmailPermission() {
     };
 
 
-    const handleNoClick = () => {
-
-
-      sessionStoragad.setItem('needsRefreshFromEmailDecline', 'true');
-        router.push('/');
-    };
 
     const Section = "Audio Permission";
-    // const audio_URL = '';
     const question_text = `t`;
-    // const currentQuestion = { question_text: "" };
-    // const currentIMG = 'https://frad.cloud.appwritad.io/v1/storage/buckets/dood_gifs/files/EMAIL_SEND_TEST/view?project=test-domain&mode=admin';
     
     // Placeholder functions
     const getLabelColorBySection = (section) => "#033699";
@@ -45,10 +34,6 @@ export default function EmailPermission() {
           style={{
               boxShadow: '0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.06)',
               height:' 500px', 
-
-                  
-      
-
 
 
           }}

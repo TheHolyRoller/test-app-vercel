@@ -1,0 +1,264 @@
+
+
+.mainContainer{
+
+
+height: 100vh; 
+width: 100vw; 
+position: absolute;
+top: 1rem; 
+
+
+}
+
+
+
+
+.card {
+
+
+
+    height: var(--card-height);
+
+    width:320px;    
+    background-color: white !important;
+    margin: 0 auto; 
+
+
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+
+
+    
+}
+
+.supportingTextSectionContainer{
+
+
+
+
+    margin-top: 2.5rem; 
+    text-align: center;
+    color: #404f6f; 
+    font-size: 1.5rem;
+
+
+
+
+
+}
+
+
+
+.firstCARD{
+
+
+
+}
+
+.cardCategoryColorContainer{
+    position: relative;
+    height: 3rem;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px; 
+    display: grid; 
+    place-content: center;
+    background-color: white;
+    height: 4.5rem;
+    
+}
+
+.categoryLabelContainer{
+    height: 5.5rem; 
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    display: grid; 
+    place-content: center;
+
+    
+
+}
+
+.categoryLabel {
+}
+
+.labelContainer{
+    height: 2.5rem;
+    width: 300px;
+    border-radius:25px;
+    -webkit-border-radius:25px;
+    -moz-border-radius:25px;
+    -ms-border-radius:25px;
+    -o-border-radius:25px;
+    display: grid;
+    place-content: center;
+    text-transform: uppercase;
+    margin-bottom: -0.5em;
+    font-family: var(--font-nunito), sans-serif;
+    font-weight: 700;
+    color: white;
+}
+
+
+.headerImageContainer{
+
+
+    display: grid; 
+    place-content: center;
+
+    margin-top: 0.6em; 
+
+    height: 12rem; 
+
+
+
+}
+
+
+
+.mainImage{
+
+
+    height: 15rem; 
+    width: 16rem; 
+
+
+
+}
+
+
+.understandSpan{
+    
+    width: 70%; 
+
+
+
+}
+
+
+
+.currentIMG{
+
+    height: 80%; 
+    display: none;
+
+    
+
+}
+
+
+
+#cardOne{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 320px;
+    height: 555px;
+    background-color: #fbfbfb;
+    border-radius: 0rem;
+    -webkit-border-radius: 0rem;
+    -moz-border-radius: 0rem;
+    -ms-border-radius: 0rem;
+    -o-border-radius: 0rem;
+    z-index: -2;
+   display: none;
+    box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+    
+}
+
+
+
+#cardTwo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    height: 510px;
+    max-height: 777px;
+    width: 320px;
+    background-color: #fbfbfb;
+    box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+   
+
+
+
+}
+
+#cardThree{
+ width: 320px;
+ height: 510px;
+ background-color: #fbfbfb;
+ border-radius: 1rem;
+ -webkit-border-radius: 1rem;
+ -moz-border-radius: 1rem;
+ -ms-border-radius: 1rem;
+ -o-border-radius: 1rem;
+ position: absolute;
+ top: 0; 
+ margin-bottom: 0.8em;
+ display: none;
+ box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+
+
+
+
+
+}
+
+#cardFour{
+    width: 320px;
+    height: 505px;
+    background-color: #fbfbfb;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+
+
+
+    border-radius: 0 0 1rem 1rem;
+    box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+    
+    -webkit-border-radius: 0 0 1rem 1rem;
+    -moz-border-radius: 0 0 1rem 1rem;
+    -ms-border-radius: 0 0 1rem 1rem;
+    -o-border-radius: 0 0 1rem 1rem;
+
+
+}
+
+
+
+
+.buttonSectionContainer{
+
+
+    width: 99.999vw; 
+    margin: 0 auto; 
+    display: grid; 
+    place-content: center;
+    margin-top: 4.9rem; 
+
+
+
+}
+
+
+.ctaContainer{
+
+
+    cursor: pointer;
+
+}
+
+
+
+
+
+
+ 

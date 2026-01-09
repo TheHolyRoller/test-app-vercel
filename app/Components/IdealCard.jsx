@@ -50,7 +50,8 @@ export default function EmailPermission() {
           id={id.firstCARD} 
           style={{
               boxShadow: '0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.06)',
-              height: '500px '
+              height: '500px ', 
+              position: 'relative'
 
           }}
           >
@@ -109,7 +110,7 @@ export default function EmailPermission() {
 
       
 
-      <div className={id.paginationElementContainer} style={{ margin: '0 auto',}}>
+      <div className={id.paginationElementContainer} style={{ margin: '0 auto', position: 'absolute', bottom: '1.2rem'}}>
       <div className={id.paginationElementSubContainer}>
 
         <ul className={id.paginationList}
