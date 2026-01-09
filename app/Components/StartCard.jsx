@@ -69,9 +69,11 @@ export default function EmailPermission() {
           className={`${st.card} ${nunito.className} [@media(min-width:428px)_and_(max-width:767px)]:-translate-y-[5rem]`} 
           id={st.firstCARD} 
           style={{
-              position: 'relative',
+            //   position: 'relative',
               zIndex: 200,
               boxShadow: '0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.06)',
+             
+
           }}
           >
   
@@ -107,7 +109,8 @@ export default function EmailPermission() {
 
 <section className={st.buttonSectionContainer}>
 
-  <div  className={`${st.ctaContainer} [@media(min-width:428px)_and_(max-width:767px)]:-translate-y-[5rem] `}>
+{/* [@media(min-width:428px)_and_(max-width:767px)]:-translate-y-[5rem]  */}
+  <div  className={`${st.ctaContainer} `}>
 
     <div className={`${st.cta}`} onClick={handleYesClick} style={{cursor: 'pointer', fontSize: '2rem', letterSpacing: '1px'}} >
         Start Screener 
