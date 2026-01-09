@@ -727,15 +727,13 @@ margin-bottom: 5em;
 background-color: #82c34a;
 font-size: 1.76rem !important;
 
-
-
 }
 
 /* ============ INTEGRATED ANSWER STYLES FROM Answer.module.css ============ */
 
 .mainAnswerContainer{
     position: absolute;
-    bottom: -6.95rem;
+    bottom: -6.3rem;
     left: 50%;  
     display: grid;
     place-content: center;

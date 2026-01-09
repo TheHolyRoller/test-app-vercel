@@ -76,11 +76,6 @@ function CategoryCard({ Section, audio_url, categoryName }) {
                     zIndex: '1'
 
 
-
-
-
-
-
                     }}>
 
                 <article className={c.mainLogoContainer}>
