@@ -71,6 +71,11 @@ function CategoryCard({ Section, audio_url, categoryName }) {
                     // marginTop: pathname === '/quiz' ? '-1em' : '0',
                     boxShadow: '0 6px 20px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.08)',
                     backgroundColor: getColorBySection(actualCategory), 
+                    position: 'relative', 
+                    height: '500px', 
+                    zIndex: '1'
+
+
 
 
 

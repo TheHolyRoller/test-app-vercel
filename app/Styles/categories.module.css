@@ -30,8 +30,6 @@
     -ms-border-radius: 1rem;
     -o-border-radius: 1rem;
 
-
-
 }
 
 
@@ -157,30 +155,27 @@
 
 }
 
-#firstCARD {
-
-}
 
 #cardOne {
 
 
     position: absolute;
-    left: 0;
-    right: 0;
     top: 0;
-    position: relative;
-    width: 45px;
-    /* height: 555px; */
-    height: var(--card-height);
-    background-color: #fbfbfb;
-    border-radius: 0rem;
-    -webkit-border-radius: 0rem;
-    -moz-border-radius: 0rem;
-    -ms-border-radius: 0rem;
-    -o-border-radius: 0rem;
-    z-index: -2;
-   display: none;
-    transform:  translate(0rem,3em) !important;
+    width: 320px;
+    height: 497px;
+    /* outline: 1px solid  red;  */
+    /* display: none; */
+    background-color:   #fbfbfb;
+    z-index: -1 !important; 
+
+
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+
+    
     box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
 
 }
@@ -196,20 +191,19 @@
 
 
     width: 320px;
-    height: 400px;
+    height: 502px;
     background-color: #fbfbfb;
     border-radius: 1rem;
     -webkit-border-radius: 1rem;
     -moz-border-radius: 1rem;
     -ms-border-radius: 1rem;
     -o-border-radius: 1rem;
+    /* outline: 0.5px solid lime; */
    
     position: absolute;
     bottom: 0; 
-    z-index: -2;
- 
-    margin-bottom: 0.8em;
-   
+    z-index: -1;
+
     box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
 
 }
@@ -217,25 +211,25 @@
 #cardFour {
 
 
-    position: relative;
-    z-index: -5;
+    z-index: -2;
     width: 320px;
-    height: 400px;
+    height: 510px;
     background-color: #fbfbfb;
     position: absolute;
-    bottom: 0;
-    right: 0;
+    bottom: 0; 
     border-radius: 0 0 1rem 1rem;
     box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
-    transform:translate(0, 5.5em);
-    -webkit-transform:translate(0, 5.5em);
-    -moz-transform:translate(0, 5.5em);
-    -ms-transform:translate(0, 5.5em);
-    -o-transform:translate(0, 5.5em);
-    -webkit-border-radius: 0 0 1rem 1rem;
-    -moz-border-radius: 0 0 1rem 1rem;
-    -ms-border-radius: 0 0 1rem 1rem;
-    -o-border-radius: 0 0 1rem 1rem;
+   
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    /* outline: 1px solid blue; */
+
+
+    /* display: none;  */
+
 
 
 
@@ -286,9 +280,9 @@
     place-content: center;
     margin: 0em auto; 
 
-    margin-top: -4.5em; 
     position: relative;
     z-index: 10;
+    margin-top: 0.938rem; 
 
 
 }
