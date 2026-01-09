@@ -6,9 +6,6 @@
     color: #013699 !important; 
 
 
-
-
-
 }
 
 
@@ -58,6 +55,8 @@
     -moz-border-radius: 1rem;
     -ms-border-radius: 1rem;
     -o-border-radius: 1rem;
+
+    outline: 4px solid lime;
 
 }
 
@@ -532,12 +531,7 @@ border-bottom: 4px solid  #073384;
 
 
         padding: 0;
-        /* moved up higher  */
         margin-top: -8rem; 
-
-
-
-
 
     }
 

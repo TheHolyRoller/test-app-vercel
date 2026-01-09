@@ -8,13 +8,12 @@ import { browserOS } from '../lib/browserOS';
 
 
 
-import QuizCard from '../Components/QuizCard';
-import {PermissionAnswer} from '../Components/PermissionAnswer'; 
+// import QuizCard from '../Components/QuizCard';
+// import {PermissionAnswer} from '../Components/PermissionAnswer'; 
 import st from '../Styles/startCard.module.css'; 
 import { nunito } from '../fonts/nunito';
 import Image from 'next/image';
 import logo from '../assets/ivvi_Logo.svg'; 
-import { type } from 'os';
 
 
 
