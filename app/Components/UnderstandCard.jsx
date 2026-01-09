@@ -1,10 +1,10 @@
 'use client';
 
-import { useQuiz } from '../lib/context/QuizContext';
-import { useUser } from '../lib/context/UserContext';
+// import { useQuiz } from '../lib/context/QuizContext';
+// import { useUser } from '../lib/context/UserContext';
 import { useRouter } from 'next/navigation';
-import QuizCard from '../Components/QuizCard';
-import {PermissionAnswer} from '../Components/PermissionAnswer'; 
+// import QuizCard from '../Components/QuizCard';
+// import {PermissionAnswer} from '../Components/PermissionAnswer'; 
 // import uc from '../Styles/emailPermission.module.css'; 
 import uc from '../Styles/UnderstandCard.module.css'; 
 import { nunito } from '../fonts/nunito';
@@ -13,10 +13,11 @@ import ivvi_group from '../assets/ivvi_group.svg';
 import Link from 'next/link';
 
 
+
 export default function EmailPermission() {
     const router = useRouter();
-    const { finalScore } = useQuiz();
-    const { name, sound } = useUser();
+    // const { finalScore } = useQuiz();
+    // const { name, sound } = useUser();
 
     // const handleYesClick = () => {
     //     router.push('/ideal');
@@ -40,20 +41,18 @@ export default function EmailPermission() {
     const getLabelColorBySection = (section) => "#033699";
 
     return (
-        <div className={uc.mainContainer}
-        
-        style={{ position: 'relative'}}
-        >
+        <div className={uc.mainContainer}>
 
 
-        <div style={{ paddingTop: '60px', position: 'relative' }}>
+        {/* <div> */}
           <article 
           className={`${uc.card} ${nunito.className}`} 
           id={uc.firstCARD} 
           style={{
-              position: 'relative',
-              zIndex: 200,
-              boxShadow: '0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.06)',
+            boxShadow: '0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.06)',
+              // outline: '11px solid blue',
+              height: '500px', 
+
 
           }}
           >
@@ -189,7 +188,7 @@ href='/ideal' prefetch
   
 </section>
 </Link>
-        </div>
+        {/* </div> */}
       </div>
     );
 } 

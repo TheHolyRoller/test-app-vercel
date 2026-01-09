@@ -1,46 +1,11 @@
-
-
 .cardElementContainer{
 
     color: #013699 !important; 
-    outline: 5px solid red; 
     position: absolute;
     top: 1rem; 
     height: 100vh; 
 
-
-
 }
-
-
-/* Laptop media query  */
-/* @media(min-width: 2000px){
-
-
-    .cardElementContainer{
-        
-
-        padding: 0 !important; 
-        margin-bottom: 9rem; 
-    
-    }
-
-} */
-
-
-
-/* @media(min-width: 1530px) and (max-width: 2000px){
-
-
-    .cardElementContainer{
-        
-        padding-top: 9rem !important;
-        margin-bottom: -5.5rem; 
-    
-    }
-
-} */
-
 
 
 .card {
@@ -50,15 +15,8 @@
     width: var(--card-width); 
     opacity: 1; 
 
-    /* position: absolute; */
-    /* left: 50%;  */
-
-    top: 1rem; 
-
     background-color: rgb(1, 54, 153) !important;
     margin: 0 auto; 
-     /* margin-bottom: 5.9rem; */
-    
 
     border-radius: 1rem;
     -webkit-border-radius: 1rem;
@@ -68,13 +26,10 @@
 
 }
 
-
-
-
 .firstCARD{
 
     min-width: 320px;
-
+ 
 
 }
 
@@ -86,7 +41,6 @@
     border-top-right-radius: 12px; 
     display: grid; 
     place-content: center;
-    /* background-color: var(--category-color, #ccc); */
     background-color: white;
     height: 4.5rem; 
 }
@@ -147,25 +101,7 @@
     font-weight: 600;
     font-size: 2.5rem !important; 
 
-    /* Clamp the font size here  */
 }
-
-/* Add in a media query for the font size here  */
-@media(min-width: 1000px) {
-
-    
-.question_text{
-
-
-
-
-}
-
-
-
-
-}
-
 
 
 .imageSectionContainer{
@@ -191,6 +127,7 @@
     display: grid;
     place-content: center;
     position: relative; 
+    z-index: 99;
     margin-top: -4.5rem !important; 
     /* TODO Remove this negative margin  */
 
@@ -248,21 +185,17 @@
     left: 0;
     right: 0;
     top: 0;
-    position: relative;
+
+
+
     width: 320px;
     min-width: 320px; 
 
-    height: 555px;
+    height: 495px;
     background-color: #fbfbfb;
-    border-radius: 0rem;
-    -webkit-border-radius: 0rem;
-    -moz-border-radius: 0rem;
-    -ms-border-radius: 0rem;
-    -o-border-radius: 0rem;
-    z-index: -2;
-   display: none;
-    transform:  translate(0rem,3em) !important;
+
     box-shadow: 0 4px 8px -4px rgba(162, 179, 247, 0.3);
+
 
 
 }
@@ -275,22 +208,18 @@
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
-    display: none;
-    z-index: -1;
+    top: 0; 
+    /* display: none; */
 
-    margin-bottom: -5rem !important;
-    height: 555px;
-    max-height: 777px;
+
+    height: 500px;
+    max-height: 520px;
 
     width: 320px;
     min-width: 320px; 
 
-    transform:translate(0rem, 4em);
-    -webkit-transform:translate(0rem, 4em);
-    -moz-transform:translate(0rem, 4em);
-    -ms-transform:translate(0rem, 4em);
-    -o-transform:translate(0rem, 4em);
+    /* Add in the shadow here */
+
 
 
 }
@@ -301,11 +230,11 @@
 #cardThree{
  
     
- width: 317px;
+ width: 320px;
  min-width: 320px; 
 
 
- height: 400px;
+ height: 505px;
  background-color: #fbfbfb;
  border-radius: 1rem;
  -webkit-border-radius: 1rem;
@@ -313,15 +242,13 @@
  -ms-border-radius: 1rem;
  -o-border-radius: 1rem;
  position: absolute;
- bottom: 0; 
- z-index: -2;
- margin-bottom: 0.8em;
+ top: 0; 
+ 
 
+/* display: none; */
 box-shadow: 0 4px 12px -4px rgba(55, 174, 248, 0.3);
 box-sizing: border-box; 
 border-bottom: 4px solid  #073384;
-
-
 
 
 }
@@ -329,19 +256,15 @@ border-bottom: 4px solid  #073384;
 #cardFour{
 
 
+    width: 320px;
+    min-width: 320px; 
+    max-width: 320px; 
 
-    position: relative;
-    z-index: -5;
-    width: 317px;
-    
-    min-width: 317px; 
-    max-width: 317px; 
-
-    height: 400px;
+    height: 500;
     background-color: #fbfbfb;
     position: absolute;
-    bottom: 0;
-    right: 0;
+    top: 0;
+    
     border-radius: 1rem;
     -webkit-border-radius: 1rem;
     -moz-border-radius: 1rem;
@@ -351,11 +274,11 @@ border-bottom: 4px solid  #073384;
     box-shadow: 0 4px 6px -4px rgb(75, 105, 251) !important;
 
 
-    transform:translate(0, 5.5em);
+    /* transform:translate(0, 5.5em);
     -webkit-transform:translate(0, 5.5em);
     -moz-transform:translate(0, 5.5em);
     -ms-transform:translate(0, 5.5em);
-    -o-transform:translate(0, 5.5em);
+    -o-transform:translate(0, 5.5em); */
 
     
 
@@ -379,9 +302,6 @@ border-bottom: 4px solid  #073384;
     margin: 0 auto; 
     display: grid; 
     place-content: center;
-    /* margin-top: -4.5em;  */
-
-
 
 }
 
@@ -390,8 +310,6 @@ border-bottom: 4px solid  #073384;
 
 
     cursor: pointer;
-    /* margin-top: -1rem; */
-
 }
 
 
@@ -413,8 +331,9 @@ border-bottom: 4px solid  #073384;
     cursor: pointer !important; 
     box-shadow: 0px 4px 1px 0px #c17a41;
 
+    /* This is the 23px top margin */
     margin-top: 1.438rem; 
-    
+
 
 }
 
@@ -550,8 +469,6 @@ border-bottom: 4px solid  #073384;
 
     .card{
 
-
-        outline: 5px solid lime;
 
 }
 

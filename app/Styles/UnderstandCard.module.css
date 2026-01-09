@@ -1,3 +1,21 @@
+
+
+.mainContainer{
+
+
+height: 100vh; 
+width: 100vw; 
+position: absolute;
+top: 1rem; 
+
+
+}
+
+
+
+
+
+
 .card {
 
 
@@ -5,33 +23,26 @@
     height: var(--card-height);
 
     width:320px;    
-    position: relative;
     background-color: white !important;
     margin: 0 auto; 
-    margin-bottom: 5.9rem;
-    margin-top: -2rem !important; 
+
+
     border-radius: 1rem;
     -webkit-border-radius: 1rem;
     -moz-border-radius: 1rem;
     -ms-border-radius: 1rem;
     -o-border-radius: 1rem;
+
+
     
 }
 
-@media(min-width: 1100px){
 
-    .card {
-
-
-        margin-top: -1rem !important; 
-       
-    }
-
-
-
-}
 
 .firstCARD{
+
+
+
 }
 
 .cardCategoryColorContainer{
@@ -42,7 +53,8 @@
     display: grid; 
     place-content: center;
     background-color: white;
-    height: 4.5rem; 
+    height: 4.5rem;
+    
 }
 
 .categoryLabelContainer{
@@ -266,7 +278,7 @@
     left: 0;
     right: 0;
     top: 0;
-    position: relative;
+    /* position: relative; */
     width: 320px;
     height: 555px;
     background-color: #fbfbfb;
@@ -277,12 +289,17 @@
     -o-border-radius: 0rem;
     z-index: -2;
    display: none;
-    transform:  translate(0rem,3em) !important;
+    /* transform:  translate(0rem,3em) !important; */
     box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+
+
 
 
     
 }
+
+
+/* TODO Make this Card 510px but the other cards shorter */
 
 #cardTwo{
     position: absolute;
@@ -290,19 +307,14 @@
     left: 0;
     right: 0;
     bottom: 0;
-    display: none;
+    /* This z index is important */
     z-index: -1;
-    margin-bottom: -5rem !important;
-    height: 555px;
+    height: 510px;
     max-height: 777px;
     width: 320px;
     background-color: #fbfbfb;
     box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
-    transform:translate(0rem, 4em);
-    -webkit-transform:translate(0rem, 4em);
-    -moz-transform:translate(0rem, 4em);
-    -ms-transform:translate(0rem, 4em);
-    -o-transform:translate(0rem, 4em);
+   
 
 
 
@@ -310,7 +322,7 @@
 
 #cardThree{
  width: 320px;
- height: 400px;
+ height: 510px;
  background-color: #fbfbfb;
  border-radius: 1rem;
  -webkit-border-radius: 1rem;
@@ -319,32 +331,36 @@
  -o-border-radius: 1rem;
  /* display: none; */
  position: absolute;
- bottom: 0; 
- z-index: -2;
+ top: 0; 
  margin-bottom: 0.8em;
+ display: none;
  box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+
+
+
+
+
 }
 
 #cardFour{
-    position: relative;
-    z-index: -5;
     width: 320px;
-    height: 400px;
+    height: 505px;
     background-color: #fbfbfb;
     position: absolute;
-    bottom: 0;
-    right: 0;
+    top: 0;
+    z-index: -1;
+
+
+
     border-radius: 0 0 1rem 1rem;
     box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
-    transform:translate(0, 5.5em);
-    -webkit-transform:translate(0, 5.5em);
-    -moz-transform:translate(0, 5.5em);
-    -ms-transform:translate(0, 5.5em);
-    -o-transform:translate(0, 5.5em);
+    
     -webkit-border-radius: 0 0 1rem 1rem;
     -moz-border-radius: 0 0 1rem 1rem;
     -ms-border-radius: 0 0 1rem 1rem;
     -o-border-radius: 0 0 1rem 1rem;
+
+
 }
 
 
@@ -357,7 +373,7 @@
     margin: 0 auto; 
     display: grid; 
     place-content: center;
-    margin-top: -4.5em; 
+    margin-top: 1.438rem; 
 
 
 

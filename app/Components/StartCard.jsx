@@ -69,12 +69,13 @@ export default function EmailPermission() {
           className={`${st.card} ${nunito.className} [@media(min-width:428px)_and_(max-width:767px)]:-translate-y-[5rem]`} 
           id={st.firstCARD} 
           style={{
-            //   position: 'relative',
-              zIndex: 200,
               boxShadow: '0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.06)',
-             
+            //   outline: '11px solid red ', 
+              position: 'static', 
+              zIndex: '99999'
 
           }}
+          
           >
   
       {question_text && (
