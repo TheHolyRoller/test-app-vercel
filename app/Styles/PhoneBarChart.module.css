@@ -7,9 +7,8 @@
     background-color: #013699;
 
     margin: 0 auto; 
-    margin-bottom: 5.9rem;
-
-    margin-top: -1.9rem !important; 
+    margin-top: 1rem; 
+    
     border-radius: 1rem;
     -webkit-border-radius: 1rem;
     -moz-border-radius: 1rem;
@@ -19,16 +18,7 @@
 }
 
 
-@media(min-width: 1100px){
 
-    .card {
-
-
-        margin-top: -1rem !important; 
-       
-    }
-
-}
 
 
 
@@ -204,7 +194,7 @@
  -moz-border-radius: 1rem;
  -ms-border-radius: 1rem;
  -o-border-radius: 1rem;
- /* display: none; */
+ display: none;
  position: absolute;
  bottom: 0; 
  z-index: -2;
@@ -218,22 +208,18 @@
     width: 320px;
     height: 400px;
     background-color: #053895;
-    box-shadow: 0 4px 8px -4px rgba(255, 255, 255, 0.3) !important;
 
     position: absolute;
     bottom: 0;
     right: 0;
     border-radius: 0 0 1rem 1rem;
-    /* box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3); */
-    transform:translate(0, 5.5em);
-    -webkit-transform:translate(0, 5.5em);
-    -moz-transform:translate(0, 5.5em);
-    -ms-transform:translate(0, 5.5em);
-    -o-transform:translate(0, 5.5em);
+   
     -webkit-border-radius: 0 0 1rem 1rem;
     -moz-border-radius: 0 0 1rem 1rem;
     -ms-border-radius: 0 0 1rem 1rem;
     -o-border-radius: 0 0 1rem 1rem;
+
+
 }
 
 
@@ -708,57 +694,18 @@
     box-sizing: border-box;
     display: grid !important;
     align-content: center;
-    transform:translate(0, 8.5rem) ;
-    -webkit-transform:translate(0, 8.5rem) ;
-    -moz-transform:translate(0, 8.5rem) ;
-    -ms-transform:translate(0, 8.5rem) ;
-    -o-transform:translate(0, 8.5rem) ;
+    transform:translate(0, 6.5rem) ;
+    -webkit-transform:translate(0, 6.5rem) ;
+    -moz-transform:translate(0, 6.5rem) ;
+    -ms-transform:translate(0, 6.5rem) ;
+    -o-transform:translate(0, 6.5rem) ;
 
-}
-
-
-@media(min-width: 300px) and (max-width: 2000px) {
-
-
-    .barChartSection {
-        width: 20vw;
-        max-height: 220px !important;
-        max-width: 300px !important;
-        margin: 0rem auto 0rem auto;
-        padding: 1rem 2rem;
-        background-color: #013699 !important;
-        border-radius: 15px;
-        box-sizing: border-box;
-        display: grid !important;
-        align-content: center;
-        transform:translate(0, 10.3rem) ;
-        -webkit-transform:translate(0, 10.3rem) ;
-        -moz-transform:translate(0, 10.3rem) ;
-        -ms-transform:translate(0, 10.3rem) ;
-        -o-transform:translate(0, 10.3rem) ;
-        
-
-
-    }
-
-
-
-/* Add in the main score component here  */
-.mainScore{
-
-    padding: 0; 
-    margin-top: 0rem; 
-    margin-bottom: 0.8rem;
-
-    /* Clamp the  */
-
+    outline: 4px solid lime;
 
 }
 
 
 
-
-}
 
 .barChartItem {
     margin-bottom: 1.5rem;
@@ -874,8 +821,6 @@
     margin: 0 auto;  
     display: grid;
     place-content: center;
-    margin-top: -6.5rem !important;
-    margin-bottom: 2rem !important;
 
 
     
@@ -927,8 +872,6 @@
 
 
 
-
-
 @keyframes shimmer {
     0% {
         /* background-position: -20px 0; */
@@ -938,280 +881,3 @@
     }
 }
 
-/* Responsive Design */
-
-
-
-
-
-@media (max-width: 768px) {
-
-
-    /* Adjust the score element placement here  */
-    .mainScore{
-        transform:translate(0, 1.5rem);
-        -webkit-transform:translate(0, 1.5rem);
-        -moz-transform:translate(0, 1.5rem);
-        -ms-transform:translate(0, 1.5rem);
-        -o-transform:translate(0, 1.5rem);
-}
-
-    .barChartSection {
-        width: 95%;
-        padding: 0.75rem 1.5rem;
-        transform: translate(0);
-        -webkit-transform: translate(0);
-        -moz-transform: translate(0);
-        -ms-transform: translate(0);
-        -o-transform: translate(0);
-}
-    
-    .categoryName {
-        font-size: 1rem;
-
-
-    }
-    
-    .barPercentageText {
-        font-size: 0.8rem;
-    }
-    
-    .barBackground {
-        height: 40px;
-    }
-    
-    .barFill {
-        min-width: 200px;
-        justify-content: center !important;
-        padding-left: 0 !important;
-    }
-    
-    .barChartItem {
-        margin-bottom: 1.25rem;
-
-    }
-
-    .mainScore{
-
-
-
-
-
-    }
-
-}
-
-@media (max-width: 480px) {
-    .barChartSection {
-        width: 98%;
-        padding: 0.5rem 1rem;
-        margin: 5rem auto 1rem auto;
-    }
-    
-    .categoryName {
-        font-size: 0.9rem;
-    }
-    
-    .barPercentageText {
-        font-size: 0.75rem;
-        font-weight: 600;
-    }
-    
-    .barBackground {
-        height: 36px;
-    }
-    
-    .barFill {
-        border-radius: 12px;
-        min-width: 180px;
-        justify-content: center !important;
-        padding-left: 0 !important;
-    }
-    
-    .barBackground {
-        border-radius: 12px;
-    }
-}
-
-@media(min-width: 1200px){
-
-
-    .chartContainer {
-        width: 90vw; 
-        margin: 0 auto; 
-        display: grid;
-        place-content: center;
-        height: 50vh; 
-        margin-top: 6em !important; 
-    
-    
-    }
-
-
-    .buttonContainer{
-
-        width: 99.99vw; 
-        margin: 0 auto;  
-        display: grid;
-        place-content: center;
-        padding-bottom: 5vh;
-        
-    
-    
-    
-    }
-
-
-    .barFill {
-        height: 55px !important;
-        border-radius: 15px;
-        position: relative;
-
-        background-size: 20px 20px;
-        animation: shimmer 2s linear infinite;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        min-width: 130px;
-        
-        
-        
-        transition: width 1.5s ease-in-out;
-        -webkit-transition: width 1.5s ease-in-out;
-        -moz-transition: width 1.5s ease-in-out;
-        -ms-transition: width 1.5s ease-in-out;
-        -o-transition: width 1.5s ease-in-out;
-}
-
-
-
-}
-
-
-
-@media(min-width: 1200px){
-
-
-    .barChartSection {
-        width: 60vw;
-        max-width: 800px;
-        margin: 0rem auto 0rem auto; 
-        padding: 1rem 2rem;
-        background-color: rgba(255, 255, 255, 0.1);
-        border-radius: 15px;
-        backdrop-filter: blur(10px);
-        box-sizing: border-box;
-        display: block;
-        margin-top: -5.5em !important; 
-    
-    }
-
-}
-
-
-@media(min-width:2000px){
-
-
-    .mainScore{
-        outline: 8px solid white !important;
-        width: 120px;
-        height: 120px;
-        font-size: 4rem;
-        color: white;
-        background-color: #99bb9a;
-        display: grid;
-        place-content: center;
-        margin: 0rem auto;
-    
-        margin-top: -0.5em !important; 
-        margin-bottom: 1em !important;
-        
-    
-        border-radius: 50%;
-        -webkit-border-radius: 50%;
-        -moz-border-radius: 50%;
-        -ms-border-radius: 50%;
-        -o-border-radius: 50%;
-
-    
-    }
-
-    .refSpan{
-
-        margin-top: -0.5em !important; 
-        margin-bottom: 0.5rem !important; 
-
-
-
-
-    }
-
-
-
-
-}
-
-@media(min-width: 1100px){
-
-    .cta {
-
-
-        margin-top: 0.7rem !important; 
-       
-    }
-
-}
-
-@media(min-width: 1300px) and (max-width: 1700px){
-
-    .card{
-
-        margin-top: -2rem !important; 
-
-    }
-
-    .ctaContainer{
-
-        margin: 0 !important; 
-
-    }
-
-
-    .cta{
-
-
-        margin: 0 !important; 
-        margin-top: -0.5rem !important; 
-
-
-
-
-    }
-
-    /* Add in the main score container here  */
-
-    .mainScore{
-
-        margin-top: -1.5rem !important; 
-        margin-bottom: 1.95rem !important;
-
-    }
-
-
-
-
-
-
-}
-
-
-/* TO DO add in the mobile media query here to adjust the final results bar  */
-
-
-
-
-/* Add in the effects here  */
-
-
-
-/* Add in the animations here  */

@@ -5,7 +5,8 @@ import { useQuiz } from '../lib/context/QuizContext';
 import { useSearchParams } from 'next/navigation';
 import { useRouter } from 'next/navigation'; 
 import { useState } from 'react';
-import r from '../Styles/Results.module.css'; 
+// import r from '../Styles/Results.module.css'; 
+import r from '../Styles/ResultsExplanation.module.css'; 
 
 import PhoneBarChart from '../Components/PhoneBarChart'; 
 
@@ -103,7 +104,7 @@ function ResultsExplanationContent() {
     return (
         <>
 
-            <div className={r.mainBarChartContainer}>
+            <div className={r.mainBarChartContainer} style={{outline: '3px solid red'}} >
 
             <PhoneBarChart
                 percentage={percentage || 0}
