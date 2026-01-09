@@ -1,76 +1,32 @@
 'use client';
 
-import { useQuiz } from '../lib/context/QuizContext';
-import { useUser } from '../lib/context/UserContext';
 import { useRouter } from 'next/navigation';
-import QuizCard from '../Components/QuizCard';
-import {PermissionAnswer} from '../Components/PermissionAnswer'; 
-
 import fc from '../Styles/FunctionCard.module.css'; 
-
-
 import { nunito } from '../fonts/nunito';
 import Image from 'next/image';
-import ivvi_group from '../assets/ivvi_group.svg'; 
-// import all from '../assets/All in one resource.svg'; 
-import learn from '../assets/Listen and learn, confident.svg'; 
-import say from '../assets/Say goodbye to the time.svg'; 
-import real from '../assets/Real time NotetakinListen and learn, confident.svg'; 
-import study from '../assets/Study anywhere.svg'; 
-import your from '../assets/Your notes are comprehensiv.svg'; 
-import multi from '../assets/Multi Style Learning.svg'; 
-import listen from '../assets/Listen and learn, confident.svg'; 
-import high from '../assets/Highlight Key Info.svg'; 
-import all from '../assets/All in one resource.svg';
 import group from '../assets/Multi Style Learning.svg'; 
-
-
 import Link from 'next/link';
-
 
 
 export default function EmailPermission() {
     const router = useRouter();
-    const { finalScore } = useQuiz();
-    const { name, sound } = useUser();
-
-    // const handleYesClick = () => {
-        
-    //    router.push('/legal');
-
-    // };
-
-
-
-    // const handleNoClick = () => {
-
-    //   sessionStorage.setItem('needsRefreshFromEmailDecline', 'true');
-    //     router.push('/');
-    // };
 
     const Section = "Audio Permission";
-    const audio_URL = '';
     const question_text = `t`;
-    const currentQuestion = { question_text: "" };
-    const currentIMG = 'https://frfc.cloud.appwritfc.io/v1/storage/buckets/dood_gifs/files/EMAIL_SEND_TEST/view?project=test-domain&mode=admin';
     
     // Placeholder functions
     const getLabelColorBySection = (section) => "#033699";
 
     return (
-        <div style={{}}>
-        {/* Top Blue Navbar Strip */}
+        <div className={fc.mainContainer}>
 
-        <div style={{ paddingTop: '60px', }}>
           <article 
           className={`${fc.card} ${nunito.className}`} 
           id={fc.firstCARD} 
           style={{
-              position: 'relative',
-              zIndex: 200,
               boxShadow: '0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.06)',
-              marginTop: '-40px',
-              overflow: 'hidden'
+              height: '500px', 
+              
 
             
           }}
@@ -210,7 +166,6 @@ href='/legal' prefetch
   
 </section>
   </Link>
-        </div>
       </div>
     );
 } 

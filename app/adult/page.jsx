@@ -1,17 +1,15 @@
 'use client'
 import React from 'react'
 
-import a from '../Styles/adult.module.css'; 
-import Image from 'next/image';
+// import a from '../Styles/adult.module.css'; 
+// import Image from 'next/image';
 // import affect from '../assets/Listen and learn, confident.svg'; 
-import affect from '../assets/Highlight Key Info.svg'; 
+// import affect from '../assets/Highlight Key Info.svg'; 
 import { useRouter } from 'next/navigation';
 import AdultCard from '../Components/AdultCard'; 
 
 
 function Adult() {
-
-
 
   const router = useRouter();
   

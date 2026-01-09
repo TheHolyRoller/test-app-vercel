@@ -50,11 +50,12 @@ export default function EmailPermission() {
           id={uc.firstCARD} 
           style={{
             boxShadow: '0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.06)',
-              // outline: '11px solid blue',
               height: '500px', 
+              
 
 
-          }}
+
+            }}
           >
       <div 
           className={uc.cardCategoryColorContainer} 

@@ -1,31 +1,10 @@
 'use client';
 
-import { useQuiz } from '../lib/context/QuizContext';
-import { useUser } from '../lib/context/UserContext';
 import { useRouter } from 'next/navigation';
-import QuizCard from '../Components/QuizCard';
-import {PermissionAnswer} from '../Components/PermissionAnswer'; 
-// import uc from '../Styles/emailPermission.module.css'; 
-// import uc from '../Styles/UnderstandCard.module.css'; 
-// import id from '../Styles/IdealCard.module.css'; 
-// import ad from '../Styles/AdultCard.module.css'; 
-import fc from '../Styles/FunctionCard.module.css'; 
 
 
 import { nunito } from '../fonts/nunito';
 import Image from 'next/image';
-import ivvi_group from '../assets/ivvi_group.svg'; 
-// import all from '../assets/All in one resource.svg'; 
-import learn from '../assets/Listen and learn, confident.svg'; 
-import say from '../assets/Say goodbye to the time.svg'; 
-import real from '../assets/Real time NotetakinListen and learn, confident.svg'; 
-import study from '../assets/Study anywhere.svg'; 
-import your from '../assets/Your notes are comprehensiv.svg'; 
-import multi from '../assets/Multi Style Learning.svg'; 
-import listen from '../assets/Listen and learn, confident.svg'; 
-import high from '../assets/Highlight Key Info.svg'; 
-import all from '../assets/All in one resource.svg';
-import group from '../assets/Multi Style Learning.svg'; 
 import legal from '../assets/Your notes are comprehensiv.svg'; 
 import lc from '../Styles/LegalCard.module.css'; 
 
@@ -35,8 +14,6 @@ import Link from 'next/link';
 
 export default function EmailPermission() {
     const router = useRouter();
-    const { finalScore } = useQuiz();
-    const { name, sound } = useUser();
 
     const handleYesClick = () => {
         router.push('/audiopermission');
@@ -51,10 +28,7 @@ export default function EmailPermission() {
     };
 
     const Section = "Audio Permission";
-    const audio_url = '';
     const question_text = `t`;
-    const currentQuestion = { question_text: "" };
-    const currentIMG = 'https://frlc.cloud.appwritlc.io/v1/storage/buckets/dood_gifs/files/EMAIL_SEND_TEST/view?project=test-domain&mode=admin';
     
     // Placeholder functions
     const getLabelColorBySection = (section) => "#033699";
@@ -64,31 +38,15 @@ export default function EmailPermission() {
         <>
 
         <div className={lc.cardMainContainer} >
-        {/* Top Blue Navbar Strip */}
-        <div 
-          style={{
-            width: '100%',
-            height: '120px',
-            backgroundColor: '#023597',
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            zIndex: 100, 
-            display: 'none'
-          }}
-        />
-        
 
         {/* Main Content Container */}
-        <div className={lc.cardSubContainer}  style={{ paddingTop: '60px' }}>
+        <div className={lc.cardSubContainer}>
           <article 
           className={`${lc.card} ${nunito.className}`} 
           id={lc.firstCARD} 
           style={{
-              position: 'relative',
-              zIndex: 200,
               boxShadow: '0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.06)',
-              marginTop: '-40px', 
+              height: '500px'
 
           }}
           >

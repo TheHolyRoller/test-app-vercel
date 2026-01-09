@@ -1,3 +1,24 @@
+
+
+.mainContainer{
+
+
+    height: 100vh; 
+    width: 100vw; 
+    position: absolute;
+    top: 1rem; 
+    left: 0; 
+
+
+
+
+
+
+}
+
+
+
+
 .card {
     /* height: 625px; */
     height: var(--card-height);
@@ -7,9 +28,6 @@
     display: grid;
     background-color: white !important;
     margin: 0 auto; 
-    margin-bottom: 5.9rem;
-
-    margin-top: -2rem !important; 
 
     border-radius: 1rem;
     -webkit-border-radius: 1rem;
@@ -19,7 +37,7 @@
 }
 
 
-@media(min-width: 1100px){
+/* @media(min-width: 1100px){
 
     .card {
 
@@ -30,7 +48,7 @@
 
 
 
-}
+} */
 
 
 .firstCARD{
@@ -293,41 +311,30 @@
     left: 0;
     right: 0;
     top: 0;
-    position: relative;
     width: 320px;
-    height: 555px;
+    height: 510px;
     background-color: #fbfbfb;
-    border-radius: 0rem;
-    -webkit-border-radius: 0rem;
-    -moz-border-radius: 0rem;
-    -ms-border-radius: 0rem;
-    -o-border-radius: 0rem;
+    
     z-index: -2;
-   display: none;
-    transform:  translate(0rem,3em) !important;
     box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
 }
 
 #cardTwo{
     position: absolute;
     top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: none;
     z-index: -1;
-    margin-bottom: -5rem !important;
-    height: 555px;
-    max-height: 777px;
+
     width: 320px;
+    height: 505px;
+    max-height: 505px;
+
+
+
     background-color: #fbfbfb;
     box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
-    transform:translate(0rem, 4em);
-    -webkit-transform:translate(0rem, 4em);
-    -moz-transform:translate(0rem, 4em);
-    -ms-transform:translate(0rem, 4em);
-    -o-transform:translate(0rem, 4em);
+    
 }
+
 
 #cardThree{
  width: 320px;
@@ -338,11 +345,12 @@
  -moz-border-radius: 1rem;
  -ms-border-radius: 1rem;
  -o-border-radius: 1rem;
- /* display: none; */
+ display: none;
  position: absolute;
  bottom: 0; 
  z-index: -2;
- margin-bottom: 0.8em;
+ /* margin-bottom: 0.8em; */
+
  box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
 }
 
@@ -355,13 +363,9 @@
     position: absolute;
     bottom: 0;
     right: 0;
+    display: none;
     border-radius: 0 0 1rem 1rem;
     box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
-    transform:translate(0, 5.5em);
-    -webkit-transform:translate(0, 5.5em);
-    -moz-transform:translate(0, 5.5em);
-    -ms-transform:translate(0, 5.5em);
-    -o-transform:translate(0, 5.5em);
     -webkit-border-radius: 0 0 1rem 1rem;
     -moz-border-radius: 0 0 1rem 1rem;
     -ms-border-radius: 0 0 1rem 1rem;
@@ -378,7 +382,8 @@
     margin: 0 auto; 
     display: grid; 
     place-content: center;
-    margin-top: -4.5em; 
+    margin-top: 1.438rem; 
+
 
 
 
@@ -432,13 +437,13 @@
 
 
 
-.noButtonContainer{
+/* .noButtonContainer{
 
     cursor: pointer;
 
-}
+} */
 
-.noButton{
+/* .noButton{
 
     margin: 0 auto; 
     display: grid; 
@@ -446,10 +451,10 @@
     margin-top: 0.5em; 
     color: #7d879b; 
 
-}
+} */
 
 
-@media(min-width: 1300px) and (max-width: 1700px){
+/* @media(min-width: 1300px) and (max-width: 1700px){
 
     .card{
 
@@ -475,12 +480,12 @@
 
     }
 
-}
+} */
 
 
 
 
-@media(min-width: 1900px){
+/* @media(min-width: 1900px){
 
     .cta {
 
@@ -489,4 +494,4 @@
        
     }
 
-}
+} */

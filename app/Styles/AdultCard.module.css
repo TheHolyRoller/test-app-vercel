@@ -1,14 +1,33 @@
+
+.mainContainer{
+
+
+position: absolute;
+top: 1rem; 
+height: 100vh;
+width: 100vw; 
+
+
+
+
+
+
+
+
+
+}
+
+
+
 .card {
 
     height: var(--card-height);
     width:320px;    
 
-    position: relative;
+    /* position: relative; */
     background-color: white !important;
 
     margin: 0 auto; 
-    margin-bottom: 5.9rem;
-    margin-top: -2rem !important; 
     
     border-radius: 1rem;
     -webkit-border-radius: 1rem;
@@ -17,7 +36,8 @@
     -o-border-radius: 1rem;
 }
 
-@media(min-width: 1100px){
+
+/* @media(min-width: 1100px){
 
     .card {
 
@@ -25,7 +45,7 @@
        
     }
 
-}
+} */
 
 .firstCARD{
 }
@@ -159,14 +179,11 @@
 
 
 .paginationElementContainer{
-    position: absolute;
-    left: 50%;
-    bottom: 5%;
-    transform:translate(-50%, -70%) ;
-    -webkit-transform:translate(-50%, -70%) ;
-    -moz-transform:translate(-50%, -70%) ;
-    -ms-transform:translate(-50%, -70%) ;
-    -o-transform:translate(-50%, -70%) ;
+
+    margin: auto; 
+    display: grid;
+    place-content: center ;
+
 
 }
 
@@ -207,23 +224,19 @@
 
 
 
-
-
-
-
-
-
 .imageSectionContainer{
     display: grid;  
     place-content: center; 
-    margin: 0 auto; 
+    
     width: 100%;
     height:5em !important;
-    position: relative; 
-    z-index: 9;
+    
+    
+    margin: 0 auto; 
     margin-top: 0rem !important; 
     position: absolute; 
-    top: 80%; 
+    top: 80%;
+    z-index: 9;
 
 
 
@@ -248,21 +261,13 @@
 
 #cardOne{
     position: absolute;
-    left: 0;
-    right: 0;
     top: 0;
-    position: relative;
-    width: 320px;
-    height: 555px;
-    background-color: #fbfbfb;
-    border-radius: 0rem;
-    -webkit-border-radius: 0rem;
-    -moz-border-radius: 0rem;
-    -ms-border-radius: 0rem;
-    -o-border-radius: 0rem;
     z-index: -2;
-   display: none;
-    transform:  translate(0rem,3em) !important;
+
+    width: 320px;
+    height: 510px;
+    background-color: #fbfbfb;
+  
     box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
 }
 
@@ -274,52 +279,57 @@
     bottom: 0;
     display: none;
     z-index: -1;
-    margin-bottom: -5rem !important;
-    height: 555px;
-    max-height: 777px;
+    height: 510px;
+    max-height: 510px;
     width: 320px;
     background-color: #fbfbfb;
     box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
-    transform:translate(0rem, 4em);
-    -webkit-transform:translate(0rem, 4em);
-    -moz-transform:translate(0rem, 4em);
-    -ms-transform:translate(0rem, 4em);
-    -o-transform:translate(0rem, 4em);
+  
+
+
+
 }
 
 #cardThree{
+ 
  width: 320px;
- height: 400px;
+ height: 505px;
  background-color: #fbfbfb;
+ 
+ 
  border-radius: 1rem;
  -webkit-border-radius: 1rem;
  -moz-border-radius: 1rem;
  -ms-border-radius: 1rem;
  -o-border-radius: 1rem;
- /* display: none; */
- position: absolute;
- bottom: 0; 
- z-index: -2;
- margin-bottom: 0.8em;
  box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+
+
+
+ position: absolute;
+ top: 0; 
+ z-index: -2;
+
+
+
+
+
+
 }
 
 #cardFour{
-    position: relative;
-    z-index: -5;
     width: 320px;
-    height: 400px;
+    height: 510px;
     background-color: #fbfbfb;
     position: absolute;
     bottom: 0;
-    right: 0;
-    border-radius: 0 0 1rem 1rem;
     box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
-    transform:translate(0, 5.5em);
-    -webkit-transform:translate(0, 5.5em);
-    -moz-transform:translate(0, 5.5em);
-    -ms-transform:translate(0, 5.5em);
-    -o-transform:translate(0, 5.5em);
+    z-index: -2;
+    display: none; 
+
+
+
+    border-radius: 0 0 1rem 1rem;
     -webkit-border-radius: 0 0 1rem 1rem;
     -moz-border-radius: 0 0 1rem 1rem;
     -ms-border-radius: 0 0 1rem 1rem;
@@ -350,6 +360,7 @@
 
 
 .affectsList{
+
     list-style-type: disc;
     width: min-content; 
     margin: 0 auto; 
@@ -359,9 +370,10 @@
 }
 
 .affectsListItem{
-    /* font-size: 1.22rem; */
+
     margin-bottom: 0.5rem;
     line-height: 1.4;
+
 }
 
 
@@ -375,9 +387,7 @@
     margin: 0 auto; 
     display: grid; 
     place-content: center;
-    margin-top: -4.5em; 
-
-
+    margin-top: 1.438rem;
 
 }
 
@@ -443,7 +453,8 @@
     color: #7d879b; 
 
 }
-@media(min-width: 1100px){
+/* @media(min-width: 1100px){
+
 
     .cta {
 
@@ -452,11 +463,11 @@
        
     }
 
-}
+} */
 
 
 
-@media(min-width: 1300px) and (max-width: 1700px){
+/* @media(min-width: 1300px) and (max-width: 1700px){
 
     .card{
 
@@ -482,4 +493,4 @@
 
     }
 
-}
+} */

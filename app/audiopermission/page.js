@@ -1,13 +1,12 @@
 'use client'
 import React, { useEffect } from 'react'
 import Image from 'next/image'; 
-import a from '../Styles/Quiz.module.css'; 
+import a from '../Styles/Quiz.module.css';
+ 
 
 import { nunito } from '../fonts/nunito';
-import { usePathname } from 'next/navigation'; 
 import AudioButtons from '../Components/AudioButtons'; 
 import { useUser } from '../lib/context/UserContext';
-// import currentIMG from '../../public/v.mp4'; 
 
 function Page() {
   
@@ -110,8 +109,6 @@ function Page() {
                 </span>
 
                 ready
-
-                {/* Add in the audio control icon here  */}
 
                         <div className={a.soundIconContainer} onClick={toggleUserSound} >
 
