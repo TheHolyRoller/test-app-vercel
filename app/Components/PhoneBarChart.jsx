@@ -98,10 +98,9 @@ function PhoneBarChart({ writingPercentage,
               className={`${p.card} ${nunito.className}`} 
               id={p.firstCARD} 
               style={{
-                  position: 'relative',
-                  zIndex: 200,
-                  boxShadow: '0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.06)',
-    
+
+
+
               }}
               >
             <div 
