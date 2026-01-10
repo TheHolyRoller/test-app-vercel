@@ -90,7 +90,7 @@ export default function EmailPermission() {
 
         <article className={ad.mainSupportingTextContainer}>
 
-<ul className={ad.affectsList}> 
+<ul className={ad.affectsList}  > 
 <li className={ad.affectsListItem}>
 
     Reading 
@@ -125,20 +125,7 @@ export default function EmailPermission() {
 
 </ul>
 
-
-</article>
-
-
-
-
-
-
-
-        </div>
-
-      </div>
-
-      <div className={ad.paginationElementContainer}
+<div className={ad.paginationElementContainer}
       
       style={{ margin: '0 auto'}}
 
@@ -181,7 +168,19 @@ export default function EmailPermission() {
       </div>
 
 
-  
+</article>
+
+
+
+
+
+
+
+        </div>
+
+      </div>
+
+    
       <article className={ad.card} id={ad.cardOne}></article>
       <article className={ad.card} id={ad.cardTwo}></article>
       <article className={ad.card} id={ad.cardThree}></article>

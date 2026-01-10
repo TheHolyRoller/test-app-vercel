@@ -94,9 +94,8 @@ export default function EmailPermission() {
 
         </p>
 
-      </div>
 
-      <div className={uc.paginationElementContainer}
+            <div className={uc.paginationElementContainer}
       
       style={{ margin: '0 auto', }}
 
@@ -137,6 +136,10 @@ export default function EmailPermission() {
         </ul>
       </div>
       </div>
+
+      </div>
+
+  
 
 
   

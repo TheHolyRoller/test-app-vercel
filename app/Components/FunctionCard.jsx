@@ -62,11 +62,10 @@ export default function EmailPermission() {
       {question_text && (
           <div className={`${fc.question_textContainer} ${nunito.className}`} style={{color:'#333333' }} >
               <h2 className={`${fc.question_text} ${nunito.className}`} style={{color:'#333333' }}>
-                  {/* {question_text} */}
   
   
                   <span className={fc.functionSpan}  style={{color:'rgb(40, 84, 168)', fontWeight: 'bolder'}}>
-                      {/* Adult Dyslexia Can Affect: */}
+
                       How the Screener Works
 
                       
@@ -75,7 +74,7 @@ export default function EmailPermission() {
           </div>
       )}
 
-      {/* Add in the supporting text section here  */}
+
       <div className={fc.supportingTextSectionContainer}>
 
 
@@ -88,15 +87,13 @@ export default function EmailPermission() {
        You can see and hear the questions.
        </span> 
         At the end you will be given a score and sent your results.
-
-
             
             </article>
 
         </div>
 
-      </div>
 
+      
       <div className={fc.paginationElementContainer}
       
       style={{ margin: '0 auto'}}
@@ -139,6 +136,13 @@ export default function EmailPermission() {
         </ul>
       </div>
       </div>
+
+
+
+
+
+      </div>
+
 
 
   

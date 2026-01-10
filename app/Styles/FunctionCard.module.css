@@ -180,6 +180,8 @@
         position: relative; 
         /* margin-top: 9rem;  */
         margin-top: -5rem; 
+        height: min-content;
+
 
 
         color: #65656C; 
@@ -205,12 +207,13 @@
 .paginationElementContainer{
     position: absolute;
     left: 50%;
-    bottom: 5%;
+    bottom: -2.6838rem;
     transform:translate(-50%, -70%) ;
     -webkit-transform:translate(-50%, -70%) ;
     -moz-transform:translate(-50%, -70%) ;
     -ms-transform:translate(-50%, -70%) ;
     -o-transform:translate(-50%, -70%) ;
+    
 
 }
 
@@ -365,10 +368,11 @@
 
     position: relative; 
 
-    margin-bottom: 7.5rem;
+    /* margin-bottom: 7.5rem; */
     margin-top: 0.65em;
     color: #69696f;
     max-width: 600px;
+
 }
 
 

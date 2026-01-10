@@ -187,7 +187,9 @@ top: 3rem;
 .paginationElementContainer{
     position: absolute;
     left: 50%;
-    bottom: 7%;
+    bottom: -4.445rem;
+    z-index: 999999;
+    /* outline: 1px solid red; */
     transform:translate(-50%, -70%) ;
     -webkit-transform:translate(-50%, -70%) ;
     -moz-transform:translate(-50%, -70%) ;

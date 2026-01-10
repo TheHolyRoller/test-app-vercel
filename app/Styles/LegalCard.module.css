@@ -164,6 +164,7 @@
         color: #65656C; 
         font-weight: lighter !important;
         padding-top: 8rem; 
+
         
 
 
@@ -224,7 +225,7 @@ display: block;
 .paginationElementContainer{
     position: absolute;
     left: 50%;
-    bottom: 5%;
+    bottom: -0.05rem;
     transform:translate(-50%, -70%) ;
     -webkit-transform:translate(-50%, -70%) ;
     -moz-transform:translate(-50%, -70%) ;

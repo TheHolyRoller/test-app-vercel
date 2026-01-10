@@ -177,6 +177,10 @@ width: 100vw;
     display: grid;
     place-content: center ;
 
+    position: absolute;
+    bottom: -2rem; 
+
+
 
 }
 
@@ -359,6 +363,9 @@ width: 100vw;
     margin: 0 auto; 
     text-align: left;
     font-size: 0.9rem !important;
+
+    position: relative;
+
     
 }
 
@@ -366,6 +373,10 @@ width: 100vw;
 
     margin-bottom: 0.5rem;
     line-height: 1.4;
+    font-size: 1.04rem !important;
+
+
+
 
 }
 
