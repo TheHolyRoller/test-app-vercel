@@ -3,22 +3,18 @@
 import { useQuiz } from '../lib/context/QuizContext';
 import { useUser } from '../lib/context/UserContext';
 import { useRouter } from 'next/navigation';
-import QuizCard from '../Components/QuizCard';
-import {PermissionAnswer} from '../Components/PermissionAnswer'; 
 import e from '../Styles/emailPermission.module.css'; 
 import { nunito } from '../fonts/nunito';
 import Image from 'next/image';
 
 export default function EmailPermission() {
     const router = useRouter();
-    const { finalScore } = useQuiz();
-    const { name, sound, toggleUserSound } = useUser();
+    const { sound, toggleUserSound } = useUser();
 
     const handleYesClick = () => {
         router.push('/name');
     };
     
-
 
     const handleNoClick = () => {
         // Set flag to trigger refresh when landing on home page
@@ -31,32 +27,17 @@ export default function EmailPermission() {
     const Section = "Audio Permission";
     const audio_url = 'https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/6943fecb000ff0da0ae4/view?project=67d4d9140008273c9d84&mode=admin';
     const question_text = `Shall We send a results Report to your email?
-Otherwise they won’t be saved.`;
+             Otherwise they won’t be saved.`;
     const currentQuestion = { question_text: "" };
     const currentIMG = 'https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/69440aa20005ab99eec3/view?project=67d4d9140008273c9d84&mode=admin';
-    
-    // Placeholder functions
+
+
     const getLabelColorBySection = (section) => "#033699";
 
     return (
         <div>
-        {/* Top Blue Navbar Strip */}
-        <div 
-          style={{
-            width: '100%',
-            height: '120px',
-            backgroundColor: '#023597',
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            zIndex: 100, 
-            display: 'none'
-          }}
-        />
-        
-
         {/* Main Content Container */}
-        <div style={{ paddingTop: '60px' }}>
+        <div style={{paddingTop: '2rem'}}>
           <article 
           className={`${e.card} ${nunito.className}`} 
           id={e.firstCARD} 
@@ -64,8 +45,10 @@ Otherwise they won’t be saved.`;
               position: 'relative',
               zIndex: 200,
               boxShadow: '0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.06)',
-              marginTop: '-40px', 
-          }}
+
+
+
+            }}
           >
       <div 
           className={e.cardCategoryColorContainer} 
@@ -76,6 +59,7 @@ Otherwise they won’t be saved.`;
           }}
 
           
+
       >
 
 
@@ -92,9 +76,6 @@ Otherwise they won’t be saved.`;
               </audio>
           )}
 
-          
-
-          
   
           <div className={`${e.categoryLabelContainer} ${nunito.className}`}>
               <label className={`${e.categoryLabel} ${nunito.className}`}>
