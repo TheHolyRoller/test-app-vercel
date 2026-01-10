@@ -152,6 +152,7 @@ export default function EmailPermission() {
 
 href='/ideal' prefetch
 
+
 >
   {/* onClick={handleYesClick} */}
 <section className={uc.buttonSectionContainer} style={{cursor: 'pointer'}}>

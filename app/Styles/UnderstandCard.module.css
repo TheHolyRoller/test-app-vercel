@@ -7,7 +7,6 @@ height: 100vh;
 width: 100vw; 
 position: absolute;
 top: 3rem; 
-outline: 3px solid red;
 
 
 
@@ -364,8 +363,6 @@ outline: 3px solid red;
 }
 
 
-
-
 .buttonSectionContainer{
 
 
@@ -374,7 +371,6 @@ outline: 3px solid red;
     display: grid; 
     place-content: center;
     margin-top: 2.548rem; 
-    outline: 2px solid red;
 
 
 
