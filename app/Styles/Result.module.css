@@ -1,53 +1,273 @@
 /* Result Page Styles */
-.card{
 
+/* Main Container */
+.mainContainer {
+
+
+
+
+}
+
+/* Card Styles */
+.card {
+
+
+    position: relative;
+    z-index: 999999999;
+    top: 1rem; 
+    width: 320px;    
+    background-color: #013699;
+    margin: 0 auto; 
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    box-shadow: 0 4px 6px -4px rgb(53, 99, 249) !important;
+    /* outline: 2px solid red; */
+    /* height: 505px;  */
+
+
+
+}
+
+
+
+#cardOne{
+
+
+    position: absolute;
+    top: 0; 
+
+    z-index: -2;
+
+    width: 320px;
+    min-width: 320px; 
+
+    height: 510px;
+    background-color: #013699;
+    box-shadow: 0 4px 6px -4px rgb(53, 99, 249) !important;
+
+
+
+
+}
+
+#cardTwo{
+
+
+
+    position: absolute;
+    top: 0; 
+    z-index: 0;
+
+    height: 500px;
+    max-height: 500px;
+
+    width: 320px;
+    min-width: 320px; 
+    background-color: #013699;
+
+    /* Add in the box shadows here  */
+    box-shadow: 0 4px 12px -4px rgba(55, 174, 248, 0.3);
+ 
+
+    /* Add in the shadow here */
+
+
+
+}
+
+
+
+
+#cardThree{
+ 
+    
+ width: 320px;
+ min-width: 320px; 
+
+
+ height: 505px;
+ /* background-color: #fbfbfb; */
+ background-color: #013699;
+
+ border-radius: 1rem;
+ -webkit-border-radius: 1rem;
+ -moz-border-radius: 1rem;
+ -ms-border-radius: 1rem;
+ -o-border-radius: 1rem;
+ position: absolute;
+ top: 0; 
+ /* outline: 4px solid green; */
+ 
+
+/* display: none; */
+box-shadow: 0 4px 12px -4px rgba(55, 174, 248, 0.3);
+box-sizing: border-box; 
+border-bottom: 4px solid  #073384;
+z-index: -2;
+
+}
+
+#cardFour{
+
+
+    width: 320px;
+    min-width: 320px; 
+    max-width: 320px; 
+    background-color: #013699;
+    z-index: -1;
+
+    height: 500;
+    position: absolute;
+    top: 0;
+    outline: 4px solid purple;
+    display: none;
+    
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    
+    box-shadow: 0 4px 6px -4px rgb(75, 105, 251) !important;
+
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    z-index: -2;
     
 
-
 }
 
 
-.mainContainer{
-  
+.cardCategoryColorContainer {
+    position: relative;
+    height: 3rem;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px; 
+    display: grid; 
+    place-content: center;
+    background-color: var(--category-color, #ccc);
+    height: 4.5rem; 
+
+    z-index: 99;
+}
+
+/* Category Label */
+.categoryLabelContainer {
+    height: 5.5rem; 
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    display: grid; 
+    place-content: center;
+    z-index: 99;
+}
+
+.categoryLabel {
 
 
 
 }
 
-
-
-.mainChartContainer {
-
-
-
+.labelContainer {
+    height: 2.5rem;
+    width: 300px;
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+    display: grid;
+    place-content: center;
+    text-transform: uppercase;
+    margin-bottom: -0.5em;
+    font-family: var(--font-nunito), sans-serif;
+    font-weight: 700;
+    color: white;
 }
 
-
-@media(min-width: 1100px){
-
-    .card {
-
-
-       
-    }
-
-
-
+/* Audio/Sound Icon Styles */
+.soundIconContainer {
+    position: relative; 
+    display: flex;
+    justify-content: flex-end; 
+    margin-right: -6em; 
+    margin-top: -1.35em; 
 }
+
+.soundIcon {
+    justify-self: end;
+    stroke: #033699;
+    fill: #033699;
+    opacity: 1;
+}
+
+.iconBackground {
+    width: 2em;
+    height: 2em;
+    background-color: rgba(240, 240, 240, 0.7);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    display: grid;
+    place-content: center;
+    margin-right: -0.7em;
+    padding-bottom: 0px;
+    transform: translate(0, -1.6px);
+    -webkit-transform: translate(0, -1.6px);
+    -moz-transform: translate(0, -1.6px);
+    -ms-transform: translate(0, -1.6px);
+    -o-transform: translate(0, -1.6px);
+}
+
+/* Question Text Styles */
+.question_textContainer {
+    font-size: clamp(0.8rem + 1vw) !important; 
+    width: 90%;
+    text-align: center;
+    margin: 0 auto;
+    font-family: var(--font-nunito), sans-serif;
+    position: relative; 
+    z-index: 9999999;
+    margin-top: -2.5rem; 
+}
+
+.question_text {
+    position: relative; 
+    z-index: 99999;
+    margin: 4.5rem auto;
+    font-family: var(--font-nunito), sans-serif;
+    font-weight: 600;
+    width: 100%; 
+    margin-bottom: 5rem !important;
+}
+
+.understandSpan {
+    width: 40%; 
+    text-align: center;
+}
+
+/* Media Queries */
+
+
+
+
+
+
+
 
 
 
 
 
 .mainChartSubContainer {
-    /* width: 100vw; 
-    margin: 0 auto; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: rgb(41, 39, 39);
-    position: relative; 
-    min-height: auto; */
+    
 
 }
 
@@ -81,7 +301,6 @@
     background-color: #99bb9a;
     display: grid;
     place-content: center;
-    /* margin: 0.5rem auto; */
     margin: 0 auto; 
     margin-top: -3rem; 
 
@@ -90,6 +309,10 @@
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
+
+    position: relative;
+    z-index: 9999;
+
 
 
 }
@@ -111,6 +334,9 @@
     margin: 2rem auto; 
      width: 80%; 
     text-align: center;
+
+    position: relative;
+    z-index: 99;
 
 
 
@@ -139,13 +365,16 @@
 }
 
 .buttonContainer {
-    width: 99.99vw; 
+    position: absolute;
+    bottom: 0; 
+    left: 50%; 
+    transform: translate(-50%, 185%);
 
+
+    z-index: 99999;
     margin: 0 auto; 
     display: grid;
     place-content: center;
-    margin-top: -7rem; 
-    
 
 }
 
@@ -214,187 +443,6 @@
 }
 
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .mainHeadline {
-        font-size: 2rem;
-        padding: 0.5rem;
-    }
-    
-    .impactMessage {
-        font-size: 1.2rem;
-        width: 95%;
-        margin-top: 4rem;
-
-    }
-
-    
-
-    
-    .button {
-        width: 280px;
-        height: 55px;
-        font-size: 1.7rem !important;
-
-
-    }
-
-    
-.mainScore {
-    outline: 8px solid white;
-    max-width: 100px !important;
-    max-height: 100px !important;
-
-    margin-top: -3rem !important;
-}
 
 
 
-
-}
-
-@media (max-width: 480px) {
-   
-    .mainHeadlineContainer {
-        width: 100%;
-        text-align: center;
-        margin-bottom: 0.8rem;
-        margin-top: 2em !important; 
-
-        
-    }
-
-    .mainScore {
-        outline: 14px solid white;
-        width: 155px !important;
-        height: 155px !important;
-        font-size: 4rem;
-        color: white;
-        background-color: #99bb9a;
-        display: grid;
-        place-content: center;
-        margin: 0.5rem auto;
-        border-radius: 50%;
-        -webkit-border-radius: 50%;
-        -moz-border-radius: 50%;
-        -ms-border-radius: 50%;
-        -o-border-radius: 50%;
-    
-        
-    }
-
-    
-   
-    .mainHeadline {
-        font-size: 1.8rem;
-        width: 70%;
-        margin: 0 auto;
-    }
-
-    .mainScore {
-        width: 100px;
-        height: 100px;
-        font-size: 2.5rem;
-        outline-width: 10px;
-    }
-    
-    .impactText {
-        margin: 0; 
-        width: 100%; 
-        text-align: center;
-        line-height: 1.4;
-        margin-top: -1.5em !important; 
-        font-size: 1.2rem;
-
-
-
-    }
-
-
-
-
-    .refSpan {
-        font-size: 0.9rem;
-        margin: 0 auto; 
-        display: block;
-        margin-top: -0.85em;
-    
-    }
-    
-    .impactMessage {
-        font-size: 1.1rem;
-        margin-top: 3rem;
-        width: 50vw; 
-
-
-    }
-    
-    .button {
-        width: 250px;
-        height: 50px;
-        font-size: 1.75rem;
-        letter-spacing: 1px;
-
-    }
-} 
-
-
-@media(min-width: 1100px){
-
-    .cta {
-
-
-        margin-top: 0.7rem !important; 
-
-        box-shadow: 0px 4px 1px 0px #c17a41;
-
-       
-    }
-
-}
-
-
-@media(min-width: 1300px) and (max-width: 1700px){
-
-    
-
-    .refSpan{
-
-
-        margin-bottom: 0.65rem !important;
-
-    }
-
-    .scoreSpan{
-
-        font-size: 2.5rem !important;
-
-    }
-
-
-}
-
-
-@media(min-width: 350px) and (max-width: 465px){
-
-
-    .button{
-
-        /* width: 18rem;  */
-        width: 300px;
-        min-height: 60px;
-        margin-top: 2.1rem !important;
-        box-shadow: 0px 4px 1px 0px #c17a41;
-
-
-    }
-
-    .card{
-
-
-    }
-
-
-
-
-}
