@@ -10,14 +10,9 @@ import axios from 'axios';
 import emailSubmission from '../Styles/email.module.css'; 
     
 import { nunito } from '../fonts/nunito';
-import Image from 'next/image';
-import { Link } from 'lucide-react';
-import { NextResponse } from 'next/server';
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
 
-const DATABASE_ID = process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID;
-const COLLECTION_ID = process.env.NEXT_PUBLIC_APPWRITE_RESULTS_COLLECTION_ID;
 
 export default function EmailPermission() {
     const router = useRouter();
@@ -556,20 +551,9 @@ const prove_consent = async () => {
     return (
         <div>
         {/* Top Blue Navbar Strip */}
-        <div 
-          style={{
-            width: '100%',
-            height: '120px',
-            backgroundColor: '#023597',
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            zIndex: 100, 
-            display: 'none'
-          }}
-        />
+       
         
-        <div style={{ paddingTop: '60px' }}>
+        <div style={{ paddingTop: '1rem' }}>
           <article 
           className={`${emailSubmission.card} ${nunito.className}`} 
           id={emailSubmission.firstCARD} 
@@ -577,8 +561,11 @@ const prove_consent = async () => {
               position: 'relative',
               zIndex: 200,
               boxShadow: '0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.06)',
-              marginTop: '-40px'
-          }}
+
+
+
+
+            }}
           >
             
       <div 
@@ -619,6 +606,7 @@ const prove_consent = async () => {
                   <div className={emailSubmission.soundIconContainer}  style={{}} >
 
 <div className={emailSubmission.iconBackground} style={{ position: 'absolute', left: '66%', top: '-13px', cursor: 'pointer' }} onClick={toggleUserSound} >
+
 
 
      {sound === true ? (

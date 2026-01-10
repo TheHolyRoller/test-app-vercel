@@ -128,23 +128,9 @@ export default function EmailPermission() {
 
     return (
         <div>
-        {/* Top Blue Navbar Strip */}
-        <div 
-          style={{
-            width: '100%',
-            height: '120px',
-            backgroundColor: '#023597',
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            zIndex: 100, 
-            display: 'none'
-          }}
-        />
-        
 
         {/* Main Content Container */}
-        <div style={{ paddingTop: '60px' }}>
+        <div style={{ paddingTop: '1rem' }}>
           <article 
           className={`${c.card} ${nunito.className}`} 
           id={c.firstCARD} 
@@ -152,7 +138,6 @@ export default function EmailPermission() {
               position: 'relative',
               zIndex: 200,
               boxShadow: '0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.06)',
-              marginTop: '-40px'
           }}
           >
       <div 

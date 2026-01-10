@@ -1,25 +1,15 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import ps from '../Styles/postquiz.module.css'; 
 import { useRouter } from 'next/navigation';
-import logo from '../assets/ivvi_Logo.svg'; 
-import Image from 'next/image';
-// import { useUserDetection } from '../lib/hooks/useUserDetection';
 import PostQuizCard from '../Components/PostQuizCard'; 
-import pc from '../Styles/PostQuizCard.module.css'; 
 
 
 
 function PostQuizPage() {
   const router = useRouter();
-  // const { user, isNewUser } = useUserDetection();
   const [isMobile, setIsMobile] = useState(false);
 
-  // console.log('this is the value of new user \n', isNewUser); 
-  // console.log('this is the user \n', user);
-
-  // Automatically refresh the page when component mounts - only once
   useEffect(() => {
     const hasRefreshedPostQuiz = sessionStorage.getItem('hasRefreshedPostQuiz');
     

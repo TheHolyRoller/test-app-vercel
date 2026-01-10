@@ -13,7 +13,7 @@
     background-color: #fbfbfb;
     margin: 0 auto; 
     margin-bottom: 5.9rem;
-    margin-top: -2rem !important; 
+    /* margin-top: -2rem !important;  */
 
     border-radius: 1rem;
     -webkit-border-radius: 1rem;
@@ -23,18 +23,7 @@
 }
 
 
-@media(min-width: 1100px){
 
-    .card {
-
-
-        margin-top: -1rem !important; 
-       
-    }
-
-
-
-}
 
 
 
@@ -99,8 +88,6 @@
 
     margin-right: -6em; 
     margin-top: -1.35em; 
-
-
 
 
 }
@@ -639,46 +626,6 @@
 
 }
 
-@media(min-width: 1100px){
-
-    .cta {
-
-
-        margin-top: 0.7rem !important; 
-       
-    }
-
-}
-
-
-
-
-
-@media(min-width: 1300px) and (max-width: 1700px){
-
-    .card{
-
-        margin-top: -2rem !important; 
-
-    }
-
-    .ctaContainer{
-
-        margin: 0 !important; 
-
-    }
-
-
-    .cta{
-
-
-        margin: 0 !important; 
-        margin-top: -0.5rem !important; 
-
-    }
-
-
-}
 
 
 

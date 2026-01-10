@@ -329,20 +329,20 @@
 
 
 .scoreSpan{
-    /* margin-bottom: -0.45rem !important; */
-    /* padding-top: 2rem !important; */
+
     font-size: clamp(1.4rem, 7vw, 2.8rem);
+    margin: auto;
     margin-bottom: 0rem;
-    margin-top: 1rem; 
+    margin-top: 1rem;
+    display: grid; 
+    place-content: center;
+
 
 
 }
 
 .scoreSpan{
 
-
-    /* clamp the text size here  */
-    
 
 
 }
@@ -356,6 +356,7 @@
 
     display: block;
 
+    /* outline: 4px solid red; */
     
 }
 
@@ -383,7 +384,6 @@
     -ms-transform:translate(0,2.4rem);
     -o-transform:translate(0,2.4rem);
 
-    outline: 4px solid red;
 }
 
 .mainChartSubContainer {
@@ -701,9 +701,10 @@
 
 /* Bar Chart Styles */
 .barChartSection {
-    width: 20vw;
+
+    min-width: 280px !important;
     max-height: 220px !important;
-    max-width: 300px !important;
+    max-width: 305px !important;
     margin: 0rem auto 0rem auto;
     padding: 1rem 2rem;
     background-color: #013699 !important;
