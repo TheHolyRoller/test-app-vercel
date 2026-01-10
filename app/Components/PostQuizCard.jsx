@@ -3,15 +3,12 @@
 import { useQuiz } from '../lib/context/QuizContext';
 import { useUser } from '../lib/context/UserContext';
 import { useRouter } from 'next/navigation';
-import QuizCard from '../Components/QuizCard';
-import logo from '../assets/ivvi_Logo.svg'; 
 
 import {PermissionAnswer} from '../Components/PermissionAnswer'; 
 // import e from '../Styles/emailPermission.modulpc.css'; 
 import pc from '../Styles/PostQuizCard.module.css'; 
 
 import { nunito } from '../fonts/nunito';
-import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
 
 
@@ -124,22 +121,11 @@ export default function PostQuizCard() {
     return (
         <div>
         {/* Top Blue Navbar Strip */}
-        <div 
-          style={{
-            width: '100%',
-            height: '120px',
-            backgroundColor: '#023597',
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            zIndex: 100, 
-            display: 'none'
-          }}
-        />
+        
         
 
         {/* Main Content Container */}
-        <div style={{ paddingTop: '60px' }}>
+        <div style={{ paddingTop: '1rem' }}>
           <article 
           className={`${pc.card} ${nunito.className}`} 
           id={pc.firstCARD} 
@@ -147,7 +133,6 @@ export default function PostQuizCard() {
               position: 'relative',
               zIndex: 200,
               boxShadow: '0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.06)',
-              marginTop: '-40px', 
           }}
           >
       <div 
