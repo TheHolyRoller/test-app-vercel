@@ -7,14 +7,8 @@ import resultStyles from '../Styles/Result.module.css';
 
 import { useRouter } from 'next/navigation'; 
 import { useState } from 'react';
-import rc from '../Styles/resultsCard.module.css'; 
 import { nunito } from '../fonts/nunito';
 
-
-
-
-// Import the appwrite credentials here 
-import UnderstandCard from '../Components/UnderstandCard'; 
 
   
 function ResultContent() {
