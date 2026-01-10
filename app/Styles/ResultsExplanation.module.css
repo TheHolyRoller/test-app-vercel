@@ -22,6 +22,8 @@
     padding: 1vh; 
     position: relative;
     margin-top: -1em; 
+    /* outline: 32px solid red; */
+    /* display: none; */
 }
 
 .quizResultsSubContainer {
