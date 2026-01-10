@@ -198,7 +198,7 @@ function ResultContent() {
                   results
                   </div>
 
-                  <div className={resultStyles.soundIconContainer}  style={{}} >
+                  <div className={resultStyles.soundIconContainer} onClick={toggleUserSound}  style={{cursor: 'pointer', position: 'relative', zIndex: '99999'}} >
 
 <div className={resultStyles.iconBackground} style={{ position: 'absolute', left: '66%', top: '-13px', cursor: 'pointer' }} onClick={toggleUserSound} >
 
