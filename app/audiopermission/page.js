@@ -46,18 +46,7 @@ export default function EmailPermission() {
   
           }}
       >
-          {audio_url && (
-              <audio 
-                  key={audio_url} 
-                  controls 
-                  autoPlay 
-                  style={{ opacity: '0', position: 'absolute' }}
-                  onPlay={() => console.log('🎵 Audio Started Playing:', audio_url)}
-                  onError={(e) => console.error('❌ Audio Error:', e)}
-              >
-                  <source src={audio_url} type="audio/mp3" />
-              </audio>
-          )}
+           
           
   
           <div className={`${uc.categoryLabelContainer} ${nunito.className}`}>
@@ -67,6 +56,7 @@ export default function EmailPermission() {
                   <div className={`${uc.labelContainer} ${nunito.className}`} style={{backgroundColor: getLabelColorBySection(Section)}}>
                   Ready
                   </div>
+                  
               </label>
           </div>
       </div>
