@@ -30,8 +30,7 @@ export default function EmailPermission() {
           style={{
             boxShadow: '0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.06)',
               height: '500px', 
-              position: 'relative'
-
+              
 
 
             }}
@@ -95,9 +94,8 @@ export default function EmailPermission() {
 
         </p>
 
-      </div>
 
-      <div className={uc.paginationElementContainer}
+            <div className={uc.paginationElementContainer}
       
       style={{ margin: '0 auto', }}
 
@@ -139,6 +137,10 @@ export default function EmailPermission() {
       </div>
       </div>
 
+      </div>
+
+  
+
 
   
       <article className={uc.card} id={uc.cardOne}></article>
@@ -152,6 +154,7 @@ export default function EmailPermission() {
 <Link   
 
 href='/ideal' prefetch
+
 
 >
   {/* onClick={handleYesClick} */}

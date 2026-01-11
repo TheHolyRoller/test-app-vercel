@@ -7,14 +7,8 @@ import resultStyles from '../Styles/Result.module.css';
 
 import { useRouter } from 'next/navigation'; 
 import { useState } from 'react';
-import rc from '../Styles/resultsCard.module.css'; 
 import { nunito } from '../fonts/nunito';
 
-
-
-
-// Import the appwrite credentials here 
-import UnderstandCard from '../Components/UnderstandCard'; 
 
   
 function ResultContent() {
@@ -204,7 +198,7 @@ function ResultContent() {
                   results
                   </div>
 
-                  <div className={resultStyles.soundIconContainer}  style={{}} >
+                  <div className={resultStyles.soundIconContainer} onClick={toggleUserSound}  style={{cursor: 'pointer', position: 'relative', zIndex: '99999'}} >
 
 <div className={resultStyles.iconBackground} style={{ position: 'absolute', left: '66%', top: '-13px', cursor: 'pointer' }} onClick={toggleUserSound} >
 

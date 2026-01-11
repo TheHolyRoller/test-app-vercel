@@ -124,9 +124,8 @@ terms of service </a>
 
         </div>
 
-      </div>
 
-      <div className={lc.paginationElementContainer}
+         <div className={lc.paginationElementContainer}
       
       style={{ margin: '0 auto'}}
 
@@ -167,6 +166,10 @@ terms of service </a>
         </ul>
       </div>
       </div>
+
+      </div>
+
+     
 
 
   

@@ -54,7 +54,7 @@ export default function EmailPermission() {
   
   
                   <div className={`${uc.labelContainer} ${nunito.className}`} style={{backgroundColor: getLabelColorBySection(Section)}}>
-                  Ready
+                  Welcome
                   </div>
                   
               </label>
