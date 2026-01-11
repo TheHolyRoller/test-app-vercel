@@ -2,19 +2,19 @@
 
 import { useQuiz } from '../lib/context/QuizContext';
 import { useUser } from '../lib/context/UserContext';
-import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 import q from '../Styles/Quiz.module.css';
 import QuizCard from '../Components/QuizCard';
 import CategoryCard from '../Components/CategoryCard';
 import { useGifPreloader } from '../lib/hooks/useGifPreloader';
 
 
-export default function Quiz() {
-    const router = useRouter();
-    const { name, sound, userAge } = useUser();
-    const { questions, currentQuestion, handleAnswer, currentIndex, quizLength, gif_urls, navColor } = useQuiz();
 
+export default function Quiz() {
+
+
+    const { name, sound, userAge } = useUser();
+    const { questions, currentQuestion, currentIndex, quizLength, gif_urls, navColor } = useQuiz();
 
     useGifPreloader(gif_urls, currentIndex, 2);
     
@@ -35,9 +35,6 @@ export default function Quiz() {
 
     // Create lighter version of navbar color for progress bar
     const progressBarColor = navColor ? lightenColor(navColor, 30) : '#4f46e5';
-
-    const [answer, setAnswer] = useState();
-
 
 
     // Log initial props and state
@@ -116,12 +113,10 @@ export default function Quiz() {
         <section className={q.quizMainSection} style={{color: 'white'}}>
 
             {/* TODO put the position relative back */}
-            <main className={q.quizComponentContainer} id='quizElement' style={{ zIndex: '9999999'}}>
+            <main className={q.quizComponentContainer} id='quizElement' style={{ zIndex: '9999'}}>
           
 
             <div className={q.quizCardContainer} style={{}}>
-
-
                 
                 <div className={q.progressBarContainer} style={{}}>
                     
