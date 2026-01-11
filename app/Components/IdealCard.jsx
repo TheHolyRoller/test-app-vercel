@@ -14,29 +14,13 @@ import Link from 'next/link';
 
 
 export default function EmailPermission() {
-    const router = useRouter();
-    const { finalScore } = useQuiz();
-    const { name, sound } = useUser();
-
-    // const handleYesClick = () => {
-    //     router.push('/adult');
-    // };
-
-
-
-
-    // const handleNoClick = () => {
-    //     // Set flag to trigger refresh when landing on home page
-    //     sessionStoragid.setItem('needsRefreshFromEmailDecline', 'true');
-    //     router.push('/');
-    // };
 
     const Section = "Audio Permission";
-    const audio_url = '';
     const question_text = `t`;
-    const currentQuestion = { question_text: "" };
-    const currentIMG = 'https://fra.cloud.appwritid.io/v1/storage/buckets/dood_gifs/files/EMAIL_SEND_TEST/view?project=test-domain&mode=admin';
+
     
+
+
     // Placeholder functions
     const getLabelColorBySection = (section) => "#033699";
 
