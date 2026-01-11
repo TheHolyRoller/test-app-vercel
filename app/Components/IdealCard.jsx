@@ -63,8 +63,6 @@ export default function EmailPermission() {
   
           }}
       >
-      
-          
   
           <div className={`${id.categoryLabelContainer} ${nunito.className}`}>
               <label className={`${id.categoryLabel} ${nunito.className}`}>
@@ -86,12 +84,8 @@ export default function EmailPermission() {
       {question_text && (
           <div className={`${id.question_textContainer} ${nunito.className}`} style={{color:'#333333' }} >
               <h2 className={`${id.question_text} ${nunito.className}`} style={{color:'#333333' }}>
-                  {/* {question_text} */}
-  
   
                   <span className={id.idealSpan}  style={{color:'rgb(40, 84, 168)', fontWeight: 'bolder'}}>
-                      {/* {currentQuestion?.question_text} */}
-                      {/* Understand how Dyslexia feels  */}
                       Ideal for University and the Workplace 
                   </span>
               </h2>
