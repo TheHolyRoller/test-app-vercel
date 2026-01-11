@@ -2,13 +2,10 @@
 
 .mainContainer{
 
-
 height: 100vh; 
 width: 100vw; 
 position: absolute;
 top: 1rem; 
-
-
 
 }
 
@@ -372,7 +369,7 @@ top: 1rem;
     margin: 0 auto; 
     display: grid; 
     place-content: center;
-    margin-top: 2.548rem; 
+    margin-top: 1.42rem; 
 
 
 
