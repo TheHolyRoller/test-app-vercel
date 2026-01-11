@@ -16,6 +16,8 @@ export default function EmailPermission() {
     const Section = "Audio Permission";
     const audio_url = '';
     const question_text = `t`;
+
+    
     // Placeholder functions
     const getLabelColorBySection = (section) => "#033699";
 
