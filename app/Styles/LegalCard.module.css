@@ -141,8 +141,6 @@
 
     position: relative; 
     z-index: 99999;
-    /* margin-top: 2em;  */
-    /* margin-bottom: 4.5em;  */
     margin: 4.5rem auto;
     font-family: var(--font-nunito), sans-serif;
     font-weight: 600;
@@ -443,8 +441,9 @@ display: block;
     display: grid; 
     place-content: center;
     position: absolute;
-    bottom: 11.35rem; 
-    
+    bottom: 9.25rem; 
+    /* outline: 2px solid red; */
+
 
 }
 
