@@ -15,8 +15,6 @@ export default function EmailPermission() {
         router.push('/function');
     };
 
-
-
     const Section = "Audio Permission";
     const question_text = `t`;
     
@@ -46,9 +44,6 @@ export default function EmailPermission() {
   
           }}
       >
-      
-          
-  
           <div className={`${ad.categoryLabelContainer} ${nunito.className}`}>
               <label className={`${ad.categoryLabel} ${nunito.className}`}>
   
@@ -66,9 +61,6 @@ export default function EmailPermission() {
             <Image className={ad.mainImage}  src={high} width={150} height={150} alt='notes' /> 
             </header>
 
-
-
-
   
       {question_text && (
           <div className={`${ad.question_textContainer} ${nunito.className}`} style={{color:'#333333' }} >
@@ -80,9 +72,9 @@ export default function EmailPermission() {
                   </span>
               </h2>
           </div>
+
       )}
 
-      {/* Add in the supporting text section here  */}
       <div className={ad.supportingTextSectionContainer}>
 
 

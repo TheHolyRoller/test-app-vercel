@@ -177,15 +177,14 @@ terms of service </a>
       <article className={lc.card} id={lc.cardTwo}></article>
       <article className={lc.card} id={lc.cardThree}></article>
       <article className={lc.card} id={lc.cardFour}></article>
-  </article>
 
-  <Link   
 
-href='/audiopermission' prefetch
+      <section className={lc.buttonSectionContainer} style={{cursor: 'pointer'}}>
+  <Link href="/audiopermission"
 
->
-
-<section className={lc.buttonSectionContainer} style={{cursor: 'pointer'}}>
+    rel='prefetch'
+    className={lc.LinkButtonContainer}
+  >
 
   <div className={lc.ctaContainer} style={{cursor: 'pointer'}} >
 
@@ -195,9 +194,17 @@ href='/audiopermission' prefetch
     </div>
 
   </div>
+  </Link>
   
 </section>
-</Link>
+
+
+  </article>
+
+
+
+
+
         </div>
       </div>
 

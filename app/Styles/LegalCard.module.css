@@ -440,20 +440,22 @@ display: block;
     margin: 0 auto; 
     display: grid; 
     place-content: center;
-    position: absolute;
-    bottom: 9.25rem; 
     /* outline: 2px solid red; */
+    display: flex;
+    justify-content: flex-start;
+    margin-top:52px; 
 
 
 }
+
 
 
 .ctaContainer{
 
 
     cursor: pointer;
-
-
+    padding-left: 10px; 
+    
 
 }
 
