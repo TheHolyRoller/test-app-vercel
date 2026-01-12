@@ -1,78 +1,105 @@
 'use client';
 
-import { useQuiz } from '../lib/context/QuizContext';
-import { useUser } from '../lib/context/UserContext';
 import { useRouter } from 'next/navigation';
-import { useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { browserOS } from '../lib/browserOS'; 
 
 
 
-// import QuizCard from '../Components/QuizCard';
-// import {PermissionAnswer} from '../Components/PermissionAnswer'; 
 import st from '../Styles/startCard.module.css'; 
 import { nunito } from '../fonts/nunito';
 import Image from 'next/image';
 import logo from '../assets/ivvi_Logo.svg'; 
-
-
+import { relative } from 'path';
 
 
 export default function EmailPermission() {
     
-    const router = useRouter();
-    const { finalScore } = useQuiz();
-    const { name, sound } = useUser();
-
+    const router = useRouter()
+    const cardContainerRef = useRef(null)
+ 
     const handleYesClick = () => {
-        router.push('/understand');
-    };
+        router.push('/understand')
+    }
 
     const handleNoClick = () => {
         // Set flag to trigger refresh when landing on home page
-        sessionStorage.setItem('needsRefreshFromEmailDecline', 'true');
-        router.push('/');
-    };
+        sessionStorage.setItem('needsRefreshFromEmailDecline', 'true')
+        router.push('/')
+    }
 
-    const Section = "Audio Permission";
-    const audio_url = 'https://dyslexiaquizapp.s3.eu-west-2.amazonaws.com/audio+doodles/send+email-v1.mp3';
-    const question_text = `t`;
-    const currentQuestion = { question_text: "" };
-    const currentIMG = 'https://fra.cloud.appwritst.io/v1/storage/buckets/dood_gifs/files/EMAIL_SEND_TEST/view?project=test-domain&mode=admin';
+    const question_text = `t`
+
+    // Set CSS variable for card height to enable calc() in CSS
+    const updateCardHeight = () => {
+        if (!cardContainerRef.current) return
+
+        const cardFrameHeight = cardContainerRef.current.offsetHeight
+
+        // Skip if card hasn't rendered yet
+        if (cardFrameHeight === 0) return
+
+        document.documentElement.style.setProperty('--card-container-height', `${cardFrameHeight}px`)
+    }
     
-    // Placeholder functions
-    const getLabelColorBySection = (section) => "#033699";
     useEffect(() => {
-
         (async () => {
-            const isMacChrome = await browserOS();
-            console.log("Mac Chrome?", isMacChrome);
+            const isMacChrome = await browserOS()
+            console.log("Mac Chrome?", isMacChrome)
 
-            if(isMacChrome === true){
-
-                    console.log('you`re on a mac using chrome '); 
-
+            if(isMacChrome === true) {
+                console.log('you`re on a mac using chrome ')
             }
+        })()
+    }, [])
 
-          })();
+    // Update card height CSS variable on mount and resize
+    useEffect(() => {
+        // Use multiple frames to ensure DOM is fully rendered
+        const updateHeight = () => {
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    updateCardHeight()
+                })
+            })
+        }
 
+        updateHeight()
 
-    }, []); 
+        // Also update after a short delay to catch any late renders
+        const timeoutId = setTimeout(updateCardHeight, 100)
+
+        const handleResize = () => {
+            updateCardHeight()
+        }
+
+        window.addEventListener('resize', handleResize)
+        window.addEventListener('orientationchange', handleResize)
+
+        return () => {
+            clearTimeout(timeoutId)
+            window.removeEventListener('resize', handleResize)
+            window.removeEventListener('orientationchange', handleResize)
+        }
+    }, []) 
 
 
     return (
-
-
-            <div className={st.cardElementContainer} >
+        <div 
+            ref={cardContainerRef}
+            className={st.cardElementContainer}
+        >
         <div style={{}}>
           <article 
           className={`${st.card} ${nunito.className} `} 
           id={st.firstCARD} 
           style={{
               boxShadow: '0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.06)',
-            //   outline: '11px solid red ', 
-              position: 'static', 
-              zIndex: '99999'
+              position: 'relative', 
+
+
+
+
 
           }}
           
