@@ -39,14 +39,7 @@ export async function POST(request) {
     
 
         const { email } = body;
-        // const { subscribed } = body;
-        // console.log('this is the unsubscribed status \n', subscribed); 
         console.log('this is the email extracted from the body \n', email);
-        // if(!email || !subscribed){
-
-        //     return NextResponse.json({message: 'could not extract status or email from response'}, {status: 404}); 
-
-        // } 
       
    const { data, error } = await resend.emails.send({
     from: 'Quiz App <info@results.ivvidyslexiascreener.com>',

@@ -8,9 +8,6 @@ import { useUser } from '../lib/context/UserContext';
 import { usePathname } from 'next/navigation';
 import { nunito } from '../fonts/nunito';
 import { chewy } from '../fonts/chewy';
-import mute from '../assets/mute.svg'; 
-
-import soundOn from '../assets/volume.svg'; 
 import styled from "styled-components";
 
 
@@ -29,7 +26,7 @@ const QuizCard = ({
     const { handleAnswer, buttonCounters, incrementButtonCounter, navColor, cardSection, cardType } = useQuiz();
     const { sound, toggleUserSound } = useUser();
     const pathname = usePathname(); 
-    const [answer, setAnswer] = useState();
+    const [ setAnswer] = useState();
     const [iconColor, setIconColor] = useState('');
 
 
@@ -333,6 +330,7 @@ const QuizCard = ({
                                 marginRight: '-0.2rem',
                                 objectFit: 'contain', 
                                 zIndex: '0', 
+                                outline: '3px solid red'
                                
                             }}
                         />
