@@ -3,15 +3,8 @@
     color: #013699 !important; 
     position: absolute;
     height: 100vh;
-    /* top: calc((100vh - var(--card-container-height, 0px)) / 3); */
     top: 0; 
     margin-top: calc((100vh - 665px) / 3); 
-
-
-    
-    
-    /* margin-top: calc((100vh - var(--card-container-height, 0px)) / 3);  */
-
     outline: 2px solid red;
 
 }
