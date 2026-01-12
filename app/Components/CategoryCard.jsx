@@ -1,7 +1,6 @@
 'use client'
 import React from 'react'
 import Image from 'next/image'; 
-// import c from '../Styles/categories.module.css';
 import c from '../Styles/CategoryCard.module.css'; 
 
 import { nunito } from '../fonts/nunito';
