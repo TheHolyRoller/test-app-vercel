@@ -1,7 +1,9 @@
 'use client'
 import React from 'react'
 import Image from 'next/image'; 
-import c from '../Styles/categories.module.css';
+// import c from '../Styles/categories.module.css';
+import c from '../Styles/CategoryCard.module.css'; 
+
 import { nunito } from '../fonts/nunito';
 import { useQuiz } from '../lib/context/QuizContext';
 import { usePathname } from 'next/navigation';
@@ -13,6 +15,7 @@ function CategoryCard({ Section, audio_url, categoryName }) {
     const pathname = usePathname();
 
     const actualCategory = Section || categoryName || currentQuestion?.categoryName || currentQuestion?.question_text?.toLowerCase();
+
 
     console.log('CategoryCard - Props:', { Section, categoryName, actualCategory });
     

@@ -17,7 +17,6 @@ import instagram from '../assets/instagram.svg';
 import facebook from '../assets/facebook.svg'; 
 
 
-
 import Image from 'next/image';
 
 export default function Footer(){

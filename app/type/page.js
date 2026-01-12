@@ -2,14 +2,12 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-//  const q = '';  
+
 import q from '../Styles/Type.module.css'; 
 
 import { useUser } from '../lib/context/UserContext';
 
 import QuizCard from '../Components/QuizCard';
-import TypeControls from '../Components/TypeControls'; 
-
 
 export default function UserType() {
     const router = useRouter();
@@ -24,8 +22,6 @@ export default function UserType() {
         setUser(type);
         setTimeout(() => {
 
-            // alert(`this is the user type ${type}`); 
-
             router.push('/quiz');
         }, 210);
     };
@@ -37,20 +33,17 @@ export default function UserType() {
     }, [user]);
 
     return (
-        <section className={q.mainCardSectionContainer} style={{color: 'white', marginTop:'9rem'}}>
-            <main className={q.quizComponentContainer} style={{}} id='quizElement'>
-            {/* 
-We can screen different people for you, who is it going to be this time?
-
-*/}
-                     <QuizCard 
+        <section className={q.mainCardSectionContainer} style={{color: 'white'}}>
+            <main className={q.quizComponentContainer}  id='quizElement'>
+  
+  
+                  <QuizCard 
 
                         question_text="Who is being quizzed"
                         Section="Details"
                         currentQuestion={{
                             question_text: ""
                         }}
-                        // https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/Audio_Permissions/view?project=67d4d9140008273c9d84&mode=admin
                         audio_url={sound ? "https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/6943fe96001f94a52f53/view?project=67d4d9140008273c9d84&mode=admin" : null}
                         currentIMG=''
                     >
@@ -85,8 +78,6 @@ We can screen different people for you, who is it going to be this time?
 
                     </div>
                     </div>
-
-
 
                     </QuizCard>
                     

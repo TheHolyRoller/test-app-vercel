@@ -282,7 +282,8 @@
 
     position: relative;
     z-index: 10;
-    margin-top: 1.29rem; 
+    margin-top: 0.985rem; 
+
 
 
 }
@@ -316,7 +317,7 @@
 
 
 .CTAButton{
-    height: 63px;
+    height: 57.5px;
     width: 318px;
     color: #7f7f7f;
     

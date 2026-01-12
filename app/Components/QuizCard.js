@@ -1,4 +1,4 @@
-    
+/* eslint-disable react-hooks/exhaustive-deps */
 'use client'
 import Image from 'next/image';
 import q from '../Styles/Quiz.module.css';
@@ -11,6 +11,8 @@ import { chewy } from '../fonts/chewy';
 import styled from "styled-components";
 
 
+
+
 const QuizCard = ({ 
     question_text, 
     audio_url, 
@@ -21,8 +23,6 @@ const QuizCard = ({
 }) => {
 
 
-
-    // Answer button state and logic from QuizAnswer
     const { handleAnswer, buttonCounters, incrementButtonCounter, navColor, cardSection, cardType } = useQuiz();
     const { sound, toggleUserSound } = useUser();
     const pathname = usePathname(); 
@@ -41,12 +41,10 @@ const QuizCard = ({
 
         
         console.log('🎯 Answer Selected:', {
-            answer: userAnswer,
-            // question_text: currentQuestion?.question_text
+            answer: userAnswer
         });
 
 
-        // Call the increment button counter function here and call the user answer as it's function argument 
         const answerMap = {
 
          yes: "yesNum", 
@@ -54,8 +52,6 @@ const QuizCard = ({
          sometimes: "sometimesNum"
 
         }
-
-
 
 
         console.log('this is the mapped user answer \n', answerMap[userAnswer]);
@@ -103,12 +99,9 @@ const QuizCard = ({
     console.log("Current Question:", currentQuestion);
 
     const getColorBySection = (Section) => {
-        // Add debug logging
+
         console.log('getColorBySection called with:', Section);
         
-        // Handle undefined or null case
-
-        // TO DO Change this to the Default blue 
         if (!Section) {
             console.warn('Section is undefined or null, using default color');
             return 'rgb(65, 104, 179)';
@@ -181,7 +174,7 @@ const QuizCard = ({
 
         }
 
-        // Normalize the section name
+    
         const normalizedSection = Section.trim().toLowerCase();
 
         // Add in a fallback function so that it uses the url path to find the color if no normalized Section is defined 
@@ -221,18 +214,22 @@ const QuizCard = ({
             className={q.navbarStrip}
             style={{
 
+
                
             }}
         />
+
+        {/* Top Baseline inside card  */}
 
         <article 
             className={`${q.card} ${nunito.className}`} 
             id={q.firstCARD} 
             style={{
-                marginTop: pathname === '/quiz' ? '-1em' : '0',
-                position: 'relative',
                 zIndex: 200,
                 boxShadow: '0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.06)', 
+                    position: 'relative', 
+                    borderRadius: '1rem', 
+
 
             }}
 
@@ -330,7 +327,6 @@ const QuizCard = ({
                                 marginRight: '-0.2rem',
                                 objectFit: 'contain', 
                                 zIndex: '0', 
-                                outline: '3px solid red'
                                
                             }}
                         />
@@ -431,7 +427,6 @@ const QuizCard = ({
                 </article>
             </section>
         )}
-
 
 
         </article>

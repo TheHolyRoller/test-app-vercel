@@ -1,11 +1,21 @@
 
-
+/* TODO fix the bottom margin in the quiz card URGENT */
 .mainCardSectionContainer{
+        position: absolute;
+        top: 4.25rem;
+        outline: 3px solid red;
+        margin-top: 1rem;
+        left: 50%;
+        transform:translate(-50%, 0%);
+        -webkit-transform:translate(-50%, 0%);
+        -moz-transform:translate(-50%, 0%);
+        -ms-transform:translate(-50%, 0%);
+        -o-transform:translate(-50%, 0%);
 
 
 
 
-}
+    }
 
 
 
