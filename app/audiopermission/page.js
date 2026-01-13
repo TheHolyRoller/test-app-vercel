@@ -1,21 +1,15 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
 import uc from '../Styles/AudioPermission.module.css'; 
 import { nunito } from '../fonts/nunito';
 import Image from 'next/image';
-import ivvi_group from '../assets/ivvi_group.svg'; 
 import Link from 'next/link';
 import AudioButtons from '../Components/AudioButtons';
 
 
 export default function EmailPermission() {
-    const router = useRouter();
-
-
 
     const Section = "Audio Permission";
-    const audio_url = 'https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/6943fef60015171f5d65/view?project=67d4d9140008273c9d84&mode=admin';
     const question_text = `Hello. Welcome to our Dyslexia Screener. Shall I read out the questions for you?`;
     // const currentIMG = 'https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/69440a9500117e2eaa5c/view?project=67d4d9140008273c9d84&mode=admin';
     const currentIMG = 'https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/Optimized_Three/view?project=67d4d9140008273c9d84&mode=admin';
