@@ -1,19 +1,10 @@
 
-.mainContainer{
-
-
-
-
-}
-
-
-
 .quizComponentContainer{
 
 
-display: grid;
-place-content: center;  
-margin-bottom: 5em;
+
+
+
 
 }
 
@@ -24,9 +15,9 @@ margin-bottom: 5em;
     margin: 0 auto; 
     display: grid;
     place-content: center; 
-    padding-top: 6em; 
 
-    
+    margin-top: 4.5rem; 
+
 
 
 
@@ -74,8 +65,6 @@ margin-bottom: 5em;
 
 
 
-
-
 .cardContainer{
 
     position: relative; 
@@ -85,6 +74,8 @@ margin-bottom: 5em;
     place-content: center; 
 
     font-size: 1.2rem !important;
+
+    outline: 3px solid lime;
 
 
 }
@@ -112,6 +103,7 @@ margin-bottom: 5em;
     -moz-border-radius: 1rem;
     -ms-border-radius: 1rem;
     -o-border-radius: 1rem;
+
 
 
 }
@@ -264,6 +256,7 @@ margin-bottom: 5em;
     left: 0; 
     right: 0; 
     margin-top: -3.3rem;
+
 
 
     z-index: 999;
@@ -467,6 +460,10 @@ margin-bottom: 5em;
 
 .quizCardContainer{
 
+
+
+
+
 }
 
 .progressBarContainer{
@@ -484,7 +481,9 @@ margin-bottom: 5em;
 
 .categoryCardContainer{
 
-    margin-top: -9em; 
+
+
+
 
 }
 
@@ -751,12 +750,12 @@ font-size: 1.76rem !important;
     z-index: 1000;
     width: 130%;
 
-
     transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
     -moz-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     -o-transform: translateX(-50%);
+
 
 
 }
@@ -860,6 +859,7 @@ font-size: 1.76rem !important;
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
+    
 
 
     
@@ -1383,6 +1383,7 @@ font-size: 1.76rem !important;
     height: 625px;
     width: 340px;    
     margin-top: -3rem !important; 
+
 }
 
 #cardOne .emailCardOne{

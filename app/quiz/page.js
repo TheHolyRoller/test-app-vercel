@@ -143,7 +143,7 @@ export default function Quiz() {
                     />
                     </div>
                 ) : (
-
+                    
                     <QuizCard
                         key={`quiz-${currentIndex}-${currentQuestion?.$id}`}
                         question_text={question_text}

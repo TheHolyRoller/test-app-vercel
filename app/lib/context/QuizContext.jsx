@@ -6,9 +6,8 @@
     import { databases } from '../appwrite';
     import { Query } from 'appwrite';
     import { usePathname, useRouter } from 'next/navigation';
-    // Color logic is now handled directly in the context
 
-    // Environment variable checks
+
     const DATABASE_ID = process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID;
     const QUESTION_COLLECTION_ID = process.env.NEXT_PUBLIC_APPWRITE_QUESTION_COLLECTION_ID;
 
@@ -144,7 +143,6 @@
                     const allQuestions = [];
                     const limit = 1000; 
                     let offset = 0;
-                    let totalDocuments = 0;
                     let total;
 
                     console.log('this is the limit \n', limit); 
@@ -576,25 +574,11 @@
                     }
                                             
                     const allQuestions = [];
-                    const limit = 1000; 
                     let offset = 0;
-                    let totalDocuments = 0;
                     let total; 
         
                     do {
                         
-                        // TO DO Replace this with a call the the server query route 
-                        // const resultsResponse = await databases.listDocuments(
-                        //     DATABASE_ID,
-                        //     QUESTION_COLLECTION_ID,
-                        //     [
-                        //       Query.limit(1000),
-                        //       Query.offset(offset)
-                        //     ]
-                        //   );
-        
-                        // // DO TO Add in the code 
-                        //   allQuestions.push(...resultsResponse.documents);
                         const res = await fetch('/api/questions', { cache: 'no-store' });
                         const allQuestions = await res.json();
                         

@@ -8,25 +8,25 @@ import { useUser } from '../lib/context/UserContext';
 import { usePathname } from 'next/navigation';
 import { nunito } from '../fonts/nunito';
 import { chewy } from '../fonts/chewy';
-import styled from "styled-components";
-
-
 
 
 const QuizCard = ({ 
+    
     question_text, 
     audio_url, 
     Section, 
     currentIMG,
     currentQuestion, 
     children
+
+
 }) => {
 
 
     const { handleAnswer, buttonCounters, incrementButtonCounter, navColor, cardSection, cardType } = useQuiz();
     const { sound, toggleUserSound } = useUser();
+
     const pathname = usePathname(); 
-    const [ setAnswer] = useState();
     const [iconColor, setIconColor] = useState('');
 
 
@@ -35,6 +35,7 @@ const QuizCard = ({
     
     
     const handleClick = async (userAnswer) => {
+
         
         
         console.log('this is the user answer type::::!!!@@@ \n', userAnswer); 
@@ -58,7 +59,7 @@ const QuizCard = ({
         
         incrementButtonCounter(answerMap[userAnswer]); 
         
-        await setAnswer(userAnswer);
+        // await setAnswer(userAnswer);
         await setIconColor(Section); 
         handleAnswer(userAnswer);
     };
@@ -201,11 +202,7 @@ const QuizCard = ({
 
     // Color is now handled automatically in the context 
 
-    const StyledSVG = styled.svg`
-  width: 5px;
-  height: 5px;
-  background-color: ${(props) => props.color};
-  background-image: url(${(props) => props.src});`;
+
 
     return (
         <>
@@ -227,8 +224,8 @@ const QuizCard = ({
             style={{
                 zIndex: 200,
                 boxShadow: '0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.06)', 
-                    position: 'relative', 
                     borderRadius: '1rem', 
+
 
 
             }}
@@ -268,7 +265,6 @@ const QuizCard = ({
                         </span>
 
                         <div className={q.soundIconContainer} onClick={toggleUserSound} >
-                                {/* <Image src={soundOn} width={20} height={20} alt='sound on' className={q.soundIcon}  /> */}
 
                                 <div className={q.iconBackground} style={{marginTop: '-5px'}} >
 
@@ -334,15 +330,11 @@ const QuizCard = ({
                     
                 </div>
 
+
                 <div  style={{width: '19.25rem', marginTop: '-7rem', display: 'grid', placeContent: 'center'}}>
 
                 {children && <div style={{}}  className={q.childElement}>{children}</div>}
                 </div>
-
-                
-
-
-
 
             </div>
 
