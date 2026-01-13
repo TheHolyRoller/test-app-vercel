@@ -751,9 +751,6 @@ font-size: 1.76rem !important;
     z-index: 1000;
     width: 130%;
 
-    outline: 2px solid red;
-
-
 
     transform: translateX(-50%);
     -webkit-transform: translateX(-50%);

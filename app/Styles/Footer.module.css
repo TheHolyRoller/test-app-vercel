@@ -7,9 +7,6 @@
     height: calc((100vh - 665px) / 3 + 688px); 
     display: grid;
 
-    outline: 2px solid red;
-
-
 }
 
 .footerSubContainer{

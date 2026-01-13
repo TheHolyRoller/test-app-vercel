@@ -3,7 +3,6 @@
 .mainCardSectionContainer{
         position: absolute;
         top: 4.25rem;
-        outline: 3px solid red;
         margin-top: 1rem;
         left: 50%;
         transform:translate(-50%, 0%);

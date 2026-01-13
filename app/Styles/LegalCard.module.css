@@ -441,10 +441,9 @@ display: block;
     margin: 0 auto; 
     display: grid; 
     place-content: center;
-    /* outline: 2px solid red; */
     display: flex;
     justify-content: flex-start;
-    margin-top:53.5px; 
+    margin-top:52px; 
 
 
 }

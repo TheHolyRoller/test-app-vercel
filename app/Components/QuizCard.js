@@ -334,7 +334,7 @@ const QuizCard = ({
                     
                 </div>
 
-                <div  style={{outline: '0px solid red', width: '19.25rem', marginTop: '-7rem', display: 'grid', placeContent: 'center'}}>
+                <div  style={{width: '19.25rem', marginTop: '-7rem', display: 'grid', placeContent: 'center'}}>
 
                 {children && <div style={{}}  className={q.childElement}>{children}</div>}
                 </div>

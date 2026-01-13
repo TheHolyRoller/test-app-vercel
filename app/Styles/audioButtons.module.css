@@ -8,15 +8,12 @@
     background: none;
     z-index: 1000;
     width: 100%;    
-    margin-top: -2.5rem !important; 
-
-
-
+    margin-top: -2.65rem; 
 
 }
 
 
-@media(max-width: 1000px){
+/* @media(max-width: 1000px){
 
 
     
@@ -28,7 +25,7 @@
     
     }
 
-}
+} */
 
 
 
@@ -50,7 +47,9 @@
     position: relative;
     display: grid;
     place-content: center;      
-    height: calc(3rem + 10px); 
+    /* height: calc(3rem + 10px);  */
+    height: calc(2rem + 15px); 
+
 
 }
 
@@ -536,7 +535,7 @@
 }
 
 
-@media(min-width: 1200px){
+/* @media(min-width: 1200px){
 
 
 
@@ -550,4 +549,4 @@
 
 
 
-}
+} */

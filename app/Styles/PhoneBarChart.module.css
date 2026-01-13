@@ -27,8 +27,6 @@
     width: 320px;
     height: 470px;
     background-color: #013699;
-    /* outline: 1px solid red; */
-
     box-shadow: 0 4px 9px -4px rgba(55, 174, 248, 0.3);
 
 
@@ -101,8 +99,6 @@
     -moz-border-radius: 0 0 1rem 1rem;
     -ms-border-radius: 0 0 1rem 1rem;
     -o-border-radius: 0 0 1rem 1rem;
-    outline: 1px solid red;
-
     display: none ;
 
 
@@ -355,8 +351,6 @@
     padding-bottom: 0.5rem !important;
 
     display: block;
-
-    /* outline: 4px solid red; */
     
 }
 
