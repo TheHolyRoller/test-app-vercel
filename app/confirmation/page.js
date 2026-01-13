@@ -118,8 +118,9 @@ export default function EmailPermission() {
 
     const Section = "Audio Permission";
     const audio_url = '';
-    const currentQuestion = { question_text: "" };
-    const currentIMG = 'https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/email_confirmation/view?project=67d4d9140008273c9d84&mode=admin';
+    // const currentIMG = 'https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/email_confirmation/view?project=67d4d9140008273c9d84&mode=admin';
+    const currentIMG = 'https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/69661864000d3df0ece6/view?project=67d4d9140008273c9d84&mode=admin';
+    
 
     console.log('this is the answers object from the quiz context \n', answers); 
     
@@ -204,7 +205,8 @@ export default function EmailPermission() {
                           objectFit: 'contain', 
                           zIndex: '0', 
                           marginTop: '9rem',
-                          marginLeft: '-1rem'
+                        //   TODO Add this back in if needed 
+                        //   marginLeft: '-1rem'
                       }}
                   />
               )}

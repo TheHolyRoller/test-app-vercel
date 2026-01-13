@@ -7,7 +7,9 @@
     width: 100vw; 
     position: absolute;
     top: 0;
-    margin-top: calc((100vh - 665px) / 3); 
+    /* margin-top: calc((100vh - 665px) / 3);  */
+    margin-top: 1rem; 
+
     left: 0; 
 
 }
@@ -155,9 +157,6 @@
     font-family: var(--font-nunito), sans-serif;
     font-weight: 600;
 
-
-
-
 }
 
 
@@ -204,9 +203,6 @@
     font-weight: lighter !important;
     width: 90%;
     margin: 0 auto;
-
-
-
 
 }
 
@@ -376,9 +372,7 @@
     margin: 0 auto; 
     display: grid; 
     place-content: center;
-    margin-top: 2.128rem; 
-
-
+    margin-top: 1.9405rem;
 
 
 

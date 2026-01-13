@@ -18,7 +18,6 @@ export default function Quiz() {
 
     useGifPreloader(gif_urls, currentIndex, 2);
     
-    // Calculate progress as percentage of completed questions
     const progress = quizLength > 0 ? Math.round(((currentIndex + 1) / quizLength) * 100) : 0; 
 
     // Function to lighten a hex color
