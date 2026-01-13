@@ -2,13 +2,28 @@
 
 .mainContainer{
 
+position: absolute; 
+/* TODO Use this as the baseline to change the top margin  */
+top: 2rem;
+left: 50%; 
+/* transform: translate(-50%, 0%); */
+-webkit-transform: translate(-50%, 0%);
+-moz-transform: translate(-50%, 0%);
+-ms-transform: translate(-50%, 0%);
+-o-transform: translate(-50%, 0%);
+transform: translate(-50%, 0%);
+
+
+/* ToDO URGENT add in vendor prefixes here */
+
+display: flex; 
+flex-direction: column;
+justify-content: flex-start;
 
 
 
 
 }
-
-
 
 
 .card {
@@ -163,8 +178,6 @@
     top: 0;
     width: 320px;
     height: 497px;
-    /* outline: 1px solid  red;  */
-    /* display: none; */
     background-color:   #fbfbfb;
     z-index: -1 !important; 
 
@@ -375,6 +388,9 @@
     text-align: center;
     margin: 0 auto; 
     font-size: clamp(1.5rem + 1vw, 2rem, 3rem);
+
+    margin-top: -7rem; 
+
 
 }
 

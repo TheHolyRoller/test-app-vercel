@@ -5,16 +5,12 @@ import c from '../Styles/CategoryCard.module.css';
 
 import { nunito } from '../fonts/nunito';
 import { useQuiz } from '../lib/context/QuizContext';
-import { usePathname } from 'next/navigation';
 import logo from '../assets/ivvi_Logo.svg'; 
 
 
 function CategoryCard({ Section, audio_url, categoryName }) {
     const { handleAnswer, currentQuestion } = useQuiz();
-    const pathname = usePathname();
-
     const actualCategory = Section || categoryName || currentQuestion?.categoryName || currentQuestion?.question_text?.toLowerCase();
-
 
     console.log('CategoryCard - Props:', { Section, categoryName, actualCategory });
     
@@ -64,7 +60,7 @@ function CategoryCard({ Section, audio_url, categoryName }) {
 
     return (
 
-            <div className={c.mainContainer} >
+            <div className={c.mainContainer}>
 
             <article 
                 className={`${c.card} ${nunito.className}`} 
@@ -121,9 +117,10 @@ function CategoryCard({ Section, audio_url, categoryName }) {
             </article>
 
             <aside className={c.buttonSectionContainer} onClick={handleNext} style={{cursor: 'pointer', zIndex: '999999999998999999999999999999999999'}} >
-                <div className={c.CTAButton}  style={{cursor: 'pointer', zIndex: '99999999999999'}}>Next</div>
+                <div className={c.CTAButton}  style={{cursor: 'pointer', zIndex: '99'}}>Next</div>
             </aside>
             </div>
+
 
     )
 }

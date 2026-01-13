@@ -19,7 +19,6 @@ const QuizCard = ({
     currentQuestion, 
     children
 
-
 }) => {
 
 
@@ -207,17 +206,6 @@ const QuizCard = ({
     return (
         <>
 
-        <div 
-            className={q.navbarStrip}
-            style={{
-
-
-               
-            }}
-        />
-
-        {/* Top Baseline inside card  */}
-
         <article 
             className={`${q.card} ${nunito.className}`} 
             id={q.firstCARD} 
@@ -225,9 +213,6 @@ const QuizCard = ({
                 zIndex: 200,
                 boxShadow: '0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.06)', 
                     borderRadius: '1rem', 
-
-
-
             }}
 
 
