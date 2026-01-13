@@ -30,7 +30,7 @@ export default function EmailPermission() {
              Otherwise they won’t be saved.`;
     const currentQuestion = { question_text: "" };
     // const currentIMG = 'https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/69440aa20005ab99eec3/view?project=67d4d9140008273c9d84&mode=admin';
-    const currentIMG = 'https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/Optimized_Gif_One/view?project=67d4d9140008273c9d84&mode=admin';
+    const currentIMG = 'https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/69669d57000fa9cce190/view?project=67d4d9140008273c9d84&mode=admin';
 
 
 

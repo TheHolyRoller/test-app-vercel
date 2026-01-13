@@ -55,7 +55,7 @@ export default function EmailPermission() {
     const audio_url = 'https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/6943fea500373acfa5d5/view?project=67d4d9140008273c9d84&mode=admin';
     const question_text = `Enter your full name`;
     const currentQuestion = { question_text: "" };
-    const currentIMG = 'https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/69440aa90005c8ac8aa8/view?project=67d4d9140008273c9d84&mode=admin'; 
+    const currentIMG = 'https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/69669d61003416124adc/view?project=67d4d9140008273c9d84&mode=admin'; 
     
     // Placeholder functions
     const getLabelColorBySection = (section) => "#033699";

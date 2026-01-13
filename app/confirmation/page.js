@@ -114,12 +114,9 @@ export default function EmailPermission() {
     };
 
 
-   
-
     const Section = "Audio Permission";
     const audio_url = '';
-    // const currentIMG = 'https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/email_confirmation/view?project=67d4d9140008273c9d84&mode=admin';
-    const currentIMG = 'https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/69661864000d3df0ece6/view?project=67d4d9140008273c9d84&mode=admin';
+    const currentIMG = 'https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/69669d6900019b6a3bbf/view?project=67d4d9140008273c9d84&mode=admin';
     
 
     console.log('this is the answers object from the quiz context \n', answers); 
