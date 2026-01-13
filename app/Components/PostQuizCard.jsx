@@ -4,8 +4,6 @@ import { useQuiz } from '../lib/context/QuizContext';
 import { useUser } from '../lib/context/UserContext';
 import { useRouter } from 'next/navigation';
 
-import {PermissionAnswer} from '../Components/PermissionAnswer'; 
-// import e from '../Styles/emailPermission.modulpc.css'; 
 import pc from '../Styles/PostQuizCard.module.css'; 
 
 import { nunito } from '../fonts/nunito';
@@ -184,12 +182,9 @@ export default function PostQuizCard() {
       <article className={pc.card} id={pc.cardThree}></article>
       <article className={pc.card} id={pc.cardFour}></article>
 
-    
-
 
 
   </article>
-
 
 
 

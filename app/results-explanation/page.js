@@ -46,11 +46,7 @@ function ResultsExplanationContent() {
     
 
     const formatCategoryCounter = (memoryScore, writingScore, readingScore, examResultsScore, organisationalScore ) => {
-        const memory = 10; 
-        const writing = 10; 
         const exam = 10; 
-        const reading = 10
-        const organisation = 12;
 
         const examPercent = (examResultsScore / exam) * 100; 
         console.log('this is the exam percentage in format category score  \n', examPercent)    
@@ -92,7 +88,6 @@ function ResultsExplanationContent() {
         
         percentage = Math.min(percentage, 100);
     }
-
     
     formatScore(finalScore); 
 
@@ -121,7 +116,6 @@ function ResultsExplanationContent() {
                 memoryScore={memoryScore}
                 isExplanationPage={true}
                 onNext={handleNext}
-                
                 
             />
             </div>

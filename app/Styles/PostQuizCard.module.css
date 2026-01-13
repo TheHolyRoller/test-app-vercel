@@ -416,15 +416,12 @@
 
     width: 99.99vw; 
     margin: 0 auto; 
-    /* margin-top: -0.8em; */
-    /* margin-top: 2em !important;  */
 
+    
     display: grid;
     place-content: center;
-    /* color: white; */
 
     cursor: pointer;
-    
 
 
 }
@@ -433,12 +430,11 @@
 
 .secondaryButton{
     margin-top: -1.5em;
-    height: 60px;
+    height: 55px;
     width: 300px;
     color: white !important;
     background-color: #686886 !important;
     box-shadow: 0px 4px 1px 0px #4d4d65;
-
 
     
 
@@ -455,6 +451,9 @@
     -moz-border-radius:23px ;
     -ms-border-radius:23px ;
     -o-border-radius:23px ;
+
+
+
 }
 
 .secondaryButton:hover{

@@ -1,9 +1,9 @@
 /* Result Page Styles */
 
-/* Main Container */
 .mainContainer {
 
-
+    margin-top: 1rem; 
+    width: 100vw; 
 
 
 }
@@ -359,7 +359,7 @@ z-index: -2;
 }
 
 .mainTitleSubContainer {
-    /* Title sub container */
+
 }
 
 .buttonContainer {
@@ -369,10 +369,15 @@ z-index: -2;
     transform: translate(-50%, 185%);
 
 
+
     z-index: 99999;
     margin: 0 auto; 
+    
+    
     display: grid;
     place-content: center;
+
+
 
 }
 
@@ -382,13 +387,11 @@ z-index: -2;
 
 
     width: 13em; 
-    height: 2em; 
+    height: 55px; 
     position: absolute;
     left: 5%;
     top: 4%; 
-
-
-
+    outline: 2px solid red;
 
 
 }
@@ -397,22 +400,38 @@ z-index: -2;
 
 
 .button {
+   
+   
     width: 300px;
-    height: 60px;
+    height: 55px;
     border-radius: 22px;
+
+
     -webkit-border-radius: 22px;
     -moz-border-radius: 22px;
     -ms-border-radius: 22px;
     -o-border-radius: 22px;
-    margin: 1em auto; 
+
+
+
+    /* margin: 1em auto;  */
+    margin: 0 auto; 
+    margin-top: 3.03rem; 
     position: relative; 
     display: grid;
     place-content: center;
+
+
+
+
     color: white; 
     background-color: #f49b53;
+    
+    
     font-weight: bolder;
-    font-size: 1.565rem;
+    font-size: 2.2rem;
     letter-spacing: 1px;
+
     border: none;
     outline: none;
     cursor: pointer;
@@ -422,7 +441,6 @@ z-index: -2;
     -moz-user-select: none;    /* Firefox */
     -ms-user-select: none;     /* IE/Edge */
     user-select: none;  
-    font-size: 2.2rem;
     box-shadow: 0px 4px 1px 0px #c17a41 !important;
     
 

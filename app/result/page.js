@@ -10,14 +10,15 @@ import { useState } from 'react';
 import { nunito } from '../fonts/nunito';
 
 
-  
+
 function ResultContent() {
     const searchParams = useSearchParams();
-    const { name, userAge } = useUser();
+    const { name } = useUser();
     const router = useRouter(); 
       const { sound, toggleUserSound } = useUser();
     
   const audio_url = 'https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/6943fe9e00361dad8d36/view?project=67d4d9140008273c9d84&mode=admin';
+
 
 
     const [percentageScore, setPercentageScore] = useState(0);
@@ -298,7 +299,11 @@ function ResultContent() {
                             style={{cursor: 'pointer', fontSize: '2rem', letterSpacing: '1px'
                             }}
                         >
+
                             See Breakdown  
+
+
+
                         </div>
                     </div>
   </article>

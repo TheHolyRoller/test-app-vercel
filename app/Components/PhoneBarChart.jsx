@@ -191,7 +191,6 @@ function PhoneBarChart({ writingPercentage,
 
       <div className={p.buttonContainer}>
 
-
 <div className={p.button} onClick={onNext} style={{cursor: 'pointer', fontSize: '2rem', letterSpacing: '1px', boxShadow: '0px 4px 1px 0px #c17a41;'}}>
 
 Next

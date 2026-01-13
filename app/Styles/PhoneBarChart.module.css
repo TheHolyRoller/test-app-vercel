@@ -1,6 +1,6 @@
 .card {
 
-    height: 500px; 
+    height: 510px; 
 
     width:320px;    
     position: relative;
@@ -25,7 +25,7 @@
     top: 0;    
     
     width: 320px;
-    height: 470px;
+    height: 480px;
     background-color: #013699;
     box-shadow: 0 4px 9px -4px rgba(55, 174, 248, 0.3);
 
@@ -46,14 +46,11 @@
     position: absolute;
     top: 0;
     z-index: -2;
-    height: 477px;
+    height: 487px;
     width: 320px;
-    /* display: none; */
 
     background-color: #013699;
     box-shadow: 0 4px 9px -4px rgba(55, 174, 248, 0.3);
-    /* outline: 4px solid lime; */
-
 
 
 }
@@ -232,22 +229,6 @@
 }
 
 
-
-
-.buttonSectionContainer{
-
-
-    width: 99.999vw; 
-    margin: 0 auto; 
-    display: grid; 
-    place-content: center;
-    margin-top: -4.5em; 
-
-
-
-}
-
-
 .ctaContainer{
 
 
@@ -353,6 +334,7 @@
     display: block;
     
 }
+
 
 .mainScore{
     outline: 10px solid white !important;
@@ -831,8 +813,6 @@
     place-content: center;
 
 
-    
-
 
 
 }
@@ -841,13 +821,15 @@
 
 .button{
     width: 300px;
-    height: 60px;
+    height: 55px;
     border-radius: 22px ;
     -webkit-border-radius: 22px ;
     -moz-border-radius: 22px ;
     -ms-border-radius: 22px ;
     -o-border-radius: 22px ;
-    margin: 1em auto; 
+    margin: 0 auto;
+    margin-top: 22px; 
+
     display: grid;
     place-content: center;
     color: white; 
