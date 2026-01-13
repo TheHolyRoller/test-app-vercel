@@ -64,7 +64,6 @@ export default function EmailPermission() {
 
         <p  className={uc.supportingText} style={{fontWeight: 'lighter'}}>
 
-
         {question_text}
 
         </p>
