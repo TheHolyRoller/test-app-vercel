@@ -472,8 +472,9 @@
     font-size: 0.6rem !important;
     color:rgb(23, 22, 22); 
     padding: 0 1rem; 
-    margin-top: -1rem; 
+    margin-top: -3rem; 
     margin-left: 1rem; 
+
 
 
 
@@ -484,9 +485,7 @@
 .nameEmailConsent{
 
 
-    margin-bottom: 1rem; 
-
-
+    margin-bottom: 2.5rem; 
 
 
 }
@@ -495,24 +494,25 @@
 
 
 .nameEmailCheckbox{
-
-
-    position: absolute; 
-    left: 0.7rem; 
-    transform: translate(0, 0.1rem);
-
-
-
-
+	position: absolute; 
+	left: 0.7rem; 
+	transform: translate(0, 0.1rem);
+	width: 18px;
+	height: 18px;
+	cursor: pointer;
+	accent-color: #000000;
 }
 
 
 
 
 .nameEmailConsentText{
-
-
-
+	font-weight: 400;
+	font-size: 14px;
+	color: #000000;
+	margin-top: 28px;
+	margin-left: 1rem;
+	line-height: 1.4;
 
 
 
@@ -523,17 +523,20 @@
 
 .resultsConsentContainer{
 
+    margin-top: -1rem; 
+
 
 
 }
 
 .resultCheckbox{
-
-
-    position: absolute;
-    left: 0.7rem; 
-    transform: translate(0, 0.1rem);
-
+	position: absolute;
+	left: 0.7rem; 
+	transform: translate(0, 0.1rem);
+	width: 18px;
+	height: 18px;
+	cursor: pointer;
+	accent-color: #000000;
 }
 
 
@@ -546,8 +549,12 @@
 
 
 .resultConsentText{
-
-
+	font-weight: 400;
+	font-size: 14px;
+	color: #000000;
+	margin-top: 6px;
+	margin-left: 1rem;
+	line-height: 1.4;
 }
 
 
@@ -614,13 +621,31 @@
 
 
 .nextButton:active{
+	transform: translateY(0);
+	box-shadow: 0 2px 8px rgba(244, 155, 83, 0.2);
+}
+
+.legalTermsSection{
+	font-weight: 400;
+	font-size: 13px;
+	color: #2c2c2c;
+	text-align: center;
+	margin-top: 2rem;
+    /* margin-bottom: 1rem;; */
+	padding:0  1rem;
+	width: 100%;
 
 
-    transform: translateY(0);
-    box-shadow: 0 2px 8px rgba(244, 155, 83, 0.2);
+}
 
+.legalTermsLink{
+	text-decoration: underline;
+	color: #2c2c2c;
+}
 
-
+.legalTermsLink:hover{
+	text-decoration: underline;
+	color: #2c2c2c;
 }
 
 

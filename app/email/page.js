@@ -685,10 +685,7 @@ const prove_consent = async () => {
 
         {/* Add in the text here  */}
         <p className={`${emailSubmission.nameEmailConsentText}`}>
-            
-             I confirm that I am 13 years or older and I give my explicit consent for ivvi Assist ltd to send me personalized emails
- 
- 
+            I&apos;m 13+ and agree to have my results stored and emailed to me
         </p>
 
       </div>
@@ -706,35 +703,27 @@ const prove_consent = async () => {
         />
 
         <div className={`${emailSubmission.resultConsentTextContainer}`}>
-
             <p className={`${emailSubmission.resultConsentText}`}>
-
-
-                I’d like to receive emails about dyslexia.
-
-               Click 
-               <span>
-                <a href='/Terms_of_Service'  style={{textDecoration:'underline', margin: '0 2.5px'}} >
-               here
-                </a>
-               </span>
-                to read 
-                <a  href='/Terms_of_Service'  style={{textDecoration:'underline', margin: '0 2.5px'}} >
-
-                Terms of Service
-                </a>
-                 and 
-                <a href='/privacyPolicy' style={{textDecoration:'underline', margin: '0 2.5px'}} >
-                Privacy Policy
-
-                </a>
+                Send me dyslexia tips and update emails. (Optional)
             </p>
-
         </div>
 
       </div>
 
       </section>
+
+      <div className={`${emailSubmission.legalTermsSection}`}>
+        <p>
+          Read{' '}
+          <a href='/Terms_of_Service' className={emailSubmission.legalTermsLink}>
+            Terms of Service
+          </a>
+          {' '}and{' '}
+          <a href='/privacyPolicy' className={emailSubmission.legalTermsLink}>
+            Privacy Policy
+          </a>
+        </p>
+      </div>
 
       <article className={emailSubmission.card} id={emailSubmission.cardOne}></article>
       <article className={emailSubmission.card} id={emailSubmission.cardTwo}></article>
