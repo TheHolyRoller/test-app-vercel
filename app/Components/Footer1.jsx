@@ -1,5 +1,4 @@
 
-// Add in the style sheet here 
 import f1 from '../Styles/footer1.module.css'; 
 import { useQuiz } from '../lib/context/QuizContext';
 

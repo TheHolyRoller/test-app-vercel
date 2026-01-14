@@ -4,15 +4,16 @@
 #footer{
 
     position: absolute; 
-    height: 4rem;
+    height: calc((100vh - 591px) / 3 + 30px);
+
     bottom: 0%; 
     min-width: 110vw; 
     right: 0; 
+
     
     
     
 }
-
 
 
 @media (min-width: 200px) and (max-width: 900px) {
