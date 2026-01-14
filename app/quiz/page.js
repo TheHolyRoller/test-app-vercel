@@ -143,7 +143,10 @@ export default function Quiz() {
                     />
                     </div>
                 ) : (
-                    
+
+                    // TODO Dial this in with the dynamic top margin element 
+                    <div style={{ marginTop:"4.5rem"}} >
+
                     <QuizCard
                         key={`quiz-${currentIndex}-${currentQuestion?.$id}`}
                         question_text={question_text}
@@ -151,7 +154,8 @@ export default function Quiz() {
                         audio_url={audio_url}   
                         currentIMG={gif_url}
                         currentQuestion={currentQuestion}
-                    />
+                        />
+                        </div>
                 )}
 
                </div>
