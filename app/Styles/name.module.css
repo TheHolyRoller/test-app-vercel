@@ -121,6 +121,12 @@
     -moz-transform:translate(0, -1.6px) ;
     -ms-transform:translate(0, -1.6px) ;
     -o-transform:translate(0, -1.6px) ;
+
+
+    cursor: pointer;
+    position: relative;
+    z-index: 999999;    
+
 }
 
 

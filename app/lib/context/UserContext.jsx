@@ -1,5 +1,4 @@
 'use client';
-
 /* eslint-disable no-unused-vars */
 import { useState, useEffect, useContext, createContext } from 'react';
 
@@ -8,26 +7,22 @@ const UserContext = createContext();
 
 // Create a provider component
 export const UserProvider = ({ children }) => {
-  const [sound, setSound] = useState(true); 
+  const [sound, setSound] = useState(false); // Changed to false - sound off by default
   const [name, setName] = useState('');
   const [userAge, setUserAge] = useState(); 
   const [nameEmailConsent, setNameEmailConsent] = useState(); 
   const [answerConsent, setAnswerConsent] = useState(); 
 
-
   useEffect(() => {
     console.log('this is the updated user age \n', userAge); 
   }, [userAge]); 
-
 
   const setUserSound = (userSound) => {
     setSound(userSound);
   };
 
   const toggleUserSound = () => {
-
     setSound(!sound);
-
   }
 
   const setUserType = (age) => {
@@ -39,17 +34,12 @@ export const UserProvider = ({ children }) => {
   };
 
   const setNameConsent = (nameEmailConsent) => {
-
     setNameEmailConsent(!nameEmailConsent); 
-
   }
 
   const setResultsConsent = (answerConsent) => {
-
       setAnswerConsent(!answerConsent); 
   }
-
-
 
   // Debug effect - remove in production
   useEffect(() => {
@@ -60,22 +50,18 @@ export const UserProvider = ({ children }) => {
   
   
   return (
-    <UserContext.Provider value={{ name, sound, userAge,nameEmailConsent, answerConsent, setUserName, setUserSound, setUserType, toggleUserSound, setResultsConsent, setNameConsent }}>
+    <UserContext.Provider value={{ name, sound, userAge, nameEmailConsent, answerConsent, setUserName, setUserSound, setUserType, toggleUserSound, setResultsConsent, setNameConsent }}>
       {children}
     </UserContext.Provider>
     
   );
 };
 
-
-
 // Custom hook to consume the context
 export const useUser = () => {
   const context = useContext(UserContext);
-
   if (!context) {
     throw new Error('useUser must be used within a UserProvider');
   }
-
   return context;
 };

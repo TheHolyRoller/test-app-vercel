@@ -111,8 +111,6 @@
     -ms-border-radius: 1rem;
     -o-border-radius: 1rem;
 
-    outline: 4px solid red;
-
 
 
 }
@@ -394,6 +392,9 @@
     -moz-transform:translate(0, -1.6px) ;
     -ms-transform:translate(0, -1.6px) ;
     -o-transform:translate(0, -1.6px) ;
+
+    cursor: pointer;
+    
 }
 
 

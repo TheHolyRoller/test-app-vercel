@@ -103,16 +103,16 @@ export default function EmailPermission() {
               <label className={`${n.categoryLabel} ${nunito.className}`}>
   
   
-                  <div className={`${n.labelContainer} ${nunito.className}`} style={{backgroundColor: getLabelColorBySection(Section)}}>
+                  <div className={`${n.labelContainer} ${nunito.className}`} style={{backgroundColor: getLabelColorBySection(Section), cursor: 'pointer',  }} onClick={toggleUserSound}  >
   
                   ready
 
                   </div>
 
 
-                  <div className={n.soundIconContainer}  style={{}} >
+                  <div className={n.soundIconContainer}  style={{cursor: 'pointer'}} >
 
-                <div className={n.iconBackground} style={{ position: 'absolute', left: '66%', top: '-13px', cursor: 'pointer' }} onClick={toggleUserSound} >
+                <div className={n.iconBackground} style={{ position: 'absolute', left: '66%', top: '-13px', cursor: 'pointer' }}  onClick={toggleUserSound} >
 
 
 
