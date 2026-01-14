@@ -308,6 +308,7 @@ const QuizCard = ({
                                 marginRight: '-0.2rem',
                                 objectFit: 'contain', 
                                 zIndex: '0', 
+                                maxHeight: '270px'
                                
                             }}
                         />
