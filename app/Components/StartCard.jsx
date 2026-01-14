@@ -1,7 +1,7 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { browserOS } from '../lib/browserOS'; 
 
 
@@ -21,7 +21,6 @@ export default function EmailPermission() {
         router.push('/understand')
     }
 
- 
 
     const question_text = `t`
 
