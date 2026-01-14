@@ -75,8 +75,10 @@ export default function EmailPermission() {
               <label className={`${uc.categoryLabel} ${nunito.className}`}>
   
   
-                  <div className={`${uc.labelContainer} ${nunito.className}`} style={{backgroundColor: getLabelColorBySection(Section), outline: '0px solid blue', marginBottom:'1rem'}}   >
+                  <div className={`${uc.labelContainer} ${nunito.className}`} style={{backgroundColor: getLabelColorBySection(Section), outline: '0px solid blue', marginBottom:'1rem'}}>
+                  
                   Welcome
+
                   </div>
 
                   <div className={uc.soundIconContainer} onClick={toggleUserSound}  style={{cursor: 'pointer', position: 'relative', zIndex: '99999'}} >
