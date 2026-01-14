@@ -6,15 +6,29 @@ import Image from 'next/image';
 import Link from 'next/link';
 import AudioButtons from '../Components/AudioButtons';
 import { useUser } from '../lib/context/UserContext';
+import { useEffect, useRef } from 'react';
 
 export default function EmailPermission() {
 
     const Section = "Audio Permission";
     const question_text = `Hello. Welcome to our Dyslexia Screener. Shall I read out the questions for you?`;
     const currentIMG = 'https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/69669d400003f1e47642/view?project=67d4d9140008273c9d84&mode=admin';
-    const audio_url = "https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/69669f980026e3c46be0/view?project=67d4d9140008273c9d84&mode=admin"
+    const audio_url = "https://fra.cloud.appwrite.io/v1/storage/buckets/dood_gifs/files/No_HUH/view?project=67d4d9140008273c9d84&mode=admin"
     
     const { sound, toggleUserSound } = useUser();
+    const audioRef = useRef(null);
+
+    useEffect(() => {
+        if (audioRef.current) {
+            if (sound) {
+                audioRef.current.play().catch(error => {
+                    console.error('Error playing audio:', error);
+                });
+            } else {
+                audioRef.current.pause();
+            }
+        }
+    }, [sound]);
  
     
     // Placeholder functions
@@ -30,7 +44,7 @@ export default function EmailPermission() {
           style={{
             boxShadow: '0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.06)',
               height: '500px', 
-              position: 'relative'
+              position: 'relative',
 
 
 
@@ -44,20 +58,30 @@ export default function EmailPermission() {
   
           }}
       >
-           
-          
-  
-          <div className={`${uc.categoryLabelContainer} ${nunito.className}`}>
+          {audio_url && (
+              <audio 
+                  ref={audioRef}
+                  key={audio_url} 
+                  controls 
+                  style={{ opacity: '0', position: 'absolute' }}
+                  onPlay={() => console.log('🎵 Audio Started Playing:', audio_url)}
+                  onError={(e) => console.error('❌ Audio Error:', e)}
+              >
+                  <source src={audio_url} type="audio/mp3" />
+              </audio>
+          )}
+
+          <div className={`${uc.categoryLabelContainer} ${nunito.className}`} style={{outline: '0px solid red'}} >
               <label className={`${uc.categoryLabel} ${nunito.className}`}>
   
   
-                  <div className={`${uc.labelContainer} ${nunito.className}`} style={{backgroundColor: getLabelColorBySection(Section)}}>
+                  <div className={`${uc.labelContainer} ${nunito.className}`} style={{backgroundColor: getLabelColorBySection(Section), outline: '0px solid blue', marginBottom:'1rem'}}   >
                   Welcome
                   </div>
 
                   <div className={uc.soundIconContainer} onClick={toggleUserSound}  style={{cursor: 'pointer', position: 'relative', zIndex: '99999'}} >
 
-<div className={uc.iconBackground} style={{ position: 'absolute', left: '66%', top: '-13px', cursor: 'pointer' }} onClick={toggleUserSound} >
+<div className={uc.iconBackground} style={{ position: 'absolute', left: '66.7%', top: '-29.5px', cursor: 'pointer' }} onClick={toggleUserSound} >
 
 
      {sound === true ? (

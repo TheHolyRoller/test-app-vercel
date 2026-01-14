@@ -55,16 +55,16 @@ export default function UserType() {
 
                         <button className={`${q.ageButton} ${q.childButton}`} onClick={(() => handleUserType('child'))} >
                             
-                            Teen (13+) 
+                            Teen 
                         </button>
                             <button className={`${q.ageButton} ${q.studentButton}`} onClick={(() => handleUserType('student'))}>
                             
-                            Student
+                            Student(18+)
                         </button>
 
                             <button className={`${q.ageButton} ${q.adultButton}`} onClick={(() => handleUserType('adult'))}>
                             
-                            Adult 
+                            Professional 
                         </button>
 
                         <div className={q.ageTextContainer}>

@@ -10,7 +10,6 @@ import st from '../Styles/startCard.module.css';
 import { nunito } from '../fonts/nunito';
 import Image from 'next/image';
 import logo from '../assets/ivvi_Logo.svg'; 
-import { relative } from 'path';
 
 
 export default function EmailPermission() {
@@ -22,11 +21,7 @@ export default function EmailPermission() {
         router.push('/understand')
     }
 
-    const handleNoClick = () => {
-        // Set flag to trigger refresh when landing on home page
-        sessionStorage.setItem('needsRefreshFromEmailDecline', 'true')
-        router.push('/')
-    }
+ 
 
     const question_text = `t`
 
