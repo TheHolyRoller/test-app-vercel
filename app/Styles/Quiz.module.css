@@ -3,7 +3,6 @@
 
 
 
-    outline: 44px solid lime;
     width: 100vw;   
     height: 100vh;    
     margin: 0 auto; 
@@ -25,6 +24,7 @@
     place-content: center; 
 
     /* margin-top: 4.5rem;  */
+
 
 
 
@@ -110,6 +110,8 @@
     -moz-border-radius: 1rem;
     -ms-border-radius: 1rem;
     -o-border-radius: 1rem;
+
+    outline: 4px solid red;
 
 
 

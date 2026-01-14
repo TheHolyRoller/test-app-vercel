@@ -2,7 +2,7 @@
 
 position: absolute; 
 /* TODO Use this as the baseline to change the top margin  */
-top: 2rem;
+top: 2.2rem;
 left: 50%; 
 /* transform: translate(-50%, 0%); */
 -webkit-transform: translate(-50%, 0%);
@@ -10,6 +10,7 @@ left: 50%;
 -ms-transform: translate(-50%, 0%);
 -o-transform: translate(-50%, 0%);
 transform: translate(-50%, 0%);
+
 
 
 /* ToDO URGENT add in vendor prefixes here */

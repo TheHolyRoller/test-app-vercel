@@ -145,7 +145,7 @@ export default function Quiz() {
                 ) : (
 
                     // TODO Dial this in with the dynamic top margin element 
-                    <div style={{ marginTop:"4.5rem"}} >
+                    <div style={{ marginTop:"4.3rem"}} >
 
                     <QuizCard
                         key={`quiz-${currentIndex}-${currentQuestion?.$id}`}
